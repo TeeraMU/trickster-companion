@@ -1,0 +1,24 @@
+name: Wrong quest info
+description: An item count, NPC, map, reward or step is wrong or missing
+title: "[Data] "
+labels: ["data"]
+body:
+  - type: input
+    id: quest
+    attributes:
+      label: Quest
+      description: Quest name or id (the "Report" link on a quest fills this in)
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong?
+      placeholder: "e.g. Bunny Maid asks for 3x Baby Carrot, not 2"
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: How do you know? (optional)
+      description: In-game check, screenshot, server version

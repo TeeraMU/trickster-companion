@@ -1,20 +1,44 @@
 # Trickster Companion (fan-made)
 
-A fan-made quest tracker and farming helper for **Trickster Online**. It shows how many items each quest needs, how many turn-ins are left, where the NPCs are, and which maps to farm.
+Quest tracker & guides for **Trickster Online** (fan-made): how many items each quest needs, how many turn-ins are left, where to go and which monsters / drill spots to farm.
 
-🌐 **Live site:** https://teeramu.github.io/trickster-companion/
+🌐 **Open it:** https://teeramu.github.io/trickster-companion/ (works on phone and computer)
 
-## Features (current)
-- Quest list for Episode 0 – Episode 1 plus regional quests (Coral Beach, Desert Beach, Megalopolis, Caballa Relics)
-- Step-by-step checklist and turn-in (cycle) counter
-- Item calculator: total items to drop or drill for the remaining quests
-- Progress is saved in your browser (localStorage)
+## Quick start
+1. Open the link. Pick your character's class at the top so class-only quests are filtered.
+2. **📖 Episodes**: choose EP0 or EP1. The quest marked **▶ Now** is the one to do next.
+   - **🗺️ Route**: the stops in order, drawn on the region map. Tap a stop to see that map.
+   - **🎒 Items**: everything still to collect, grouped by map (monster + level, drill depth, shop, combine).
+3. Tick steps or the whole quest as you play. Progress is saved **in this browser only**: use **💾 Export** / **📂 Import** to move it to another device.
+4. **📜 Quests & Items**: every quest with category tabs (Story, Key, Sticker, Card Girl, Town, …) and the items list for whatever you filter.
+5. ☀️ / 🌙 switches light and dark; **🖼️ Background** turns the pictures off (off by default on phones).
+
+### เริ่มใช้ (ภาษาไทย)
+เปิดลิงก์ด้านบน → เลือกอาชีพ → แท็บ **📖 Episodes** เลือก EP ที่เล่นอยู่ เควสที่มีป้าย **▶ Now** คือเควสถัดไป แท็บ **🗺️ Route** บอกลำดับ map ที่ต้องไป และ **🎒 Items** บอกของที่ต้องเก็บ ติ๊กเควสเมื่อทำเสร็จ (บันทึกไว้ในเบราว์เซอร์เครื่องนั้น ย้ายเครื่องใช้ปุ่ม Export / Import) เจอข้อมูลผิดกด **🐞 Report**
+
+## Found something wrong?
+Press **🐞 Report** at the top of the page (or the link at the bottom of a quest's details). It opens a short form on GitHub (a free GitHub account is needed). Mention what you saw in game.
+
+### NPC pins
+On the Route, tap **📍 Pin NPCs**, choose an NPC and tap where they stand on the map. Then **⬇️ Export pins** and send the `npc-pins.json` file to the project owner so everyone gets them.
+
+## What's inside
+- Episode 0 – Episode 1 plus Coral Beach, Desert Beach, Megalopolis and Caballa Relics quests (138)
+- 60 maps from 5 regions with portal links, used for the route
+- Data comes from the ggftw Trickster wiki (2013) and may not match the current server: please report differences
+
+## Run locally
+```bash
+node scripts/serve.js        # then open http://localhost:8080/
+node scripts/validate.js     # check data/*.json
+```
+Opening `index.html` directly as a file will not work: browsers block it from reading `data/*.json`.
 
 ## Roadmap
-See [IMPROVEMENT_PLAN.md](IMPROVEMENT_PLAN.md) (written in Thai).
-
-## Report wrong data
-Open an [issue](../../issues) with the quest name and what is wrong.
+See [IMPROVEMENT_PLAN.md](IMPROVEMENT_PLAN.md) (written in Thai) and [CHANGELOG.md](CHANGELOG.md).
 
 ## Disclaimer
-Trickster Online and all related images are property of their respective owners. This is a non-commercial fan project and is not affiliated with or endorsed by the game's developer or publisher. Images are sourced from the ggftw Trickster wiki (via wikimirror.lifeto.co). Quest data may be inaccurate; please verify in game.
+Trickster Online and all related images are property of their respective owners. This is a non-commercial fan project and is not affiliated with or endorsed by the game's developer or publisher. Item and map images are sourced from the ggftw Trickster wiki (via wikimirror.lifeto.co); other pictures are credited in [assets/CREDITS.md](assets/CREDITS.md). Quest data may be inaccurate; please verify in game.
+
+## Contributing
+Work happens on `dev`; `main` is what the live site shows. Work is done on `feature/...`, `fix/...`, `data/...`, `docs/...` branches from `dev` and merged back (git flow). Full rules are in [CLAUDE.md](CLAUDE.md).

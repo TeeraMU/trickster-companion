@@ -1,0 +1,387 @@
+{
+  "region": "Coral Beach",
+  "quests": [
+    {
+      "id": "cb-gen-01",
+      "order": 11,
+      "title": "Explorer Reina - It's Too Hot!",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Coral Beach Field 3 - Sunny Beach",
+      "minLevel": 12,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 12+",
+      "steps": [
+        "Speak to Explorer Reina in Coral Beach Field 3 - Sunny Beach.",
+        "Hunt Clione (Lv.10) on Coral Beach Field 3 - Sunny Beach to collect 5x Cool Spring Water.",
+        "Return 5x Cool Spring Water to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cool Spring Water",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Clione (Lv.10)",
+            "map": "Coral Beach Field 3 - Sunny Beach"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 10410,
+        "tmExp": 0,
+        "galder": 4000,
+        "items": []
+      }
+    },
+    {
+      "id": "cb-gen-02",
+      "order": 12,
+      "title": "Monkey T - Loyal Monkey T",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Coral Beach Field 3 - Sunny Beach",
+      "minLevel": 12,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 12+",
+      "steps": [
+        "Speak to Monkey T in Coral Beach Field 3 - Sunny Beach.",
+        "Hunt Clione (Lv.10) on Coral Beach Field 3 - Sunny Beach to collect 5x Panacea Herbs.",
+        "Return 5x Panacea Herbs to Monkey T."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Panacea Herbs",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Clione (Lv.10)",
+            "map": "Coral Beach Field 3 - Sunny Beach"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 10410,
+        "galder": 0,
+        "items": [
+          "1x Monkey T's Bad Check"
+        ]
+      },
+      "notes": "Can be done simultaneously with Explorer Reina - It's Too Hot! and Hunter Yuri - Coral Beach Monster Quest since all three target Clione (Lv.10)!"
+    },
+    {
+      "id": "cb-mon-01",
+      "order": 13,
+      "title": "Hunter Yuri - Coral Beach Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Coral Beach Field 3 - Sunny Beach",
+      "minLevel": 12,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 12+",
+      "steps": [
+        "Speak to Hunter Yuri in Coral Beach Field 3 - Sunny Beach.",
+        "Lv.12-14 Bracket: Hunt 15x Clione (Lv.10) within 15 minutes on Field 3.",
+        "Lv.15+ Bracket: Hunt 10x Thiefmon (Lv.13) within 15 minutes on Field 3.",
+        "Return to Hunter Yuri to claim your reward."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Clione (Lv.12-14) OR Thiefmon (Lv.15+)",
+          "level": 10,
+          "count": 15,
+          "timeLimit": "15 min",
+          "map": "Coral Beach Field 3 - Sunny Beach"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3586,
+        "tmExp": 1055,
+        "galder": 0,
+        "items": [
+          "1~2x 100 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "cb-gen-03",
+      "order": 14,
+      "title": "Warrior Kei - A Novice's Growth",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Coral Beach - Dark Cave",
+      "minLevel": 12,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 12+",
+      "steps": [
+        "Enter Coral Beach - Dark Cave from Field 3 and speak to Warrior Kei.",
+        "Hunt Real Golden Mole (Lv.15) inside Dark Cave to collect 5x Mole Crown.",
+        "Return 5x Mole Crown to Warrior Kei."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mole Crown",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Real Golden Mole (Lv.15)",
+            "map": "Coral Beach - Dark Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 10410,
+        "tmExp": 0,
+        "galder": 4000,
+        "items": []
+      }
+    },
+    {
+      "id": "cb-mon-02",
+      "order": 15,
+      "title": "Assistant Hunter - Assistant Hunter's Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Coral Beach - Dark Cave",
+      "minLevel": 12,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cb-mon-01"
+        }
+      ],
+      "prereqText": "Hunter Yuri - Coral Beach Monster Quest",
+      "steps": [
+        "Speak to Assistant Hunter inside Coral Beach - Dark Cave.",
+        "Hunt 10x Real Golden Mole (Lv.15) within 10 minutes inside Dark Cave.",
+        "Report back to Assistant Hunter."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Real Golden Mole",
+          "level": 15,
+          "count": 10,
+          "timeLimit": "10 min",
+          "map": "Coral Beach - Dark Cave"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3261,
+        "tmExp": 3359,
+        "galder": 0,
+        "items": [
+          "3x 100 Galder Coupon"
+        ]
+      },
+      "notes": "Pair this with Warrior Kei - A Novice's Growth so you collect 5x Mole Crown while hunting the 10 Real Golden Moles!"
+    },
+    {
+      "id": "cb-boss-01",
+      "order": 16,
+      "title": "Monkey T - Monkey T's Revenge & Transfer to Master Mong's Lair",
+      "categories": [
+        "dungeon"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Coral Beach - Dark Cave",
+      "minLevel": 10,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 10+",
+      "steps": [
+        "Speak to Monkey T in Coral Beach - Dark Cave to accept 'Monkey T's Revenge'.",
+        "Hunt Addax (Lv.18) in Dark Cave for 3x Addax's Horn (if Lv.10-40) or pay 30,000 Galder (if Lv.41+) to Monkey T to teleport to Master Mong's Lair.",
+        "Defeat the boss Master Mong (Lv.55) inside Master Mong's Lair to obtain 1x Master Mong's Fur.",
+        "Return 1x Master Mong's Fur to Monkey T in Dark Cave."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Addax's Horn",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Addax (Lv.18)",
+            "map": "Coral Beach - Dark Cave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Master Mong's Fur",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Master Mong (Lv.55 Boss)",
+            "map": "Coral Beach - Dark Cave (Master Mong's Lair)"
+          }
+        },
+        {
+          "type": "hunt",
+          "monster": "Master Mong (Boss)",
+          "level": 55,
+          "count": 1,
+          "timeLimit": "None",
+          "map": "Coral Beach - Dark Cave (Master Mong's Lair)"
+        }
+      ],
+      "rewards": {
+        "baseExp": 5313,
+        "tmExp": 0,
+        "galder": 1000,
+        "items": [
+          "Teleport to Master Mong's Lair"
+        ]
+      },
+      "notes": "Master Mong is Level 55; you may want to return around Level 35-45 to defeat him easily."
+    },
+    {
+      "id": "cb-daily-01",
+      "order": 17,
+      "title": "Indiana John - Daily Quest - Coral Beach (Seasonal)",
+      "categories": [
+        "daily"
+      ],
+      "chapter": "Coral Beach - General, Monster & Daily Quests",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Coral Town - Blooming Cora",
+      "minLevel": 5,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 5+ (Repeatable Daily)",
+      "steps": [
+        "Speak to Indiana John in Coral Town - Blooming Cora.",
+        "Drill in Coral Beach Fields 1-3 (10m, Sand) for the seasonal item: Spring (2x Crystal), Summer (2x Cacao), Autumn (1x Rusty Chain + 1x Plastic Bag), or Winter (2x Firecracker).",
+        "Turn in the drilled items to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Crystal (Spring)",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Spring Season Only: Drill Depth 10m (Sand)",
+            "map": "Coral Beach Fields 1-3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Cacao (Summer)",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Summer Season Only: Drill Depth 10m (Sand)",
+            "map": "Coral Beach Fields 1-3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Rusty Chain (Autumn)",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Autumn Season Only: Drill Depth 10m (Sand)",
+            "map": "Coral Beach Fields 1-3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Plastic Bag (Autumn)",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Autumn Season Only: Drill Depth 10m (Sand)",
+            "map": "Coral Beach Fields 1-3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Firecracker (Winter)",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Winter Season Only: Drill Depth 10m (Sand)",
+            "map": "Coral Beach Fields 1-3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3369,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "Choice/Random: 5x Pink Potion A / 5x Blue Potion A / 2x 100 Galder Coupon / 1x Moon Staff"
+        ]
+      }
+    }
+  ]
+}

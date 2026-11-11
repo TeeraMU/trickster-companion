@@ -1,0 +1,1203 @@
+{
+  "region": "Megalopolis",
+  "quests": [
+    {
+      "id": "mg-key-01",
+      "order": 59,
+      "title": "Guild Clerk Esther - Meet Scared Poppuri (Key Quest 1)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Guild Clerk Esther",
+      "npcIds": [
+        "guild-clerk-esther"
+      ],
+      "location": "Megalopolis Guild Office (Megalopolis Square)",
+      "minLevel": 25,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-key-04"
+        }
+      ],
+      "prereqText": "Sandman - Go to Megalopolis Square",
+      "steps": [
+        "Speak to Guild Clerk Esther inside Megalopolis Guild Office.",
+        "Exit Megalopolis Square to the southeast into Southeast Forest and talk to Scared Poppuri."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 28440,
+        "tmExp": 0,
+        "galder": 10000,
+        "items": []
+      }
+    },
+    {
+      "id": "mg-key-02",
+      "order": 60,
+      "title": "Scared Poppuri - Scared Poppuri's Concern (Key Quest 2)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Scared Poppuri",
+      "npcIds": [
+        "scared-poppuri"
+      ],
+      "location": "Southeast Forest",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-key-03"
+        },
+        {
+          "quest": "mg-key-01"
+        }
+      ],
+      "prereqText": "Level 30+, Sandman - The Miracle of Sand (and Guild Clerk Esther - Meet Scared Poppuri)",
+      "steps": [
+        "Speak to Scared Poppuri in Southeast Forest.",
+        "Hunt Kokebi (Lv.39) in Poppuri Dungeon - Moss Cave (or Southeast Forest) to obtain 1x Toy Box.",
+        "Return 1x Toy Box to Scared Poppuri."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Toy Box",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Kokebi (Lv.39)",
+            "map": "Poppuri Dungeon - Moss Cave / Southeast Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 89410,
+        "tmExp": 111360,
+        "galder": 0,
+        "items": [
+          "1x Poppuri Bean"
+        ]
+      }
+    },
+    {
+      "id": "mg-key-03",
+      "order": 61,
+      "title": "Scared Poppuri - Look for Toys (Key Quest 3)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Scared Poppuri",
+      "npcIds": [
+        "scared-poppuri"
+      ],
+      "location": "Southeast Forest",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-key-02"
+        }
+      ],
+      "prereqText": "Scared Poppuri - Scared Poppuri's Concern",
+      "steps": [
+        "Speak to Scared Poppuri in Southeast Forest.",
+        "Hunt Simbatta (Lv.42, Southeast Forest) for 1x Squeaky Hammer.",
+        "Hunt Sppo (Lv.46, Southeast Forest) for 1x Exchange Diary.",
+        "Hunt Moss Moth (Lv.48, Poppuri Dungeon - Moss/Rainbow Cave) for 1x Teddy Bear.",
+        "Hunt Larva (Lv.52, Poppuri Dungeon - Spore/Root Cave) for 1x Robot Model Kit.",
+        "Bring all 4 toys back to Scared Poppuri."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Squeaky Hammer",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Simbatta (Lv.42)",
+            "map": "Southeast Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Exchange Diary",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sppo (Lv.46)",
+            "map": "Southeast Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Teddy Bear",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Moss Moth (Lv.48)",
+            "map": "Poppuri Dungeon - Moss Cave / Rainbow Cave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Robot Model Kit",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Larva (Lv.52)",
+            "map": "Poppuri Dungeon - Spore Cave / Root Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 89410,
+        "tmExp": 111360,
+        "galder": 0,
+        "items": [
+          "Keeps the 4 Toys for Artisan Poppuri - Fix Toys"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-01",
+      "order": 62,
+      "title": "Vagabond Eloy - Eloy's Skin Care [Instant Adhesive #1]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Vagabond Eloy",
+      "npcIds": [
+        "vagabond-eloy"
+      ],
+      "location": "Southeast Forest",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+",
+      "steps": [
+        "Speak to Vagabond Eloy in Southeast Forest.",
+        "Hunt Pochi (Lv.35) in Southwest Forest to collect 3x Multi-Vitamin per cycle (15x total for 5 cycles).",
+        "Turn in 3x Multi-Vitamin to Vagabond Eloy 5 times to receive 1x Instant Adhesive on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Multi-Vitamin",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Pochi (Lv.35)",
+            "map": "Southwest Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 87046,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x 500 Galder Coupon | Cycle 5: 1x Instant Adhesive + 1x 500 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-02a",
+      "order": 63,
+      "title": "Poppuri - Poppuri's Request [Instant Adhesive #2]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Poppuri",
+      "npcIds": [
+        "poppuri"
+      ],
+      "location": "Poppuri Dungeon - Moss Cave",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+",
+      "steps": [
+        "Speak to Poppuri in Poppuri Dungeon - Moss Cave.",
+        "Drill in Poppuri Dungeon Caves (Depth 20~30m, Land) to collect 3x Poppuri Whistle per cycle (15x total for 5 cycles).",
+        "Turn in 3x Poppuri Whistle per cycle for 5 cycles to receive 1x Instant Adhesive + 1x Peridot Gemstone on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Poppuri Whistle",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Land)",
+            "map": "Poppuri Dungeon Caves"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 87046,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Peridot Gemstone"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-02b",
+      "order": 63,
+      "title": "Poppuri - Get the Special Whistle [Instant Adhesive #3]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Poppuri",
+      "npcIds": [
+        "poppuri"
+      ],
+      "location": "Poppuri Dungeon - Moss Cave",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-stk-02a"
+        }
+      ],
+      "prereqText": "Level 30+, Poppuri - Poppuri's Request",
+      "steps": [
+        "Speak to Poppuri in Poppuri Dungeon - Moss Cave after completing Poppuri's Request.",
+        "Hunt Koom (Lv.55) in Poppuri Dungeon - Root Cave / Slide Cave to collect 1x Special Whistle per cycle (5x total for 5 cycles).",
+        "Turn in 1x Special Whistle per cycle for 5 cycles to receive 1x Instant Adhesive + 1x Peridot Gemstone on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Special Whistle",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Koom (Lv.55)",
+            "map": "Poppuri Dungeon - Root Cave / Slide Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 105738,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Peridot Gemstone"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-03",
+      "order": 64,
+      "title": "Hungry Poppuri - Poppuri's Special Snack [Instant Adhesive #4]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Hungry Poppuri",
+      "npcIds": [
+        "hungry-poppuri"
+      ],
+      "location": "Poppuri Dungeon - Rainbow Cave",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+ (Have at least 1x Red Petal in inventory)",
+      "steps": [
+        "Drill inside Poppuri Dungeon Caves (Depth 20~30m, Land) for 3x Red Petal per cycle (15x total for 5 cycles).",
+        "Turn them in to Hungry Poppuri in Poppuri Dungeon - Rainbow Cave 5 times to receive 1x Instant Adhesive on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Petal",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Land)",
+            "map": "Poppuri Dungeon Caves"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 87046,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Poppuri Bean"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-04a",
+      "order": 65,
+      "title": "Artisan Poppuri - Artisan Poppuri That Makes Alarm Clocks (Poppuri's Alarm Clock - 10 Cycles)",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Artisan Poppuri",
+      "npcIds": [
+        "artisan-poppuri"
+      ],
+      "location": "Gate of Poppuri Dungeon",
+      "minLevel": 30,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+",
+      "steps": [
+        "Speak to Artisan Poppuri at Gate of Poppuri Dungeon.",
+        "Hunt Kokebi (Lv.39) in Poppuri Dungeon - Moss Cave (or Southeast Forest) for 1x Talky Mushroom per cycle (10x total for 10 cycles).",
+        "Drill in Poppuri Dungeon Caves (Depth 20~30m, Land) for 1x Battery Lasting Long per cycle (10x total for 10 cycles).",
+        "Turn in 1x Talky Mushroom + 1x Battery Lasting Long per cycle across 10 cycles to earn 6x Super Alarm Clock (Cycles 2, 4, 6, 8, 9, 10) for Blue Muffler Poppuri!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Talky Mushroom",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Kokebi (Lv.39)",
+            "map": "Poppuri Dungeon - Moss Cave / Southeast Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Battery Lasting Long",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Land)",
+            "map": "Poppuri Dungeon Caves"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 80738,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "6x Super Alarm Clock (Cycles 2, 4, 6, 8, 9, 10)",
+          "1x Peridot Gemstone (Cycle 1)",
+          "4x Poppuri Bean (Cycles 3, 5, 7, 9)",
+          "10x Wing of Return (Pop Dungeon)"
+        ]
+      },
+      "notes": "Each cycle gives 80,738 Base EXP (121,107 EXP on 1.5x rate). Save all 6x Super Alarm Clock: 5x are turned in to Blue Muffler Poppuri (I Don't Like Vampire Bats), and 1x must stay in your inventory to start Purifying Poppuri Dungeon!"
+    },
+    {
+      "id": "mg-stk-04b",
+      "order": 65,
+      "title": "Blue Muffler Poppuri - I Don't Like Vampire Bats [Instant Adhesive #5]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Blue Muffler Poppuri",
+      "npcIds": [
+        "blue-muffler-poppuri"
+      ],
+      "location": "Poppuri Dungeon - Spore Cave",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+, Have Super Alarm Clock in inventory (from Artisan Poppuri)",
+      "steps": [
+        "Speak to Blue Muffler Poppuri in Poppuri Dungeon - Spore Cave (with Super Alarm Clock in your inventory).",
+        "Hunt Turvy (Lv.45) in Poppuri Dungeon - Spore Cave to collect 3x Turvy's Tooth per cycle (15x total for 5 cycles).",
+        "Turn in 1x Super Alarm Clock + 3x Turvy's Tooth per cycle for 5 cycles to receive 1x Instant Adhesive + 1x Peridot Gemstone on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Super Alarm Clock",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Artisan Poppuri That Makes Alarm Clocks (Cycles 2, 4, 6, 8, 9, 10)",
+            "map": "Gate of Poppuri Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Turvy's Tooth",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Turvy (Lv.45)",
+            "map": "Poppuri Dungeon - Spore Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 87046,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Peridot Gemstone"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-04c",
+      "order": 65,
+      "title": "Blue Muffler Poppuri - Purifying Poppuri Dungeon [Instant Adhesive #6]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Blue Muffler Poppuri",
+      "npcIds": [
+        "blue-muffler-poppuri"
+      ],
+      "location": "Poppuri Dungeon - Spore Cave",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-stk-04b"
+        }
+      ],
+      "prereqText": "Blue Muffler Poppuri - I Don't Like Vampire Bats + 1x Super Alarm Clock in inventory",
+      "steps": [
+        "Keep the 6th Super Alarm Clock (from Cycle 10 of Artisan Poppuri) in your inventory and speak to Blue Muffler Poppuri in Poppuri Dungeon - Spore Cave.",
+        "Hunt Larva (Lv.52) in Poppuri Dungeon - Spore Cave / Root Cave to collect 3x Poisonous Moss per cycle (15x total for 5 cycles).",
+        "Turn in 3x Poisonous Moss per cycle for 5 cycles to receive 1x Instant Adhesive + 1x Peridot Gemstone on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Poisonous Moss",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Larva (Lv.52)",
+            "map": "Poppuri Dungeon - Spore Cave / Root Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 105738,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Peridot Gemstone"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-05a",
+      "order": 66,
+      "title": "Indiana John - Indiana John at Poppuri Dungeon (1) [Instant Adhesive #7]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Poppuri Dungeon - Root Cave",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+",
+      "steps": [
+        "Speak to Indiana John in Poppuri Dungeon - Root Cave.",
+        "Drill in Poppuri Dungeon Caves (Depth 20~30m, Land) for 1x Amber per cycle (5x total) and hunt Sppo (Lv.46) in Southeast Forest for 1x Gold Powder per cycle (5x total).",
+        "Turn in 1x Amber + 1x Gold Powder per cycle for 5 cycles to receive 1x Instant Adhesive on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Amber",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Land)",
+            "map": "Poppuri Dungeon Caves"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Gold Powder",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sppo (Lv.46)",
+            "map": "Southeast Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 87046,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Poppuri Bean"
+        ]
+      }
+    },
+    {
+      "id": "mg-stk-05b",
+      "order": 66,
+      "title": "Indiana John - Indiana John at Poppuri Dungeon (2) [Instant Adhesive #8]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Poppuri Dungeon - Root Cave",
+      "minLevel": 35,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-stk-05a"
+        }
+      ],
+      "prereqText": "Level 35+, Indiana John - Indiana John at Poppuri Dungeon (1)",
+      "steps": [
+        "Speak to Indiana John in Poppuri Dungeon - Root Cave after completing Part (1).",
+        "Collect 1x Peridot Gemstone (drilled in Poppuri Dungeon Caves or earned from Poppuri / Artisan Poppuri / Blue Muffler Poppuri quests) and drill 1x Moss Water (Depth 20~30m, Land in Poppuri Dungeon Caves) per cycle (5x each total).",
+        "Turn in 1x Peridot Gemstone + 1x Moss Water per cycle for 5 cycles to receive 1x Instant Adhesive on Cycle 5."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Peridot Gemstone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Land) OR Reward from Poppuri Quests",
+            "map": "Poppuri Dungeon Caves"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Moss Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Land)",
+            "map": "Poppuri Dungeon Caves"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 105738,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Poppuri Bean | Cycle 5: 1x Instant Adhesive + 1x Poppuri Bean"
+        ]
+      }
+    },
+    {
+      "id": "mg-key-04",
+      "order": 67,
+      "title": "Artisan Poppuri - Fix Toys (Key Quest 4)",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Artisan Poppuri",
+      "npcIds": [
+        "artisan-poppuri"
+      ],
+      "location": "Gate of Poppuri Dungeon",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-key-03"
+        }
+      ],
+      "prereqText": "Scared Poppuri - Look for Toys + 4x Instant Adhesive",
+      "steps": [
+        "Speak to Artisan Poppuri at Gate of Poppuri Dungeon.",
+        "Hand over the 4 broken toys (Squeaky Hammer, Exchange Diary, Teddy Bear, Robot Model Kit) and 4x Instant Adhesive (earned from any 4 of the 8 Instant Adhesive quests above) to receive 1x Mended Toy Box."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Instant Adhesive",
+          "qty": 4,
+          "source": {
+            "kind": "quest",
+            "from": "Complete any 4 of the 8 Instant Adhesive quests above",
+            "map": "Southeast Forest & Poppuri Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 89410,
+        "tmExp": 111360,
+        "galder": 0,
+        "items": [
+          "1x Mended Toy Box"
+        ]
+      }
+    },
+    {
+      "id": "mg-key-05a",
+      "order": 68,
+      "title": "Scared Poppuri - Poppuri Redemption (Key Quest 5)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Scared Poppuri -> Stern Poppuri",
+      "npcIds": [
+        "scared-poppuri",
+        "stern-poppuri"
+      ],
+      "location": "Southeast Forest -> Poppuri Dungeon - Slide Cave",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-key-04"
+        }
+      ],
+      "prereqText": "Artisan Poppuri - Fix Toys",
+      "steps": [
+        "Speak to Scared Poppuri in Southeast Forest with the Mended Toy Box.",
+        "Navigate to Poppuri Dungeon - Slide Cave and deliver 1x Mended Toy Box to Stern Poppuri to complete Poppuri Redemption!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mended Toy Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Artisan Poppuri - Fix Toys",
+            "map": "Gate of Poppuri Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 178820,
+        "tmExp": 222720,
+        "galder": 0,
+        "items": [
+          "9x Poppuri Bean"
+        ]
+      }
+    },
+    {
+      "id": "mg-key-05b",
+      "order": 68,
+      "title": "Stern Poppuri - Journey to Caballa Relics (Key Finale)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
+      "npc": "Stern Poppuri -> Wise Hen",
+      "npcIds": [
+        "stern-poppuri",
+        "wise-hen"
+      ],
+      "location": "Poppuri Dungeon - Slide Cave -> Gate of Caballa Relics",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-key-05a"
+        }
+      ],
+      "prereqText": "Scared Poppuri - Poppuri Redemption",
+      "steps": [
+        "Speak to Stern Poppuri in Poppuri Dungeon - Slide Cave to accept 'Journey to Caballa Relics'.",
+        "Travel to Gate of Caballa Relics and speak to Wise Hen."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 77374,
+        "tmExp": 0,
+        "galder": 10000,
+        "items": [
+          "1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "mg-gen-01",
+      "order": 69,
+      "title": "Indiana John - Old Man's Dream (Unlocks Surprise Spots!)",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Southeast Forest",
+      "minLevel": 15,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 15+",
+      "steps": [
+        "Speak to Indiana John in Southeast Forest to receive the Treasure Map Use Guide and permanently unlock Surprise Spot drilling & Explorer Reina / Driller King Marky Treasure Map quests!"
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6139,
+        "tmExp": 5900,
+        "galder": 0,
+        "items": [
+          "1x Treasure Map Use Guide (Unlocks Surprise Spots)"
+        ]
+      }
+    },
+    {
+      "id": "mg-gen-02",
+      "order": 70,
+      "title": "Monkey T - Loyal Monkey T (3)",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Southwest Forest",
+      "minLevel": 30,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+ (Repeatable up to 25 times)",
+      "steps": [
+        "Speak to Monkey T in Southwest Forest.",
+        "Hunt Forest Tickler (Lv.44) in Southwest Forest or Southeast Forest for 5x Energy Grass per cycle."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Energy Grass",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Forest Tickler (Lv.44)",
+            "map": "Southwest Forest & Southeast Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 50989,
+        "galder": 0,
+        "items": [
+          "50 / 100 / 500 Galder Coupons per cycle"
+        ]
+      }
+    },
+    {
+      "id": "mg-card-01",
+      "order": 71,
+      "title": "Card Girl - Megalopolis Card Girl Quests (1 to 5)",
+      "categories": [
+        "card"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Southeast Forest",
+      "minLevel": 35,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Lv.35+ (Quest 1), Lv.40+ (Quest 2), Lv.42+ (Quests 3-5)",
+      "steps": [
+        "Quest 1 (Lv.35+): Turn in 1x Sppo Card (from Sppo Lv.46, Southeast Forest) -> 245,428 TM EXP + 2x Arcana Smart Card.",
+        "Quest 2 (Lv.40+): Turn in 1x Forest Mantis Card (from Forest Mantis Lv.50, Southwest Forest) -> 366,066 TM EXP + 2x Arcana Smart Card.",
+        "Quest 3 (Lv.42+): Turn in 1x Koom Card (from Koom Lv.55, Poppuri Dungeon - Root/Slide Cave) -> 419,480 TM EXP + 4x Arcana Smart Card.",
+        "Quest 4 (Lv.42+): Turn in 1x Queen Yamu Card (from Green Chipmunk Lv.39, Southwest Forest) -> 419,480 TM EXP + 5x Arcana Smart Card.",
+        "Quest 5 (Lv.42+): Turn in 1x Kokebi Card (from Kokebi Lv.39, Poppuri Dungeon - Moss Cave) -> 419,480 TM EXP + 6x Arcana Smart Card."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sppo Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sppo (Lv.46)",
+            "map": "Southeast Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Forest Mantis Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Forest Mantis (Lv.50)",
+            "map": "Southwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Koom Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Koom (Lv.55)",
+            "map": "Poppuri Dungeon - Root Cave / Slide Cave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Queen Yamu Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Green Chipmunk (Lv.39)",
+            "map": "Southwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Kokebi Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Kokebi (Lv.39)",
+            "map": "Poppuri Dungeon - Moss Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1869934,
+        "galder": 0,
+        "items": [
+          "19x Arcana Smart Card (Total across Quests 1-5)"
+        ]
+      }
+    },
+    {
+      "id": "mg-mon-01",
+      "order": 72,
+      "title": "Hunter Yuri - South East Forest Hunter Girl & Hunt the Feisty Koom",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Path to Desert Beach & Southeast Forest",
+      "minLevel": 28,
+      "cycles": 2,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Lv.28+ (Feisty Koom) & Lv.30+ (Pink Chipmunk)",
+      "steps": [
+        "Southeast Forest (Lv.28+): Speak to Hunter Yuri and hunt 1x Feisty Koom (Lv.60) in 5 min in Poppuri Dungeon - Moss Cave -> 19,264 Base / 8,722 TM EXP + 500 Galder Coupon + 2,000 Galder.",
+        "Path to Desert Beach (Lv.30+): Speak to Hunter Yuri and hunt 15x Pink Chipmunk (Lv.33) in 15 min on Path to Desert Beach -> 35,125 Base / 12,499 TM EXP + Hunter Girl's Special Gift."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Feisty Koom",
+          "level": 60,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "Poppuri Dungeon - Moss Cave"
+        },
+        {
+          "type": "hunt",
+          "monster": "Pink Chipmunk",
+          "level": 33,
+          "count": 15,
+          "timeLimit": "15 min",
+          "map": "Path to Desert Beach"
+        }
+      ],
+      "rewards": {
+        "baseExp": 54389,
+        "tmExp": 21221,
+        "galder": 2000,
+        "items": [
+          "1x 500 Galder Coupon",
+          "1x Hunter Girl's Special Gift"
+        ]
+      }
+    },
+    {
+      "id": "mg-mon-02",
+      "order": 73,
+      "title": "Love Hunter Robin - Southwest Forest & Poppuri Dungeon Monster Quests",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Southwest Forest & Gate of Poppuri Dungeon",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+ (SW Forest) / Level 30+ (Poppuri Dungeon)",
+      "steps": [
+        "Southwest Forest (5 Cycles per bracket): Lv.25-30: 30x Pochi (20m) | Lv.31-40: 30x Forest Wasp (20m) | Lv.41+: 30x Forest Mantis (20m).",
+        "Gate of Poppuri Dungeon (Infinite Cycles): Lv.30-39: 15x Kokebi (15m) | Lv.40-45: 15x Turvy (15m) | Lv.46-50: 15x Moss Moth (15m) | Lv.51+: 15x Koom (15m, rewards 267,241 TM EXP + Poppuri Bean!)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Pochi / Forest Wasp / Forest Mantis / Kokebi / Turvy / Moss Moth / Koom",
+          "level": 35,
+          "count": 30,
+          "timeLimit": "15-20 min",
+          "map": "Southwest Forest & Poppuri Dungeon"
+        }
+      ],
+      "rewards": {
+        "baseExp": 79984,
+        "tmExp": 267241,
+        "galder": 0,
+        "items": [
+          "100 Galder Coupons & Poppuri Beans"
+        ]
+      }
+    },
+    {
+      "id": "mg-daily-01",
+      "order": 74,
+      "title": "Star Gazer Stella - Daily Quest - Megalopolis",
+      "categories": [
+        "daily"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Megalopolis Square",
+      "minLevel": 35,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 35+ (Repeatable Daily)",
+      "steps": [
+        "Speak to Star Gazer Stella in Megalopolis Square.",
+        "Hunt regional monsters in Desert Beach, Caballa Relics, or Oops Wharf for 2x Shtella's Profile.",
+        "Return 2x Shtella's Profile to Star Gazer Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shtella's Profile",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Regional Monsters",
+            "map": "Desert Beach / Caballa Relics / Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 96418,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "Choice: 2x 500 Galder Coupon / 5x Pink Potion B / 5x Blue Potion B"
+        ]
+      }
+    },
+    {
+      "id": "mg-job-01",
+      "order": 75,
+      "title": "Fairy Nono & 4 Arbiters - Card Identification & Trickster Crest (Enlightenment)",
+      "categories": [
+        "job",
+        "card"
+      ],
+      "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
+      "npc": "Fairy Nono & Arbiters of Courage, Wisdom, Dreams, Love",
+      "npcIds": [
+        "fairy-nono",
+        "arbiters-of-courage",
+        "wisdom",
+        "dreams",
+        "love"
+      ],
+      "location": "Poppuri Dungeon - Mysterious Space (via Curious Poppuri in Rainbow Cave)",
+      "minLevel": 65,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 65+, 2nd Job Advancement Completed",
+      "steps": [
+        "Step 1: Speak to Curious Poppuri in Poppuri Dungeon - Rainbow Cave to enter Mysterious Space, then talk to Fairy Nono.",
+        "Step 2 (Arbiter of Courage): Turn in 1x Arcana Brave Card and defeat 1x Guardian of the Brave (Lv.80) -> 1x Courage Crest.",
+        "Step 3 (Arbiter of Wisdom): Turn in 1x Arcana Smart Card and defeat 1x Wise Sphinx (Lv.80) -> 1x Wisdom Crest.",
+        "Step 4 (Arbiter of Dreams): Turn in 1x Arcana Dream Card and defeat 1x Guardian of Dreams (Lv.80) -> 1x Dream Crest.",
+        "Step 5 (Arbiter of Love): Turn in 1x Arcana Love Card and defeat 1x Loving Lucia (Lv.80) -> 1x Love Crest.",
+        "Step 6: Bring all 4 Crests to Fairy Nono for 1x Trickster Crest, then give 1x Trickster Crest + 5x Harkon Shard to Artisan Poppuri in Moss Cave ('Giant's Poppuri Treasure') for the Trickster Certificate, and return to Fairy Nono to learn Card Identification!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Arcana Brave Card",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Caballa Relics Card Girl Quests",
+            "map": "Gate of Caballa Relics"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Arcana Smart Card",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Desert Beach / Megalopolis Card Girl Quests",
+            "map": "Gate of Desert Beach / Southeast Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Arcana Dream Card",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Oops Wharf Card Girl Quests",
+            "map": "Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Arcana Love Card",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Ghost Blue Card Girl Quests",
+            "map": "Ghost Blue"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Harkon Shard",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Opened from Harkon Heirloom (Path to Mermaid Palace 1 & 2)",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        },
+        {
+          "type": "hunt",
+          "monster": "Guardian of the Brave / Wise Sphinx / Guardian of Dreams / Loving Lucia",
+          "level": 80,
+          "count": 4,
+          "timeLimit": "Trial Rooms",
+          "map": "Poppuri Dungeon Trial Rooms"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4225100,
+        "tmExp": 4707285,
+        "galder": 0,
+        "items": [
+          "Skill: Card Identification",
+          "1x Trickster Certificate",
+          "4x Flower of Revival"
+        ]
+      }
+    }
+  ]
+}

@@ -91,10 +91,10 @@ data/
 ```
 
 **งานย่อย**
-- [ ] เขียนสคริปต์ (Node) แปลง `QUESTS` เดิม 138 เควสเป็น JSON ใหม่แบบอัตโนมัติ แล้วไล่แก้ที่เหลือด้วยมือ
-- [ ] สร้าง `maps / monsters / npcs / items` จากข้อความที่ซ้ำกันในเควสเดิม (dedupe)
-- [ ] สคริปต์ **validate**: เช็กว่า ID ที่อ้างถึงมีอยู่จริง, prereq ไม่วนกันเอง, ไม่มี qty ติดลบ, ทุก item มี source
-- [ ] migrate progress เดิมใน `localStorage` (`_v1` → `_v2`) ไม่ให้ของที่ติ๊กไว้หาย
+- [x] แปลง `QUESTS` เดิม 138 เควสเป็น JSON (schema v2) แล้ว — `data/quests/*.json` แยกตาม region, prereq เป็น ID แล้ว 133/138 (อีก 5 เป็นเงื่อนไขเลเวลล้วน) ✅ Phase 1.1
+- [~] `npcs.json` (75 NPC) + `images.json` (630 รูป) เสร็จแล้ว · `maps / monsters / items` ยังเป็นข้อความในเควส → แยกตอนทำ 1.2 (หน้า Episode ต้องจัดกลุ่มตาม map/มอน)
+- [x] `scripts/validate.js`: field ครบ, id ไม่ซ้ำ, category/class/source ถูกชนิด, NPC และ prereq ที่อ้างถึงมีจริง, prereq ไม่วน ✅
+- [x] progress เดิมใช้ต่อได้เลย: id เควสและ step เหมือนเดิมทุกตัว key `trickster_quest_tracker_v1` ไม่ต้อง migrate ✅
 
 ---
 
@@ -202,6 +202,31 @@ Progress  ███████░░░░░░░░░░░░░  7/20 que
 - `compound: { npc, ingredients: [{ item, qty }] }`
 - `warnings: ["daytime-only"]`
 
+### 3.5 รวม Calculator เข้า Checklist + แผนที่ + เส้นทาง (ตกลง 2026-11-11)
+
+**ปัญหา**: Quest Checklist กับ Items & Drill Calculator แยกกันแล้วดูซับซ้อน ต้องสลับไปมา
+
+**1.6 รวมเป็นหน้าเดียว**
+- Checklist = รายการเควส (ซ้าย) + **🎒 Items to collect** (ขวา) แบบเดียวกับหน้า Episode ใช้ตัวกรองเดียวกัน (หมวด / พื้นที่ / อาชีพ / ค้นหา / สถานะ)
+- สลับได้: "เหลือที่ต้องเก็บ" / "ทั้งหมด"
+- มือถือ: แท็บย่อย 📜 Quests / 🎒 Items
+- ตัดแท็บ Calculator; Drill Depth guide คงไว้เป็นหน้าอ้างอิง
+
+**1.7 แผนที่ + เส้นทาง + ปักหมุด NPC** — ข้อมูลจาก wiki (เช็กแล้ว)
+| ของที่ต้องใช้ | wiki มีไหม | หมายเหตุ |
+|---|---|---|
+| แผนที่ภาพรวมของโซน | ✅ เช่น `Coral_Beach_Map.png` 530×540 มีกรอบแต่ละ map + จุด portal | ใช้เป็นฉากหลังของเส้นทาง |
+| แผนที่ราย map | ⚠️ มีแต่เล็ก (188–220px) | ใช้เป็นภาพประกอบ / ปักหมุด NPC |
+| ทางเชื่อมระหว่าง map | ✅ รายการ "Portal/Transfer to" | บางหน้ามี template ค้าง ต้องเก็บกวาด |
+| ตำแหน่ง NPC | ❌ มีแค่รายชื่อ NPC ต่อ map | ใช้ **โหมดปักหมุด** |
+
+- `data/maps.json`: `{ id, name, region, image, overview: { x, y, w, h } /* กรอบบนแผนที่โซน (%) */, links: [mapId] }`
+- `data/npc-pins.json`: `{ npcId: { map, x, y } }` (% ของภาพ) — ผู้ใช้ปักผ่าน **โหมดปักหมุด** ในแอป แล้ว export เป็นไฟล์ commit เข้า repo
+- **เส้นทาง** = จุดแวะเรียงตามลำดับเควสที่เหลือ รวมจุดติดกันใน map เดียว เช่น
+  ① Blooming Cora: คุย Heidi, Bunny Maid → ② Coral Field 1: ตี Torobbie ×2 (Baby Carrot) → ③ Blooming Cora: ส่งของ
+  + map ที่ต้องเดินผ่านคำนวณจาก `links` (BFS) แล้ววาดเส้น + เลขลำดับบนแผนที่โซน
+- NPC ที่ยังไม่ได้ปักหมุด: แสดงชื่อ + ไฮไลต์ทั้ง map แทน
+
 ---
 
 ## 4. แก้ Pain Point #2 — "ไป map ไหนก่อนดี" (Map Priority)
@@ -302,18 +327,9 @@ Progress  ███████░░░░░░░░░░░░░  7/20 que
 
 หน้า wiki อื่นที่เกี่ยวข้อง: `Second_Job_Advancement`, `Third_Job_Advancement`, `New_Dark_Lord_Job_Advancement`, `How_to_Obtain_3rd_Job_Skills`
 
-**ลำดับการเติมข้อมูลที่แนะนำ** (ทำทีละ batch และ validate ทุก batch)
+**ลำดับการเติมข้อมูล**: ดู Roadmap ข้อ 12 — Phase 1 ปรับ 138 เควสเดิม (EP0–EP1 + region) เข้า schema ใหม่ → Phase 2 EP2 → Phase 3 EP3–EP6 ทีละ EP · Job Change / Progression / side content แทรกตามจังหวะ
 
-| Batch | เนื้อหา | หมายเหตุ |
-|---|---|---|
-| A | ปรับ 138 เควสเดิมเข้า schema ใหม่ | ไม่มีเนื้อหาใหม่ แต่ได้ ID/map/monster ครบ |
-| B | Job Change ขั้น 1–2 ทุกสาย | ผู้เล่นใหม่ถามบ่อย |
-| C | EP1 ที่เหลือ + EP2 | ต่อเนื่องจากของเดิม |
-| D | EP3 – EP4 + โซนที่เกี่ยวข้อง (Oops Wharf, Mermaid Palace, Mirage Island, Ghost Blue …) | |
-| E | EP5 – EP6 + Job ขั้น 3 / Dark Lord | |
-| F | Tower of Chaos, Eclipse's Shadow, Shadow World, Monkey T's Requests, Storage, Card Quests | ทำเป็น "side content" |
-
-**ขั้นตอนต่อ batch**: ดึงจาก wiki → แปลงเป็น JSON (ให้ Claude ช่วย parse) → รัน validate → เทียบกับเกมจริงอย่างน้อย 1 เควสต่อ chapter → ติด `source.verified`
+**ขั้นตอนต่อ EP**: ดึงจาก wiki → แปลงเป็น JSON (ให้ Claude ช่วย parse) → รัน validate → เทียบกับเกมจริงอย่างน้อย 1 เควสต่อ chapter → ติด `source.verified`
 
 > Server นี้มี 9 ตัวละคร (รวม **White Bear** ที่ wiki เก่าไม่มี) → `classes.json` ทำตาม 9 ตัวนี้ ส่วนเควสเปลี่ยนอาชีพของ White Bear และ Progression Quest ต้องเก็บข้อมูลจากในเกมเอง
 > เพราะไม่รู้ว่า server เปิดถึง EP ไหน → เติมข้อมูลตาม EP ที่ server เปิดจริงก่อน ส่วนที่เหลือค่อยทำเมื่อ server เปิด
@@ -466,10 +482,70 @@ parties/{partyId}                       # { name, members: [uid...], inviteCode 
 - **Global search** ช่องเดียว ค้นได้ทั้งเควส, NPC, item, monster, map
 - **สีสถานะ**: เทา = ยังทำไม่ได้ (ติด prereq/level), ขาว = ทำได้, เหลือง = ทำอยู่, เขียว = เสร็จ
 - **ไอคอนอาชีพ** (Power/Magic/Sense/Charm และแต่ละสาย) ใช้ใน filter/profile
-- **Dark mode** + ปรับขนาดตัวอักษร
+- **Light / Dark mode** (Auto ตามเครื่อง) + ปรับขนาดตัวอักษร → รายละเอียดข้อ 8.1
 - **ภาษา: อังกฤษ** ทั้ง UI และข้อมูล เพราะ wiki / แหล่ง research เป็นอังกฤษ ชื่อตรงกับต้นทาง ตรวจความถูกต้องง่ายกว่า (ถ้าภายหลังอยากใส่ชื่อไทยในเกม ให้เพิ่ม field `nameTh` เป็น optional ไว้ค้นหาได้)
 - **Onboarding 3 หน้า**: เลือกอาชีพ → ใส่เลเวล → ติ๊กว่าผ่าน EP ไหนแล้ว (ติ๊กเควสก่อนหน้าให้อัตโนมัติ)
 - **Accessibility**: contrast ผ่านเกณฑ์, ปุ่มขนาดอย่างน้อย 44px, ไม่ใช้สีอย่างเดียวบอกสถานะ
+
+### 8.1 Theme ใหม่: น่ารัก สดใส + Light / Dark mode
+
+**ภาพอ้างอิง** (ผู้ใช้ส่งมา 2026-11-11): artwork ทางการของ Trickster — ตัวละครหลายตัวบนเรือ ท้องฟ้าสีฟ้า เมฆขาว นกนางนวล และตัวละครแกะผมชมพูกับโลโก้ "Trickster Evolution"
+→ โทนที่ต้องการ: **สดใส พาสเทล การ์ตูนอนิเมะ ผจญภัยทะเล**
+
+#### Palette (ดึงจากภาพอ้างอิง)
+| Token | Light | Dark | มาจาก |
+|---|---|---|---|
+| `--bg` | ฟ้าอ่อนไล่ขาว `#EAF6FF → #FFFFFF` | กรมท่าม่วงยามค่ำ `#141B33 → #1E1838` | ท้องฟ้า / ฟ้ากลางคืน |
+| `--card` | ขาวนวล `#FFFFFF` (โปร่ง 85–90%) | `#232A48` (โปร่ง 85–90%) | เมฆ |
+| `--primary` | ฟ้าทะเล `#3BA7F0` | `#6CC4FF` | ทะเล / ท้องฟ้า |
+| `--accent-pink` | ชมพูพาสเทล `#FF8FB8` | `#FF9EC6` | ผมแกะ, sticker |
+| `--accent-yellow` | เหลืองครีม `#FFD45C` | `#FFD970` | ตัวเหลืองหน้าเรือ |
+| `--accent-lavender` | ม่วงลาเวนเดอร์ `#A98BFF` | `#B9A2FF` | ผมม่วง, ไม้เท้า |
+| `--success` / `--warn` / `--danger` | เขียวมิ้นต์ / ส้มพีช / แดงชมพู | สว่างขึ้น 1 ระดับ | สถานะเควส |
+
+- สีสถานะเควส (ข้อ 8) ใช้ token เดิม: เทา = ล็อก, ขาว/ฟ้า = ทำได้, เหลือง = ทำอยู่, เขียวมิ้นต์ = เสร็จ
+- ข้อความต้องผ่าน contrast WCAG AA (4.5:1) ทั้งสองโหมด → สีพาสเทลใช้กับพื้น/ขอบ/ไอคอน ไม่ใช้กับตัวหนังสือบนพื้นขาว
+
+#### สไตล์ "น่ารัก"
+- **ฟอนต์กลมมน**: Google Fonts `Nunito` (ตัวเนื้อหา) + `Fredoka` (หัวข้อ/ตัวเลขใหญ่)
+- **มุมโค้งมาก** (การ์ด 16–20px, ปุ่ม/ชิปเป็นทรงแคปซูล), **เงานุ่ม**, ขอบ 2px สีพาสเทล
+- **Progress bar** แบบลายทางลูกกวาด (candy stripe) + ไอคอนดาว ⭐ เมื่อครบ 100%
+- **ไอคอนหมวด** (ข้อ 5) เป็นวงกลมพื้นพาสเทลคนละสี
+- **Micro-animation** เล็กน้อย: ติ๊กเควสเสร็จมีเด้ง/ประกาย ✨ (ปิดเองเมื่อเครื่องตั้ง `prefers-reduced-motion`)
+- **Empty state** ใช้รูปมอนน่ารัก (เช่น Torobbie / Poppuri จาก wiki) พร้อมข้อความสั้นๆ
+
+#### Light / Dark mode
+- สวิตช์ 3 ค่า: **Auto (ตามเครื่อง)** · ☀️ Light · 🌙 Dark — ค่าเริ่มต้น Auto
+- ทำด้วย CSS variables: `:root` = light, `[data-theme="dark"]` และ `@media (prefers-color-scheme: dark)` เมื่อเป็น Auto
+- จำค่าที่เลือกใน `localStorage` (และ sync ตาม profile เมื่อมี login ใน Phase 4)
+- ตั้ง `<meta name="theme-color">` ให้แถบ browser บนมือถือเปลี่ยนสีตามโหมด
+
+#### ภาพพื้นหลัง (Background art)
+- ชั้นพื้นหลังแบบ `position: fixed` อยู่หลังเนื้อหาทั้งหมด: รูป artwork + **gradient ทับ** ให้จางลง (Light ~15–20%, Dark ~8–12% + เบลอเล็กน้อย) → ตัวหนังสือยังอ่านง่าย
+- การ์ดใช้พื้นโปร่งแสง + `backdrop-filter: blur()` (แบบกระจกฝ้า) ให้เห็นภาพข้างหลังเล็กน้อย
+- **ตั้งค่าได้**: เปิด/ปิดภาพพื้นหลัง (ค่าเริ่มต้นเปิดบนคอม, **ปิดบนมือถือ**เพื่อความเร็วและแบต — เปิดเองได้)
+- ไฟล์: webp ย่อขนาด ~1600px กว้าง ≤ 250 KB, โหลดแบบ lazy หลังเนื้อหาหลัก ไม่ให้หน้าแรกช้า
+- มีภาพ 2 ชุด: กลางวัน (Light) / ยามค่ำ (Dark) ถ้าหาได้ ไม่งั้นใช้ภาพเดียวกันแต่ overlay ต่างกัน
+
+#### เรื่องลิขสิทธิ์ภาพพื้นหลัง (ต่อจากข้อ 7.2)
+> ⚠️ artwork ทางการ (key art, wallpaper) มีความเสี่ยงสูงกว่า icon เล็กๆ เพราะเป็นงานศิลปะเต็มชิ้นที่ทำเพื่อโปรโมต
+- ✅ ใช้เป็น **พื้นหลังจางๆ เพื่อตกแต่ง** + ใส่เครดิตใน footer ("Background art © Trickster Online / publisher")
+- ✅ มีสวิตช์ปิด และถ้าเจ้าของขอให้ลบ → ลบไฟล์ แล้วพื้นหลังกลับเป็น gradient ล้วน (ดีไซน์ต้องสวยได้แม้ไม่มีรูป)
+- ❌ **ไม่ใช้โลโก้ "Trickster Evolution"** หรือ artwork เป็นโลโก้/แบรนด์ของเว็บ — ชื่อเว็บยังเป็น "Trickster Companion (fan-made)" ใช้ตัวอักษร + ไอคอนของเราเอง
+- แหล่งภาพ: ภาพที่ผู้ใช้ส่งมา / wallpaper ทางการจากหน้าเว็บหรือ Discord ของ playtrickster.com → บันทึกที่มาใน `assets/CREDITS.md`
+- (แนะนำ) ถามทีมงานใน Discord พร้อมกับเรื่อง icon (ข้อ 7.2 ข้อ 5)
+
+#### หน้าตาโดยรวม (ตัวอย่าง Light)
+```
+┌──────────────────────────────────────────────┐  ← พื้นหลัง: ฟ้า + เมฆ + artwork จางๆ
+│ ✦ Trickster Companion            ☀️/🌙  ⚙    │
+│ ╭──────────────────────────────────────────╮ │
+│ │ 📖 EPISODE 1          ⭐ 7/20             │ │  ← การ์ดขาวโปร่ง มุมโค้ง 20px
+│ │ ▓▓▓▓▓▓▓░░░░░░░░  (ลายทางลูกกวาดสีฟ้า-ชมพู) │ │
+│ ╰──────────────────────────────────────────╯ │
+│  (📖)  (🎓)  (🏷)  (🔑)  (⚔)   ← ไอคอนหมวดวงกลมพาสเทล │
+└──────────────────────────────────────────────┘
+```
 
 ---
 
@@ -512,7 +588,7 @@ data/builds/
 
 ## 11. ไอเดียเพิ่มเติม (นอกเหนือจากที่ขอ)
 
-### ✅ ยืนยันแล้ว: รายการ "ห้ามขาย" (ทำใน P2)
+### ✅ ยืนยันแล้ว: รายการ "ห้ามขาย" (ทำใน Phase 1 ข้อ 1.8)
 - หน้ารวม item ทุกชิ้นที่ **ยังต้องใช้กับเควสที่ยังไม่เสร็จ** พร้อมจำนวนรวมที่ต้องเก็บไว้ และชื่อเควสที่ใช้
 - ไอคอน 🔒 บน item นั้นทุกที่ในแอป (การ์ดเควส, หน้า map, inventory)
 - เรียงตาม "ใช้หลายเควสที่สุด" ก่อน → รู้เลยว่าชิ้นไหนสำคัญ
@@ -532,28 +608,77 @@ data/builds/
 
 ---
 
-## 12. Roadmap ที่แนะนำ
+## 12. Roadmap (แบ่ง Phase ใหม่: ใช้ได้ก่อน → EP2 → EP ถัดไป)
 
-| Phase | เป้าหมาย | Deliverable | ขนาดงาน |
+> หลักคิด: **ทำให้ใช้เล่นจริงได้ก่อน** แล้วค่อยเติมเนื้อหา **ทีละ EP** ฟีเจอร์เสริมค่อยตามมา
+> แต่ละ Phase จบด้วยการ release (merge เข้า `main` + tag) → เว็บจริงอัปเดต
+
+### Phase 1 — ใช้ได้จริง (EP0–EP1) → release `v0.2.0`
+
+> ⚡ **release v0.2.0 ก่อนกำหนด (2026-11-12)** หลังจบ 1.7 เพื่อให้เพื่อนลองใช้จริง · 1.8–1.9 จะออกใน v0.3.0
+
+**เป้าหมาย**: เปิดบนมือถือแล้วเล่น EP0–EP1 ได้จนจบ **โดยไม่ต้องเปิด wiki** — รู้ว่าต้องเก็บอะไรกี่ชิ้น ส่งกี่รอบ NPC อยู่ไหน ไป map ไหน ตีตัวไหน ขุดอะไร
+
+| # | งาน | อ้างอิง | Branch |
 |---|---|---|---|
-| **P0 – Foundation** | แยก data ออกจาก UI, schema ใหม่, validate script, migrate progress | `data/*.json`, `scripts/validate.js`, แอปหน้าตาเดิมแต่อ่านจาก JSON | M |
-| **P1 – Go Mobile** | Public repo + GitHub Pages + PWA + Export/Import + responsive/bottom nav | URL ใช้ได้บนมือถือ | S–M |
-| **P1.5 – Sync** | Login Google + Firebase sync แบบ local-first (ข้อ 7.1) | progress ตรงกันทุกเครื่อง | S–M |
-| **P2 – Clarity** | Quest card ใหม่, NPC directory, แท็บ category (เควสอยู่ได้หลายแท็บ), Sticker book, inventory, **รายการห้ามขาย** | แก้ pain point #1, #3 | M |
-| **P3 – Map Priority** | หน้า "ไป map ไหนดี": เรียง map ตามจำนวนเควสที่ช่วย, ตีตัวไหน / ดรอปกี่ชิ้น / ขุดอะไรกี่อัน (เลเวลเป็นแค่ badge) | แก้ pain point #2 | M |
-| **P3.5 – Friends & Party** | Share link → Friend list + ของต้องการ/มีเผื่อ + match → Party shopping list รวม (ข้อ 7.3) | เพื่อนเห็น progress กัน | M |
-| **P4 – Content** | Batch B–F ตาม EP ที่ server เปิดจริง + Progression Quest + White Bear | ข้อมูลครบ | L (ทยอยทำ) |
-| **P5 – Map/Monster DB** | Map browser, monster/item page, รูปเก็บใน repo | UI แบบ wiki | M |
-| **P6 – Builds** | Build guide, stat sim, skill tree, leveling guide | pain point #7 | L |
+| 1.1 ✅ | แยกข้อมูล 138 เควสเดิมเป็น JSON + schema ใหม่ (objective แยก drop / drill / shop / compound / quest-reward, NPC/map เป็น ID) + validate script + ย้าย progress เดิมไม่ให้หาย | ข้อ 2 | `refactor/split-quest-data` |
+| 1.2 ✅ | **Theme ใหม่ + Light/Dark**: design tokens (สี/ฟอนต์/มุมโค้ง), สวิตช์ Auto/Light/Dark, ภาพพื้นหลังจางๆ ปิดได้ — ทำก่อนเพื่อให้หน้าใหม่ 1.3–1.7 ใช้สไตล์เดียวกันเลย ไม่ต้องแต่งซ้ำ | ข้อ 8.1 | `feature/cute-theme` |
+| 1.3 ✅ | **หน้า Episode**: ภาพรวม + ของที่ต้องเก็บจัดตาม map (สลับ ทั้ง EP / Chapter ปัจจุบัน) + ลำดับเควส (เควสที่ทำอยู่กางเต็ม) | ข้อ 3.4 | `feature/episode-view` |
+| 1.4 ✅ | **Quest card ใหม่**: ต่อรอบ / รวม / เหลือ, รับเควสที่ / ส่งที่, สูตรผสม, คำเตือน ⚠ | ข้อ 3.1 | `feature/quest-card` |
+| 1.5 ✅ | **แท็บ Category** ไอคอนใหญ่ เควสอยู่ได้หลายแท็บ | ข้อ 5 | `feature/category-tabs` |
+| 1.6 ✅ | **รวม Calculator เข้า Quest Checklist**: รายการเควสซ้าย + "🎒 Items to collect" จัดตาม map ขวา (ตามตัวกรอง), ตัดแท็บ Calculator, Drill guide คงไว้ | ข้อ 3.5 | `feature/merge-calculator` |
+| 1.7 ✅ | **แผนที่ + เส้นทาง + ปักหมุด NPC**: แผนที่ภาพรวมของโซนพร้อมไฮไลต์ map ที่ต้องไป, เส้นทางเป็นจุดแวะเรียงลำดับ (คุย/ตี/ขุด/ส่ง) + map ที่ต้องเดินผ่าน, โหมดปักหมุดตำแหน่ง NPC | ข้อ 3.5 | `feature/map-route` |
+| 1.8 | **ของในมือ** (+/−) หักจากยอดที่ต้องเก็บ + **รายการห้ามขาย** 🔒 | ข้อ 3.3, 11 | `feature/inventory` |
+| 1.9 | **มือถือ**: responsive + bottom nav + Export/Import progress + Add to Home Screen (PWA) | ข้อ 7, 8 | `feature/mobile` |
 
-> P4 (เติมข้อมูล) ทำคู่ขนานกับ P2–P3 ได้ เพราะเมื่อ schema นิ่งแล้ว ข้อมูลกับ UI ก็แยกกันทำได้
+**ยังไม่ทำใน Phase 1**: login/sync, เพื่อน/party, หน้า "ไป map ไหนดี" แบบรวมทุก EP (หน้า Episode ข้อ 1.3 ตอบคำถาม "ไป map ไหน ตีอะไร ขุดอะไร" ภายใน EP ได้แล้ว), map/monster DB, build guide
+**เสร็จเมื่อ**: เล่น EP1 จบทั้ง EP บนมือถือได้จากแอปอย่างเดียว
+
+### Phase 2 — EP2 → release `v0.3.0`
+
+**เป้าหมาย**: หน้า EP2 ใช้ได้ครบเหมือน EP1
+
+| # | งาน | Branch |
+|---|---|---|
+| 2.1 | อ่านหน้า `Episode_2_Quests` บน wiki → เช็กว่าข้อมูลครบแค่ไหน (จำนวนของ, placeholder ค้าง) | `data/ep2-quests` |
+| 2.2 | แปลงเป็น JSON ตาม schema + เพิ่ม NPC / map / monster / item ใหม่ของ EP2 | `data/ep2-quests` |
+| 2.3 | ดึงรูปที่ EP2 ใช้ (ข้อ 7.2) | `data/ep2-quests` |
+| 2.4 | รัน validate + เทียบกับในเกมอย่างน้อย 1 เควสต่อ chapter → ติด `source.verified` | `data/ep2-quests` |
+| 2.5 | แก้ UI ที่ข้อมูล EP2 ทำให้เห็นปัญหา (ถ้ามี) | `fix/...` |
+
+**เสร็จเมื่อ**: เล่น EP2 จบได้จากแอปอย่างเดียว
+
+### Phase 3 — EP ถัดไป ทีละ EP (ทยอยทำ)
+
+ใช้ขั้นตอนเดียวกับ Phase 2 ทุก EP — **1 EP = 1 branch `data/epN-quests` = 1 release**
+
+| ลำดับ | เนื้อหา | Release |
+|---|---|---|
+| 3.1 | EP3 (3 ch + Bonus) | `v0.4.0` |
+| 3.2 | EP4 (3 ch + Bonus) | `v0.5.0` |
+| 3.3 | EP5 (3 ch + Bonus) | `v0.6.0` |
+| 3.4 | EP6 (4 ch + Bonus, ข้อมูล wiki ไม่ครบ ต้องเติมจากในเกม) | `v0.7.0` |
+
+- **Job Change / Progression Quest / White Bear** แทรกเป็น release ย่อยเมื่อถึงเลเวลที่ต้องใช้ (branch `data/job-change-2nd` ฯลฯ)
+- ถ้าเจอว่า server ยังไม่เปิดถึง EP ไหน หยุดรอที่ EP นั้น แล้วไปทำ Phase 4 ระหว่างรอ
+
+### Phase 4 — ฟีเจอร์เสริม (แทรกระหว่าง Phase 3 ได้)
+
+| งาน | อ้างอิง |
+|---|---|
+| หน้า "ไป map ไหนดี" แบบรวมทุก EP / ทุกหมวด | ข้อ 4 |
+| Login Google + sync (Firebase) | ข้อ 7.1 |
+| แชร์ progress ให้เพื่อน / Party | ข้อ 7.3 |
+| Map browser, หน้า monster / item, NPC directory | ข้อ 3.2, 8 |
+| Sticker Book, side content (Tower of Chaos, Eclipse's Shadow ฯลฯ) | ข้อ 5, 6 |
+| Build guide, stat sim, skill tree, leveling guide | ข้อ 10 |
 
 ---
 
 ## 13. Tech Stack ที่แนะนำ
 
 - **คงความเรียบง่าย**: Vanilla JS (ES modules) + JSON ยังไม่ต้องใช้ framework ใช้ได้ทันทีบน GitHub Pages
-- ถ้า UI เริ่มซับซ้อน (ราว P3) ค่อยย้ายไป **Vite + Preact/Svelte** (bundle เล็ก เหมาะกับมือถือ) แล้ว deploy ผ่าน GitHub Actions
+- ถ้า UI เริ่มซับซ้อน (ราว Phase 4) ค่อยย้ายไป **Vite + Preact/Svelte** (bundle เล็ก เหมาะกับมือถือ) แล้ว deploy ผ่าน GitHub Actions
 - Node script สำหรับ: convert ข้อมูลเดิม, validate, ดาวน์โหลดและ optimize รูป (เป็น webp)
 - State: `localStorage` + versioned migration → ภายหลังค่อยเพิ่ม cloud sync ถ้าจำเป็น
 
@@ -569,8 +694,11 @@ data/builds/
 - ✅ ขอบเขตข้อมูล: EP0–EP6 ตาม wiki (EP6 เป็นตอนสุดท้าย)
 - ✅ ระบบแนะนำ: เน้น "ไป map ไหนก่อน" ไม่ใช้เลเวลเป็นตัวตัดสิน
 - ✅ หมวด: แท็บ Category ใหญ่ กดง่าย และเควสเดียวอยู่ได้หลายแท็บ
-- ✅ รายการห้ามขาย: ทำใน P2
-- ✅ แชร์ progress ให้เพื่อน / Party: ทำใน P3.5 (opt-in, ค่าเริ่มต้น private)
+- ✅ รายการห้ามขาย: ทำใน Phase 1
+- ✅ รวม Calculator เข้า Checklist (1.6) + แผนที่/เส้นทาง/ปักหมุด NPC เอง (1.7) ก่อน release v0.2.0
+- ✅ UI: theme น่ารัก สดใส (ฟ้า/ชมพู/เหลือง/ลาเวนเดอร์) + Light/Dark (Auto) + ภาพพื้นหลังจางๆ ปิดได้ → Phase 1 ข้อ 1.2 (spec ข้อ 8.1)
+- ✅ แชร์ progress ให้เพื่อน / Party: ทำใน Phase 4 (opt-in, ค่าเริ่มต้น private)
+- ✅ ลำดับงาน: Phase 1 ใช้ได้จริง (EP0–EP1) → Phase 2 EP2 → Phase 3 EP3–EP6 ทีละ EP → Phase 4 ฟีเจอร์เสริม
 
 **ยังเปิดอยู่**
 1. playtrickster.com เปิดถึง EP ไหนแล้ว (เช็กในเกมหรือ Discord) → ใช้จัดลำดับ Batch ข้อ 6

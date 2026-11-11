@@ -1,0 +1,1431 @@
+{
+  "region": "Desert Beach",
+  "quests": [
+    {
+      "id": "db-key-01",
+      "order": 35,
+      "title": "Sandman - Desert Sticker (Key Quest 1)",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Sandman",
+      "npcIds": [
+        "sandman"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Sandman in Beach Town - Paradise.",
+        "Complete all 5 cycles of any 5 of the 7 Desert Sticker quests below to obtain 5x Desert Sticker.",
+        "Turn in 5x Desert Sticker to Sandman."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Desert Sticker",
+          "qty": 5,
+          "source": {
+            "kind": "quest",
+            "from": "Complete Cycle 5 of any 5 Desert Sticker quests below",
+            "map": "Beach Town - Paradise"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 57072,
+        "tmExp": 61769,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Recommended 5 Stickers: Homeless Ian -> Bunny Maid -> Al-Hauri (they chain together!) + Miranda Watty + Vagabond Eloy (or Skipper Min)."
+    },
+    {
+      "id": "db-stk-01",
+      "order": 36,
+      "title": "Homeless Ian - This Generation's Last Romantic [Desert Sticker #1]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Homeless Ian",
+      "npcIds": [
+        "homeless-ian"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Homeless Ian in Beach Town - Paradise.",
+        "Hunt Sea Scorpion (Lv.22) or Hula Octopus (Lv.27) in Desert Beach Field 3 / 4 for 2x Flower Necklace per cycle (10x total for 5 cycles).",
+        "Save all 5x Water Bucket rewards for Bunny Maid's sticker quest!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Flower Necklace",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Scorpion (Lv.22) / Hula Octopus (Lv.27)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Per Cycle: 1x Water Bucket | Cycle 4: 1x Homeless Ian Card | Cycle 5: 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-stk-02",
+      "order": 37,
+      "title": "Bunny Maid - Well Watching Bunny Maid [Desert Sticker #2]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Bunny Maid",
+      "npcIds": [
+        "bunny-maid"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+ (Uses Water Buckets from Homeless Ian)",
+      "steps": [
+        "Speak to Bunny Maid by the well in Beach Town - Paradise.",
+        "Hunt Hula Octopus (Lv.27) or Grumpy Octopus (Lv.29) in Desert Beach Field 3 / 4 for 2x Octopus Leg per cycle (10x total).",
+        "Turn in 1x Water Bucket (from Homeless Ian) + 2x Octopus Leg per cycle for 5 cycles. Save the 5x Filled Water Bucket rewards for Al-Hauri!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Water Bucket",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Homeless Ian - This Generation's Last Romantic",
+            "map": "Beach Town - Paradise"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Octopus Legs",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Hula Octopus (Lv.27) / Grumpy Octopus (Lv.29)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Per Cycle: 1x Filled Water Bucket | Cycle 4: 1x Bunny Maid Card | Cycle 5: 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-stk-03",
+      "order": 38,
+      "title": "Al-Hauri - Help Al-Hauri [Desert Sticker #3]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Al-Hauri",
+      "npcIds": [
+        "al-hauri"
+      ],
+      "location": "Paradise Spa (Beach Town - Paradise)",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+ (Uses Filled Water Buckets from Bunny Maid)",
+      "steps": [
+        "Enter Paradise Spa in Beach Town - Paradise and speak to Al-Hauri.",
+        "Hand over 1x Filled Water Bucket (from Bunny Maid's quest) per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Filled Water Bucket",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Bunny Maid - Well Watching Bunny Maid",
+            "map": "Beach Town - Paradise"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-3: Pink/Blue Potion B | Cycle 4: 1x Al-Hauri Card | Cycle 5: 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-stk-04",
+      "order": 39,
+      "title": "Miranda Watty - Miranda Watty's Hobbies [Desert Sticker #4]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Miranda Watty",
+      "npcIds": [
+        "miranda-watty"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Miranda Watty in Beach Town - Paradise.",
+        "Hunt Pineapple (Lv.24) in Desert Beach Field 3 - Statue of Anubis for 2x Pineapple Mask per cycle (10x total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pineapple Mask",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Pineapple (Lv.24)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Per Cycle: 1x 500 Galder Coupon | Cycle 4: 1x Miranda Watty Card | Cycle 5: 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-stk-05",
+      "order": 40,
+      "title": "Vagabond Eloy - Eloy's Sensitive Skin (1) [Desert Sticker #5]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Vagabond Eloy",
+      "npcIds": [
+        "vagabond-eloy"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Vagabond Eloy in Beach Town - Paradise.",
+        "Drill in Desert Beach Field 2 - Sand Palace (10m, Sand) for 2x Sun Cream per cycle (10x total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sun Cream",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Per Cycle: 3x Pink/Blue Potion C | Cycle 4: 1x Vagabond Eloy Card | Cycle 5: 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-stk-06",
+      "order": 41,
+      "title": "Skipper Min - Dude Needs a Bath! [Desert Sticker #6]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Skipper Min",
+      "npcIds": [
+        "skipper-min"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 15,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 15+",
+      "steps": [
+        "Speak to Skipper Min in Beach Town - Paradise.",
+        "Drill in Desert Beach Field 3 - Statue of Anubis (10m, Sand) for 1x Soap, 1x Shampoo, and 1x Bath Sponge per cycle (5x each total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Soap",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shampoo",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bath Sponge",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x 500 Galder Coupon | Cycle 4: 1x Skipper Card | Cycle 5: 1x Survival Stick + 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-stk-07",
+      "order": 42,
+      "title": "Eliza Bath - Eliza Bath's Curiosity [Desert Sticker #7]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Eliza Bath",
+      "npcIds": [
+        "eliza-bath"
+      ],
+      "location": "Paradise Spa (Beach Town - Paradise)",
+      "minLevel": 15,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 15+",
+      "steps": [
+        "Speak to Eliza Bath inside Paradise Spa.",
+        "Drill in Desert Beach Field 3 & Field 4 (10m, Sand) for 1x Lucky Letter, 1x Cursed Letter, 1x Love Letter, 1x Confession Letter, and 1x Farewell Letter per cycle (5x each total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lucky Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Cursed Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Love Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Confession Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Farewell Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 2, 3 & 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x 500 Galder Coupon | Cycle 4: 1x Eliza Bath Card | Cycle 5: 1x Octopus Hat Neo + 1x Desert Sticker"
+        ]
+      }
+    },
+    {
+      "id": "db-key-02",
+      "order": 43,
+      "title": "Sandman - Legendary Recipe (Key Quest 2)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Sandman",
+      "npcIds": [
+        "sandman"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-key-01"
+        }
+      ],
+      "prereqText": "Sandman - Desert Sticker",
+      "steps": [
+        "Speak to Sandman in Beach Town - Paradise after turning in 5 Desert Stickers.",
+        "Hunt Sand Demon (Lv.28) in Desert Beach Field 3 - Statue of Anubis for 5x Sand Cake and 1x Sand Glass.",
+        "Drill in Desert Beach Fields 1-4 (10m, Sand) for 2x Limestone, 1x Garden Trowel, and 1x Oasis Water.",
+        "Return all items to Sandman."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sand Cake",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sand Demon (Lv.28)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sand Glass",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sand Demon (Lv.28)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Limestone",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Garden Trowel",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Oasis Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 57072,
+        "tmExp": 61769,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "db-key-03",
+      "order": 44,
+      "title": "Sandman - The Miracle of Sand (Key Quest 3)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Sandman",
+      "npcIds": [
+        "sandman"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-key-02"
+        }
+      ],
+      "prereqText": "Sandman - Legendary Recipe",
+      "steps": [
+        "Speak to Sandman in Beach Town - Paradise.",
+        "Hunt Sand Demon (Lv.28) in Desert Beach Field 3 for 1x Legendary Recipe.",
+        "Enter Pyramid Dungeon (via Field 3) and drill in Pyramid Dungeon 1-6 (20~30m, Rock) for 1x Glyph Tablet.",
+        "Return both items to Sandman to receive the Adventurer's Book and Weapon Ticket A!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Legendary Recipe",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sand Demon (Lv.28)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Glyph Tablet",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Rock)",
+            "map": "Pyramid Dungeon 1-6"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 57072,
+        "tmExp": 61769,
+        "galder": 0,
+        "items": [
+          "1x Adventurer's Book",
+          "1x Weapon Ticket A"
+        ]
+      },
+      "notes": "Keep your Adventurer's Book safe! You will need it later for the Caballa Relics Key Quest chain."
+    },
+    {
+      "id": "db-key-04",
+      "order": 45,
+      "title": "Sandman - Go to Megalopolis Square (Key Transition)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
+      "npc": "Sandman",
+      "npcIds": [
+        "sandman"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-key-03"
+        }
+      ],
+      "prereqText": "Sandman - The Miracle of Sand",
+      "steps": [
+        "Speak to Sandman in Beach Town - Paradise.",
+        "Travel to Megalopolis Square, enter the Megalopolis Guild Office, and speak to Guild Clerk Esther."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 28440,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "id": "db-gen-01",
+      "order": 46,
+      "title": "Don Giuvanni - Calming Down Don Giuvanni",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Desert Beach Field 2 - Sand Palace",
+      "minLevel": 15,
+      "cycles": 3,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 15+",
+      "steps": [
+        "Speak to Don Giuvanni in Desert Beach Field 2 - Sand Palace.",
+        "Drill in Desert Beach Field 3 - Statue of Anubis (10m, Sand) for 1x Soap per cycle (3x total for 3 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Soap",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7521,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 3: 1x Don Giuvanni Card (Unlocks Star Gazer Stella)"
+        ]
+      }
+    },
+    {
+      "id": "db-gen-02",
+      "order": 47,
+      "title": "Star Gazer Stella - The Star Gazer",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Desert Beach Field 2 - Sand Palace",
+      "minLevel": 15,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-gen-01"
+        }
+      ],
+      "prereqText": "Don Giuvanni - Calming Down Don Giuvanni (3 Cycles)",
+      "steps": [
+        "After completing all 3 cycles of Calming Down Don Giuvanni, speak to Star Gazer Stella in Desert Beach Field 2 - Sand Palace to unlock the Star Gazing fortune system."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6218,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No. 5",
+          "1x Stars and Fortunes"
+        ]
+      }
+    },
+    {
+      "id": "db-gen-03",
+      "order": 48,
+      "title": "Monkey T - Monkey T's Loyalty - 2",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Desert Beach Field 1 - Delta Island",
+      "minLevel": 20,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 20+ (Repeatable up to 25 times)",
+      "steps": [
+        "Speak to Monkey T in Desert Beach Field 1 - Delta Island.",
+        "Hunt Shell Trap (Lv.19) in Desert Beach Field 1 for 5x Iron Grass per cycle."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Iron Grass",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Shell Trap (Lv.19)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 19593,
+        "galder": 0,
+        "items": [
+          "50 / 100 Galder Coupons per cycle"
+        ]
+      }
+    },
+    {
+      "id": "db-gen-04",
+      "order": 49,
+      "title": "Driller Marky - Crazy Drilling! (With Explorer Reina & Indiana John Sub-Quests)",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Driller Marky",
+      "npcIds": [
+        "driller-marky"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 25,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Driller Marky in Beach Town - Paradise to start 'Crazy Drilling!'.",
+        "Sub-Quest 1 (Indiana John - Acquire Rare Artifacts, in Paradise): Hunt Sand Demon (Lv.28, Field 3) for 1x Broken Artifact 1, Fan Lizard (Lv.26, Field 4) for 1x Broken Artifact 2, and Cannon Shell (Lv.33, Field 4) for 1x Broken Artifact 3. Turn them in to Indiana John for 1x Earth Charm (+49,389 Base EXP).",
+        "Sub-Quest 2 (Explorer Reina - Driller Master Test, in Paradise): Collect Driller King Necklace, Driller King Ring, and Driller King Bag to receive 1x Drilling Certification (+49,389 Base EXP).",
+        "Return 1x Earth Charm and 1x Drilling Certification to Driller Marky to learn the Crazy Drilling skill!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Broken Artifact 1",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sand Demon (Lv.28)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Broken Artifact 2",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Fan Lizard (Lv.26)",
+            "map": "Desert Beach Field 4 - Parasol River"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Broken Artifact 3",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Cannon Shell (Lv.33)",
+            "map": "Desert Beach Field 4 - Parasol River"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Earth Charm",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Acquire Rare Artifacts",
+            "map": "Beach Town - Paradise"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Drilling Certification",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Explorer Reina - Driller Master Test",
+            "map": "Beach Town - Paradise"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 148167,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Crazy Drilling Card (Skill)",
+          "30x Basic Detection Scroll S"
+        ]
+      }
+    },
+    {
+      "id": "db-gen-05",
+      "order": 50,
+      "title": "Blacksmith Marx - Collection!",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Desert Beach Mine - Crystal Copper",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Blacksmith Marx in Desert Beach Mine - Crystal Copper.",
+        "Drill 3x Pure Tin in 1st Mining Lot of Crystal Copper (10~20m, Rock) and 3x Flawless Amethyst in 2nd Mining Lot of Crystal Copper per cycle (15x each total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Tin",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10~20m (Rock)",
+            "map": "1st Mining Lot of Crystal Copper"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Flawless Amethyst",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10~20m (Rock)",
+            "map": "2nd Mining Lot of Crystal Copper"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 51447,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: Tornado Stone / 500 Galder Coupons / Pink Potion C | Cycle 5: 2x Pure Sulfur + 2x Flawless Agate"
+        ]
+      }
+    },
+    {
+      "id": "db-gen-06",
+      "order": 51,
+      "title": "Pharaoh Boy - Young Pharaoh's Request",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Pharaoh Boy",
+      "npcIds": [
+        "pharaoh-boy"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+",
+      "steps": [
+        "Speak to Pharaoh Boy in Desert Beach Field 3 - Statue of Anubis.",
+        "Drill inside Pyramid Dungeon 1-6 (20~30m, Rock) for 1x Uraeus Statue, 1x Nekhbet Statue, and 1x Round Bone Seal per cycle (5x each total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Uraeus Statue",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Rock)",
+            "map": "Pyramid Dungeon 1-6"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Nekhbet Statue",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Rock)",
+            "map": "Pyramid Dungeon 1-6"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Round Bone Seal",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Rock)",
+            "map": "Pyramid Dungeon 1-6"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 46302,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Per Cycle: 500 Galder Coupon | Cycle 4: 1x Pharaoh Boy Card"
+        ]
+      }
+    },
+    {
+      "id": "db-card-01",
+      "order": 52,
+      "title": "Card Girl - Desert Beach Card Girl Quests (1 to 5)",
+      "categories": [
+        "card"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Desert Beach",
+      "minLevel": 10,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Lv.10+ (Quest 1), Lv.15+ (Quest 2), Lv.25+ (Quests 3-5)",
+      "steps": [
+        "Quest 1 (Lv.10+): Turn in 1x Sea Scorpion Card (from Sea Scorpion Lv.22, Field 3) -> 8,577 TM EXP + 2x Arcana Smart Card.",
+        "Quest 2 (Lv.15+): Turn in 1x Sand Demon Card (from Sand Demon Lv.28, Field 3) -> 19,920 TM EXP + 2x Arcana Smart Card.",
+        "Quest 3 (Lv.25+): Turn in 1x Nephthys Card & 1x Isis Card (from Nephthys Lv.38 & Isis Lv.42, Pyramid Dungeon 2) -> 79,191 TM EXP + 3x Arcana Smart Card.",
+        "Quest 4 (Lv.25+): Turn in 1x Shell Trap Card (from Shell Trap Lv.19, Field 1) -> 79,191 TM EXP + 4x Arcana Smart Card.",
+        "Quest 5 (Lv.25+): Turn in 1x Fan Lizard Card (from Fan Lizard Lv.26, Field 4) -> 79,191 TM EXP + 5x Arcana Smart Card."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sea Scorpion Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Scorpion (Lv.22)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sand Demon Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sand Demon (Lv.28)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Nephthys Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Nephthys (Lv.38)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Isis Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Isis (Lv.42)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shell Trap Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Shell Trap (Lv.19)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fan Lizard Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Fan Lizard (Lv.26)",
+            "map": "Desert Beach Field 4 - Parasol River"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 266070,
+        "galder": 0,
+        "items": [
+          "16x Arcana Smart Card (Total across Quests 1-5)"
+        ]
+      },
+      "notes": "Save at least 1x Arcana Smart Card for the Level 65 Arbiter of Wisdom Enlightenment quest!"
+    },
+    {
+      "id": "db-mon-01",
+      "order": 53,
+      "title": "Hunter Yuri - Desert Beach Hunter Girl & Paradise Hunter Girl",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Gate of Desert Beach & Desert Beach Field 3",
+      "minLevel": 10,
+      "cycles": 2,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Lv.10+ (Gate of Desert Beach) & Lv.20+ (Field 3)",
+      "steps": [
+        "Gate of Desert Beach (Lv.10+): Speak to Hunter Yuri and hunt 15x Fanta Slime (Lv.18) in 15 min on Field 1 -> 2,308 Base / 721 TM EXP + Hunter Girl's Thank You Gift.",
+        "Desert Beach Field 3 - Statue of Anubis (Lv.20+): Speak to Hunter Yuri and hunt 15x Sand Demon (Lv.28) in 15 min on Field 3 -> 12,647 Base / 3,584 TM EXP + Hunter Girl's Happy Gift."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Fanta Slime",
+          "level": 18,
+          "count": 15,
+          "timeLimit": "15 min",
+          "map": "Desert Beach Field 1 - Delta Island"
+        },
+        {
+          "type": "hunt",
+          "monster": "Sand Demon",
+          "level": 28,
+          "count": 15,
+          "timeLimit": "15 min",
+          "map": "Desert Beach Field 3 - Statue of Anubis"
+        }
+      ],
+      "rewards": {
+        "baseExp": 14955,
+        "tmExp": 4305,
+        "galder": 0,
+        "items": [
+          "1x Hunter Girl's Thank You Gift",
+          "1x Hunter Girl's Happy Gift"
+        ]
+      }
+    },
+    {
+      "id": "db-mon-02",
+      "order": 54,
+      "title": "Hunter Yuri & Assistant Hunter - Paradise Monster Guild Quests",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Hunter Yuri & Assistant Hunter",
+      "npcIds": [
+        "hunter-yuri",
+        "assistant-hunter"
+      ],
+      "location": "Paradise Monster Guild (Beach Town - Paradise)",
+      "minLevel": 15,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 15+ (5 Cycles per Level Bracket)",
+      "steps": [
+        "Lv.15-20: Hunt 5x Golden Mole (Lv.20) in 10 min on Field 1 -> 3,935 Base / 1,080 TM EXP.",
+        "Lv.21-25: Hunt 10x Pineapple (Lv.24) in 15 min on Field 3 -> 9,077 Base / 2,644 TM EXP.",
+        "Lv.26-33: Hunt 15x Cannon Shell (Lv.33) in 20 min on Field 4 -> 15,628 Base / 4,869 TM EXP.",
+        "Lv.34-40: Hunt 20x Gold G (Lv.36) in 25 min in Pyramid Dungeon 3/5 -> 30,305 Base / 12,428 TM EXP.",
+        "Lv.41+: Hunt 30x Rotten Mummy (Lv.43) in 30 min in Pyramid Dungeon 4/5/6 -> 49,340 Base / 22,561 TM EXP."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Golden Mole / Pineapple / Cannon Shell / Gold G / Rotten Mummy",
+          "level": 20,
+          "count": 15,
+          "timeLimit": "10-30 min",
+          "map": "Desert Beach Fields 1-4 & Pyramid Dungeon"
+        }
+      ],
+      "rewards": {
+        "baseExp": 49340,
+        "tmExp": 22561,
+        "galder": 0,
+        "items": [
+          "3~5x 100 Galder Coupon per cycle"
+        ]
+      }
+    },
+    {
+      "id": "db-mon-03",
+      "order": 55,
+      "title": "Love Hunter Robin - Love Hunter from Pyramid Dungeon",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "minLevel": 25,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 25+ (5 Cycles per Level Bracket)",
+      "steps": [
+        "Lv.25-30: Hunt 20x Oran G (Lv.30) in 20 min in Pyramid Dungeon 1 -> 14,878 TM EXP + 2x 500 Galder Coupon.",
+        "Lv.31-35: Hunt 20x Uraeus (Lv.34) in 20 min in Pyramid Dungeon 2 -> 27,860 TM EXP + 2x 500 Galder Coupon.",
+        "Lv.36-45: Hunt 20x Seth (Lv.45) in 20 min in Pyramid Dungeon 4/5 -> 51,796 TM EXP + 2x 500 Galder Coupon.",
+        "Lv.46+: Hunt 20x Queen Mummy (Lv.49) in 20 min in Pyramid Dungeon 6 -> 104,179 TM EXP + 3x 500 Galder Coupon."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Oran G / Uraeus / Seth / Queen Mummy",
+          "level": 30,
+          "count": 20,
+          "timeLimit": "20 min",
+          "map": "Pyramid Dungeon 1-6"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 51796,
+        "galder": 0,
+        "items": [
+          "2~3x 500 Galder Coupon per cycle"
+        ]
+      }
+    },
+    {
+      "id": "db-daily-01",
+      "order": 56,
+      "title": "Monkey T - Daily Quest - Desert Beach & Keeper Julio - Storage Mission 1",
+      "categories": [
+        "daily"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Monkey T & Keeper Julio",
+      "npcIds": [
+        "monkey-t",
+        "keeper-julio"
+      ],
+      "location": "Beach Town - Paradise & Gate of Desert Beach",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 20+ (Repeatable Daily)",
+      "steps": [
+        "Monkey T (Paradise): Hunt Punisher Cannon Shell (Lv.38) or Cannon Shell (Lv.33) in Field 4 for 1x Sleeping Socks -> 16,421 TM EXP + 1x Daily Coupon.",
+        "Keeper Julio (Gate of Desert Beach): Turn in 10x to 100x Crystal (drilled in Coral Beach / Desert Beach Fields, 10m Sand) -> up to 179,136 TM EXP + 7x 500 Galder Coupon + 1x Chaos's Feather 20."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sleeping Socks",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Punisher Cannon Shell (Lv.38) / Cannon Shell (Lv.33)",
+            "map": "Desert Beach Field 4 - Parasol River"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystal",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Coral Beach & Desert Beach Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 195557,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "2~7x 500 Galder Coupon",
+          "1x Chaos's Feather 20 (for 100x Crystal)"
+        ]
+      }
+    },
+    {
+      "id": "db-pyr-01",
+      "order": 57,
+      "title": "Pharaoh Boy & Gods - Young Pharaoh's Awakening (Pyramid Unique Gear Chain)",
+      "categories": [
+        "dungeon"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Pharaoh Boy, Anubis, Nefertiti & Bastet",
+      "npcIds": [
+        "pharaoh-boy",
+        "anubis",
+        "nefertiti",
+        "bastet"
+      ],
+      "location": "Desert Beach Field 3 & Pyramid Dungeon 2, 3, 6",
+      "minLevel": 35,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 35-90",
+      "steps": [
+        "Step 1 (Anubis - Mission 1 & 2, Pyramid Dungeon 2 -> Room of Truth): Hunt 30x Soul Taker (1) in 10 min for Anubis Card, then 20x Soul Taker (2) in 10 min for 1x Piece of Free Soul 1.",
+        "Step 2 (Nefertiti - Nefertiti's Mission, Pyramid Dungeon 6): Drill in Pyramid Dungeon 1-6 (Depth 20~30m, Rock) for 15x Book of the Dead -> 1x Piece of Free Soul 2 + Nefertiti Card.",
+        "Step 3 (Bastet - Bastet's Mission, Pyramid Dungeon 3): Hunt Nephthys (Lv.38) and Isis (Lv.42) in Pyramid Dungeon 2 for Blue Feather, Nephthys' Song, Red Feather, and Isis' Song -> 1x Piece of Free Soul 3.",
+        "Step 4 (Pharaoh Boy - Young Pharaoh's Awakening, Desert Beach Field 3): Turn in Piece of Free Soul 1, 2, and 3 to Pharaoh Boy for a Pyramid Unique Equipment piece!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Book of the Dead",
+          "qty": 15,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~30m (Rock)",
+            "map": "Pyramid Dungeon 1-6 (Pyramid Dungeon Halls)"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Blue Feather",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Nephthys (Lv.38)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Nephthys Song",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Nephthys (Lv.38)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Red Feather",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Isis (Lv.42)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Isis' Song",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Isis (Lv.42)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        },
+        {
+          "type": "hunt",
+          "monster": "Soul Taker (1) & (2)",
+          "level": 60,
+          "count": 50,
+          "timeLimit": "10 min each",
+          "map": "Pyramid Dungeon - Room of Truth"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2096331,
+        "tmExp": 879714,
+        "galder": 0,
+        "items": [
+          "Random Pyramid Unique Gear: Pharaoh Hat / Golden Sword / Golden Lion Shield / Ankh Pendant",
+          "1x Anubis Card",
+          "1x Nefertiti Card"
+        ]
+      }
+    },
+    {
+      "id": "db-pyr-02",
+      "order": 58,
+      "title": "Nefertiti - Canopic Jar & Tutankhamen Boss Access Trials",
+      "categories": [
+        "dungeon"
+      ],
+      "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
+      "npc": "Nefertiti & Bastet",
+      "npcIds": [
+        "nefertiti",
+        "bastet"
+      ],
+      "location": "Pyramid Dungeon 6 - Hall of the Queen",
+      "minLevel": 35,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 35+",
+      "steps": [
+        "Canopic Jar (Nefertiti, 5 Cycles): Collect 3x Harpy, 3x Imsety, 3x Duamutef, and 3x Qebehsenuef from Mummy monsters in Pyramid Dungeon 3-6.",
+        "Boss Entry (Bastet): Hunt Seth (Lv.45) in Pyramid Dungeon 4 & 5 for 1x Subject's Mask and 1x Subject's Earrings to enter Room of Guardian.",
+        "Complete Lieutenant (Test of Calmness -> Gray Round Seal), Sergeant (Test of Quickness -> Dark Round Seal), and Captain (Test of Knowledge -> Red Round Seal) to enter Pyramid Dungeon 7 - Doom of Pharaoh (Boss Tutankhamen)!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Subject's Mask",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Seth (Lv.45)",
+            "map": "Pyramid Dungeon 4 & 5"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Subject's Earrings",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Seth (Lv.45)",
+            "map": "Pyramid Dungeon 4 & 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 150000,
+        "tmExp": 60000,
+        "galder": 0,
+        "items": [
+          "Access to Boss Tutankhamen (Pyramid Dungeon 7)",
+          "1x Nefertiti Card"
+        ]
+      }
+    }
+  ]
+}
