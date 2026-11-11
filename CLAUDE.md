@@ -47,6 +47,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   Keep text at WCAG AA (4.5:1) in both themes.
 - `assets/`: images we host (`bg/key-art.webp`), credited in `assets/CREDITS.md`.
 - `js/data.js`: loads `data/*.json` and adapts schema v2 to the shape the renderer uses.
+- `js/quest-card.js`: the quest card (`renderQuestCard` in index.html delegates to it). Helpers
+  (counts per run, warnings, which quest hands over an item) are pure and run under Node.
 - `js/episode.js`: the Episodes page. Model functions (quest status, items to collect) are pure and
   run under Node; the renderer gets everything it needs through a context object.
 - `data/quests/index.json`: the list of quest files, in load order. Each `data/quests/<region>.json`

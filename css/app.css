@@ -1706,3 +1706,211 @@ select:focus, input:focus {
   justify-content: center;
   font-size: 0.95rem;
 }
+
+/* ---------------------------------------------------------------------------------------
+   Quest card (js/quest-card.js)
+   --------------------------------------------------------------------------------------- */
+.qc-npc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fbfdff;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.qc-icon-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: var(--bg-tertiary);
+}
+
+.qc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag.qc-warn {
+  background: color-mix(in srgb, var(--accent-orange) 18%, transparent);
+  color: var(--ink-orange);
+  border: 1.5px solid color-mix(in srgb, var(--accent-orange) 55%, transparent);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.qc-runs-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.cycle-pills {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* "To do" + rewards: always visible under the title */
+.qc-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 10px 18px;
+  padding: 0 16px 14px 70px;
+}
+
+.quest-card.completed:not(.expanded) .qc-body {
+  display: none;
+}
+
+.qc-h {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-blue);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qc-h-note {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.qc-steps-h {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.qc-small-btn {
+  padding: 3px 10px;
+  font-size: 0.74rem;
+  box-shadow: none;
+}
+
+.qc-objs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.qc-obj {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border);
+}
+
+.qc-obj.is-done {
+  background: color-mix(in srgb, var(--accent-green) 10%, var(--bg-primary));
+  border-color: color-mix(in srgb, var(--accent-green) 40%, transparent);
+}
+
+.qc-obj.is-done .qc-obj-name strong {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.qc-obj-main {
+  min-width: 0;
+  font-size: 0.86rem;
+}
+
+.qc-obj-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.qc-qty-note {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.qc-qty-note strong {
+  color: var(--ink-pink);
+}
+
+.qc-obj-src {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.qc-how {
+  font-weight: 800;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+.qc-how-drop     { background: color-mix(in srgb, var(--accent-red) 14%, transparent);    color: var(--ink-red); }
+.qc-how-drill    { background: color-mix(in srgb, var(--accent-gold) 22%, transparent);   color: var(--ink-gold); }
+.qc-how-shop     { background: color-mix(in srgb, var(--accent-blue) 14%, transparent);   color: var(--ink-blue); }
+.qc-how-compound { background: color-mix(in srgb, var(--accent-purple) 14%, transparent); color: var(--ink-purple); }
+.qc-how-other    { background: color-mix(in srgb, var(--accent-purple) 14%, transparent); color: var(--ink-purple); }
+
+.qc-map {
+  color: var(--text-secondary);
+}
+
+.qc-got {
+  font-weight: 800;
+  color: var(--ink-green);
+}
+
+.qc-none {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.qc-rewards .rewards-wrap {
+  gap: 6px;
+}
+
+.quest-details {
+  padding: 14px 16px 16px 70px;
+}
+
+.qc-prereq {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.step-item {
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .qc-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .qc-body,
+  .quest-details {
+    padding-left: 16px;
+  }
+
+  .qc-npc {
+    width: 32px;
+    height: 32px;
+  }
+}

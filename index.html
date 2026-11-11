@@ -405,6 +405,7 @@
 
   <script src="js/data.js"></script>
   <script src="js/episode.js"></script>
+  <script src="js/quest-card.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -791,168 +792,14 @@
       return "";
     }
 
+    // Quest card markup lives in js/quest-card.js
     function renderQuestCard(q) {
-      const steps = q.steps || [];
-      const doneStepsCount = steps.filter((_, idx) => !!appState.completedSteps[`${q.id}_${idx}`]).length;
-      const isDone = steps.length > 0 ? (doneStepsCount === steps.length) : !!appState.completedQuests[q.id];
-      const isPartial = steps.length > 0 && doneStepsCount > 0 && doneStepsCount < steps.length;
-      const isExpanded = !!appState.expandedQuests[q.id];
-      const cDone = isDone ? q.cycles : (appState.completedCycles[q.id] || 0);
-
-      let cycleHtml = "";
-      if (q.cycles > 1) {
-        let btns = "";
-        for (let i = 1; i <= q.cycles; i++) {
-          btns += `<button class="cycle-btn ${i <= cDone ? 'done' : ''}" title="Toggle Cycle ${i}" onclick="setCycleCount('${q.id}', ${i}, event)">${i}</button>`;
-        }
-        cycleHtml = `<div class="cycle-pills" onclick="event.stopPropagation()"><span style="font-size:0.72rem;color:var(--text-muted);margin-right:3px;">Cycles:</span>${btns}</div>`;
-      }
-
-      const stepsHtml = steps.map((stepText, idx) => {
-        const sDone = !!appState.completedSteps[`${q.id}_${idx}`];
-        return `
-          <li class="step-item ${sDone ? 'step-done' : ''}" style="cursor:pointer;" onclick="toggleStep('${q.id}', ${idx}, event)">
-            <input type="checkbox" ${sDone ? 'checked' : ''} onclick="event.stopPropagation()" onchange="toggleStep('${q.id}', ${idx}, event)" />
-            <span><strong>Step ${idx + 1}:</strong> ${stepText}</span>
-          </li>
-        `;
-      }).join("");
-
-      const summaryChipsHtml = (q.items && q.items.length > 0) ? `
-        <div class="summary-items-preview">
-          ${q.items.map(item => {
-            const iconUrl = getItemImage(item.name);
-            return `<span class="summary-item-chip" title="${item.name} (${item.method}: ${item.source} @ ${item.map})">
-              ${iconUrl ? `<img src="${iconUrl}" alt="${item.name}" loading="lazy" />` : '🎁'}
-              <span>${item.name}</span>
-              <span class="chip-qty">x${item.totalQty || item.qty}</span>
-            </span>`;
-          }).join("")}
-        </div>
-      ` : "";
-
-      let reqHtml = "";
-      if ((q.items && q.items.length > 0) || (q.hunts && q.hunts.length > 0)) {
-        const itemRows = (q.items || []).map(item => {
-          const iconUrl = getItemImage(item.name);
-          return `
-          <tr>
-            <td>
-              <div class="item-cell-wrap">
-                ${iconUrl ? `<img class="item-icon" src="${iconUrl}" alt="${item.name}" loading="lazy" />` : ''}
-                <strong>${item.name}</strong>
-              </div>
-            </td>
-            <td><span class="item-qty-badge">${item.qty}x</span> ${q.cycles > 1 ? `<span style="font-size:0.74rem;color:var(--text-muted);">(${item.totalQty}x total)</span>` : ''}</td>
-            <td><span class="method-badge method-${item.method}">${item.method}</span></td>
-            <td>${item.source} <span style="color:var(--accent-cyan);">[${item.map}]</span></td>
-          </tr>
-        `;
-        }).join("");
-
-        const huntRows = (q.hunts || []).map(h => `
-          <tr>
-            <td><strong>⚔️ Hunt: ${h.monster} (Lv.${h.level})</strong></td>
-            <td><span class="item-qty-badge">${h.count}x</span></td>
-            <td><span class="method-badge method-Drop">Timed: ${h.timeLimit}</span></td>
-            <td>Map: <span style="color:var(--accent-cyan);">${h.map}</span></td>
-          </tr>
-        `).join("");
-
-        reqHtml = `
-          <div class="detail-box">
-            <h4>🎒 Required Items, Drill Targets &amp; Monster Hunts</h4>
-            <table class="req-table">
-              <thead>
-                <tr>
-                  <th>Item / Target</th>
-                  <th>Qty</th>
-                  <th>Method</th>
-                  <th>Source / Depth / Map</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${itemRows}
-                ${huntRows}
-              </tbody>
-            </table>
-          </div>
-        `;
-      } else {
-        reqHtml = `
-          <div class="detail-box">
-            <h4>🎒 Required Items &amp; Hunts</h4>
-            <div style="font-size:0.84rem;color:var(--text-secondary);">None (Talk / Delivery Quest)</div>
-          </div>
-        `;
-      }
-
-      const expTotal = (q.rewards.baseExp || 0) * q.cycles;
-      const tmTotal = (q.rewards.tmExp || 0) * q.cycles;
-      const rewardItems = (q.rewards.items || []).map(ri => {
-        const rIcon = getRewardImage(ri);
-        return `<span class="reward-pill reward-item">${rIcon ? `<img class="reward-icon" src="${rIcon}" alt="" loading="lazy" />` : '🎁'} ${ri}</span>`;
-      }).join("");
-      const npcIcon = getNpcImage(q.npc);
-
-      return `
-        <div class="quest-card ${isDone ? 'completed' : ''} ${isExpanded ? 'expanded' : ''}" id="qcard-${q.id}">
-          <div class="quest-summary" onclick="toggleExpandQuest('${q.id}')">
-            <div class="quest-left">
-              <input type="checkbox" class="quest-checkbox" ${isDone ? 'checked' : ''} title="${isDone ? 'All steps completed! Click to uncheck all' : 'Click to check all steps and complete quest'}" onclick="toggleQuestComplete('${q.id}', event)" />
-              <div class="quest-title-wrap">
-                <div class="quest-title-line">
-                  <span class="quest-order">#${q.order}</span>
-                  <span class="quest-title">${q.title}</span>
-                  <span class="tag tag-${q.category.toLowerCase()}">${q.category}</span>
-                  <span class="tag tag-level">Lv.${q.minLevel}+</span>
-                  ${q.classFilter !== 'All' ? `<span class="tag tag-job">${q.classFilter}</span>` : ''}
-                  <span class="tag ${isDone ? 'tag-everyday' : isPartial ? 'tag-key' : 'tag-level'}">
-                    Steps: ${doneStepsCount}/${steps.length}
-                  </span>
-                </div>
-                <div class="quest-meta-line">
-                  <span class="quest-meta-item">${npcIcon ? `<img class="npc-avatar-mini" src="${npcIcon}" alt="${q.npc}" loading="lazy" />` : '> '}<strong>NPC:</strong> ${q.npc}</span>
-                  <span class="quest-meta-item">@ <strong>Map:</strong> ${q.location}</span>
-                  <span class="quest-meta-item"># <strong>Prereq:</strong> ${q.prereq}</span>
-                </div>
-                ${summaryChipsHtml}
-              </div>
-            </div>
-            <div class="quest-right">
-              ${cycleHtml}
-              <button class="expand-btn" title="Expand Details">v</button>
-            </div>
-          </div>
-
-          <div class="quest-details">
-            <div class="details-grid">
-              <div>
-                <div class="detail-box">
-                  <h4 style="justify-content:space-between;flex-wrap:wrap;">
-                    <span>📝 Step-by-Step Walkthrough (${doneStepsCount}/${steps.length} Checked ${isDone ? '- COMPLETE' : '- Check all boxes to complete quest'})</span>
-                    <button class="btn" style="padding:2px 8px;font-size:0.72rem;" onclick="toggleQuestComplete('${q.id}', event)">${isDone ? '↩️ Uncheck all' : '✅ Check all steps'}</button>
-                  </h4>
-                  <ul class="step-list">${stepsHtml}</ul>
-                </div>
-                ${q.notes ? `<div class="quest-note">💡 <strong>Tip / Note:</strong> ${q.notes}</div>` : ''}
-              </div>
-              <div>
-                ${reqHtml}
-                <div class="detail-box">
-                  <h4>🎁 Quest Rewards ${q.cycles > 1 ? `(Shown for All ${q.cycles} Cycles)` : ''}</h4>
-                  <div class="rewards-wrap">
-                    ${expTotal > 0 ? `<span class="reward-pill reward-exp">⭐ ${expTotal.toLocaleString()} Base EXP</span>` : ''}
-                    ${tmTotal > 0 ? `<span class="reward-pill reward-tm">🌟 ${tmTotal.toLocaleString()} TM EXP</span>` : ''}
-                    ${q.rewards.galder > 0 ? `<span class="reward-pill reward-galder">💰 ${q.rewards.galder.toLocaleString()} Galder</span>` : ''}
-                    ${rewardItems}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
+      return TQCard.render(q, {
+        state: appState,
+        quests: QUESTS,
+        parse: TQEpisode,
+        getItemImage, getNpcImage, getRewardImage
+      });
     }
 
     function renderCalculator() {

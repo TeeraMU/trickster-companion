@@ -597,7 +597,7 @@ data/builds/
 | 1.1 ✅ | แยกข้อมูล 138 เควสเดิมเป็น JSON + schema ใหม่ (objective แยก drop / drill / shop / compound / quest-reward, NPC/map เป็น ID) + validate script + ย้าย progress เดิมไม่ให้หาย | ข้อ 2 | `refactor/split-quest-data` |
 | 1.2 ✅ | **Theme ใหม่ + Light/Dark**: design tokens (สี/ฟอนต์/มุมโค้ง), สวิตช์ Auto/Light/Dark, ภาพพื้นหลังจางๆ ปิดได้ — ทำก่อนเพื่อให้หน้าใหม่ 1.3–1.7 ใช้สไตล์เดียวกันเลย ไม่ต้องแต่งซ้ำ | ข้อ 8.1 | `feature/cute-theme` |
 | 1.3 ✅ | **หน้า Episode**: ภาพรวม + ของที่ต้องเก็บจัดตาม map (สลับ ทั้ง EP / Chapter ปัจจุบัน) + ลำดับเควส (เควสที่ทำอยู่กางเต็ม) | ข้อ 3.4 | `feature/episode-view` |
-| 1.4 | **Quest card ใหม่**: ต่อรอบ / รวม / เหลือ, รับเควสที่ / ส่งที่, สูตรผสม, คำเตือน ⚠ | ข้อ 3.1 | `feature/quest-card` |
+| 1.4 ✅ | **Quest card ใหม่**: ต่อรอบ / รวม / เหลือ, รับเควสที่ / ส่งที่, สูตรผสม, คำเตือน ⚠ | ข้อ 3.1 | `feature/quest-card` |
 | 1.5 | **แท็บ Category** ไอคอนใหญ่ เควสอยู่ได้หลายแท็บ | ข้อ 5 | `feature/category-tabs` |
 | 1.6 | **ของในมือ** (+/−) หักจากยอดที่ต้องเก็บ + **รายการห้ามขาย** 🔒 | ข้อ 3.3, 11 | `feature/inventory` |
 | 1.7 | **มือถือ**: responsive + bottom nav + Export/Import progress + Add to Home Screen (PWA) | ข้อ 7, 8 | `feature/mobile` |
