@@ -12,9 +12,9 @@
   --page-top: #dff1ff;
   --page-bottom: #fff6fb;
   --bg-primary: #f4f9ff;        /* inputs, inner chips */
-  --bg-secondary: rgba(255, 255, 255, 0.86); /* panels, cards */
+  --bg-secondary: rgba(255, 255, 255, 0.74); /* panels: frosted glass over the wallpaper */
   --bg-tertiary: #eef4fd;       /* buttons, tracks */
-  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card: rgba(255, 255, 255, 0.84);
   --bg-card-hover: #ffffff;
   --bg-sunken: rgba(236, 244, 255, 0.75); /* expanded quest details */
   --header-bg: rgba(255, 255, 255, 0.72);
@@ -68,9 +68,9 @@
   --page-top: #121a33;
   --page-bottom: #1d1636;
   --bg-primary: #1a2140;
-  --bg-secondary: rgba(33, 40, 72, 0.86);
+  --bg-secondary: rgba(33, 40, 72, 0.74);
   --bg-tertiary: #2a3360;
-  --bg-card: rgba(35, 42, 74, 0.9);
+  --bg-card: rgba(35, 42, 74, 0.84);
   --bg-card-hover: #2a3258;
   --bg-sunken: rgba(22, 28, 54, 0.75);
   --header-bg: rgba(24, 30, 58, 0.78);
@@ -120,13 +120,15 @@
   padding: 0;
 }
 
+/* The page gradient lives on <html> (the canvas). <body> stays transparent, otherwise its
+   background would paint over the z-index:-1 background art layer and hide it. */
 html {
-  background: var(--page-bottom);
+  background: linear-gradient(180deg, var(--page-top) 0%, var(--page-bottom) 100%) fixed var(--page-bottom);
 }
 
 body {
   font-family: var(--font-body);
-  background: linear-gradient(180deg, var(--page-top) 0%, var(--page-bottom) 100%) fixed;
+  background: transparent;
   color: var(--text-primary);
   line-height: 1.55;
   padding-bottom: 40px;
@@ -175,8 +177,38 @@ body {
     var(--bg-veil);
 }
 
-:root[data-bg="off"] .bg-art::before {
+:root[data-bg="off"] .bg-art::before,
+:root[data-bg="off"] .bg-chars {
   opacity: 0;
+}
+
+/* Character wallpaper standing on the right; its dark backdrop is faded out with a mask. */
+.bg-chars {
+  position: absolute;
+  z-index: 1; /* above the veil; softened by its own opacity instead */
+  right: 0;
+  bottom: 0;
+  height: 96vh;
+  aspect-ratio: 900 / 1350;
+  max-width: 70vw;
+  background: var(--bg-chars-image, none) center bottom / contain no-repeat;
+  opacity: var(--bg-chars-opacity, 0.42);
+  -webkit-mask-image: radial-gradient(ellipse 48% 52% at 50% 46%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 48% 52% at 50% 46%, #000 55%, transparent 100%);
+  transition: opacity 0.4s ease;
+}
+
+:root[data-theme="dark"] .bg-chars {
+  --bg-chars-opacity: 0.32;
+}
+
+@media (max-width: 700px) {
+  .bg-chars {
+    right: 50%;
+    transform: translateX(50%);
+    height: 80vh;
+    max-width: 100vw;
+  }
 }
 
 h1, h2, h3, h4, .stat-val, .roadmap-num, .brand-icon {
@@ -229,20 +261,17 @@ a {
 }
 
 .brand-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 16px;
-  background: var(--brand-gradient);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(180, 60, 110, 0.35);
-  box-shadow: 0 4px 12px rgba(255, 143, 184, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.06);
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
   flex-shrink: 0;
   transform: rotate(-6deg);
+  filter: drop-shadow(0 4px 8px rgba(255, 143, 184, 0.45));
+  transition: transform 0.25s ease;
+}
+
+.brand-title:hover .brand-icon {
+  transform: rotate(4deg) scale(1.06);
 }
 
 .brand-title h1 {
@@ -1360,6 +1389,7 @@ select:focus, input:focus {
 /* the image is only requested when background art is on (saves data on phones) */
 :root[data-bg="on"] {
   --bg-art-image: url("../assets/bg/key-art.webp");
+  --bg-chars-image: url("../assets/bg/wallpaper.webp");
 }
 
 /* ---------------------------------------------------------------------------------------
@@ -2282,4 +2312,22 @@ select:focus, input:focus {
 .rt-alt {
   font-size: 0.74rem;
   color: var(--text-secondary);
+}
+
+/* frosted glass: panels blur what is behind them so the wallpaper shows softly */
+.stats-bar, .filters-panel, .region-card, .calc-card, .ep-panel, .ep-chapter, .quest-card, .roadmap-step, .view-tab, .cat-tab {
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+}
+
+.qc-report {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-blue);
+}
+
+a.btn {
+  text-decoration: none;
 }

@@ -1,0 +1,16 @@
+{
+  "name": "Trickster Companion",
+  "short_name": "Trickster",
+  "description": "Fan-made quest tracker & guides for Trickster Online",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#3ba7f0",
+  "background_color": "#dff1ff",
+  "icons": [
+    { "src": "assets/icons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/maskable-icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/maskable-icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
