@@ -1,0 +1,18 @@
+name: NPC pins
+description: Share where NPCs stand on the maps (sent from the app's "Send" button)
+title: "[Pins] "
+labels: ["pins"]
+body:
+  - type: textarea
+    id: pins
+    attributes:
+      label: Pins
+      description: Filled in by the app. Please don't edit.
+      render: json
+    validations:
+      required: true
+  - type: input
+    id: note
+    attributes:
+      label: Note (optional)
+      placeholder: "e.g. checked on server X, channel 1"

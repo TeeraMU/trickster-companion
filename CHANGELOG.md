@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.2.1 (2026-11-12): Share NPC pins
+
+- Sharing NPC pins: **📤 Send** opens a GitHub form with your pins filled in, **📋 Copy** copies them to paste in LINE / Discord, **⬇️ File** downloads them. Only your own pins are sent.
+- `scripts/merge-pins.js` merges pins from files, pasted chat text or open GitHub issues (`--issues`): new NPCs are added, pins close together are averaged, different spots are reported as conflicts.
+
 ## 0.2.0 (2026-11-12): Episodes, route and a new look
 
 - New logo next to the name and a browser-tab / home-screen icon (Add to Home Screen uses `site.webmanifest`).

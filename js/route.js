@@ -210,7 +210,12 @@
         ${pinMode ? `
           <label class="rt-pin-pick">Pin: <select onchange="setPinNpc(this.value)">${npcs.map(n => `<option value="${n.id}" ${n.id === pinNpc ? "selected" : ""}>${esc(n.name)}</option>`).join("")}</select></label>
           <span class="rt-hint">then tap where they stand on the map</span>` : ""}
-        ${ctx.pinCount ? `<button type="button" class="btn qc-small-btn" onclick="exportNpcPins()">⬇️ Export pins (${ctx.pinCount})</button>` : ""}
+        ${ctx.pinCount ? `
+          <span class="rt-share">Your ${ctx.pinCount} pin${ctx.pinCount === 1 ? "" : "s"}:
+            <button type="button" class="btn qc-small-btn" onclick="sendNpcPins()" title="Opens a GitHub form with your pins filled in (free GitHub account)">📤 Send</button>
+            <button type="button" class="btn qc-small-btn" onclick="copyNpcPins()" title="Copy as text to paste in LINE / Discord">📋 Copy</button>
+            <button type="button" class="btn qc-small-btn" onclick="exportNpcPins()" title="Download npc-pins.json">⬇️ File</button>
+          </span>` : ""}
       </div>` : "";
     return `
       <div class="rt-mapcard">
