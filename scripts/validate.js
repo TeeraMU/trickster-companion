@@ -127,9 +127,41 @@ for (const id of byId.keys()) visit(id, []);
 
 for (const id of npcIds) if (!usedNpcs.has(id)) warn("npcs.json", `"${id}" is not used by any quest`);
 
+// --- maps.json: every map text in the quests resolves, links point at real maps -------------
+const maps = read("maps.json");
+const mapIds = new Set(maps.maps.map(m => m.id));
+const regionIds = new Set(maps.regions.map(r => r.id));
+for (const m of maps.maps) {
+  const at = `maps.json ${m.id}`;
+  if (!regionIds.has(m.region)) err(at, `unknown region "${m.region}"`);
+  if (!m.box && !mapIds.has(m.parent)) err(at, "needs a box on the region map or a parent map");
+  if (m.box && !(m.box.length === 4 && m.box[2] > m.box[0] && m.box[3] > m.box[1])) err(at, "box must be [x1, y1, x2, y2]");
+  for (const l of m.links) {
+    if (!mapIds.has(l)) err(at, `links to unknown map "${l}"`);
+    else if (!maps.maps.find(x => x.id === l).links.includes(m.id)) err(at, `link to "${l}" is one-way`);
+  }
+}
+for (const [text, ids] of Object.entries(maps.names)) for (const id of ids) if (!mapIds.has(id)) err(`maps.json names`, `"${text}" -> unknown map "${id}"`);
+const mapTexts = new Set();
+for (const { q } of quests) {
+  mapTexts.add(q.location);
+  for (const o of q.objectives || []) mapTexts.add(o.type === "hunt" ? o.map : o.source && o.source.map);
+}
+for (const t of mapTexts) if (t && !(t in maps.names)) err("maps.json names", `quest map text "${t}" is not listed (add it with the map ids it means)`);
+for (const t of Object.keys(maps.names)) if (!mapTexts.has(t)) warn("maps.json names", `"${t}" is not used by any quest`);
+
+// --- npc-pins.json: pins point at real NPCs and maps -------------------------------------------
+const pins = read("npc-pins.json");
+for (const [npc, p] of Object.entries(pins)) {
+  if (!npcIds.has(npc)) err("npc-pins.json", `unknown NPC "${npc}"`);
+  if (!mapIds.has(p.map)) err("npc-pins.json", `${npc}: unknown map "${p.map}"`);
+  if (!(p.x >= 0 && p.x <= 100 && p.y >= 0 && p.y <= 100)) err("npc-pins.json", `${npc}: x / y must be 0-100 (%)`);
+}
+
 // --- report --------------------------------------------------------------------------------
 for (const w of warnings) console.warn("warning  " + w);
 for (const e of errors) console.error("ERROR    " + e);
-console.log(`\n${quests.length} quests in ${index.files.length} files, ${npcIds.size} NPCs, ${Object.keys(images).length} images: ` +
+console.log(`\n${quests.length} quests in ${index.files.length} files, ${npcIds.size} NPCs, ${Object.keys(images).length} images, ` +
+  `${mapIds.size} maps (${Object.keys(maps.names).length} map names), ${Object.keys(pins).length} NPC pins: ` +
   `${errors.length} error(s), ${warnings.length} warning(s)`);
 process.exit(errors.length ? 1 : 0);
