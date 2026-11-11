@@ -222,7 +222,7 @@ Progress  ███████░░░░░░░░░░░░░  7/20 que
 
 - `data/maps.json`: `{ id, name, region, image, overview: { x, y, w, h } /* กรอบบนแผนที่โซน (%) */, links: [mapId] }`
 - `data/npc-pins.json`: `{ npcId: { map, x, y } }` (% ของภาพ) — ผู้ใช้ปักผ่าน **โหมดปักหมุด** ในแอป แล้ว export เป็นไฟล์ commit เข้า repo
-- **เส้นทาง** = จุดแวะเรียงตามลำดับเควสที่เหลือ รวมจุดติดกันใน map เดียว เช่
+- **เส้นทาง** = จุดแวะเรียงตามลำดับเควสที่เหลือ รวมจุดติดกันใน map เดียว เช่น
   ① Blooming Cora: คุย Heidi, Bunny Maid → ② Coral Field 1: ตี Torobbie ×2 (Baby Carrot) → ③ Blooming Cora: ส่งของ
   + map ที่ต้องเดินผ่านคำนวณจาก `links` (BFS) แล้ววาดเส้น + เลขลำดับบนแผนที่โซน
 - NPC ที่ยังไม่ได้ปักหมุด: แสดงชื่อ + ไฮไลต์ทั้ง map แทน
@@ -624,7 +624,7 @@ data/builds/
 | 1.3 ✅ | **หน้า Episode**: ภาพรวม + ของที่ต้องเก็บจัดตาม map (สลับ ทั้ง EP / Chapter ปัจจุบัน) + ลำดับเควส (เควสที่ทำอยู่กางเต็ม) | ข้อ 3.4 | `feature/episode-view` |
 | 1.4 ✅ | **Quest card ใหม่**: ต่อรอบ / รวม / เหลือ, รับเควสที่ / ส่งที่, สูตรผสม, คำเตือน ⚠ | ข้อ 3.1 | `feature/quest-card` |
 | 1.5 ✅ | **แท็บ Category** ไอคอนใหญ่ เควสอยู่ได้หลายแท็บ | ข้อ 5 | `feature/category-tabs` |
-| 1.6 | **รวม Calculator เข้า Quest Checklist**: รายการเควสซ้าย + "🎒 Items to collect" จัดตาม map ขวา (ตามตัวกรอง), ตัดแท็บ Calculator, Drill guide คงไว้ | ข้อ 3.5 | `feature/merge-calculator` |
+| 1.6 ✅ | **รวม Calculator เข้า Quest Checklist**: รายการเควสซ้าย + "🎒 Items to collect" จัดตาม map ขวา (ตามตัวกรอง), ตัดแท็บ Calculator, Drill guide คงไว้ | ข้อ 3.5 | `feature/merge-calculator` |
 | 1.7 | **แผนที่ + เส้นทาง + ปักหมุด NPC**: แผนที่ภาพรวมของโซนพร้อมไฮไลต์ map ที่ต้องไป, เส้นทางเป็นจุดแวะเรียงลำดับ (คุย/ตี/ขุด/ส่ง) + map ที่ต้องเดินผ่าน, โหมดปักหมุดตำแหน่ง NPC | ข้อ 3.5 | `feature/map-route` |
 | 1.8 | **ของในมือ** (+/−) หักจากยอดที่ต้องเก็บ + **รายการห้ามขาย** 🔒 | ข้อ 3.3, 11 | `feature/inventory` |
 | 1.9 | **มือถือ**: responsive + bottom nav + Export/Import progress + Add to Home Screen (PWA) | ข้อ 7, 8 | `feature/mobile` |

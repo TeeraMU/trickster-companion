@@ -121,7 +121,8 @@
       const cycles = remainingCycles(q, state);
       if (!cycles) continue;
       for (const it of q.items || []) {
-        const qty = it.qty * cycles;
+        // most items are needed every run; a few quests (Card Girl) list one total for all runs
+        const qty = it.totalQty === it.qty * q.cycles ? it.qty * cycles : it.totalQty;
         if (it.method === "Quest") continue;
         if (it.method === "Shop") { add(shop, it.name, { kind: "shop", item: it.name, how: it.map }, qty, q); continue; }
         if (it.method === "Compound") { add(compound, it.name, { kind: "compound", item: it.name, how: it.source, where: it.map }, qty, q); continue; }
@@ -211,10 +212,12 @@
       </li>`;
   }
 
-  function renderFarm(m, scope) {
-    const f = m.farm;
+  /**
+   * "Items to collect" panel, shared by the Episodes page and the Quest Checklist.
+   * opts: { switchHtml, hint, emptyText, lockedLabel }
+   */
+  function renderFarmPanel(f, opts) {
     const empty = !f.maps.length && !f.shop.length && !f.compound.length;
-    const scopeName = scope === "chapter" && m.currentChapter ? `${m.currentChapter.label} ${m.currentChapter.title}` : `all of ${m.ep.key}`;
     const maps = f.maps.map(g => `
       <section class="ep-map ${g.locked ? "is-locked" : ""}">
         <h4>🗺️ ${esc(g.map)} ${g.locked ? `<span class="ep-lock">🔒 later</span>` : ""}</h4>
@@ -244,14 +247,23 @@
       <div class="ep-panel ep-farm" data-pane="farm">
         <div class="ep-panel-head">
           <h3>🎒 Items to collect</h3>
+          ${opts.switchHtml || ""}
+        </div>
+        <p class="ep-hint">${opts.hint}</p>
+        ${empty ? `<div class="ep-empty">${opts.emptyText || "✅ Nothing left to farm here!"}</div>` : maps + shop + compound}
+      </div>`;
+  }
+
+  function renderFarm(m, scope) {
+    const scopeName = scope === "chapter" && m.currentChapter ? `${m.currentChapter.label} ${m.currentChapter.title}` : `all of ${m.ep.key}`;
+    return renderFarmPanel(m.farm, {
+      switchHtml: `
           <div class="pref-switch" role="group" aria-label="Item list scope">
             <button type="button" aria-pressed="${scope !== "chapter"}" onclick="setEpisodeScope('episode')">Whole EP</button>
             <button type="button" aria-pressed="${scope === "chapter"}" onclick="setEpisodeScope('chapter')">This chapter</button>
-          </div>
-        </div>
-        <p class="ep-hint">What's left for ${esc(scopeName)}, grouped by map. Items handed over by earlier quests aren't listed.</p>
-        ${empty ? `<div class="ep-empty">✅ Nothing left to farm here!</div>` : maps + shop + compound}
-      </div>`;
+          </div>`,
+      hint: `What's left for ${esc(scopeName)}, grouped by map. Items handed over by earlier quests aren't listed.`
+    });
   }
 
   function lockedRow(q, prereqsById, byId, statuses) {
@@ -356,5 +368,5 @@
     return m;
   }
 
-  root.TQEpisode = Object.assign({ render: renderEpisodeView }, model);
+  root.TQEpisode = Object.assign({ render: renderEpisodeView, renderFarmPanel }, model);
 })(typeof window !== "undefined" ? window : globalThis);
