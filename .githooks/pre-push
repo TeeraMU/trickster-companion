@@ -1,0 +1,12 @@
+#!/bin/sh
+# Refuse direct pushes to dev and main. Push a work branch and open a pull request instead.
+# Switch this hook on once per clone:  git config core.hooksPath .githooks
+while read local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in
+    refs/heads/dev|refs/heads/main)
+      echo "pre-push: direct pushes to ${remote_ref#refs/heads/} are not allowed." >&2
+      echo "Move your commits to a branch (feature/..., fix/..., docs/...) and open a pull request." >&2
+      exit 1 ;;
+  esac
+done
+exit 0
