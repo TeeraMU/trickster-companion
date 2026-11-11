@@ -82,6 +82,9 @@
   // ---------------------------------------------------------------------------------------
   // Renderer
   // ---------------------------------------------------------------------------------------
+  // tag text for each category (data labels -> what players call them)
+  const CATEGORY_NAME = { Episode: "Story", Everyday: "Daily", General: "Town", Card: "Card Girl" };
+
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const num = n => Number(n).toLocaleString();
 
@@ -181,7 +184,7 @@
                 <span class="quest-title">${esc(q.title)}</span>
               </div>
               <div class="qc-tags">
-                <span class="tag tag-${q.category.toLowerCase()}">${esc(q.category)}</span>
+                ${(q.categories || [q.category]).map(c => `<span class="tag tag-${c.toLowerCase()}">${esc(CATEGORY_NAME[c] || c)}</span>`).join("")}
                 <span class="tag tag-level">Lv.${q.minLevel}+</span>
                 ${q.classFilter !== "All" ? `<span class="tag tag-job">${esc(q.classFilter)}</span>` : ""}
                 ${steps.length > 1 ? `<span class="tag ${isDone ? "tag-everyday" : isPartial ? "tag-key" : "tag-level"}">Steps ${stepsDone}/${steps.length}</span>` : ""}

@@ -127,9 +127,10 @@
 
     <!-- Shared Filter Bar -->
     <div class="filters-panel" id="filtersPanel">
+      <div class="cat-tabs" id="categoryTabs" role="tablist" aria-label="Quest categories"></div>
       <div class="filter-row">
         <div class="search-input-wrap">
-          <span class="search-icon">?</span>
+          <span class="search-icon">🔍</span>
           <input type="text" id="searchInput" placeholder="Search by Quest Name, NPC, Map Location, Monster, Required Item, Drill Item, or Reward..." oninput="renderAll()" />
         </div>
         <div>
@@ -151,19 +152,6 @@
         </div>
       </div>
 
-      <div class="filter-row" style="justify-content: space-between;">
-        <div class="cat-pills" id="categoryPills">
-          <button class="pill-btn active" data-cat="All" onclick="setCategoryFilter('All')">All Categories</button>
-          <button class="pill-btn" data-cat="Episode" onclick="setCategoryFilter('Episode')">Story / Episode 0 &amp; 1</button>
-          <button class="pill-btn" data-cat="Key" onclick="setCategoryFilter('Key')">Key Quests</button>
-          <button class="pill-btn" data-cat="Sticker" onclick="setCategoryFilter('Sticker')">🏷️ Sticker / Adhesive Quests</button>
-          <button class="pill-btn" data-cat="General" onclick="setCategoryFilter('General')">General / Town / Card Girl</button>
-          <button class="pill-btn" data-cat="Monster" onclick="setCategoryFilter('Monster')">⚔️ Monster / Hunter Guild</button>
-          <button class="pill-btn" data-cat="Everyday" onclick="setCategoryFilter('Everyday')">Everyday / Daily</button>
-          <button class="pill-btn" data-cat="Dungeon" onclick="setCategoryFilter('Dungeon')">Dungeon &amp; Boss Trials</button>
-          <button class="pill-btn" data-cat="Job" onclick="setCategoryFilter('Job')">2nd Job &amp; Enlightenment</button>
-        </div>
-      </div>
     </div>
 
     <!-- VIEW 0: EPISODE GUIDE (js/episode.js) -->
@@ -505,7 +493,7 @@
       let list = QUESTS.filter(q => {
         if (!matchesClassFilter(q, cls)) return false;
         if (reg !== "All" && q.region !== reg) return false;
-        if (cat !== "All" && q.category !== cat) return false;
+        if (cat !== "All" && !q.categories.includes(cat)) return false;
 
         const isDone = !!appState.completedQuests[q.id];
         if (status === "incomplete" && isDone) return false;
@@ -513,7 +501,7 @@
 
         if (search) {
           const hay = [
-            q.title, q.npc, q.location, q.region, q.subRegion, q.category, q.prereq, q.notes || "",
+            q.title, q.npc, q.location, q.region, q.subRegion, ...q.categories, q.prereq, q.notes || "",
             ...(q.steps || []),
             ...(q.items || []).map(i => `${i.name} ${i.source} ${i.map}`),
             ...(q.hunts || []).map(h => `${h.monster} ${h.map}`),
@@ -614,9 +602,6 @@
     function setCategoryFilter(cat) {
       appState.selectedCategory = cat;
       saveState();
-      document.querySelectorAll("#categoryPills .pill-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.getAttribute("data-cat") === cat);
-      });
       renderAll();
     }
 
@@ -649,11 +634,11 @@
       document.getElementById("overallProgressText").textContent = `${doneCount} / ${totalCount} Quests (${pct}%)`;
       document.getElementById("overallProgressBar").style.width = `${pct}%`;
 
-      const storyPool = activePool.filter(q => q.category === "Episode");
+      const storyPool = activePool.filter(q => q.categories.includes("Episode"));
       const storyDone = storyPool.filter(q => !!appState.completedQuests[q.id]).length;
       document.getElementById("statStoryProgress").textContent = `${storyDone} / ${storyPool.length}`;
 
-      const keyPool = activePool.filter(q => q.category === "Key" || q.category === "Sticker");
+      const keyPool = activePool.filter(q => q.categories.includes("Key") || q.categories.includes("Sticker"));
       const keyDone = keyPool.filter(q => !!appState.completedQuests[q.id]).length;
       document.getElementById("statKeyProgress").textContent = `${keyDone} / ${keyPool.length}`;
 
@@ -927,7 +912,43 @@
       saveState();
     }
 
+    // Big category tabs. A quest can sit in several categories (e.g. Key + Sticker).
+    // Counts follow the class and region filters, not the search box.
+    const CATEGORY_TABS = [
+      { key: "All", icon: "✨", label: "All" },
+      { key: "Episode", icon: "📖", label: "Story" },
+      { key: "Key", icon: "🔑", label: "Key" },
+      { key: "Sticker", icon: "🏷️", label: "Sticker" },
+      { key: "Card", icon: "🃏", label: "Card Girl" },
+      { key: "General", icon: "🏘️", label: "Town" },
+      { key: "Monster", icon: "⚔️", label: "Monster" },
+      { key: "Dungeon", icon: "🏰", label: "Dungeon" },
+      { key: "Everyday", icon: "🔁", label: "Daily" },
+      { key: "Job", icon: "🎓", label: "Job" }
+    ];
+
+    function renderCategoryTabs() {
+      const cls = appState.selectedClass || "All";
+      const reg = appState.selectedRegion || "All";
+      const pool = QUESTS.filter(q => matchesClassFilter(q, cls) && (reg === "All" || q.region === reg));
+      let selected = appState.selectedCategory || "All";
+      const tabs = CATEGORY_TABS.map(t => {
+        const qs = t.key === "All" ? pool : pool.filter(q => q.categories.includes(t.key));
+        return Object.assign({ total: qs.length, done: qs.filter(q => appState.completedQuests[q.id]).length }, t);
+      }).filter(t => t.key === "All" || t.total > 0);
+      // the chosen category has no quests in this region / class: fall back to All (runs before the list renders)
+      if (!tabs.some(t => t.key === selected)) { selected = "All"; appState.selectedCategory = "All"; }
+      document.getElementById("categoryTabs").innerHTML = tabs.map(t => `
+        <button type="button" role="tab" class="cat-tab cat-${t.key.toLowerCase()} ${t.key === selected ? "active" : ""}"
+          aria-selected="${t.key === selected}" onclick="setCategoryFilter('${t.key}')">
+          <span class="cat-tab-icon" aria-hidden="true">${t.icon}</span>
+          <span class="cat-tab-label">${t.label}</span>
+          <span class="cat-tab-count">${t.done}/${t.total}</span>
+        </button>`).join("");
+    }
+
     function renderAll() {
+      renderCategoryTabs();
       renderEpisodes();
       renderStatsAndRegions();
       renderQuestList();
