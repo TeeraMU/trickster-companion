@@ -105,7 +105,10 @@
   <main class="main-container">
     <!-- Navigation Tabs -->
     <div class="view-tabs">
-      <button class="view-tab active" id="tabBtnQuests" onclick="switchView('quests')">
+      <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')">
+        📖 Episodes
+      </button>
+      <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')">
         📜 Quest Checklist <span class="badge-count" id="badgeQuestCount">0</span>
       </button>
       <button class="view-tab" id="tabBtnCalc" onclick="switchView('calc')">
@@ -163,8 +166,13 @@
       </div>
     </div>
 
+    <!-- VIEW 0: EPISODE GUIDE (js/episode.js) -->
+    <div id="viewEpisodes">
+      <div id="episodeContainer"></div>
+    </div>
+
     <!-- VIEW 1: QUEST CHECKLIST -->
-    <div id="viewQuests">
+    <div id="viewQuests" class="hidden">
       <div id="questListContainer"></div>
     </div>
 
@@ -396,6 +404,7 @@
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/episode.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -413,8 +422,14 @@
       expandedQuests: {},  // { [questId]: true }
       selectedClass: "All",
       selectedRegion: "All",
-      selectedCategory: "All"
+      selectedCategory: "All",
+      currentView: "episodes",
+      selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
+      episodeScope: "episode", // items list: "episode" | "chapter"
+      episodePane: "quests",   // phone sub-tab: "quests" | "farm"
+      openChapters: {}         // { [chapterName]: true|false } user-toggled chapters
     };
+    let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
 
     function syncQuestCompletionFromSteps(q) {
       if (!q) return;
@@ -604,16 +619,19 @@
       renderAll();
     }
 
+    const VIEWS = { episodes: "Episodes", quests: "Quests", calc: "Calc", drillref: "DrillRef", roadmap: "Roadmap" };
+
     function switchView(viewName) {
-      ["quests", "calc", "drillref", "roadmap"].forEach(v => {
-        document.getElementById(`tabBtn${v === 'quests' ? 'Quests' : v === 'calc' ? 'Calc' : v === 'drillref' ? 'DrillRef' : 'Roadmap'}`)
-          .classList.toggle("active", v === viewName);
+      if (!VIEWS[viewName]) viewName = "episodes";
+      Object.entries(VIEWS).forEach(([v, id]) => {
+        document.getElementById("tabBtn" + id).classList.toggle("active", v === viewName);
+        document.getElementById("view" + id).classList.toggle("hidden", v !== viewName);
       });
-      document.getElementById("viewQuests").classList.toggle("hidden", viewName !== "quests");
-      document.getElementById("viewCalc").classList.toggle("hidden", viewName !== "calc");
-      document.getElementById("viewDrillRef").classList.toggle("hidden", viewName !== "drillref");
-      document.getElementById("viewRoadmap").classList.toggle("hidden", viewName !== "roadmap");
-      document.getElementById("filtersPanel").classList.toggle("hidden", viewName === "drillref" || viewName === "roadmap");
+      // the region cards and filters belong to the checklist / calculator only
+      const usesFilters = viewName === "quests" || viewName === "calc";
+      document.getElementById("filtersPanel").classList.toggle("hidden", !usesFilters);
+      document.getElementById("regionCardsContainer").classList.toggle("hidden", !usesFilters);
+      if (appState.currentView !== viewName) { appState.currentView = viewName; saveState(); }
     }
 
     // ============================================================================
@@ -889,7 +907,7 @@
                   <span class="tag tag-${q.category.toLowerCase()}">${q.category}</span>
                   <span class="tag tag-level">Lv.${q.minLevel}+</span>
                   ${q.classFilter !== 'All' ? `<span class="tag tag-job">${q.classFilter}</span>` : ''}
-                  <span class="tag" style="background:${isDone ? 'rgba(16,185,129,0.2)' : isPartial ? 'rgba(245,158,11,0.2)' : 'var(--bg-tertiary)'};color:${isDone ? '#6ee7b7' : isPartial ? '#fcd34d' : 'var(--text-secondary)'};border:1px solid ${isDone ? 'rgba(16,185,129,0.45)' : isPartial ? 'rgba(245,158,11,0.45)' : 'var(--border)'};">
+                  <span class="tag ${isDone ? 'tag-everyday' : isPartial ? 'tag-key' : 'tag-level'}">
                     Steps: ${doneStepsCount}/${steps.length}
                   </span>
                 </div>
@@ -1005,7 +1023,65 @@
       document.getElementById("calcOtherList").innerHTML = formatList(otherMap, "✅ No remaining compounded/shop/quest items needed!");
     }
 
+    // ============================================================================
+    // EPISODE VIEW (model + markup in js/episode.js)
+    // ============================================================================
+    function renderEpisodes() {
+      const container = document.getElementById("episodeContainer");
+      const cls = appState.selectedClass || "All";
+      const visible = QUESTS.filter(q => matchesClassFilter(q, cls));
+      // default episode: the first one with quests left
+      if (!appState.selectedEpisode) {
+        const eps = TQEpisode.listEpisodes(visible);
+        const open = eps.find(e => e.quests.some(q => !appState.completedQuests[q.id]));
+        appState.selectedEpisode = (open || eps[0] || {}).key || null;
+      }
+      const m = TQEpisode.render(container, {
+        quests: visible,
+        allQuests: QUESTS,
+        state: appState,
+        prereqsById: PREREQS,
+        selected: appState.selectedEpisode,
+        scope: appState.episodeScope,
+        pane: appState.episodePane,
+        openChapters: appState.openChapters,
+        expanded: appState.expandedQuests,
+        renderCard: renderQuestCard
+      });
+      // the "Now" quest starts open; after that the player's expand/collapse wins
+      if (m && m.current && appState.expandedQuests[m.current.id] === undefined) {
+        appState.expandedQuests[m.current.id] = true;
+      }
+    }
+
+    function setEpisode(key) {
+      appState.selectedEpisode = key;
+      saveState();
+      renderEpisodes();
+    }
+
+    function setEpisodeScope(scope) {
+      appState.episodeScope = scope;
+      saveState();
+      renderEpisodes();
+    }
+
+    function setEpisodePane(pane) {
+      appState.episodePane = pane;
+      saveState();
+      renderEpisodes();
+    }
+
+    function rememberChapterOpen(el, name) {
+      // <details> fires "toggle" after every render too; only store real changes
+      if (appState.openChapters[name] === el.open) return;
+      if (appState.openChapters[name] === undefined && el.classList.contains("is-current") === el.open) return;
+      appState.openChapters[name] = el.open;
+      saveState();
+    }
+
     function renderAll() {
+      renderEpisodes();
       renderStatsAndRegions();
       renderQuestList();
       renderCalculator();
@@ -1105,6 +1181,7 @@
     async function loadData() {
       const data = await TQData.loadAll("data/");
       QUESTS = data.quests;
+      PREREQS = data.prereqsById;
       ITEM_IMAGES = data.images;
     }
 
@@ -1119,7 +1196,7 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       loadData()
-        .then(() => { loadState(); renderAll(); })
+        .then(() => { loadState(); renderAll(); switchView(appState.currentView); })
         .catch(showLoadError);
     });
   </script>

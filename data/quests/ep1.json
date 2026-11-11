@@ -898,7 +898,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ep1-c2-02"
+        }
+      ],
       "prereqText": "Level 52+, Indiana John - Box's Identity",
       "steps": [
         "Speak to Tango at Gate of Oops Wharf to start Episode 1: Chapter 3 - Harkon Searchers.",
