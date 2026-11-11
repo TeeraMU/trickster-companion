@@ -212,7 +212,7 @@
           <span class="rt-hint">then tap where they stand on the map</span>` : ""}
         ${ctx.pinCount ? `
           <span class="rt-share">Your ${ctx.pinCount} pin${ctx.pinCount === 1 ? "" : "s"}:
-            <button type="button" class="btn qc-small-btn" onclick="sendNpcPins()" title="Opens a GitHub form with your pins filled in (free GitHub account)">📤 Send</button>
+            <button type="button" class="btn qc-small-btn" onclick="sendNpcPins()" title="Opens a short form with your pins filled in (no sign-in)">📤 Send</button>
             <button type="button" class="btn qc-small-btn" onclick="copyNpcPins()" title="Copy as text to paste in LINE / Discord">📋 Copy</button>
             <button type="button" class="btn qc-small-btn" onclick="exportNpcPins()" title="Download npc-pins.json">⬇️ File</button>
           </span>` : ""}

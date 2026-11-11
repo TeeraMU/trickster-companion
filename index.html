@@ -15,14 +15,13 @@
   <script>
     // Apply the saved theme before first paint (no flash). "auto" follows the device.
     (function () {
-      var d = document.documentElement, pref = "auto", bg = null;
-      try { pref = localStorage.getItem("tc_theme") || "auto"; bg = localStorage.getItem("tc_bg"); } catch (e) {}
+      var d = document.documentElement, pref = "auto";
+      try { pref = localStorage.getItem("tc_theme") || "auto"; } catch (e) {}
       var dark = pref === "dark" || (pref === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
       d.setAttribute("data-theme", dark ? "dark" : "light");
       d.setAttribute("data-theme-pref", pref);
-      // background art: on for desktop, off for phones unless the player turned it on
-      if (bg !== "on" && bg !== "off") bg = window.matchMedia("(max-width: 700px)").matches ? "off" : "on";
-      d.setAttribute("data-bg", bg);
+      // background pictures are always shown (the on/off button was removed in 0.3.0)
+      d.setAttribute("data-bg", "on");
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,46 +33,46 @@
   <div class="bg-art" aria-hidden="true"><div class="bg-chars"></div></div>
 
   <header class="app-header">
-    <div class="header-inner">
-      <div class="header-top">
-        <div class="brand-title">
-          <img class="brand-icon" src="assets/brand/logo-192.webp" alt="" width="46" height="46" />
-          <div>
-            <h1>Trickster Companion <span class="fan-made">fan-made</span></h1>
-            <div class="brand-subtitle">Quest tracker &amp; Guides</div>
-          </div>
-        </div>
+    <div class="topbar">
+      <a class="brand-title" href="./" title="Trickster Companion">
+        <img class="brand-icon" src="assets/brand/logo-192.webp" alt="" width="46" height="46" />
+        <span class="brand-text">
+          <span class="brand-name">Trickster Companion <span class="fan-made">fan-made</span></span>
+          <span class="brand-subtitle">Quest tracker &amp; Guides</span>
+        </span>
+      </a>
 
-        <div class="header-actions">
-          <div class="class-selector-wrap">
-            <label for="charClassSelect">My Character Class:</label>
-            <select id="charClassSelect" onchange="onClassChange(this.value)">
-              <option value="All">Show All Classes (Complete DB)</option>
-              <option value="Bunny">Bunny (Power - Boxer / Champion / Duelist)</option>
-              <option value="Buffalo">Buffalo (Power - Warrior / Gladiator / Mercenary)</option>
-              <option value="Sheep">Sheep (Magic - Bard / Soul Master / Witch)</option>
-              <option value="Dragon">Dragon (Magic - Magician / Wizard / Priest)</option>
-              <option value="Fox">Fox (Sense - Explorer / Thief Master / Hunter Lord)</option>
-              <option value="Lion">Lion (Sense - Inventor / Scientist / Cyber Hunter)</option>
-              <option value="Cat">Cat (Charm - Entertainer / Primadonna / Diva)</option>
-              <option value="Raccoon">Raccoon (Charm - Card Master / Gambler / Duke)</option>
-            </select>
-          </div>
-          <div class="pref-switch" role="group" aria-label="Color theme">
-            <button type="button" data-theme-choice="auto" onclick="setThemePref('auto')" title="Follow my device">Auto</button>
-            <button type="button" data-theme-choice="light" onclick="setThemePref('light')" title="Light mode" aria-label="Light mode">☀️</button>
-            <button type="button" data-theme-choice="dark" onclick="setThemePref('dark')" title="Dark mode" aria-label="Dark mode">🌙</button>
-          </div>
-          <button class="btn" id="bgArtBtn" type="button" onclick="toggleBgArt()" title="Show or hide the background picture">🖼️ Background</button>
-          <button class="btn" onclick="expandAllVisible(true)">➕ Expand all</button>
-          <button class="btn" onclick="expandAllVisible(false)">➖ Collapse all</button>
-          <button class="btn" onclick="exportProgress()">💾 Export</button>
-          <button class="btn" onclick="importProgressPrompt()">📂 Import</button>
-          <button class="btn btn-danger" onclick="resetAllProgress()">🗑️ Reset</button>
-          <a class="btn" href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener" title="Report a bug or wrong quest info (needs a free GitHub account)">🐞 Report</a>
-        </div>
+      <nav class="view-tabs" aria-label="Pages">
+        <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
+        <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
+        <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')"><span class="tab-icon" aria-hidden="true">⛏️</span><span class="tab-label">Drill guide</span></button>
+        <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')"><span class="tab-icon" aria-hidden="true">🗺️</span><span class="tab-label">Roadmap</span></button>
+      </nav>
+
+      <div class="topbar-tools">
+        <label class="class-chip" title="My character class: hides quests for other classes">
+          <span aria-hidden="true">🎭</span>
+          <select id="charClassSelect" aria-label="My character class" onchange="onClassChange(this.value)">
+            <option value="All">All classes</option>
+            <option value="Bunny">Bunny · Power</option>
+            <option value="Buffalo">Buffalo · Power</option>
+            <option value="Sheep">Sheep · Magic</option>
+            <option value="Dragon">Dragon · Magic</option>
+            <option value="Fox">Fox · Sense</option>
+            <option value="Lion">Lion · Sense</option>
+            <option value="Cat">Cat · Charm</option>
+            <option value="Raccoon">Raccoon · Charm</option>
+          </select>
+        </label>
+        <button type="button" class="progress-chip" id="progressChip" aria-expanded="false" aria-controls="statsPanel" onclick="toggleHeaderPanel('stats')" title="Overall progress">
+          <span class="mini-track"><span class="mini-fill" id="overallProgressBar"></span></span>
+          <span id="overallPct">0%</span>
+        </button>
+        <button type="button" class="icon-btn" id="settingsBtn" aria-expanded="false" aria-controls="settingsPanel" onclick="toggleHeaderPanel('settings')" title="Settings, backup and report" aria-label="Settings">⚙️</button>
       </div>
+    </div>
 
+    <div class="header-panel stats-panel" id="statsPanel" hidden>
       <div class="stats-bar">
         <div class="overall-progress-box">
           <div class="progress-label-row">
@@ -81,7 +80,7 @@
             <span id="overallProgressText">0 / 0 Quests (0%)</span>
           </div>
           <div class="progress-track">
-            <div class="progress-fill" id="overallProgressBar"></div>
+            <div class="progress-fill" id="overallProgressFill"></div>
           </div>
         </div>
         <div class="stat-pill">
@@ -106,25 +105,34 @@
         </div>
       </div>
     </div>
+
+    <div class="header-panel settings-panel" id="settingsPanel" hidden>
+      <div class="settings-group">
+        <span class="settings-title">Theme</span>
+        <div class="pref-switch" role="group" aria-label="Color theme">
+          <button type="button" data-theme-choice="auto" onclick="setThemePref('auto')" title="Follow my device">Auto</button>
+          <button type="button" data-theme-choice="light" onclick="setThemePref('light')" title="Light mode" aria-label="Light mode">☀️ Light</button>
+          <button type="button" data-theme-choice="dark" onclick="setThemePref('dark')" title="Dark mode" aria-label="Dark mode">🌙 Dark</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <span class="settings-title">My progress <small>(saved in this browser)</small></span>
+        <div class="settings-row">
+          <button class="btn" onclick="exportProgress()">💾 Export</button>
+          <button class="btn" onclick="importProgressPrompt()">📂 Import</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <span class="settings-title">Help</span>
+        <a class="btn" id="reportLink" href="#" target="_blank" rel="noopener" title="Report a bug, wrong quest info or an idea (no sign-in)">🐞 Report a problem</a>
+      </div>
+      <div class="settings-group settings-danger">
+        <button class="btn btn-danger" onclick="resetAllProgress()">🗑️ Reset all progress</button>
+      </div>
+    </div>
   </header>
 
   <main class="main-container">
-    <!-- Navigation Tabs -->
-    <div class="view-tabs">
-      <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')">
-        📖 Episodes
-      </button>
-      <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')">
-        📜 Quests &amp; Items <span class="badge-count" id="badgeQuestCount">0</span>
-      </button>
-      <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')">
-        ⛏️ Drill Depth &amp; Soil Guide
-      </button>
-      <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')">
-        🗺️ Leveling &amp; Story Roadmap (Lv. 1 → 65)
-      </button>
-    </div>
-
     <!-- Region Quick Filter Cards -->
     <div class="region-grid" id="regionCardsContainer"></div>
 
@@ -132,6 +140,10 @@
     <div class="filters-panel" id="filtersPanel">
       <div class="cat-tabs" id="categoryTabs" role="tablist" aria-label="Quest categories"></div>
       <div class="filter-row">
+        <div class="list-tools">
+          <button class="btn" onclick="expandAllVisible(true)">➕ Expand all</button>
+          <button class="btn" onclick="expandAllVisible(false)">➖ Collapse all</button>
+        </div>
         <div class="search-input-wrap">
           <span class="search-icon">🔍</span>
           <input type="text" id="searchInput" placeholder="Search by Quest Name, NPC, Map Location, Monster, Required Item, Drill Item, or Reward..." oninput="renderAll()" />
@@ -360,13 +372,14 @@
     Trickster Companion is a non-commercial fan project, not affiliated with or endorsed by the game's developer or publisher.<br />
     Trickster Online, its artwork (including the background picture) and item images are property of their respective owners.
     Item images from the ggftw Trickster wiki via wikimirror.lifeto.co. Quest data may be inaccurate: please verify in game.<br />
-    <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source &amp; bug reports on GitHub</a>
+    <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source on GitHub</a> · <a href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener">report on GitHub instead</a>
   </footer>
 
   <script src="js/data.js"></script>
   <script src="js/episode.js"></script>
   <script src="js/quest-card.js"></script>
   <script src="js/route.js"></script>
+  <script src="js/report.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -612,6 +625,9 @@
 
       document.getElementById("overallProgressText").textContent = `${doneCount} / ${totalCount} Quests (${pct}%)`;
       document.getElementById("overallProgressBar").style.width = `${pct}%`;
+      document.getElementById("overallProgressFill").style.width = `${pct}%`;
+      document.getElementById("overallPct").textContent = `${pct}%`;
+      document.getElementById("progressChip").title = `Overall progress: ${doneCount} / ${totalCount} quests`;
 
       const storyPool = activePool.filter(q => q.categories.includes("Episode"));
       const storyDone = storyPool.filter(q => !!appState.completedQuests[q.id]).length;
@@ -762,7 +778,8 @@
         state: appState,
         quests: QUESTS,
         parse: TQEpisode,
-        getItemImage, getNpcImage, getRewardImage
+        getItemImage, getNpcImage, getRewardImage,
+        reportUrl: q => TQReport.reportUrl("data", { quest: q.id + " · " + q.title })
       });
     }
 
@@ -910,17 +927,15 @@
       return JSON.stringify(sorted);
     }
 
-    // Open a GitHub issue form with the pins filled in (scripts/merge-pins.js --issues reads them).
+    // Open the Report form (no sign-in) with the pins filled in; the owner merges the Sheet CSV
+    // with scripts/merge-pins.js.
     function sendNpcPins() {
-      const json = myPinsJson();
-      const base = "https://github.com/TeeraMU/trickster-companion/issues/new?template=npc-pins.yml&title=" +
-        encodeURIComponent("[Pins] " + Object.keys(savedPins()).length + " NPC pins");
-      const url = base + "&pins=" + encodeURIComponent(json);
-      if (url.length > 7500) {
-        // too long for a link: copy instead and open the empty form
+      const url = TQReport.reportUrl("pins", { pins: myPinsJson() });
+      if (url.length > TQReport.MAX_URL) {
+        // too long for a link: copy instead and open the form with only the type chosen
         copyNpcPins();
-        alert("Too many pins for one link. They are copied: paste them into the form that opens.");
-        window.open(base, "_blank", "noopener");
+        alert("Too many pins for one link. They are copied: paste them into the \"NPC pins\" box of the form that opens.");
+        window.open(TQReport.reportUrl("pins"), "_blank", "noopener");
         return;
       }
       window.open(url, "_blank", "noopener");
@@ -1092,23 +1107,27 @@
       applyTheme();
     }
 
-    function applyBgArt() {
-      const on = document.documentElement.getAttribute("data-bg") === "on";
-      const btn = document.getElementById("bgArtBtn");
-      btn.setAttribute("aria-pressed", String(on));
-      btn.textContent = on ? "🖼️ Background: on" : "🖼️ Background: off";
+    // Header drop-down panels (progress details, settings): one open at a time, close on
+    // outside click or Escape.
+    const HEADER_PANELS = { stats: ["statsPanel", "progressChip"], settings: ["settingsPanel", "settingsBtn"] };
+
+    function toggleHeaderPanel(name, force) {
+      Object.entries(HEADER_PANELS).forEach(([key, [panelId, btnId]]) => {
+        const panel = document.getElementById(panelId);
+        const open = key === name ? (force !== undefined ? force : panel.hidden) : false;
+        panel.hidden = !open;
+        document.getElementById(btnId).setAttribute("aria-expanded", String(open));
+      });
     }
 
-    function toggleBgArt() {
-      const next = document.documentElement.getAttribute("data-bg") === "on" ? "off" : "on";
-      document.documentElement.setAttribute("data-bg", next);
-      savePref("tc_bg", next);
-      applyBgArt();
-    }
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".header-panel, #progressChip, #settingsBtn")) toggleHeaderPanel(null);
+    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") toggleHeaderPanel(null); });
 
+    document.getElementById("reportLink").href = TQReport.reportUrl();
     darkQuery.addEventListener("change", applyTheme);
     applyTheme();
-    applyBgArt();
 
     // Initialize on page load: fetch the JSON data first, then restore progress and render.
     async function loadData() {

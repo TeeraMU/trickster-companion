@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.3.0 (2026-11-12): Compact header, no-login reports
+
+- Header is one 60px bar: logo, page tabs, class chip, progress chip (details drop down) and ⚙️ (theme, export / import, report, reset). Expand / Collapse all moved to the Quests page. On phones and small tablets the page tabs are a bottom bar.
+- Background on/off button removed: pictures always show.
+- Report and Send pins open a Google Form, no sign-in needed; merge-pins.js reads its Sheet CSV.
+
 ## 0.2.1 (2026-11-12): Share NPC pins
 
 - Sharing NPC pins: **📤 Send** opens a GitHub form with your pins filled in, **📋 Copy** copies them to paste in LINE / Discord, **⬇️ File** downloads them. Only your own pins are sent.
