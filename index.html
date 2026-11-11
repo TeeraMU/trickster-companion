@@ -70,7 +70,7 @@
           <button class="btn" onclick="exportProgress()">💾 Export</button>
           <button class="btn" onclick="importProgressPrompt()">📂 Import</button>
           <button class="btn btn-danger" onclick="resetAllProgress()">🗑️ Reset</button>
-          <a class="btn" href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener" title="Report a bug or wrong quest info (needs a free GitHub account)">🐞 Report</a>
+          <a class="btn" id="reportLink" href="#" target="_blank" rel="noopener" title="Report a bug, wrong quest info or an idea (no sign-in)">🐞 Report</a>
         </div>
       </div>
 
@@ -360,13 +360,14 @@
     Trickster Companion is a non-commercial fan project, not affiliated with or endorsed by the game's developer or publisher.<br />
     Trickster Online, its artwork (including the background picture) and item images are property of their respective owners.
     Item images from the ggftw Trickster wiki via wikimirror.lifeto.co. Quest data may be inaccurate: please verify in game.<br />
-    <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source &amp; bug reports on GitHub</a>
+    <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source on GitHub</a> · <a href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener">report on GitHub instead</a>
   </footer>
 
   <script src="js/data.js"></script>
   <script src="js/episode.js"></script>
   <script src="js/quest-card.js"></script>
   <script src="js/route.js"></script>
+  <script src="js/report.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -762,7 +763,8 @@
         state: appState,
         quests: QUESTS,
         parse: TQEpisode,
-        getItemImage, getNpcImage, getRewardImage
+        getItemImage, getNpcImage, getRewardImage,
+        reportUrl: q => TQReport.reportUrl("data", { quest: q.id + " · " + q.title })
       });
     }
 
@@ -910,17 +912,15 @@
       return JSON.stringify(sorted);
     }
 
-    // Open a GitHub issue form with the pins filled in (scripts/merge-pins.js --issues reads them).
+    // Open the Report form (no sign-in) with the pins filled in; the owner merges the Sheet CSV
+    // with scripts/merge-pins.js.
     function sendNpcPins() {
-      const json = myPinsJson();
-      const base = "https://github.com/TeeraMU/trickster-companion/issues/new?template=npc-pins.yml&title=" +
-        encodeURIComponent("[Pins] " + Object.keys(savedPins()).length + " NPC pins");
-      const url = base + "&pins=" + encodeURIComponent(json);
-      if (url.length > 7500) {
-        // too long for a link: copy instead and open the empty form
+      const url = TQReport.reportUrl("pins", { pins: myPinsJson() });
+      if (url.length > TQReport.MAX_URL) {
+        // too long for a link: copy instead and open the form with only the type chosen
         copyNpcPins();
-        alert("Too many pins for one link. They are copied: paste them into the form that opens.");
-        window.open(base, "_blank", "noopener");
+        alert("Too many pins for one link. They are copied: paste them into the \"NPC pins\" box of the form that opens.");
+        window.open(TQReport.reportUrl("pins"), "_blank", "noopener");
         return;
       }
       window.open(url, "_blank", "noopener");
@@ -1106,6 +1106,7 @@
       applyBgArt();
     }
 
+    document.getElementById("reportLink").href = TQReport.reportUrl();
     darkQuery.addEventListener("change", applyTheme);
     applyTheme();
     applyBgArt();
