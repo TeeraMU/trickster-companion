@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Merge NPC pins sent by players into data/npc-pins.json.
 //
+//   node scripts/merge-pins.js answers.csv                     # the Report form's Google Sheet (File > Download > CSV)
 //   node scripts/merge-pins.js pins-from-ann.json chat.txt     # files: exported JSON or pasted chat text
 //   node scripts/merge-pins.js --issues                        # open GitHub issues labelled "pins" (needs gh)
 //   add --dry-run to only print the report
@@ -39,8 +40,43 @@ function extractPins(text) {
   throw new Error("pins text is cut off");
 }
 
+/** Minimal CSV parser (quoted fields, "" escapes, newlines inside quotes). */
+function parseCsv(text) {
+  const rows = [];
+  let row = [], field = "", quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') quoted = false;
+      else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field); rows.push(row); row = []; field = "";
+    } else field += c;
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(x => x.trim()));
+}
+
 const sources = [];
-for (const f of files) sources.push({ name: path.basename(f), text: fs.readFileSync(f, "utf8") });
+for (const f of files) {
+  const text = fs.readFileSync(f, "utf8").replace(/^﻿/, "");
+  if (!f.toLowerCase().endsWith(".csv")) { sources.push({ name: path.basename(f), text }); continue; }
+  // Google Sheet export of the Report form: one source per answer that has pins
+  const [head, ...rows] = parseCsv(text);
+  const pinCol = head.findIndex(h => /NPC pins/i.test(h));
+  const nameCol = head.findIndex(h => /name in game/i.test(h));
+  const timeCol = head.findIndex(h => /timestamp|ประทับเวลา/i.test(h));
+  if (pinCol < 0) { console.log(`${path.basename(f)}: no "NPC pins" column, skipped`); continue; }
+  rows.forEach((r, i) => {
+    if (!(r[pinCol] || "").trim()) return;
+    const who = [r[nameCol], r[timeCol]].filter(Boolean).join(", ");
+    sources.push({ name: `sheet row ${i + 2}${who ? ` (${who})` : ""}`, text: r[pinCol] });
+  });
+}
 if (fromIssues) {
   const out = execFileSync("gh", ["issue", "list", "--repo", REPO, "--label", "pins", "--state", "open",
     "--json", "number,author,body", "--limit", "100"], { encoding: "utf8" });
