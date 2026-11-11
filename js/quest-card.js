@@ -223,6 +223,8 @@
           </div>
           ${q.notes ? `<div class="quest-note">💡 <strong>Tip:</strong> ${esc(q.notes)}</div>` : ""}
           <div class="qc-prereq">🔑 <strong>Needs first:</strong> ${esc(q.prereq)}</div>
+          <a class="qc-report" target="_blank" rel="noopener"
+             href="https://github.com/TeeraMU/trickster-companion/issues/new?template=wrong-data.yml&quest=${encodeURIComponent(q.id + " · " + q.title)}">🐞 Something wrong in this quest? Report it</a>
         </div>
       </div>`;
   }

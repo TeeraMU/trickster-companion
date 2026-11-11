@@ -45,7 +45,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `css/app.css`: all styles. Colors are tokens on `:root` (light) and `:root[data-theme="dark"]`;
   use the tokens (`--text-*`, `--accent-*` for fills, `--ink-*` for text on tints), never raw colors.
   Keep text at WCAG AA (4.5:1) in both themes.
-- `assets/`: images we host (`bg/key-art.webp`), credited in `assets/CREDITS.md`.
+- `assets/`: images we host (`bg/`, `brand/`, `icons/`), credited in `assets/CREDITS.md`.
+  `site.webmanifest` uses relative paths: the site lives under `/trickster-companion/` on GitHub Pages.
 - `js/data.js`: loads `data/*.json` and adapts schema v2 to the shape the renderer uses.
 - `js/quest-card.js`: the quest card (`renderQuestCard` in index.html delegates to it). Helpers
   (counts per run, warnings, which quest hands over an item) are pure and run under Node.

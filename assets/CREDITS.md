@@ -6,6 +6,9 @@ non-commercial fan project and will be removed on request.
 | File | What | Source |
 |---|---|---|
 | `bg/key-art.webp` | Official key art (characters on a ship), used as a faded page background | Provided by the project owner (official promotional art, 2026-11-11). 935×561, unchanged. |
+| `brand/logo-*.{webp,png}` | Site logo (round face) | Provided by the project owner (2026-11-12), resized |
+| `icons/*`, `../site.webmanifest` icons | Browser / home-screen icons (toast knight, Sunburst set) | Provided by the project owner (2026-11-12) |
+| `bg/wallpaper.webp` | Character wallpaper shown on the right of the page | Provided by the project owner (2026-11-12), resized to 900px |
 | (hotlinked) item / NPC / reward icons in `data/images.json` | Game sprites | ggftw Trickster wiki via wikimirror.lifeto.co |
 | (hotlinked) region overview maps and map pictures in `data/maps.json` | Game maps | ggftw Trickster wiki via wikimirror.lifeto.co |
 

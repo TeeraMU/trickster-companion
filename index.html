@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trickster Companion</title>
-  <meta name="description" content="Fan-made quest tracker and item calculator for Trickster Online." />
+  <meta name="description" content="Quest tracker & guides for Trickster Online (fan-made)." />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#dff1ff" />
   <script>
@@ -26,16 +31,16 @@
   <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-  <div class="bg-art" aria-hidden="true"></div>
+  <div class="bg-art" aria-hidden="true"><div class="bg-chars"></div></div>
 
   <header class="app-header">
     <div class="header-inner">
       <div class="header-top">
         <div class="brand-title">
-          <div class="brand-icon">TC</div>
+          <img class="brand-icon" src="assets/brand/logo-192.webp" alt="" width="46" height="46" />
           <div>
             <h1>Trickster Companion <span class="fan-made">fan-made</span></h1>
-            <div class="brand-subtitle">Quest tracker &amp; item calculator · Episode 0–1, Coral Beach, Desert Beach, Megalopolis, Caballa Relics</div>
+            <div class="brand-subtitle">Quest tracker &amp; Guides</div>
           </div>
         </div>
 
@@ -65,6 +70,7 @@
           <button class="btn" onclick="exportProgress()">💾 Export</button>
           <button class="btn" onclick="importProgressPrompt()">📂 Import</button>
           <button class="btn btn-danger" onclick="resetAllProgress()">🗑️ Reset</button>
+          <a class="btn" href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener" title="Report a bug or wrong quest info (needs a free GitHub account)">🐞 Report</a>
         </div>
       </div>
 
