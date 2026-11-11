@@ -58,6 +58,13 @@
     return all.sort((a, b) => a.order - b.order);
   }
 
+  // { questId: [{ quest, active? }] } — prerequisites as quest ids (schema v2 only)
+  function buildPrereqIndex(questFiles) {
+    const out = {};
+    for (const file of questFiles) for (const q of file.quests) out[q.id] = q.prereqs || [];
+    return out;
+  }
+
   async function loadAll(base) {
     const get = async path => {
       const res = await fetch(base + path, { cache: "no-cache" });
@@ -70,8 +77,8 @@
       get("images.json"),
       get("npcs.json")
     ]);
-    return { quests: buildQuestList(questFiles), images, npcs, questFiles };
+    return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, questFiles };
   }
 
-  root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, loadAll };
+  root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, buildPrereqIndex, loadAll };
 })(typeof window !== "undefined" ? window : globalThis);

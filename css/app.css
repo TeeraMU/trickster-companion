@@ -1282,3 +1282,427 @@ select:focus, input:focus {
 :root[data-bg="on"] {
   --bg-art-image: url("../assets/bg/key-art.webp");
 }
+
+/* ---------------------------------------------------------------------------------------
+   Episode view (js/episode.js)
+   --------------------------------------------------------------------------------------- */
+.ep-panel {
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-soft);
+  min-width: 0;
+}
+
+.ep-overview {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ep-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill-btn:disabled {
+  cursor: default;
+  border-style: dashed;
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.ep-overview-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+}
+
+.ep-overview-main h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.ep-overview-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.ep-overview-stats strong {
+  color: var(--text-primary);
+}
+
+.ep-chapter-dots {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.86rem;
+}
+
+.ep-chapter-dots li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.ep-chapter-dots li.is-current {
+  background: color-mix(in srgb, var(--accent-blue) 14%, transparent);
+  font-weight: 800;
+}
+
+.ep-ch-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink-blue);
+}
+
+.ep-dots {
+  margin-left: auto;
+  letter-spacing: 2px;
+  color: var(--ink-green);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.ep-dots-left {
+  color: var(--text-secondary);
+}
+
+.ep-now {
+  padding: 9px 14px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--accent-gold) 20%, var(--bg-card));
+  border: 1.5px solid color-mix(in srgb, var(--accent-gold) 55%, transparent);
+  font-size: 0.9rem;
+}
+
+.ep-now-where {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* two columns on wide screens, sub-tabs on narrow ones */
+.ep-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.ep-subtabs {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .ep-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ep-subtabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border);
+  }
+
+  .ep-subtabs button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font: inherit;
+    font-weight: 800;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 8px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .ep-subtabs button[aria-selected="true"] {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .ep-layout[data-pane="quests"] > [data-pane="farm"],
+  .ep-layout[data-pane="farm"] > [data-pane="quests"] {
+    display: none;
+  }
+}
+
+.ep-quests {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* chapters */
+.ep-chapter {
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.ep-chapter.is-current {
+  border-color: color-mix(in srgb, var(--accent-blue) 55%, transparent);
+}
+
+.ep-chapter > summary {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--accent-blue) 16%, var(--bg-card)),
+    color-mix(in srgb, var(--accent-purple) 8%, var(--bg-card)));
+}
+
+.ep-chapter > summary::-webkit-details-marker,
+.ep-done > summary::-webkit-details-marker {
+  display: none;
+}
+
+.ep-chapter > summary::before {
+  content: "▸";
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.ep-chapter[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.ep-ch-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.ep-ch-progress {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.ep-ch-progress .progress-track {
+  width: 90px;
+  height: 8px;
+  display: inline-block;
+}
+
+.ep-ch-progress .progress-fill {
+  display: block;
+}
+
+.ep-chapter-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ep-done > summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--ink-green);
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-green) 12%, transparent);
+  border: 1.5px dashed color-mix(in srgb, var(--accent-green) 45%, transparent);
+  width: fit-content;
+}
+
+.ep-done[open] > summary {
+  margin-bottom: 10px;
+}
+
+.quest-card.is-now {
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--accent-gold) 35%, transparent);
+}
+
+.ep-now-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--accent-gold);
+  color: #4a3200;
+}
+
+.ep-locked {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ep-locked-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border-strong);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+}
+
+.ep-locked-title {
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.ep-locked-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.ep-empty {
+  padding: 14px;
+  text-align: center;
+  font-weight: 800;
+  color: var(--ink-green);
+}
+
+/* items to collect */
+.ep-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ep-panel-head h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.ep-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.ep-map {
+  margin-bottom: 14px;
+}
+
+.ep-map h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px dashed var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.ep-farm-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ep-farm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.ep-farm-row:hover {
+  background: var(--bg-primary);
+}
+
+/* locked rows: dashed outline + muted, but text keeps AA contrast (no opacity) */
+.ep-farm-row.is-locked {
+  border: 1.5px dashed var(--border);
+}
+
+.ep-farm-row.is-locked .ep-farm-main strong,
+.ep-map.is-locked h4 {
+  color: var(--text-secondary);
+}
+
+.ep-farm-row.is-locked .item-icon {
+  filter: grayscale(0.7);
+}
+
+.ep-farm-main {
+  min-width: 0;
+  font-size: 0.85rem;
+}
+
+.ep-farm-how {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.ep-kind {
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 1px 7px;
+  border-radius: 999px;
+  margin-right: 2px;
+}
+
+.ep-kind-hunt, .ep-kind-drop { background: color-mix(in srgb, var(--accent-red) 16%, transparent); color: var(--ink-red); }
+.ep-kind-drill { background: color-mix(in srgb, var(--accent-gold) 22%, transparent); color: var(--ink-gold); }
+.ep-kind-other { background: color-mix(in srgb, var(--accent-purple) 16%, transparent); color: var(--ink-purple); }
+
+.ep-lv {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.ep-lock {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.ep-icon-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
