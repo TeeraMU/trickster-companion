@@ -2331,3 +2331,347 @@ select:focus, input:focus {
 a.btn {
   text-decoration: none;
 }
+
+/* ---------------------------------------------------------------------------------------
+   Compact header (0.3.0): one sticky bar; progress details and settings drop down.
+   Overrides the older header rules above.
+   --------------------------------------------------------------------------------------- */
+.app-header {
+  padding: 0;
+  position: sticky;
+  top: 0;
+}
+
+.topbar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+}
+
+.brand-title {
+  text-decoration: none;
+  color: inherit;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-name .fan-made {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 4px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  -webkit-text-fill-color: var(--ink-pink);
+  background: color-mix(in srgb, var(--accent-pink) var(--tint), transparent);
+  border: 1.5px solid color-mix(in srgb, var(--accent-pink) 45%, transparent);
+}
+
+.brand-subtitle {
+  font-size: 0.78rem;
+}
+
+/* page tabs live in the bar */
+.app-header .view-tabs {
+  flex: 1;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.app-header .view-tab {
+  padding: 7px 14px;
+  font-size: 0.86rem;
+  gap: 6px;
+  box-shadow: none;
+  background: transparent;
+  border-color: transparent;
+  white-space: nowrap;
+}
+
+.app-header .view-tab:hover {
+  background: var(--bg-card);
+  transform: none;
+}
+
+.app-header .view-tab.active {
+  border-color: var(--accent-blue);
+}
+
+.topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.class-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px 2px 10px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1.5px solid var(--border);
+}
+
+.class-chip select {
+  border: none;
+  background: transparent;
+  padding: 5px 6px;
+  font-weight: 800;
+  max-width: 150px;
+  cursor: pointer;
+}
+
+.progress-chip,
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: 800 0.82rem var(--font-body);
+  cursor: pointer;
+  padding: 7px 12px;
+}
+
+.icon-btn {
+  padding: 6px 9px;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.progress-chip:hover,
+.icon-btn:hover,
+.progress-chip[aria-expanded="true"],
+.icon-btn[aria-expanded="true"] {
+  border-color: var(--accent-blue);
+}
+
+.mini-track {
+  width: 64px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.mini-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: var(--progress-gradient);
+  transition: width 0.4s ease;
+}
+
+/* drop-down panels under the bar */
+.header-panel {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px 12px;
+}
+
+.header-panel[hidden] {
+  display: none;
+}
+
+.settings-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 22px;
+  align-items: flex-end;
+}
+
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settings-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.settings-title small {
+  text-transform: none;
+  font-weight: 700;
+}
+
+.settings-row {
+  display: flex;
+  gap: 8px;
+}
+
+.settings-danger {
+  margin-left: 10px;
+}
+
+.list-tools {
+  display: flex;
+  gap: 8px;
+}
+
+/* narrower laptops: tabs show icons only, names on hover */
+@media (max-width: 1180px) {
+  .app-header .view-tab .tab-label {
+    display: none;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+}
+
+/* phones and small tablets: page tabs become a bottom bar */
+@media (max-width: 900px) {
+  /* no backdrop blur on the header here: a blurred parent would become the box the fixed
+     bottom bar is positioned in, and the bar would stick to the header instead of the screen */
+  .app-header {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: color-mix(in srgb, var(--page-top) 94%, transparent);
+  }
+
+  .topbar {
+    justify-content: space-between;
+  }
+}
+
+/* phones: slim top bar */
+@media (max-width: 900px) {
+  .topbar {
+    padding: 6px 12px;
+    gap: 8px;
+    min-height: 54px;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 1.02rem;
+  }
+
+  .brand-name .fan-made {
+    display: none;
+  }
+
+  .class-chip select {
+    max-width: 92px;
+    font-size: 0.78rem;
+  }
+
+  .mini-track {
+    display: none;
+  }
+
+  .progress-chip {
+    padding: 6px 9px;
+  }
+
+  .app-header .view-tabs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 120;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 4px 6px calc(4px + env(safe-area-inset-bottom));
+    background: var(--header-bg);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-top: 2px solid var(--border);
+  }
+
+  .app-header .view-tab {
+    flex-direction: column;
+    gap: 1px;
+    padding: 5px 2px;
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    justify-content: center;
+  }
+
+  .app-header .view-tab .tab-label {
+    display: inline;
+  }
+
+  .app-header .view-tab .tab-icon {
+    font-size: 1.2rem;
+  }
+
+  .app-header .view-tab .badge-count {
+    display: none;
+  }
+
+  .app-header .view-tab.active {
+    border-color: transparent;
+    background: color-mix(in srgb, var(--accent-blue) 18%, var(--bg-card));
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
+
+  .header-panel {
+    padding: 0 12px 10px;
+  }
+
+  .settings-panel {
+    justify-content: flex-start;
+  }
+
+  .settings-danger {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-text {
+    display: none;
+  }
+}
