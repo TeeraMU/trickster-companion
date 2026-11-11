@@ -648,7 +648,8 @@
       "order": 67,
       "title": "Artisan Poppuri - Fix Toys (Key Quest 4)",
       "categories": [
-        "key"
+        "key",
+        "sticker"
       ],
       "chapter": "Megalopolis & Poppuri Dungeon - Key Quests & Instant Adhesives",
       "npc": "Artisan Poppuri",
@@ -864,7 +865,7 @@
       "order": 71,
       "title": "Card Girl - Megalopolis Card Girl Quests (1 to 5)",
       "categories": [
-        "general"
+        "card"
       ],
       "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
       "npc": "Card Girl",
@@ -1099,7 +1100,8 @@
       "order": 75,
       "title": "Fairy Nono & 4 Arbiters - Card Identification & Trickster Crest (Enlightenment)",
       "categories": [
-        "job"
+        "job",
+        "card"
       ],
       "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
       "npc": "Fairy Nono & Arbiters of Courage, Wisdom, Dreams, Love",

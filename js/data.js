@@ -5,7 +5,7 @@
 
   const CATEGORY_LABEL = {
     episode: "Episode", general: "General", monster: "Monster", dungeon: "Dungeon",
-    daily: "Everyday", key: "Key", sticker: "Sticker", job: "Job"
+    daily: "Everyday", key: "Key", sticker: "Sticker", job: "Job", card: "Card"
   };
   const SOURCE_LABEL = { drop: "Drop", drill: "Drill", quest: "Quest", compound: "Compound", shop: "Shop" };
   const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
@@ -28,6 +28,7 @@
       region: region,
       subRegion: q.chapter,
       category: CATEGORY_LABEL[q.categories[0]],
+      categories: q.categories.map(c => CATEGORY_LABEL[c]),
       minLevel: q.minLevel,
       cycles: q.cycles,
       prereq: q.prereqText,

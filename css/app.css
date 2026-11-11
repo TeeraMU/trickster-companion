@@ -803,6 +803,85 @@ select:focus, input:focus {
 .tag-everyday { background: color-mix(in srgb, var(--accent-green) var(--tint), transparent);  color: var(--ink-green);  border: 1.5px solid color-mix(in srgb, var(--accent-green) 45%, transparent); }
 .tag-dungeon  { background: color-mix(in srgb, var(--accent-orange) var(--tint), transparent); color: var(--ink-orange); border: 1.5px solid color-mix(in srgb, var(--accent-orange) 50%, transparent); }
 .tag-job      { background: color-mix(in srgb, var(--accent-cyan) var(--tint), transparent);   color: var(--ink-cyan);   border: 1.5px solid color-mix(in srgb, var(--accent-cyan) 45%, transparent); }
+.tag-card     { background: linear-gradient(90deg, color-mix(in srgb, var(--accent-pink) 14%, transparent), color-mix(in srgb, var(--accent-purple) 14%, transparent)); color: var(--ink-purple); border: 1.5px solid color-mix(in srgb, var(--accent-purple) 45%, transparent); }
+
+/* Big category tabs (Quest checklist / calculator) */
+.cat-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cat-tab {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 78px;
+  padding: 8px 10px 7px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cat-tab:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+}
+
+.cat-tab-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: color-mix(in srgb, var(--cat-color, var(--accent-blue)) 22%, var(--bg-card));
+  border: 2px solid color-mix(in srgb, var(--cat-color, var(--accent-blue)) 55%, transparent);
+}
+
+.cat-tab-label {
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.cat-tab-count {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.cat-tab.active {
+  border-color: var(--cat-color, var(--accent-blue));
+  background: color-mix(in srgb, var(--cat-color, var(--accent-blue)) 14%, var(--bg-card));
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--cat-color, var(--accent-blue)) 35%, transparent);
+}
+
+.cat-tab.active .cat-tab-icon {
+  background: var(--cat-color, var(--accent-blue));
+}
+
+.cat-all      { --cat-color: var(--accent-blue); }
+.cat-episode  { --cat-color: var(--accent-purple); }
+.cat-key      { --cat-color: var(--accent-gold); }
+.cat-sticker  { --cat-color: var(--accent-pink); }
+.cat-card     { --cat-color: var(--accent-purple); }
+.cat-general  { --cat-color: var(--accent-blue); }
+.cat-monster  { --cat-color: var(--accent-red); }
+.cat-dungeon  { --cat-color: var(--accent-orange); }
+.cat-everyday { --cat-color: var(--accent-green); }
+.cat-job      { --cat-color: var(--accent-cyan); }
 
 .tag-level {
   background: var(--bg-tertiary);

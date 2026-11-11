@@ -6,7 +6,8 @@
       "order": 35,
       "title": "Sandman - Desert Sticker (Key Quest 1)",
       "categories": [
-        "key"
+        "key",
+        "sticker"
       ],
       "chapter": "Desert Beach - Key Quests & 7 Desert Stickers",
       "npc": "Sandman",
@@ -966,7 +967,7 @@
       "order": 52,
       "title": "Card Girl - Desert Beach Card Girl Quests (1 to 5)",
       "categories": [
-        "general"
+        "card"
       ],
       "chapter": "Desert Beach - General, Card Girl, Monster, Daily & Pyramid Dungeon",
       "npc": "Card Girl",

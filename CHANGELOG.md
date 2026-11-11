@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Big category tabs with icons and done/total counts (Story, Key, Sticker, Card Girl, Town, Monster, Dungeon, Daily, Job) replace the row of small filter pills. Tabs with no quests for your class or region are hidden.
+- A quest can now be in more than one category: the three sticker hand-in Key quests also show under Sticker, and Card Identification (Fairy Nono) also under Card Girl. Card Girl quests have their own tab instead of being mixed into Town.
 - New quest card: NPC picture, name and place; ⚠️ badges for special conditions (e.g. *Must be in-game DAYTIME*, *Have 1x Super Alarm Clock in inventory*); a **To do** list that is always visible, with each item's icon, amount and where to get it (monster and level, drill depth, shop, combine recipe, or 🔗 which earlier quest hands it over and ✓ once you have it); rewards at a glance. Quests with several runs show *per run · total · left*. Steps, tips and prerequisites open with ▾.
 - Finished quests fold down to their title line.
 - New **📖 Episodes** page (now the start page): pick EP0 / EP1, see progress and EXP, the quest you should do next (opened and marked ▶ Now), finished quests folded away, and locked quests with what they still need.
