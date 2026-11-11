@@ -8,7 +8,7 @@ const path = require("path");
 const DATA = path.join(__dirname, "..", "data");
 const read = p => JSON.parse(fs.readFileSync(path.join(DATA, p), "utf8"));
 
-const CATEGORIES = ["episode", "general", "monster", "dungeon", "daily", "key", "sticker", "job"];
+const CATEGORIES = ["episode", "general", "card", "monster", "dungeon", "daily", "key", "sticker", "job"];
 const SOURCE_KINDS = ["drop", "drill", "quest", "compound", "shop"];
 const CLASSES = ["bunny", "buffalo", "white-bear", "sheep", "dragon", "fox", "lion", "cat", "raccoon"];
 

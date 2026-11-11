@@ -44,7 +44,8 @@
       "order": 97,
       "title": "Fortune Teller - Caballa Stickers (Key Quest 1)",
       "categories": [
-        "key"
+        "key",
+        "sticker"
       ],
       "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
       "npc": "Fortune Teller",
@@ -1485,7 +1486,7 @@
       "order": 117,
       "title": "Card Girl - Caballa Relics Card Girl Quests (1 to 5)",
       "categories": [
-        "general"
+        "card"
       ],
       "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
       "npc": "Card Girl",
