@@ -1,0 +1,302 @@
+[
+  {
+    "id": "al-hauri",
+    "name": "Al-Hauri"
+  },
+  {
+    "id": "alchemist-nate",
+    "name": "Alchemist Nate"
+  },
+  {
+    "id": "andrew",
+    "name": "Andrew"
+  },
+  {
+    "id": "anubis",
+    "name": "Anubis"
+  },
+  {
+    "id": "arbiters-of-courage",
+    "name": "Arbiters of Courage"
+  },
+  {
+    "id": "artisan-poppuri",
+    "name": "Artisan Poppuri"
+  },
+  {
+    "id": "assistant-hunter",
+    "name": "Assistant Hunter"
+  },
+  {
+    "id": "bastet",
+    "name": "Bastet"
+  },
+  {
+    "id": "blacksmith-marx",
+    "name": "Blacksmith Marx"
+  },
+  {
+    "id": "blue-muffler-poppuri",
+    "name": "Blue Muffler Poppuri"
+  },
+  {
+    "id": "boxer-jeanne-warrior-kei-bard-la-fimmel-magician-louie-explorer-reina-inventor-gale-entertainer-elicia-card-master-taniel",
+    "name": "Boxer Jeanne / Warrior Kei / Bard La Fimmel / Magician Louie / Explorer Reina / Inventor Gale / Entertainer Elicia / Card Master Taniel"
+  },
+  {
+    "id": "bunny-maid",
+    "name": "Bunny Maid"
+  },
+  {
+    "id": "card-girl",
+    "name": "Card Girl"
+  },
+  {
+    "id": "clerk-z-smith",
+    "name": "Clerk Z. Smith"
+  },
+  {
+    "id": "clever-owl",
+    "name": "Clever Owl"
+  },
+  {
+    "id": "don-giuvanni",
+    "name": "Don Giuvanni"
+  },
+  {
+    "id": "dorothy",
+    "name": "Dorothy"
+  },
+  {
+    "id": "dr-cat-far-left",
+    "name": "Dr. Cat (Far Left)"
+  },
+  {
+    "id": "dr-cat-far-right",
+    "name": "Dr. Cat (Far Right)"
+  },
+  {
+    "id": "dr-cat-middle-left",
+    "name": "Dr. Cat (Middle Left)"
+  },
+  {
+    "id": "dr-cat-middle-right",
+    "name": "Dr. Cat (Middle Right)"
+  },
+  {
+    "id": "dreams",
+    "name": "Dreams"
+  },
+  {
+    "id": "driller-marky",
+    "name": "Driller Marky"
+  },
+  {
+    "id": "eliza-bath",
+    "name": "Eliza Bath"
+  },
+  {
+    "id": "explorer-reina",
+    "name": "Explorer Reina"
+  },
+  {
+    "id": "fairy-feria",
+    "name": "Fairy Feria"
+  },
+  {
+    "id": "fairy-nono",
+    "name": "Fairy Nono"
+  },
+  {
+    "id": "favian",
+    "name": "Favian"
+  },
+  {
+    "id": "fortune-teller",
+    "name": "Fortune Teller"
+  },
+  {
+    "id": "genius-cochma",
+    "name": "Genius Cochma"
+  },
+  {
+    "id": "guide-sabrina",
+    "name": "Guide Sabrina"
+  },
+  {
+    "id": "guild-clerk-esther",
+    "name": "Guild Clerk Esther"
+  },
+  {
+    "id": "heidi",
+    "name": "Heidi"
+  },
+  {
+    "id": "homeless-ian",
+    "name": "Homeless Ian"
+  },
+  {
+    "id": "hungry-poppuri",
+    "name": "Hungry Poppuri"
+  },
+  {
+    "id": "hunter-master",
+    "name": "Hunter Master"
+  },
+  {
+    "id": "hunter-yuri",
+    "name": "Hunter Yuri"
+  },
+  {
+    "id": "indiana-john",
+    "name": "Indiana John"
+  },
+  {
+    "id": "keeper-julio",
+    "name": "Keeper Julio"
+  },
+  {
+    "id": "kristoffer-j",
+    "name": "Kristoffer J."
+  },
+  {
+    "id": "lifeguard-bean",
+    "name": "Lifeguard Bean"
+  },
+  {
+    "id": "lifeguard-deen",
+    "name": "Lifeguard Deen"
+  },
+  {
+    "id": "louis-bitton",
+    "name": "Louis Bitton"
+  },
+  {
+    "id": "love",
+    "name": "Love"
+  },
+  {
+    "id": "love-hunter-robin",
+    "name": "Love Hunter Robin"
+  },
+  {
+    "id": "mirabo-watty",
+    "name": "Mirabo Watty"
+  },
+  {
+    "id": "miranda-watty",
+    "name": "Miranda Watty"
+  },
+  {
+    "id": "model-mermaid-babe",
+    "name": "Model Mermaid Babe"
+  },
+  {
+    "id": "monkey-t",
+    "name": "Monkey T"
+  },
+  {
+    "id": "nefertiti",
+    "name": "Nefertiti"
+  },
+  {
+    "id": "officer-robert",
+    "name": "Officer Robert"
+  },
+  {
+    "id": "officer-tera",
+    "name": "Officer Tera"
+  },
+  {
+    "id": "old-artist",
+    "name": "Old Artist"
+  },
+  {
+    "id": "pharaoh-boy",
+    "name": "Pharaoh Boy"
+  },
+  {
+    "id": "poppuri",
+    "name": "Poppuri"
+  },
+  {
+    "id": "rosaline-gracia",
+    "name": "Rosaline Gracia"
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary"
+  },
+  {
+    "id": "sandman",
+    "name": "Sandman"
+  },
+  {
+    "id": "scared-poppuri",
+    "name": "Scared Poppuri"
+  },
+  {
+    "id": "shaman-girl-jia",
+    "name": "Shaman Girl Jia"
+  },
+  {
+    "id": "sissy-cello",
+    "name": "Sissy Cello"
+  },
+  {
+    "id": "skipper-min",
+    "name": "Skipper Min"
+  },
+  {
+    "id": "star-gazer-stella",
+    "name": "Star Gazer Stella"
+  },
+  {
+    "id": "stern-poppuri",
+    "name": "Stern Poppuri"
+  },
+  {
+    "id": "steve-ryu",
+    "name": "Steve Ryu"
+  },
+  {
+    "id": "tango",
+    "name": "Tango"
+  },
+  {
+    "id": "tinnie",
+    "name": "Tinnie"
+  },
+  {
+    "id": "vagabond-eloy",
+    "name": "Vagabond Eloy"
+  },
+  {
+    "id": "vinosh",
+    "name": "Vinosh"
+  },
+  {
+    "id": "warrior-kei",
+    "name": "Warrior Kei"
+  },
+  {
+    "id": "weird-box",
+    "name": "Weird Box"
+  },
+  {
+    "id": "weirdo-hen",
+    "name": "Weirdo Hen"
+  },
+  {
+    "id": "winnie",
+    "name": "Winnie"
+  },
+  {
+    "id": "wisdom",
+    "name": "Wisdom"
+  },
+  {
+    "id": "wise-hen",
+    "name": "Wise Hen"
+  }
+]

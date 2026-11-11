@@ -1,0 +1,1685 @@
+{
+  "region": "Episode 0",
+  "quests": [
+    {
+      "id": "ep0-c1-01",
+      "order": 1,
+      "title": "Heidi - Trickster Registration",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Heidi",
+      "npcIds": [
+        "heidi"
+      ],
+      "location": "Coral Town - Blooming Cora",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None (Character Creation Spawn)",
+      "steps": [
+        "Speak to Heidi in Coral Town - Blooming Cora upon spawning to receive 1x Registration Form.",
+        "Walk a short distance in Blooming Cora and speak to Bunny Maid to turn in the Registration Form."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Registration Form",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Given automatically by Heidi",
+            "map": "Coral Town - Blooming Cora"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 256,
+        "tmExp": 256,
+        "galder": 0,
+        "items": [
+          "1x Rookie Sword",
+          "1x Rookie Hat",
+          "1x Rookie Shield"
+        ]
+      },
+      "notes": "Equip your Rookie Sword, Hat, and Shield right away before heading out to Coral Beach Field 1."
+    },
+    {
+      "id": "ep0-c1-02",
+      "order": 2,
+      "title": "Bunny Maid - Prove Your Spirit!",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Bunny Maid",
+      "npcIds": [
+        "bunny-maid"
+      ],
+      "location": "Coral Town - Blooming Cora",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-01"
+        }
+      ],
+      "prereqText": "Heidi - Trickster Registration",
+      "steps": [
+        "Speak to Bunny Maid in Coral Town - Blooming Cora.",
+        "Exit to Coral Beach Field 1 - Blue Wave and hunt Torobbie (Lv.1) until you collect 2x Baby Carrot.",
+        "Return to Blooming Cora and give 2x Baby Carrot to Bunny Maid."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Baby Carrot",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Torobbie (Lv.1)",
+            "map": "Coral Beach Field 1 - Blue Wave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1374,
+        "tmExp": 1374,
+        "galder": 2000,
+        "items": [
+          "1x Level Up Guide"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-03",
+      "order": 3,
+      "title": "Bunny Maid - Helping Others",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Bunny Maid",
+      "npcIds": [
+        "bunny-maid"
+      ],
+      "location": "Coral Town - Blooming Cora",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-02"
+        }
+      ],
+      "prereqText": "Bunny Maid - Prove Your Spirit!",
+      "steps": [
+        "Speak to Bunny Maid in Coral Town - Blooming Cora.",
+        "Find and talk to Winnie in Coral Town - Blooming Cora."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 2739,
+        "tmExp": 2739,
+        "galder": 2000,
+        "items": [
+          "1x Young Egg (Beginner Pet)"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-04",
+      "order": 4,
+      "title": "Winnie - Winnie's Request",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Winnie",
+      "npcIds": [
+        "winnie"
+      ],
+      "location": "Coral Town - Blooming Cora",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-03"
+        }
+      ],
+      "prereqText": "Bunny Maid - Helping Others",
+      "steps": [
+        "Speak to Winnie in Coral Town - Blooming Cora.",
+        "Go to Coral Beach Field 1 - Blue Wave and speak to Lifeguard Deen (in front of the Lifeguard Building)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3735,
+        "tmExp": 3735,
+        "galder": 0,
+        "items": [
+          "10x Lucky Pink Potion",
+          "10x Lucky Blue Potion",
+          "1x Recovery Guide"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-05",
+      "order": 5,
+      "title": "Lifeguard Deen - Deen's Request - 1",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Lifeguard Deen",
+      "npcIds": [
+        "lifeguard-deen"
+      ],
+      "location": "Coral Beach Field 1 - Blue Wave",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-04"
+        }
+      ],
+      "prereqText": "Winnie - Winnie's Request",
+      "steps": [
+        "Accept the monster hunt from Lifeguard Deen in Coral Beach Field 1 - Blue Wave.",
+        "Hunt 5x Tottochi (Lv.2) within 10 minutes on Coral Beach Field 1 - Blue Wave.",
+        "Report back to Lifeguard Deen."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tottochi",
+          "level": 2,
+          "count": 5,
+          "timeLimit": "10 min",
+          "map": "Coral Beach Field 1 - Blue Wave"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3735,
+        "tmExp": 3735,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-06",
+      "order": 6,
+      "title": "Lifeguard Deen - Deen's Request - 2",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Lifeguard Deen",
+      "npcIds": [
+        "lifeguard-deen"
+      ],
+      "location": "Coral Beach Field 1 - Blue Wave",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-05"
+        }
+      ],
+      "prereqText": "Lifeguard Deen - Deen's Request - 1",
+      "steps": [
+        "Speak to Lifeguard Deen in Coral Beach Field 1 - Blue Wave.",
+        "Take the portal to Coral Beach Field 2 - Passionate Sun and talk to Tinnie (by the Beach Volleyball Court)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 4970,
+        "tmExp": 4970,
+        "galder": 2000,
+        "items": [
+          "10x Lucky Pink Potion",
+          "10x Lucky Blue Potion"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-07",
+      "order": 7,
+      "title": "Tinnie - Tinnie's Request - 1",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Tinnie",
+      "npcIds": [
+        "tinnie"
+      ],
+      "location": "Coral Beach Field 2 - Passionate Sun",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-06"
+        }
+      ],
+      "prereqText": "Lifeguard Deen - Deen's Request - 2",
+      "steps": [
+        "Accept the monster hunt from Tinnie in Coral Beach Field 2 - Passionate Sun.",
+        "Hunt 5x Bad Fury (Lv.4) within 10 minutes on Coral Beach Field 2 - Passionate Sun.",
+        "Report back to Tinnie."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Bad Fury",
+          "level": 4,
+          "count": 5,
+          "timeLimit": "10 min",
+          "map": "Coral Beach Field 2 - Passionate Sun"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4970,
+        "tmExp": 4970,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-08",
+      "order": 8,
+      "title": "Tinnie - Tinnie's Request - 2",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Tinnie",
+      "npcIds": [
+        "tinnie"
+      ],
+      "location": "Coral Beach Field 2 - Passionate Sun",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-07"
+        }
+      ],
+      "prereqText": "Tinnie - Tinnie's Request - 1",
+      "steps": [
+        "Speak to Tinnie in Coral Beach Field 2 - Passionate Sun.",
+        "Proceed to Coral Beach Field 3 - Sunny Beach and talk to Lifeguard Bean (standing in front of a pond)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 4970,
+        "tmExp": 4970,
+        "galder": 2000,
+        "items": [
+          "10x Lucky Pink Potion",
+          "10x Lucky Blue Potion"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c1-09",
+      "order": 9,
+      "title": "Lifeguard Bean - Bean's Request",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Lifeguard Bean",
+      "npcIds": [
+        "lifeguard-bean"
+      ],
+      "location": "Coral Beach Field 3 - Sunny Beach",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-08"
+        }
+      ],
+      "prereqText": "Tinnie - Tinnie's Request - 2",
+      "steps": [
+        "Speak to Lifeguard Bean in Coral Beach Field 3 - Sunny Beach.",
+        "Hunt Blue Penguin (Lv.6) in Coral Beach Field 3 - Sunny Beach to collect 5x Cool Ice.",
+        "Return to Lifeguard Bean and turn in 5x Cool Ice to complete Episode 0: Chapter 1!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cool Ice",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Blue Penguin (Lv.6)",
+            "map": "Coral Beach Field 3 - Sunny Beach"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 32928,
+        "tmExp": 32928,
+        "galder": 10000,
+        "items": [
+          "1x Pocket Pouch (Equippable Weight Pouch)",
+          "1x Shortcut Guide"
+        ]
+      },
+      "notes": "Completes Episode 0: Chapter 1 - The Start of an Adventure! Equip your Pocket Pouch immediately for extra inventory capacity."
+    },
+    {
+      "id": "ep0-c1-10",
+      "order": 10,
+      "title": "Lifeguard Bean - Meet Don Giuvanni",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.1: The Start of an Adventure (Coral Beach)",
+      "npc": "Lifeguard Bean",
+      "npcIds": [
+        "lifeguard-bean"
+      ],
+      "location": "Coral Beach Field 3 - Sunny Beach",
+      "minLevel": 1,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-09"
+        }
+      ],
+      "prereqText": "Lifeguard Bean - Bean's Request",
+      "steps": [
+        "Speak to Lifeguard Bean in Coral Beach Field 3 - Sunny Beach.",
+        "Before leaving Coral Beach, complete the Level 10-12 Coral Beach quests if desired, then walk through Coral Beach - Dark Cave (or use Pachi in Blooming Cora) to reach Gate of Desert Beach.",
+        "Talk to Don Giuvanni in Gate of Desert Beach."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 12664,
+        "tmExp": 12664,
+        "galder": 4000,
+        "items": []
+      }
+    },
+    {
+      "id": "ep0-c2-01",
+      "order": 18,
+      "title": "Driller Marky - Master Drilling! (Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Driller Marky",
+      "npcIds": [
+        "driller-marky"
+      ],
+      "location": "Gate of Desert Beach",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c1-10"
+        }
+      ],
+      "prereqText": "Lifeguard Bean - Meet Don Giuvanni (Lv.13+)",
+      "steps": [
+        "Speak to Don Giuvanni at Gate of Desert Beach to start 'Don Giuvanni's Training Pt. 1'.",
+        "Speak to Driller Marky standing next to Don Giuvanni at Gate of Desert Beach.",
+        "Drill in the sand at Gate of Desert Beach (Depth 10m, Sand) until you find 2x Tanning Oil.",
+        "Return 2x Tanning Oil to Driller Marky to receive Drilling for Dummies and Peng (Pet)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tanning Oil",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Gate of Desert Beach"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "1x Peng (Pet)",
+          "1x Drilling for Dummies"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-02",
+      "order": 19,
+      "title": "Don Giuvanni - Don Giuvanni's Training Pt. 1",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Gate of Desert Beach",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-01"
+        }
+      ],
+      "prereqText": "Driller Marky - Master Drilling!",
+      "steps": [
+        "Hand over 1x Drilling for Dummies (from Driller Marky) to Don Giuvanni at Gate of Desert Beach."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Drilling for Dummies",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Driller Marky - Master Drilling!",
+            "map": "Gate of Desert Beach"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "5x Oasis Water",
+          "5x Distilled Water",
+          "5x Empty Potion Bottle",
+          "1x Drilling for Dummies"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-03",
+      "order": 20,
+      "title": "Don Giuvanni - Meet Officer Robert",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Gate of Desert Beach",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-02"
+        }
+      ],
+      "prereqText": "Don Giuvanni - Don Giuvanni's Training Pt. 1",
+      "steps": [
+        "Speak to Don Giuvanni at Gate of Desert Beach.",
+        "Travel through Desert Beach Field 1 to Beach Town - Paradise and speak to Officer Robert."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "5x Oasis Water",
+          "5x Distilled Water",
+          "5x Empty Potion Bottle"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-04",
+      "order": 21,
+      "title": "Officer Robert - Don Giuvanni's Training Pt. 2",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Officer Robert",
+      "npcIds": [
+        "officer-robert"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-03"
+        }
+      ],
+      "prereqText": "Don Giuvanni - Meet Officer Robert",
+      "steps": [
+        "Speak to Officer Robert in Beach Town - Paradise.",
+        "Enter Paradise Shop and talk to Compounder Paul.",
+        "Compound 1x Desert Potion using 1x Oasis Water + 1x Distilled Water + 1x Empty Potion Bottle (given by previous quests).",
+        "Bring 1x Desert Potion back to Officer Robert."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Desert Potion",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul: 1x Oasis Water + 1x Distilled Water + 1x Empty Potion Bottle",
+            "map": "Paradise Shop"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "5x Hard Scales",
+          "1x Life Vest"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-05",
+      "order": 22,
+      "title": "Alchemist Nate - Let's Try Maturing Compounding! (Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Alchemist Nate",
+      "npcIds": [
+        "alchemist-nate"
+      ],
+      "location": "Paradise Shop",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-06",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Officer Robert - Don's Push - 3rd Stage",
+      "steps": [
+        "Accept 'Don's Push - 3rd Stage' from Officer Robert in Beach Town - Paradise.",
+        "Enter Paradise Shop and speak to Alchemist Nate.",
+        "Use Alchemist Nate's compounding service to compound your Life Vest with 1x Hard Scales (received from Don Giuvanni's Training Pt. 2; extra Hard Scales drop from Fanta Fish Lv.21 in Field 2).",
+        "Talk to Alchemist Nate again to receive Nate's Certification."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Life Vest (Compounded with Hard Scales)",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Alchemist Nate: 1x Life Vest + 1x Hard Scales",
+            "map": "Paradise Shop"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "1x Mature Compounding Guide",
+          "1x Nate's Certification"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-06",
+      "order": 23,
+      "title": "Officer Robert - Don's Push - 3rd Stage",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Officer Robert",
+      "npcIds": [
+        "officer-robert"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-05"
+        }
+      ],
+      "prereqText": "Alchemist Nate - Let's Try Maturing Compounding!",
+      "steps": [
+        "Bring 1x Nate's Certification from Alchemist Nate back to Officer Robert in Beach Town - Paradise."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nate's Certification",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Alchemist Nate - Let's Try Maturing Compounding!",
+            "map": "Paradise Shop"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "20x Pink Potion B",
+          "20x Blue Potion B",
+          "1x Wooden Sword"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-07",
+      "order": 24,
+      "title": "Blacksmith Marx - Learn to Refine! (Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Paradise Shop",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-08",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Officer Robert - Don's Push - 4th Stage",
+      "steps": [
+        "Accept 'Don's Push - 4th Stage' from Officer Robert in Beach Town - Paradise.",
+        "Enter Paradise Shop and speak to Blacksmith Marx.",
+        "Go to 1st Mining Lot of Crystal Copper (entered via Desert Beach Field 3 - Statue of Anubis) and drill 7x Bronze Fragment (Depth 10~20m, Rock).",
+        "Return 7x Bronze Fragment to Blacksmith Marx to receive Refining Guide, 7x Bronze Fragment, and Wooden Sword."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bronze Fragment",
+          "qty": 7,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10~20m (Rock)",
+            "map": "1st Mining Lot of Crystal Copper"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 21763,
+        "tmExp": 21763,
+        "galder": 0,
+        "items": [
+          "1x Refining Guide",
+          "7x Bronze Fragment",
+          "1x Wooden Sword"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c2-08",
+      "order": 25,
+      "title": "Officer Robert - Don's Push - 4th Stage",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.2: Don Giuvanni's Push (Desert Beach)",
+      "npc": "Officer Robert",
+      "npcIds": [
+        "officer-robert"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 13,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-07"
+        }
+      ],
+      "prereqText": "Blacksmith Marx - Learn to Refine!",
+      "steps": [
+        "Use Blacksmith Marx's refining service in Paradise Shop to refine your Wooden Sword to Level 1 using 1x Bronze Fragment.",
+        "Bring 1x Refining Guide and the Refined Lv.1 Wooden Sword to Officer Robert in Beach Town - Paradise to complete Episode 0: Chapter 2!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Refining Guide",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Blacksmith Marx - Learn to Refine!",
+            "map": "Paradise Shop"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Wooden Sword (Refined Lv.1)",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Refined at Blacksmith Marx with Bronze Fragment",
+            "map": "Paradise Shop"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 87054,
+        "tmExp": 43527,
+        "galder": 0,
+        "items": [
+          "1x Refining Guide",
+          "1x Hologram Port",
+          "5x Beginner's Scroll of Revival"
+        ]
+      },
+      "notes": "Completes Episode 0: Chapter 2 - Don Giuvanni's Push!"
+    },
+    {
+      "id": "ep0-c3-00",
+      "order": 26,
+      "title": "Andrew - Meet the Natives! (Chapter 3 Main Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Andrew",
+      "npcIds": [
+        "andrew"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c2-08"
+        }
+      ],
+      "prereqText": "Level 20+, Officer Robert - Don's Push - 4th Stage",
+      "steps": [
+        "Speak to Andrew in Beach Town - Paradise to begin Episode 0: Chapter 3 - Our Prologue.",
+        "Complete all 8 resident quests below (7 in Beach Town - Paradise and Old Artist in Desert Beach Field 2). Note: Your own character class's NPC gives a special class version that awards a Pet + Ring!",
+        "Turn in all 8x Heart Gem to Andrew in Beach Town - Paradise."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Heart Gem",
+          "qty": 8,
+          "source": {
+            "kind": "quest",
+            "from": "1x from each of the 8 Chapter 3 NPCs below",
+            "map": "Beach Town - Paradise & Desert Beach Field 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 176960,
+        "tmExp": 50160,
+        "galder": 0,
+        "items": [
+          "1x Health Charm",
+          "10x Wing Port (Paradise)"
+        ]
+      },
+      "notes": "Select your character class in the top bar to automatically filter the 8 NPC quests below to the exact versions your character will play!"
+    },
+    {
+      "id": "ep0-c3-01a",
+      "order": 27,
+      "title": "Steve Ryu - Helping Confess (Non-Bunny Classes)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Steve Ryu",
+      "npcIds": [
+        "steve-ryu"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "!bunny"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Any class EXCEPT Bunny)",
+      "steps": [
+        "Speak to Steve Ryu in Beach Town - Paradise.",
+        "Hunt Hula Octopus (Lv.25/27) in Desert Beach Field 3 or Field 4 to collect 3x Bouquet.",
+        "Return 3x Bouquet to Steve Ryu for 1x Heart Gem."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bouquet",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Hula Octopus (Lv.25)",
+            "map": "Desert Beach Field 3 & Field 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Bunny Card",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-01b",
+      "order": 27,
+      "title": "Steve Ryu - Wacky Confession & Mermaid Babe - The Mark of Love! (Bunny Only)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Steve Ryu",
+      "npcIds": [
+        "steve-ryu"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Bunny Class Only)",
+      "steps": [
+        "Speak to Steve Ryu in Beach Town - Paradise to receive 1x Written Challenge.",
+        "Go to Desert Beach Field 2 - Sand Palace and speak to Mermaid Babe to start 'The Mark of Love!'.",
+        "Drill 3x Red Lipstick in Desert Beach Field 2 - Sand Palace (10m, Sand) and give them + Written Challenge to Mermaid Babe for 1x Handkerchief of Challenge (+35,392 Base / 10,032 TM EXP).",
+        "Return 1x Handkerchief of Challenge to Steve Ryu in Paradise."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Lipstick",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Handkerchief of Challenge",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Mermaid Babe - The Mark of Love!",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 70784,
+        "tmExp": 20064,
+        "galder": 0,
+        "items": [
+          "1x Baby Bunny (Pet)",
+          "1x Strong Ring",
+          "1x Bouquet",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-02a",
+      "order": 28,
+      "title": "Don Giuvanni - A Famous Model's Picture (Non-Cat Classes)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "!cat"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Any class EXCEPT Cat)",
+      "steps": [
+        "Speak to Don Giuvanni in Beach Town - Paradise.",
+        "Drill in Desert Beach Field 1 - Delta Island (10m, Sand) to find 1x Jenny's Photo B.",
+        "Return 1x Jenny's Photo B to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Jenny's Photo B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Cat Card",
+          "10x Blue Potion B",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-02b",
+      "order": 28,
+      "title": "Don Giuvanni - Enemies in a Place like this? (Cat Only)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Cat Class Only)",
+      "steps": [
+        "Speak to Don Giuvanni in Beach Town - Paradise.",
+        "Hunt Shell Trap (Lv.19) in Desert Beach Field 1 - Delta Island to collect 3x Clam Meat.",
+        "Return 3x Clam Meat to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Clam Meat",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Shell Trap (Lv.19)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Kitten (Pet)",
+          "1x Solid Ring",
+          "1x Director's Letter",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-03a",
+      "order": 29,
+      "title": "Clever Owl - The Owl's Worry (Non-Sheep Classes)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Clever Owl",
+      "npcIds": [
+        "clever-owl"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "!sheep"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Any class EXCEPT Sheep)",
+      "steps": [
+        "Speak to Clever Owl in Beach Town - Paradise.",
+        "Hunt Golden Mole (Lv.20) in Desert Beach Field 1 - Delta Island to collect 3x Golden Mole Feather.",
+        "Return 3x Golden Mole Feather to Clever Owl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Mole Feather",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Golden Mole (Lv.20)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Sheep Card",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-03b",
+      "order": 29,
+      "title": "Clever Owl - The Owl from that Time (Sheep Only)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Clever Owl",
+      "npcIds": [
+        "clever-owl"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Sheep Class Only)",
+      "steps": [
+        "Speak to Clever Owl in Beach Town - Paradise.",
+        "Drill in Desert Beach Field 1 - Delta Island (10m, Sand) to find 1x Magic Sealed Letter.",
+        "Return 1x Magic Sealed Letter to Clever Owl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Magic Sealed Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Lamb (Pet)",
+          "1x Smart Ring",
+          "1x Unsealed Letter",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-04a",
+      "order": 30,
+      "title": "Kristoffer J. - Weird Fisherman (Non-Fox Classes)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "!fox"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Any class EXCEPT Fox)",
+      "steps": [
+        "Speak to Kristoffer J. in Beach Town - Paradise.",
+        "Drill in Desert Beach Field 1 - Delta Island (10m, Sand) to collect 3x Salt.",
+        "Return 3x Salt to Kristoffer J."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Salt",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "20x Salted Dry Fish",
+          "1x Fox Card",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-04b",
+      "order": 30,
+      "title": "Kristoffer J. - Fished Up Scroll (Fox Only)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Fox Class Only)",
+      "steps": [
+        "Speak to Kristoffer J. in Beach Town - Paradise.",
+        "Hunt Golden Mole (Lv.20) in Desert Beach Field 1 - Delta Island to collect 3x Earthworm.",
+        "Return 3x Earthworm to Kristoffer J."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Earthworm",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Golden Mole (Lv.20)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Fox Pup (Pet)",
+          "1x Accurate Ring",
+          "1x Envelope with Photo",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-05a",
+      "order": 31,
+      "title": "Dorothy - A Present for a Sick Friend (1) (Non-Lion Classes)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Dorothy",
+      "npcIds": [
+        "dorothy"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "!lion"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Any class EXCEPT Lion)",
+      "steps": [
+        "Speak to Dorothy in Beach Town - Paradise.",
+        "Hunt Sea Scorpion (Lv.22) in Desert Beach Field 2 or Field 3 to collect 3x Scorpion Jerky.",
+        "Return 3x Scorpion Jerky to Dorothy."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Scorpion Jerky",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Scorpion (Lv.22)",
+            "map": "Desert Beach Field 2 & Field 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Lion Card",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-05b",
+      "order": 31,
+      "title": "Dorothy - Guardian of Dreams (Lion Only)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Dorothy",
+      "npcIds": [
+        "dorothy"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Lion Class Only)",
+      "steps": [
+        "Speak to Dorothy in Beach Town - Paradise.",
+        "Hunt Fanta Slime (Lv.18) in Gate of Desert Beach or Desert Beach Field 1 to collect 3x Twinkle Star.",
+        "Return 3x Twinkle Star to Dorothy."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Twinkle Star",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Fanta Slime (Lv.18)",
+            "map": "Desert Beach Field 1 - Delta Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Lion Cub (Pet)",
+          "1x Accurate Ring",
+          "1x Child's Letter",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-06a",
+      "order": 32,
+      "title": "Officer Tera - Help Keep the Peace (Non-Buffalo) / An Unexpected Encounter (Buffalo)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Officer Tera",
+      "npcIds": [
+        "officer-tera"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (All Classes)",
+      "steps": [
+        "Speak to Officer Tera in Beach Town - Paradise.",
+        "Hunt Grumpy Octopus (Lv.29) in Desert Beach Field 4 - Parasol River (Haunted House) to collect 3x Illegal CD.",
+        "Return 3x Illegal CD to Officer Tera."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Illegal CD",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Grumpy Octopus (Lv.29)",
+            "map": "Desert Beach Field 4 - Parasol River"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon",
+          "1x Heart Gem",
+          "Non-Buffalo: 1x Buffalo Card | Buffalo Only: 1x Buffalo Calf (Pet) + 1x Strong Ring"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-07a",
+      "order": 33,
+      "title": "Old Artist - Cherishing Destinies (Non-Dragon) / The Painter from Notre Dame (Dragon)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Desert Beach Field 2 - Sand Palace",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (All Classes)",
+      "steps": [
+        "Speak to Old Artist in Desert Beach Field 2 - Sand Palace.",
+        "Collect 1x Paper (drilled in Desert Beach Field 2, 10m Sand, or bought at Gate of Desert Beach / Paradise Shop) and 2x Color Pencils (dropped by Fanta Fish Lv.21 in Field 2).",
+        "Return 1x Paper and 2x Color Pencils to Old Artist."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Paper",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand) or Buy in Paradise Shop",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Color Pencils",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Fanta Fish (Lv.21)",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Postcard",
+          "1x Heart Gem",
+          "Non-Dragon: 1x Dragon Card + 10x Pink Potion B | Dragon Only: 1x Dragon Whelp (Pet) + 1x Smart Ring"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-08a",
+      "order": 34,
+      "title": "Rosemary - Lookin' Good! (Non-Raccoon Classes)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Rosemary",
+      "npcIds": [
+        "rosemary"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "!raccoon"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Any class EXCEPT Raccoon)",
+      "steps": [
+        "Speak to Rosemary in Beach Town - Paradise.",
+        "Drill in Desert Beach Field 2 - Sand Palace (10m, Sand) to collect 2x Swimsuit.",
+        "Return 2x Swimsuit to Rosemary."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Swimsuit",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand)",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Raccoon Card",
+          "1x Heart Gem"
+        ]
+      }
+    },
+    {
+      "id": "ep0-c3-08b",
+      "order": 34,
+      "title": "Rosemary - Runaway Student (Raccoon Only)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 0 - Ch.3: Our Prologue (8 Heart Gems)",
+      "npc": "Rosemary",
+      "npcIds": [
+        "rosemary"
+      ],
+      "location": "Beach Town - Paradise",
+      "minLevel": 20,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep0-c3-00",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Andrew - Meet the Natives! (Raccoon Class Only)",
+      "steps": [
+        "Speak to Rosemary in Beach Town - Paradise.",
+        "Hunt Fanta Fish (Lv.21) in Desert Beach Field 2 for 2x Pen and drill/buy 2x Paper.",
+        "Return 2x Pen and 2x Paper to Rosemary."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pen",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Fanta Fish (Lv.21)",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Paper",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10m (Sand) or Buy in Paradise Shop",
+            "map": "Desert Beach Field 2 - Sand Palace"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 35392,
+        "tmExp": 10032,
+        "galder": 0,
+        "items": [
+          "1x Raccoon Cub (Pet)",
+          "1x Solid Ring",
+          "1x Signed Agreement",
+          "1x Heart Gem"
+        ]
+      }
+    }
+  ]
+}

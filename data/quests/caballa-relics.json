@@ -1,0 +1,1833 @@
+{
+  "region": "Caballa Relics",
+  "quests": [
+    {
+      "id": "cr-key-00",
+      "order": 96,
+      "title": "Wise Hen - Caballa Relics Town - Azteca (Breadcrumb Quest)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Wise Hen",
+      "npcIds": [
+        "wise-hen"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-key-05b"
+        }
+      ],
+      "prereqText": "Level 50+, Stern Poppuri - Journey to Caballa Relics",
+      "steps": [
+        "Speak to Wise Hen at Gate of Caballa Relics.",
+        "Travel to Relics Town - Azteca and speak to Fortune Teller."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 207010,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "cr-key-01",
+      "order": 97,
+      "title": "Fortune Teller - Caballa Stickers (Key Quest 1)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-key-03"
+        }
+      ],
+      "prereqText": "Level 55+, Sandman - The Miracle of Sand",
+      "steps": [
+        "Speak to Fortune Teller in Relics Town - Azteca.",
+        "Complete any 10 of the 13 Caballa Sticker quests below to collect 10x Caballa Sticker.",
+        "Turn in 10x Caballa Sticker to Fortune Teller."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Caballa Sticker",
+          "qty": 10,
+          "source": {
+            "kind": "quest",
+            "from": "Complete any 10 of the 13 Caballa Sticker quests below",
+            "map": "Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 385599,
+        "tmExp": 1636201,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-01",
+      "order": 98,
+      "title": "Wise Hen - Wise Hen's Lunch [Caballa Sticker #1]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Wise Hen",
+      "npcIds": [
+        "wise-hen"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 45,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 45+",
+      "steps": [
+        "Speak to Wise Hen at Gate of Caballa Relics.",
+        "Hunt Leaf Bird (Lv.50) in Path to Caballa Relics for 3x Millet per cycle (15x total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Millet",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Leaf Bird (Lv.50)",
+            "map": "Path to Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 232886,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 2x Caballa Slate + 1x Wise Hen Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-02",
+      "order": 99,
+      "title": "Officer Tera - Aposis Data Collection [Caballa Sticker #2]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Officer Tera",
+      "npcIds": [
+        "officer-tera"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Officer Tera in Relics Town - Azteca.",
+        "Drill 2x Aposis Statue in Caballa Relics Fields 1-4 (20~40m, Land) and hunt Aposis (Lv.66) in Relics Field 3 or 4 for 2x Aposis' Stick per cycle (10x each total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Aposis Statue",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Aposis' Stick",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Aposis (Lv.66)",
+            "map": "Relics Field 3 & Field 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 249581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 2x Caballa Slate + 1x Officer Tera Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-03",
+      "order": 100,
+      "title": "Guide Sabrina - Contributing to the Fund [Caballa Sticker #3]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Guide Sabrina",
+      "npcIds": [
+        "guide-sabrina"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Guide Sabrina in Relics Town - Azteca.",
+        "Hunt Mimic (Lv.61) in Relics Fields 2, 3, & 4 for 3x Gold and drill 1x Golden Egg in Caballa Relics Fields 1-4 (20~40m, Land) per cycle (15x Gold & 5x Golden Egg total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Mimic (Lv.61)",
+            "map": "Relics Fields 2, 3, & 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Golden Egg",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 249581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: Caballa Slate + Light Attribute Stone | Cycle 5: 2x Caballa Slate + 1x Guide Sabrina Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-04",
+      "order": 101,
+      "title": "Fairy Feria - I'm Not a Crook! [Caballa Sticker #4]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Fairy Feria",
+      "npcIds": [
+        "fairy-feria"
+      ],
+      "location": "Relics Field 3 - Monkey Statues",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-05",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 50+, Active Guide Sabrina - Catch That Thief!",
+      "steps": [
+        "First, accept 'Catch That Thief!' from Guide Sabrina in Relics Town - Azteca.",
+        "Speak to Fairy Feria in Relics Field 3 - Monkey Statues.",
+        "Drill 3x Patterned Pottery and 3x Plain Pottery in Caballa Relics Fields 1-4 (20~40m, Land) per cycle (15x each total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Patterned Pottery",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Plain Pottery",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 249581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 1x Yellow Monkey Fur + 2x Caballa Slate + 1x Fairy Feria Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-05",
+      "order": 102,
+      "title": "Guide Sabrina - Catch That Thief! [Caballa Sticker #5]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Guide Sabrina",
+      "npcIds": [
+        "guide-sabrina"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-04"
+        }
+      ],
+      "prereqText": "Fairy Feria - I'm Not a Crook! (5 Cycles)",
+      "steps": [
+        "Bring 1x Yellow Monkey Fur (from Cycle 5 of Fairy Feria - I'm Not a Crook!) back to Guide Sabrina in Relics Town - Azteca for an instant second Caballa Sticker!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Yellow Monkey Fur",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Cycle 5 of Fairy Feria - I'm Not a Crook!",
+            "map": "Relics Field 3 - Monkey Statues"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 266220,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Caballa Slate",
+          "1x Guide Sabrina Card",
+          "1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-06",
+      "order": 103,
+      "title": "Vagabond Eloy - Need Coffee! [Caballa Sticker #6]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Vagabond Eloy",
+      "npcIds": [
+        "vagabond-eloy"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 55+",
+      "steps": [
+        "Speak to Vagabond Eloy in Relics Town - Azteca.",
+        "Hunt Guiana (Lv.66) in Caballa Relics Dungeons 1-4 to collect 2x Coffee Beans per cycle (10x total), and buy 5x Distilled Water + 5x Empty Potion Bottle.",
+        "Compound 5x Caballa Coffee with Compounder Paul in Azteca and turn in 1x per cycle."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Coffee Beans",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Guiana (Lv.66) - for Caballa Coffee",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Caballa Coffee",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul: 2x Coffee Beans + 1x Distilled Water + 1x Empty Potion Bottle",
+            "map": "Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 312835,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 2x Caballa Slate + 1x Vagabond Eloy Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-07",
+      "order": 104,
+      "title": "Indiana John - John's Request [Caballa Sticker #7]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Relics Field 2 - Hand of Giant",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 55+",
+      "steps": [
+        "Speak to Indiana John in Relics Field 2 - Hand of Giant.",
+        "Drill inside Caballa Relics Dungeons 1-4 (Depth 40~60m, Rock) for 2x Incense Burner and 2x Ash Box per cycle (10x each total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Incense Burner",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ash Box",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 312835,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 2x Caballa Slate + 1x Indiana John Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-08",
+      "order": 105,
+      "title": "Dr. Cat (Far Left) - Caballa V - Steel Punch [Caballa Sticker #8]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Dr. Cat (Far Left)",
+      "npcIds": [
+        "dr-cat-far-left"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-12",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 55+, Active Genius Cochma - Launch! Caballa V",
+      "steps": [
+        "First, speak to Genius Cochma in Relics Town - Azteca to accept 'Launch! Caballa V'.",
+        "Speak to Dr. Cat (Far Left) in Relics Town - Azteca.",
+        "Hunt Lima (Lv.70) in Caballa Relics Dungeons 1-4 for 3x Flying Weight and drill 2x Lapis Penna (40~60m, Rock) per cycle (15x Flying Weight & 10x Lapis Penna total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Flying Weight",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Lima (Lv.70)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lapis Penna",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 312835,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 1x Steel Punch + 2x Caballa Slate + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-09",
+      "order": 106,
+      "title": "Dr. Cat (Middle Left) - Caballa V - Steel Heart [Caballa Sticker #9]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Dr. Cat (Middle Left)",
+      "npcIds": [
+        "dr-cat-middle-left"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-12",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 55+, Active Genius Cochma - Launch! Caballa V",
+      "steps": [
+        "Speak to Dr. Cat (Middle Left) in Relics Town - Azteca.",
+        "Hunt Naranjo (Lv.84) in Caballa Relics Dungeons 3 & 4 for 3x Ancient Dice and drill 2x Tortoise Shell (40~60m, Rock) per cycle (15x Ancient Dice & 10x Tortoise Shell total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ancient Dice",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Naranjo (Lv.84)",
+            "map": "Caballa Relics Dungeons 3 & 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tortoise Shell",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 312835,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 1x Steel Heart + 2x Caballa Slate + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-10",
+      "order": 107,
+      "title": "Dr. Cat (Middle Right) - Caballa V - Steel Body [Caballa Sticker #10]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Dr. Cat (Middle Right)",
+      "npcIds": [
+        "dr-cat-middle-right"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-12",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 55+, Active Genius Cochma - Launch! Caballa V",
+      "steps": [
+        "Speak to Dr. Cat (Middle Right) in Relics Town - Azteca.",
+        "Hunt Chibcha (Lv.73) in Caballa Relics Dungeons 1, 2, & 3 for 3x Ancient Jar and drill 2x Malachite (40~60m, Rock) per cycle (15x Ancient Jar & 10x Malachite total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ancient Jar",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Chibcha (Lv.73)",
+            "map": "Caballa Relics Dungeons 1, 2, & 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Malachite",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 312835,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 1x Steel Body + 2x Caballa Slate + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-11",
+      "order": 108,
+      "title": "Dr. Cat (Far Right) - Caballa V - Laser Eyes [Caballa Sticker #11]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Dr. Cat (Far Right)",
+      "npcIds": [
+        "dr-cat-far-right"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-12",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 55+, Active Genius Cochma - Launch! Caballa V",
+      "steps": [
+        "Speak to Dr. Cat (Far Right) in Relics Town - Azteca.",
+        "Hunt Lima (Lv.70) in Caballa Relics Dungeons 1-4 for 3x Eyes of the Sun and drill 2x Selinolite (40~60m, Rock) per cycle (15x Eyes of the Sun & 10x Selinolite total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eyes of the Sun",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Lima (Lv.70)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Selinolite",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 312835,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 1x Laser Eyes + 2x Caballa Slate + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-12",
+      "order": 109,
+      "title": "Genius Cochma - Launch! Caballa V [Caballa Sticker #12]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-stk-08"
+        },
+        {
+          "quest": "cr-stk-09"
+        },
+        {
+          "quest": "cr-stk-10"
+        },
+        {
+          "quest": "cr-stk-11"
+        }
+      ],
+      "prereqText": "Completed all 4 Dr. Cat quests above",
+      "steps": [
+        "Turn in 1x Steel Punch, 1x Steel Heart, 1x Steel Body, and 1x Laser Eyes to Genius Cochma in Relics Town - Azteca for your 5th Caballa Sticker from the Caballa V set + Megalo UFO!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Steel Punch",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Dr. Cat - Assemble Caballa V-1",
+            "map": "Relics Town - Azteca"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Steel Heart",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Dr. Cat - Assemble Caballa V-2",
+            "map": "Relics Town - Azteca"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Steel Body",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Dr. Cat - Assemble Caballa V-3",
+            "map": "Relics Town - Azteca"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Laser Eyes",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Dr. Cat - Assemble Caballa V-4",
+            "map": "Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 333691,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Caballa Slate",
+          "1x Megalo UFO",
+          "1x Cochma Card",
+          "1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-stk-13",
+      "order": 110,
+      "title": "Sissy Cello - Find Scaredy Cat Cello's Lamp [Caballa Sticker #13]",
+      "categories": [
+        "sticker"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Sissy Cello",
+      "npcIds": [
+        "sissy-cello"
+      ],
+      "location": "Caballa Relics Dungeon 4",
+      "minLevel": 55,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 55+",
+      "steps": [
+        "Speak to Sissy Cello in Caballa Relics Dungeon 4.",
+        "Hunt Naranjo (Lv.84) in Dungeons 3 & 4 for 1x Lamplight and Chimu (Lv.78) in Dungeons 2 & 4 for 1x Smiling Face per cycle (5x each total)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lamplight",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Naranjo (Lv.84)",
+            "map": "Caballa Relics Dungeons 3 & 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Smiling Face",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Chimu (Lv.78)",
+            "map": "Caballa Relics Dungeons 2 & 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 347595,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycles 1-4: Caballa Slate + Light Attribute Stone | Cycle 5: 2x Caballa Slate + 1x Sissy Cello Card + 1x Caballa Sticker"
+        ]
+      }
+    },
+    {
+      "id": "cr-key-02",
+      "order": 111,
+      "title": "Keeper Julio - Recover Julio's Storage Key (Key Quest 2 Sub-Quest)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Keeper Julio",
+      "npcIds": [
+        "keeper-julio"
+      ],
+      "location": "Relics Field 4 - An Altar for Sacrifice",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-key-01"
+        }
+      ],
+      "prereqText": "Fortune Teller - Caballa Stickers + Active Borrow Gold Silk Pouch",
+      "steps": [
+        "Accept 'Borrow Gold Silk Pouch' from Fortune Teller in Relics Town - Azteca (must have Adventurer's Book in inventory).",
+        "Go to Relics Field 4 - An Altar for Sacrifice and speak to Keeper Julio.",
+        "Hunt Lima (Lv.70) in Caballa Relics Dungeons 1-4 to obtain 1x Julio's Key.",
+        "Return 1x Julio's Key to Keeper Julio to receive 1x Gold Silk Pouch."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Julio's Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Lima (Lv.70)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 385599,
+        "tmExp": 1636201,
+        "galder": 0,
+        "items": [
+          "1x Gold Silk Pouch"
+        ]
+      },
+      "notes": "CRITICAL WARNING: Do NOT return the Gold Silk Pouch to Keeper Julio yet! Take it back to Fortune Teller in Azteca FIRST!"
+    },
+    {
+      "id": "cr-key-03a",
+      "order": 112,
+      "title": "Fortune Teller - Borrow Gold Silk Pouch (Key Quest 2)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-key-02"
+        }
+      ],
+      "prereqText": "Keeper Julio - Recover Julio's Storage Key",
+      "steps": [
+        "Bring 1x Gold Silk Pouch and 1x Adventurer's Book to Fortune Teller in Relics Town - Azteca FIRST (before returning it to Keeper Julio!)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold Silk Pouch",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Keeper Julio - Recover Julio's Storage Key",
+            "map": "Relics Field 4 - An Altar for Sacrifice"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Sandman - The Miracle of Sand",
+            "map": "Beach Town - Paradise"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 385599,
+        "tmExp": 1636201,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon",
+          "Keeps Gold Silk Pouch & Adventurer's Book for Keeper Julio"
+        ]
+      }
+    },
+    {
+      "id": "cr-key-03b",
+      "order": 112,
+      "title": "Keeper Julio - Return the Gold Silk Pouch (Key Quest 3)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Keeper Julio",
+      "npcIds": [
+        "keeper-julio"
+      ],
+      "location": "Relics Field 4 - An Altar for Sacrifice",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-key-03a"
+        }
+      ],
+      "prereqText": "Fortune Teller - Borrow Gold Silk Pouch",
+      "steps": [
+        "Return to Keeper Julio in Relics Field 4 - An Altar for Sacrifice and hand over 1x Gold Silk Pouch + 1x Adventurer's Book."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold Silk Pouch",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "After showing to Fortune Teller",
+            "map": "Relics Town - Azteca"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "After showing to Fortune Teller",
+            "map": "Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 771198,
+        "tmExp": 3272403,
+        "galder": 0,
+        "items": [
+          "1x Weapon Ticket B",
+          "1x Adventurer's Book"
+        ]
+      }
+    },
+    {
+      "id": "cr-key-03c",
+      "order": 112,
+      "title": "Keeper Julio - Path to Oops Wharf (Key Finale)",
+      "categories": [
+        "key"
+      ],
+      "chapter": "Caballa Relics - Key Quests & 13 Caballa Stickers",
+      "npc": "Keeper Julio",
+      "npcIds": [
+        "keeper-julio"
+      ],
+      "location": "Relics Field 4 - An Altar for Sacrifice -> Gate of Oops Wharf",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-key-03b"
+        }
+      ],
+      "prereqText": "Keeper Julio - Return the Gold Silk Pouch",
+      "steps": [
+        "Speak to Keeper Julio in Relics Field 4 - An Altar for Sacrifice to accept 'Path to Oops Wharf'.",
+        "Travel to Gate of Oops Wharf and speak to Keeper Julio."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 166845,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 1,000 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-01a",
+      "order": 113,
+      "title": "Bunny Maid - Protecting Caballa Relics",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Bunny Maid",
+      "npcIds": [
+        "bunny-maid"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 45,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 45+",
+      "steps": [
+        "Speak to Bunny Maid at Gate of Caballa Relics.",
+        "Drill 3x Coin per cycle (15x total for 5 cycles) in Gate of Caballa Relics / Relics Fields 1-4 (Depth 20~40m, Land).",
+        "Turn in 3x Coin per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Coin",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Gate of Caballa Relics & Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 232886,
+        "tmExp": 0,
+        "galder": 50000,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 50,000 Galder + 1x Caballa Slate + 1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-01b",
+      "order": 113,
+      "title": "Weirdo Hen - Ordinary Hen's Lunch",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Weirdo Hen",
+      "npcIds": [
+        "weirdo-hen"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 45,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 45+",
+      "steps": [
+        "Speak to Weirdo Hen at Gate of Caballa Relics.",
+        "Hunt Mandragora (Lv.53) in Path to Caballa Relics / Relics Field 1 for 3x Thick Radish per cycle (15x total for 5 cycles).",
+        "Turn in 3x Thick Radish per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Thick Radish",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Mandragora (Lv.53)",
+            "map": "Path to Caballa Relics & Relics Field 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 232886,
+        "tmExp": 0,
+        "galder": 50000,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 50,000 Galder + 1x Caballa Slate + 1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-02",
+      "order": 114,
+      "title": "Monkey T - Caballa Island's Best Merchant (Massive TM EXP!)",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 45,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 45+",
+      "steps": [
+        "Speak to Monkey T in Relics Town - Azteca.",
+        "Drill 2x Gold Ring and 2x Gold Necklace in Caballa Relics Fields 1-4 (20~40m, Land) and hunt Stone Soldier (Lv.57) in Field 1/2 for 2x Gold Plated Wheel per cycle (10x each total for 5 cycles)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold Ring",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Gold Necklace",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Gold Plated Wheel",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Stone Soldier (Lv.57)",
+            "map": "Relics Field 1 & Field 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 902175,
+        "galder": 0,
+        "items": [
+          "4,510,875 Total TM EXP across 5 cycles!",
+          "Caballa Slates / Galder Coupons"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-03a",
+      "order": 115,
+      "title": "Favian - A Snack for Vinosh",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Favian",
+      "npcIds": [
+        "favian"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Favian at Gate of Caballa Relics.",
+        "Hunt Leaf Bird (Lv.50) in Path to Caballa Relics for 3x Boiled Corn per cycle (15x total for 5 cycles).",
+        "Turn in 3x Boiled Corn per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Boiled Corn",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Leaf Bird (Lv.50)",
+            "map": "Path to Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 299497,
+        "tmExp": 0,
+        "galder": 50000,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 50,000 Galder + 1x Caballa Slate + 1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-03b",
+      "order": 115,
+      "title": "Vinosh - Wanna Have Unique Food",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Vinosh",
+      "npcIds": [
+        "vinosh"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Vinosh at Gate of Caballa Relics.",
+        "Hunt Mandragora (Lv.53) in Path to Caballa Relics / Relics Field 1 for 3x Ginseng Root per cycle (15x total for 5 cycles).",
+        "Turn in 3x Ginseng Root per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ginseng Root",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Mandragora (Lv.53)",
+            "map": "Path to Caballa Relics & Relics Field 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 299497,
+        "tmExp": 0,
+        "galder": 50000,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 50,000 Galder + 1x Caballa Slate + 1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-03c",
+      "order": 115,
+      "title": "Mirabo Watty - Mirabo Watty's Hobby",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Mirabo Watty",
+      "npcIds": [
+        "mirabo-watty"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Mirabo Watty at Gate of Caballa Relics.",
+        "Hunt Stone Soldier (Lv.53/57) in Relics Field 1 & Field 2 for 3x Stone Soldier Hat per cycle (15x total for 5 cycles).",
+        "Turn in 3x Stone Soldier Hat per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Stone Soldier Hat",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Stone Soldier (Lv.53/57)",
+            "map": "Relics Field 1 & Field 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 299497,
+        "tmExp": 0,
+        "galder": 50000,
+        "items": [
+          "Cycles 1-4: 1x Caballa Slate | Cycle 5: 50,000 Galder + 1x Caballa Slate + 1x Wing Port (Caballa Relics)"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-04a",
+      "order": 116,
+      "title": "Clerk Z. Smith - Rare Stone Collection (Massive TM EXP!)",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Clerk Z. Smith",
+      "npcIds": [
+        "clerk-z-smith"
+      ],
+      "location": "Azteca Sauna (Relics Town - Azteca)",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Clerk Z. Smith inside Azteca Sauna (Relics Town - Azteca).",
+        "Drill 1x Jade, 1x Copal, and 1x Obsidian per cycle (5x each total for 5 cycles) in Caballa Relics Dungeons 1-4 (Depth 40~60m, Rock).",
+        "Turn in 1x Jade + 1x Copal + 1x Obsidian per cycle for 5 cycles (883,571 TM EXP per cycle = 4,417,855 TM EXP total!)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Jade",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Copal",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Obsidian",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Dungeons 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 883571,
+        "galder": 0,
+        "items": [
+          "4,417,855 Total TM EXP across 5 cycles!",
+          "Caballa Slates & 500 Galder Coupons"
+        ]
+      }
+    },
+    {
+      "id": "cr-gen-04b",
+      "order": 116,
+      "title": "Blacksmith Marx - Jade Steel Mine Collection",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Caballa Relics Mine - Jade Steel (via Relics Field 3)",
+      "minLevel": 50,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+",
+      "steps": [
+        "Speak to Blacksmith Marx in Caballa Relics Mine - Jade Steel (entered from Relics Field 3).",
+        "Drill 3x Pure Soft Iron in 1st Mining Lot of Jade Steel (Depth 50~130m, Rock) and 3x Flawless Cat's Eye in 2nd Mining Lot of Jade Steel per cycle (15x each total for 5 cycles).",
+        "Turn in 3x Pure Soft Iron + 3x Flawless Cat's Eye per cycle for 5 cycles."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Soft Iron",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 50~130m (Rock)",
+            "map": "1st Mining Lot of Jade Steel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Flawless Cat's Eye",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 50~130m (Rock)",
+            "map": "2nd Mining Lot of Jade Steel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 277312,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 5: 1x Ancient Steel + 1x Moonstone",
+          "Cycles 1-4: Caballa Slates & 500 Galder Coupons"
+        ]
+      }
+    },
+    {
+      "id": "cr-card-01",
+      "order": 117,
+      "title": "Card Girl - Caballa Relics Card Girl Quests (1 to 5)",
+      "categories": [
+        "general"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 45,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Lv.45+ (Quest 1), Lv.55+ (Quest 2), Lv.60+ (Quests 3-5)",
+      "steps": [
+        "Quest 1 (Lv.45+): Turn in 1x Mimic Card (from Mimic Lv.61, Fields 2-4) -> 505,218 TM EXP + 3x Arcana Brave Card.",
+        "Quest 2 (Lv.55+): Turn in 1x Chibcha Card (from Chibcha Lv.73, Dungeons 1-3) -> 2,097,694 TM EXP + 4x Arcana Brave Card.",
+        "Quest 3 (Lv.60+): Turn in 1x Chimu Card (from Chimu Lv.78, Dungeons 2 & 4) -> 2,562,815 TM EXP + 5x Arcana Brave Card.",
+        "Quest 4 (Lv.60+): Turn in 1x Mandragondra Card (from Mandragora Lv.53, Path/Field 1) -> 2,562,815 TM EXP + 6x Arcana Brave Card.",
+        "Quest 5 (Lv.60+): Turn in 1x Aposis Card (from Aposis Lv.66, Fields 3 & 4) -> 2,562,815 TM EXP + 7x Arcana Brave Card."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mimic Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Mimic (Lv.61)",
+            "map": "Relics Fields 2, 3, & 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chibcha Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Chibcha (Lv.73)",
+            "map": "Caballa Relics Dungeons 1, 2, & 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chimu Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Chimu (Lv.78)",
+            "map": "Caballa Relics Dungeons 2 & 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Mandragondra Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Mandragora (Lv.53)",
+            "map": "Path to Caballa Relics & Field 1"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Aposis Card",
+          "qty": 1,
+          "total": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Aposis (Lv.66)",
+            "map": "Relics Fields 3 & 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 10291357,
+        "galder": 0,
+        "items": [
+          "25x Arcana Brave Card (Save 1x for Lv.65 Arbiter of Courage!)"
+        ]
+      }
+    },
+    {
+      "id": "cr-mon-01",
+      "order": 118,
+      "title": "Azteca Monster Guild & Love Hunter Robin - Relics Monster Quests",
+      "categories": [
+        "monster"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Hunter Yuri, Assistant Hunter, Hunter Master & Love Hunter Robin",
+      "npcIds": [
+        "hunter-yuri",
+        "assistant-hunter",
+        "hunter-master",
+        "love-hunter-robin"
+      ],
+      "location": "Azteca Monster Guild & Caballa Relics Dungeon 1",
+      "minLevel": 45,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 45+ (5 Cycles per Bracket)",
+      "steps": [
+        "Hunter Yuri (Azteca Guild): Lv.45-55: 30x Mandragora (20m) | Lv.56-60: 30x Stone Soldier (20m) | Lv.61-65: 30x Mimic (20m) | Lv.66+: 30x Aposis (20m).",
+        "Assistant Hunter (Azteca Guild, Lv.50+): Hunt 10x Mutated Mandragora (Lv.58) in Field 1 in 20m -> 51,451 Base / 204,916 TM EXP + 6x 500 Galder Coupon.",
+        "Hunter Master (Azteca Guild, Lv.55+): Lv.55-65: 20x Guiana (15m) | Lv.66+: 20x Chimu (15m) -> Rewards Hat Ticket B!",
+        "Love Hunter Robin (Relics Dungeon 1, Lv.55+): Lv.55-70: 30x Lima (20m) -> 443,127 TM EXP | Lv.71+: 30x Naranjo (20m) -> 632,828 TM EXP + Caballa Slate."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mandragora / Stone Soldier / Mimic / Aposis / Guiana / Chimu / Lima / Naranjo",
+          "level": 53,
+          "count": 30,
+          "timeLimit": "15-20 min",
+          "map": "Caballa Relics Fields 1-4 & Dungeons 1-4"
+        }
+      ],
+      "rewards": {
+        "baseExp": 253459,
+        "tmExp": 632828,
+        "galder": 0,
+        "items": [
+          "1x Hat Ticket B",
+          "500 Galder Coupons",
+          "Caballa Slates"
+        ]
+      }
+    },
+    {
+      "id": "cr-daily-01",
+      "order": 119,
+      "title": "Pharaoh Boy - Daily Quest - Caballa Relics & Keeper Julio - Storage Mission 2",
+      "categories": [
+        "daily"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Pharaoh Boy & Keeper Julio",
+      "npcIds": [
+        "pharaoh-boy",
+        "keeper-julio"
+      ],
+      "location": "Relics Town - Azteca & Gate of Caballa Relics",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+ (Repeatable Daily)",
+      "steps": [
+        "Pharaoh Boy (Azteca): Hunt Punisher Aposis (Lv.71) in Relics Fields 1-4 for 1x Staff of Purification -> 617,097 TM EXP + 1x Daily Coupon.",
+        "Keeper Julio (Gate of Caballa Relics): Turn in 10x to 100x Patterned Pottery (drilled in Relics Fields 1-4, 20~40m Land) -> up to 6,731,964 TM EXP + 9x 500 Galder Coupon + 1x Chaos's Feather 50!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Staff of Purification",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Punisher Aposis (Lv.71)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Patterned Pottery",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1178094,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "4~9x 500 Galder Coupon",
+          "1x Chaos's Feather 50 (for 100x Pottery)"
+        ]
+      }
+    },
+    {
+      "id": "cr-job-01",
+      "order": 120,
+      "title": "2nd Job Advancement Quest (All 8 Job Masters in Relics Town - Azteca)",
+      "categories": [
+        "job"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Boxer Jeanne / Warrior Kei / Bard La Fimmel / Magician Louie / Explorer Reina / Inventor Gale / Entertainer Elicia / Card Master Taniel",
+      "npcIds": [
+        "boxer-jeanne-warrior-kei-bard-la-fimmel-magician-louie-explorer-reina-inventor-gale-entertainer-elicia-card-master-taniel"
+      ],
+      "location": "Relics Town - Azteca (or Garden of Skill Master)",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 50+ / TM Level 40+ (Lv.60 / TM 50 for Warrior Kei on older servers)",
+      "steps": [
+        "Enter Caballa Relics Dungeon 4 and hunt Kaboom (Lv.60) until you obtain 1x Growth Badge.",
+        "Visit Andrew in Beach Town - Paradise or Megalopolis Bank to purchase 3x 100k Galder Check (costs 105,000 Galder each = 315,000 Galder total).",
+        "Speak to your class's Job Master in Relics Town - Azteca and turn in 1x Growth Badge + 3x 100k Galder Check to advance to your 2nd Job!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Growth Badge",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Kaboom (Lv.60)",
+            "map": "Caballa Relics Dungeon 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "100k Galder Check",
+          "qty": 3,
+          "source": {
+            "kind": "shop",
+            "from": "Bought from Andrew (105,000 Galder each)",
+            "map": "Megalopolis Bank / Paradise"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000000,
+        "tmExp": 12000000,
+        "galder": 0,
+        "items": [
+          "2nd Job Advancement Sign (Fighting Spirit / Sound / Magic Tricks / Excavation / Creation / Popularity / Card)"
+        ]
+      }
+    },
+    {
+      "id": "cr-boss-01",
+      "order": 121,
+      "title": "Tombeth Boss Awakening Chain (Waking Dream -> Dread Slumber -> Rude Awakening -> Trident Maze)",
+      "categories": [
+        "dungeon"
+      ],
+      "chapter": "Caballa Relics - General, Card Girl, Monster, Daily, 2nd Job & Boss Tombeth",
+      "npc": "Rosemary, Explorer Reina, Fortune Teller, Guide Sabrina, Keeper Julio & Indiana John",
+      "npcIds": [
+        "rosemary",
+        "explorer-reina",
+        "fortune-teller",
+        "guide-sabrina",
+        "keeper-julio",
+        "indiana-john"
+      ],
+      "location": "Caballa Relics Dungeon 3 -> Boss Paths 1-3 -> The Trident Maze",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1-150",
+      "steps": [
+        "Step 1 (Rosemary, Relics Dungeon 3): Give 1x 500 Galder Coupon to teleport to Caballa Relics Boss Path 1 - Waking Dream.",
+        "Step 2 (Explorer Reina 1st, Waking Dream): Hunt 6x Guard Stone Soldier (Lv.60) in 1 min, then drill 1x Torn Clue 1 (40~60m, Rock) -> 1x Decoded Clue 1.",
+        "Step 3 (Explorer Reina 2nd, Waking Dream): Hunt 30x Awakened Guiana (Lv.70) in 10 min, then drill 1x Torn Clue 2 (40~60m, Rock) -> 1x Decoded Clue 2.",
+        "Step 4 (Fortune Teller, hidden southwest passage in Waking Dream): Hunt Awoken Mimic (Lv.65) for 5x Philosopher's Stone (500 weight each!) -> 1x Complete Decoded Doc.",
+        "Step 5 (Dread Slumber Rooms 1-16): Use Brick Guide Stones (+1 room) with Guide Sabrina or Chaotic + Fractal Guide Stones (+4 rooms) with Keeper Julio to reach Room 16 and enter Boss Path 3 - Rude Awakening.",
+        "Step 6 (Indiana John, Rude Awakening): Hunt 2x Tombeth's Soul (Lv.100) in 5 min to enter The Trident Maze, then speak to Guide Sabrina to enter Boss Tombeth's Room (Lv.121)!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "500 Galder Coupon",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Entry fee to Rosemary",
+            "map": "Caballa Relics Dungeon 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Torn Clue 1",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Boss Path 1 - Waking Dream"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Torn Clue 2",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Rock)",
+            "map": "Caballa Relics Boss Path 1 - Waking Dream"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Philosopher's Stone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Awoken Mimic (Lv.65) [Weight: 500 each!]",
+            "map": "Caballa Relics Boss Path 1 - Waking Dream"
+          }
+        },
+        {
+          "type": "hunt",
+          "monster": "Guard Stone Soldier (6x in 1m), Awakened Guiana (30x in 10m), Tombeth's Soul (2x in 5m), Boss Tombeth (Lv.121)",
+          "level": 121,
+          "count": 1,
+          "timeLimit": "Boss Trial",
+          "map": "The Trident Maze"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4874261,
+        "tmExp": 2944926,
+        "galder": 0,
+        "items": [
+          "Access to Boss Tombeth (Lv.121) & Guardian's Soul Equipment"
+        ]
+      }
+    }
+  ]
+}
