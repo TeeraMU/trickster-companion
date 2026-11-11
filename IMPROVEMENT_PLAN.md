@@ -302,18 +302,9 @@ Progress  ███████░░░░░░░░░░░░░  7/20 que
 
 หน้า wiki อื่นที่เกี่ยวข้อง: `Second_Job_Advancement`, `Third_Job_Advancement`, `New_Dark_Lord_Job_Advancement`, `How_to_Obtain_3rd_Job_Skills`
 
-**ลำดับการเติมข้อมูลที่แนะนำ** (ทำทีละ batch และ validate ทุก batch)
+**ลำดับการเติมข้อมูล**: ดู Roadmap ข้อ 12 — Phase 1 ปรับ 138 เควสเดิม (EP0–EP1 + region) เข้า schema ใหม่ → Phase 2 EP2 → Phase 3 EP3–EP6 ทีละ EP · Job Change / Progression / side content แทรกตามจังหวะ
 
-| Batch | เนื้อหา | หมายเหตุ |
-|---|---|---|
-| A | ปรับ 138 เควสเดิมเข้า schema ใหม่ | ไม่มีเนื้อหาใหม่ แต่ได้ ID/map/monster ครบ |
-| B | Job Change ขั้น 1–2 ทุกสาย | ผู้เล่นใหม่ถามบ่อย |
-| C | EP1 ที่เหลือ + EP2 | ต่อเนื่องจากของเดิม |
-| D | EP3 – EP4 + โซนที่เกี่ยวข้อง (Oops Wharf, Mermaid Palace, Mirage Island, Ghost Blue …) | |
-| E | EP5 – EP6 + Job ขั้น 3 / Dark Lord | |
-| F | Tower of Chaos, Eclipse's Shadow, Shadow World, Monkey T's Requests, Storage, Card Quests | ทำเป็น "side content" |
-
-**ขั้นตอนต่อ batch**: ดึงจาก wiki → แปลงเป็น JSON (ให้ Claude ช่วย parse) → รัน validate → เทียบกับเกมจริงอย่างน้อย 1 เควสต่อ chapter → ติด `source.verified`
+**ขั้นตอนต่อ EP**: ดึงจาก wiki → แปลงเป็น JSON (ให้ Claude ช่วย parse) → รัน validate → เทียบกับเกมจริงอย่างน้อย 1 เควสต่อ chapter → ติด `source.verified`
 
 > Server นี้มี 9 ตัวละคร (รวม **White Bear** ที่ wiki เก่าไม่มี) → `classes.json` ทำตาม 9 ตัวนี้ ส่วนเควสเปลี่ยนอาชีพของ White Bear และ Progression Quest ต้องเก็บข้อมูลจากในเกมเอง
 > เพราะไม่รู้ว่า server เปิดถึง EP ไหน → เติมข้อมูลตาม EP ที่ server เปิดจริงก่อน ส่วนที่เหลือค่อยทำเมื่อ server เปิด
@@ -512,7 +503,7 @@ data/builds/
 
 ## 11. ไอเดียเพิ่มเติม (นอกเหนือจากที่ขอ)
 
-### ✅ ยืนยันแล้ว: รายการ "ห้ามขาย" (ทำใน P2)
+### ✅ ยืนยันแล้ว: รายการ "ห้ามขาย" (ทำใน Phase 1 ข้อ 1.5)
 - หน้ารวม item ทุกชิ้นที่ **ยังต้องใช้กับเควสที่ยังไม่เสร็จ** พร้อมจำนวนรวมที่ต้องเก็บไว้ และชื่อเควสที่ใช้
 - ไอคอน 🔒 บน item นั้นทุกที่ในแอป (การ์ดเควส, หน้า map, inventory)
 - เรียงตาม "ใช้หลายเควสที่สุด" ก่อน → รู้เลยว่าชิ้นไหนสำคัญ
@@ -532,28 +523,72 @@ data/builds/
 
 ---
 
-## 12. Roadmap ที่แนะนำ
+## 12. Roadmap (แบ่ง Phase ใหม่: ใช้ได้ก่อน → EP2 → EP ถัดไป)
 
-| Phase | เป้าหมาย | Deliverable | ขนาดงาน |
+> หลักคิด: **ทำให้ใช้เล่นจริงได้ก่อน** แล้วค่อยเติมเนื้อหา **ทีละ EP** ฟีเจอร์เสริมค่อยตามมา
+> แต่ละ Phase จบด้วยการ release (merge เข้า `main` + tag) → เว็บจริงอัปเดต
+
+### Phase 1 — ใช้ได้จริง (EP0–EP1) → release `v0.2.0`
+
+**เป้าหมาย**: เปิดบนมือถือแล้วเล่น EP0–EP1 ได้จนจบ **โดยไม่ต้องเปิด wiki** — รู้ว่าต้องเก็บอะไรกี่ชิ้น ส่งกี่รอบ NPC อยู่ไหน ไป map ไหน ตีตัวไหน ขุดอะไร
+
+| # | งาน | อ้างอิง | Branch |
 |---|---|---|---|
-| **P0 – Foundation** | แยก data ออกจาก UI, schema ใหม่, validate script, migrate progress | `data/*.json`, `scripts/validate.js`, แอปหน้าตาเดิมแต่อ่านจาก JSON | M |
-| **P1 – Go Mobile** | Public repo + GitHub Pages + PWA + Export/Import + responsive/bottom nav | URL ใช้ได้บนมือถือ | S–M |
-| **P1.5 – Sync** | Login Google + Firebase sync แบบ local-first (ข้อ 7.1) | progress ตรงกันทุกเครื่อง | S–M |
-| **P2 – Clarity** | Quest card ใหม่, NPC directory, แท็บ category (เควสอยู่ได้หลายแท็บ), Sticker book, inventory, **รายการห้ามขาย** | แก้ pain point #1, #3 | M |
-| **P3 – Map Priority** | หน้า "ไป map ไหนดี": เรียง map ตามจำนวนเควสที่ช่วย, ตีตัวไหน / ดรอปกี่ชิ้น / ขุดอะไรกี่อัน (เลเวลเป็นแค่ badge) | แก้ pain point #2 | M |
-| **P3.5 – Friends & Party** | Share link → Friend list + ของต้องการ/มีเผื่อ + match → Party shopping list รวม (ข้อ 7.3) | เพื่อนเห็น progress กัน | M |
-| **P4 – Content** | Batch B–F ตาม EP ที่ server เปิดจริง + Progression Quest + White Bear | ข้อมูลครบ | L (ทยอยทำ) |
-| **P5 – Map/Monster DB** | Map browser, monster/item page, รูปเก็บใน repo | UI แบบ wiki | M |
-| **P6 – Builds** | Build guide, stat sim, skill tree, leveling guide | pain point #7 | L |
+| 1.1 | แยกข้อมูล 138 เควสเดิมเป็น JSON + schema ใหม่ (objective แยก drop / drill / shop / compound / quest-reward, NPC/map เป็น ID) + validate script + ย้าย progress เดิมไม่ให้หาย | ข้อ 2 | `refactor/split-quest-data` |
+| 1.2 | **หน้า Episode**: ภาพรวม + ของที่ต้องเก็บจัดตาม map (สลับ ทั้ง EP / Chapter ปัจจุบัน) + ลำดับเควส (เควสที่ทำอยู่กางเต็ม) | ข้อ 3.4 | `feature/episode-view` |
+| 1.3 | **Quest card ใหม่**: ต่อรอบ / รวม / เหลือ, รับเควสที่ / ส่งที่, สูตรผสม, คำเตือน ⚠ | ข้อ 3.1 | `feature/quest-card` |
+| 1.4 | **แท็บ Category** ไอคอนใหญ่ เควสอยู่ได้หลายแท็บ | ข้อ 5 | `feature/category-tabs` |
+| 1.5 | **ของในมือ** (+/−) หักจากยอดที่ต้องเก็บ + **รายการห้ามขาย** 🔒 | ข้อ 3.3, 11 | `feature/inventory` |
+| 1.6 | **มือถือ**: responsive + bottom nav + Export/Import progress + Add to Home Screen (PWA) | ข้อ 7, 8 | `feature/mobile` |
 
-> P4 (เติมข้อมูล) ทำคู่ขนานกับ P2–P3 ได้ เพราะเมื่อ schema นิ่งแล้ว ข้อมูลกับ UI ก็แยกกันทำได้
+**ยังไม่ทำใน Phase 1**: login/sync, เพื่อน/party, หน้า "ไป map ไหนดี" แบบรวมทุก EP (หน้า Episode ข้อ 1.2 ตอบคำถาม "ไป map ไหน ตีอะไร ขุดอะไร" ภายใน EP ได้แล้ว), map/monster DB, build guide
+**เสร็จเมื่อ**: เล่น EP1 จบทั้ง EP บนมือถือได้จากแอปอย่างเดียว
+
+### Phase 2 — EP2 → release `v0.3.0`
+
+**เป้าหมาย**: หน้า EP2 ใช้ได้ครบเหมือน EP1
+
+| # | งาน | Branch |
+|---|---|---|
+| 2.1 | อ่านหน้า `Episode_2_Quests` บน wiki → เช็กว่าข้อมูลครบแค่ไหน (จำนวนของ, placeholder ค้าง) | `data/ep2-quests` |
+| 2.2 | แปลงเป็น JSON ตาม schema + เพิ่ม NPC / map / monster / item ใหม่ของ EP2 | `data/ep2-quests` |
+| 2.3 | ดึงรูปที่ EP2 ใช้ (ข้อ 7.2) | `data/ep2-quests` |
+| 2.4 | รัน validate + เทียบกับในเกมอย่างน้อย 1 เควสต่อ chapter → ติด `source.verified` | `data/ep2-quests` |
+| 2.5 | แก้ UI ที่ข้อมูล EP2 ทำให้เห็นปัญหา (ถ้ามี) | `fix/...` |
+
+**เสร็จเมื่อ**: เล่น EP2 จบได้จากแอปอย่างเดียว
+
+### Phase 3 — EP ถัดไป ทีละ EP (ทยอยทำ)
+
+ใช้ขั้นตอนเดียวกับ Phase 2 ทุก EP — **1 EP = 1 branch `data/epN-quests` = 1 release**
+
+| ลำดับ | เนื้อหา | Release |
+|---|---|---|
+| 3.1 | EP3 (3 ch + Bonus) | `v0.4.0` |
+| 3.2 | EP4 (3 ch + Bonus) | `v0.5.0` |
+| 3.3 | EP5 (3 ch + Bonus) | `v0.6.0` |
+| 3.4 | EP6 (4 ch + Bonus, ข้อมูล wiki ไม่ครบ ต้องเติมจากในเกม) | `v0.7.0` |
+
+- **Job Change / Progression Quest / White Bear** แทรกเป็น release ย่อยเมื่อถึงเลเวลที่ต้องใช้ (branch `data/job-change-2nd` ฯลฯ)
+- ถ้าเจอว่า server ยังไม่เปิดถึง EP ไหน หยุดรอที่ EP นั้น แล้วไปทำ Phase 4 ระหว่างรอ
+
+### Phase 4 — ฟีเจอร์เสริม (แทรกระหว่าง Phase 3 ได้)
+
+| งาน | อ้างอิง |
+|---|---|
+| หน้า "ไป map ไหนดี" แบบรวมทุก EP / ทุกหมวด | ข้อ 4 |
+| Login Google + sync (Firebase) | ข้อ 7.1 |
+| แชร์ progress ให้เพื่อน / Party | ข้อ 7.3 |
+| Map browser, หน้า monster / item, NPC directory | ข้อ 3.2, 8 |
+| Sticker Book, side content (Tower of Chaos, Eclipse's Shadow ฯลฯ) | ข้อ 5, 6 |
+| Build guide, stat sim, skill tree, leveling guide | ข้อ 10 |
 
 ---
 
 ## 13. Tech Stack ที่แนะนำ
 
 - **คงความเรียบง่าย**: Vanilla JS (ES modules) + JSON ยังไม่ต้องใช้ framework ใช้ได้ทันทีบน GitHub Pages
-- ถ้า UI เริ่มซับซ้อน (ราว P3) ค่อยย้ายไป **Vite + Preact/Svelte** (bundle เล็ก เหมาะกับมือถือ) แล้ว deploy ผ่าน GitHub Actions
+- ถ้า UI เริ่มซับซ้อน (ราว Phase 4) ค่อยย้ายไป **Vite + Preact/Svelte** (bundle เล็ก เหมาะกับมือถือ) แล้ว deploy ผ่าน GitHub Actions
 - Node script สำหรับ: convert ข้อมูลเดิม, validate, ดาวน์โหลดและ optimize รูป (เป็น webp)
 - State: `localStorage` + versioned migration → ภายหลังค่อยเพิ่ม cloud sync ถ้าจำเป็น
 
@@ -569,8 +604,9 @@ data/builds/
 - ✅ ขอบเขตข้อมูล: EP0–EP6 ตาม wiki (EP6 เป็นตอนสุดท้าย)
 - ✅ ระบบแนะนำ: เน้น "ไป map ไหนก่อน" ไม่ใช้เลเวลเป็นตัวตัดสิน
 - ✅ หมวด: แท็บ Category ใหญ่ กดง่าย และเควสเดียวอยู่ได้หลายแท็บ
-- ✅ รายการห้ามขาย: ทำใน P2
-- ✅ แชร์ progress ให้เพื่อน / Party: ทำใน P3.5 (opt-in, ค่าเริ่มต้น private)
+- ✅ รายการห้ามขาย: ทำใน Phase 1
+- ✅ แชร์ progress ให้เพื่อน / Party: ทำใน Phase 4 (opt-in, ค่าเริ่มต้น private)
+- ✅ ลำดับงาน: Phase 1 ใช้ได้จริง (EP0–EP1) → Phase 2 EP2 → Phase 3 EP3–EP6 ทีละ EP → Phase 4 ฟีเจอร์เสริม
 
 **ยังเปิดอยู่**
 1. playtrickster.com เปิดถึง EP ไหนแล้ว (เช็กในเกมหรือ Discord) → ใช้จัดลำดับ Batch ข้อ 6
