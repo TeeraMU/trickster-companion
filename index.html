@@ -109,10 +109,7 @@
         📖 Episodes
       </button>
       <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')">
-        📜 Quest Checklist <span class="badge-count" id="badgeQuestCount">0</span>
-      </button>
-      <button class="view-tab" id="tabBtnCalc" onclick="switchView('calc')">
-        🎒 Items &amp; Drill Calculator <span class="badge-count" id="badgeItemCount">0</span>
+        📜 Quests &amp; Items <span class="badge-count" id="badgeQuestCount">0</span>
       </button>
       <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')">
         ⛏️ Drill Depth &amp; Soil Guide
@@ -161,44 +158,13 @@
 
     <!-- VIEW 1: QUEST CHECKLIST -->
     <div id="viewQuests" class="hidden">
-      <div id="questListContainer"></div>
-    </div>
-
-    <!-- VIEW 2: ITEM & DRILL CALCULATOR -->
-    <div id="viewCalc" class="hidden">
-      <div class="detail-box" style="margin-bottom: 18px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
-        <div>
-          <h4 style="margin-bottom:4px;">🧮 Dynamic Quest Item &amp; Drill Calculator</h4>
-          <div style="font-size:0.84rem; color:var(--text-secondary);">
-            Automatically sums every item needed across your currently filtered quests. As you check off quests (or individual cycles), the required quantities update in real time!
-          </div>
-        </div>
-        <div style="display:flex; gap:10px; align-items:center;">
-          <label style="font-size:0.84rem; display:flex; align-items:center; gap:6px; cursor:pointer;">
-            <input type="checkbox" id="calcOnlyRemaining" checked onchange="renderCalculator()" style="accent-color:var(--accent-blue); width:16px; height:16px;" />
-            <strong>Only Count Uncompleted Quests / Remaining Cycles</strong>
-          </label>
-        </div>
+      <div class="ep-subtabs" role="tablist">
+        <button type="button" role="tab" id="ckTabQuests" onclick="setChecklistPane('quests')">📜 Quests</button>
+        <button type="button" role="tab" id="ckTabFarm" onclick="setChecklistPane('farm')">🎒 Items to collect</button>
       </div>
-
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h3><span>TO Required Drill Items (By Map &amp; Depth)</span> <span class="badge-count" id="calcDrillCount">0</span></h3>
-          <p class="calc-desc">Bring the right drill for the soil type and depth listed below to dig up all required quest items efficiently.</p>
-          <div id="calcDrillList"></div>
-        </div>
-
-        <div class="calc-card">
-          <h3><span>⚔️ Required Monster Drops (By Monster &amp; Map)</span> <span class="badge-count" id="calcDropCount">0</span></h3>
-          <p class="calc-desc">Exact monster drop quantities grouped by monster level and map location.</p>
-          <div id="calcDropList"></div>
-        </div>
-
-        <div class="calc-card">
-          <h3><span>⚗️ Compounding, Shop &amp; Quest Chain Items</span> <span class="badge-count" id="calcOtherCount">0</span></h3>
-          <p class="calc-desc">Items crafted with Compounder Paul, bought from NPCs, or earned from prerequisite sub-quests.</p>
-          <div id="calcOtherList"></div>
-        </div>
+      <div class="ep-layout" id="checklistLayout" data-pane="quests">
+        <div class="ck-quests" data-pane="quests"><div id="questListContainer"></div></div>
+        <div class="ck-farm" data-pane="farm" id="checklistFarm"></div>
       </div>
     </div>
 
@@ -605,16 +571,17 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", calc: "Calc", drillref: "DrillRef", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", drillref: "DrillRef", roadmap: "Roadmap" };
 
     function switchView(viewName) {
+      if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
       if (!VIEWS[viewName]) viewName = "episodes";
       Object.entries(VIEWS).forEach(([v, id]) => {
         document.getElementById("tabBtn" + id).classList.toggle("active", v === viewName);
         document.getElementById("view" + id).classList.toggle("hidden", v !== viewName);
       });
       // the region cards and filters belong to the checklist / calculator only
-      const usesFilters = viewName === "quests" || viewName === "calc";
+      const usesFilters = viewName === "quests";
       document.getElementById("filtersPanel").classList.toggle("hidden", !usesFilters);
       document.getElementById("regionCardsContainer").classList.toggle("hidden", !usesFilters);
       if (appState.currentView !== viewName) { appState.currentView = viewName; saveState(); }
@@ -787,72 +754,40 @@
       });
     }
 
-    function renderCalculator() {
-      const onlyRem = document.getElementById("calcOnlyRemaining")?.checked ?? true;
+    // "Items to collect" next to the checklist: same filters as the quest list.
+    function renderChecklistFarm() {
       const filtered = getFilteredQuests();
-
-      const drillMap = new Map();
-      const dropMap = new Map();
-      const otherMap = new Map();
-
-      filtered.forEach(q => {
-        const isDone = !!appState.completedQuests[q.id];
-        const cDone = isDone ? q.cycles : (appState.completedCycles[q.id] || 0);
-        const cyclesToCount = onlyRem ? Math.max(0, q.cycles - cDone) : q.cycles;
-        if (cyclesToCount <= 0) return;
-
-        (q.items || []).forEach(item => {
-          const neededQty = item.qty * cyclesToCount;
-          const key = `${item.name}||${item.map}`;
-          const targetMap = item.method === "Drill" ? drillMap : item.method === "Drop" ? dropMap : otherMap;
-
-          if (!targetMap.has(key)) {
-            targetMap.set(key, {
-              name: item.name,
-              qty: 0,
-              method: item.method,
-              source: item.source,
-              map: item.map,
-              quests: []
-            });
-          }
-          const entry = targetMap.get(key);
-          entry.qty += neededQty;
-          if (!entry.quests.includes(q.title)) entry.quests.push(q.title);
-        });
+      const everything = !!appState.checklistFarmAll;
+      const progress = everything ? { completedQuests: {}, completedCycles: {} } : appState;
+      const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
+      const farm = TQEpisode.farmList(filtered, progress, statuses);
+      const cat = appState.selectedCategory && appState.selectedCategory !== "All" ? CATEGORY_TABS.find(t => t.key === appState.selectedCategory) : null;
+      const reg = appState.selectedRegion && appState.selectedRegion !== "All" ? appState.selectedRegion : null;
+      const scope = [cat ? cat.icon + " " + cat.label : null, reg].filter(Boolean).join(" · ") || "all quests";
+      document.getElementById("checklistFarm").innerHTML = TQEpisode.renderFarmPanel(farm, {
+        switchHtml: `
+          <div class="pref-switch" role="group" aria-label="Which items">
+            <button type="button" aria-pressed="${!everything}" onclick="setChecklistFarmAll(false)">Still needed</button>
+            <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
+          </div>`,
+        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map. Items handed over by earlier quests aren't listed.`
       });
+      const pane = appState.checklistPane === "farm" ? "farm" : "quests";
+      document.getElementById("checklistLayout").setAttribute("data-pane", pane);
+      document.getElementById("ckTabQuests").setAttribute("aria-selected", String(pane === "quests"));
+      document.getElementById("ckTabFarm").setAttribute("aria-selected", String(pane === "farm"));
+    }
 
-      const totalUnique = drillMap.size + dropMap.size + otherMap.size;
-      document.getElementById("badgeItemCount").textContent = totalUnique;
-      document.getElementById("calcDrillCount").textContent = drillMap.size;
-      document.getElementById("calcDropCount").textContent = dropMap.size;
-      document.getElementById("calcOtherCount").textContent = otherMap.size;
+    function setChecklistFarmAll(all) {
+      appState.checklistFarmAll = all;
+      saveState();
+      renderChecklistFarm();
+    }
 
-      const formatList = (mapObj, emptyMsg) => {
-        if (mapObj.size === 0) {
-          return `<div style="padding:18px;text-align:center;color:var(--text-muted);font-size:0.85rem;">${emptyMsg}</div>`;
-        }
-        return Array.from(mapObj.values()).map(it => {
-          const iconUrl = getItemImage(it.name);
-          return `
-          <div class="item-check-row">
-            ${iconUrl ? `<img class="item-icon-lg" src="${iconUrl}" alt="${it.name}" loading="lazy" />` : ''}
-            <div style="flex:1;">
-              <div><strong>${it.name}</strong> <span style="color:var(--accent-cyan);font-size:0.8rem;">@ ${it.map}</span></div>
-              <div style="font-size:0.76rem;color:var(--text-secondary);">${it.source}</div>
-              <div style="font-size:0.72rem;color:var(--text-muted);">Used in: ${it.quests.join(" | ")}</div>
-            </div>
-            <div>
-              <span class="item-qty-badge">${it.qty}x</span>
-            </div>
-          </div>
-        `;
-        }).join("");
-      };
-
-      document.getElementById("calcDrillList").innerHTML = formatList(drillMap, "✅ No remaining drill items needed for the current filter!");
-      document.getElementById("calcDropList").innerHTML = formatList(dropMap, "✅ No remaining monster drops needed for the current filter!");
-      document.getElementById("calcOtherList").innerHTML = formatList(otherMap, "✅ No remaining compounded/shop/quest items needed!");
+    function setChecklistPane(pane) {
+      appState.checklistPane = pane;
+      saveState();
+      renderChecklistFarm();
     }
 
     // ============================================================================
@@ -952,7 +887,7 @@
       renderEpisodes();
       renderStatsAndRegions();
       renderQuestList();
-      renderCalculator();
+      renderChecklistFarm();
     }
 
     // ============================================================================

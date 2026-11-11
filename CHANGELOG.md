@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- The separate Items & Drill Calculator tab is gone: **📜 Quests & Items** now shows the quest list with an **🎒 Items to collect** panel beside it (same filters: category, region, class, search, status), grouped by map like the Episodes page. Switch between *Still needed* and *Everything*. On phones, two sub-tabs.
+- Fixed: Card Girl cards were counted once per run (5×) in item totals; each card is needed once.
 - Big category tabs with icons and done/total counts (Story, Key, Sticker, Card Girl, Town, Monster, Dungeon, Daily, Job) replace the row of small filter pills. Tabs with no quests for your class or region are hidden.
 - A quest can now be in more than one category: the three sticker hand-in Key quests also show under Sticker, and Card Identification (Fairy Nono) also under Card Girl. Card Girl quests have their own tab instead of being mixed into Town.
 - New quest card: NPC picture, name and place; ⚠️ badges for special conditions (e.g. *Must be in-game DAYTIME*, *Have 1x Super Alarm Clock in inventory*); a **To do** list that is always visible, with each item's icon, amount and where to get it (monster and level, drill depth, shop, combine recipe, or 🔗 which earlier quest hands it over and ✓ once you have it); rewards at a glance. Quests with several runs show *per run · total · left*. Steps, tips and prerequisites open with ▾.
