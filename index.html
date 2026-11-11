@@ -903,6 +903,40 @@
       renderEpisodes();
     }
 
+    // Only the pins this player placed (not the ones shipped with the site), as compact JSON.
+    function myPinsJson() {
+      const pins = savedPins();
+      const sorted = Object.fromEntries(Object.keys(pins).sort().map(k => [k, pins[k]]));
+      return JSON.stringify(sorted);
+    }
+
+    // Open a GitHub issue form with the pins filled in (scripts/merge-pins.js --issues reads them).
+    function sendNpcPins() {
+      const json = myPinsJson();
+      const base = "https://github.com/TeeraMU/trickster-companion/issues/new?template=npc-pins.yml&title=" +
+        encodeURIComponent("[Pins] " + Object.keys(savedPins()).length + " NPC pins");
+      const url = base + "&pins=" + encodeURIComponent(json);
+      if (url.length > 7500) {
+        // too long for a link: copy instead and open the empty form
+        copyNpcPins();
+        alert("Too many pins for one link. They are copied: paste them into the form that opens.");
+        window.open(base, "_blank", "noopener");
+        return;
+      }
+      window.open(url, "_blank", "noopener");
+    }
+
+    // Copy the pins as text to paste in a chat (LINE / Discord) for the project owner.
+    async function copyNpcPins() {
+      const text = "Trickster Companion NPC pins:\n" + myPinsJson();
+      try {
+        await navigator.clipboard.writeText(text);
+        alert("Pins copied. Paste them in a message to the project owner.");
+      } catch (e) {
+        prompt("Copy these pins:", text);
+      }
+    }
+
     // Download every pin (shipped + yours) as data/npc-pins.json, ready to commit to the repo.
     function exportNpcPins() {
       const pins = allPins();

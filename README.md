@@ -20,7 +20,11 @@ Quest tracker & guides for **Trickster Online** (fan-made): how many items each 
 Press **🐞 Report** at the top of the page (or the link at the bottom of a quest's details). It opens a short form on GitHub (a free GitHub account is needed). Mention what you saw in game.
 
 ### NPC pins
-On the Route, tap **📍 Pin NPCs**, choose an NPC and tap where they stand on the map. Then **⬇️ Export pins** and send the `npc-pins.json` file to the project owner so everyone gets them.
+On the Route, tap **📍 Pin NPCs**, choose an NPC and tap where they stand on the map. Then share them:
+- **📤 Send**: opens a GitHub form with your pins filled in, just press *Submit* (free GitHub account), or
+- **📋 Copy**: paste the text in a message to the project owner (LINE / Discord).
+
+The owner merges everyone's pins (`node scripts/merge-pins.js`) so they show for all players.
 
 ## What's inside
 - Episode 0 – Episode 1 plus Coral Beach, Desert Beach, Megalopolis and Caballa Relics quests (138)
