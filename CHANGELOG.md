@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- New quest card: NPC picture, name and place; ⚠️ badges for special conditions (e.g. *Must be in-game DAYTIME*, *Have 1x Super Alarm Clock in inventory*); a **To do** list that is always visible, with each item's icon, amount and where to get it (monster and level, drill depth, shop, combine recipe, or 🔗 which earlier quest hands it over and ✓ once you have it); rewards at a glance. Quests with several runs show *per run · total · left*. Steps, tips and prerequisites open with ▾.
+- Finished quests fold down to their title line.
 - New **📖 Episodes** page (now the start page): pick EP0 / EP1, see progress and EXP, the quest you should do next (opened and marked ▶ Now), finished quests folded away, and locked quests with what they still need.
 - **Items to collect** for the whole episode or just the current chapter, grouped by map: which monster drops what and how many, what to drill and at which depth, what to buy and what to combine. Items handed over by earlier quests are left out; items only needed by locked quests are marked 🔒.
 - On phones the Episodes page switches between 📜 Quests and 🎒 Items with two tabs.
