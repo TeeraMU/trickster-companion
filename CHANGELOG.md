@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.0 (2026-11-12): Episodes, route and a new look
+
 - New logo next to the name and a browser-tab / home-screen icon (Add to Home Screen uses `site.webmanifest`).
 - Description is now *Quest tracker & Guides*.
 - Character wallpaper on the right of the page, shown softly through frosted panels. Fixed: the background pictures never showed because the page body painted over them.
