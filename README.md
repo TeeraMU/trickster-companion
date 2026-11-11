@@ -10,6 +10,13 @@ A fan-made quest tracker and farming helper for **Trickster Online**. It shows h
 - Item calculator: total items to drop or drill for the remaining quests
 - Progress is saved in your browser (localStorage)
 
+## Run locally
+```bash
+node scripts/serve.js        # then open http://localhost:8080/
+node scripts/validate.js     # check data/*.json
+```
+Opening `index.html` directly as a file will not work: browsers block it from reading `data/*.json`.
+
 ## Roadmap
 See [IMPROVEMENT_PLAN.md](IMPROVEMENT_PLAN.md) (written in Thai).
 

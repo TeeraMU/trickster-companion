@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 2,
+  "files": [
+    "ep0.json",
+    "coral-beach.json",
+    "desert-beach.json",
+    "megalopolis.json",
+    "ep1.json",
+    "caballa-relics.json"
+  ]
+}

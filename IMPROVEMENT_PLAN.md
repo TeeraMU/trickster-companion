@@ -91,10 +91,10 @@ data/
 ```
 
 **งานย่อย**
-- [ ] เขียนสคริปต์ (Node) แปลง `QUESTS` เดิม 138 เควสเป็น JSON ใหม่แบบอัตโนมัติ แล้วไล่แก้ที่เหลือด้วยมือ
-- [ ] สร้าง `maps / monsters / npcs / items` จากข้อความที่ซ้ำกันในเควสเดิม (dedupe)
-- [ ] สคริปต์ **validate**: เช็กว่า ID ที่อ้างถึงมีอยู่จริง, prereq ไม่วนกันเอง, ไม่มี qty ติดลบ, ทุก item มี source
-- [ ] migrate progress เดิมใน `localStorage` (`_v1` → `_v2`) ไม่ให้ของที่ติ๊กไว้หาย
+- [x] แปลง `QUESTS` เดิม 138 เควสเป็น JSON (schema v2) แล้ว — `data/quests/*.json` แยกตาม region, prereq เป็น ID แล้ว 133/138 (อีก 5 เป็นเงื่อนไขเลเวลล้วน) ✅ Phase 1.1
+- [~] `npcs.json` (75 NPC) + `images.json` (630 รูป) เสร็จแล้ว · `maps / monsters / items` ยังเป็นข้อความในเควส → แยกตอนทำ 1.2 (หน้า Episode ต้องจัดกลุ่มตาม map/มอน)
+- [x] `scripts/validate.js`: field ครบ, id ไม่ซ้ำ, category/class/source ถูกชนิด, NPC และ prereq ที่อ้างถึงมีจริง, prereq ไม่วน ✅
+- [x] progress เดิมใช้ต่อได้เลย: id เควสและ step เหมือนเดิมทุกตัว key `trickster_quest_tracker_v1` ไม่ต้อง migrate ✅
 
 ---
 

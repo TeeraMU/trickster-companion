@@ -39,9 +39,27 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   delete it on GitHub after merging (`git push origin --delete <branch>`).
 - Keep one branch to one piece of work. Don't rewrite pushed history (no force-push to `dev` or `main`).
 
+## Project layout
+
+- `index.html`: the app (UI, styles, rendering). It holds no quest data.
+- `js/data.js`: loads `data/*.json` and adapts schema v2 to the shape the renderer uses.
+- `data/quests/index.json`: the list of quest files, in load order. Each `data/quests/<region>.json`
+  holds `{ region, quests: [...] }`; the app sorts all quests by `order`.
+- `data/npcs.json` (id, name), `data/images.json` (name -> image URL).
+- `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
+
+Quest ids and the order of `steps` are what saved progress is keyed on: never rename an id or
+reorder steps of an existing quest (players would lose ticks). Add new steps at the end.
+
+## Run locally
+
+The app reads `data/*.json` with `fetch`, which browsers block for `file://` pages, so open it through
+the local server: `node scripts/serve.js` then http://localhost:8080/.
+
 ## Before merging into `dev`
 
-- Open `index.html` in a browser (desktop and phone width) and check the changed part works.
+- Data changed: `node scripts/validate.js` shows 0 errors.
+- Open the app through `node scripts/serve.js` (desktop and phone width) and check the changed part works.
 - Add a line under `## Unreleased` in `CHANGELOG.md` for anything a user would notice.
 - Data changes: say in the commit message where the data came from (wiki page or in-game check).
 

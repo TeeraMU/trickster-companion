@@ -1,0 +1,1182 @@
+{
+  "region": "Episode 1",
+  "quests": [
+    {
+      "id": "ep1-c1-01",
+      "order": 76,
+      "title": "Monkey T - Honest Monkey T (Ep.1 Ch.1 - Step 1)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 45+",
+      "steps": [
+        "Speak to Monkey T at Gate of Caballa Relics to start Episode 1: Chapter 1 - Nefertiti's Necklace.",
+        "Give him 5x 50 Galder Coupon to receive 1x Faded Necklace."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "50 Galder Coupon",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace / Mirage Island or Monkey T Loyalty quests",
+            "map": "Gate of Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Faded Necklace"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-02",
+      "order": 77,
+      "title": "Old Artist - Old Artist's Request (Ep.1 Ch.1 - Step 2)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Relics Field 1 - Atlas",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-01"
+        }
+      ],
+      "prereqText": "Monkey T - Honest Monkey T (Must be in-game DAYTIME!)",
+      "steps": [
+        "Speak to Old Artist in Relics Field 1 - Atlas during in-game daytime.",
+        "Drill 2x Ginseng in Southeast/Southwest Forest (10~20m, Land), hunt Forest Wasp (Lv.47) in SE/SW Forest for 1x Honey, and buy 1x Distilled Water.",
+        "Visit Compounder Paul (in Megalopolis Square or Relics Town - Azteca) to compound 1x Ginseng Tea.",
+        "Bring 1x Ginseng Tea and 1x Faded Necklace to Old Artist to receive 1x Empty Container."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ginseng",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 10~20m (Land) - for Ginseng Tea",
+            "map": "Southeast Forest / Southwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Honey",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Forest Wasp (Lv.47) - for Ginseng Tea",
+            "map": "Southeast Forest / Southwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Distilled Water",
+          "qty": 1,
+          "source": {
+            "kind": "shop",
+            "from": "Bought from Item Shop - for Ginseng Tea",
+            "map": "Megalopolis / Azteca Shop"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ginseng Tea",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul: 2x Ginseng + 1x Honey + 1x Distilled Water",
+            "map": "Megalopolis Square / Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Empty Container"
+        ]
+      },
+      "notes": "IMPORTANT: Old Artist only accepts and completes this quest during in-game DAYTIME!"
+    },
+    {
+      "id": "ep1-c1-03a",
+      "order": 78,
+      "title": "Guide Sabrina - Sabrina's Sacred Water (Ep.1 Ch.1 - Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Guide Sabrina",
+      "npcIds": [
+        "guide-sabrina"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-03b",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Old Artist - Old Artist's Needs",
+      "steps": [
+        "Accept 'Old Artist's Needs' from Old Artist in Relics Field 1 - Atlas.",
+        "Go to Relics Town - Azteca and speak to Guide Sabrina.",
+        "Hunt Mimic (Lv.61) in Relics Fields 2, 3, & 4 for 5x Gold, and drill in Caballa Relics Fields 1-4 (20~40m, Land) for 1x Golden Egg.",
+        "Give 1x Empty Container, 5x Gold, and 1x Golden Egg to Guide Sabrina to receive 1x Fully-Filled Container."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Mimic (Lv.61)",
+            "map": "Relics Fields 2, 3, & 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Golden Egg",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Fully-Filled Container"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-03b",
+      "order": 79,
+      "title": "Old Artist - Old Artist's Needs (Ep.1 Ch.1 - Step 3)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Relics Field 1 - Atlas",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-03a"
+        }
+      ],
+      "prereqText": "Guide Sabrina - Sabrina's Sacred Water",
+      "steps": [
+        "Return 1x Fully-Filled Container to Old Artist in Relics Field 1 - Atlas."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fully-Filled Container",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Guide Sabrina - Sabrina's Sacred Water",
+            "map": "Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Nefertiti's Portrait",
+          "1x Mermaid Babe's Portrait"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-04a",
+      "order": 80,
+      "title": "Monkey T - Antique Mirror! (Ep.1 Ch.1 - Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-04d",
+          "active": true
+        },
+        {
+          "quest": "ep1-c1-04b",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Old Artist - Help Old Artist & Model Mermaid Babe - Mermaid Babe's Complaint",
+      "steps": [
+        "Speak to Old Artist in Relics Field 1 - Atlas to start 'Help Old Artist'.",
+        "Speak to Model Mermaid Babe in Relics Field 1 - Atlas to start 'Mermaid Babe's Complaint'.",
+        "Go to Gate of Caballa Relics and give 2x 500 Galder Coupon to Monkey T to receive 1x Antique Mirror."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "500 Galder Coupon",
+          "qty": 2,
+          "source": {
+            "kind": "quest",
+            "from": "Obtained from Quests / Monster Guilds / Drilling",
+            "map": "Gate of Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Antique Mirror"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-04b",
+      "order": 81,
+      "title": "Model Mermaid Babe - Mermaid Babe's Complaint (Ep.1 Ch.1 - Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Model Mermaid Babe",
+      "npcIds": [
+        "model-mermaid-babe"
+      ],
+      "location": "Relics Field 1 - Atlas",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-04a"
+        }
+      ],
+      "prereqText": "Monkey T - Antique Mirror!",
+      "steps": [
+        "Give 1x Mermaid Babe's Portrait and 1x Antique Mirror to Model Mermaid Babe in Relics Field 1 - Atlas."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Antique Mirror",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Monkey T - Antique Mirror!",
+            "map": "Gate of Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Antique Mirror (Returned for Louis Bitton)"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-04c",
+      "order": 82,
+      "title": "Louis Bitton - Louis the Great (Ep.1 Ch.1 - Sub-Quest)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Louis Bitton",
+      "npcIds": [
+        "louis-bitton"
+      ],
+      "location": "Relics Town - Azteca",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-04d",
+          "active": true
+        }
+      ],
+      "prereqText": "Active Model Mermaid Babe - A Mirror for the Beauty",
+      "steps": [
+        "Accept 'A Mirror for the Beauty' from Model Mermaid Babe in Relics Field 1 - Atlas.",
+        "Speak to Louis Bitton in Relics Town - Azteca.",
+        "Go to Relics Field 4 - An Altar for Sacrifice and drill 1x Fantastic Powder (Depth 20~40m, Land).",
+        "Give 1x Antique Mirror and 1x Fantastic Powder to Louis Bitton to receive 1x Fantastic Hand Mirror."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fantastic Powder",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 20~40m (Land)",
+            "map": "Relics Field 4 - An Altar for Sacrifice"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Fantastic Hand Mirror"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-04d",
+      "order": 83,
+      "title": "Model Mermaid Babe - A Mirror for the Beauty & Old Artist - Help Old Artist (Ep.1 Ch.1 - Step 4)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Model Mermaid Babe & Old Artist",
+      "npcIds": [
+        "model-mermaid-babe",
+        "old-artist"
+      ],
+      "location": "Relics Field 1 - Atlas",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-04c"
+        }
+      ],
+      "prereqText": "Louis Bitton - Louis the Great",
+      "steps": [
+        "Give 1x Fantastic Hand Mirror to Model Mermaid Babe in Relics Field 1 - Atlas to receive 1x Chuu~ Check (+257,613 Base / 121,252 TM EXP).",
+        "Give 1x Chuu~ Check to Old Artist in Relics Field 1 - Atlas to receive 1x Restored Necklace (+257,613 Base / 121,252 TM EXP)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fantastic Hand Mirror",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Louis Bitton - Louis the Great",
+            "map": "Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 515226,
+        "tmExp": 242504,
+        "galder": 0,
+        "items": [
+          "1x Chuu~ Check",
+          "1x Restored Necklace"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-05",
+      "order": 84,
+      "title": "Love Hunter Robin - Necklace's Owner (Ep.1 Ch.1 - Step 5)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Path to Caballa Relics",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-04d"
+        }
+      ],
+      "prereqText": "Old Artist - Help Old Artist",
+      "steps": [
+        "Go to Path to Caballa Relics and speak to Love Hunter Robin.",
+        "Hand over 1x Restored Necklace to receive 1x Aquamarine Pendant."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Restored Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Old Artist - Help Old Artist",
+            "map": "Relics Field 1 - Atlas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257613,
+        "tmExp": 121252,
+        "galder": 0,
+        "items": [
+          "1x Aquamarine Pendant"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c1-06",
+      "order": 85,
+      "title": "Rosaline Gracia - Rosaline's Document (Ep.1 Ch.1 Finale)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.1: Nefertiti's Necklace (Lv.45+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Megalopolis Square",
+      "minLevel": 45,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-05"
+        }
+      ],
+      "prereqText": "Love Hunter Robin - Necklace's Owner",
+      "steps": [
+        "Speak to Rosaline Gracia in Megalopolis Square.",
+        "Hunt Forest Wasp (Lv.47) in Southeast/Southwest Forest for 1x Honey and 2x Royal Jelly, and buy 2x Distilled Water.",
+        "Compound 1x Honey Tea with Compounder Paul in Megalopolis Square.",
+        "Give 1x Honey Tea and 1x Nefertiti's Portrait (from Old Artist's Needs) to Rosaline Gracia to complete Episode 1: Chapter 1!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Honey",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Forest Wasp (Lv.47) - for Honey Tea",
+            "map": "Southeast Forest / Southwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Royal Jelly",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Forest Wasp (Lv.47) - for Honey Tea",
+            "map": "Southeast Forest / Southwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Distilled Water",
+          "qty": 2,
+          "source": {
+            "kind": "shop",
+            "from": "Bought from Item Shop - for Honey Tea",
+            "map": "Megalopolis Shop"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Honey Tea",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul: 1x Honey + 2x Royal Jelly + 2x Distilled Water",
+            "map": "Megalopolis Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1288065,
+        "tmExp": 606262,
+        "galder": 0,
+        "items": [
+          "1x Unknown Old Document"
+        ]
+      },
+      "notes": "Completes Episode 1: Chapter 1 - Nefertiti's Necklace!"
+    },
+    {
+      "id": "ep1-c2-01a",
+      "order": 86,
+      "title": "Skipper Min - Skipper Min's Sightings [Weird Piece 1]",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.2: Unknown Ancient Box (Lv.50+)",
+      "npc": "Skipper Min",
+      "npcIds": [
+        "skipper-min"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c1-06"
+        },
+        {
+          "quest": "ep1-c2-01d",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 50+, Rosaline Gracia - Rosaline's Document + Active Indiana John - Weird Box",
+      "steps": [
+        "First, enter Caballa Relics Dungeon 1 and speak to Indiana John to start 'Weird Box'.",
+        "Travel to Gate of Oops Wharf and speak to Skipper Min.",
+        "Drill 3x Thick Rope in Oops Wharf Fields 1-4 (Depth 40~60m, Land) and collect 5x Piece of Lumber (dropped by Black Foe Lv.79 in Wharf Field 2/3 OR drilled in Oops Wharf Fields 1-4).",
+        "Return to Skipper Min to receive 1x Weird Piece 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Thick Rope",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 40~60m (Land)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Piece of Lumber",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Black Foe (Lv.79) OR Drill 40~60m (Land)",
+            "map": "Oops Wharf Field 2 & 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 331296,
+        "tmExp": 376990,
+        "galder": 0,
+        "items": [
+          "1x Weird Piece 1"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c2-01b",
+      "order": 87,
+      "title": "Shaman Girl Jia - Jia's Deja Vu [Weird Piece 2]",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.2: Unknown Ancient Box (Lv.50+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c2-01a"
+        }
+      ],
+      "prereqText": "Skipper Min - Skipper Min's Sightings",
+      "steps": [
+        "Speak to Shaman Girl Jia in Wharf Field 4 - Chrono Wharf.",
+        "Hunt Crow (Lv.88) in Wharf Field 4 - Chrono Wharf for 2x Bell Cluster.",
+        "Return 2x Bell Cluster to Shaman Girl Jia to receive 1x Weird Piece 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bell Cluster",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Crow (Lv.88)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 331296,
+        "tmExp": 376990,
+        "galder": 0,
+        "items": [
+          "1x Weird Piece 2"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c2-01c",
+      "order": 88,
+      "title": "Vagabond Eloy - Eloy's Tale [Weird Piece 3]",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.2: Unknown Ancient Box (Lv.50+)",
+      "npc": "Vagabond Eloy",
+      "npcIds": [
+        "vagabond-eloy"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c2-01b"
+        }
+      ],
+      "prereqText": "Shaman Girl Jia - Jia's Deja Vu",
+      "steps": [
+        "Speak to Vagabond Eloy in Oops Wharf.",
+        "Hunt Quiem (Lv.75) in Wharf Field 1 - Trap Zone or Wharf Field 2 - Devil's Canyon for 3x Baby Powder.",
+        "Return 3x Baby Powder to Vagabond Eloy to receive 1x Weird Piece 3."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Baby Powder",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Trap Zone & Field 2 - Devil's Canyon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 331296,
+        "tmExp": 376990,
+        "galder": 0,
+        "items": [
+          "1x Weird Piece 3"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c2-01d",
+      "order": 89,
+      "title": "Indiana John - Weird Box (Ep.1 Ch.2 - Step 1)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.2: Unknown Ancient Box (Lv.50+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c2-01a"
+        },
+        {
+          "quest": "ep1-c2-01b"
+        },
+        {
+          "quest": "ep1-c2-01c"
+        }
+      ],
+      "prereqText": "Collected Weird Piece 1, 2, and 3",
+      "steps": [
+        "Return Weird Piece 1, Weird Piece 2, and Weird Piece 3 to Indiana John in Caballa Relics Dungeon 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Piece 1",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Skipper Min - Weird Piece (1)",
+            "map": "Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Piece 2",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Shaman Girl Jia - Weird Piece (2)",
+            "map": "Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Piece 3",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Vagabond Eloy - Weird Piece (3)",
+            "map": "Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 331296,
+        "tmExp": 376990,
+        "galder": 0,
+        "items": [
+          "1x Completed Box Key",
+          "1x Soil Attribute Stone",
+          "1x Light Attribute Stone"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c2-02",
+      "order": 90,
+      "title": "Indiana John - Box's Identity & Weird Box Password ('Vendetta') (Ep.1 Ch.2 Finale)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.2: Unknown Ancient Box (Lv.50+)",
+      "npc": "Indiana John & Weird Box",
+      "npcIds": [
+        "indiana-john",
+        "weird-box"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "minLevel": 50,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c2-01d"
+        }
+      ],
+      "prereqText": "Indiana John - Weird Box",
+      "steps": [
+        "Speak to Indiana John in Caballa Relics Dungeon 1 to accept 'Box's Identity'.",
+        "Click the Weird Box in Caballa Relics Dungeon 1 and select the password 'Vendetta' to receive 1x Doc from Weird Box. (WARNING: Picking any other option teleports you away!)",
+        "Hunt Naranjo (Lv.84) in Caballa Relics Dungeon 3 or 4 to collect 2x Lamplight.",
+        "Return 1x Doc from Weird Box and 2x Lamplight to Indiana John in Caballa Relics Dungeon 1 to complete Episode 1: Chapter 2!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Doc from Weird Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Weird Box Password: 'Vendetta'",
+            "map": "Caballa Relics Dungeon 1"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lamplight",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Naranjo (Lv.84)",
+            "map": "Caballa Relics Dungeon 3 & 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1656480,
+        "tmExp": 1884952,
+        "galder": 0,
+        "items": [
+          "1x Memo from Weird Box"
+        ]
+      },
+      "notes": "PASSWORD ALERT: Choose 'Vendetta' at the Weird Box! Choosing DISASTER, FANTASIA, FRIENDLY, HAPPYEND, or MIRAGE will teleport you out of the dungeon!"
+    },
+    {
+      "id": "ep1-c3-01",
+      "order": 91,
+      "title": "Tango - Tango's Love (Ep.1 Ch.3 - Step 1)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.3: Harkon Searchers (Lv.52+)",
+      "npc": "Tango",
+      "npcIds": [
+        "tango"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 52,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 52+, Indiana John - Box's Identity",
+      "steps": [
+        "Speak to Tango at Gate of Oops Wharf to start Episode 1: Chapter 3 - Harkon Searchers.",
+        "Travel to Path to Mermaid Palace 1 or 2 and drill (Depth 60~80m, Rock) or hunt Pirate Boxer B (Lv.86) / Cone Stone (Lv.84) for Harkon Heirloom boxes.",
+        "Open Harkon Heirloom boxes until you get 1x Harkon Necklace (keep any Harkon Ornaments and Harkon Shards you get for Steps 3 and 5!).",
+        "Return 1x Harkon Necklace to Tango."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Opened from Harkon Heirloom (Drilled 60~80m Rock or dropped by Pirate Boxer B Lv.86)",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 363639,
+        "tmExp": 429317,
+        "galder": 0,
+        "items": [
+          "1x Silk Handkerchief",
+          "3x Volcano Water"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c3-02",
+      "order": 92,
+      "title": "Explorer Reina - Reina's Preparation (Ep.1 Ch.3 - Step 2)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.3: Harkon Searchers (Lv.52+)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Path to Mermaid Palace 1",
+      "minLevel": 52,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c3-01"
+        }
+      ],
+      "prereqText": "Tango - Tango's Love",
+      "steps": [
+        "Speak to Explorer Reina in Path to Mermaid Palace 1.",
+        "Hunt Pirate Boxer B (Lv.86) in Path to Mermaid Palace 1 or 2 to collect 5x Power Plan Battery.",
+        "Return 5x Power Plan Battery to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Power Plan Battery",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Boxer B (Lv.86)",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 363639,
+        "tmExp": 429317,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c3-03",
+      "order": 93,
+      "title": "Explorer Reina - Reina's Exploration (Ep.1 Ch.3 - Step 3)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.3: Harkon Searchers (Lv.52+)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Path to Mermaid Palace 1",
+      "minLevel": 52,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c3-02"
+        }
+      ],
+      "prereqText": "Explorer Reina - Reina's Preparation",
+      "steps": [
+        "Speak to Explorer Reina in Path to Mermaid Palace 1.",
+        "Collect 3x Harkon Ornament by opening Harkon Heirloom boxes (from Path to Mermaid Palace 1 & 2) or drilling in Techichi Volcano Fields (230~250m).",
+        "Return 3x Harkon Ornament to Explorer Reina to receive 1x Special Polisher."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon Ornament",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Opened from Harkon Heirloom (Path to Mermaid Palace 1 & 2)",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 363639,
+        "tmExp": 429317,
+        "galder": 0,
+        "items": [
+          "1x Special Polisher"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c3-04",
+      "order": 94,
+      "title": "Fairy Nono - Fairy in a Harkon (Ep.1 Ch.3 - Step 4)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.3: Harkon Searchers (Lv.52+)",
+      "npc": "Fairy Nono",
+      "npcIds": [
+        "fairy-nono"
+      ],
+      "location": "Path to Mermaid Palace 2",
+      "minLevel": 52,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c3-03"
+        }
+      ],
+      "prereqText": "Explorer Reina - Reina's Exploration",
+      "steps": [
+        "Speak to Fairy Nono in Path to Mermaid Palace 2 with 1x Silk Handkerchief, 1x Special Polisher, and 1x Volcano Water in your inventory to receive 1x Nono's Note."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Silk Handkerchief",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Tango - Tango's Love",
+            "map": "Path to Mermaid Palace 2"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Special Polisher",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Explorer Reina - Reina's Exploration",
+            "map": "Path to Mermaid Palace 2"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Volcano Water",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Tango - Tango's Love",
+            "map": "Path to Mermaid Palace 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 363639,
+        "tmExp": 429317,
+        "galder": 0,
+        "items": [
+          "1x Nono's Note"
+        ]
+      }
+    },
+    {
+      "id": "ep1-c3-05",
+      "order": 95,
+      "title": "Fairy Nono - Fairy's Favor (Episode 1 Grand Finale!)",
+      "categories": [
+        "episode"
+      ],
+      "chapter": "Episode 1 - Ch.3: Harkon Searchers (Lv.52+)",
+      "npc": "Fairy Nono",
+      "npcIds": [
+        "fairy-nono"
+      ],
+      "location": "Path to Mermaid Palace 2",
+      "minLevel": 52,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep1-c3-04"
+        }
+      ],
+      "prereqText": "Fairy Nono - Fairy in a Harkon",
+      "steps": [
+        "Speak to Fairy Nono in Path to Mermaid Palace 2.",
+        "Collect 1x Harkon Shard (opened from Harkon Heirloom), 2x Super Bean Shell (dropped by Super Golden Mole Lv.80 in Path to Mermaid Palace 1 & 2), and 1x Fairy's Drink (drilled in Path to Mermaid Palace 1 & 2, Depth 60~80m, Rock).",
+        "Visit Compounder Paul at Oops Wharf to compound 1x Transparent Medicine.",
+        "Return 1x Transparent Medicine and 1x Nono's Note to Fairy Nono in Path to Mermaid Palace 2 to complete Episode 1!"
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon Shard",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Opened from Harkon Heirloom - for Transparent Medicine",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Super Bean Shell",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Super Golden Mole (Lv.80) - for Transparent Medicine",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fairy's Drink",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drill Depth 60~80m (Rock) - for Transparent Medicine",
+            "map": "Path to Mermaid Palace 1 & 2"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Transparent Medicine",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul (Oops Wharf): 1x Harkon Shard + 2x Super Bean Shell + 1x Fairy's Drink",
+            "map": "Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1818198,
+        "tmExp": 2146586,
+        "galder": 0,
+        "items": [
+          "1x Nono Ring (Episode 1 Completion Ring!)"
+        ]
+      },
+      "notes": "Congratulations! Completing this quest finishes all of Episode 1: Harkon Searchers!"
+    }
+  ]
+}
