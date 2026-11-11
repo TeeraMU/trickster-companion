@@ -103,6 +103,9 @@ for (const { q, file } of quests) {
     if (!byId.has(p.quest)) err(at, `prerequisite "${p.quest}" does not exist`);
     if (p.quest === q.id) err(at, "quest requires itself");
   }
+  // prereqText names more quests ("NPC - Title") than prereqs links: a link was probably missed.
+  const named = (q.prereqText.match(/[A-Z][\w.' ]+ - [A-Z]/g) || []).length;
+  if (named > (q.prereqs || []).length) warn(at, `prereqText names ${named} quest(s) but only ${(q.prereqs || []).length} linked: "${q.prereqText}"`);
   // A quest needing another one *finished* should come after it in play order.
   for (const p of q.prereqs || []) {
     const other = byId.get(p.quest);
