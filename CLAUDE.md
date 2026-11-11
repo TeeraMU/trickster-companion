@@ -41,7 +41,11 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 
 ## Project layout
 
-- `index.html`: the app (UI, styles, rendering). It holds no quest data.
+- `index.html`: the app (markup and rendering). It holds no quest data.
+- `css/app.css`: all styles. Colors are tokens on `:root` (light) and `:root[data-theme="dark"]`;
+  use the tokens (`--text-*`, `--accent-*` for fills, `--ink-*` for text on tints), never raw colors.
+  Keep text at WCAG AA (4.5:1) in both themes.
+- `assets/`: images we host (`bg/key-art.webp`), credited in `assets/CREDITS.md`.
 - `js/data.js`: loads `data/*.json` and adapts schema v2 to the shape the renderer uses.
 - `data/quests/index.json`: the list of quest files, in load order. Each `data/quests/<region>.json`
   holds `{ region, quests: [...] }`; the app sorts all quests by `order`.
