@@ -20,4 +20,4 @@ Open an [issue](../../issues) with the quest name and what is wrong.
 Trickster Online and all related images are property of their respective owners. This is a non-commercial fan project and is not affiliated with or endorsed by the game's developer or publisher. Images are sourced from the ggftw Trickster wiki (via wikimirror.lifeto.co). Quest data may be inaccurate; please verify in game.
 
 ## Contributing
-Work happens on `dev`; `main` is what the live site shows. Branch from `dev` (`feature/...`, `fix/...`, `data/...`, `docs/...`) and open a pull request into `dev`. Full rules are in [CLAUDE.md](CLAUDE.md).
+Work happens on `dev`; `main` is what the live site shows. Work is done on `feature/...`, `fix/...`, `data/...`, `docs/...` branches from `dev` and merged back (git flow). Full rules are in [CLAUDE.md](CLAUDE.md).

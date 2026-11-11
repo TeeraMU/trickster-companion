@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Branching rules: `dev` / `main` with `feature/`, `fix/`, `data/`, `docs/`, `chore/` work branches (see `CLAUDE.md`).
+- Branching rules: `dev` / `main` with `feature/`, `fix/`, `data/`, `docs/`, `chore/` work branches, merged locally without pull requests (see `CLAUDE.md`).
 
 ## 0.1.0 (2026-11-11): First public version
 
