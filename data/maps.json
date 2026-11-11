@@ -1,0 +1,1420 @@
+{
+  "source": "ggftw Trickster wiki via wikimirror.lifeto.co (map pages, portal lists); boxes measured on the region overview maps (px, 530x540)",
+  "regions": [
+    {
+      "id": "coral-beach",
+      "name": "Coral Beach",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f9/Coral_Beach_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    },
+    {
+      "id": "desert-beach",
+      "name": "Desert Beach",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/29/Desert_Beach_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    },
+    {
+      "id": "megalopolis",
+      "name": "Megalopolis",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ed/Megalopolis_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    },
+    {
+      "id": "caballa-relics",
+      "name": "Caballa Relics",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/73/Caballa_Relics_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    },
+    {
+      "id": "oops-wharf",
+      "name": "Oops Wharf",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/69/Oops_Wharf_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    }
+  ],
+  "maps": [
+    {
+      "id": "coral-town",
+      "name": "Coral Town - Blooming Cora",
+      "region": "coral-beach",
+      "kind": "town",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5f/Coral_Town_-_Blooming_Cora_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coral_Town_-_Blooming_Cora.html",
+      "box": [
+        198,
+        260,
+        348,
+        390
+      ],
+      "links": [
+        "coral-field-1",
+        "coral-field-3"
+      ]
+    },
+    {
+      "id": "coral-field-1",
+      "name": "Coral Beach Field 1 - Blue Wave",
+      "region": "coral-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/01/Coral_Beach_Field_1_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coral_Beach_Field_1_-_Blue_Wave.html",
+      "box": [
+        20,
+        215,
+        195,
+        360
+      ],
+      "links": [
+        "coral-town",
+        "coral-field-2"
+      ]
+    },
+    {
+      "id": "coral-field-2",
+      "name": "Coral Beach Field 2 - Passionate Sun",
+      "region": "coral-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/16/Coral_Beach_Field_2_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coral_Beach_Field_2_-_Passionate_Sun.html",
+      "box": [
+        20,
+        70,
+        195,
+        215
+      ],
+      "links": [
+        "coral-field-1",
+        "coral-field-3"
+      ]
+    },
+    {
+      "id": "coral-field-3",
+      "name": "Coral Beach Field 3 - Sunny Beach",
+      "region": "coral-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Coral_Beach_Field_3_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coral_Beach_Field_3_-_Sunny_Beach.html",
+      "box": [
+        198,
+        82,
+        358,
+        257
+      ],
+      "links": [
+        "coral-town",
+        "coral-field-2",
+        "coral-dark-cave"
+      ]
+    },
+    {
+      "id": "coral-dark-cave",
+      "name": "Coral Beach - Dark Cave",
+      "region": "coral-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/thumb/6/65/Coral_Beach_-_Dark_Cave_big.png/500px-Coral_Beach_-_Dark_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coral_Beach_-_Dark_Cave.html",
+      "box": [
+        362,
+        97,
+        522,
+        155
+      ],
+      "links": [
+        "coral-field-3",
+        "master-mongs-lair",
+        "gate-of-desert-beach"
+      ]
+    },
+    {
+      "id": "master-mongs-lair",
+      "name": "Coral Beach - Dark Cave (Master Mong's Lair)",
+      "region": "coral-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5b/Master_Mong%27s_Lair_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coral_Beach_-_Dark_Cave_(Master_Mong%27s_Lair).html",
+      "parent": "coral-dark-cave",
+      "links": [
+        "coral-dark-cave"
+      ]
+    },
+    {
+      "id": "gate-of-desert-beach",
+      "name": "Gate of Desert Beach",
+      "region": "desert-beach",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ee/Gate_of_Desert_Beach_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Desert_Beach.html",
+      "box": [
+        248,
+        462,
+        343,
+        527
+      ],
+      "links": [
+        "coral-dark-cave",
+        "desert-field-1"
+      ]
+    },
+    {
+      "id": "paradise",
+      "name": "Beach Town - Paradise",
+      "region": "desert-beach",
+      "kind": "town",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f1/Desert_Beach_Town_-_Paradise_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Beach_Town_-_Paradise.html",
+      "box": [
+        185,
+        180,
+        343,
+        302
+      ],
+      "links": [
+        "desert-field-1",
+        "desert-field-2",
+        "desert-field-3",
+        "desert-field-4"
+      ]
+    },
+    {
+      "id": "desert-field-1",
+      "name": "Desert Beach Field 1 - Delta Island",
+      "region": "desert-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b0/Desert_Beach_Field_1_-_Delta_Island_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Desert_Beach_Field_1_-_Delta_Island.html",
+      "box": [
+        185,
+        302,
+        343,
+        462
+      ],
+      "links": [
+        "gate-of-desert-beach",
+        "paradise"
+      ]
+    },
+    {
+      "id": "desert-field-2",
+      "name": "Desert Beach Field 2 - Sand Palace",
+      "region": "desert-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cb/Desert_Beach_Field_2_-_Sand_Palace_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Desert_Beach_Field_2_-_Sand_Palace.html",
+      "box": [
+        345,
+        115,
+        505,
+        272
+      ],
+      "links": [
+        "paradise",
+        "desert-field-3",
+        "desert-mine"
+      ]
+    },
+    {
+      "id": "desert-field-3",
+      "name": "Desert Beach Field 3 - Statue of Anubis",
+      "region": "desert-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/32/Desert_Beach_Field_3_-_Statue_of_Anubis_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Desert_Beach_Field_3_-_Statue_of_Anubis.html",
+      "box": [
+        185,
+        20,
+        343,
+        180
+      ],
+      "links": [
+        "paradise",
+        "desert-field-2",
+        "desert-field-4",
+        "pyramid-1"
+      ]
+    },
+    {
+      "id": "desert-field-4",
+      "name": "Desert Beach Field 4 - Parasol River",
+      "region": "desert-beach",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/77/Desert_Beach_Field_4_-_Parasol_River_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Desert_Beach_Field_4_-_Parasol_River.html",
+      "box": [
+        24,
+        88,
+        180,
+        245
+      ],
+      "links": [
+        "paradise",
+        "desert-field-3",
+        "path-to-desert-beach"
+      ]
+    },
+    {
+      "id": "desert-mine",
+      "name": "Desert Beach Mine - Crystal Copper",
+      "region": "desert-beach",
+      "kind": "mine",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/75/Desert_Beach_Mine_-_Crystal_Copper_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Desert_Beach_Mine_-_Crystal_Copper.html",
+      "parent": "desert-field-2",
+      "links": [
+        "desert-field-2",
+        "crystal-copper-lot-1",
+        "crystal-copper-lot-2"
+      ]
+    },
+    {
+      "id": "crystal-copper-lot-1",
+      "name": "1st Mining Lot of Crystal Copper",
+      "region": "desert-beach",
+      "kind": "mine",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/thumb/c/cd/1st_Mining_Lot_of_Crystal_Copper_big.png/500px-1st_Mining_Lot_of_Crystal_Copper_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/1st_Mining_Lot_of_Crystal_Copper.html",
+      "parent": "desert-field-2",
+      "links": [
+        "desert-mine"
+      ]
+    },
+    {
+      "id": "crystal-copper-lot-2",
+      "name": "2nd Mining Lot of Crystal Copper",
+      "region": "desert-beach",
+      "kind": "mine",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/thumb/b/b1/2nd_Mining_Lot_of_Crystal_Copper_big.png/250px-2nd_Mining_Lot_of_Crystal_Copper_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/2nd_Mining_Lot_of_Crystal_Copper.html",
+      "parent": "desert-field-2",
+      "links": [
+        "desert-mine"
+      ]
+    },
+    {
+      "id": "pyramid-1",
+      "name": "Pyramid Dungeon 1 - Hall of the Slave",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9a/Pyramid_Dungeon_1_-_Hall_of_the_Slave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_1_-_Hall_of_the_Slave.html",
+      "parent": "desert-field-3",
+      "links": [
+        "desert-field-3",
+        "pyramid-2",
+        "pyramid-3"
+      ]
+    },
+    {
+      "id": "pyramid-2",
+      "name": "Pyramid Dungeon 2 - Hall of Harpy",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/63/Pyramid_Dungeon_2_-_Hall_of_Harpy_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_2_-_Hall_of_Harpy.html",
+      "parent": "desert-field-3",
+      "links": [
+        "pyramid-1",
+        "pyramid-3",
+        "pyramid-room-of-truth"
+      ]
+    },
+    {
+      "id": "pyramid-3",
+      "name": "Pyramid Dungeon 3 - Hall of Bastet",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/31/Pyramid_Dungeon_3_-_Hall_of_Bastet_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_3_-_Hall_of_Bastet.html",
+      "parent": "desert-field-3",
+      "links": [
+        "pyramid-1",
+        "pyramid-2",
+        "pyramid-4"
+      ]
+    },
+    {
+      "id": "pyramid-4",
+      "name": "Pyramid Dungeon 4 - Hall of the Dead",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/d5/Pyramid_Dungeon_4_-_Hall_of_the_Dead_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_4_-_Hall_of_the_Dead.html",
+      "parent": "desert-field-3",
+      "links": [
+        "pyramid-3",
+        "pyramid-5"
+      ]
+    },
+    {
+      "id": "pyramid-5",
+      "name": "Pyramid Dungeon 5 - Hall of Love Affair",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/db/Pyramid_Dungeon_5_-_Hall_of_Love_Affair_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_5_-_Hall_of_Love_Affair.html",
+      "parent": "desert-field-3",
+      "links": [
+        "pyramid-4",
+        "pyramid-6"
+      ]
+    },
+    {
+      "id": "pyramid-6",
+      "name": "Pyramid Dungeon 6 - Hall of the Queen",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c8/Pyramid_Dungeon_6_-_Hall_of_the_Queen_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_6_-_Hall_of_the_Queen.html",
+      "parent": "desert-field-3",
+      "links": [
+        "pyramid-5"
+      ]
+    },
+    {
+      "id": "pyramid-room-of-truth",
+      "name": "Pyramid Dungeon - Room of Truth",
+      "region": "desert-beach",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/38/Room_of_Guardian_-_Test_of_Power_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pyramid_Dungeon_-_Room_of_Truth.html",
+      "parent": "desert-field-3",
+      "links": [
+        "pyramid-2"
+      ]
+    },
+    {
+      "id": "megalo-square",
+      "name": "Megalopolis Square",
+      "region": "megalopolis",
+      "kind": "town",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ee/Megalopolis_Square_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Megalopolis_Square.html",
+      "box": [
+        192,
+        150,
+        370,
+        318
+      ],
+      "links": [
+        "path-to-desert-beach",
+        "southeast-forest",
+        "southwest-forest",
+        "oops-wharf"
+      ]
+    },
+    {
+      "id": "path-to-desert-beach",
+      "name": "Path to Desert Beach",
+      "region": "megalopolis",
+      "kind": "path",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/7b/Path_to_Desert_Beach_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Desert_Beach.html",
+      "box": [
+        372,
+        248,
+        510,
+        318
+      ],
+      "links": [
+        "desert-field-4",
+        "megalo-square"
+      ]
+    },
+    {
+      "id": "southwest-forest",
+      "name": "Southwest Forest",
+      "region": "megalopolis",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3f/Southwest_Forest_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Southwest_Forest.html",
+      "box": [
+        30,
+        320,
+        222,
+        458
+      ],
+      "links": [
+        "megalo-square",
+        "path-to-caballa",
+        "path-to-oops-wharf"
+      ]
+    },
+    {
+      "id": "southeast-forest",
+      "name": "Southeast Forest",
+      "region": "megalopolis",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6c/Southeast_Forest_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Southeast_Forest.html",
+      "box": [
+        360,
+        320,
+        500,
+        505
+      ],
+      "links": [
+        "megalo-square",
+        "gate-of-poppuri"
+      ]
+    },
+    {
+      "id": "gate-of-poppuri",
+      "name": "Gate of Poppuri Dungeon",
+      "region": "megalopolis",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a6/Gate_of_Poppuri_Dungeon.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Poppuri_Dungeon.html",
+      "parent": "southeast-forest",
+      "links": [
+        "southeast-forest",
+        "poppuri-slide",
+        "poppuri-root"
+      ]
+    },
+    {
+      "id": "poppuri-root",
+      "name": "Poppuri Dungeon - Root Cave",
+      "region": "megalopolis",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/fd/Poppuri_Dungeon_-_Root_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_Dungeon_-_Root_Cave.html",
+      "parent": "southeast-forest",
+      "links": [
+        "gate-of-poppuri",
+        "poppuri-spore"
+      ]
+    },
+    {
+      "id": "poppuri-slide",
+      "name": "Poppuri Dungeon - Slide Cave",
+      "region": "megalopolis",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/ac/Poppuri_Dungeon_-_Slide_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_Dungeon_-_Slide_Cave.html",
+      "parent": "southeast-forest",
+      "links": [
+        "gate-of-poppuri",
+        "poppuri-rainbow"
+      ]
+    },
+    {
+      "id": "poppuri-spore",
+      "name": "Poppuri Dungeon - Spore Cave",
+      "region": "megalopolis",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5e/Poppuri_Dungeon_-_Spore_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_Dungeon_-_Spore_Cave.html",
+      "parent": "southeast-forest",
+      "links": [
+        "poppuri-root",
+        "poppuri-moss"
+      ]
+    },
+    {
+      "id": "poppuri-moss",
+      "name": "Poppuri Dungeon - Moss Cave",
+      "region": "megalopolis",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/52/Poppuri_Dungeon_-_Moss_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_Dungeon_-_Moss_Cave.html",
+      "parent": "southeast-forest",
+      "links": [
+        "poppuri-spore",
+        "poppuri-rainbow"
+      ]
+    },
+    {
+      "id": "poppuri-rainbow",
+      "name": "Poppuri Dungeon - Rainbow Cave",
+      "region": "megalopolis",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2b/Poppuri_Dungeon_-_Rainbow_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_Dungeon_-_Rainbow_Cave.html",
+      "parent": "southeast-forest",
+      "links": [
+        "poppuri-moss",
+        "poppuri-slide",
+        "poppuri-mysterious-space"
+      ]
+    },
+    {
+      "id": "poppuri-mysterious-space",
+      "name": "Poppuri Dungeon - Mysterious Space",
+      "region": "megalopolis",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/93/Poppuri_Dungeon_-_Mysterious_Space.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_Dungeon_-_Mysterious_Space.html",
+      "parent": "southeast-forest",
+      "links": [
+        "poppuri-rainbow"
+      ]
+    },
+    {
+      "id": "path-to-caballa",
+      "name": "Path to Caballa Relics",
+      "region": "caballa-relics",
+      "kind": "path",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/89/Path_to_Caballa_Relics_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Caballa_Relics.html",
+      "box": [
+        235,
+        8,
+        302,
+        135
+      ],
+      "links": [
+        "southwest-forest",
+        "gate-of-caballa"
+      ]
+    },
+    {
+      "id": "gate-of-caballa",
+      "name": "Gate of Caballa Relics",
+      "region": "caballa-relics",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/00/Gate_of_Caballa_Relics_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Caballa_Relics.html",
+      "box": [
+        235,
+        135,
+        450,
+        212
+      ],
+      "links": [
+        "path-to-caballa",
+        "relics-field-1"
+      ]
+    },
+    {
+      "id": "azteca",
+      "name": "Relics Town - Azteca",
+      "region": "caballa-relics",
+      "kind": "town",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/06/Relics_Town_-_Azteca_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Relics_Town_-_Azteca.html",
+      "box": [
+        120,
+        105,
+        235,
+        200
+      ],
+      "links": [
+        "relics-field-4"
+      ]
+    },
+    {
+      "id": "relics-field-1",
+      "name": "Relics Field 1 - Atlas",
+      "region": "caballa-relics",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3a/Relics_Field_1_-_Atlas_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Relics_Field_1_-_Atlas.html",
+      "box": [
+        282,
+        212,
+        450,
+        372
+      ],
+      "links": [
+        "gate-of-caballa",
+        "relics-field-2",
+        "relics-field-4"
+      ]
+    },
+    {
+      "id": "relics-field-2",
+      "name": "Relics Field 2 - Hand of Giant",
+      "region": "caballa-relics",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/ce/Relics_Field_2_-_Hand_of_Giant_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Relics_Field_2_-_Hand_of_Giant.html",
+      "box": [
+        290,
+        372,
+        462,
+        535
+      ],
+      "links": [
+        "relics-field-1",
+        "relics-field-3"
+      ]
+    },
+    {
+      "id": "relics-field-3",
+      "name": "Relics Field 3 - Monkey Statues",
+      "region": "caballa-relics",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/34/Relics_Field_3_-_Monkey_Statues_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Relics_Field_3_-_Monkey_Statues.html",
+      "box": [
+        120,
+        372,
+        290,
+        535
+      ],
+      "links": [
+        "relics-field-2",
+        "relics-field-4",
+        "jade-steel-mine"
+      ]
+    },
+    {
+      "id": "relics-field-4",
+      "name": "Relics Field 4 - An Altar for Sacrifice",
+      "region": "caballa-relics",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f6/Relics_Field_4_-_An_Altar_for_Sacrifice_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Relics_Field_4_-_An_Altar_for_Sacrifice.html",
+      "box": [
+        115,
+        212,
+        282,
+        372
+      ],
+      "links": [
+        "relics-field-1",
+        "relics-field-3",
+        "azteca",
+        "relics-dungeon-1"
+      ]
+    },
+    {
+      "id": "relics-dungeon-1",
+      "name": "Caballa Relics Dungeon 1",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/48/Caballa_Relics_Dungeon_1_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Dungeon_1.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-field-4",
+        "relics-dungeon-2"
+      ]
+    },
+    {
+      "id": "relics-dungeon-2",
+      "name": "Caballa Relics Dungeon 2",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cf/Caballa_Relics_Dungeon_2_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Dungeon_2.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-dungeon-1",
+        "relics-dungeon-3"
+      ]
+    },
+    {
+      "id": "relics-dungeon-3",
+      "name": "Caballa Relics Dungeon 3",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a7/Caballa_Relics_Dungeon_3_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Dungeon_3.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-dungeon-2",
+        "relics-dungeon-4",
+        "relics-boss-path-1"
+      ]
+    },
+    {
+      "id": "relics-dungeon-4",
+      "name": "Caballa Relics Dungeon 4",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5d/Caballa_Relics_Dungeon_4_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Dungeon_4.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-dungeon-3"
+      ]
+    },
+    {
+      "id": "relics-boss-path-1",
+      "name": "Caballa Relics Boss Path 1 - Waking Dream",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c0/Caballa_Relics_Boss_Path_1_-_Waking_Dream_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Boss_Path_1_-_Waking_Dream.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-dungeon-3",
+        "relics-boss-path-2"
+      ]
+    },
+    {
+      "id": "relics-boss-path-2",
+      "name": "Caballa Relics Boss Path 2 - Dread Slumber",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/thumb/9/93/Caballa_Relics_Boss_Path_2_-_Dread_Slumber_big.png/500px-Caballa_Relics_Boss_Path_2_-_Dread_Slumber_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Boss_Path_2_-_Dread_Slumber.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-boss-path-1",
+        "relics-boss-path-3"
+      ]
+    },
+    {
+      "id": "relics-boss-path-3",
+      "name": "Caballa Relics Boss Path 3 - Rude Awakening",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3b/Caballa_Relics_Boss_Path_3_-_Rude_Awakening_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Boss_Path_3_-_Rude_Awakening.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-boss-path-2",
+        "trident-maze"
+      ]
+    },
+    {
+      "id": "trident-maze",
+      "name": "The Trident Maze",
+      "region": "caballa-relics",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/dd/The_Trident_Maze_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/The_Trident_Maze.html",
+      "parent": "relics-field-4",
+      "links": [
+        "relics-boss-path-3"
+      ]
+    },
+    {
+      "id": "jade-steel-mine",
+      "name": "Caballa Relics Mine - Jade Steel",
+      "region": "caballa-relics",
+      "kind": "mine",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/38/Caballa_Relics_Mine_-_Jade_Steel_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Caballa_Relics_Mine_-_Jade_Steel.html",
+      "parent": "relics-field-3",
+      "links": [
+        "relics-field-3",
+        "jade-steel-lot-1",
+        "jade-steel-lot-2"
+      ]
+    },
+    {
+      "id": "jade-steel-lot-1",
+      "name": "1st Mining Lot of Jade Steel",
+      "region": "caballa-relics",
+      "kind": "mine",
+      "image": null,
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/1st_Mining_Lot_of_Jade_Steel.html",
+      "parent": "relics-field-3",
+      "links": [
+        "jade-steel-mine"
+      ]
+    },
+    {
+      "id": "jade-steel-lot-2",
+      "name": "2nd Mining Lot of Jade Steel",
+      "region": "caballa-relics",
+      "kind": "mine",
+      "image": null,
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/2nd_Mining_Lot_of_Jade_Steel.html",
+      "parent": "relics-field-3",
+      "links": [
+        "jade-steel-mine"
+      ]
+    },
+    {
+      "id": "path-to-oops-wharf",
+      "name": "Path to Oops Wharf",
+      "region": "oops-wharf",
+      "kind": "path",
+      "image": null,
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Oops_Wharf.html",
+      "box": [
+        393,
+        370,
+        525,
+        440
+      ],
+      "links": [
+        "southwest-forest",
+        "gate-of-oops-wharf"
+      ]
+    },
+    {
+      "id": "gate-of-oops-wharf",
+      "name": "Gate of Oops Wharf",
+      "region": "oops-wharf",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/d4/Gate_of_Oops_Wharf_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Oops_Wharf.html",
+      "box": [
+        235,
+        372,
+        393,
+        440
+      ],
+      "links": [
+        "path-to-oops-wharf",
+        "wharf-field-1"
+      ]
+    },
+    {
+      "id": "oops-wharf",
+      "name": "Oops Wharf",
+      "region": "oops-wharf",
+      "kind": "town",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/23/Oops_Wharf_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Oops_Wharf.html",
+      "box": [
+        8,
+        245,
+        108,
+        330
+      ],
+      "links": [
+        "wharf-field-4",
+        "megalo-square",
+        "mermaid-path-1"
+      ]
+    },
+    {
+      "id": "wharf-field-1",
+      "name": "Wharf Field 1 - Haunted Town",
+      "region": "oops-wharf",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3d/Wharf_Field_1_-_Haunted_Town_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wharf_Field_1_-_Haunted_Town.html",
+      "box": [
+        265,
+        248,
+        395,
+        372
+      ],
+      "links": [
+        "gate-of-oops-wharf",
+        "wharf-field-2"
+      ]
+    },
+    {
+      "id": "wharf-field-2",
+      "name": "Wharf Field 2 - Devil Crow",
+      "region": "oops-wharf",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/72/Wharf_Field_2_-_Devil_Crow_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wharf_Field_2_-_Devil_Crow.html",
+      "box": [
+        265,
+        120,
+        395,
+        245
+      ],
+      "links": [
+        "wharf-field-1",
+        "wharf-field-3"
+      ]
+    },
+    {
+      "id": "wharf-field-3",
+      "name": "Wharf Field 3 - Phantom Park",
+      "region": "oops-wharf",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3f/Wharf_Field_3_-_Phantom_Park_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wharf_Field_3_-_Phantom_Park.html",
+      "box": [
+        140,
+        120,
+        265,
+        245
+      ],
+      "links": [
+        "wharf-field-2",
+        "wharf-field-4"
+      ]
+    },
+    {
+      "id": "wharf-field-4",
+      "name": "Wharf Field 4 - Chrono Wharf",
+      "region": "oops-wharf",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b4/Wharf_Field_4_-_Chrono_Wharf_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wharf_Field_4_-_Chrono_Wharf.html",
+      "box": [
+        108,
+        248,
+        265,
+        372
+      ],
+      "links": [
+        "wharf-field-3",
+        "oops-wharf"
+      ]
+    },
+    {
+      "id": "mermaid-path-1",
+      "name": "Path to Mermaid Palace 1",
+      "region": "oops-wharf",
+      "kind": "path",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b0/Path_to_Mermaid_Palace_1_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Mermaid_Palace_1.html",
+      "parent": "oops-wharf",
+      "links": [
+        "oops-wharf",
+        "mermaid-path-2"
+      ]
+    },
+    {
+      "id": "mermaid-path-2",
+      "name": "Path to Mermaid Palace 2",
+      "region": "oops-wharf",
+      "kind": "path",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/06/Path_to_Mermaid_Palace_2_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Mermaid_Palace_2.html",
+      "parent": "oops-wharf",
+      "links": [
+        "mermaid-path-1"
+      ]
+    }
+  ],
+  "names": {
+    "1st Mining Lot of Crystal Copper": [
+      "crystal-copper-lot-1"
+    ],
+    "1st Mining Lot of Jade Steel": [
+      "jade-steel-lot-1"
+    ],
+    "2nd Mining Lot of Crystal Copper": [
+      "crystal-copper-lot-2"
+    ],
+    "2nd Mining Lot of Jade Steel": [
+      "jade-steel-lot-2"
+    ],
+    "Azteca Monster Guild & Caballa Relics Dungeon 1": [
+      "azteca",
+      "relics-dungeon-1"
+    ],
+    "Azteca Sauna (Relics Town - Azteca)": [
+      "azteca"
+    ],
+    "Beach Town - Paradise": [
+      "paradise"
+    ],
+    "Beach Town - Paradise & Desert Beach Field 2": [
+      "paradise",
+      "desert-field-2"
+    ],
+    "Beach Town - Paradise & Gate of Desert Beach": [
+      "paradise",
+      "gate-of-desert-beach"
+    ],
+    "Caballa Relics": [],
+    "Caballa Relics Boss Path 1 - Waking Dream": [
+      "relics-boss-path-1"
+    ],
+    "Caballa Relics Dungeon 1": [
+      "relics-dungeon-1"
+    ],
+    "Caballa Relics Dungeon 3": [
+      "relics-dungeon-3"
+    ],
+    "Caballa Relics Dungeon 3 -> Boss Paths 1-3 -> The Trident Maze": [
+      "trident-maze"
+    ],
+    "Caballa Relics Dungeon 3 & 4": [
+      "relics-dungeon-3",
+      "relics-dungeon-4"
+    ],
+    "Caballa Relics Dungeon 4": [
+      "relics-dungeon-4"
+    ],
+    "Caballa Relics Dungeons 1-4": [
+      "relics-dungeon-1",
+      "relics-dungeon-2",
+      "relics-dungeon-3",
+      "relics-dungeon-4"
+    ],
+    "Caballa Relics Dungeons 1, 2, & 3": [
+      "relics-dungeon-1",
+      "relics-dungeon-2",
+      "relics-dungeon-3"
+    ],
+    "Caballa Relics Dungeons 2 & 4": [
+      "relics-dungeon-2",
+      "relics-dungeon-4"
+    ],
+    "Caballa Relics Dungeons 3 & 4": [
+      "relics-dungeon-3",
+      "relics-dungeon-4"
+    ],
+    "Caballa Relics Fields 1-4": [
+      "relics-field-1",
+      "relics-field-2",
+      "relics-field-3",
+      "relics-field-4"
+    ],
+    "Caballa Relics Fields 1-4 & Dungeons 1-4": [
+      "relics-field-1",
+      "relics-field-2",
+      "relics-field-3",
+      "relics-field-4",
+      "relics-dungeon-1",
+      "relics-dungeon-2",
+      "relics-dungeon-3",
+      "relics-dungeon-4"
+    ],
+    "Caballa Relics Mine - Jade Steel (via Relics Field 3)": [
+      "jade-steel-mine"
+    ],
+    "Coral Beach - Dark Cave": [
+      "coral-dark-cave"
+    ],
+    "Coral Beach - Dark Cave (Master Mong's Lair)": [
+      "master-mongs-lair"
+    ],
+    "Coral Beach & Desert Beach Fields": [
+      "coral-field-1",
+      "coral-field-2",
+      "coral-field-3",
+      "desert-field-1",
+      "desert-field-2",
+      "desert-field-3",
+      "desert-field-4"
+    ],
+    "Coral Beach Field 1 - Blue Wave": [
+      "coral-field-1"
+    ],
+    "Coral Beach Field 2 - Passionate Sun": [
+      "coral-field-2"
+    ],
+    "Coral Beach Field 3 - Sunny Beach": [
+      "coral-field-3"
+    ],
+    "Coral Beach Fields 1-3": [
+      "coral-field-1",
+      "coral-field-2",
+      "coral-field-3"
+    ],
+    "Coral Town - Blooming Cora": [
+      "coral-town"
+    ],
+    "Desert Beach / Caballa Relics / Oops Wharf": [],
+    "Desert Beach Field 1 - Delta Island": [
+      "desert-field-1"
+    ],
+    "Desert Beach Field 2 - Sand Palace": [
+      "desert-field-2"
+    ],
+    "Desert Beach Field 2 & Field 3": [
+      "desert-field-2",
+      "desert-field-3"
+    ],
+    "Desert Beach Field 2, 3 & 4": [
+      "desert-field-2",
+      "desert-field-3",
+      "desert-field-4"
+    ],
+    "Desert Beach Field 3 - Statue of Anubis": [
+      "desert-field-3"
+    ],
+    "Desert Beach Field 3 & Field 4": [
+      "desert-field-3",
+      "desert-field-4"
+    ],
+    "Desert Beach Field 3 & Pyramid Dungeon 2, 3, 6": [
+      "desert-field-3",
+      "pyramid-2",
+      "pyramid-3",
+      "pyramid-6"
+    ],
+    "Desert Beach Field 4 - Parasol River": [
+      "desert-field-4"
+    ],
+    "Desert Beach Fields 1-4": [
+      "desert-field-1",
+      "desert-field-2",
+      "desert-field-3",
+      "desert-field-4"
+    ],
+    "Desert Beach Fields 1-4 & Pyramid Dungeon": [
+      "desert-field-1",
+      "desert-field-2",
+      "desert-field-3",
+      "desert-field-4",
+      "pyramid-1",
+      "pyramid-2",
+      "pyramid-3",
+      "pyramid-4",
+      "pyramid-5",
+      "pyramid-6"
+    ],
+    "Desert Beach Mine - Crystal Copper": [
+      "desert-mine"
+    ],
+    "Gate of Caballa Relics": [
+      "gate-of-caballa"
+    ],
+    "Gate of Caballa Relics & Relics Fields 1-4": [
+      "gate-of-caballa",
+      "relics-field-1",
+      "relics-field-2",
+      "relics-field-3",
+      "relics-field-4"
+    ],
+    "Gate of Desert Beach": [
+      "gate-of-desert-beach"
+    ],
+    "Gate of Desert Beach / Southeast Forest": [
+      "gate-of-desert-beach",
+      "southeast-forest"
+    ],
+    "Gate of Desert Beach & Desert Beach Field 3": [
+      "gate-of-desert-beach",
+      "desert-field-3"
+    ],
+    "Gate of Oops Wharf": [
+      "gate-of-oops-wharf"
+    ],
+    "Gate of Poppuri Dungeon": [
+      "gate-of-poppuri"
+    ],
+    "Ghost Blue": [],
+    "Megalopolis / Azteca Shop": [
+      "megalo-square",
+      "azteca"
+    ],
+    "Megalopolis Bank / Paradise": [
+      "megalo-square",
+      "paradise"
+    ],
+    "Megalopolis Guild Office (Megalopolis Square)": [
+      "megalo-square"
+    ],
+    "Megalopolis Shop": [
+      "megalo-square"
+    ],
+    "Megalopolis Square": [
+      "megalo-square"
+    ],
+    "Megalopolis Square / Relics Town - Azteca": [
+      "megalo-square",
+      "azteca"
+    ],
+    "Oops Wharf": [
+      "oops-wharf"
+    ],
+    "Oops Wharf Field 2 & 3": [
+      "wharf-field-2",
+      "wharf-field-3"
+    ],
+    "Oops Wharf Fields 1-4": [
+      "wharf-field-1",
+      "wharf-field-2",
+      "wharf-field-3",
+      "wharf-field-4"
+    ],
+    "Paradise Monster Guild (Beach Town - Paradise)": [
+      "paradise"
+    ],
+    "Paradise Shop": [
+      "paradise"
+    ],
+    "Paradise Spa (Beach Town - Paradise)": [
+      "paradise"
+    ],
+    "Path to Caballa Relics": [
+      "path-to-caballa"
+    ],
+    "Path to Caballa Relics & Field 1": [
+      "path-to-caballa",
+      "relics-field-1"
+    ],
+    "Path to Caballa Relics & Relics Field 1": [
+      "path-to-caballa",
+      "relics-field-1"
+    ],
+    "Path to Desert Beach": [
+      "path-to-desert-beach"
+    ],
+    "Path to Desert Beach & Southeast Forest": [
+      "path-to-desert-beach",
+      "southeast-forest"
+    ],
+    "Path to Mermaid Palace 1": [
+      "mermaid-path-1"
+    ],
+    "Path to Mermaid Palace 1 & 2": [
+      "mermaid-path-1",
+      "mermaid-path-2"
+    ],
+    "Path to Mermaid Palace 2": [
+      "mermaid-path-2"
+    ],
+    "Poppuri Dungeon - Moss Cave": [
+      "poppuri-moss"
+    ],
+    "Poppuri Dungeon - Moss Cave / Rainbow Cave": [
+      "poppuri-moss",
+      "poppuri-rainbow"
+    ],
+    "Poppuri Dungeon - Moss Cave / Southeast Forest": [
+      "poppuri-moss",
+      "southeast-forest"
+    ],
+    "Poppuri Dungeon - Mysterious Space (via Curious Poppuri in Rainbow Cave)": [
+      "poppuri-mysterious-space"
+    ],
+    "Poppuri Dungeon - Rainbow Cave": [
+      "poppuri-rainbow"
+    ],
+    "Poppuri Dungeon - Root Cave": [
+      "poppuri-root"
+    ],
+    "Poppuri Dungeon - Root Cave / Slide Cave": [
+      "poppuri-root",
+      "poppuri-slide"
+    ],
+    "Poppuri Dungeon - Slide Cave -> Gate of Caballa Relics": [
+      "poppuri-slide"
+    ],
+    "Poppuri Dungeon - Spore Cave": [
+      "poppuri-spore"
+    ],
+    "Poppuri Dungeon - Spore Cave / Root Cave": [
+      "poppuri-spore",
+      "poppuri-root"
+    ],
+    "Poppuri Dungeon Caves": [
+      "poppuri-root",
+      "poppuri-slide",
+      "poppuri-spore",
+      "poppuri-moss",
+      "poppuri-rainbow"
+    ],
+    "Poppuri Dungeon Trial Rooms": [
+      "poppuri-mysterious-space"
+    ],
+    "Pyramid Dungeon - Room of Truth": [
+      "pyramid-room-of-truth"
+    ],
+    "Pyramid Dungeon 1 - Hall of the Slave": [
+      "pyramid-1"
+    ],
+    "Pyramid Dungeon 1-6": [
+      "pyramid-1",
+      "pyramid-2",
+      "pyramid-3",
+      "pyramid-4",
+      "pyramid-5",
+      "pyramid-6"
+    ],
+    "Pyramid Dungeon 1-6 (Pyramid Dungeon Halls)": [
+      "pyramid-1",
+      "pyramid-2",
+      "pyramid-3",
+      "pyramid-4",
+      "pyramid-5",
+      "pyramid-6"
+    ],
+    "Pyramid Dungeon 2 - Hall of Harpy": [
+      "pyramid-2"
+    ],
+    "Pyramid Dungeon 4 & 5": [
+      "pyramid-4",
+      "pyramid-5"
+    ],
+    "Pyramid Dungeon 6 - Hall of the Queen": [
+      "pyramid-6"
+    ],
+    "Relics Field 1 - Atlas": [
+      "relics-field-1"
+    ],
+    "Relics Field 1 & Field 2": [
+      "relics-field-1",
+      "relics-field-2"
+    ],
+    "Relics Field 2 - Hand of Giant": [
+      "relics-field-2"
+    ],
+    "Relics Field 3 - Monkey Statues": [
+      "relics-field-3"
+    ],
+    "Relics Field 3 & Field 4": [
+      "relics-field-3",
+      "relics-field-4"
+    ],
+    "Relics Field 4 - An Altar for Sacrifice": [
+      "relics-field-4"
+    ],
+    "Relics Field 4 - An Altar for Sacrifice -> Gate of Oops Wharf": [
+      "relics-field-4"
+    ],
+    "Relics Fields 2, 3, & 4": [
+      "relics-field-2",
+      "relics-field-3",
+      "relics-field-4"
+    ],
+    "Relics Fields 3 & 4": [
+      "relics-field-3",
+      "relics-field-4"
+    ],
+    "Relics Town - Azteca": [
+      "azteca"
+    ],
+    "Relics Town - Azteca (or Garden of Skill Master)": [
+      "azteca"
+    ],
+    "Relics Town - Azteca & Gate of Caballa Relics": [
+      "azteca",
+      "gate-of-caballa"
+    ],
+    "Southeast Forest": [
+      "southeast-forest"
+    ],
+    "Southeast Forest -> Poppuri Dungeon - Slide Cave": [
+      "poppuri-slide"
+    ],
+    "Southeast Forest / Southwest Forest": [
+      "southeast-forest",
+      "southwest-forest"
+    ],
+    "Southeast Forest & Poppuri Dungeon": [
+      "southeast-forest",
+      "gate-of-poppuri"
+    ],
+    "Southwest Forest": [
+      "southwest-forest"
+    ],
+    "Southwest Forest & Gate of Poppuri Dungeon": [
+      "southwest-forest",
+      "gate-of-poppuri"
+    ],
+    "Southwest Forest & Poppuri Dungeon": [
+      "southwest-forest",
+      "gate-of-poppuri"
+    ],
+    "Southwest Forest & Southeast Forest": [
+      "southwest-forest",
+      "southeast-forest"
+    ],
+    "The Trident Maze": [
+      "trident-maze"
+    ],
+    "Wharf Field 1 - Trap Zone & Field 2 - Devil's Canyon": [
+      "wharf-field-1",
+      "wharf-field-2"
+    ],
+    "Wharf Field 4 - Chrono Wharf": [
+      "wharf-field-4"
+    ]
+  }
+}
