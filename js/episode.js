@@ -175,6 +175,7 @@
       done: ep.quests.filter(q => statuses[q.id] === "done").length,
       total: ep.quests.length,
       expTotal, expLeft,
+      scopeQuests: scopeQuests.slice().sort((a, b) => a.order - b.order),
       farm: farmList(scopeQuests, state, statuses)
     };
   }
@@ -355,15 +356,20 @@
     const ep = episodes.find(e => e.key === ctx.selected) || episodes[0];
     const m = episodeModel(ep, ctx.allQuests, ctx.state, ctx.prereqsById, ctx.scope);
     const byId = new Map(ctx.allQuests.map(q => [q.id, q]));
+    const pane = ["quests", "route", "farm"].includes(ctx.pane) ? ctx.pane : "quests";
     container.innerHTML = `
       ${renderOverview(m, episodes, ep.key)}
       <div class="ep-subtabs" role="tablist">
-        <button type="button" role="tab" aria-selected="${ctx.pane !== "farm"}" onclick="setEpisodePane('quests')">📜 Quests</button>
-        <button type="button" role="tab" aria-selected="${ctx.pane === "farm"}" onclick="setEpisodePane('farm')">🎒 Items to collect</button>
+        <button type="button" role="tab" aria-selected="${pane === "quests"}" onclick="setEpisodePane('quests')">📜 Quests</button>
+        <button type="button" role="tab" aria-selected="${pane === "route"}" onclick="setEpisodePane('route')">🗺️ Route</button>
+        <button type="button" role="tab" aria-selected="${pane === "farm"}" onclick="setEpisodePane('farm')">🎒 Items</button>
       </div>
-      <div class="ep-layout" data-pane="${ctx.pane === "farm" ? "farm" : "quests"}">
+      <div class="ep-layout ep-layout-3" data-pane="${pane}">
         <div class="ep-panel ep-quests" data-pane="quests">${renderChapters(m, ctx, byId)}</div>
-        ${renderFarm(m, ctx.scope)}
+        <div class="ep-side">
+          ${ctx.renderRoute ? ctx.renderRoute(m) : ""}
+          ${renderFarm(m, ctx.scope)}
+        </div>
       </div>`;
     return m;
   }

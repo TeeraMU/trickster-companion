@@ -49,6 +49,12 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/data.js`: loads `data/*.json` and adapts schema v2 to the shape the renderer uses.
 - `js/quest-card.js`: the quest card (`renderQuestCard` in index.html delegates to it). Helpers
   (counts per run, warnings, which quest hands over an item) are pure and run under Node.
+- `js/route.js`: route (stops in order, BFS over portal links) and the map / NPC pin panel.
+- `data/maps.json`: regions (overview picture), maps (`box` on the 530x540 overview or a `parent`,
+  two-way `links`), and `names`: every map text used in quests -> map ids (first = default).
+  validate.js fails when a quest uses a map text that isn't listed.
+- `data/npc-pins.json`: `{ npcId: { map, x, y } }` in % of the map picture. Players pin in the app
+  and send the exported file; replace this file with it (validate.js checks it).
 - `js/episode.js`: the Episodes page. Model functions (quest status, items to collect) are pure and
   run under Node; the renderer gets everything it needs through a context object.
 - `data/quests/index.json`: the list of quest files, in load order. Each `data/quests/<region>.json`

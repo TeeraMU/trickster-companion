@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **🗺️ Route** on the Episodes page: the stops to walk, in order, for what's left of the episode or chapter (accept, collect, hand in), with the maps you pass through. Drawn on the region map (Coral Beach, Desert Beach, Megalopolis, Caballa Relics, Oops Wharf) with numbered stops; tap a stop to see that map. On phones it is the middle sub-tab.
+- **📍 NPC pins**: tap *Pin NPCs*, pick an NPC and tap where they stand on the map. Pins are saved in your browser; *Export pins* downloads `npc-pins.json` to add to the project for everyone.
+- New data: `data/maps.json` (60 maps from the wiki with pictures, portal links and their place on the region maps; every map name used in the quests is linked to real maps) and `data/npc-pins.json`.
 - The separate Items & Drill Calculator tab is gone: **📜 Quests & Items** now shows the quest list with an **🎒 Items to collect** panel beside it (same filters: category, region, class, search, status), grouped by map like the Episodes page. Switch between *Still needed* and *Everything*. On phones, two sub-tabs.
 - Fixed: Card Girl cards were counted once per run (5×) in item totals; each card is needed once.
 - Big category tabs with icons and done/total counts (Story, Key, Sticker, Card Girl, Town, Monster, Dungeon, Daily, Job) replace the row of small filter pills. Tabs with no quests for your class or region are hidden.

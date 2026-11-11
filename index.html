@@ -360,6 +360,7 @@
   <script src="js/data.js"></script>
   <script src="js/episode.js"></script>
   <script src="js/quest-card.js"></script>
+  <script src="js/route.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -385,6 +386,11 @@
       openChapters: {}         // { [chapterName]: true|false } user-toggled chapters
     };
     let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
+    let MAP_INDEX = null;      // data/maps.json, indexed by TQRoute.indexMaps
+    let DEFAULT_PINS = {};     // data/npc-pins.json { npcId: { map, x, y } }
+    let NPC_NAMES = {};        // npcId -> name
+    // route panel UI (not saved): selected stop, region shown, pin mode
+    const routeUi = { stop: 0, region: null, regionFollows: true, pinMode: false, pinNpc: null };
 
     function syncQuestCompletionFromSteps(q) {
       if (!q) return;
@@ -813,12 +819,96 @@
         pane: appState.episodePane,
         openChapters: appState.openChapters,
         expanded: appState.expandedQuests,
-        renderCard: renderQuestCard
+        renderCard: renderQuestCard,
+        renderRoute: renderRoute
       });
       // the "Now" quest starts open; after that the player's expand/collapse wins
       if (m && m.current && appState.expandedQuests[m.current.id] === undefined) {
         appState.expandedQuests[m.current.id] = true;
       }
+    }
+
+    // ============================================================================
+    // ROUTE & NPC PINS (model + markup in js/route.js)
+    // ============================================================================
+    const PIN_KEY = "tc_npc_pins";
+
+    function savedPins() {
+      try { return JSON.parse(localStorage.getItem(PIN_KEY) || "{}"); } catch (e) { return {}; }
+    }
+
+    function allPins() {
+      return Object.assign({}, DEFAULT_PINS, savedPins());
+    }
+
+    function renderRoute(m) {
+      if (!MAP_INDEX) return "";
+      const stops = TQRoute.buildRoute(m.scopeQuests, appState, MAP_INDEX, TQEpisode);
+      if (routeUi.stop >= stops.length) routeUi.stop = 0;
+      const scopeName = appState.episodeScope === "chapter" && m.currentChapter
+        ? m.currentChapter.label + " " + m.currentChapter.title : "all of " + m.ep.key;
+      return TQRoute.renderRoutePanel(stops, {
+        idx: MAP_INDEX,
+        ui: routeUi,
+        pins: allPins(),
+        pinCount: Object.keys(savedPins()).length,
+        npcName: id => NPC_NAMES[id] || id,
+        hint: "Where to go, in order, for what's left of " + scopeName + ". Tap a stop to see its map. Follows the Whole EP / This chapter switch under Items."
+      });
+    }
+
+    function selectRouteStop(i) {
+      routeUi.stop = i;
+      routeUi.regionFollows = true;
+      renderEpisodes();
+    }
+
+    function selectRouteRegion(id) {
+      routeUi.region = id;
+      routeUi.regionFollows = false;
+      renderEpisodes();
+    }
+
+    function toggleNpcPinMode() {
+      routeUi.pinMode = !routeUi.pinMode;
+      renderEpisodes();
+    }
+
+    function setPinNpc(id) {
+      routeUi.pinNpc = id;
+    }
+
+    function placeNpcPin(event, mapId, npcId) {
+      if (!routeUi.pinMode || !npcId) return;
+      const box = event.currentTarget.getBoundingClientRect();
+      const x = Math.round((event.clientX - box.left) / box.width * 1000) / 10;
+      const y = Math.round((event.clientY - box.top) / box.height * 1000) / 10;
+      const pins = savedPins();
+      pins[npcId] = { map: mapId, x: Math.min(100, Math.max(0, x)), y: Math.min(100, Math.max(0, y)) };
+      try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
+      routeUi.pinNpc = npcId;
+      renderEpisodes();
+    }
+
+    function removeNpcPin(npcId) {
+      const pins = savedPins();
+      delete pins[npcId];
+      try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
+      renderEpisodes();
+    }
+
+    // Download every pin (shipped + yours) as data/npc-pins.json, ready to commit to the repo.
+    function exportNpcPins() {
+      const pins = allPins();
+      const sorted = Object.fromEntries(Object.keys(pins).sort().map(k => [k, pins[k]]));
+      const blob = new Blob([JSON.stringify(sorted, null, 2) + "\n"], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "npc-pins.json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     }
 
     function setEpisode(key) {
@@ -985,6 +1075,9 @@
       const data = await TQData.loadAll("data/");
       QUESTS = data.quests;
       PREREQS = data.prereqsById;
+      MAP_INDEX = TQRoute.indexMaps(data.maps);
+      DEFAULT_PINS = data.npcPins || {};
+      NPC_NAMES = Object.fromEntries((data.npcs || []).map(n => [n.id, n.name]));
       ITEM_IMAGES = data.images;
     }
 

@@ -24,6 +24,7 @@
       order: q.order,
       title: q.title,
       npc: q.npc,
+      npcIds: q.npcIds,
       location: q.location,
       region: region,
       subRegion: q.chapter,
@@ -73,12 +74,14 @@
       return res.json();
     };
     const index = await get("quests/index.json");
-    const [questFiles, images, npcs] = await Promise.all([
+    const [questFiles, images, npcs, maps, npcPins] = await Promise.all([
       Promise.all(index.files.map(f => get("quests/" + f))),
       get("images.json"),
-      get("npcs.json")
+      get("npcs.json"),
+      get("maps.json"),
+      get("npc-pins.json")
     ]);
-    return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, questFiles };
+    return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, maps, npcPins, questFiles };
   }
 
   root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, buildPrereqIndex, loadAll };
