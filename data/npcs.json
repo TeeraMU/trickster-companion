@@ -36,6 +36,10 @@
     "name": "Assistant Hunter"
   },
   {
+    "id": "banker-lisa",
+    "name": "Banker Lisa"
+  },
+  {
     "id": "bard-la-fimmel",
     "name": "Bard La Fimmel"
   },
@@ -102,6 +106,10 @@
   {
     "id": "clotho",
     "name": "Clotho"
+  },
+  {
+    "id": "compounder-paul",
+    "name": "Compounder Paul"
   },
   {
     "id": "copyfish-domdom",
@@ -348,6 +356,10 @@
     "name": "Magician Louie"
   },
   {
+    "id": "marie-elle",
+    "name": "Marie Elle"
+  },
+  {
     "id": "marinel",
     "name": "Marinel"
   },
@@ -476,6 +488,10 @@
     "name": "Sissy Cello"
   },
   {
+    "id": "sissy-viole",
+    "name": "Sissy Viole"
+  },
+  {
     "id": "skipper-min",
     "name": "Skipper Min"
   },
@@ -526,6 +542,10 @@
   {
     "id": "warrior-kei",
     "name": "Warrior Kei"
+  },
+  {
+    "id": "weepy-nora",
+    "name": "Weepy Nora"
   },
   {
     "id": "weird-box",

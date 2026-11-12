@@ -2,8 +2,67 @@
   "region": "Ghost Blue",
   "quests": [
     {
-      "id": "gb-key-01",
+      "id": "gb-key-00",
       "order": 500,
+      "title": "Chief Koha - Ghost Blue Sticker",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Key Quests (Lv.100+)",
+      "npc": "Chief Koha",
+      "npcIds": [
+        "chief-koha"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-key-03"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Mermaid Marin - Marin's Sister",
+      "steps": [
+        "Talk to Chief Koha at Ghost Blue Seabed Town - Aquarius.",
+        "Get 10x Ghost Sticker: Ghost Blue sticker quests (any 10: see the 🏷️ Sticker tab).",
+        "Bring everything back to Chief Koha."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ghost Sticker",
+          "qty": 10,
+          "source": {
+            "kind": "quest",
+            "from": "Ghost Blue sticker quests (any 10: see the 🏷️ Sticker tab)",
+            "map": "Ghost Blue Seabed Town - Aquarius"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1599860,
+        "tmExp": 3383004,
+        "galder": 0,
+        "items": [
+          "10x Herb Potion",
+          "10x Gold Pearl Potion"
+        ]
+      },
+      "notes": "Ghost Sticker is obtained by completing: Banker Lisa - Lisa's 1st Urgent Request / Lisa's 2nd Urgent Request Compounder Paul - Help Paul with his New Study Favian - Devoted Favian / Favian's Helm / Romantic Favian Frog Shaman - Ghost Blue Magic - 4 Genius Cochma - Ghost Blue Survey - 4 La Vida - La Vida's Treasure Map 3 Lethos - Collect Steel Pieces and Hook / Nora Tribe Research - 4 Monkey T - Business Proposal 2 Officer Robert - Help Transport the Cash Box Sissy Viole - Viole's Violin Vinosh - Vinosh's Sleepwalking Med Weepy Nora - Returning to the Nora",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Koha_-_Ghost_Blue_Sticker.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-key-01",
+      "order": 501,
       "title": "Chief Koha - Collect Ritual Supplies",
       "categories": [
         "key"
@@ -24,7 +83,7 @@
       ],
       "prereqs": [
         {
-          "quest": "mp-key-02"
+          "quest": "gb-key-00"
         }
       ],
       "prereqText": "Level 100+, have completed Chief Koha - Ghost Blue Sticker",
@@ -85,7 +144,7 @@
     },
     {
       "id": "gb-key-02",
-      "order": 501,
+      "order": 502,
       "title": "Chief Koha - Get a Date",
       "categories": [
         "key"
@@ -156,7 +215,7 @@
     },
     {
       "id": "gb-key-03",
-      "order": 502,
+      "order": 503,
       "title": "Shaman Girl Jia - Collect the Changed Spirits",
       "categories": [
         "key"
@@ -211,6 +270,4361 @@
       "notes": "Ghost Blue Spirit is dropped by Pirate Ghost (Lv.121).",
       "source": {
         "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Collect_the_Changed_Spirits.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-39",
+      "order": 504,
+      "title": "Hunter Yuri - Aquarius Hunter Girl Yuri's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Aquarius Monster Guild",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Hunter Yuri at Aquarius Monster Guild.",
+        "Defeat 30x Popeyed Anemone (Lv.105) within 20 min in Seabed Field 1 - North.",
+        "Report back to Hunter Yuri."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Popeyed Anemone",
+          "level": 105,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Seabed Field 1 - North"
+        }
+      ],
+      "rewards": {
+        "baseExp": 350307,
+        "tmExp": 190458,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.105~109: 30x Torpedo Fish (Lv.112) in 20 min, reward 10,000 Galder Coupon. Lv.110~114: 30x Merrow (Lv.118) in 20 min, reward 10,000 Galder Coupon. Lv.115+: 30x Nora Joe (Lv.126) in 20 min, reward 10,000 Galder Coupon. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Aquarius_Hunter_Girl_Yuri's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-01",
+      "order": 505,
+      "title": "Assistant Hunter - Aquarius Assistant Hunter's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Aquarius Monster Guild",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-39"
+        }
+      ],
+      "prereqText": "Level 100+, have completed at least 1 Aquarius Hunter Girl Yuri's Quest",
+      "steps": [
+        "Talk to Assistant Hunter at Aquarius Monster Guild.",
+        "Defeat 15x Bad Anemone (Lv.116) within 10 min in Seabed Field 1 - North.",
+        "Report back to Assistant Hunter."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Bad Anemone",
+          "level": 116,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Seabed Field 1 - North"
+        }
+      ],
+      "rewards": {
+        "baseExp": 288792,
+        "tmExp": 549547,
+        "galder": 0,
+        "items": [
+          "1x Spirit Marble"
+        ]
+      },
+      "notes": "Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Aquarius_Assistant_Hunter's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-02",
+      "order": 506,
+      "title": "Banker Lisa - Lisa's 1st Urgent Request",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Banker Lisa",
+      "npcIds": [
+        "banker-lisa"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Banker Lisa at Seabed Field 1 - North.",
+        "Get 1x Cash Box: dropped by Bad Anemone (Lv.116) in Seabed Field 1 - North.",
+        "Bring everything back to Banker Lisa (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cash Box",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Bad Anemone (Lv.116)",
+            "map": "Seabed Field 1 - North"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 1x Spirit Marble + 10x 500 Galder Coupon",
+          "Cycle 5: 1x Ghost Sticker + 1x Cash Box"
+        ]
+      },
+      "notes": "Cash Box is dropped by Bad Anemone (Lv.116). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Banker_Lisa_-_Lisa's_1st_Urgent_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-03",
+      "order": 507,
+      "title": "Banker Lisa - Lisa's 2nd Urgent Request",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Banker Lisa",
+      "npcIds": [
+        "banker-lisa"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-02"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Lisa's 1st Urgent Request",
+      "steps": [
+        "Talk to Banker Lisa at Seabed Field 1 - North.",
+        "Get 1x Robert's Receipt: reward from Officer Robert - Help Transport the Cash Box.",
+        "Bring everything back to Banker Lisa (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Robert's Receipt",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Officer Robert - Help Transport the Cash Box",
+            "map": "Ghost Blue Seabed Town - Aquarius"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 1x Cash Box + 10x 500 Galder Coupon",
+          "Cycle 5: 1x Ghost Sticker + 1x Nora Card Key"
+        ]
+      },
+      "notes": "Robert's Receipt is obtained by completing Officer Robert - Help Transport the Cash Box. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Banker_Lisa_-_Lisa's_2nd_Urgent_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-04",
+      "order": 508,
+      "title": "Bunny Maid - Protecting Ghost Blue",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Bunny Maid",
+      "npcIds": [
+        "bunny-maid"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Bunny Maid at Gate of Ghost Blue.",
+        "Get 3x Old Bowl: drilled in Path to Ghost Blue 1 / 2 / Gate of Ghost Blue / Cherry Blossom 2.",
+        "Bring everything back to Bunny Maid (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Bowl",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Ghost Blue 1 / 2 / Gate of Ghost Blue / Cherry Blossom 2 (drill depth not on the wiki)",
+            "map": "Path to Ghost Blue 1 / 2 / Gate of Ghost Blue / Cherry Blossom 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 1,000 Galder Coupon",
+          "Cycle 2: 2x 1,000 Galder Coupon",
+          "Cycle 3: 3x 1,000 Galder Coupon",
+          "Cycle 4: 4x 1,000 Galder Coupon",
+          "Cycle 5: 5x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Old Bowl is drilled in Path to Ghost Blue 1 / 2 and Gate of Ghost Blue and Cherry Blossom 2.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bunny_Maid_-_Protecting_Ghost_Blue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-05",
+      "order": 509,
+      "title": "Captain Stan - Captain's Grief",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Captain Stan",
+      "npcIds": [
+        "captain-stan"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 95,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 20+",
+      "steps": [
+        "Talk to Captain Stan at Ghost Blue Seabed Town - Aquarius.",
+        "Get 1x Old Picture: drilled in Mermaid Palace Fields / Seabed Fields.",
+        "Get 1x Broken Compass: drilled in Seabed Fields.",
+        "Get 1x Ship Steering Wheel: drilled in Seabed Fields.",
+        "Bring everything back to Captain Stan (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Picture",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields / Seabed Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields / Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Broken Compass",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ship Steering Wheel",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 17000,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 2x Skipper Min Card",
+          "Cycle 2: 1x Fragmented Map 1"
+        ]
+      },
+      "notes": "Old Picture is drilled in Mermaid Palace Fields and Seabed Fields. Broken Compass, Ship Steering Wheel are drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Captain_Stan_-_Captain's_Grief.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-06",
+      "order": 510,
+      "title": "Captain Stan - Stan's Pencilcase",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Nora Sewer - Pirate King Karan (Lv.150+)",
+      "npc": "Captain Stan",
+      "npcIds": [
+        "captain-stan"
+      ],
+      "location": "Aquarius Inn",
+      "minLevel": 150,
+      "cycles": 2,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-65",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150~280, have Shaman Girl Jia - Make Sealing Charm in quest log",
+      "steps": [
+        "Talk to Captain Stan at Aquarius Inn.",
+        "Get 20x Pencil Case: drilled in Seabed Fields.",
+        "Bring everything back to Captain Stan (repeat 2 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pencil Case",
+          "qty": 20,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 831612,
+        "tmExp": 265062,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Nothing",
+          "Cycle 2: 1x Captain Stan Card + 1x Captain Stan's Red Ink"
+        ]
+      },
+      "notes": "Pencil Case is drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Captain_Stan_-_Stan's_Pencilcase.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-07",
+      "order": 511,
+      "title": "Card Girl - Ghost Blue Card Girl Quest (1)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 90,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 90+",
+      "steps": [
+        "Talk to Card Girl at Gate of Ghost Blue.",
+        "Get 1x Armor Squirt Card: dropped by Armor Squirt (Lv.108) (use Take on it) in Seabed Field 1 - North / Seabed Field 2 - East.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Armor Squirt Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Armor Squirt (Lv.108) (use Take on it)",
+            "map": "Seabed Field 1 - North / Seabed Field 2 - East"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3272140,
+        "galder": 0,
+        "items": [
+          "2x Arcana Brave Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Armor Squirt Card. Riddle: \"It looks like a hedgehog and a turtle combined\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Ghost_Blue_Card_Girl_Quest_(1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-08",
+      "order": 512,
+      "title": "Card Girl - Ghost Blue Card Girl Quest (2)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Card Girl at Gate of Ghost Blue.",
+        "Get 1x Pirate Ghost Card: dropped by Pirate Ghost (Lv.121) (use Take on it) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pirate Ghost Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Ghost (Lv.121) (use Take on it)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3737537,
+        "galder": 0,
+        "items": [
+          "3x Arcana Brave Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Pirate Ghost Card. Riddle: \"Remember, you outlaw of the sea. Your spirit has not fallen in eternal sleep yet\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Ghost_Blue_Card_Girl_Quest_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-09",
+      "order": 513,
+      "title": "Card Girl - Ghost Blue Card Girl Quest (3)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Card Girl at Gate of Ghost Blue.",
+        "Get 1x Nora Mummy Card: dropped by Nora Mummy (Lv.132) (use Take on it) in Nora Sewer.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nora Mummy Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Mummy (Lv.132) (use Take on it)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3737537,
+        "galder": 0,
+        "items": [
+          "4x Arcana Brave Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Nora Mummy Card. Riddle: \"Place where outsiders have gathered. Only people with bandages will talk about the truth.\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Ghost_Blue_Card_Girl_Quest_(3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-10",
+      "order": 514,
+      "title": "Card Girl - Ghost Blue Card Girl Quest (4)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 110,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Card Girl at Gate of Ghost Blue.",
+        "Get 1x Torpedo Fish Card: dropped by Torpedo Fish (Lv.112) (use Take on it) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Torpedo Fish Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Torpedo Fish (Lv.112) (use Take on it)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3867810,
+        "galder": 0,
+        "items": [
+          "5x Arcana Brave Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Torpedo Fish Card. Riddle: \"Fish?.\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Ghost_Blue_Card_Girl_Quest_(4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-11",
+      "order": 515,
+      "title": "Card Girl - Ghost Blue Card Girl Quest (5)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 110,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Card Girl at Gate of Ghost Blue.",
+        "Get 1x Siremaid Card: dropped by Siremaid (Lv.120) (use Take on it) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Siremaid Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Siremaid (Lv.120) (use Take on it)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3867810,
+        "galder": 0,
+        "items": [
+          "6x Arcana Brave Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Siremaid Card. Riddle: \"The heavenly harp melody is a dirge that leads one to death.\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Ghost_Blue_Card_Girl_Quest_(5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-12",
+      "order": 516,
+      "title": "Chief Koha - To Rose Garden",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Chief Koha",
+      "npcIds": [
+        "chief-koha"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-key-02"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Chief Koha - Get a Date",
+      "steps": [
+        "Talk to Chief Koha at Ghost Blue Seabed Town - Aquarius.",
+        "Find and talk to Louis Bitton."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 662888,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Louis Bitton is found in Rose Field 1 - Stairway to Sorrow.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Koha_-_To_Rose_Garden.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-13",
+      "order": 517,
+      "title": "Clerk Z. Smith - Nora Sewer's Rare Stones",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Clerk Z. Smith",
+      "npcIds": [
+        "clerk-z-smith"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 110,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Clerk Z. Smith at Ghost Blue Seabed Town - Aquarius.",
+        "Get 3x Kryptonite: drilled in Nora Sewer.",
+        "Bring everything back to Clerk Z. Smith (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Kryptonite",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2719554,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Kryptonite is drilled in Nora Sewer.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clerk_Z._Smith_-_Nora_Sewer's_Rare_Stones.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-14",
+      "order": 518,
+      "title": "Compounder Paul - Help Paul with his New Study",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Compounder Paul",
+      "npcIds": [
+        "compounder-paul"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Compounder Paul at Gate of Ghost Blue.",
+        "Get 2x Crystal: drilled in Seabed Fields.",
+        "Get 2x Light Pink Coral: dropped by Popeyed Anemone (Lv.105) in Seabed Field 1 - North.",
+        "Get 2x Mermaid's Feather: dropped by Siremaid (Lv.120) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Compounder Paul (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Crystal",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Light Pink Coral",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Popeyed Anemone (Lv.105)",
+            "map": "Seabed Field 1 - North"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Mermaid's Feather",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Siremaid (Lv.120)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Heavenly Melody Potion",
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Crystal is drilled in Seabed Fields. Light Pink Coral is dropped by Popeyed Anemone (Lv.105), Mermaid's Feather is dropped by Siremaid (Lv.120). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Compounder_Paul_-_Help_Paul_with_his_New_Study.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-15",
+      "order": 519,
+      "title": "Copyfish DomDom - Match with Saki",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Trench of the Pirate",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Trench of the Pirate.",
+        "Defeat 1x Right Hand Saki (Lv.245) within 4 min in Trench of the Pirate.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Right Hand Saki",
+          "level": 245,
+          "count": 1,
+          "timeLimit": "4 min",
+          "map": "Trench of the Pirate"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Reward: a transfer onwards.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Match_with_Saki.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-16",
+      "order": 520,
+      "title": "Copyfish DomDom - Match with Sass",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Trench of the Pirate",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Trench of the Pirate.",
+        "Defeat 1x Left Hand Sass (Lv.248) within 4 min in Trench of the Pirate.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Left Hand Sass",
+          "level": 248,
+          "count": 1,
+          "timeLimit": "4 min",
+          "map": "Trench of the Pirate"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Reward: a transfer onwards.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Match_with_Sass.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-17",
+      "order": 521,
+      "title": "Copyfish DomDom - Request 1",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Trench of the Dead",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Trench of the Dead.",
+        "Get 5x Evil Spirit Bone 1: dropped by Popeyed Anemone Ghost (Lv.200) in Trench of the Dead.",
+        "Bring everything back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Evil Spirit Bone 1",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Popeyed Anemone Ghost (Lv.200)",
+            "map": "Trench of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Evil Spirit Bone 1 is dropped by Popeyed Anemone Ghost (Lv. 200).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Request_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-18",
+      "order": 522,
+      "title": "Copyfish DomDom - Request 2",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Trench of the Dead",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Trench of the Dead.",
+        "Get 5x Evil Spirit Bone 2: dropped by Jelly Fish Ghost (Lv.210) in Trench of the Dead.",
+        "Bring everything back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Evil Spirit Bone 2",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Jelly Fish Ghost (Lv.210)",
+            "map": "Trench of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Evil Spirit Bone 2 is dropped by Jelly Fish Ghost (Lv.210).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Request_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-19",
+      "order": 523,
+      "title": "Copyfish DomDom - Request 3",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Trench of the Dead",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Trench of the Dead.",
+        "Get 5x Evil Spirit Bone 3: dropped by Sea Tiger Ghost (Lv.220) in Trench of the Dead.",
+        "Bring everything back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Evil Spirit Bone 3",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Tiger Ghost (Lv.220)",
+            "map": "Trench of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Evil Spirit Bone 3 is dropped by Sea Tiger Ghost (Lv.220).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Request_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-20",
+      "order": 524,
+      "title": "Copyfish DomDom - Request 4",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Trench of Patience",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Trench of Patience.",
+        "Get 30x Soul Marble: dropped by Sea Dragon Ghost (Lv.230) in Trench of Patience.",
+        "Bring everything back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Soul Marble",
+          "qty": 30,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Dragon Ghost (Lv.230)",
+            "map": "Trench of Patience"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Soul Marble is dropped by Sea Dragon Ghost (Lv.230).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Request_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-21",
+      "order": 525,
+      "title": "Copyfish DomDom - Request 5",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Trench of the Pirate - Copyfish DomDom (Lv.200+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Whirlpool of Agony",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Copyfish DomDom at Whirlpool of Agony.",
+        "Find the exit."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Request_5.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-22",
+      "order": 526,
+      "title": "Dorothy - A Present for a Sick Friend (2)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Dorothy",
+      "npcIds": [
+        "dorothy"
+      ],
+      "location": "Path to Ghost Blue 1",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Dorothy at Path to Ghost Blue 1.",
+        "Get 3x Nutritious Mushroom: dropped by Mushumushu (Lv.102) in Path to Ghost Blue 1.",
+        "Bring everything back to Dorothy (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nutritious Mushroom",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Mushumushu (Lv.102)",
+            "map": "Path to Ghost Blue 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 1,000 Galder Coupon",
+          "Cycle 2: 2x 1,000 Galder Coupon",
+          "Cycle 3: 3x 1,000 Galder Coupon",
+          "Cycle 4: 4x 1,000 Galder Coupon",
+          "Cycle 5: 5x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Nutritious Mushroom is dropped by Mushumushu (Lv.102).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Dorothy_-_A_Present_for_a_Sick_Friend_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-23",
+      "order": 527,
+      "title": "Driller King Marky - Romance of Drilling - Ghost Blue",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Seabed Field 3 - Undersea Park",
+      "minLevel": 90,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 90~290, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Seabed Field 3 - Undersea Park.",
+        "Get 1x Weird Ocean Map A: drilled in Seabed Fields.",
+        "Get 1x Weird Ocean Map B: drilled in Seabed Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Ocean Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Ocean Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 198319,
+        "tmExp": 198319,
+        "galder": 0,
+        "items": [
+          "1x Weird Ocean Treasure Map"
+        ]
+      },
+      "notes": "Weird Ocean Map A and Weird Ocean Map B are drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Ghost_Blue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-70",
+      "order": 528,
+      "title": "Stella - Shadow Star 6",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Mind's Eye (Lv.255+)",
+      "npc": "Stella",
+      "npcIds": [
+        "stella"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 255,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 255+, use Mind's Eye",
+      "steps": [
+        "Talk to Stella at Ghost Blue Seabed Town - Aquarius.",
+        "Get 5x Candle of Shadow: dropped by Shadow Plug Bat (Lv.461) in Path to Ghost Blue 1 / Path to Ghost Blue 2.",
+        "Bring everything back to Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Candle of Shadow",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Shadow Plug Bat (Lv.461)",
+            "map": "Path to Ghost Blue 1 / Path to Ghost Blue 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3887933,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.5",
+          "9x Half Pink Potion",
+          "9x Half Blue Potion or Story of the Star Gazer Girl 6"
+        ]
+      },
+      "notes": "Candle of Shadow is dropped by Shadow Plug Bat (Lv.461), Shadow Pirate Boxer (Lv.463), Shadow Torpedo Fish (Lv.469), Shadow Cora Pyupyu (Lv.471), Shadow Siremaid (Lv.475), and Shadow Pirate Ghost (Lv.477).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stella_-_Shadow_Star_6.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-24",
+      "order": 529,
+      "title": "Eclipse - The Story of the Gods 6",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Mind's Eye (Lv.255+)",
+      "npc": "Eclipse",
+      "npcIds": [
+        "eclipse"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 255,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-59"
+        },
+        {
+          "quest": "gb-70"
+        }
+      ],
+      "prereqText": "Level 255+, use Mind's Eye, have completed The Story of the Gods 5 and have completed Shadow Star 6 at least once",
+      "steps": [
+        "Talk to Eclipse at Ghost Blue Seabed Town - Aquarius.",
+        "Get 2x Shadow Turquoise: dropped by Nora Sewer shadow monsters (seen with Mind's Eye) in Nora Sewer.",
+        "Get 2x Shadow Silver Aquamarine: dropped by Nora Sewer shadow monsters (seen with Mind's Eye) in Nora Sewer.",
+        "Bring everything back to Eclipse."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Turquoise",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Sewer shadow monsters (seen with Mind's Eye)",
+            "map": "Nora Sewer"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shadow Silver Aquamarine",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Sewer shadow monsters (seen with Mind's Eye)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 11830839,
+        "tmExp": 6509261,
+        "galder": 0,
+        "items": [
+          "3x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Shadow Turquoise and Shadow Silver Aquamarine are dropped by Shadow Nora Sewer Monsters. Eclipse only shows up between 23:00 and 23:20.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Eclipse_-_The_Story_of_the_Gods_6.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-25",
+      "order": 530,
+      "title": "Explorer Reina - Treasure Hunting 1 - Ghost Blue",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 90,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 90~290, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Explorer Reina at Seabed Field 1 - North.",
+        "Get 1x Worn Ocean Map A: drilled in Seabed Fields.",
+        "Get 1x Worn Ocean Map B: drilled in Seabed Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Ocean Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Ocean Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Ocean Treasure Map"
+        ]
+      },
+      "notes": "Worn Ocean Map A and Worn Ocean Map B are drilled in Seabed Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Ghost_Blue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-26",
+      "order": 531,
+      "title": "Explorer Reina - Treasure Hunting 2 - Ghost Blue",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 90,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "gb-25"
+        }
+      ],
+      "prereqText": "Level 90~290, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Ghost Blue 50 times",
+      "steps": [
+        "Talk to Explorer Reina at Seabed Field 1 - North.",
+        "Get 1x Old Ocean Map A: drilled in Seabed Fields.",
+        "Get 1x Old Ocean Map B: drilled in Seabed Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Ocean Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Ocean Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 198319,
+        "tmExp": 198319,
+        "galder": 0,
+        "items": [
+          "1x Old Ocean Treasure Map"
+        ]
+      },
+      "notes": "Old Ocean Map A and Old Ocean Map B are drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Ghost_Blue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-27",
+      "order": 532,
+      "title": "Favian - Devoted Favian",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Favian",
+      "npcIds": [
+        "favian"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Favian at Seabed Field 1 - North.",
+        "Get 1x Cash Box: dropped by Bad Anemone (Lv.116) in Seabed Field 1 - North.",
+        "Bring everything back to Favian (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cash Box",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Bad Anemone (Lv.116)",
+            "map": "Seabed Field 1 - North"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 10x 500 Galder Coupon",
+          "Cycle 5: 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Cash Box is dropped by Bad Anemone (Lv.116). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Favian_-_Devoted_Favian.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-72",
+      "order": 533,
+      "title": "Vinosh - Vinosh's Sleepwalking Med",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Vinosh",
+      "npcIds": [
+        "vinosh"
+      ],
+      "location": "Seabed Field 3 - Undersea Park",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-27"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Devoted Favian",
+      "steps": [
+        "Talk to Vinosh at Seabed Field 3 - Undersea Park.",
+        "Get 1x Cure for Sleepwalking: dropped by Pirate Ghost (Lv.121) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Vinosh (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cure for Sleepwalking",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Ghost (Lv.121)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Cure for Sleepwalking is dropped by Pirate Ghost (Lv.121). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vinosh_-_Vinosh's_Sleepwalking_Med.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-29",
+      "order": 534,
+      "title": "Favian - Romantic Favian",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Favian",
+      "npcIds": [
+        "favian"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-72"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Vinosh's Sleepwalking Med",
+      "steps": [
+        "Talk to Favian at Seabed Field 1 - North.",
+        "Get 1x Premium Wine: drilled in Seabed Fields.",
+        "Bring everything back to Favian (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Premium Wine",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 10x 500 Galder Coupon",
+          "Cycle 5: 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Premium Wine is drilled in Seabed Fields. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Favian_-_Romantic_Favian.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-28",
+      "order": 535,
+      "title": "Favian - Favian's Helm",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Favian",
+      "npcIds": [
+        "favian"
+      ],
+      "location": "Seabed Field 1 - North",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-29"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Romantic Favian",
+      "steps": [
+        "Talk to Favian at Seabed Field 1 - North.",
+        "Get 5x Monguse Helmet: dropped by Armor Squirt (Lv.108) in Seabed Field 1 - North / Seabed Field 2 - East.",
+        "Bring everything back to Favian (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Monguse Helmet",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Armor Squirt (Lv.108)",
+            "map": "Seabed Field 1 - North / Seabed Field 2 - East"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 1x 10,000 Galder Coupon",
+          "Cycle 5: 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Monguse Helmet is dropped by Armor Squirt (Lv.108). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Favian_-_Favian's_Helm.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-30",
+      "order": 536,
+      "title": "Frog Shaman - Ghost Blue Magic - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Seabed Field 2 - East",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Frog Shaman at Seabed Field 2 - East.",
+        "Get 5x Merrow's Gills: dropped by Merrow (Lv.118) in Seabed Field 3 - Undersea Park / Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Merrow's Gills",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Merrow (Lv.118)",
+            "map": "Seabed Field 3 - Undersea Park / Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1242916,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Merrow's Gills is dropped by Merrow (Lv.118).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Ghost_Blue_Magic_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-31",
+      "order": 537,
+      "title": "Frog Shaman - Ghost Blue Magic - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Seabed Field 2 - East",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Frog Shaman at Seabed Field 2 - East.",
+        "Get 5x Maid's Scales: dropped by Siremaid (Lv.120) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Maid's Scales",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Siremaid (Lv.120)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1242916,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 1x La Befana Card"
+        ]
+      },
+      "notes": "Maid's Scales is dropped by Siremaid (Lv.120).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Ghost_Blue_Magic_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-32",
+      "order": 538,
+      "title": "Frog Shaman - Ghost Blue Magic - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Seabed Field 2 - East",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Frog Shaman at Seabed Field 2 - East.",
+        "Get 5x Transparent Cloth: dropped by Pirate Ghost (Lv.121) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Transparent Cloth",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Ghost (Lv.121)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1242916,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Transparent Cloth is dropped by Pirate Ghost (Lv.121).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Ghost_Blue_Magic_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-33",
+      "order": 539,
+      "title": "Frog Shaman - Ghost Blue Magic - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Seabed Field 2 - East",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Frog Shaman at Seabed Field 2 - East.",
+        "Get 5x Nora's Reed: dropped by Nora Joe (Lv.126) in Nora Sewer.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nora's Reed",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Joe (Lv.126)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1491499,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Nora's Reed is dropped by Nora Joe (Lv.126). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Ghost_Blue_Magic_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-34",
+      "order": 540,
+      "title": "Genius Cochma - Ghost Blue Survey - 1",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Ghost Blue.",
+        "Defeat 15x Armor Squirt (Lv.108) within 10 min in Seabed Field 1 - North / Seabed Field 2 - East.",
+        "Report back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Armor Squirt",
+          "level": 108,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Seabed Field 1 - North / Seabed Field 2 - East"
+        }
+      ],
+      "rewards": {
+        "baseExp": 300877,
+        "tmExp": 572543,
+        "galder": 0,
+        "items": [
+          "5x Herb Potion",
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Ghost_Blue_Survey_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-35",
+      "order": 541,
+      "title": "Genius Cochma - Ghost Blue Survey - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Ghost Blue.",
+        "Get 5x Black Gunpowder: dropped by Torpedo Fish (Lv.112) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Black Gunpowder",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Torpedo Fish (Lv.112)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1242916,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 1x Chochma Card"
+        ]
+      },
+      "notes": "Black Gunpowder is dropped by Torpedo Fish (Lv.112).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Ghost_Blue_Survey_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-36",
+      "order": 542,
+      "title": "Genius Cochma - Ghost Blue Survey - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Ghost Blue.",
+        "Get 5x Hair Curling Iron: dropped by Cora Pyupyu (Lv.115) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Hair Curling Iron",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Cora Pyupyu (Lv.115)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1242916,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Hair Curling Iron is dropped by Cora Pyupyu (Lv.115).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Ghost_Blue_Survey_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-37",
+      "order": 543,
+      "title": "Genius Cochma - Ghost Blue Survey - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Ghost Blue.",
+        "Get 5x Merrow's Trunk: dropped by Merrow (Lv.118) in Seabed Field 3 - Undersea Park / Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Merrow's Trunk",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Merrow (Lv.118)",
+            "map": "Seabed Field 3 - Undersea Park / Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1491499,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Merrow's Trunk is dropped by Merrow (Lv.118). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Ghost_Blue_Survey_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-38",
+      "order": 544,
+      "title": "Hunter Master - Aquarius Hunter Master's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Hunter Master",
+      "npcIds": [
+        "hunter-master"
+      ],
+      "location": "Aquarius Monster Guild",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-39"
+        },
+        {
+          "quest": "gb-01"
+        }
+      ],
+      "prereqText": "Level 100+, have completed at least 1 Aquarius Hunter Girl Yuri's Quest and Aquarius Assistant Hunter's Quest",
+      "steps": [
+        "Talk to Hunter Master at Aquarius Monster Guild.",
+        "Defeat 30x Pirate Ghost (Lv.121) within 15 min in Seabed Field 4 - Undersea Grave.",
+        "Report back to Hunter Master (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Pirate Ghost",
+          "level": 121,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Seabed Field 4 - Undersea Grave"
+        }
+      ],
+      "rewards": {
+        "baseExp": 708079,
+        "tmExp": 384975,
+        "galder": 0,
+        "items": [
+          "1x Hat Exchange Ticket E"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Master_-_Aquarius_Hunter_Master's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-40",
+      "order": 545,
+      "title": "La Vida - La Vida's Revenge",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Nora Sewer - Pirate King Karan (Lv.150+)",
+      "npc": "La Vida",
+      "npcIds": [
+        "la-vida"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150~280, have Pearl Pistol in inventory",
+      "steps": [
+        "Talk to La Vida at Nora Sewer.",
+        "Get 1x Sealing Charm: reward from Shaman Girl Jia - Make Sealing Charm.",
+        "Bring everything back to La Vida."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sealing Charm",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Shaman Girl Jia - Make Sealing Charm",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 34113492,
+        "tmExp": 6318861,
+        "galder": 0,
+        "items": [
+          "1x Blood-Red Eyepatch",
+          "1x La Vida Card"
+        ]
+      },
+      "notes": "Pearl Pistol is dropped by Pirate King Karan (Lv.250). Sealing Charm is obtained from completing Shaman Girl Jia - Make Sealing Charm.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/La_Vida_-_La_Vida's_Revenge.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-41",
+      "order": 546,
+      "title": "La Vida - La Vida's Treasure Map 3",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "La Vida",
+      "npcIds": [
+        "la-vida"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-16"
+        }
+      ],
+      "prereqText": "Level 95+, have completed La Vida's Treasure Map 2 at Mermaid Palace",
+      "steps": [
+        "Talk to La Vida at Ghost Blue Seabed Town - Aquarius.",
+        "Get 1x Fragmented Map 3: drilled in Seabed Fields.",
+        "Bring everything back to La Vida (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fragmented Map 3",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Fragmented Map 3 is drilled in Seabed Fields. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/La_Vida_-_La_Vida's_Treasure_Map_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-42",
+      "order": 547,
+      "title": "Lethos - Beat Lethos",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Seabed Field 4 - Undersea Grave",
+      "minLevel": 95,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Lethos at Seabed Field 4 - Undersea Grave.",
+        "Defeat 25x Armor Squirt (Lv.108) within 10 min in Seabed Field 1 - North / Seabed Field 2 - East.",
+        "Report back to Lethos."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Armor Squirt",
+          "level": 108,
+          "count": 25,
+          "timeLimit": "10 min",
+          "map": "Seabed Field 1 - North / Seabed Field 2 - East"
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Beat_Lethos.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-43",
+      "order": 548,
+      "title": "Lethos - Collect Steel Pieces and Hook",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Seabed Field 4 - Undersea Grave",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-42"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Beat Lethos",
+      "steps": [
+        "Talk to Lethos at Seabed Field 4 - Undersea Grave.",
+        "Get 5x Steel Piece: dropped by Torpedo Fish (Lv.112) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Get 1x Hook: dropped by Pirate Ghost (Lv.121) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Steel Piece",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Torpedo Fish (Lv.112)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Hook",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Ghost (Lv.121)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 500 Galder Coupon",
+          "Cycle 5: 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Steel Piece is dropped by Torpedo Fish (Lv.112). Hook is dropped by Pirate Ghost (Lv.121). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Collect_Steel_Pieces_and_Hook.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-44",
+      "order": 549,
+      "title": "Lethos - Nora Tribe Research - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 110,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Lethos at Nora Sewer.",
+        "Get 5x Copper Nora Stone: drilled in Nora Sewer.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Copper Nora Stone",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1539641,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Copper Nora Stone is drilled in Nora Sewer.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Nora_Tribe_Research_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-45",
+      "order": 550,
+      "title": "Lethos - Nora Tribe Research - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 110,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Lethos at Nora Sewer.",
+        "Get 5x Bronze Nora Stone: dropped by Nora Joe (Lv.126) in Nora Sewer.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bronze Nora Stone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Joe (Lv.126)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1539641,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 1x Lethos Card"
+        ]
+      },
+      "notes": "Bronze Nora Stone is dropped by Nora Joe (Lv.126).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Nora_Tribe_Research_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-46",
+      "order": 551,
+      "title": "Lethos - Nora Tribe Research - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 110,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Lethos at Nora Sewer.",
+        "Get 5x Silver Nora Stone: dropped by Nora Mummy (Lv.132) in Nora Sewer.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Silver Nora Stone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Mummy (Lv.132)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1539641,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Silver Nora Stone is dropped by Nora Mummy (Lv.132).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Nora_Tribe_Research_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-47",
+      "order": 552,
+      "title": "Lethos - Nora Tribe Research - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 110,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Lethos at Nora Sewer.",
+        "Get 5x Gold Nora Stone: dropped by Nora Big (Lv.144) in Nora Sewer.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold Nora Stone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Big (Lv.144)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1847569,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Gold Nora Stone is dropped by Nora Big (Lv.144). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Nora_Tribe_Research_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-48",
+      "order": 553,
+      "title": "Love Hunter Robin - Nora Sewer Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 110,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 110+",
+      "steps": [
+        "Talk to Love Hunter Robin at Nora Sewer.",
+        "Defeat 20x Nora Mummy (Lv.132) within 10 min in Nora Sewer.",
+        "Report back to Love Hunter Robin."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Nora Mummy",
+          "level": 132,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Nora Sewer"
+        }
+      ],
+      "rewards": {
+        "baseExp": 829225,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.126+: 20x Nora Big (Lv.144) in 10 min, reward 2x 10,000 Galder Coupon. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Nora_Sewer_Monster_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-49",
+      "order": 554,
+      "title": "Love Hunter Robin - Path to Ghost Blue Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Path to Ghost Blue 1",
+      "minLevel": 95,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Love Hunter Robin at Path to Ghost Blue 1.",
+        "Defeat 30x Mushumushu (Lv.102) within 20 min in Path to Ghost Blue 1.",
+        "Report back to Love Hunter Robin."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mushumushu",
+          "level": 102,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Path to Ghost Blue 1"
+        }
+      ],
+      "rewards": {
+        "baseExp": 594220,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.105+: 30x Pirate Boxer (Lv.110) in 20 min, reward 10,000 Galder Coupon. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Path_to_Ghost_Blue_Monster_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-51",
+      "order": 555,
+      "title": "Marie Elle - Making Flyer",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Marie Elle",
+      "npcIds": [
+        "marie-elle"
+      ],
+      "location": "Aquarius Inn",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Marie Elle at Aquarius Inn.",
+        "Get 5x Paper: drilled in Desert Beach Fields / Seabed Fields.",
+        "Get 1x Brush: drilled in Seabed Fields.",
+        "Get 1x Paint: drilled in Seabed Fields.",
+        "Bring everything back to Marie Elle (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Paper",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Desert Beach Fields / Seabed Fields (drill depth not on the wiki)",
+            "map": "Desert Beach Fields / Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Brush",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Paint",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x Herb Potion",
+          "Cycle 2: 1x Spirit Marble",
+          "Cycle 3: 5x Herb Potion",
+          "Cycle 4: 1x Spirit Marble",
+          "Cycle 5: 5x Herb Potion"
+        ]
+      },
+      "notes": "Paper can be bought from Item Girl's shops for 8G or can be drilled along with Brush and Paint in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marie_Elle_-_Making_Flyer.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-50",
+      "order": 556,
+      "title": "Marie Elle - Collect Rewards",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Marie Elle",
+      "npcIds": [
+        "marie-elle"
+      ],
+      "location": "Aquarius Inn",
+      "minLevel": 95,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-51"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Marie Elle - Making Flyer",
+      "steps": [
+        "Talk to Marie Elle at Aquarius Inn.",
+        "Find where Marinel is."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 549181,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Marinel is in Seabed Field 3 - Undersea Park, next to Vinosh.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marie_Elle_-_Collect_Rewards.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-52",
+      "order": 557,
+      "title": "Marinel - Fix the Submarine",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Seabed Field 3 - Undersea Park",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-50"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Marie Elle - Collect Rewards",
+      "steps": [
+        "Talk to Marinel at Seabed Field 3 - Undersea Park.",
+        "Get 3x Propeller: dropped by Torpedo Fish (Lv.112) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Get 3x Steel Piece: dropped by Torpedo Fish (Lv.112) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Bring everything back to Marinel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Propeller",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Torpedo Fish (Lv.112)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Steel Piece",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Torpedo Fish (Lv.112)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x Gold Pearl Potion",
+          "Cycle 2: 1x Spirit Marble",
+          "Cycle 3: 5x Gold Pearl Potion",
+          "Cycle 4: 1x Spirit Marble",
+          "Cycle 5: 5x Gold Pearl Potion"
+        ]
+      },
+      "notes": "Propeller and Steel Piece are dropped by Torpedo Fish (Lv.112).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_Fix_the_Submarine.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-53",
+      "order": 558,
+      "title": "Marinel - Found you, Marinel",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Seabed Field 3 - Undersea Park",
+      "minLevel": 95,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-50",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 95+, have Marie Elle - Collect Rewards in quest log",
+      "steps": [
+        "Talk to Marinel at Seabed Field 3 - Undersea Park.",
+        "Talk to Marinel."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 549181,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "You can finish the quest by talking to Marinel again.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_Found_you,_Marinel.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-54",
+      "order": 559,
+      "title": "Marinel - Fuel the Submarine",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Seabed Field 3 - Undersea Park",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-52"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Marinel - Fix the Submarine",
+      "steps": [
+        "Talk to Marinel at Seabed Field 3 - Undersea Park.",
+        "Get 1x Petroleum: drilled in Seabed Fields.",
+        "Get 1x Natural Gas: drilled in Seabed Fields.",
+        "Bring everything back to Marinel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Petroleum",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Natural Gas",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Spirit Marble",
+          "Cycle 2: 5x Herb Potion",
+          "Cycle 3: 1x Spirit Marble",
+          "Cycle 4: 5x Herb Potion",
+          "Cycle 5: 1x Spirit Marble"
+        ]
+      },
+      "notes": "Petroleum and Natural Gas are drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_Fuel_the_Submarine.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-55",
+      "order": 560,
+      "title": "Marinel - Mom, it's me",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Seabed Field 3 - Undersea Park",
+      "minLevel": 95,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-54"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Marinel - Fuel the Submarine",
+      "steps": [
+        "Talk to Marinel at Seabed Field 3 - Undersea Park.",
+        "Talk to Marinel."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 549181,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Mom It's Me"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_Mom,_it's_me.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-56",
+      "order": 561,
+      "title": "Miranda Watty - Miranda's Hobby",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Miranda Watty",
+      "npcIds": [
+        "miranda-watty"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Miranda Watty at Gate of Ghost Blue.",
+        "Get 3x Pirate's Hood: dropped by Pirate Boxer (Lv.110) in Path to Ghost Blue 2.",
+        "Bring everything back to Miranda Watty (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pirate's Hood",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Boxer (Lv.110)",
+            "map": "Path to Ghost Blue 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 1,000 Galder Coupon",
+          "Cycle 2: 2x 1,000 Galder Coupon",
+          "Cycle 3: 3x 1,000 Galder Coupon",
+          "Cycle 4: 4x 1,000 Galder Coupon",
+          "Cycle 5: 5x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Pirate's Hood is dropped by Pirate Boxer (Lv.110).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Miranda_Watty_-_Miranda's_Hobby.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-57",
+      "order": 562,
+      "title": "Monkey T - Business Proposal 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Monkey T at Nora Sewer.",
+        "Get 3x Nora Bandage: dropped by Nora Mummy (Lv.132) in Nora Sewer.",
+        "Bring everything back to Monkey T (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nora Bandage",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Mummy (Lv.132)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 937418,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon",
+          "Cycle 2: 1x Spirit Marble",
+          "Cycle 3: 5x 500 Galder Coupon",
+          "Cycle 4: 1x Spirit Marble",
+          "Cycle 5: 5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Nora Bandage is dropped by Nora Mummy (Lv.132).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Business_Proposal_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-58",
+      "order": 563,
+      "title": "Monkey T - Business Proposal 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-57"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Monkey T - Business Proposal 1",
+      "steps": [
+        "Talk to Monkey T at Nora Sewer.",
+        "Get 3x Nora Doll: dropped by Nora Mummy (Lv.132) in Nora Sewer.",
+        "Bring everything back to Monkey T (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nora Doll",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Mummy (Lv.132)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 937418,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Spirit Marble",
+          "Cycle 2: 5x 500 Galder Coupon",
+          "Cycle 3: 1x Spirit Marble",
+          "Cycle 4: 5x 500 Galder Coupon",
+          "Cycle 5: 1x Spirit Marble + 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Nora Doll is dropped by Nora Mummy (Lv.132) and Nora Big (Lv.144). Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Business_Proposal_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-59",
+      "order": 564,
+      "title": "Monkey T - Monkey T's Request (6)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Seabed Field 2 - East",
+      "minLevel": 95,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Monkey T at Seabed Field 2 - East.",
+        "Get 10x Eternal Vigor Grass: dropped by Cora Pyupyu (Lv.115) in Seabed Field 2 - East / Seabed Field 3 - Undersea Park.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Vigor Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Cora Pyupyu (Lv.115)",
+            "map": "Seabed Field 2 - East / Seabed Field 3 - Undersea Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1255611,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Vigor Grass is dropped by Cora Pyupyu (Lv.115).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(6).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-60",
+      "order": 565,
+      "title": "Officer Robert - Help Transport the Cash Box",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Officer Robert",
+      "npcIds": [
+        "officer-robert"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-03",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 95+, have Lisa's 2nd Urgent Request in quest log",
+      "steps": [
+        "Talk to Officer Robert at Ghost Blue Seabed Town - Aquarius.",
+        "Get 1x Cash Box: reward from Banker Lisa - Lisa's 1st Urgent Request.",
+        "Bring everything back to Officer Robert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cash Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Banker Lisa - Lisa's 1st Urgent Request",
+            "map": "Seabed Field 1 - North"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Robert's Receipt",
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Cash Box is obtained by completing Banker Lisa - Lisa's 1st Urgent Request. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Robert_-_Help_Transport_the_Cash_Box.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-61",
+      "order": 566,
+      "title": "Rosemary - Making Luxurious Sunglasses",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Rosemary",
+      "npcIds": [
+        "rosemary"
+      ],
+      "location": "Gate of Ghost Blue",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Rosemary at Gate of Ghost Blue.",
+        "Get 3x Batglasses: dropped by Plug Bat (Lv.104) in Path to Ghost Blue 1 / Path to Ghost Blue 2.",
+        "Bring everything back to Rosemary (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Batglasses",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Plug Bat (Lv.104)",
+            "map": "Path to Ghost Blue 1 / Path to Ghost Blue 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 1,000 Galder Coupon",
+          "Cycle 2: 2x 1,000 Galder Coupon",
+          "Cycle 3: 3x 1,000 Galder Coupon",
+          "Cycle 4: 4x 1,000 Galder Coupon",
+          "Cycle 5: 5x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Batglasses is dropped by Plug Bat (Lv.104).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosemary_-_Making_Luxurious_Sunglasses.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-62",
+      "order": 567,
+      "title": "Shaman Girl Jia - Dark Soul of Karan",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Nora Sewer - Pirate King Karan (Lv.150+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-40",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150~280, have La Vida's Revenge in quest log, and have Pearl Pistol in inventory",
+      "steps": [
+        "Talk to Shaman Girl Jia at Nora Sewer.",
+        "Defeat 1x Dark Soul of Karan (Lv.230) within 5 min in Nora Sewer.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Dark Soul of Karan",
+          "level": 230,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "Nora Sewer"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1349387,
+        "tmExp": 145802,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Pearl Pistol is dropped by Pirate King Karan (Lv.250). Shaman Girl Jia will teleport you to the place of Dark Soul of Karan.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Soul_of_Karan.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-63",
+      "order": 568,
+      "title": "Shaman Girl Jia - Dark Spirit Punishment 6",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Mind's Eye (Lv.255+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 255,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 255+, use Mind's Eye",
+      "steps": [
+        "Talk to Shaman Girl Jia at Ghost Blue Seabed Town - Aquarius.",
+        "Defeat 3x Shadow Mushumushu (Lv.459) within 12 min in Path to Ghost Blue 1.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Shadow Mushumushu",
+          "level": 459,
+          "count": 3,
+          "timeLimit": "12 min",
+          "map": "Path to Ghost Blue 1"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1916319,
+        "tmExp": 301242,
+        "galder": 0,
+        "items": [
+          "5x Half Pink Potion",
+          "5x Half Blue Potion"
+        ]
+      },
+      "notes": "At other levels: Lv.259~262: 3x Shadow Popeyed Anemone (Lv.465) in 12 min, reward 5x Half Pink Potion, 5x Half Blue Potion. Lv.263~266: 3x Shadow Monguse (Lv.467) in 11 min, reward 4x Half Pink Potion, 4x Half Blue Potion. Lv.267~270: 3x Shadow Merrow (Lv.437) in 11 min, reward 5x Half Pink Potion, 5x Half Blue Potion. Lv.271+: 3x Shadow Nora Joe (Lv.481) in 10 min, reward 5x Half Pink Potion, 5x Half Blue Potion.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Spirit_Punishment_6.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-64",
+      "order": 569,
+      "title": "Shaman Girl Jia - Jia in search of Pure Water",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Aquarius Shrine",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Shaman Girl Jia at Aquarius Shrine.",
+        "Get 3x Pure Water: drilled in Seabed Fields.",
+        "Bring everything back to Shaman Girl Jia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Water",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon",
+          "Cycle 2: 1x Spirit Marble",
+          "Cycle 3: 5x 500 Galder Coupon",
+          "Cycle 4: 1x Spirit Marble",
+          "Cycle 5: 5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Pure Water is drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Jia_in_search_of_Pure_Water.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-65",
+      "order": 570,
+      "title": "Shaman Girl Jia - Make Sealing Charm",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Nora Sewer - Pirate King Karan (Lv.150+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-62"
+        }
+      ],
+      "prereqText": "Level 150~280, have completed Shaman Girl Jia - Dark Soul of Karan, must have Ebon Admiral's Hat and Pearl Pistol in inventory",
+      "steps": [
+        "Talk to Shaman Girl Jia at Nora Sewer.",
+        "Get 1x Captain Stan's Red Ink: reward from Captain Stan - Stan's Pencilcase.",
+        "Bring everything back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Captain Stan's Red Ink",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Captain Stan - Stan's Pencilcase",
+            "map": "Aquarius Inn"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 28427910,
+        "tmExp": 5265718,
+        "galder": 0,
+        "items": [
+          "1x Shaman Jia Card",
+          "1x Sealing Charm"
+        ]
+      },
+      "notes": "Ebon Admiral's Hat and Pearl Pistol are dropped by Pirate King Karan (Lv.250). Captain Stan's Red Ink is obtained by completing Captain Stan - Stan's Pencilcase. While you need the Ebon Admiral's Hat to finish the quest, it's not needed to start it.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Make_Sealing_Charm.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-66",
+      "order": 571,
+      "title": "Sissy Viole - Viole's Violin",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Sissy Viole",
+      "npcIds": [
+        "sissy-viole"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Sissy Viole at Ghost Blue Seabed Town - Aquarius.",
+        "Get 3x Whale Sinew: dropped by Siremaid (Lv.120) in Seabed Field 4 - Undersea Grave.",
+        "Get 1x Heavenly Melody Potion: reward from Compounder Paul - Help Paul with his New Study.",
+        "Bring everything back to Sissy Viole (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Whale Sinew",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Siremaid (Lv.120)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Heavenly Melody Potion",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Compounder Paul - Help Paul with his New Study",
+            "map": "Gate of Ghost Blue"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Spirit Marble",
+          "1x Ghost Sticker"
+        ]
+      },
+      "notes": "Whale Sinew is dropped by Siremaid (Lv.120). Heavenly Melody Potion is obtained by completing Help Paul with his New Study. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sissy_Viole_-_Viole's_Violin.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-67",
+      "order": 572,
+      "title": "Sophia - Help Opening the Inn",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Sophia",
+      "npcIds": [
+        "sophia"
+      ],
+      "location": "Aquarius Inn",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Sophia at Aquarius Inn.",
+        "Get 2x Premium Wine: drilled in Seabed Fields.",
+        "Get 2x Premium Liquor: drilled in Seabed Fields.",
+        "Bring everything back to Sophia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Premium Wine",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Premium Liquor",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Spirit Marble",
+          "Cycle 2: 5x Gold Pearl Potion",
+          "Cycle 3: 1x Spirit Marble",
+          "Cycle 4: 5x Gold Pearl Potion",
+          "Cycle 5: 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Premium Wine and Premium Liquor are drilled in Seabed Fields. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sophia_-_Help_Opening_the_Inn.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-68",
+      "order": 573,
+      "title": "Sophia - Sophia's Concern",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Sophia",
+      "npcIds": [
+        "sophia"
+      ],
+      "location": "Aquarius Inn",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-55"
+        }
+      ],
+      "prereqText": "Level 95+, have completed Mom It's Me",
+      "steps": [
+        "Talk to Sophia at Aquarius Inn.",
+        "Get 1x Mom It's Me: reward from Marinel - Mom.",
+        "Bring everything back to Sophia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mom It's Me",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Marinel - Mom",
+            "map": "Aquarius Inn"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 549181,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Mom It's Me is obtained by completing Marinel - Mom, it's me.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sophia_-_Sophia's_Concern.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-69",
+      "order": 574,
+      "title": "Star Gazer Stella - Daily Quest - Ghost Blue",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Daily",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Star Gazer Stella at Ghost Blue Seabed Town - Aquarius.",
+        "Get 2x Stela's Profile: dropped by Mermaid Palace, Rose Garden and Black Swamp monsters in Mermaid Palace Fields.",
+        "Bring everything back to Star Gazer Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Stela's Profile",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Palace, Rose Garden and Black Swamp monsters",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1468318,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "20x 500 Galder Coupon or 5x First-Aid Pink Potion or 5x First-Aid Blue Potion or Moon Battle Rod or Strong Knight Shield or Sharp Sabre"
+        ]
+      },
+      "notes": "Stela's Profile is dropped by Mermaid Palace, Rose Garden, and Black Swamp Monsters. In next season the request will be Torture for Morons 1, Torture for Morons 2.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Star_Gazer_Stella_-_Daily_Quest_-_Ghost_Blue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-71",
+      "order": 575,
+      "title": "Vagabond Eloy - Eloy's Sensitive Skin (2)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Vagabond Eloy",
+      "npcIds": [
+        "vagabond-eloy"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Vagabond Eloy at Ghost Blue Seabed Town - Aquarius.",
+        "Get 5x Plane for Skin: drilled in Seabed Fields.",
+        "Bring everything back to Vagabond Eloy (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Plane for Skin",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1242916,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 1,000 Galder Coupon",
+          "Cycle 2: 2x 1,000 Galder Coupon",
+          "Cycle 3: 3x 1,000 Galder Coupon",
+          "Cycle 4: 4x 1,000 Galder Coupon",
+          "Cycle 5: 5x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Plane for Skin is drilled in Seabed Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vagabond_Eloy_-_Eloy's_Sensitive_Skin_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-75",
+      "order": 576,
+      "title": "Weepy Nora - Third Eye Nora Ron's Request",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Weepy Nora",
+      "npcIds": [
+        "weepy-nora"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 100+",
+      "steps": [
+        "Talk to Weepy Nora at Nora Sewer.",
+        "Get 5x Nora Sprayer: dropped by Nora Joe (Lv.126) in Nora Sewer.",
+        "Bring everything back to Weepy Nora (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nora Sprayer",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Joe (Lv.126)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 937418,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Nora Drill",
+          "Cycle 2: 1x Spirit Marble",
+          "Cycle 3: 1x Nora Drill",
+          "Cycle 4: 1x Spirit Marble",
+          "Cycle 5: 1x Nora Drill"
+        ]
+      },
+      "notes": "Nora Sprayer is dropped by Nora Joe (Lv.126), Nora Mummy (Lv.132), Nora Big (Lv.144).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Weepy_Nora_-_Third_Eye_Nora_Ron's_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-73",
+      "order": 577,
+      "title": "Weepy Nora - Feed Nora Ron",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Ghost Blue - Town Quests",
+      "npc": "Weepy Nora",
+      "npcIds": [
+        "weepy-nora"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-75"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Third Eye Nora Ron's Request",
+      "steps": [
+        "Talk to Weepy Nora at Nora Sewer.",
+        "Get 1x R Stone: drilled in Nora Sewer.",
+        "Get 1x Y Stone: drilled in Nora Sewer.",
+        "Get 1x B Stone: drilled in Nora Sewer.",
+        "Get 1x P Stone: drilled in Nora Sewer.",
+        "Get 1x G Stone: drilled in Nora Sewer.",
+        "Bring everything back to Weepy Nora (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "R Stone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Y Stone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "B Stone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "P Stone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "G Stone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 937418,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Spirit Marble",
+          "Cycle 2: 1x Nora Drill",
+          "Cycle 3: 1x Spirit Marble",
+          "Cycle 4: 1x Nora Drill",
+          "Cycle 5: 1x Spirit Marble"
+        ]
+      },
+      "notes": "R Stone, Y Stone, B Stone, P Stone, G Stone are drilled in Nora Sewer.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Weepy_Nora_-_Feed_Nora_Ron.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-74",
+      "order": 578,
+      "title": "Weepy Nora - Returning to the Nora",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Ghost Blue - Sticker Quests",
+      "npc": "Weepy Nora",
+      "npcIds": [
+        "weepy-nora"
+      ],
+      "location": "Nora Sewer",
+      "minLevel": 100,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-73"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Weepy Nora - Feed Nora Ron",
+      "steps": [
+        "Talk to Weepy Nora at Nora Sewer.",
+        "Get 2x Kryptonite: drilled in Nora Sewer.",
+        "Bring everything back to Weepy Nora (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Kryptonite",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Nora Sewer (drill depth not on the wiki)",
+            "map": "Nora Sewer"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 937418,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Nora Drill",
+          "Cycle 2: 1x Spirit Marble",
+          "Cycle 3: 1x Nora Drill",
+          "Cycle 4: 1x Spirit Marble",
+          "Cycle 5: 1x Ghost Sticker"
+        ]
+      },
+      "notes": "Kryptonite is drilled in Nora Sewer. Gives a Ghost Sticker: Chief Koha - Ghost Blue Sticker needs 10.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Weepy_Nora_-_Returning_to_the_Nora.html",
         "checked": "2026-11-12",
         "verifiedInGame": false
       }
