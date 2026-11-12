@@ -1951,6 +1951,48 @@
     "Phantom Dungeon - 2F Chilly Hallway": [],
     "Phantom Dungeon 2-1 / 2-2 / 2-4": [],
     "Phantom Dungeon - 3F Shiver Hallway": [],
-    "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet": []
+    "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet": [],
+    "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square": [
+      "mermaid-field-1",
+      "mermaid-field-2"
+    ],
+    "Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square": [
+      "mermaid-field-2",
+      "mermaid-field-3"
+    ],
+    "Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square / Mermaid Palace Field 4 - Rock Square": [
+      "mermaid-field-2",
+      "mermaid-field-3",
+      "mermaid-field-4"
+    ],
+    "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square": [
+      "mermaid-field-1",
+      "mermaid-field-4"
+    ],
+    "Mermaid Palace Field 1 - Water Park": [
+      "mermaid-field-1"
+    ],
+    "Mermaid Dungeon 1 - Underworld / Mermaid Dungeon 2 - Legend of the Sea": [
+      "mermaid-dungeon-1",
+      "mermaid-dungeon-2"
+    ],
+    "Mermaid Palace Fields / Mermaid Dungeon": [
+      "mermaid-field-1",
+      "mermaid-field-2",
+      "mermaid-field-3",
+      "mermaid-field-4",
+      "mermaid-dungeon-1",
+      "mermaid-dungeon-2"
+    ],
+    "Mermaid Dungeon": [
+      "mermaid-dungeon-1",
+      "mermaid-dungeon-2"
+    ],
+    "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square / Mermaid Palace Field 4 - Rock Square": [
+      "mermaid-field-1",
+      "mermaid-field-2",
+      "mermaid-field-3",
+      "mermaid-field-4"
+    ]
   }
 }
