@@ -81,6 +81,7 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   holds `{ region, quests: [...] }`; the app sorts all quests by `order`.
 - `data/npcs.json` (id, name), `data/images.json` (name -> image URL).
 - `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
+- Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`.
 
 Quest ids and the order of `steps` are what saved progress is keyed on: never rename an id or
 reorder steps of an existing quest (players would lose ticks). Add new steps at the end.

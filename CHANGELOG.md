@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.
+
 ## 0.6.1 (2026-11-12): See what friends have, Bag up to 999
 
 - Bag counts go up to 999 (3-digit numbers used to be cut off in the box).
