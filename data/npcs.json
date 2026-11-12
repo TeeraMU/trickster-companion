@@ -48,6 +48,10 @@
     "name": "Atropos"
   },
   {
+    "id": "automatic-plant-incubator",
+    "name": "Automatic Plant Incubator"
+  },
+  {
     "id": "banker-lisa",
     "name": "Banker Lisa"
   },
@@ -82,6 +86,10 @@
   {
     "id": "boxer-jeanne-warrior-kei-bard-la-fimmel-magician-louie-explorer-reina-inventor-gale-entertainer-elicia-card-master-taniel",
     "name": "Boxer Jeanne / Warrior Kei / Bard La Fimmel / Magician Louie / Explorer Reina / Inventor Gale / Entertainer Elicia / Card Master Taniel"
+  },
+  {
+    "id": "brother-tango",
+    "name": "Brother Tango"
   },
   {
     "id": "bunny-maid",
@@ -126,6 +134,10 @@
   {
     "id": "cluck-cluck-warrior",
     "name": "Cluck Cluck Warrior"
+  },
+  {
+    "id": "compounder-nadia",
+    "name": "Compounder Nadia"
   },
   {
     "id": "compounder-paul",
@@ -198,6 +210,10 @@
   {
     "id": "eliza-bath",
     "name": "Eliza Bath"
+  },
+  {
+    "id": "elsa-key-kuan",
+    "name": "Elsa Key Kuan"
   },
   {
     "id": "enigmo-van-peruozas-messenger",
@@ -360,6 +376,10 @@
     "name": "Inventor Gale"
   },
   {
+    "id": "irina",
+    "name": "Irina"
+  },
+  {
     "id": "kahlihara",
     "name": "Kahlihara"
   },
@@ -452,6 +472,18 @@
     "name": "Marinel"
   },
   {
+    "id": "marion",
+    "name": "Marion"
+  },
+  {
+    "id": "marked-stone",
+    "name": "Marked Stone"
+  },
+  {
+    "id": "match-girl-annie",
+    "name": "Match Girl Annie"
+  },
+  {
     "id": "merchant-miguel",
     "name": "Merchant Miguel"
   },
@@ -512,12 +544,24 @@
     "name": "Old Artist"
   },
   {
+    "id": "orconio-npc",
+    "name": "Orconio (NPC)"
+  },
+  {
+    "id": "orpeo-npc",
+    "name": "Orpeo (NPC)"
+  },
+  {
     "id": "pastor-tau",
     "name": "Pastor Tau"
   },
   {
     "id": "pharaoh-boy",
     "name": "Pharaoh Boy"
+  },
+  {
+    "id": "ponchichi-npc",
+    "name": "Ponchichi (NPC)"
   },
   {
     "id": "poppuri",
@@ -544,12 +588,36 @@
     "name": "Princess Rosetta"
   },
   {
+    "id": "prof-neil",
+    "name": "Prof. Neil"
+  },
+  {
     "id": "queen-cecilia",
     "name": "Queen Cecilia"
   },
   {
     "id": "queen-odinea-npc",
     "name": "Queen Odinea (NPC)"
+  },
+  {
+    "id": "ravenwood",
+    "name": "Ravenwood"
+  },
+  {
+    "id": "ray",
+    "name": "Ray"
+  },
+  {
+    "id": "rebecca",
+    "name": "Rebecca"
+  },
+  {
+    "id": "relic-site-dungeon",
+    "name": "Relic Site (Dungeon)"
+  },
+  {
+    "id": "relic-site-field",
+    "name": "Relic Site (Field)"
   },
   {
     "id": "rosaline-gracia",
