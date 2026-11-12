@@ -405,6 +405,7 @@
       selectedClass: "All",
       selectedRegion: "All",
       selectedAreaGroup: "all",
+      selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
       selectedCategory: "All",
       currentView: "episodes",
       selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
@@ -476,6 +477,8 @@
     // FILTERING HELPERS
     // ============================================================================
     function matchesClassFilter(q, selectedClass) {
+      // a chosen 3rd job path hides the other paths' quests everywhere (lists, counts, items, route)
+      if (q.path && appState.selectedJobPath && q.path !== appState.selectedJobPath) return false;
       if (!selectedClass || selectedClass === "All" || q.classFilter === "All") return true;
       if (q.classFilter.startsWith("Not ")) {
         const excluded = q.classFilter.replace("Not ", "").trim();
@@ -591,8 +594,53 @@
 
     function onClassChange(val) {
       appState.selectedClass = val;
+      // a 3rd job path of another class no longer fits
+      const p = jobPaths().find(x => x.key === appState.selectedJobPath);
+      if (p && val !== "All" && p.cls !== val) appState.selectedJobPath = "";
       saveState();
       renderAll();
+    }
+
+    // 3rd job paths, from the quests that carry a `path` (e.g. "primadonna" -> Cat)
+    let JOB_PATHS = null;
+    function jobPaths() {
+      if (JOB_PATHS) return JOB_PATHS;
+      const byKey = new Map();
+      QUESTS.forEach(q => {
+        if (q.path && !byKey.has(q.path)) byKey.set(q.path, {
+          key: q.path, cls: q.classFilter,
+          label: q.path.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
+        });
+      });
+      return (JOB_PATHS = [...byKey.values()]);
+    }
+
+    function setJobPath(key) {
+      appState.selectedJobPath = key || "";
+      const p = jobPaths().find(x => x.key === key);
+      if (p) {
+        appState.selectedClass = p.cls;
+        document.getElementById("charClassSelect").value = p.cls;
+      }
+      saveState();
+      renderAll();
+    }
+
+    // the "Which 3rd job?" row under an area whose quests split by path (only paths of your class)
+    function jobPathRow(areaKey) {
+      if (!areaKey || areaKey === "All" || !QUESTS.some(q => q.area === areaKey && q.path)) return "";
+      const cls = appState.selectedClass || "All";
+      const paths = jobPaths().filter(p => cls === "All" || p.cls === cls);
+      if (!paths.length) return "";
+      const cur = appState.selectedJobPath || "";
+      const allLabel = paths.length === 2 ? "Both paths" : `All ${paths.length} paths`;
+      const pill = (key, label, title) => `<button type="button" class="area-group-btn ${cur === key ? "active" : ""}" aria-pressed="${cur === key}"
+          onclick="setJobPath('${key}')" title="${title}">${label}</button>`;
+      return `<div class="area-paths" role="group" aria-label="Which 3rd job">
+          <span class="area-paths-label">Which 3rd job?</span>
+          <div class="area-chips">${pill("", allLabel, "Show every path") +
+            paths.map(p => pill(p.key, p.label, `${p.label} (${p.cls})`)).join("")}</div>
+        </div>`;
     }
 
     // Areas are grouped: 📖 Story (EP0, EP1 …), 📍 Zones (towns, by level), 🎓 Job (every job change).
@@ -749,11 +797,13 @@
         `<div class="area-groups" role="group" aria-label="Area group">${AREA_GROUPS.map(groupBtn).join("")}</div>` +
         (grp === "all"
           ? `<p class="area-hint">Every quest in play order. Pick a group to narrow it down.</p>`
-          : `<div class="area-chips" role="group" aria-label="Area">${areas.filter(a => a.group === grp).map(chip).join("")}</div>`);
-      // keep the chosen chip in sight when the row scrolls sideways (later towns sit far right)
-      const row = document.querySelector("#regionCardsContainer .area-chips");
-      const on = row && row.querySelector(".area-chip.active");
-      if (on) row.scrollLeft = Math.max(0, on.offsetLeft - row.offsetLeft - 24);
+          : `<div class="area-chips" role="group" aria-label="Area">${areas.filter(a => a.group === grp).map(chip).join("")}</div>`) +
+        jobPathRow(appState.selectedRegion);
+      // keep the chosen chip / path in sight when a row scrolls sideways (later towns sit far right)
+      document.querySelectorAll("#regionCardsContainer .area-chips").forEach(row => {
+        const on = row.querySelector(".active");
+        if (on) row.scrollLeft = Math.max(0, on.offsetLeft - row.offsetLeft - 24);
+      });
     }
 
     function num(s) {
@@ -872,7 +922,8 @@
       const grp = AREA_GROUPS.find(g => g.key === (appState.selectedAreaGroup || "all"));
       const reg = appState.selectedRegion && appState.selectedRegion !== "All" ? appState.selectedRegion
         : grp && grp.key !== "all" ? grp.icon + " " + grp.label : null;
-      const scope = [cat ? cat.icon + " " + cat.label : null, reg].filter(Boolean).join(" · ") || "all quests";
+      const path = jobPaths().find(p => p.key === appState.selectedJobPath);
+      const scope = [cat ? cat.icon + " " + cat.label : null, reg, path ? path.label : null].filter(Boolean).join(" · ") || "all quests";
       document.getElementById("checklistFarm").innerHTML = TQEpisode.renderFarmPanel(farm, {
         have: everything ? null : appState.inventory,
         switchHtml: `
@@ -1092,7 +1143,8 @@
       { key: "Monster", icon: "⚔️", label: "Monster" },
       { key: "Dungeon", icon: "🏰", label: "Dungeon" },
       { key: "Everyday", icon: "🔁", label: "Daily" },
-      { key: "Job", icon: "🎓", label: "Job" }
+      { key: "Job", icon: "🎓", label: "Job" },
+      { key: "Guardian", icon: "🛡️", label: "Guardian" }
     ];
 
     function renderCategoryTabs() {

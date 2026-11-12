@@ -6,6 +6,9 @@
 - Items in your Bag are subtracted everywhere: *Items to collect* shows "×1 have 1 of 2" or "✅ have all", the Route skips farm stops you already have enough for, and quest cards show 🎒 have N and 🔒 +N quests when other quests need the same item.
 - The Bag is saved with your progress (Export / Import include it).
 - Quests page: areas are now grouped: **✨ All · 📖 Story · 📍 Zones · 🎓 Job**. Pick a group to see its quests, then a chip to narrow it to one area (tap it again to go back). Each chip shows the level it starts at, and zones are sorted by level. 🎓 Job holds every job change: 2nd Job, Enlightenment and 3rd Job (2nd Job and Enlightenment moved out of Caballa Relics and Megalopolis).
+- Quests page: areas are now grouped: **✨ All · 📖 Story · 📍 Zones · 🎓 Job**. Pick a group to see its quests, then a chip to narrow it to one area (tap it again to go back). Each chip shows the level it starts at, and zones are sorted by level. 🎓 Job holds every job change: 2nd Job (moved out of Caballa Relics) and 3rd Job.
+- **Pick your 3rd job**: under 🎓 Job → 3rd Job, "Which 3rd job?" lists your class's paths (Cat: Diva / Primadonna). Pick one and only that path's quests stay, 22 instead of 86, in progress, items to collect and the route too. Picking a path sets your class; changing class clears a path that no longer fits.
+- New 🛡️ **Guardian** category: Fairy Nono & 4 Arbiters (Card Identification & Trickster Crest) moved there from Job, back under Megalopolis.
 
 - **Key quests after Caballa Relics** (30 quests): Oops Wharf (4), Mermaid Palace (3), Ghost Blue (3), Rose Garden (4), Black Swamp (5), Snow Hill (6) and Techichi Volcano (6), in unlock order, with where each item comes from (monster and map, drill area, or which quest hands it over, including the Adventurer's Book chain). Sticker items list that area's sticker quests; the sticker quests themselves aren't in yet.
 

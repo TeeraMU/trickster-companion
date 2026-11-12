@@ -5,7 +5,7 @@
 
   const CATEGORY_LABEL = {
     episode: "Episode", general: "General", monster: "Monster", dungeon: "Dungeon",
-    daily: "Everyday", key: "Key", sticker: "Sticker", job: "Job", card: "Card"
+    daily: "Everyday", key: "Key", sticker: "Sticker", job: "Job", card: "Card", guardian: "Guardian"
   };
   const SOURCE_LABEL = { drop: "Drop", drill: "Drill", quest: "Quest", compound: "Compound", shop: "Shop" };
   const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
@@ -30,6 +30,7 @@
       // the area chip a quest sits under: its file's region, unless the quest names another
       // (job quests from the towns sit with 3rd Job under 🎓 Job)
       area: q.area || region,
+      path: q.path || null, // 3rd job path (e.g. "primadonna") for quests only that job does
       subRegion: q.chapter,
       category: CATEGORY_LABEL[q.categories[0]],
       categories: q.categories.map(c => CATEGORY_LABEL[c]),
