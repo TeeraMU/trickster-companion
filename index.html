@@ -437,6 +437,7 @@
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
+      focus: null,             // pinned scope friends see needs for: { region, group, cats, path } (Friends)
       currentView: "episodes",
       selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
       episodeScope: "episode", // items list: "episode" | "chapter"
@@ -524,6 +525,7 @@
       appState.inventory = Object.assign({}, p.inventory);
       appState.selectedClass = p.selectedClass || "All";
       appState.selectedJobPath = p.selectedJobPath || "";
+      appState.focus = p.focus || null;
       storePins(p.pins || {});
       normalizeCompletion();
       document.getElementById("charClassSelect").value = appState.selectedClass;
@@ -1046,12 +1048,68 @@
             <button type="button" aria-pressed="${!everything}" onclick="setChecklistFarmAll(false)">Still needed</button>
             <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
           </div>`,
-        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map. Items handed over by earlier quests aren't listed.`
+        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map. Items handed over by earlier quests aren't listed.`,
+        afterHint: focusBarHtml()
       });
       const pane = appState.checklistPane === "farm" ? "farm" : "quests";
       document.getElementById("checklistLayout").setAttribute("data-pane", pane);
       document.getElementById("ckTabQuests").setAttribute("aria-selected", String(pane === "quests"));
       document.getElementById("ckTabFarm").setAttribute("aria-selected", String(pane === "farm"));
+    }
+
+    // ============================================================================
+    // FOCUS: the Quests page scope (area / group, category tabs, 3rd job path) a player pins so
+    // friends see the items *that* needs. Search and status filters don't count. Saved and synced.
+    // ============================================================================
+    function currentScope() {
+      return { region: appState.selectedRegion || "All", group: appState.selectedAreaGroup || "all",
+        cats: selectedCats().slice().sort(), path: appState.selectedJobPath || "" };
+    }
+
+    function sameScope(a, b) {
+      return !!a && !!b && a.region === b.region && a.group === b.group && (a.path || "") === (b.path || "") &&
+        (a.cats || []).slice().sort().join() === (b.cats || []).slice().sort().join();
+    }
+
+    function inScope(q, s) {
+      if (s.region && s.region !== "All") { if (q.area !== s.region) return false; }
+      else if (s.group && s.group !== "all" && areaGroupOf(q.area) !== s.group) return false;
+      if ((s.cats || []).length && !s.cats.some(c => q.categories.includes(c))) return false;
+      if (q.path && s.path && q.path !== s.path) return false;
+      return true;
+    }
+
+    function scopeLabel(s) {
+      const cats = (s.cats || []).map(k => CATEGORY_TABS.find(t => t.key === k)).filter(Boolean).map(t => t.icon + " " + t.label);
+      const grp = AREA_GROUPS.find(g => g.key === s.group);
+      const area = s.region && s.region !== "All" ? (/^Episode \d+$/.test(s.region) ? "EP" + num(s.region) : s.region)
+        : grp && grp.key !== "all" ? grp.icon + " " + grp.label : "all areas";
+      const path = jobPaths().find(p => p.key === s.path);
+      return [cats.join(" + "), area, path ? path.label : ""].filter(Boolean).join(" · ");
+    }
+
+    function focusBarHtml() {
+      const focus = appState.focus, cur = currentScope();
+      const signedIn = window.TQFriends && TQFriends.signedIn();
+      const here = sameScope(focus, cur);
+      const note = signedIn ? "" : `<span class="focus-note">Friends see it once you sign in (👥 Friends).</span>`;
+      if (here) {
+        return `<div class="focus-bar is-pinned">
+            <span>📌 Your friends see these needs: <b>${scopeLabel(focus)}</b></span>
+            <button type="button" class="btn" onclick="toggleFocus()">Unpin</button>${note}
+          </div>`;
+      }
+      return `<div class="focus-bar">
+          <button type="button" class="btn" onclick="toggleFocus()" title="Friends see the items these quests need">📌 Share as my focus</button>
+          <span class="focus-note">${focus ? `Now sharing: ${scopeLabel(focus)}` : "Friends see what your current area needs."}</span>${note}
+        </div>`;
+    }
+
+    function toggleFocus() {
+      const cur = currentScope();
+      appState.focus = sameScope(appState.focus, cur) ? null : cur;
+      saveState();
+      renderChecklistFarm();
     }
 
     function setChecklistFarmAll(all) {
@@ -1307,9 +1365,15 @@
         const q = byId.get(x.id);
         return (q && ref && q.area === ref.area ? 0 : 1e6) + (q ? q.order : 1e6);
       }));
-      const needs = TQBag.bagList(open, appState, appState.inventory)
+      // a pinned focus (📌 in Items to collect) replaces that: every unfinished quest in it, play order
+      const focus = appState.focus;
+      const fq = focus ? pool.filter(q => inScope(q, focus)) : null;
+      const orderOf = new Map(QUESTS.map(q => [q.id, q.order]));
+      const needs = (fq
+        ? TQBag.bagList(fq, appState, appState.inventory)
+            .sort((a, b) => Math.min(...a.quests.map(x => orderOf.get(x.id))) - Math.min(...b.quests.map(x => orderOf.get(x.id))))
+        : TQBag.bagList(open, appState, appState.inventory).sort((a, b) => rank(a) - rank(b)))
         .filter(r => r.left > 0 && !r.chain && !money(r.item))
-        .sort((a, b) => rank(a) - rank(b))
         .slice(0, 12).map(r => ({ item: r.item, n: r.left }));
       const needed = new Map(TQBag.bagList(pool, appState, appState.inventory).map(r => [r.item, r.need]));
       const spares = Object.entries(appState.inventory || {})
@@ -1320,7 +1384,8 @@
         cls, path: path ? path.label : "",
         done: pool.filter(q => appState.completedQuests[q.id]).length, total: pool.length,
         area: ref ? area(ref.area) : "", next: ref ? short(ref.title) : "",
-        needs, spares
+        needs, spares,
+        focus: fq ? { label: scopeLabel(focus), done: fq.filter(q => appState.completedQuests[q.id]).length, total: fq.length } : null
       };
     }
 

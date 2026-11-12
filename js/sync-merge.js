@@ -16,7 +16,8 @@
       inventory: positiveOnly(state.inventory),
       pins: Object.assign({}, pins || {}),
       selectedClass: state.selectedClass || "All",
-      selectedJobPath: state.selectedJobPath || ""
+      selectedJobPath: state.selectedJobPath || "",
+      focus: state.focus || null // scope pinned for friends (Friends page)
     };
   }
 
@@ -51,7 +52,8 @@
       inventory: max(a.inventory, b.inventory),
       pins: Object.assign({}, b.pins, a.pins),
       selectedClass: a.selectedClass && a.selectedClass !== "All" ? a.selectedClass : b.selectedClass || "All",
-      selectedJobPath: a.selectedJobPath || b.selectedJobPath || ""
+      selectedJobPath: a.selectedJobPath || b.selectedJobPath || "",
+      focus: a.focus || b.focus || null
     };
   }
 

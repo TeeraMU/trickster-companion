@@ -3311,3 +3311,31 @@ a.btn {
   opacity: 0.85;
   border-style: dashed;
 }
+
+/* 📌 focus bar in Items to collect: the scope friends see needs for */
+.focus-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 4px 0 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border-strong);
+  font-size: 0.82rem;
+}
+
+.focus-bar.is-pinned {
+  border-style: solid;
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 12%, var(--bg-card));
+}
+
+.focus-note {
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+}
+
+.friend-focus {
+  color: var(--ink-gold);
+}

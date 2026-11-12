@@ -142,6 +142,7 @@
       cls: s.cls || "All", path: s.path || "", done: s.done || 0, total: s.total || 0,
       area: s.area || "", next: s.next || "",
       needs: (s.needs || []).slice(0, 12), spares: (s.spares || []).slice(0, 12),
+      focus: s.focus ? { label: String(s.focus.label).slice(0, 80), done: s.focus.done || 0, total: s.focus.total || 0 } : null,
       updatedAt: TQCloud.serverTime()
     };
   }
@@ -303,6 +304,7 @@
         <div class="friend-bar" role="img" aria-label="${pct}% done"><span style="width:${pct}%"></span></div>
         <p class="friend-line">${d.done} / ${d.total} quests (${pct}%)${d.area ? ` · now in <b>${esc(d.area)}</b>` : ""}</p>
         ${d.next ? `<p class="friend-line">➡️ Next: ${esc(d.next)}</p>` : ""}
+        ${d.focus ? `<p class="friend-line friend-focus">📌 Focus: <b>${esc(d.focus.label)}</b> (${d.focus.done} / ${d.focus.total} done)</p>` : ""}
         <div class="friend-tags">
           ${giveThem.length ? `<span class="friend-tag tag-give">🎁 You can give: ${items(giveThem)}</span>` : ""}
           ${giveMe.length ? `<span class="friend-tag tag-get">🤝 They have spare: ${items(giveMe)}</span>` : ""}

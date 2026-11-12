@@ -4,6 +4,7 @@
 
 - **👥 Friends** (needs Google sign-in): pick a name friends will see and get a friend code (TC-XXXX-XX) to share. Add friends by their code to see their class / 3rd job path, how far they are, where they are and their next quest, what they still need and what they have spare, with 🎁 "You can give" / 🤝 "They have spare" when your Bags match. Needs list the current area's items first and leave out money (Galder checks and coupons). Updates on its own. Friends never see your Google name or email; 🔄 New code stops the old one from working.
 - Phones: the bottom bar fits all six pages in one row.
+- **📌 Share as my focus** (Quests → Items to collect): pin the area and categories you're working on, e.g. 🔑 Key + 🏷️ Sticker at Oops Wharf. Friends then see "📌 Focus: … (3 / 16 done)" and only the items those quests need. Unpin to go back to your current area. The focus syncs with your progress.
 - **Sync with Google (optional)**: ⚙️ → Sign in with Google keeps your progress (ticked quests, steps and runs, your Bag, your NPC pins, class and 3rd job path) on every device you sign in on, and updates the others within a few seconds. Without signing in nothing changes: progress stays in this browser. The first time you sign in on a browser that already has different progress, you choose: merge both, use your account's, or use this browser's. Offline changes are kept and sent later. Your data is only readable by you.
 
 ## 0.5.1 (2026-11-12): Fixes: locked quest chains, missing item pictures
