@@ -1298,10 +1298,19 @@
       const ref = open.find(q => q.categories.includes("Key")) || open[0];
       const short = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "").replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
       const area = a => (/^Episode \d+$/.test(a) ? "EP" + num(a) : a);
-      // needs: what the quests open right now still need (what a friend could help with today);
-      // spares: what's in the Bag beyond everything their unfinished quests will ever need
+      // needs: what the quests open right now still need (what a friend could help with today),
+      // the current area's first, then the rest in play order. Not money (Galder checks / coupons:
+      // nobody can farm those for you) and not items only other quests hand over.
+      const money = item => /Galder (Coupon|Check)$/i.test(item);
+      const byId = new Map(open.map(q => [q.id, q]));
+      const rank = r => Math.min(...r.quests.map(x => {
+        const q = byId.get(x.id);
+        return (q && ref && q.area === ref.area ? 0 : 1e6) + (q ? q.order : 1e6);
+      }));
       const needs = TQBag.bagList(open, appState, appState.inventory)
-        .filter(r => r.left > 0 && !r.chain).slice(0, 12).map(r => ({ item: r.item, n: r.left }));
+        .filter(r => r.left > 0 && !r.chain && !money(r.item))
+        .sort((a, b) => rank(a) - rank(b))
+        .slice(0, 12).map(r => ({ item: r.item, n: r.left }));
       const needed = new Map(TQBag.bagList(pool, appState, appState.inventory).map(r => [r.item, r.need]));
       const spares = Object.entries(appState.inventory || {})
         .map(([item, have]) => ({ item, n: have - (needed.get(item) || 0) }))
