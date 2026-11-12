@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **Sync with Google (optional)**: ⚙️ → Sign in with Google keeps your progress (ticked quests, steps and runs, your Bag, your NPC pins, class and 3rd job path) on every device you sign in on, and updates the others within a few seconds. Without signing in nothing changes: progress stays in this browser. The first time you sign in on a browser that already has different progress, you choose: merge both, use your account's, or use this browser's. Offline changes are kept and sent later. Your data is only readable by you.
+
 ## 0.5.1 (2026-11-12): Fixes: locked quest chains, missing item pictures
 
 - Fixed: 42 quest items showed a plain 📦 box instead of their picture (3rd job ores and gems like Brass, Glass Piece, Magic Powder, Magnetite; the Oops Wharf boss Requiem items and cards). Pictures now come from each item's wiki page; many items share another item's icon in game (Brass looks like Steel Piece). Sailor's Requiem pt. 1 has no wiki page, so it keeps the box.

@@ -108,6 +108,13 @@
     </div>
 
     <div class="header-panel settings-panel" id="settingsPanel" hidden>
+      <div class="settings-group sync-group" id="syncGroup">
+        <span class="settings-title">Sync <small>(optional)</small></span>
+        <div class="sync-box" id="syncBox">
+          <button class="btn btn-google" onclick="TQCloud.signIn()">Sign in with Google</button>
+          <span class="sync-note">Keep your progress on every device. Without signing in it stays in this browser.</span>
+        </div>
+      </div>
       <div class="settings-group">
         <span class="settings-title">Theme</span>
         <div class="pref-switch" role="group" aria-label="Color theme">
@@ -117,7 +124,7 @@
         </div>
       </div>
       <div class="settings-group">
-        <span class="settings-title">My progress <small>(saved in this browser)</small></span>
+        <span class="settings-title">My progress <small>(as a file)</small></span>
         <div class="settings-row">
           <button class="btn" onclick="exportProgress()">💾 Export</button>
           <button class="btn" onclick="importProgressPrompt()">📂 Import</button>
@@ -132,6 +139,20 @@
       </div>
     </div>
   </header>
+
+  <dialog class="sync-dialog" id="syncChoice" aria-labelledby="syncChoiceTitle">
+    <h2 id="syncChoiceTitle">☁️ Which progress do you want to keep?</h2>
+    <p>This browser and your Google account both have progress, and they're different.</p>
+    <div class="sync-compare">
+      <div><strong>📱 This browser</strong><span id="syncLocal"></span></div>
+      <div><strong>☁️ Your account</strong><span id="syncCloud"></span></div>
+    </div>
+    <div class="sync-choices">
+      <button class="btn btn-primary" data-choice="merge">🔀 Merge both <small>(ticked on either stays ticked)</small></button>
+      <button class="btn" data-choice="cloud">☁️ Use my account's</button>
+      <button class="btn" data-choice="local">📱 Use this browser's</button>
+    </div>
+  </dialog>
 
   <main class="main-container">
     <!-- Region Quick Filter Cards -->
@@ -387,6 +408,8 @@
   <script src="js/route.js"></script>
   <script src="js/report.js"></script>
   <script src="js/bag.js"></script>
+  <script src="js/sync-merge.js"></script>
+  <script src="js/cloud.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -450,7 +473,12 @@
       } catch (e) {
         console.warn("Could not load state from localStorage:", e);
       }
-      // Ensure step checkboxes and quest completion are strictly synchronized
+      normalizeCompletion();
+      document.getElementById("charClassSelect").value = appState.selectedClass || "All";
+    }
+
+    // Ensure step checkboxes and quest completion are strictly synchronized
+    function normalizeCompletion() {
       QUESTS.forEach(q => {
         const steps = q.steps || [];
         if (steps.length > 0) {
@@ -463,7 +491,6 @@
           syncQuestCompletionFromSteps(q);
         }
       });
-      document.getElementById("charClassSelect").value = appState.selectedClass || "All";
     }
 
     function saveState() {
@@ -472,6 +499,74 @@
       } catch (e) {
         console.warn("Could not save state to localStorage:", e);
       }
+      if (window.TQCloud) TQCloud.changed();
+    }
+
+    // ============================================================================
+    // CLOUD SYNC (optional Google sign-in; js/cloud.js + js/sync-merge.js)
+    // ============================================================================
+    function cloudPayload() {
+      return TQSync.pick(appState, savedPins());
+    }
+
+    // Progress from the cloud (or a merge) replaces this browser's progress
+    function applyCloudPayload(p) {
+      appState.completedQuests = Object.assign({}, p.completedQuests);
+      appState.completedCycles = Object.assign({}, p.completedCycles);
+      appState.completedSteps = Object.assign({}, p.completedSteps);
+      appState.inventory = Object.assign({}, p.inventory);
+      appState.selectedClass = p.selectedClass || "All";
+      appState.selectedJobPath = p.selectedJobPath || "";
+      storePins(p.pins || {});
+      normalizeCompletion();
+      document.getElementById("charClassSelect").value = appState.selectedClass;
+      saveState();
+      renderAll();
+      if (appState.currentView === "episodes") renderEpisodes();
+    }
+
+    // First sign-in on a browser that already has different progress: ask which copy to keep
+    function chooseSyncCopy(local, cloud) {
+      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins`;
+      document.getElementById("syncLocal").textContent = say(local);
+      document.getElementById("syncCloud").textContent = say(cloud);
+      const dlg = document.getElementById("syncChoice");
+      return new Promise(resolve => {
+        const pick = e => {
+          const b = e.target.closest("[data-choice]");
+          if (!b) return;
+          dlg.removeEventListener("click", pick);
+          dlg.close();
+          resolve(b.dataset.choice);
+        };
+        dlg.addEventListener("click", pick);
+        dlg.addEventListener("cancel", ev => ev.preventDefault(), { once: true }); // Esc: must choose
+        dlg.showModal();
+      });
+    }
+
+    function renderSyncStatus(s) {
+      const box = document.getElementById("syncBox");
+      if (!box) return;
+      const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const who = s.user ? esc(s.user.name || s.user.email) : "";
+      const when = s.at ? new Date(s.at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "";
+      const line = {
+        loading: "⏳ Connecting…",
+        saving: "⏳ Saving…",
+        synced: `✅ Synced${when ? " at " + when : ""}`,
+        offline: "📴 Offline: saved here, will sync later",
+        error: "⚠️ " + esc(s.message || "Sync problem")
+      }[s.state];
+      box.innerHTML = s.user
+        ? `<span class="sync-user">☁️ ${who}</span>
+           <span class="sync-state sync-${s.state}" role="status">${line || ""}</span>
+           <button class="btn" onclick="TQCloud.signOut()">Sign out</button>`
+        : `<button class="btn btn-google" onclick="TQCloud.signIn()" ${s.state === "loading" ? "disabled" : ""}>${s.state === "loading" ? "⏳ Signing in…" : "Sign in with Google"}</button>
+           ${s.state === "error" ? `<span class="sync-state sync-error" role="status">${line}</span>` : ""}
+           <span class="sync-note">Keep your progress on every device. Without signing in it stays in this browser.</span>`;
+      const chip = document.getElementById("settingsBtn");
+      if (chip) chip.classList.toggle("is-synced", !!s.user && s.state === "synced");
     }
 
     // ============================================================================
@@ -1008,6 +1103,7 @@
 
     function storePins(pins) {
       try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
+      if (window.TQCloud) TQCloud.changed();
     }
 
     function allPins() {
@@ -1352,7 +1448,10 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       loadData()
-        .then(() => { loadState(); renderAll(); switchView(appState.currentView); })
+        .then(() => {
+          loadState(); renderAll(); switchView(appState.currentView);
+          TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: renderSyncStatus });
+        })
         .catch(showLoadError);
     });
   </script>
