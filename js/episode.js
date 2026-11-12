@@ -209,6 +209,10 @@
     return root.TQBag.stepper(r.item, have[r.item] || 0);
   }
 
+  // "👥 who of your friends has this item": set by index.html once Friends data is in (js/friends.js)
+  let friendsHave = () => "";
+  function setFriendsHave(fn) { friendsHave = fn || (() => ""); }
+
   function farmRow(r, have) {
     const usedIn = r.quests.map(x => x.title).join(" · ");
     let how = "";
@@ -222,6 +226,7 @@
         <div class="ep-farm-main">
           <div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}${r.locked ? ` <span class="ep-lock" title="Every quest that needs this is still locked">🔒</span>` : ""}</div>
           <div class="ep-farm-how"><span class="ep-kind ep-kind-${r.kind}">${KIND_LABEL[r.kind]}</span> ${how}</div>
+          ${r.kind === "hunt" ? "" : friendsHave(r.item)}
         </div>
         ${haveStepper(r, have)}
       </li>`;
@@ -394,5 +399,5 @@
     return m;
   }
 
-  root.TQEpisode = Object.assign({ render: renderEpisodeView, renderFarmPanel }, model);
+  root.TQEpisode = Object.assign({ render: renderEpisodeView, renderFarmPanel, setFriendsHave }, model);
 })(typeof window !== "undefined" ? window : globalThis);

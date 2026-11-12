@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Bag counts go up to 999 (3-digit numbers used to be cut off in the box).
+- **👥 Who has it**: item rows in Items to collect (Quests and Episodes) and in quest cards show which friends have that item and how many, e.g. "👥 Bunny_Jeanne ×12 · Milo ×3". Friends now share their Bag counts (said on the Friends page).
 
 ## 0.6.0 (2026-11-12): Google sync and Friends
 

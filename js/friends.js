@@ -98,11 +98,11 @@
 
   function followFriends() {
     const want = new Set((me && me.friends) || []);
-    for (const [code, u] of unsubs) if (!want.has(code)) { u(); unsubs.delete(code); friendData.delete(code); }
+    for (const [code, u] of unsubs) if (!want.has(code)) { u(); unsubs.delete(code); friendData.delete(code); if (ctx.onData) ctx.onData(); }
     for (const code of want) {
       if (unsubs.has(code)) continue;
       unsubs.set(code, profileRef(code).onSnapshot(
-        snap => { friendData.set(code, snap.exists ? { data: snap.data() } : { missing: true }); ctx.render(); },
+        snap => { friendData.set(code, snap.exists ? { data: snap.data() } : { missing: true }); ctx.render(); if (ctx.onData) ctx.onData(); },
         () => { friendData.set(code, { missing: true }); ctx.render(); }));
     }
   }
@@ -143,8 +143,28 @@
       area: s.area || "", next: s.next || "",
       needs: (s.needs || []).slice(0, 12), spares: (s.spares || []).slice(0, 12),
       focus: s.focus ? { label: String(s.focus.label).slice(0, 80), done: s.focus.done || 0, total: s.focus.total || 0 } : null,
+      bag: bagCounts(s.bag),
       updatedAt: TQCloud.serverTime()
     };
+  }
+
+  // the whole Bag ({ item: count }), so friends see "👥 you ×12" next to items; capped in size
+  function bagCounts(bag) {
+    const out = {};
+    Object.entries(bag || {}).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).slice(0, 400)
+      .forEach(([item, n]) => { out[item] = Math.min(999, n); });
+    return out;
+  }
+
+  // friends who have an item: [{ name, n }] most first
+  function holdings(item) {
+    const out = [];
+    for (const f of friendData.values()) {
+      const d = f && f.data;
+      const n = d && d.bag && d.bag[item];
+      if (n > 0) out.push({ name: d.name, n });
+    }
+    return out.sort((a, b) => b.n - a.n);
   }
 
   function setName(text) {
@@ -241,7 +261,7 @@
         <div class="friends-page">
           <div class="calc-card friends-intro">
             <h2>👥 Pick a name for your friends</h2>
-            <p>Friends see this name with your class, how far you are, and the items you need or have spare. You get a friend code to share.</p>
+            <p>Friends see this name with your class, how far you are, the items you need or have spare, and how many of each item is in your Bag. You get a friend code to share.</p>
             <form class="friends-form" onsubmit="event.preventDefault(); TQFriends.setName(this.name.value)">
               <input type="text" name="name" maxlength="20" placeholder="Your character name" value="${esc(me && me.name)}" required>
               <button class="btn btn-primary" ${busy ? "disabled" : ""}>${busy ? "⏳" : "Get my friend code"}</button>
@@ -314,5 +334,5 @@
       </div>`;
   }
 
-  root.TQFriends = Object.assign({ init, render, setName, newCode, addFriend, removeFriend, copyCode, changed, signedIn: () => !!user }, helpers);
+  root.TQFriends = Object.assign({ init, render, setName, newCode, addFriend, removeFriend, copyCode, changed, holdings, signedIn: () => !!user }, helpers);
 })(this);
