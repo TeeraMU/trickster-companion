@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **👥 Who has it**: item rows in Items to collect (Quests and Episodes) and in quest cards show which friends have that item and how many, e.g. "👥 Bunny_Jeanne ×12 · Milo ×3". Friends now share their Bag counts (said on the Friends page).
+
 ## 0.6.0 (2026-11-12): Google sync and Friends
 
 - **👥 Friends** (needs Google sign-in): pick a name friends will see and get a friend code (TC-XXXX-XX) to share. Add friends by their code to see their class / 3rd job path, how far they are, where they are and their next quest, what they still need and what they have spare, with 🎁 "You can give" / 🤝 "They have spare" when your Bags match. Needs list the current area's items first and leave out money (Galder checks and coupons). Updates on its own. Friends never see your Google name or email; 🔄 New code stops the old one from working.
