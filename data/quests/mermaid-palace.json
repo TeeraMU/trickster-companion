@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "mp-key-01",
-      "order": 304,
+      "order": 400,
       "title": "Captain Stan - Mermaid Palace Stickers",
       "categories": [
         "key",
@@ -74,7 +74,7 @@
     },
     {
       "id": "mp-key-02",
-      "order": 305,
+      "order": 401,
       "title": "Captain Stan - Captain's Stan Past",
       "categories": [
         "key"
@@ -135,7 +135,7 @@
     },
     {
       "id": "mp-key-03",
-      "order": 306,
+      "order": 402,
       "title": "Mermaid Marin - Marin's Sister",
       "categories": [
         "key"

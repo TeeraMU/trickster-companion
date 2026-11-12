@@ -139,7 +139,7 @@
 
     <!-- Shared Filter Bar -->
     <div class="filters-panel" id="filtersPanel">
-      <div class="cat-tabs" id="categoryTabs" role="tablist" aria-label="Quest categories"></div>
+      <div class="cat-tabs" id="categoryTabs" role="group" aria-label="Quest categories (tap several to combine)"></div>
       <div class="filter-row">
         <div class="list-tools">
           <button class="btn" onclick="expandAllVisible(true)">➕ Expand all</button>
@@ -407,6 +407,7 @@
       selectedAreaGroup: "all",
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
       selectedCategory: "All",
+      selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
       currentView: "episodes",
       selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
       episodeScope: "episode", // items list: "episode" | "chapter"
@@ -493,12 +494,12 @@
       const sort = document.getElementById("sortOrder")?.value || "order";
       const cls = appState.selectedClass || "All";
       const reg = appState.selectedRegion || "All";
-      const cat = appState.selectedCategory || "All";
+      const cats = selectedCats();
 
       let list = QUESTS.filter(q => {
         if (!matchesClassFilter(q, cls)) return false;
         if (!inSelectedArea(q)) return false;
-        if (cat !== "All" && !q.categories.includes(cat)) return false;
+        if (cats.length && !cats.some(c => q.categories.includes(c))) return false;
 
         const isDone = !!appState.completedQuests[q.id];
         if (status === "incomplete" && isDone) return false;
@@ -700,8 +701,18 @@
       renderAll();
     }
 
+    // Category tabs combine: tap Key, then Sticker, to see both; tap a lit tab to drop it; ✨ All clears.
+    function selectedCats() {
+      if (!Array.isArray(appState.selectedCategories)) // progress saved before tabs combined
+        appState.selectedCategories = appState.selectedCategory && appState.selectedCategory !== "All" ? [appState.selectedCategory] : [];
+      return appState.selectedCategories;
+    }
+
     function setCategoryFilter(cat) {
-      appState.selectedCategory = cat;
+      const cats = selectedCats();
+      appState.selectedCategories = cat === "All" ? []
+        : cats.includes(cat) ? cats.filter(c => c !== cat) : [...cats, cat];
+      appState.selectedCategory = appState.selectedCategories.length === 1 ? appState.selectedCategories[0] : "All";
       saveState();
       renderAll();
     }
@@ -918,12 +929,13 @@
       const progress = everything ? { completedQuests: {}, completedCycles: {} } : appState;
       const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
       const farm = TQEpisode.farmList(filtered, progress, statuses);
-      const cat = appState.selectedCategory && appState.selectedCategory !== "All" ? CATEGORY_TABS.find(t => t.key === appState.selectedCategory) : null;
+      const catTabs = selectedCats().map(k => CATEGORY_TABS.find(t => t.key === k)).filter(Boolean);
+      const cat = catTabs.length ? { icon: "", label: catTabs.map(t => t.icon + " " + t.label).join(" + ") } : null;
       const grp = AREA_GROUPS.find(g => g.key === (appState.selectedAreaGroup || "all"));
       const reg = appState.selectedRegion && appState.selectedRegion !== "All" ? appState.selectedRegion
         : grp && grp.key !== "all" ? grp.icon + " " + grp.label : null;
       const path = jobPaths().find(p => p.key === appState.selectedJobPath);
-      const scope = [cat ? cat.icon + " " + cat.label : null, reg, path ? path.label : null].filter(Boolean).join(" · ") || "all quests";
+      const scope = [cat ? cat.label : null, reg, path ? path.label : null].filter(Boolean).join(" · ") || "all quests";
       document.getElementById("checklistFarm").innerHTML = TQEpisode.renderFarmPanel(farm, {
         have: everything ? null : appState.inventory,
         switchHtml: `
@@ -1151,16 +1163,18 @@
       const cls = appState.selectedClass || "All";
       const reg = appState.selectedRegion || "All";
       const pool = QUESTS.filter(q => matchesClassFilter(q, cls) && inSelectedArea(q));
-      let selected = appState.selectedCategory || "All";
       const tabs = CATEGORY_TABS.map(t => {
         const qs = t.key === "All" ? pool : pool.filter(q => q.categories.includes(t.key));
         return Object.assign({ total: qs.length, done: qs.filter(q => appState.completedQuests[q.id]).length }, t);
       }).filter(t => t.key === "All" || t.total > 0);
-      // the chosen category has no quests in this region / class: fall back to All (runs before the list renders)
-      if (!tabs.some(t => t.key === selected)) { selected = "All"; appState.selectedCategory = "All"; }
+      // chosen categories with no quests in this area / class drop out (runs before the list renders)
+      const cats = selectedCats().filter(c => tabs.some(t => t.key === c));
+      appState.selectedCategories = cats;
+      const isOn = key => key === "All" ? !cats.length : cats.includes(key);
       document.getElementById("categoryTabs").innerHTML = tabs.map(t => `
-        <button type="button" role="tab" class="cat-tab cat-${t.key.toLowerCase()} ${t.key === selected ? "active" : ""}"
-          aria-selected="${t.key === selected}" onclick="setCategoryFilter('${t.key}')">
+        <button type="button" class="cat-tab cat-${t.key.toLowerCase()} ${isOn(t.key) ? "active" : ""}"
+          aria-pressed="${isOn(t.key)}" onclick="setCategoryFilter('${t.key}')"
+          title="${t.key === "All" ? "Show every category" : isOn(t.key) ? "Tap to remove " + t.label : cats.length ? "Tap to add " + t.label : "Tap more tabs to combine them"}">
           <span class="cat-tab-icon" aria-hidden="true">${t.icon}</span>
           <span class="cat-tab-label">${t.label}</span>
           <span class="cat-tab-count">${t.done}/${t.total}</span>

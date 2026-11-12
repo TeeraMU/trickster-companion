@@ -44,6 +44,10 @@
     "name": "Bastet"
   },
   {
+    "id": "black-pirate-swab",
+    "name": "Black Pirate Swab"
+  },
+  {
     "id": "black-wings-messenger",
     "name": "Black Wings' Messenger"
   },
@@ -100,6 +104,10 @@
     "name": "Clotho"
   },
   {
+    "id": "copyfish-domdom",
+    "name": "Copyfish DomDom"
+  },
+  {
     "id": "delphinus-messenger",
     "name": "Delphinus' Messenger"
   },
@@ -140,8 +148,16 @@
     "name": "Dreams"
   },
   {
+    "id": "driller-king-marky",
+    "name": "Driller King Marky"
+  },
+  {
     "id": "driller-marky",
     "name": "Driller Marky"
+  },
+  {
+    "id": "eclipse",
+    "name": "Eclipse"
   },
   {
     "id": "eliza-bath",
@@ -194,6 +210,10 @@
   {
     "id": "fortune-teller",
     "name": "Fortune Teller"
+  },
+  {
+    "id": "frog-shaman",
+    "name": "Frog Shaman"
   },
   {
     "id": "genius-cochma",
@@ -276,8 +296,16 @@
     "name": "Kristoffer J."
   },
   {
+    "id": "la-vida",
+    "name": "La Vida"
+  },
+  {
     "id": "lachesis",
     "name": "Lachesis"
+  },
+  {
+    "id": "lethos",
+    "name": "Lethos"
   },
   {
     "id": "lifeguard-bean",
@@ -310,6 +338,14 @@
   {
     "id": "magician-louie",
     "name": "Magician Louie"
+  },
+  {
+    "id": "marinel",
+    "name": "Marinel"
+  },
+  {
+    "id": "merchant-miguel",
+    "name": "Merchant Miguel"
   },
   {
     "id": "mermaid-marin",
@@ -432,8 +468,16 @@
     "name": "Skipper Min"
   },
   {
+    "id": "sophia",
+    "name": "Sophia"
+  },
+  {
     "id": "star-gazer-stella",
     "name": "Star Gazer Stella"
+  },
+  {
+    "id": "stella",
+    "name": "Stella"
   },
   {
     "id": "stern-poppuri",
@@ -454,6 +498,10 @@
   {
     "id": "vagabond-eloy",
     "name": "Vagabond Eloy"
+  },
+  {
+    "id": "vice-captain",
+    "name": "Vice Captain"
   },
   {
     "id": "vinosh",

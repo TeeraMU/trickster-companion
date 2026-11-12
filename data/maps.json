@@ -1903,6 +1903,54 @@
     "Techichi Field 4": [],
     "Techichi Field 3": [],
     "Techichi Field 2 / 3": [],
-    "Techichi Fields": []
+    "Techichi Fields": [],
+    "Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park": [
+      "wharf-field-1",
+      "wharf-field-2",
+      "wharf-field-3"
+    ],
+    "Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park": [
+      "wharf-field-1",
+      "wharf-field-3"
+    ],
+    "Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park": [
+      "wharf-field-2",
+      "wharf-field-3"
+    ],
+    "Wharf Field 2 - Devil Crow": [
+      "wharf-field-2"
+    ],
+    "Path to Oops Wharf": [
+      "path-to-oops-wharf"
+    ],
+    "Path to Mermaid Palace 1 / 2": [
+      "mermaid-path-1",
+      "mermaid-path-2"
+    ],
+    "Path to Mermaid Palace 1 / Path to Mermaid Palace 2": [
+      "mermaid-path-1",
+      "mermaid-path-2"
+    ],
+    "Wharf Field 1 - Haunted Town": [
+      "wharf-field-1"
+    ],
+    "Path to Oops Wharf Boss 1 - Not This Ship": [],
+    "Path to Oops Wharf Boss 2 - Not This Map": [],
+    "Path to Oops Wharf Boss 3 - Real Wharf of Darkness": [],
+    "Path to Oops Wharf Boss 4 - Real Dock of Darkness": [],
+    "Oops Wharf Boss Room": [],
+    "Fading Tower - 2nd Floor": [],
+    "Fading Tower - 4th Floor": [],
+    "Fading Tower - 5th Floor": [],
+    "Fading Tower - 6th Floor": [],
+    "Fading Tower - 8th Floor": [],
+    "Fading Tower - 9th Floor": [],
+    "Fading Tower - 10th Floor": [],
+    "Phantom Dungeon - 1F Silent Hallway": [],
+    "Phantom Dungeon - 1F Silent Hallway / Phantom Dungeon 1-2": [],
+    "Phantom Dungeon - 2F Chilly Hallway": [],
+    "Phantom Dungeon 2-1 / 2-2 / 2-4": [],
+    "Phantom Dungeon - 3F Shiver Hallway": [],
+    "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet": []
   }
 }
