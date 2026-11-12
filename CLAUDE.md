@@ -53,6 +53,14 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/bag.js`: the Bag (`appState.inventory`): bag list (need / have / spare per item), `applyHave`
   for the Items panels; the Route takes the bag too. Item key = item name.
 - `js/route.js`: route (stops in order, BFS over portal links) and the map / NPC pin panel.
+- `js/cloud.js`: optional Google sign-in + cloud copy (Firebase Auth + Firestore, compat SDK from
+  gstatic, loaded only when someone signs in). One document per player: `users/{uid}`
+  `{ schema, progress, device, updatedAt }`. Local-first: the app never needs it.
+  `js/sync-merge.js` (pure, `node scripts/test-sync.js`) decides what is synced (quests, steps, runs,
+  Bag, own NPC pins, class / 3rd job path; not screen prefs) and how two copies merge.
+  `firestore.rules`: each player reads/writes only their own document. After changing it, paste it in
+  Firebase console -> Firestore -> Rules -> Publish (the repo copy is not deployed by itself).
+  The web config in cloud.js is public by design; never commit service-account keys.
 - `data/maps.json`: regions (overview picture), maps (`box` on the 530x540 overview or a `parent`,
   two-way `links`), and `names`: every map text used in quests -> map ids (first = default).
   validate.js fails when a quest uses a map text that isn't listed.

@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// Trickster Companion: each signed-in player can read and write only their own progress document
+// (users/{their uid}). Nothing else in the database is reachable from the app.
+// Paste into Firebase console -> Firestore -> Rules -> Publish whenever this file changes.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['schema', 'progress', 'device', 'updatedAt'])
+        && request.resource.data.progress is map
+        && request.resource.data.device is string
+        && request.resource.data.device.size() < 40;
+    }
+  }
+}
