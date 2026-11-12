@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.1 (2026-11-12): Fixes: locked quest chains, missing item pictures
 
 - Fixed: 42 quest items showed a plain 📦 box instead of their picture (3rd job ores and gems like Brass, Glass Piece, Magic Powder, Magnetite; the Oops Wharf boss Requiem items and cards). Pictures now come from each item's wiki page; many items share another item's icon in game (Brass looks like Steel Piece). Sailor's Requiem pt. 1 has no wiki page, so it keeps the box.
 - Fixed: 12 quest chains that could never unlock (EP0 Don's Push 3rd / 4th Stage, EP1 Ch.1 Old Artist / Sabrina / Model Mermaid Babe, EP1 Ch.2 Weird Box and the 3 Weird Pieces, Caballa Relics Catch That Thief! and Launch! Caballa V). A quest that sends you on side quests waited for them to be finished before it opened, while they waited for it to be accepted. Each now opens as the wiki says (usually after the previous step), and its side quests open as soon as it does. validate.js now reports any such loop.
