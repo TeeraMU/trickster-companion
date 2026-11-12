@@ -2876,21 +2876,66 @@ a.btn {
 /* ---------------------------------------------------------------------------------------
    Area chips (Quests page): one scrolling row, built from the data
    --------------------------------------------------------------------------------------- */
+.area-picker {
+  margin-bottom: 12px;
+}
+
+.area-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.area-group-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.15s ease;
+}
+
+.area-group-btn:hover {
+  border-color: var(--accent-blue);
+}
+
+.area-group-btn.active {
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 16%, var(--bg-card));
+}
+
 .area-chips {
   display: flex;
   align-items: center;
   gap: 6px;
   overflow-x: auto;
   padding: 2px 2px 8px;
-  margin-bottom: 12px;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
 }
 
-.area-group {
-  flex: 0 0 auto;
-  margin: 0 2px 0 8px;
-  font-size: 1rem;
+.area-hint {
+  margin: 2px 4px 4px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.area-lv {
+  grid-column: 1 / -1;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  line-height: 1;
 }
 
 .area-chip {
