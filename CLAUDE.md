@@ -54,8 +54,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `data/maps.json`: regions (overview picture), maps (`box` on the 530x540 overview or a `parent`,
   two-way `links`), and `names`: every map text used in quests -> map ids (first = default).
   validate.js fails when a quest uses a map text that isn't listed.
-- `data/npc-pins.json`: `{ npcId: { map, x, y, n } }` in % of the map picture (`n` = how many
-  players agreed). Never hand-edit or replace it: merge what players send with
+- `data/npc-pins.json`: `{ "npcId@mapId": { x, y, n, src } }` in % of the map picture (`n` = how many
+  players agreed, `src: "wiki"` = taken from the wiki's circle marker, replaced by the first player pin). Never hand-edit or replace it: merge what players send with
   `node scripts/merge-pins.js <files or pasted text>` or `--issues` (open issues labelled `pins`),
   check the conflicts it reports, run validate.js, commit on a `data/` branch, then close the issues.
 - `js/episode.js`: the Episodes page. Model functions (quest status, items to collect) are pure and

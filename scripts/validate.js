@@ -152,10 +152,13 @@ for (const t of Object.keys(maps.names)) if (!mapTexts.has(t)) warn("maps.json n
 
 // --- npc-pins.json: pins point at real NPCs and maps -------------------------------------------
 const pins = read("npc-pins.json");
-for (const [npc, p] of Object.entries(pins)) {
-  if (!npcIds.has(npc)) err("npc-pins.json", `unknown NPC "${npc}"`);
-  if (!mapIds.has(p.map)) err("npc-pins.json", `${npc}: unknown map "${p.map}"`);
-  if (!(p.x >= 0 && p.x <= 100 && p.y >= 0 && p.y <= 100)) err("npc-pins.json", `${npc}: x / y must be 0-100 (%)`);
+for (const [key, p] of Object.entries(pins)) {
+  const [npc, map] = key.split("@");
+  if (!map) { err("npc-pins.json", `"${key}" must be "npcId@mapId"`); continue; }
+  if (!npcIds.has(npc)) err("npc-pins.json", `${key}: unknown NPC "${npc}"`);
+  if (!mapIds.has(map)) err("npc-pins.json", `${key}: unknown map "${map}"`);
+  if (!(p.x >= 0 && p.x <= 100 && p.y >= 0 && p.y <= 100)) err("npc-pins.json", `${key}: x / y must be 0-100 (%)`);
+  if (p.src && p.src !== "wiki") err("npc-pins.json", `${key}: src must be "wiki" when set`);
 }
 
 // --- report --------------------------------------------------------------------------------

@@ -8,7 +8,7 @@
 //
 // Rules: unknown NPC / map -> skipped; NPC not pinned yet -> added; same map and within 5% of the
 // picture -> averaged (weighted by how many people agreed, kept in `n`); different spot or map ->
-// left as it is and listed as a conflict for you to decide.
+// replaces a pin that only came from the wiki, or is listed as a conflict when players disagree.
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -26,7 +26,17 @@ const read = p => JSON.parse(fs.readFileSync(p, "utf8"));
 const npcIds = new Set(read(path.join(DATA, "npcs.json")).map(n => n.id));
 const mapIds = new Set(read(path.join(DATA, "maps.json")).maps.map(m => m.id));
 const pinsPath = path.join(DATA, "npc-pins.json");
-const pins = read(pinsPath);
+/** Pins are keyed "npcId@mapId"; the old { npcId: { map, x, y } } layout is converted. */
+function normalizePins(obj) {
+  const out = {};
+  for (const [k, v] of Object.entries(obj || {})) {
+    if (!v || typeof v !== "object") continue;
+    if (k.includes("@")) out[k] = v;
+    else if (v.map) { const { map, ...rest } = v; out[`${k}@${map}`] = rest; }
+  }
+  return out;
+}
+const pins = normalizePins(read(pinsPath));
 
 /** The first {...} JSON object in a text (exported file, pasted chat message or issue body). */
 function extractPins(text) {
@@ -87,28 +97,34 @@ if (!sources.length) {
   process.exit(0);
 }
 
-const report = { added: [], averaged: [], conflicts: [], skipped: [], same: [] };
+const report = { added: [], averaged: [], replaced: [], conflicts: [], skipped: [], same: [] };
 const merged = [];
 for (const src of sources) {
   let incoming;
   try { incoming = extractPins(src.text); } catch (e) { report.skipped.push(`${src.name}: ${e.message}`); continue; }
-  for (const [npc, p] of Object.entries(incoming)) {
-    const at = `${npc} (${src.name})`;
+  for (const [key, p] of Object.entries(normalizePins(incoming))) {
+    const [npc, map] = key.split("@");
+    const at = `${npc} @ ${map} (${src.name})`;
     if (!npcIds.has(npc)) { report.skipped.push(`${at}: unknown NPC`); continue; }
-    if (!mapIds.has(p.map)) { report.skipped.push(`${at}: unknown map "${p.map}"`); continue; }
+    if (!mapIds.has(map)) { report.skipped.push(`${at}: unknown map`); continue; }
     if (!(p.x >= 0 && p.x <= 100 && p.y >= 0 && p.y <= 100)) { report.skipped.push(`${at}: x / y out of range`); continue; }
-    const cur = pins[npc];
-    if (!cur) { pins[npc] = { map: p.map, x: p.x, y: p.y, n: 1 }; report.added.push(at); continue; }
+    const cur = pins[key];
+    if (!cur) { pins[key] = { x: p.x, y: p.y, n: 1 }; report.added.push(at); continue; }
     const dist = Math.hypot(cur.x - p.x, cur.y - p.y);
-    if (cur.map === p.map && dist <= NEAR) {
+    if (dist <= NEAR) {
       const n = cur.n || 1;
       if (dist === 0) { report.same.push(at); continue; }
       cur.x = Math.round((cur.x * n + p.x) / (n + 1) * 10) / 10;
       cur.y = Math.round((cur.y * n + p.y) / (n + 1) * 10) / 10;
       cur.n = n + 1;
-      report.averaged.push(`${at}: ${n + 1} people agree`);
+      delete cur.src; // confirmed by players, no longer only the wiki's guess
+      report.averaged.push(`${at}: ${n + 1} agree`);
+    } else if (cur.src === "wiki") {
+      // the wiki is from 2013; a player standing in the game knows better
+      pins[key] = { x: p.x, y: p.y, n: 1 };
+      report.replaced.push(`${at}: (${cur.x}, ${cur.y}) -> (${p.x}, ${p.y})`);
     } else {
-      report.conflicts.push(`${at}: sent ${p.map} (${p.x}, ${p.y}) but data has ${cur.map} (${cur.x}, ${cur.y})`);
+      report.conflicts.push(`${at}: sent (${p.x}, ${p.y}) but players pinned (${cur.x}, ${cur.y})`);
     }
   }
   if (src.issue) merged.push(src.issue);
@@ -117,6 +133,7 @@ for (const src of sources) {
 const show = (title, list) => list.length && console.log(`\n${title} (${list.length})\n  ` + list.join("\n  "));
 show("Added", report.added);
 show("Averaged", report.averaged);
+show("Replaced a wiki pin with a player pin", report.replaced);
 show("Already there", report.same);
 show("CONFLICTS: kept the current pin, decide by hand", report.conflicts);
 show("Skipped", report.skipped);

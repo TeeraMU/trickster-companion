@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- **NPC positions from the wiki**: 48 NPCs are already circled on their maps (taken from the circle the wiki draws on each Episode 0–2 quest), marked "📍 from the wiki". Your own pins still win.
+- Pins are now kept per NPC **and** map, so an NPC who stands in several maps (Monkey T, Nefertiti) can be pinned in each. Pins saved the old way are converted automatically.
+- `merge-pins.js`: a player pin replaces a wiki pin (the wiki is from 2013); players who disagree are still reported as conflicts.
+
 - **Episode 2** (29 quests, 3 chapters: Sword of Vengeance, Song of Memories, Prelude of The Cursed Soul) from the wiki's Episode 2 page, with where every item comes from (monster and map from the monster pages) and the order quests unlock in.
 - New regions on the route maps: **Mirage Island** and **Mermaid Palace** (19 new maps with pictures and portals; the Paths to Mermaid Palace now sit on the Mermaid Palace map).
 
