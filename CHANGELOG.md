@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Quests page: the area cards are now one row of chips (📖 EP0, EP1, EP2 … then 📍 towns), built from the data so new episodes and towns appear by themselves; scrolls sideways when it gets long.
+
 - **NPC positions from the wiki**: 48 NPCs are already circled on their maps (taken from the circle the wiki draws on each Episode 0–2 quest), marked "📍 from the wiki". Your own pins still win.
 - Pins are now kept per NPC **and** map, so an NPC who stands in several maps (Monkey T, Nefertiti) can be pinned in each. Pins saved the old way are converted automatically.
 - `merge-pins.js`: a player pin replaces a wiki pin (the wiki is from 2013); players who disagree are still reported as conflicts.

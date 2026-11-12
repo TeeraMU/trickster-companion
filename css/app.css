@@ -2675,3 +2675,83 @@ a.btn {
     display: none;
   }
 }
+
+/* ---------------------------------------------------------------------------------------
+   Area chips (Quests page): one scrolling row, built from the data
+   --------------------------------------------------------------------------------------- */
+.area-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  margin-bottom: 12px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.area-group {
+  flex: 0 0 auto;
+  margin: 0 2px 0 8px;
+  font-size: 1rem;
+}
+
+.area-chip {
+  flex: 0 0 auto;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 3px;
+  padding: 6px 12px 7px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.15s ease, transform 0.12s ease;
+}
+
+.area-chip:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.area-chip.active {
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 16%, var(--bg-card));
+}
+
+.area-name {
+  font-weight: 800;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.area-count {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-cyan);
+}
+
+.area-chip.is-done .area-count {
+  color: var(--ink-green);
+}
+
+.area-bar {
+  grid-column: 1 / -1;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.area-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--progress-gradient);
+}
