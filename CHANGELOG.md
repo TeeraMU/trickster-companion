@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: 42 quest items showed a plain 📦 box instead of their picture (3rd job ores and gems like Brass, Glass Piece, Magic Powder, Magnetite; the Oops Wharf boss Requiem items and cards). Pictures now come from each item's wiki page; many items share another item's icon in game (Brass looks like Steel Piece). Sailor's Requiem pt. 1 has no wiki page, so it keeps the box.
+
 ## 0.5.0 (2026-11-12): Oops Wharf and Mermaid Palace in full, combined category tabs
 
 - **Oops Wharf town quests** (29 new): the 12 quests that give an **Oops Sticker** (Skipper Min - Urgent Issue needs 7), Frog Shaman, Genius Cochma, Lethos, Officer Tera, Monkey T, Explorer Reina's treasure hunts, Marinel's daily and the way to Mermaid Palace. Where every item comes from (monster, level and maps, or drill area) is taken from each item's wiki page. 22 more NPCs circled on their maps from the wiki. 
