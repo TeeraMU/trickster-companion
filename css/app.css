@@ -2836,7 +2836,7 @@ a.btn {
 }
 
 .bag-count {
-  width: 42px;
+  width: 52px; /* 3 digits (max 999) */
   border: none;
   border-radius: 0;
   background: transparent;
