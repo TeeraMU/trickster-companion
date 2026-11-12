@@ -210,10 +210,10 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c1-03a"
+          "quest": "ep1-c1-02"
         }
       ],
-      "prereqText": "Guide Sabrina - Sabrina's Sacred Water",
+      "prereqText": "Level 45+, have completed Old Artist - Old Artist's Request",
       "steps": [
         "Return 1x Fully-Filled Container to Old Artist in Relics Field 1 - Atlas."
       ],
@@ -259,15 +259,11 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c1-04d",
-          "active": true
-        },
-        {
           "quest": "ep1-c1-04b",
           "active": true
         }
       ],
-      "prereqText": "Active Old Artist - Help Old Artist & Model Mermaid Babe - Mermaid Babe's Complaint",
+      "prereqText": "Level 45+, have Model Mermaid Babe - Mermaid Babe's Complaint in quest log",
       "steps": [
         "Speak to Old Artist in Relics Field 1 - Atlas to start 'Help Old Artist'.",
         "Speak to Model Mermaid Babe in Relics Field 1 - Atlas to start 'Mermaid Babe's Complaint'.",
@@ -314,10 +310,11 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c1-04a"
+          "quest": "ep1-c1-04d",
+          "active": true
         }
       ],
-      "prereqText": "Monkey T - Antique Mirror!",
+      "prereqText": "Level 45+, have Old Artist - Help Old Artist in quest log",
       "steps": [
         "Give 1x Mermaid Babe's Portrait and 1x Antique Mirror to Model Mermaid Babe in Relics Field 1 - Atlas."
       ],
@@ -415,10 +412,10 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c1-04c"
+          "quest": "ep1-c1-03b"
         }
       ],
-      "prereqText": "Louis Bitton - Louis the Great",
+      "prereqText": "Level 45+, have completed Old Artist - Old Artist's Needs",
       "steps": [
         "Give 1x Fantastic Hand Mirror to Model Mermaid Babe in Relics Field 1 - Atlas to receive 1x Chuu~ Check (+257,613 Base / 121,252 TM EXP).",
         "Give 1x Chuu~ Check to Old Artist in Relics Field 1 - Atlas to receive 1x Restored Necklace (+257,613 Base / 121,252 TM EXP)."
@@ -596,14 +593,11 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c1-06"
-        },
-        {
           "quest": "ep1-c2-01d",
           "active": true
         }
       ],
-      "prereqText": "Level 50+, Rosaline Gracia - Rosaline's Document + Active Indiana John - Weird Box",
+      "prereqText": "Level 50+ (do it while Indiana John - Weird Box is in your quest log)",
       "steps": [
         "First, enter Caballa Relics Dungeon 1 and speak to Indiana John to start 'Weird Box'.",
         "Travel to Gate of Oops Wharf and speak to Skipper Min.",
@@ -661,10 +655,11 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c2-01a"
+          "quest": "ep1-c2-01d",
+          "active": true
         }
       ],
-      "prereqText": "Skipper Min - Skipper Min's Sightings",
+      "prereqText": "Level 50+ (do it while Indiana John - Weird Box is in your quest log)",
       "steps": [
         "Speak to Shaman Girl Jia in Wharf Field 4 - Chrono Wharf.",
         "Hunt Crow (Lv.88) in Wharf Field 4 - Chrono Wharf for 2x Bell Cluster.",
@@ -711,10 +706,11 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c2-01b"
+          "quest": "ep1-c2-01d",
+          "active": true
         }
       ],
-      "prereqText": "Shaman Girl Jia - Jia's Deja Vu",
+      "prereqText": "Level 50+ (do it while Indiana John - Weird Box is in your quest log)",
       "steps": [
         "Speak to Vagabond Eloy in Oops Wharf.",
         "Hunt Quiem (Lv.75) in Wharf Field 1 - Trap Zone or Wharf Field 2 - Devil's Canyon for 3x Baby Powder.",
@@ -761,16 +757,10 @@
       ],
       "prereqs": [
         {
-          "quest": "ep1-c2-01a"
-        },
-        {
-          "quest": "ep1-c2-01b"
-        },
-        {
-          "quest": "ep1-c2-01c"
+          "quest": "ep1-c1-06"
         }
       ],
-      "prereqText": "Collected Weird Piece 1, 2, and 3",
+      "prereqText": "Level 50+, have completed Rosaline Gracia - Rosaline's Document",
       "steps": [
         "Return Weird Piece 1, Weird Piece 2, and Weird Piece 3 to Indiana John in Caballa Relics Dungeon 1."
       ],

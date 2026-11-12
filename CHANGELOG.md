@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: 12 quest chains that could never unlock (EP0 Don's Push 3rd / 4th Stage, EP1 Ch.1 Old Artist / Sabrina / Model Mermaid Babe, EP1 Ch.2 Weird Box and the 3 Weird Pieces, Caballa Relics Catch That Thief! and Launch! Caballa V). A quest that sends you on side quests waited for them to be finished before it opened, while they waited for it to be accepted. Each now opens as the wiki says (usually after the previous step), and its side quests open as soon as it does. validate.js now reports any such loop.
+
 ## 0.5.0 (2026-11-12): Oops Wharf and Mermaid Palace in full, combined category tabs
 
 - **Oops Wharf town quests** (29 new): the 12 quests that give an **Oops Sticker** (Skipper Min - Urgent Issue needs 7), Frog Shaman, Genius Cochma, Lethos, Officer Tera, Monkey T, Explorer Reina's treasure hunts, Marinel's daily and the way to Mermaid Palace. Where every item comes from (monster, level and maps, or drill area) is taken from each item's wiki page. 22 more NPCs circled on their maps from the wiki. 
