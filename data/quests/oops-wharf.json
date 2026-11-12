@@ -1,0 +1,274 @@
+{
+  "region": "Oops Wharf",
+  "quests": [
+    {
+      "id": "ow-key-01",
+      "order": 300,
+      "title": "Mighty Captain Stan - Promise with Rookie Heidi",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Oops Wharf - Key Quests (Lv.70+)",
+      "npc": "Mighty Captain Stan",
+      "npcIds": [
+        "mighty-captain-stan"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-key-03b"
+        }
+      ],
+      "prereqText": "Level 70+, have completed Keeper Julio - Return Gold Silk Pouch",
+      "steps": [
+        "Talk to Mighty Captain Stan at Oops Wharf.",
+        "Talk to him again."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 5214,
+        "tmExp": 17530,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "To initiate this quest you have to have completed the Key Quests, starting from Desert Beach, in order. If you've already done them in the past, he won't give you this quest.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mighty_Captain_Stan_-_Promise_with_Rookie_Heidi.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-key-02",
+      "order": 301,
+      "title": "Skipper Min - Urgent Issue",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Oops Wharf - Key Quests (Lv.70+)",
+      "npc": "Skipper Min",
+      "npcIds": [
+        "skipper-min"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-key-01"
+        }
+      ],
+      "prereqText": "Level 70+, have completed Mighty Captain Stan - Promise with Rookie Heidi",
+      "steps": [
+        "Talk to Skipper Min at Oops Wharf.",
+        "Get 7x Oops Sticker: Oops Wharf sticker quests: Explorer Reina - God of Sea Poseidon, Fortune Teller - Ghost Exorcism 1/2/3, Frog Shaman - Oops Wharf Magic 4, Genius Cochma - Oops Wharf Survey 4, Grandpa Tango - Destination: Sea Palace!, Lethos - Elixir of Life? 4, Merchant Miguel - Rare Ivory, Officer Tera - Fend Off Pirates! 2, Rosemary - Make a Luxury Coat, Sophia - Let's be Healthy!.",
+        "Bring everything back to Skipper Min."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Oops Sticker",
+          "qty": 7,
+          "source": {
+            "kind": "quest",
+            "from": "Oops Wharf sticker quests: Explorer Reina - God of Sea Poseidon, Fortune Teller - Ghost Exorcism 1/2/3, Frog Shaman - Oops Wharf Magic 4, Genius Cochma - Oops Wharf Survey 4, Grandpa Tango - Destination: Sea Palace!, Lethos - Elixir of Life? 4, Merchant Miguel - Rare Ivory, Officer Tera - Fend Off Pirates! 2, Rosemary - Make a Luxury Coat, Sophia - Let's be Healthy!",
+            "map": "Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5214,
+        "tmExp": 17530,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Oops Sticker comes from that area's sticker quests (see the source on the item).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Skipper_Min_-_Urgent_Issue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-key-03",
+      "order": 302,
+      "title": "Mighty Captain Stan - Lost Ship's Log",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Oops Wharf - Key Quests (Lv.70+)",
+      "npc": "Mighty Captain Stan",
+      "npcIds": [
+        "mighty-captain-stan"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-key-02"
+        }
+      ],
+      "prereqText": "Have completed Urgent Issue",
+      "steps": [
+        "Talk to Mighty Captain Stan at Oops Wharf.",
+        "Get 1x Voyage Log p9: dropped by Master Foe (Lv.84) in Wharf Field 4 - Chrono Wharf.",
+        "Get 1x Voyage Log p25: dropped by Quiem (Lv.75) in Wharf Field 1 - Trap Zone & Field 2 - Devil's Canyon.",
+        "Get 1x Voyage Log p31: dropped by Requi (Lv.72) in Wharf Field 1 - 3.",
+        "Bring everything back to Mighty Captain Stan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voyage Log p9",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Master Foe (Lv.84)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Voyage Log p25",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Trap Zone & Field 2 - Devil's Canyon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Voyage Log p31",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Requi (Lv.72)",
+            "map": "Wharf Field 1 - 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 260749,
+        "tmExp": 876521,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon",
+          "1x Old Unsigned Letter"
+        ]
+      },
+      "notes": "Voyage Log p9 is dropped by Master Foe (Lv.84). Voyage Log p25 is dropped by Quiem (Lv.75). Voyage Log p31 is dropped by Requi (Lv.72).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mighty_Captain_Stan_-_Lost_Ship's_Log.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-key-04",
+      "order": 303,
+      "title": "Skipper Min - Min's Weakness",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Oops Wharf - Key Quests (Lv.70+)",
+      "npc": "Skipper Min",
+      "npcIds": [
+        "skipper-min"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-key-03"
+        }
+      ],
+      "prereqText": "Have completed Lost Ship's Log",
+      "steps": [
+        "Talk to Skipper Min at Oops Wharf.",
+        "Get 5x Nausea Drink: Drilled in Wharf Field 4.",
+        "Get 5x Nausea Patch: Drilled in Wharf Field 4.",
+        "Get 1x Adventurer's Book: reward from Keeper Julio - Return the Gold Silk Pouch (Key Quest 3).",
+        "Bring everything back to Skipper Min."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nausea Drink",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Wharf Field 4 (drill depth not on the wiki)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Nausea Patch",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Wharf Field 4 (drill depth not on the wiki)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Keeper Julio - Return the Gold Silk Pouch (Key Quest 3)",
+            "map": "Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1355895,
+        "tmExp": 4557911,
+        "galder": 0,
+        "items": [
+          "1x Weapon Ticket C",
+          "1x Adventurer's Book"
+        ]
+      },
+      "notes": "Nausea Drink, Nausea Patch are drilled in Wharf Field 4. Adventurer's Book is obtained by completing Keeper Julio - Return Gold Silk Pouch.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Skipper_Min_-_Min's_Weakness.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

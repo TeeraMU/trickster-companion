@@ -1,0 +1,421 @@
+{
+  "region": "Snow Hill",
+  "quests": [
+    {
+      "id": "sh-key-01",
+      "order": 319,
+      "title": "Fairy Godmother - Snow Hill Recommendation Sticker",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Snow Hill - Key Quests (Lv.170+)",
+      "npc": "Fairy Godmother",
+      "npcIds": [
+        "fairy-godmother"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-key-05"
+        }
+      ],
+      "prereqText": "Level 170+, have completed Little Chagan - Read Chagan's Dream",
+      "steps": [
+        "Talk to Fairy Godmother at Snow Hill Town - Laplanoel.",
+        "Get 14x Snow Hill Sticker: Snow Hill sticker quests: 22 Snow Hill quests (Ancient Polar Bear, Dorothy, Farmer Tsetsech, Frog Shaman, General Granada, Genius Cochma, Grandma / Grandpa Tango, Horse Hiddink, Lethos, Lifeguard Deen, Louis Bitton, Old Artist, Poppuri, Prince Stephano, Princess Rosetta, Santa Claus, Tacky, Tango, Witch La Befana).",
+        "Get 1x Adventurer's Book: reward from Little Chagan - Interpret Chagan's Dream.",
+        "Bring everything back to Fairy Godmother."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Snow Hill Sticker",
+          "qty": 14,
+          "source": {
+            "kind": "quest",
+            "from": "Snow Hill sticker quests: 22 Snow Hill quests (Ancient Polar Bear, Dorothy, Farmer Tsetsech, Frog Shaman, General Granada, Genius Cochma, Grandma / Grandpa Tango, Horse Hiddink, Lethos, Lifeguard Deen, Louis Bitton, Old Artist, Poppuri, Prince Stephano, Princess Rosetta, Santa Claus, Tacky, Tango, Witch La Befana)",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Little Chagan - Interpret Chagan's Dream",
+            "map": "Swamp Town - Carbigal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4953995,
+        "tmExp": 4183415,
+        "galder": 0,
+        "items": [
+          "20x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Snow Hill Sticker comes from that area's sticker quests (see the source on the item). Adventurer's Book is obtained by completing Little Chagan - Read Chagan's Dream.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Godmother_-_Snow_Hill_Recommendation_Sticker.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-key-02",
+      "order": 320,
+      "title": "Witch La Befana - Broken Promise",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Snow Hill - Key Quests (Lv.170+)",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-key-01"
+        }
+      ],
+      "prereqText": "Level 170+, have Save the Snow Machine in quest log",
+      "steps": [
+        "Talk to Witch La Befana at Snow Hill Town - Laplanoel.",
+        "Get 1x Truth Draught: reward from Fairy Godmother - Truth Draught.",
+        "Get 1x Ice Heart: reward from Fairy Godmother - Truth Draught.",
+        "Bring everything back to Witch La Befana."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Truth Draught",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Godmother - Truth Draught",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ice Heart",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Godmother - Truth Draught",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4953995,
+        "tmExp": 4183415,
+        "galder": 0,
+        "items": [
+          "1x La Befana's Broomstick A",
+          "1x La Befana's Broomstick B"
+        ]
+      },
+      "notes": "Truth Draught and Ice Heart are obtained by completing Fairy Godmother - Truth Draught.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Broken_Promise.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-key-03",
+      "order": 321,
+      "title": "Fairy Godmother - Truth Draught",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Snow Hill - Key Quests (Lv.170+)",
+      "npc": "Fairy Godmother",
+      "npcIds": [
+        "fairy-godmother"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-key-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 170, have Witch La Befana - Broken Promise in quest log",
+      "steps": [
+        "Talk to Fairy Godmother at Snow Hill Town - Laplanoel.",
+        "Get 1x Blue Orchid: Drilled in Snow Hill Fields.",
+        "Get 1x Udambara: Drilled in Snow Hill Fields.",
+        "Bring everything back to Fairy Godmother."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Orchid",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Udambara",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4953995,
+        "tmExp": 4183415,
+        "galder": 0,
+        "items": [
+          "1x Truth Draught",
+          "1x Ice Heart"
+        ]
+      },
+      "notes": "Blue Orchid and Udambara are drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Godmother_-_Truth_Draught.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-key-04",
+      "order": 322,
+      "title": "Santa Claus (2) - Save the Snow Machine",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Snow Hill - Key Quests (Lv.170+)",
+      "npc": "Santa Claus (2)",
+      "npcIds": [
+        "santa-claus-2"
+      ],
+      "location": "Laplanoel - Santa's Post Office",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-key-02"
+        }
+      ],
+      "prereqText": "Level 170+, have completed Witch La Befana - Broken Promise",
+      "steps": [
+        "Talk to Santa Claus (2) at Laplanoel - Santa's Post Office.",
+        "Get 1x Broken Remote: dropped by Giant Coolem (Lv.277) in Ice Dungeon 4 - Teardrop Walkways.",
+        "Get 1x Remote Part A: dropped by Great Coolem (Lv.280) in Ice Dungeon 3 - Heart of Crystal / 4 - Teardrop Walkways.",
+        "Get 1x Remote Part B: dropped by Freyr (Lv.259) in Ice Dungeon 1 - Cave of Darkblue / 2 - Cave of Crystal.",
+        "Get 1x Remote Part C: dropped by Freyja (Lv.264) in Ice Dungeon 1 - 3.",
+        "Bring everything back to Santa Claus (2)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Broken Remote",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Giant Coolem (Lv.277)",
+            "map": "Ice Dungeon 4 - Teardrop Walkways"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Remote Part A",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Great Coolem (Lv.280)",
+            "map": "Ice Dungeon 3 - Heart of Crystal / 4 - Teardrop Walkways"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Remote Part B",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Freyr (Lv.259)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / 2 - Cave of Crystal"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Remote Part C",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Freyja (Lv.264)",
+            "map": "Ice Dungeon 1 - 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4953995,
+        "tmExp": 4183415,
+        "galder": 0,
+        "items": [
+          "1x Satisfaction Guarantee",
+          "1x Broken Remote",
+          "1x Remote Part A",
+          "1x Remote Part B",
+          "1x Remote Part C"
+        ]
+      },
+      "notes": "Broken Remote is dropped by Giant Coolem (Lv.277), Remote Part A is dropped by Great Coolem (Lv.280), Remote Part B is dropped by Freyr (Lv.259) and Remote Part C is dropped by Freyja (Lv.264).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Santa_Claus_(2)_-_Save_the_Snow_Machine.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-key-05",
+      "order": 323,
+      "title": "Santa Claus (2) - Fix the Remote Control",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Snow Hill - Key Quests (Lv.170+)",
+      "npc": "Santa Claus (2)",
+      "npcIds": [
+        "santa-claus-2"
+      ],
+      "location": "Laplanoel - Santa's Post Office",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-key-04"
+        }
+      ],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Santa Claus (2) at Laplanoel - Santa's Post Office.",
+        "Get 1x Fixed Remote: Inventor Gale: Satisfaction Guarantee + Broken Remote + Remote Part A + B + C (all handed back by Save the Snow Machine).",
+        "Bring everything back to Santa Claus (2)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fixed Remote",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Inventor Gale: Satisfaction Guarantee + Broken Remote + Remote Part A + B + C (all handed back by Save the Snow Machine)",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4953995,
+        "tmExp": 4183415,
+        "galder": 0,
+        "items": [
+          "1x Santa's Emergency Cash"
+        ]
+      },
+      "notes": "Fixed Remote is obtained by compounding Satisfaction Guarantee + Broken Remote + Remote Part A + Remote Part B + Remote Part C with Inventor Gale at Gate of Snow Hill. Satisfaction Guarantee, Broken Remote, Remote Part A, Remote Part B, Remote Part C are obtained by completing Santa Claus (2) - Save the Snow Machine.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Santa_Claus_(2)_-_Fix_the_Remote_Control.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-key-06",
+      "order": 324,
+      "title": "Fairy Godmother - Finding Peace Again",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Snow Hill - Key Quests (Lv.170+)",
+      "npc": "Fairy Godmother",
+      "npcIds": [
+        "fairy-godmother"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-key-05"
+        }
+      ],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Fairy Godmother at Snow Hill Town - Laplanoel.",
+        "Talk to her."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 4953995,
+        "tmExp": 4183415,
+        "galder": 0,
+        "items": [
+          "1x Weapon Exchange H",
+          "1x Adventurer's Book"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Godmother_-_Finding_Peace_Again.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}
