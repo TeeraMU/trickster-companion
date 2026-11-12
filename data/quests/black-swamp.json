@@ -341,6 +341,4738 @@
         "checked": "2026-11-12",
         "verifiedInGame": false
       }
+    },
+    {
+      "id": "bs-39",
+      "order": 705,
+      "title": "Hunter Yuri - Carbigal Hunter Girl Yuri's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Monster Quests",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Carbigal Monster Guild",
+      "minLevel": 135,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+",
+      "steps": [
+        "Talk to Hunter Yuri at Carbigal Monster Guild.",
+        "Defeat 30x Electric Snail (Lv.164) within 20 min in Path to Black Swamp / Swamp Field 1 / 2.",
+        "Report back to Hunter Yuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Electric Snail",
+          "level": 164,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Path to Black Swamp / Swamp Field 1 / 2"
+        }
+      ],
+      "rewards": {
+        "baseExp": 750653,
+        "tmExp": 235034,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.139~142: 30x Chameleon Frog (Lv.169) in 20 min, reward 2x 10,000 Galder Coupon. Lv.143~146: 30x Monkya (Lv.173) in 20 min, reward 2x 10,000 Galder Coupon. Lv.147+: 30x Arachne (Lv.178) in 15 min, reward 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Carbigal_Hunter_Girl_Yuri's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-01",
+      "order": 706,
+      "title": "Assistant Hunter - Carbigal Assistant Hunter's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Monster Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Carbigal Monster Guild",
+      "minLevel": 135,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-39"
+        }
+      ],
+      "prereqText": "Level 135+, have completed at least 1 Carbigal Hunter Girl Yuri's Quest",
+      "steps": [
+        "Talk to Assistant Hunter at Carbigal Monster Guild.",
+        "Defeat 20x Electro Snail (Lv.175) within 10 min in Swamp Field 1 / 2.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Electro Snail",
+          "level": 175,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Swamp Field 1 / 2"
+        }
+      ],
+      "rewards": {
+        "baseExp": 632223,
+        "tmExp": 781272,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Carbigal_Assistant_Hunter's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-02",
+      "order": 707,
+      "title": "Bard La Fimmel - A Gift La Fimmel Wants",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Swamp Dungeon 3 - Marshy Vacant Lot",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Bard La Fimmel at Swamp Dungeon 3 - Marshy Vacant Lot.",
+        "Get 2x Feel Eye: dropped by Purple Worm (Lv.215) in Swamp Dungeon 4 - Marshy Garden.",
+        "Bring everything back to Bard La Fimmel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Feel Eye",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Purple Worm (Lv.215)",
+            "map": "Swamp Dungeon 4 - Marshy Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3398891,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x Herb Potion + 5x Gold Pearl Potion",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 1x La Fimmel Card",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Feel Eye is dropped by Purple Worm (Lv.215). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bard_La_Fimmel_-_A_Gift_La_Fimmel_Wants.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-03",
+      "order": 708,
+      "title": "Blacksmith Marx - Find Ingredients for Silver Jewel",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Silver Jewel Mining Lots",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Swamp Mine - Silver Jewel",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Blacksmith Marx at Swamp Mine - Silver Jewel.",
+        "Get 3x Pure Silver: drilled in 1st Mining Lot of Silver Jewel.",
+        "Get 3x Flawless Turquoise: drilled in 2nd Mining Lot of Silver Jewel.",
+        "Bring everything back to Blacksmith Marx (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Silver",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 1st Mining Lot of Silver Jewel (drill depth not on the wiki)",
+            "map": "1st Mining Lot of Silver Jewel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Flawless Turquoise",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 2nd Mining Lot of Silver Jewel (drill depth not on the wiki)",
+            "map": "2nd Mining Lot of Silver Jewel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 760317,
+        "tmExp": 560833,
+        "galder": 0,
+        "items": [
+          "1x Mithril",
+          "1x Garnet"
+        ]
+      },
+      "notes": "Pure Silver is drilled in 1st Mining Lot of Silver Jewel. Flawless Turquoise is drilled in 2nd Mining Lot of Silver Jewel.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Blacksmith_Marx_-_Find_Ingredients_for_Silver_Jewel.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-04",
+      "order": 709,
+      "title": "Card Girl - Black Swamp Card Girl Quest (1)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Card Girl at Gate of Black Swamp.",
+        "Get 1x Electric Snail Card: dropped by Electric Snail (Lv.164) (use Take on it) in Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Electric Snail Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Electric Snail (Lv.164) (use Take on it)",
+            "map": "Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4750042,
+        "galder": 0,
+        "items": [
+          "2x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Electric Snail Card. Riddle: \"Cooking ingredient whith a house on it's back\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Black_Swamp_Card_Girl_Quest_(1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-05",
+      "order": 710,
+      "title": "Card Girl - Black Swamp Card Girl Quest (2)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Card Girl at Gate of Black Swamp.",
+        "Get 1x Mud Bigfoot Card: dropped by Mud Bigfoot (Lv.180) (use Take on it) in Swamp Field 6 - Lake of Illusion.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mud Bigfoot Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Mud Bigfoot (Lv.180) (use Take on it)",
+            "map": "Swamp Field 6 - Lake of Illusion"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4750042,
+        "galder": 0,
+        "items": [
+          "3x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Mud Bigfoot Card. Riddle: \"That grass on his body, did they sprout from him?\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Black_Swamp_Card_Girl_Quest_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-06",
+      "order": 711,
+      "title": "Card Girl - Black Swamp Card Girl Quest (3)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Card Girl at Gate of Black Swamp.",
+        "Get 1x Myconid Card: dropped by Myconid (Lv.208) (use Take on it) in Swamp Dungeon 1 - Marshy Trail / Swamp Dungeon 2 - Marshy Pool.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Myconid Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Myconid (Lv.208) (use Take on it)",
+            "map": "Swamp Dungeon 1 - Marshy Trail / Swamp Dungeon 2 - Marshy Pool"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4678418,
+        "galder": 0,
+        "items": [
+          "4x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Myconid Card. Riddle: \"What you have on both your hands belongs to the rabbit!\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Black_Swamp_Card_Girl_Quest_(3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-07",
+      "order": 712,
+      "title": "Card Girl - Black Swamp Card Girl Quest (4)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 180,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 180+",
+      "steps": [
+        "Talk to Card Girl at Gate of Black Swamp.",
+        "Get 1x Stoor Worm Card: dropped by Stoor Worm (Lv.221) (use Take on it) in Swamp Dungeon 5 - Marshy Lawn / Swamp Dungeon 6 - Suu's Muddy Pool.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Stoor Worm Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Stoor Worm (Lv.221) (use Take on it)",
+            "map": "Swamp Dungeon 5 - Marshy Lawn / Swamp Dungeon 6 - Suu's Muddy Pool"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4678418,
+        "galder": 0,
+        "items": [
+          "5x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Stoor Worm Card. Riddle: \"I'm sorry, but will the red scarf catch on fire?\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Black_Swamp_Card_Girl_Quest_(4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-08",
+      "order": 713,
+      "title": "Card Girl - Black Swamp Card Girl Quest (5)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Card Girl at Gate of Black Swamp.",
+        "Get 1x Mingo Card: dropped by Mingo (Lv.171) (use Take on it) in Swamp Field 3 - Maze of Forest.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mingo Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Mingo (Lv.171) (use Take on it)",
+            "map": "Swamp Field 3 - Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4903525,
+        "galder": 0,
+        "items": [
+          "6x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Mingo Card. Riddle: \"Slimy\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Black_Swamp_Card_Girl_Quest_(5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-09",
+      "order": 714,
+      "title": "Clerk Z. Smith - Clerk Z's Split Personality",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Clerk Z. Smith",
+      "npcIds": [
+        "clerk-z-smith"
+      ],
+      "location": "Swamp Dungeon 2 - Marshy Pool",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Clerk Z. Smith at Swamp Dungeon 2 - Marshy Pool.",
+        "Get 1x Siam Marble: dropped by Cobra Flower (Lv.210) in Swamp Dungeon 2 - Marshy Pool / Swamp Dungeon 3 - Marshy Vacant Lot.",
+        "Bring everything back to Clerk Z. Smith (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Siam Marble",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Cobra Flower (Lv.210)",
+            "map": "Swamp Dungeon 2 - Marshy Pool / Swamp Dungeon 3 - Marshy Vacant Lot"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3398891,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 1x G. Smith Card",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Siam Marble is dropped by Cobra Flower (Lv.210). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clerk_Z._Smith_-_Clerk_Z's_Split_Personality.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-10",
+      "order": 715,
+      "title": "Clever Owl - Acquire Clever Owl's Book",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Tenter Lion (Lv.210+)",
+      "npc": "Clever Owl",
+      "npcIds": [
+        "clever-owl"
+      ],
+      "location": "Swamp Field 5 - Further Maze of Forest",
+      "minLevel": 210,
+      "cycles": 3,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-13",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 210+, have Dr. Cat - Tenter Lion's Legendary Shield in quest log.",
+      "steps": [
+        "Talk to Clever Owl at Swamp Field 5 - Further Maze of Forest.",
+        "Get 15x Red Apple: dropped by Monkya (Lv.173) in The Trident Maze / Swamp Field 3 - Maze of Forest.",
+        "Get 15x Snail Dish: dropped by Electric Snail (Lv.164) in Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp.",
+        "Get 15x Swamp Shark's Fin: dropped by Swamp Shark (Lv.176) in Swamp Field 3 - Maze of Forest / Swamp Field 5 - Further Maze of Forest.",
+        "Bring everything back to Clever Owl (repeat 3 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Apple",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Monkya (Lv.173)",
+            "map": "The Trident Maze / Swamp Field 3 - Maze of Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Snail Dish",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Electric Snail (Lv.164)",
+            "map": "Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Swamp Shark's Fin",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Swamp Shark (Lv.176)",
+            "map": "Swamp Field 3 - Maze of Forest / Swamp Field 5 - Further Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 30551081,
+        "tmExp": 5591035,
+        "galder": 0,
+        "items": [
+          "1x Clever Owl's Book of Myths"
+        ]
+      },
+      "notes": "Red Apple is dropped by Monkya (Lv.173), Snail Dish is dropped by Electric Snail (Lv.164) and Swamp Shark's Fin is dropped by Swamp Shark (Lv.176).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clever_Owl_-_Acquire_Clever_Owl's_Book.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-11",
+      "order": 716,
+      "title": "Cluck Cluck Warrior - Food for Cluck",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Cluck Cluck Warrior",
+      "npcIds": [
+        "cluck-cluck-warrior"
+      ],
+      "location": "Swamp Field 2 - Beaver's Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+, have completed The Great Chicken War",
+      "steps": [
+        "Talk to Cluck Cluck Warrior at Swamp Field 2 - Beaver's Swamp.",
+        "Get 5x Tadpole Egg: dropped by Chameleon Frog (Lv.169) in Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen.",
+        "Get 5x Swamp Worms: drilled in Black Swamp Fields.",
+        "Bring everything back to Cluck Cluck Warrior (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tadpole Egg",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chameleon Frog (Lv.169)",
+            "map": "Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Swamp Worms",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 10x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Tadpole Egg is dropped by Chameleon Frog (Lv.169). Swamp Worms is drilled in Black Swamp Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Cluck_Cluck_Warrior_-_Food_for_Cluck.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-12",
+      "order": 717,
+      "title": "Cluck Cluck Warrior - Remember the Chicken Warriors",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Cluck Cluck Warrior",
+      "npcIds": [
+        "cluck-cluck-warrior"
+      ],
+      "location": "Swamp Field 2 - Beaver's Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140, have completed Food for Cluck.",
+      "steps": [
+        "Talk to Cluck Cluck Warrior at Swamp Field 2 - Beaver's Swamp.",
+        "Get 1x Grass-Leaf Doll: drilled in Black Swamp Fields.",
+        "Get 5x Swamp Leaf: drilled in Black Swamp Fields.",
+        "Bring everything back to Cluck Cluck Warrior (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Grass-Leaf Doll",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Swamp Leaf",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Grass-Leaf Doll and Swamp Leaf are drilled in Black Swamp Fields. Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Cluck_Cluck_Warrior_-_Remember_the_Chicken_Warriors.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-13",
+      "order": 718,
+      "title": "Dr. Cat - Tenter Lion's Legendary Shield",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Tenter Lion (Lv.210+)",
+      "npc": "Dr. Cat",
+      "npcIds": [
+        "dr-cat"
+      ],
+      "location": "Swamp Field 6 - Lake of Illusion",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 210+, have Tenter Lion Tail Spear, Tenter Lion Mane, Tenter Lion Earring in inventory",
+      "steps": [
+        "Talk to Dr. Cat at Swamp Field 6 - Lake of Illusion.",
+        "Get 1x Clever Owl's Book of Myths: reward from Clever Owl - Acquire Clever Owl's Book.",
+        "Get 1x Red Tentacle: dropped by Tenter Lion (Lv.420) in Swamp Dungeon 7 - Tenterlion's Cave.",
+        "Bring everything back to Dr. Cat."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Clever Owl's Book of Myths",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Clever Owl - Acquire Clever Owl's Book",
+            "map": "Swamp Field 5 - Further Maze of Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Red Tentacle",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Tenter Lion (Lv.420)",
+            "map": "Swamp Dungeon 7 - Tenterlion's Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 47354176,
+        "tmExp": 8666104,
+        "galder": 0,
+        "items": [
+          "1x Tenter Lion Shield"
+        ]
+      },
+      "notes": "Tenter Lion Tail Spear, Tenter Lion Mane, Tenter Lion Earring, and Red Tentacle are dropped by Tenter Lion (Lv.420). Clever Owl's Book of Myths is obtained by completing Clever Owl - Acquire Clever Owl's Book.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Dr._Cat_-_Tenter_Lion's_Legendary_Shield.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-14",
+      "order": 719,
+      "title": "Driller King Marky - Romance of Drilling - Black Swamp",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Swamp Field 5 - Further Maze of Forest",
+      "minLevel": 110,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 110+, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Swamp Field 5 - Further Maze of Forest.",
+        "Get 1x Weird Swamp Map A: drilled in Black Swamp Fields.",
+        "Get 1x Weird Swamp Map B: drilled in Black Swamp Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Swamp Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Swamp Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 311826,
+        "tmExp": 311826,
+        "galder": 0,
+        "items": [
+          "1x Weird Swamp Treasure Map"
+        ]
+      },
+      "notes": "Weird Swamp Map A and Weird Swamp Map B are drilled in Black Swamp Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Black_Swamp.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-68",
+      "order": 720,
+      "title": "Stella - Shadow Star 8",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Mind's Eye (Lv.285+)",
+      "npc": "Stella",
+      "npcIds": [
+        "stella"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 285,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 285+, use Mind's Eye",
+      "steps": [
+        "Talk to Stella at Swamp Town - Carbigal.",
+        "Get 5x Shadow Flames: dropped by Shadow Monkya (Lv.519) in Swamp Field 3 - Maze of Forest.",
+        "Bring everything back to Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Flames",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Shadow Monkya (Lv.519)",
+            "map": "Swamp Field 3 - Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4920676,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.5",
+          "11x Half Pink Potion",
+          "11x Half Blue Potion or Story of the Star Gazer Girl 8"
+        ]
+      },
+      "notes": "Shadow Flames is dropped by Shadow Monkya (Lv.519), Shadow Arachne (Lv.516), Shadow Mud Bigfoot (Lv.517).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stella_-_Shadow_Star_8.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-15",
+      "order": 721,
+      "title": "Eclipse - The Story of the Gods 8",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Mind's Eye (Lv.285+)",
+      "npc": "Eclipse",
+      "npcIds": [
+        "eclipse"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 285,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-19"
+        },
+        {
+          "quest": "bs-68"
+        }
+      ],
+      "prereqText": "Level 285+, use Mind's Eye, have completed The Story of the Gods 7 and have completed Shadow Star 8 at least once",
+      "steps": [
+        "Talk to Eclipse at Swamp Town - Carbigal.",
+        "Get 2x Shadow Jade: dropped by Swamp Dungeon shadow monsters (seen with Mind's Eye) in Swamp Dungeon.",
+        "Get 2x Shadow Rhodonite: dropped by Swamp Dungeon shadow monsters (seen with Mind's Eye) in Swamp Dungeon.",
+        "Bring everything back to Eclipse."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Jade",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Swamp Dungeon shadow monsters (seen with Mind's Eye)",
+            "map": "Swamp Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shadow Rhodonite",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Swamp Dungeon shadow monsters (seen with Mind's Eye)",
+            "map": "Swamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 14973436,
+        "tmExp": 7749269,
+        "galder": 0,
+        "items": [
+          "4x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Shadow Jade and Shadow Rhodonite are dropped by Shadow Swamp Dungeon Monsters. Eclipse only shows up between 11:00 and 11:20.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Eclipse_-_The_Story_of_the_Gods_8.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-16",
+      "order": 722,
+      "title": "Explorer Reina - Bring Black Swamp Goods",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Explorer Reina at Gate of Black Swamp.",
+        "Get 2x Amber: drilled in Poppuri Dungeons / Black Swamp Fields.",
+        "Get 2x Grass-Leaf Doll: drilled in Black Swamp Fields.",
+        "Get 2x White Hair Moss: drilled in Swamp Dungeons.",
+        "Get 2x Litmus Moss: drilled in Swamp Dungeons.",
+        "Bring everything back to Explorer Reina (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Amber",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Poppuri Dungeons / Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Poppuri Dungeons / Black Swamp Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Grass-Leaf Doll",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "White Hair Moss",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Swamp Dungeons (drill depth not on the wiki)",
+            "map": "Swamp Dungeons"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Litmus Moss",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Swamp Dungeons (drill depth not on the wiki)",
+            "map": "Swamp Dungeons"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1038621,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Amber is drilled in Poppuri Dungeons and Black Swamp Fields. Grass-Leaf Doll is drilled in Black Swamp Fields. White Hair Moss and Litmus Moss are drilled in Swamp Dungeons.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Bring_Black_Swamp_Goods.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-17",
+      "order": 723,
+      "title": "Explorer Reina - Journey to Carbigal",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-67"
+        }
+      ],
+      "prereqText": "Level 140+, have competed Rosaline Gracia - The Swamp Beyond Azteca",
+      "steps": [
+        "Talk to Explorer Reina at Gate of Black Swamp.",
+        "Find and talk to Vagabond Eloy."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 2243520,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Vagabond Eloy is found in Swamp Town - Carbigal.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Journey_to_Carbigal.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-18",
+      "order": 724,
+      "title": "Explorer Reina - Treasure Hunting 1 - Black Swamp",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 110,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 110+, have completed Indiana John - Old Man's Dream, haven't Worn Swamp Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Swamp Field 1 - Black Hole.",
+        "Get 1x Worn Swamp Map A: drilled in Black Swamp Fields.",
+        "Get 1x Worn Swamp Map B: drilled in Black Swamp Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Swamp Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Swamp Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Swamp Treasure Map"
+        ]
+      },
+      "notes": "Worn Swamp Map A and Worn Swamp Map B are drilled in Black Swamp Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Black_Swamp.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-19",
+      "order": 725,
+      "title": "Explorer Reina - Treasure Hunting 2 - Black Swamp",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 110,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "bs-18"
+        }
+      ],
+      "prereqText": "Level 110+, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Black Swamp 50 times, haven't Old Swamp Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Swamp Field 1 - Black Hole.",
+        "Get 1x Old Swamp Map A: drilled in Black Swamp Fields.",
+        "Get 1x Old Swamp Map B: drilled in Black Swamp Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Swamp Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Swamp Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 311826,
+        "tmExp": 311826,
+        "galder": 0,
+        "items": [
+          "1x Old Swamp Treasure Map"
+        ]
+      },
+      "notes": "Old Swamp Map A and Old Swamp Map B are drilled in Black Swamp Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Black_Swamp.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-20",
+      "order": 726,
+      "title": "Farmer Tsetsech - Help the Plantation 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Farmer Tsetsech",
+      "npcIds": [
+        "farmer-tsetsech"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Farmer Tsetsech at Swamp Town - Carbigal.",
+        "Get 3x Haro: dropped by Lotus Wormhole (Lv.219) in Swamp Dungeon 4 - Marshy Garden / Swamp Dungeon 5 - Marshy Lawn.",
+        "Bring everything back to Farmer Tsetsech (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Haro",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Lotus Wormhole (Lv.219)",
+            "map": "Swamp Dungeon 4 - Marshy Garden / Swamp Dungeon 5 - Marshy Lawn"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Haro is dropped by Lotus Wormhole (Lv.219).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Farmer_Tsetsech_-_Help_the_Plantation_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-21",
+      "order": 727,
+      "title": "Farmer Tsetsech - Help the Plantation 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Farmer Tsetsech",
+      "npcIds": [
+        "farmer-tsetsech"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-20"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Help the Plantation 1",
+      "steps": [
+        "Talk to Farmer Tsetsech at Swamp Town - Carbigal.",
+        "Get 5x Poison Spore: dropped by Myconid (Lv.208) in Swamp Dungeon 1 - Marshy Trail / Swamp Dungeon 2 - Marshy Pool.",
+        "Bring everything back to Farmer Tsetsech (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Poison Spore",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Myconid (Lv.208)",
+            "map": "Swamp Dungeon 1 - Marshy Trail / Swamp Dungeon 2 - Marshy Pool"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 1x Tsetsech Card",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Poison Spore is dropped by Myconid (Lv.208). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Farmer_Tsetsech_-_Help_the_Plantation_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-22",
+      "order": 728,
+      "title": "Farmer Tsetsech - Memory of a Student",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Farmer Tsetsech",
+      "npcIds": [
+        "farmer-tsetsech"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Farmer Tsetsech at Swamp Town - Carbigal.",
+        "Get 1x Don Danihen's Picture: reward from Atropos - Third Prophecy.",
+        "Bring everything back to Farmer Tsetsech."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Don Danihen's Picture",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Atropos - Third Prophecy",
+            "map": "Swamp Town - Carbigal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Don Danihen's Picture is obtained by completing Atropos - Third Prophecy.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Farmer_Tsetsech_-_Memory_of_a_Student.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-23",
+      "order": 729,
+      "title": "Favian - Finding Her Favorite Food",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Favian",
+      "npcIds": [
+        "favian"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Favian at Swamp Field 1 - Black Hole.",
+        "Get 10x Snail Dish: dropped by Electric Snail (Lv.164) in Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp.",
+        "Bring everything back to Favian (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Snail Dish",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Electric Snail (Lv.164)",
+            "map": "Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Snail Dish is dropped by Electric Snail (Lv.164). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Favian_-_Finding_Her_Favorite_Food.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-24",
+      "order": 730,
+      "title": "Fortune Teller - Dream Reader",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+, have Read Chagan's Dream in quest log",
+      "steps": [
+        "Talk to Fortune Teller at Gate of Black Swamp.",
+        "Get 1x Dream Note: reward from Little Chagan - Chagan's Dream.",
+        "Get 1x Crystal Marble: dropped by Aposis (Lv.66) in Relics Field 3 - Monkey Statues / Relics Field 4 - An Altar for Sacrifice / Relics Field 2 - Hand of Giant.",
+        "Get 1x Old Book: dropped by Aposis (Lv.66) in Relics Field 3 - Monkey Statues / Relics Field 4 - An Altar for Sacrifice / Relics Field 2 - Hand of Giant.",
+        "Bring everything back to Fortune Teller."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dream Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Little Chagan - Chagan's Dream",
+            "map": "Swamp Town - Carbigal"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystal Marble",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Aposis (Lv.66)",
+            "map": "Relics Field 3 - Monkey Statues / Relics Field 4 - An Altar for Sacrifice / Relics Field 2 - Hand of Giant"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Book",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Aposis (Lv.66)",
+            "map": "Relics Field 3 - Monkey Statues / Relics Field 4 - An Altar for Sacrifice / Relics Field 2 - Hand of Giant"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3770503,
+        "tmExp": 3649166,
+        "galder": 0,
+        "items": [
+          "1x Dream Interpretation"
+        ]
+      },
+      "notes": "Dream Note is obtained by completing Little Chagan - Chagan's Dream. Crystal Marble and Old Book are dropped by Aposis (Lv.66).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fortune_Teller_-_Dream_Reader.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-25",
+      "order": 731,
+      "title": "Frog Prince - Essence of Life",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Frog Prince",
+      "npcIds": [
+        "frog-prince"
+      ],
+      "location": "Black Swamp - Site of Life",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+, 3rd Job",
+      "steps": [
+        "Talk to Frog Prince at Black Swamp - Site of Life.",
+        "Get 15x Cobra Flower Seed: dropped by Cobra Flower (Lv.210) in Swamp Dungeon 2 - Marshy Pool / Swamp Dungeon 3 - Marshy Vacant Lot.",
+        "Get 15x Tooth Flower Seed: dropped by Tooth Flower (Lv.212) in Swamp Dungeon 3 - Marshy Vacant Lot.",
+        "Get 15x Mud Bigfoot Seed: dropped by Mud Bigfoot (Lv.180) in Swamp Field 6 - Lake of Illusion.",
+        "Get 15x Lotus Wormhole Seed: dropped by Lotus Wormhole (Lv.219) in Swamp Dungeon 4 - Marshy Garden / Swamp Dungeon 5 - Marshy Lawn.",
+        "Bring everything back to Frog Prince."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cobra Flower Seed",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Cobra Flower (Lv.210)",
+            "map": "Swamp Dungeon 2 - Marshy Pool / Swamp Dungeon 3 - Marshy Vacant Lot"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tooth Flower Seed",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Tooth Flower (Lv.212)",
+            "map": "Swamp Dungeon 3 - Marshy Vacant Lot"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Mud Bigfoot Seed",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Mud Bigfoot (Lv.180)",
+            "map": "Swamp Field 6 - Lake of Illusion"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lotus Wormhole Seed",
+          "qty": 15,
+          "source": {
+            "kind": "drop",
+            "from": "Lotus Wormhole (Lv.219)",
+            "map": "Swamp Dungeon 4 - Marshy Garden / Swamp Dungeon 5 - Marshy Lawn"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2013276,
+        "tmExp": 710832,
+        "galder": 0,
+        "items": [
+          "1x Essence of Life"
+        ]
+      },
+      "notes": "Cobra Flower Seed is dropped by Cobra Flower (Lv.210), Tooth Flower Seed is dropped by Tooth Flower (Lv.212), Mud Bigfoot Seed is dropped by Mud Bigfoot (Lv.180) and Lotus Wormhole Seed is dropped by Lotus Wormhole (Lv.219).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Prince_-_Essence_of_Life.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-26",
+      "order": 732,
+      "title": "Frog Prince - I am the Frog Prince",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Frog Prince",
+      "npcIds": [
+        "frog-prince"
+      ],
+      "location": "Swamp Field 4 - Dark Omen",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Frog Prince at Swamp Field 4 - Dark Omen.",
+        "Get 1x Golden Ball: drilled in Black Swamp Fields.",
+        "Bring everything back to Frog Prince (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Ball",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Golden Ball is drilled in Black Swamp Fields. Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Prince_-_I_am_the_Frog_Prince.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-27",
+      "order": 733,
+      "title": "Frog Shaman - Passing the Spell",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Swamp Dungeon 2 - Marshy Pool",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Card Master or Gambler, Metamorphosis (Master)",
+      "steps": [
+        "Talk to Frog Shaman at Swamp Dungeon 2 - Marshy Pool.",
+        "Get 20x Eyes of the Sun: dropped by Lima (Lv.70) in Caballa Relics Dungeon 1 / Caballa Relics Dungeon 2 / Caballa Relics Dungeon 3 / Caballa Relics Dungeon 4.",
+        "Bring everything back to Frog Shaman."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eyes of the Sun",
+          "qty": 20,
+          "source": {
+            "kind": "drop",
+            "from": "Lima (Lv.70)",
+            "map": "Caballa Relics Dungeon 1 / Caballa Relics Dungeon 2 / Caballa Relics Dungeon 3 / Caballa Relics Dungeon 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x (Summon) Card Soldier Card"
+        ]
+      },
+      "notes": "Eyes of the Sun is dropped by Lima (Lv.70). Though a Card Master can complete this quest, only a Gambler can learn (Summon) Card Soldier.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Passing_the_Spell.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-28",
+      "order": 734,
+      "title": "Frog Shaman - Protect the Sky Lotus",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Swamp Boss Room Gateway 1 - Sky Lotus",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Frog Shaman at Swamp Boss Room Gateway 1 - Sky Lotus.",
+        "Defeat 8x Tentacles (Lv.240) within 2 min in Swamp Boss Room Gateway 1 - Sky Lotus.",
+        "Report back to Frog Shaman."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tentacles",
+          "level": 240,
+          "count": 8,
+          "timeLimit": "2 min",
+          "map": "Swamp Boss Room Gateway 1 - Sky Lotus"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Protect_the_Sky_Lotus.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-29",
+      "order": 735,
+      "title": "Frog Shaman - Swamp Magic 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Frog Shaman at Swamp Field 1 - Black Hole.",
+        "Get 5x Squishy Mud: dropped by Walking Tadpole (Lv.166) in Swamp Field 1 - Black Hole.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Squishy Mud",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Walking Tadpole (Lv.166)",
+            "map": "Swamp Field 1 - Black Hole"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 1x Flower of Revival"
+        ]
+      },
+      "notes": "Squishy Mud is dropped by Walking Tadpole (Lv.166).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Swamp_Magic_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-30",
+      "order": 736,
+      "title": "Frog Shaman - Swamp Magic 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-29"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Swamp Magic 1",
+      "steps": [
+        "Talk to Frog Shaman at Swamp Field 1 - Black Hole.",
+        "Get 5x Tadpole Egg: dropped by Chameleon Frog (Lv.169) in Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tadpole Egg",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chameleon Frog (Lv.169)",
+            "map": "Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 2: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 3: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 4: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 5: 1x La Befana Card"
+        ]
+      },
+      "notes": "Tadpole Egg is dropped by Chameleon Frog (Lv.169).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Swamp_Magic_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-31",
+      "order": 737,
+      "title": "Frog Shaman - Swamp Magic 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-30"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Swamp Magic 2",
+      "steps": [
+        "Talk to Frog Shaman at Swamp Field 1 - Black Hole.",
+        "Get 5x Dancing for Idiots: dropped by Monkya (Lv.173) in The Trident Maze / Swamp Field 3 - Maze of Forest.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dancing for Idiots",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Monkya (Lv.173)",
+            "map": "The Trident Maze / Swamp Field 3 - Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3680775,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 2: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 3: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 4: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 5: 1x Flower of Revival"
+        ]
+      },
+      "notes": "Dancing for Idiots is dropped by Monkya (Lv.173).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Swamp_Magic_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-32",
+      "order": 738,
+      "title": "Frog Shaman - Swamp Magic 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Swamp Field 1 - Black Hole",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-31"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Swamp Magic 3",
+      "steps": [
+        "Talk to Frog Shaman at Swamp Field 1 - Black Hole.",
+        "Get 5x Viscous Saliva: dropped by Mud Bigfoot (Lv.180) in Swamp Field 6 - Lake of Illusion.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Viscous Saliva",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Mud Bigfoot (Lv.180)",
+            "map": "Swamp Field 6 - Lake of Illusion"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3943687,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Swamp Sticker"
+        ]
+      },
+      "notes": "Viscous Saliva is dropped by Mud Bigfoot (Lv.180). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Swamp_Magic_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-33",
+      "order": 739,
+      "title": "Genius Cochma - Black Swamp Survey 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Black Swamp.",
+        "Defeat 10x Electric Snail (Lv.164) within 20 min in Path to Black Swamp / Swamp Field 1 / 2.",
+        "Report back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Electric Snail",
+          "level": 164,
+          "count": 10,
+          "timeLimit": "20 min",
+          "map": "Path to Black Swamp / Swamp Field 1 / 2"
+        }
+      ],
+      "rewards": {
+        "baseExp": 709448,
+        "tmExp": 811115,
+        "galder": 0,
+        "items": [
+          "5x Herb Potion",
+          "5x Gold Pearl Potion"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Black_Swamp_Survey_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-34",
+      "order": 740,
+      "title": "Genius Cochma - Black Swamp Survey 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-33"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Black Swamp Survey 1",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Black Swamp.",
+        "Get 5x Pump: dropped by Walking Tadpole (Lv.166) in Swamp Field 1 - Black Hole.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pump",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Walking Tadpole (Lv.166)",
+            "map": "Swamp Field 1 - Black Hole"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 2: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 3: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 4: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 5: 1x Chochma Card"
+        ]
+      },
+      "notes": "Pump is dropped by Walking Tadpole (Lv.166).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Black_Swamp_Survey_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-35",
+      "order": 741,
+      "title": "Genius Cochma - Black Swamp Survey 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-34"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Black Swamp Survey 2",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Black Swamp.",
+        "Get 5x Colored Paper: dropped by Chameleon Frog (Lv.169) in Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Colored Paper",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chameleon Frog (Lv.169)",
+            "map": "Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3417862,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 2: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 3: 10x 500 Galder Coupon + 10x Herb Potion",
+          "Cycle 4: 10x 500 Galder Coupon + 10x Gold Pearl Potion",
+          "Cycle 5: 1x Flower of Revival"
+        ]
+      },
+      "notes": "Colored Paper is dropped by Chameleon Frog (Lv.169).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Black_Swamp_Survey_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-36",
+      "order": 742,
+      "title": "Genius Cochma - Black Swamp Survey 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Black Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-35"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Black Swamp Survey 3",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Black Swamp.",
+        "Get 5x Mingo Jelly: dropped by Mingo (Lv.171) in Swamp Field 3 - Maze of Forest.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mingo Jelly",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Mingo (Lv.171)",
+            "map": "Swamp Field 3 - Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3680775,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Swamp Sticker"
+        ]
+      },
+      "notes": "Mingo Jelly is dropped by Mingo (Lv.171). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Black_Swamp_Survey_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-37",
+      "order": 743,
+      "title": "Hair of Rosetta - Daily Quest - Black Swamp",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Daily",
+      "npc": "Hair of Rosetta",
+      "npcIds": [
+        "hair-of-rosetta"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Hair of Rosetta at Swamp Town - Carbigal.",
+        "Get 2x Swamp Leaf: drilled in Black Swamp Fields.",
+        "Bring everything back to Hair of Rosetta."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Swamp Leaf",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1866088,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "30x 500 Galder Coupon",
+          "5x Pink Potion C",
+          "1x or 5x Blue Potion C"
+        ]
+      },
+      "notes": "Swamp Leaf is drilled in Black Swamp Fields. In next season the request will be Grass-Leaf Doll.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hair_of_Rosetta_-_Daily_Quest_-_Black_Swamp.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-38",
+      "order": 744,
+      "title": "Hunter Master - Carbigal Hunter Master's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Monster Quests",
+      "npc": "Hunter Master",
+      "npcIds": [
+        "hunter-master"
+      ],
+      "location": "Carbigal Monster Guild",
+      "minLevel": 135,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-39"
+        }
+      ],
+      "prereqText": "Level 135+, have completed at least 1 Carbigal Hunter Girl Yuri's Quest and Carbigal Assistant Hunter's Quest",
+      "steps": [
+        "Talk to Hunter Master at Carbigal Monster Guild.",
+        "Defeat 20x Mud Bigfoot (Lv.180) within 10 min in Swamp Field 6 - Lake of Illusion.",
+        "Report back to Hunter Master (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mud Bigfoot",
+          "level": 180,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Swamp Field 6 - Lake of Illusion"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1857644,
+        "tmExp": 655883,
+        "galder": 0,
+        "items": [
+          "1x Hat Exchange G"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Master_-_Carbigal_Hunter_Master's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-40",
+      "order": 745,
+      "title": "Kristoffer J. - Bait for Swamp Fishing",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Swamp Field 2 - Beaver's Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Kristoffer J. at Swamp Field 2 - Beaver's Swamp.",
+        "Get 5x Swamp Worms: drilled in Black Swamp Fields.",
+        "Bring everything back to Kristoffer J. (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Swamp Worms",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x Herb Potion + 5x Gold Pearl Potion",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 5x Herb Potion + 5x Gold Pearl Potion",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Kristoffer J. Card"
+        ]
+      },
+      "notes": "Swamp Worms is drilled in Black Swamp Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kristoffer_J._-_Bait_for_Swamp_Fishing.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-41",
+      "order": 746,
+      "title": "Kristoffer J. - Calm Down Suu (Maze Jungle A)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle A",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle A) in quest log and Children's Letter in inventory",
+      "steps": [
+        "Talk to Kristoffer J. at Swamp Boss Room Gateway 3 - Maze Jungle A.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Sand Filled Bag"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kristoffer_J._-_Calm_Down_Suu_(Maze_Jungle_A).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-42",
+      "order": 747,
+      "title": "Kristoffer J. - Calm Down Suu (Maze Jungle B)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle B",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle B) in quest log and Children's Letter in inventory",
+      "steps": [
+        "Talk to Kristoffer J. at Swamp Boss Room Gateway 3 - Maze Jungle B.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Sand Filled Bag"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kristoffer_J._-_Calm_Down_Suu_(Maze_Jungle_B).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-43",
+      "order": 748,
+      "title": "Kristoffer J. - Calm Down Suu (Maze Jungle C)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle C",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle C) in quest log and Children's Letter in inventory",
+      "steps": [
+        "Talk to Kristoffer J. at Swamp Boss Room Gateway 3 - Maze Jungle C.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Sand Filled Bag"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kristoffer_J._-_Calm_Down_Suu_(Maze_Jungle_C).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-44",
+      "order": 749,
+      "title": "Kristoffer J. - Protect the Swamp",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Kristoffer J.",
+      "npcIds": [
+        "kristoffer-j"
+      ],
+      "location": "Swamp Field 2 - Beaver's Swamp",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-40"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Bait for Swamp Fishing",
+      "steps": [
+        "Talk to Kristoffer J. at Swamp Field 2 - Beaver's Swamp.",
+        "Get 3x Candy Light Bulb: dropped by Electric Snail (Lv.164) in Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp.",
+        "Bring everything back to Kristoffer J. (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Candy Light Bulb",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Electric Snail (Lv.164)",
+            "map": "Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x Herb Potion + 5x Gold Pearl Potion",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 5x Herb Potion + 5x Gold Pearl Potion",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Candy Light Bulb is dropped by Electric Snail (Lv.164). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kristoffer_J._-_Protect_the_Swamp.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-45",
+      "order": 750,
+      "title": "Lethos - Black Swamp Treasure 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Lethos at Swamp Town - Carbigal.",
+        "Get 5x Swamp Shark Teeth: dropped by Swamp Shark (Lv.176) in Swamp Field 3 - Maze of Forest / Swamp Field 5 - Further Maze of Forest.",
+        "Bring everything back to Lethos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Swamp Shark Teeth",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Swamp Shark (Lv.176)",
+            "map": "Swamp Field 3 - Maze of Forest / Swamp Field 5 - Further Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3915522,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon",
+          "5x Herb Potion",
+          "5x Gold Pearl Potion"
+        ]
+      },
+      "notes": "Swamp Shark Teeth is dropped by Swamp Shark (Lv.176).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Black_Swamp_Treasure_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-46",
+      "order": 751,
+      "title": "Lethos - Black Swamp Treasure 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-45"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Black Swamp Treasure 1",
+      "steps": [
+        "Talk to Lethos at Swamp Town - Carbigal.",
+        "Get 5x Lotus Fruit: dropped by Lotus Wormhole (Lv.219) in Swamp Dungeon 4 - Marshy Garden / Swamp Dungeon 5 - Marshy Lawn.",
+        "Bring everything back to Lethos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lotus Fruit",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Lotus Wormhole (Lv.219)",
+            "map": "Swamp Dungeon 4 - Marshy Garden / Swamp Dungeon 5 - Marshy Lawn"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3915522,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon",
+          "10x Herb Potion",
+          "10x Gold Pearl Potion",
+          "1x Lethos Card"
+        ]
+      },
+      "notes": "Lotus Fruit is dropped by Lotus Wormhole (Lv.219).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Black_Swamp_Treasure_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-47",
+      "order": 752,
+      "title": "Lethos - Black Swamp Treasure 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-46"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Black Swamp Treasure 2",
+      "steps": [
+        "Talk to Lethos at Swamp Town - Carbigal.",
+        "Get 3x Stoor Worm's Horn: dropped by Stoor Worm (Lv.221) in Swamp Dungeon 5 - Marshy Lawn / Swamp Dungeon 6 - Suu's Muddy Pool.",
+        "Bring everything back to Lethos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Stoor Worm's Horn",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Stoor Worm (Lv.221)",
+            "map": "Swamp Dungeon 5 - Marshy Lawn / Swamp Dungeon 6 - Suu's Muddy Pool"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3915522,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon",
+          "10x Herb Potion",
+          "10x Gold Pearl Potion",
+          "1x Flower of Revival"
+        ]
+      },
+      "notes": "Stoor Worm's Horn is dropped by Stoor Worm (Lv.221).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Black_Swamp_Treasure_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-48",
+      "order": 753,
+      "title": "Lethos - Black Swamp Treasure 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-47"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Black Swamp Treasure 3",
+      "steps": [
+        "Talk to Lethos at Swamp Town - Carbigal.",
+        "Get 3x Feeler Eyes: dropped by Slug G (Lv.224) in Swamp Dungeon 6 - Suu's Muddy Pool.",
+        "Bring everything back to Lethos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Feeler Eyes",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Slug G (Lv.224)",
+            "map": "Swamp Dungeon 6 - Suu's Muddy Pool"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4894403,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon",
+          "10x Herb Potion",
+          "10x Gold Pearl Potion",
+          "1x Swamp Sticker"
+        ]
+      },
+      "notes": "Feeler Eyes is dropped by Slug G (Lv.224). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Black_Swamp_Treasure_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-49",
+      "order": 754,
+      "title": "Little Chagan - Fairy at Snow Hill",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Little Chagan",
+      "npcIds": [
+        "little-chagan"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-key-05"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Little Chagan - Interpret Chagan's Dream",
+      "steps": [
+        "Talk to Little Chagan at Swamp Town - Carbigal.",
+        "Find and talk to Fairy Feria."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 2610348,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Fairy Feria is found in Snow Hill Gift Factory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Little_Chagan_-_Fairy_at_Snow_Hill.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-50",
+      "order": 755,
+      "title": "Love Hunter Robin - Swamp Dungeon Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Swamp Dungeon 1 - Marshy Trail",
+      "minLevel": 145,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 145+",
+      "steps": [
+        "Talk to Love Hunter Robin at Swamp Dungeon 1 - Marshy Trail.",
+        "Defeat 20x Slithis (Lv.203) within 10 min in Swamp Dungeon 1 - Marshy Trail.",
+        "Report back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Slithis",
+          "level": 203,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Swamp Dungeon 1 - Marshy Trail"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1123996,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon",
+          "10x 500 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.149~152: 20x Cobra Flower (Lv.208) in 10 min, reward 2x 10,000 Galder Coupon, 10x 500 Galder Coupon. Lv.153~156: 20x Purple Worm (Lv.215) in 10 min, reward 2x 10,000 Galder Coupon, 10x 500 Galder Coupon. Lv.157~160: 20x Lotus Wormhole (Lv.219) in 10 min, reward 2x 10,000 Galder Coupon, 10x 500 Galder Coupon. Lv.161+: 20x Slug G (Lv.224) in 10 min, reward 2x 10,000 Galder Coupon, 10x 500 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Swamp_Dungeon_Monster_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-51",
+      "order": 756,
+      "title": "Madam Sarah - Calm Down Suu (Maze Jungle A)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle A",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle A) in quest log and Children's Letter, Sand Filled Bag in inventory",
+      "steps": [
+        "Talk to Madam Sarah at Swamp Boss Room Gateway 3 - Maze Jungle A.",
+        "Talk to her."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Herbal Tea"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau and Sand Filled Bag is obtained by talking to Kristoffer J.. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Calm_Down_Suu_(Maze_Jungle_A).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-52",
+      "order": 757,
+      "title": "Madam Sarah - Calm Down Suu (Maze Jungle B)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle B",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle B) in quest log and Children's Letter, Sand Filled Bag in inventory",
+      "steps": [
+        "Talk to Madam Sarah at Swamp Boss Room Gateway 3 - Maze Jungle B.",
+        "Talk to her."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Herbal Tea"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau and Sand Filled Bag is obtained by talking to Kristoffer J.. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Calm_Down_Suu_(Maze_Jungle_B).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-53",
+      "order": 758,
+      "title": "Madam Sarah - Calm Down Suu (Maze Jungle C)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle C",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle C) in quest log and Children's Letter, Sand Filled Bag in inventory",
+      "steps": [
+        "Talk to Madam Sarah at Swamp Boss Room Gateway 3 - Maze Jungle C.",
+        "Talk to her."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Herbal Tea"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau and Sand Filled Bag is obtained by talking to Kristoffer J.. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Calm_Down_Suu_(Maze_Jungle_C).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-54",
+      "order": 759,
+      "title": "Madam Sarah - Exclusive Honey Tea",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Madam Sarah at Swamp Town - Carbigal.",
+        "Get 1x Tsetsech Honey: reward from Farmer Tsetsech - Help the Plantation 1.",
+        "Get 3x Lotus Leaf: dropped by Chameleon Frog (Lv.169) in Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen.",
+        "Bring everything back to Madam Sarah (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tsetsech Honey",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Farmer Tsetsech - Help the Plantation 1",
+            "map": "Swamp Town - Carbigal"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lotus Leaf",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Chameleon Frog (Lv.169)",
+            "map": "Swamp Field 2 - Beaver's Swamp / Swamp Field 4 - Dark Omen"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Lily Perfume",
+          "Cycle 2: 1x Madam Sarah Card",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Tsetsech Honey is obtained by completing Help the Plantation 1. Lotus Leaf is dropped by Chameleon Frog (Lv.169). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Exclusive_Honey_Tea.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-55",
+      "order": 760,
+      "title": "Madam Sarah - Making New Robes",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Swamp Field 5 - Further Maze of Forest",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Madam Sarah at Swamp Field 5 - Further Maze of Forest.",
+        "Get 5x 1st Class Silk Thread: dropped by Arachne (Lv.178) in The Trident Maze / Swamp Field 4 - Dark Omen / Swamp Field 5 - Further Maze of Forest / Swamp Field 6 - Lake of Illusion.",
+        "Bring everything back to Madam Sarah (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "1st Class Silk Thread",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Arachne (Lv.178)",
+            "map": "The Trident Maze / Swamp Field 4 - Dark Omen / Swamp Field 5 - Further Maze of Forest / Swamp Field 6 - Lake of Illusion"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "1st Class Silk Thread is dropped by Arachne (Lv.178). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Making_New_Robes.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-56",
+      "order": 761,
+      "title": "Monkey T - Monkey T Business 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Monkey T at Swamp Town - Carbigal.",
+        "Get 3x Swamp Shark Leather: dropped by Swamp Shark (Lv.176) in Swamp Field 3 - Maze of Forest / Swamp Field 5 - Further Maze of Forest.",
+        "Bring everything back to Monkey T (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Swamp Shark Leather",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Swamp Shark (Lv.176)",
+            "map": "Swamp Field 3 - Maze of Forest / Swamp Field 5 - Further Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Thiefmon Card"
+        ]
+      },
+      "notes": "Swamp Shark Leather is dropped by Swamp Shark (Lv.176).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T_Business_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-57",
+      "order": 762,
+      "title": "Monkey T - Monkey T Business 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-56"
+        }
+      ],
+      "prereqText": "Level 140+, have completed Monkey T Business 3",
+      "steps": [
+        "Talk to Monkey T at Swamp Town - Carbigal.",
+        "Get 5x Snail Shell: dropped by Electric Snail (Lv.164) in Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp.",
+        "Bring everything back to Monkey T (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Snail Shell",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Electric Snail (Lv.164)",
+            "map": "Path to Black Swamp / Swamp Field 1 - Black Hole / Swamp Field 2 - Beaver's Swamp"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Snail Shell is dropped by Electric Snail (Lv.164). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T_Business_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-58",
+      "order": 763,
+      "title": "Monkey T - Monkey T's Request (8)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Swamp Field 3 - Maze of Forest",
+      "minLevel": 140,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Monkey T at Swamp Field 3 - Maze of Forest.",
+        "Get 10x Eternal Clarity Grass: dropped by Monkya (Lv.173) in The Trident Maze / Swamp Field 3 - Maze of Forest.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Clarity Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Monkya (Lv.173)",
+            "map": "The Trident Maze / Swamp Field 3 - Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1696443,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Clarity Grass is dropped by Monkya (Lv.173)",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(8).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-59",
+      "order": 764,
+      "title": "Pastor Tau - Calm Down Suu (Maze Jungle A)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle A",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle A) in quest log",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Boss Room Gateway 3 - Maze Jungle A.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Children's Letter"
+        ]
+      },
+      "notes": "Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Calm_Down_Suu_(Maze_Jungle_A).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-60",
+      "order": 765,
+      "title": "Pastor Tau - Calm Down Suu (Maze Jungle B)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle B",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle B) in quest log",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Boss Room Gateway 3 - Maze Jungle B.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Children's Letter"
+        ]
+      },
+      "notes": "Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Calm_Down_Suu_(Maze_Jungle_B).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-61",
+      "order": 766,
+      "title": "Pastor Tau - Calm Down Suu (Maze Jungle C)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle C",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle C) in quest log",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Boss Room Gateway 3 - Maze Jungle C.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Children's Letter"
+        ]
+      },
+      "notes": "Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Calm_Down_Suu_(Maze_Jungle_C).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-62",
+      "order": 767,
+      "title": "Pastor Tau - Destroy the Ancient Statues",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Boss Room Gateway 4 - Grave of the Ancient Hero",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Boss Room Gateway 4 - Grave of the Ancient Hero.",
+        "Get 8x Teleport Scroll: Tenter Lion's Lair: dropped by Ancient Hero Statue (Lv.320) in Swamp Boss Room Gateway 4 - Grave of the Ancient Hero.",
+        "Bring everything back to Pastor Tau."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Teleport Scroll: Tenter Lion's Lair",
+          "qty": 8,
+          "source": {
+            "kind": "drop",
+            "from": "Ancient Hero Statue (Lv.320)",
+            "map": "Swamp Boss Room Gateway 4 - Grave of the Ancient Hero"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Teleport Scroll: Tenter Lion's Lair is dropped by Ancient Hero Statue (Lv.320).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Destroy_the_Ancient_Statues.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-63",
+      "order": 768,
+      "title": "Pastor Tau - Tau's Request 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Town Quests",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Dungeon 1 - Marshy Trail",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Dungeon 1 - Marshy Trail.",
+        "Get 3x Fragrant Candle: drilled in Swamp Dungeon.",
+        "Bring everything back to Pastor Tau (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fragrant Candle",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Swamp Dungeon (drill depth not on the wiki)",
+            "map": "Swamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3398891,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Pastor Tau Card"
+        ]
+      },
+      "notes": "Fragrant Candle is drilled in Swamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Tau's_Request_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-64",
+      "order": 769,
+      "title": "Pastor Tau - Tau's Request 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Dungeon 1 - Marshy Trail",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-63"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Tau's Request 1",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Dungeon 1 - Marshy Trail.",
+        "Get 3x Slythis Jelly: dropped by Slithis (Lv.203) in Swamp Dungeon 1 - Marshy Trail.",
+        "Bring everything back to Pastor Tau (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Slythis Jelly",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Slithis (Lv.203)",
+            "map": "Swamp Dungeon 1 - Marshy Trail"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3398891,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Swamp Sticker"
+        ]
+      },
+      "notes": "Slythis Jelly is dropped by Slithis (Lv.203). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Tau's_Request_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-65",
+      "order": 770,
+      "title": "Poppuri - Moss Collecting Poppuri",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Poppuri",
+      "npcIds": [
+        "poppuri"
+      ],
+      "location": "Swamp Dungeon 4 - Marshy Garden",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Poppuri at Swamp Dungeon 4 - Marshy Garden.",
+        "Get 5x White Hair Moss: drilled in Swamp Dungeon.",
+        "Get 5x Wing Moss: drilled in Swamp Dungeon.",
+        "Bring everything back to Poppuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "White Hair Moss",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Swamp Dungeon (drill depth not on the wiki)",
+            "map": "Swamp Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Wing Moss",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Swamp Dungeon (drill depth not on the wiki)",
+            "map": "Swamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3398891,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Poppuri Card",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "White Hair Moss and Wing Moss are drilled in Swamp Dungeon. Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_-_Moss_Collecting_Poppuri.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-66",
+      "order": 771,
+      "title": "Princess Rosetta - Busy Princess",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Princess Rosetta",
+      "npcIds": [
+        "princess-rosetta"
+      ],
+      "location": "Swamp Field 4 - Dark Omen",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Princess Rosetta at Swamp Field 4 - Dark Omen.",
+        "Get 5x White Ball: dropped by Monkya (Lv.173) in The Trident Maze / Swamp Field 3 - Maze of Forest.",
+        "Get 1x Gold Colored Paint: dropped by Mingo (Lv.171) in Swamp Field 3 - Maze of Forest.",
+        "Bring everything back to Princess Rosetta (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "White Ball",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Monkya (Lv.173)",
+            "map": "The Trident Maze / Swamp Field 3 - Maze of Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Gold Colored Paint",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Mingo (Lv.171)",
+            "map": "Swamp Field 3 - Maze of Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 1x Princess Rosetta Card",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "White Ball is dropped by Monkya (Lv.173). Gold Colored Paint is dropped by Mingo (Lv.171). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Princess_Rosetta_-_Busy_Princess.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-67",
+      "order": 772,
+      "title": "Shaman Girl Jia - Dark Spirit Punishment 8",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Black Swamp - Mind's Eye (Lv.285+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 285,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 285+, use Mind's Eye",
+      "steps": [
+        "Talk to Shaman Girl Jia at Swamp Town - Carbigal.",
+        "Defeat 3x Shadow Lotus Wormhole (Lv.532) within 10 min in Swamp Dungeon 4 / 5.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Shadow Lotus Wormhole",
+          "level": 532,
+          "count": 3,
+          "timeLimit": "10 min",
+          "map": "Swamp Dungeon 4 / 5"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2928748,
+        "tmExp": 423280,
+        "galder": 0,
+        "items": [
+          "6x Half Pink Potion",
+          "6x Half Blue Potion"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Spirit_Punishment_8.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-69",
+      "order": 773,
+      "title": "Swampy Suu - Calm Down Suu (Maze Jungle A)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Swampy Suu",
+      "npcIds": [
+        "swampy-suu"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle A",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle A) in quest log",
+      "steps": [
+        "Talk to Swampy Suu at Swamp Boss Room Gateway 3 - Maze Jungle A.",
+        "Get 1x Children's Letter: reward from Pastor Tau - Find the Marble of Fortune A.",
+        "Get 1x Sand Filled Bag: reward from Kristoffer J.",
+        "Get 1x Herbal Tea: reward from Madam Sarah - Find the Marble of Fortune A.",
+        "Get 1x The Brave Story Book: reward from Warrior Kei - Find the Marble of Fortune A.",
+        "Bring everything back to Swampy Suu."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Children's Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Pastor Tau - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle A"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sand Filled Bag",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kristoffer J",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle A"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Herbal Tea",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Madam Sarah - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle A"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "The Brave Story Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle A"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Mud Ball"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau, Sand Filled Bag is obtained by talking to Kristoffer J., Herbal Tea is obtained by talking to Madam Sarah and The Brave Story Book is obtained by talking to Warrior Kei. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Swampy_Suu_-_Calm_Down_Suu_(Maze_Jungle_A).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-70",
+      "order": 774,
+      "title": "Swampy Suu - Calm Down Suu (Maze Jungle B)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Swampy Suu",
+      "npcIds": [
+        "swampy-suu"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle B",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle B) in quest log",
+      "steps": [
+        "Talk to Swampy Suu at Swamp Boss Room Gateway 3 - Maze Jungle B.",
+        "Get 1x Children's Letter: reward from Pastor Tau - Find the Marble of Fortune A.",
+        "Get 1x Sand Filled Bag: reward from Kristoffer J.",
+        "Get 1x Herbal Tea: reward from Madam Sarah - Find the Marble of Fortune A.",
+        "Get 1x The Brave Story Book: reward from Warrior Kei - Find the Marble of Fortune A.",
+        "Bring everything back to Swampy Suu."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Children's Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Pastor Tau - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle B"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sand Filled Bag",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kristoffer J",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle B"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Herbal Tea",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Madam Sarah - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle B"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "The Brave Story Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle B"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Mud Ball"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau, Sand Filled Bag is obtained by talking to Kristoffer J., Herbal Tea is obtained by talking to Madam Sarah and The Brave Story Book is obtained by talking to Warrior Kei. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Swampy_Suu_-_Calm_Down_Suu_(Maze_Jungle_B).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-71",
+      "order": 775,
+      "title": "Swampy Suu - Calm Down Suu (Maze Jungle C)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Swampy Suu",
+      "npcIds": [
+        "swampy-suu"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle C",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle C) in quest log",
+      "steps": [
+        "Talk to Swampy Suu at Swamp Boss Room Gateway 3 - Maze Jungle C.",
+        "Get 1x Children's Letter: reward from Pastor Tau - Find the Marble of Fortune A.",
+        "Get 1x Sand Filled Bag: reward from Kristoffer J.",
+        "Get 1x Herbal Tea: reward from Madam Sarah - Find the Marble of Fortune A.",
+        "Get 1x The Brave Story Book: reward from Warrior Kei - Find the Marble of Fortune A.",
+        "Bring everything back to Swampy Suu."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Children's Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Pastor Tau - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle C"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sand Filled Bag",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kristoffer J",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle C"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Herbal Tea",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Madam Sarah - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle C"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "The Brave Story Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find the Marble of Fortune A",
+            "map": "Swamp Boss Room Gateway 3 - Maze Jungle C"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Mud Ball"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau, Sand Filled Bag is obtained by talking to Kristoffer J., Herbal Tea is obtained by talking to Madam Sarah and The Brave Story Book is obtained by talking to Warrior Kei. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Swampy_Suu_-_Calm_Down_Suu_(Maze_Jungle_C).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-72",
+      "order": 776,
+      "title": "Swampy Suu - Suu's Request",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Swampy Suu",
+      "npcIds": [
+        "swampy-suu"
+      ],
+      "location": "Swamp Dungeon 6 - Suu's Muddy Pool",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Swampy Suu at Swamp Dungeon 6 - Suu's Muddy Pool.",
+        "Get 5x Mud: drilled in Swamp Dungeon.",
+        "Bring everything back to Swampy Suu (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mud",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Swamp Dungeon (drill depth not on the wiki)",
+            "map": "Swamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3398891,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 1x Swampy Suu Card",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Mud is drilled in Swamp Dungeon. Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Swampy_Suu_-_Suu's_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-73",
+      "order": 777,
+      "title": "Vagabond Eloy - Skin Care",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Vagabond Eloy",
+      "npcIds": [
+        "vagabond-eloy"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Vagabond Eloy at Swamp Town - Carbigal.",
+        "Get 2x Mud Pack: dropped by Mud Bigfoot (Lv.180) in Swamp Field 6 - Lake of Illusion.",
+        "Get 1x Tsetsech Honey: reward from Farmer Tsetsech - Help the Plantation 1.",
+        "Bring everything back to Vagabond Eloy (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mud Pack",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Mud Bigfoot (Lv.180)",
+            "map": "Swamp Field 6 - Lake of Illusion"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tsetsech Honey",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Farmer Tsetsech - Help the Plantation 1",
+            "map": "Swamp Town - Carbigal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 1x Vagabond Eloy Card",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Mud Pack is dropped by Mud Bigfoot (Lv.180). Tsetsech Honey is obtained by completing Help the Plantation 1. Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vagabond_Eloy_-_Skin_Care.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-74",
+      "order": 778,
+      "title": "Vinosh - I Love Special Jewelry",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Black Swamp - Sticker Quests",
+      "npc": "Vinosh",
+      "npcIds": [
+        "vinosh"
+      ],
+      "location": "Swamp Field 6 - Lake of Illusion",
+      "minLevel": 140,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 140+",
+      "steps": [
+        "Talk to Vinosh at Swamp Field 6 - Lake of Illusion.",
+        "Get 10x Arachne's Earrings: dropped by Arachne (Lv.178) in The Trident Maze / Swamp Field 4 - Dark Omen / Swamp Field 5 - Further Maze of Forest / Swamp Field 6 - Lake of Illusion.",
+        "Bring everything back to Vinosh (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Arachne's Earrings",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Arachne (Lv.178)",
+            "map": "The Trident Maze / Swamp Field 4 - Dark Omen / Swamp Field 5 - Further Maze of Forest / Swamp Field 6 - Lake of Illusion"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3154950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x 500 Galder Coupon",
+          "Cycle 2: 1x Lily Perfume",
+          "Cycle 3: 10x 500 Galder Coupon",
+          "Cycle 4: 1x Lily Perfume",
+          "Cycle 5: 1x Swamp Sticker"
+        ]
+      },
+      "notes": "Arachne's Earrings is dropped by Arachne (Lv.178). Gives a Swamp Sticker: Pastor Tau - Swamp Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vinosh_-_I_Love_Special_Jewelry.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-75",
+      "order": 779,
+      "title": "Warrior Kei - Calm Down Suu (Maze Jungle A)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle A",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle A) in quest log and Children's Letter, Sand Filled Bag, Herbal Tea in inventory",
+      "steps": [
+        "Talk to Warrior Kei at Swamp Boss Room Gateway 3 - Maze Jungle A.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x The Brave Story Book"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau, Sand Filled Bag is obtained by talking to Kristoffer J. and Herbal Tea is obtained by talking to Madam Sarah. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Warrior_Kei_-_Calm_Down_Suu_(Maze_Jungle_A).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-76",
+      "order": 780,
+      "title": "Warrior Kei - Calm Down Suu (Maze Jungle B)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle B",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle B) in quest log and Children's Letter, Sand Filled Bag, Herbal Tea in inventory",
+      "steps": [
+        "Talk to Warrior Kei at Swamp Boss Room Gateway 3 - Maze Jungle B.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x The Brave Story Book"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau, Sand Filled Bag is obtained by talking to Kristoffer J. and Herbal Tea is obtained by talking to Madam Sarah. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Warrior_Kei_-_Calm_Down_Suu_(Maze_Jungle_B).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-77",
+      "order": 781,
+      "title": "Warrior Kei - Calm Down Suu (Maze Jungle C)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle C",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-78",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 150+, have Witch La Befana - Calm Down Suu (Maze Jungle C) in quest log and Children's Letter, Sand Filled Bag, Herbal Tea in inventory",
+      "steps": [
+        "Talk to Warrior Kei at Swamp Boss Room Gateway 3 - Maze Jungle C.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x The Brave Story Book"
+        ]
+      },
+      "notes": "Children's Letter is obtained by talking to Pastor Tau, Sand Filled Bag is obtained by talking to Kristoffer J. and Herbal Tea is obtained by talking to Madam Sarah. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Warrior_Kei_-_Calm_Down_Suu_(Maze_Jungle_C).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-78",
+      "order": 782,
+      "title": "Witch La Befana - Calm Down Suu (Maze Jungle A)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle A",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Witch La Befana at Swamp Boss Room Gateway 3 - Maze Jungle A.",
+        "Talk to Pastor Tau, Kristoffer J., Madam Sarah, Warrior Kei, Swampy Suu."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Talk to them in the order she requested. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Calm_Down_Suu_(Maze_Jungle_A).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-79",
+      "order": 783,
+      "title": "Witch La Befana - Calm Down Suu (Maze Jungle B)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle B",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Witch La Befana at Swamp Boss Room Gateway 3 - Maze Jungle B.",
+        "Talk to Pastor Tau, Kristoffer J., Madam Sarah, Warrior Kei, Swampy Suu."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Talk to them in the order she requested. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Calm_Down_Suu_(Maze_Jungle_B).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-80",
+      "order": 784,
+      "title": "Witch La Befana - Calm Down Suu (Maze Jungle C)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Swamp Boss Room Gateway 3 - Maze Jungle C",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Witch La Befana at Swamp Boss Room Gateway 3 - Maze Jungle C.",
+        "Talk to Pastor Tau, Kristoffer J., Madam Sarah, Warrior Kei, Swampy Suu."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Talk to them in the order she requested. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Calm_Down_Suu_(Maze_Jungle_C).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-81",
+      "order": 785,
+      "title": "Witch La Befana - Find the Marble of Fortune",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Swamp Boss Rooms - Calm Down Suu (Lv.150+)",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Swamp Boss Room Gateway 2 - Lotus Examination Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Witch La Befana at Swamp Boss Room Gateway 2 - Lotus Examination Room.",
+        "Get 4x Marble of Fortune: dropped by Shadow Mon (Lv.299) in Swamp Boss Room Gateway 2 - Lotus Examination Room.",
+        "Bring everything back to Witch La Befana."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Fortune",
+          "qty": 4,
+          "source": {
+            "kind": "drop",
+            "from": "Shadow Mon (Lv.299)",
+            "map": "Swamp Boss Room Gateway 2 - Lotus Examination Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Marble of Fortune is dropped by Shadow Mon (Lv.299).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Find_the_Marble_of_Fortune.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
     }
   ]
 }

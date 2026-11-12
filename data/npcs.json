@@ -116,6 +116,10 @@
     "name": "Clotho"
   },
   {
+    "id": "cluck-cluck-warrior",
+    "name": "Cluck Cluck Warrior"
+  },
+  {
     "id": "compounder-paul",
     "name": "Compounder Paul"
   },
@@ -138,6 +142,10 @@
   {
     "id": "dorothy",
     "name": "Dorothy"
+  },
+  {
+    "id": "dr-cat",
+    "name": "Dr. Cat"
   },
   {
     "id": "dr-cat-far-left",
@@ -234,6 +242,10 @@
   {
     "id": "fortune-teller",
     "name": "Fortune Teller"
+  },
+  {
+    "id": "frog-prince",
+    "name": "Frog Prince"
   },
   {
     "id": "frog-shaman",
@@ -562,6 +574,10 @@
   {
     "id": "steve-ryu",
     "name": "Steve Ryu"
+  },
+  {
+    "id": "swampy-suu",
+    "name": "Swampy Suu"
   },
   {
     "id": "tango",
