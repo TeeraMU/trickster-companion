@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 (2026-11-12): Oops Wharf and Mermaid Palace in full, combined category tabs
 
 - **Oops Wharf town quests** (29 new): the 12 quests that give an **Oops Sticker** (Skipper Min - Urgent Issue needs 7), Frog Shaman, Genius Cochma, Lethos, Officer Tera, Monkey T, Explorer Reina's treasure hunts, Marinel's daily and the way to Mermaid Palace. Where every item comes from (monster, level and maps, or drill area) is taken from each item's wiki page. 22 more NPCs circled on their maps from the wiki. 
 - **The rest of Oops Wharf** (30 more, 63 in all): the boss **Requiem for the Spirits** chain (13 quests, Shaman Girl Jia → Copyfish DomDom → La Vida, Vice Captain and the Black Pirate Swabs), **Captain Skull's Dread Pirate set** (Star Gazer Stella and Jia), **Fading Tower** hunts for Hunter Yuri (Lv.70-109), **Phantom Dungeon** hunts for Jia (Lv.170+), **Mind's Eye** quests (Lv.240+) and Genius Cochma's Survey 1. Hunts show the monster, its level, the time limit and where it lives; quests with other targets at higher levels list them in the notes. The boss paths, Fading Tower and Phantom Dungeon aren't on the route maps yet. Left out: Officer Tera's party quest and Julio's Storage Mission 3 (their wiki pages are empty).
