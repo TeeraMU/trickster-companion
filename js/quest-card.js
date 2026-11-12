@@ -115,6 +115,7 @@
         <div class="qc-obj-main">
           <div class="qc-obj-name"><strong>${esc(item.name)}</strong> ${qtyHtml}${bagBadges(item, q, c, ctx)}</div>
           <div class="qc-obj-src">${source}</div>
+          ${ctx.friendsHave ? ctx.friendsHave(item.name) : ""}
         </div>
       </li>`;
   }

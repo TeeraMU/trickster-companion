@@ -1023,8 +1023,29 @@
         getItemImage, getNpcImage, getRewardImage,
         reportUrl: q => TQReport.reportUrl("data", { quest: q.id + " · " + q.title }),
         have: appState.inventory,
-        itemUse: name => (ITEM_USE.get(name) || 0)
+        itemUse: name => (ITEM_USE.get(name) || 0),
+        friendsHave: friendsHaveHtml
       });
+    }
+
+    // a friend's shared Bag changed: redraw the item rows that show it (several updates -> one redraw)
+    let friendsRedraw = 0;
+    function friendsDataChanged() {
+      clearTimeout(friendsRedraw);
+      friendsRedraw = setTimeout(() => {
+        if (appState.currentView === "quests") { renderQuestList(); renderChecklistFarm(); }
+        if (appState.currentView === "episodes") renderEpisodes();
+      }, 250);
+    }
+
+    // "👥 Bunny_Jeanne ×12 · Milo ×3": how many of an item your friends have (their shared Bags)
+    function friendsHaveHtml(item) {
+      const list = window.TQFriends ? TQFriends.holdings(item) : [];
+      if (!list.length) return "";
+      const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const all = list.map(x => `${x.name} ×${x.n}`).join(" · ");
+      const shown = list.slice(0, 2).map(x => `${esc(x.name)} <b>×${x.n}</b>`).join(" · ");
+      return `<div class="friends-have" title="Friends who have it: ${esc(all)}">👥 ${shown}${list.length > 2 ? ` <span class="friends-have-more">+${list.length - 2}</span>` : ""}</div>`;
     }
 
     // "Items to collect" next to the checklist: same filters as the quest list.
@@ -1385,6 +1406,7 @@
         done: pool.filter(q => appState.completedQuests[q.id]).length, total: pool.length,
         area: ref ? area(ref.area) : "", next: ref ? short(ref.title) : "",
         needs, spares,
+        bag: appState.inventory || {},
         focus: fq ? { label: scopeLabel(focus), done: fq.filter(q => appState.completedQuests[q.id]).length, total: fq.length } : null
       };
     }
@@ -1416,7 +1438,7 @@
 
     function setHave(item, n) {
       if (!item) return;
-      const v = Math.max(0, Math.min(99999, Math.round(Number(n) || 0)));
+      const v = Math.max(0, Math.min(999, Math.round(Number(n) || 0))); // the box fits 3 digits
       if (v) appState.inventory[item] = v; else delete appState.inventory[item];
       saveState();
       renderAll();
@@ -1572,7 +1594,8 @@
         .then(() => {
           loadState(); renderAll(); switchView(appState.currentView);
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
-          TQFriends.init({ summary: friendSummary, render: renderFriends });
+          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged });
+          TQEpisode.setFriendsHave(friendsHaveHtml);
         })
         .catch(showLoadError);
     });
