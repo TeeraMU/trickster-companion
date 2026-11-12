@@ -16,6 +16,10 @@
     "name": "Amethysta's Messenger"
   },
   {
+    "id": "ancient-polar-bear",
+    "name": "Ancient Polar Bear"
+  },
+  {
     "id": "andrew",
     "name": "Andrew"
   },
@@ -34,6 +38,10 @@
   {
     "id": "assistant-hunter",
     "name": "Assistant Hunter"
+  },
+  {
+    "id": "assistant-hunter-poppuri",
+    "name": "Assistant Hunter Poppuri"
   },
   {
     "id": "atropos",
@@ -126,6 +134,10 @@
   {
     "id": "copyfish-domdom",
     "name": "Copyfish DomDom"
+  },
+  {
+    "id": "daisy",
+    "name": "Daisy"
   },
   {
     "id": "delphinus-messenger",
@@ -244,12 +256,24 @@
     "name": "Fortune Teller"
   },
   {
+    "id": "freyja-npc",
+    "name": "Freyja (NPC)"
+  },
+  {
+    "id": "freyr-npc",
+    "name": "Freyr (NPC)"
+  },
+  {
     "id": "frog-prince",
     "name": "Frog Prince"
   },
   {
     "id": "frog-shaman",
     "name": "Frog Shaman"
+  },
+  {
+    "id": "general-granada",
+    "name": "General Granada"
   },
   {
     "id": "genius-cochma",
@@ -316,6 +340,14 @@
     "name": "Hunter Master"
   },
   {
+    "id": "hunter-master-leviathan",
+    "name": "Hunter Master Leviathan"
+  },
+  {
+    "id": "hunter-yuna",
+    "name": "Hunter Yuna"
+  },
+  {
     "id": "hunter-yuri",
     "name": "Hunter Yuri"
   },
@@ -350,6 +382,10 @@
   {
     "id": "kochi",
     "name": "Kochi"
+  },
+  {
+    "id": "kokomelo",
+    "name": "Kokomelo"
   },
   {
     "id": "kristoffer-j",
@@ -444,12 +480,20 @@
     "name": "Monkey T"
   },
   {
+    "id": "mystery-npc",
+    "name": "???"
+  },
+  {
     "id": "nefertiti",
     "name": "Nefertiti"
   },
   {
     "id": "nefertiti-2",
     "name": "Nefertiti 2"
+  },
+  {
+    "id": "niwerth-npc",
+    "name": "Niwerth (NPC)"
   },
   {
     "id": "oddeye-dragons-messenger",
@@ -484,6 +528,10 @@
     "name": "Portina"
   },
   {
+    "id": "primrose",
+    "name": "Primrose"
+  },
+  {
     "id": "prince-sebastian",
     "name": "Prince Sebastian"
   },
@@ -500,6 +548,10 @@
     "name": "Queen Cecilia"
   },
   {
+    "id": "queen-odinea-npc",
+    "name": "Queen Odinea (NPC)"
+  },
+  {
     "id": "rosaline-gracia",
     "name": "Rosaline Gracia"
   },
@@ -512,12 +564,20 @@
     "name": "Rosemary"
   },
   {
+    "id": "rudolph",
+    "name": "Rudolph"
+  },
+  {
     "id": "sacred-espers-messenger",
     "name": "Sacred Esper's Messenger"
   },
   {
     "id": "sandman",
     "name": "Sandman"
+  },
+  {
+    "id": "santa-claus",
+    "name": "Santa Claus"
   },
   {
     "id": "santa-claus-2",
@@ -564,6 +624,10 @@
     "name": "Star Gazer Stella"
   },
   {
+    "id": "star-gazer-stella-2",
+    "name": "Star Gazer Stella (2)"
+  },
+  {
     "id": "stella",
     "name": "Stella"
   },
@@ -578,6 +642,14 @@
   {
     "id": "swampy-suu",
     "name": "Swampy Suu"
+  },
+  {
+    "id": "tacky",
+    "name": "Tacky"
+  },
+  {
+    "id": "tame-reindeer",
+    "name": "Tame Reindeer"
   },
   {
     "id": "tango",
@@ -642,5 +714,9 @@
   {
     "id": "witch-la-befana",
     "name": "Witch La Befana"
+  },
+  {
+    "id": "xote",
+    "name": "Xote"
   }
 ]
