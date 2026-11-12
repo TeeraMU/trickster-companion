@@ -639,6 +639,7 @@ data/builds/
 | 1.6 ✅ | **รวม Calculator เข้า Quest Checklist**: รายการเควสซ้าย + "🎒 Items to collect" จัดตาม map ขวา (ตามตัวกรอง), ตัดแท็บ Calculator, Drill guide คงไว้ | ข้อ 3.5 | `feature/merge-calculator` |
 | 1.7 ✅ | **แผนที่ + เส้นทาง + ปักหมุด NPC**: แผนที่ภาพรวมของโซนพร้อมไฮไลต์ map ที่ต้องไป, เส้นทางเป็นจุดแวะเรียงลำดับ (คุย/ตี/ขุด/ส่ง) + map ที่ต้องเดินผ่าน, โหมดปักหมุดตำแหน่ง NPC | ข้อ 3.5 | `feature/map-route` |
 | 1.8 ✅ | **ของในมือ** (+/−) หักจากยอดที่ต้องเก็บ + **รายการห้ามขาย** 🔒 | ข้อ 3.3, 11 | `feature/inventory` |
+| 1.11 ✅ | **เควสเปลี่ยนอาชีพคลาส 3** (ทำ 2026-11-12 ตามที่ขอ): 86 เควสจาก wiki Third_Job_Advancement ครบ 17 อาชีพ · ยังไม่ได้เช็กกับ server ใหม่ (playtrickster) ว่าเงื่อนไข Lv.130 / TM 120 ยังเหมือนเดิมไหม | ข้อ 6 | `data/job-change-3rd` |
 | 1.9 ✅ | **มือถือ**: responsive + bottom nav + Export/Import progress + Add to Home Screen (manifest + icons) · *ยังไม่มี service worker สำหรับใช้ offline* | ข้อ 7, 8 | `feature/mobile` |
 | 1.10 ✅ | **เอาปุ่ม 🖼️ Background on/off ออก** (ผู้ใช้ขอ 2026-11-12): ภาพพื้นหลังแสดงตลอด รวมถึงมือถือ · หัวเว็บย่อเหลือแถบเดียว 60px + เมนู ⚙️ (v0.3.0) | ข้อ 8.1 | `feature/remove-bg-toggle` |
 
