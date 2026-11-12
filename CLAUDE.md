@@ -50,6 +50,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/data.js`: loads `data/*.json` and adapts schema v2 to the shape the renderer uses.
 - `js/quest-card.js`: the quest card (`renderQuestCard` in index.html delegates to it). Helpers
   (counts per run, warnings, which quest hands over an item) are pure and run under Node.
+- `js/bag.js`: the Bag (`appState.inventory`): bag list (need / have / spare per item), `applyHave`
+  for the Items panels; the Route takes the bag too. Item key = item name.
 - `js/route.js`: route (stops in order, BFS over portal links) and the map / NPC pin panel.
 - `data/maps.json`: regions (overview picture), maps (`box` on the 530x540 overview or a `parent`,
   two-way `links`), and `names`: every map text used in quests -> map ids (first = default).

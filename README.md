@@ -10,8 +10,9 @@ Quest tracker & guides for **Trickster Online** (fan-made): how many items each 
    - **🗺️ Route**: the stops in order, drawn on the region map. Tap a stop to see that map.
    - **🎒 Items**: everything still to collect, grouped by map (monster + level, drill depth, shop, combine).
 3. Tick steps or the whole quest as you play. The **▓░ %** chip at the top shows your overall progress (tap it for details). Progress is saved **in this browser only**: use **⚙️ → 💾 Export / 📂 Import** to move it to another device.
-4. **📜 Quests & Items**: every quest with category tabs (Story, Key, Sticker, Card Girl, Town, …) and the items list for whatever you filter.
-5. **⚙️** also has the theme (Auto / ☀️ Light / 🌙 Dark), **🐞 Report a problem** and **🗑️ Reset**.
+4. **🎒 Bag**: type how many of each item you have; everything listed is still needed (🔒 don't sell). Items, Route and quest cards subtract it.
+5. **📜 Quests & Items**: every quest with category tabs (Story, Key, Sticker, Card Girl, Town, …) and the items list for whatever you filter.
+6. **⚙️** also has the theme (Auto / ☀️ Light / 🌙 Dark), **🐞 Report a problem** and **🗑️ Reset**.
 
 ### เริ่มใช้ (ภาษาไทย)
 เปิดลิงก์ด้านบน → เลือกอาชีพที่ปุ่ม 🎭 → แท็บ **📖 Episodes** เลือก EP ที่เล่นอยู่ เควสที่มีป้าย **▶ Now** คือเควสถัดไป แท็บ **🗺️ Route** บอกลำดับ map ที่ต้องไป และ **🎒 Items** บอกของที่ต้องเก็บ ติ๊กเควสเมื่อทำเสร็จ (บันทึกไว้ในเบราว์เซอร์เครื่องนั้น ย้ายเครื่องใช้ ⚙️ → Export / Import) เจอข้อมูลผิดกด ⚙️ → **🐞 Report** ไม่ต้องล็อกอิน

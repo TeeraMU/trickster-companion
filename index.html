@@ -45,6 +45,7 @@
       <nav class="view-tabs" aria-label="Pages">
         <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
+        <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
         <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')"><span class="tab-icon" aria-hidden="true">⛏️</span><span class="tab-label">Drill guide</span></button>
         <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')"><span class="tab-icon" aria-hidden="true">🗺️</span><span class="tab-label">Roadmap</span></button>
       </nav>
@@ -184,6 +185,11 @@
         <div class="ck-quests" data-pane="quests"><div id="questListContainer"></div></div>
         <div class="ck-farm" data-pane="farm" id="checklistFarm"></div>
       </div>
+    </div>
+
+    <!-- VIEW 2: BAG (js/bag.js) -->
+    <div id="viewBag" class="hidden">
+      <div id="bagContainer"></div>
     </div>
 
     <!-- VIEW 3: DRILL DEPTH & SOIL REFERENCE -->
@@ -380,6 +386,7 @@
   <script src="js/quest-card.js"></script>
   <script src="js/route.js"></script>
   <script src="js/report.js"></script>
+  <script src="js/bag.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -402,7 +409,10 @@
       selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
       episodeScope: "episode", // items list: "episode" | "chapter"
       episodePane: "quests",   // phone sub-tab: "quests" | "farm"
-      openChapters: {}         // { [chapterName]: true|false } user-toggled chapters
+      openChapters: {},        // { [chapterName]: true|false } user-toggled chapters
+      inventory: {},           // { itemName: count } what the player has (Bag page)
+      bagFilter: "keep",       // Bag tab: keep | missing | spare
+      bagSearch: ""
     };
     let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
     let MAP_INDEX = null;      // data/maps.json, indexed by TQRoute.indexMaps
@@ -596,7 +606,7 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", drillref: "DrillRef", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", drillref: "DrillRef", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
@@ -610,6 +620,7 @@
       document.getElementById("filtersPanel").classList.toggle("hidden", !usesFilters);
       document.getElementById("regionCardsContainer").classList.toggle("hidden", !usesFilters);
       if (appState.currentView !== viewName) { appState.currentView = viewName; saveState(); }
+      if (viewName === "bag") renderBag();
     }
 
     // ============================================================================
@@ -779,7 +790,9 @@
         quests: QUESTS,
         parse: TQEpisode,
         getItemImage, getNpcImage, getRewardImage,
-        reportUrl: q => TQReport.reportUrl("data", { quest: q.id + " · " + q.title })
+        reportUrl: q => TQReport.reportUrl("data", { quest: q.id + " · " + q.title }),
+        have: appState.inventory,
+        itemUse: name => (ITEM_USE.get(name) || 0)
       });
     }
 
@@ -794,6 +807,7 @@
       const reg = appState.selectedRegion && appState.selectedRegion !== "All" ? appState.selectedRegion : null;
       const scope = [cat ? cat.icon + " " + cat.label : null, reg].filter(Boolean).join(" · ") || "all quests";
       document.getElementById("checklistFarm").innerHTML = TQEpisode.renderFarmPanel(farm, {
+        have: everything ? null : appState.inventory,
         switchHtml: `
           <div class="pref-switch" role="group" aria-label="Which items">
             <button type="button" aria-pressed="${!everything}" onclick="setChecklistFarmAll(false)">Still needed</button>
@@ -842,6 +856,7 @@
         pane: appState.episodePane,
         openChapters: appState.openChapters,
         expanded: appState.expandedQuests,
+        have: appState.inventory,
         renderCard: renderQuestCard,
         renderRoute: renderRoute
       });
@@ -866,7 +881,7 @@
 
     function renderRoute(m) {
       if (!MAP_INDEX) return "";
-      const stops = TQRoute.buildRoute(m.scopeQuests, appState, MAP_INDEX, TQEpisode);
+      const stops = TQRoute.buildRoute(m.scopeQuests, appState, MAP_INDEX, TQEpisode, appState.inventory);
       if (routeUi.stop >= stops.length) routeUi.stop = 0;
       const scopeName = appState.episodeScope === "chapter" && m.currentChapter
         ? m.currentChapter.label + " " + m.currentChapter.title : "all of " + m.ep.key;
@@ -1027,7 +1042,54 @@
         </button>`).join("");
     }
 
+    // ============================================================================
+    // BAG (items in hand, keep list) — model + markup in js/bag.js
+    // ============================================================================
+    let ITEM_USE = new Map(); // item name -> how many unfinished quests still need it
+
+    function renderBag() {
+      const cls = appState.selectedClass || "All";
+      const visible = QUESTS.filter(q => matchesClassFilter(q, cls));
+      ITEM_USE = new Map(TQBag.bagList(visible, appState, appState.inventory).map(r => [r.item, r.quests.length]));
+      if (document.getElementById("viewBag").classList.contains("hidden")) return;
+      TQBag.render(document.getElementById("bagContainer"), {
+        quests: visible, state: appState, have: appState.inventory,
+        filter: appState.bagFilter || "keep", search: appState.bagSearch || "", getItemImage
+      });
+    }
+
+    function setHave(item, n) {
+      if (!item) return;
+      const v = Math.max(0, Math.min(99999, Math.round(Number(n) || 0)));
+      if (v) appState.inventory[item] = v; else delete appState.inventory[item];
+      saveState();
+      renderAll();
+    }
+
+    function stepHave(btn, delta) {
+      const box = btn.closest(".bag-stepper");
+      setHave(box.dataset.item, (appState.inventory[box.dataset.item] || 0) + delta);
+    }
+
+    function typeHave(input) {
+      setHave(input.closest(".bag-stepper").dataset.item, input.value);
+    }
+
+    function setBagFilter(f) {
+      appState.bagFilter = f;
+      saveState();
+      renderBag();
+    }
+
+    function setBagSearch(v) {
+      appState.bagSearch = v;
+      renderBag();
+      const box = document.querySelector(".bag-search");
+      if (box) { box.focus(); box.setSelectionRange(v.length, v.length); }
+    }
+
     function renderAll() {
+      renderBag();
       renderCategoryTabs();
       renderEpisodes();
       renderStatsAndRegions();
