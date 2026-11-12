@@ -196,7 +196,20 @@
 
   const KIND_LABEL = { hunt: "⚔️ Hunt", drop: "⚔️ Drop", drill: "⛏️ Drill", other: "📦 Get" };
 
-  function farmRow(r) {
+  /** Amount still to get: "×5", or with items in the bag "×3 (have 2 of 5)" / "✅ have all 5". */
+  function qtyHtml(r) {
+    if (r.done) return `<span class="ep-have-all">✅ have all ${r.qty}</span>`;
+    if (r.got) return `<span class="item-qty-badge">×${r.left}</span> <span class="ep-have">have ${r.got} of ${r.qty}</span>`;
+    return `<span class="item-qty-badge">×${r.qty}</span>`;
+  }
+
+  /** Bag stepper for item rows (not hunts) when the page passes the bag. */
+  function haveStepper(r, have) {
+    if (!have || r.kind === "hunt" || !root.TQBag) return "";
+    return root.TQBag.stepper(r.item, have[r.item] || 0);
+  }
+
+  function farmRow(r, have) {
     const usedIn = r.quests.map(x => x.title).join(" · ");
     let how = "";
     if (r.kind === "drop") how = `${esc(r.monster)} <span class="ep-lv">Lv.${esc(r.level)}</span>`;
@@ -204,12 +217,13 @@
     else if (r.kind === "drill") how = esc(r.depth);
     else how = esc(r.how);
     return `
-      <li class="ep-farm-row ${r.locked ? "is-locked" : ""}" title="Used in: ${esc(usedIn)}">
+      <li class="ep-farm-row ${r.locked ? "is-locked" : ""} ${r.done ? "is-done" : ""}" title="Used in: ${esc(usedIn)}">
         ${r.kind === "hunt" ? `<span class="item-icon ep-icon-fallback">⚔️</span>` : itemIcon(r.item, "item-icon")}
         <div class="ep-farm-main">
-          <div><strong>${esc(r.item)}</strong> <span class="item-qty-badge">×${r.qty}</span>${r.locked ? ` <span class="ep-lock" title="Every quest that needs this is still locked">🔒</span>` : ""}</div>
+          <div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}${r.locked ? ` <span class="ep-lock" title="Every quest that needs this is still locked">🔒</span>` : ""}</div>
           <div class="ep-farm-how"><span class="ep-kind ep-kind-${r.kind}">${KIND_LABEL[r.kind]}</span> ${how}</div>
         </div>
+        ${haveStepper(r, have)}
       </li>`;
   }
 
@@ -218,30 +232,34 @@
    * opts: { switchHtml, hint, emptyText, lockedLabel }
    */
   function renderFarmPanel(f, opts) {
+    const have = opts.have || null;
+    if (have && root.TQBag) f = root.TQBag.applyHave(f, have);
     const empty = !f.maps.length && !f.shop.length && !f.compound.length;
     const maps = f.maps.map(g => `
-      <section class="ep-map ${g.locked ? "is-locked" : ""}">
-        <h4>🗺️ ${esc(g.map)} ${g.locked ? `<span class="ep-lock">🔒 later</span>` : ""}</h4>
-        <ul class="ep-farm-list">${g.rows.map(farmRow).join("")}</ul>
+      <section class="ep-map ${g.locked ? "is-locked" : ""} ${g.rows.every(r => r.done) ? "is-done" : ""}">
+        <h4>🗺️ ${esc(g.map)} ${g.locked ? `<span class="ep-lock">🔒 later</span>` : ""}${g.rows.every(r => r.done) ? ` <span class="ep-have-all">✅ got everything</span>` : ""}</h4>
+        <ul class="ep-farm-list">${g.rows.map(r => farmRow(r, have)).join("")}</ul>
       </section>`).join("");
     const shop = f.shop.length ? `
       <section class="ep-map">
         <h4>🛒 Buy</h4>
         <ul class="ep-farm-list">${f.shop.map(r => `
-          <li class="ep-farm-row ${r.locked ? "is-locked" : ""}" title="Used in: ${esc(r.quests.map(x => x.title).join(" · "))}">
+          <li class="ep-farm-row ${r.locked ? "is-locked" : ""} ${r.done ? "is-done" : ""}" title="Used in: ${esc(r.quests.map(x => x.title).join(" · "))}">
             ${itemIcon(r.item, "item-icon")}
-            <div class="ep-farm-main"><div><strong>${esc(r.item)}</strong> <span class="item-qty-badge">×${r.qty}</span></div>
+            <div class="ep-farm-main"><div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}</div>
             <div class="ep-farm-how">${esc(r.how)}</div></div>
+            ${haveStepper(r, have)}
           </li>`).join("")}</ul>
       </section>` : "";
     const compound = f.compound.length ? `
       <section class="ep-map">
         <h4>⚗️ Combine (after collecting the ingredients)</h4>
         <ul class="ep-farm-list">${f.compound.map(r => `
-          <li class="ep-farm-row ${r.locked ? "is-locked" : ""}">
+          <li class="ep-farm-row ${r.locked ? "is-locked" : ""} ${r.done ? "is-done" : ""}">
             ${itemIcon(r.item, "item-icon")}
-            <div class="ep-farm-main"><div><strong>${esc(r.item)}</strong> <span class="item-qty-badge">×${r.qty}</span></div>
+            <div class="ep-farm-main"><div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}</div>
             <div class="ep-farm-how">${esc(r.how)} · ${esc(r.where)}</div></div>
+            ${haveStepper(r, have)}
           </li>`).join("")}</ul>
       </section>` : "";
     return `
@@ -255,9 +273,10 @@
       </div>`;
   }
 
-  function renderFarm(m, scope) {
+  function renderFarm(m, scope, have) {
     const scopeName = scope === "chapter" && m.currentChapter ? `${m.currentChapter.label} ${m.currentChapter.title}` : `all of ${m.ep.key}`;
     return renderFarmPanel(m.farm, {
+      have,
       switchHtml: `
           <div class="pref-switch" role="group" aria-label="Item list scope">
             <button type="button" aria-pressed="${scope !== "chapter"}" onclick="setEpisodeScope('episode')">Whole EP</button>
@@ -368,7 +387,7 @@
         <div class="ep-panel ep-quests" data-pane="quests">${renderChapters(m, ctx, byId)}</div>
         <div class="ep-side">
           ${ctx.renderRoute ? ctx.renderRoute(m) : ""}
-          ${renderFarm(m, ctx.scope)}
+          ${renderFarm(m, ctx.scope, ctx.have)}
         </div>
       </div>`;
     return m;

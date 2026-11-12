@@ -58,7 +58,9 @@
    * into one stop. Each stop lists the maps walked through to get there ("via").
    * action: { type: talk|accept|turnin|drop|drill|hunt|other|buy|combine, quest, text, alts }
    */
-  function buildRoute(quests, state, idx, parse) {
+  function buildRoute(quests, state, idx, parse, have) {
+    // items already in the bag are used up quest by quest; fully covered items need no farm stop
+    const pool = Object.assign({}, have || {});
     const stops = [];
     let cur = null;
     const where = text => (idx.names[text] || []).filter(id => idx.byId.has(id));
@@ -77,7 +79,10 @@
       const todo = [];
       for (const it of q.items || []) {
         if (it.method === "Quest") continue;
-        const left = itemLeft(it, q, state);
+        const need = itemLeft(it, q, state);
+        const got = Math.min(need, Math.max(0, pool[it.name] || 0));
+        pool[it.name] = (pool[it.name] || 0) - got;
+        const left = need - got;
         if (!left) continue;
         let type = "other", text = `${it.name} ×${left}`;
         if (it.method === "Drop") {

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- New **🎒 Bag** page: type how many of each item you have (− / + or type a number). **🔒 Keep** lists every item still needed by a quest you haven't finished (don't sell these), **🎯 Still missing** what you still have to get, **💰 Extra** what you have more than you need (and items no quest needs any more: OK to sell).
+- Items in your Bag are subtracted everywhere: *Items to collect* shows "×1 have 1 of 2" or "✅ have all", the Route skips farm stops you already have enough for, and quest cards show 🎒 have N and 🔒 +N quests when other quests need the same item.
+- The Bag is saved with your progress (Export / Import include it).
+
 ## 0.3.0 (2026-11-12): Compact header, no-login reports
 
 - Header is one 60px bar: logo, page tabs, class chip, progress chip (details drop down) and ⚙️ (theme, export / import, report, reset). Expand / Collapse all moved to the Quests page. On phones and small tablets the page tabs are a bottom bar.
