@@ -13,7 +13,7 @@ t("pick keeps progress, drops screen prefs and empty values", () => {
   }, { "npc@map": { x: 1, y: 2 } });
   assert.deepStrictEqual(p, {
     schema: 1, completedQuests: { a: true }, completedCycles: { a: 5 }, completedSteps: { a_0: true },
-    inventory: { Brass: 3 }, pins: { "npc@map": { x: 1, y: 2 } }, selectedClass: "Cat", selectedJobPath: "diva"
+    inventory: { Brass: 3 }, pins: { "npc@map": { x: 1, y: 2 } }, selectedClass: "Cat", selectedJobPath: "diva", focus: null
   });
 });
 
@@ -43,9 +43,17 @@ t("summary, isEmpty and same", () => {
   assert.deepStrictEqual(S.summary(p), { quests: 1, steps: 0, items: 1, pins: 1 });
   assert.ok(!S.isEmpty(p));
   const reordered = JSON.parse(JSON.stringify({ pins: p.pins, inventory: p.inventory, completedQuests: p.completedQuests,
-    completedCycles: {}, completedSteps: {}, selectedJobPath: "", selectedClass: "All", schema: 1 }));
+    completedCycles: {}, completedSteps: {}, selectedJobPath: "", selectedClass: "All", focus: null, schema: 1 }));
   assert.ok(S.same(p, reordered));
   assert.ok(!S.same(p, S.merge(p, S.pick({ completedQuests: { z: true } }, {}))));
+});
+
+t("focus: kept, this device's wins, cloud fills it in", () => {
+  const f = { region: "Oops Wharf", group: "zones", cats: ["Key", "Sticker"], path: "" };
+  assert.deepStrictEqual(S.pick({ focus: f }, {}).focus, f);
+  assert.deepStrictEqual(S.merge(S.pick({}, {}), S.pick({ focus: f }, {})).focus, f);
+  const g = Object.assign({}, f, { region: "Mermaid Palace" });
+  assert.deepStrictEqual(S.merge(S.pick({ focus: g }, {}), S.pick({ focus: f }, {})).focus, g);
 });
 
 console.log(`${n} passed`);

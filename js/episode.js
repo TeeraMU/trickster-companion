@@ -229,7 +229,7 @@
 
   /**
    * "Items to collect" panel, shared by the Episodes page and the Quest Checklist.
-   * opts: { switchHtml, hint, emptyText, lockedLabel }
+   * opts: { switchHtml, hint, afterHint (html under the hint), emptyText, lockedLabel }
    */
   function renderFarmPanel(f, opts) {
     const have = opts.have || null;
@@ -269,6 +269,7 @@
           ${opts.switchHtml || ""}
         </div>
         <p class="ep-hint">${opts.hint}</p>
+        ${opts.afterHint || ""}
         ${empty ? `<div class="ep-empty">${opts.emptyText || "✅ Nothing left to farm here!"}</div>` : maps + shop + compound}
       </div>`;
   }

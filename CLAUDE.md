@@ -61,6 +61,12 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   `firestore.rules`: each player reads/writes only their own document. After changing it, paste it in
   Firebase console -> Firestore -> Rules -> Publish (the repo copy is not deployed by itself).
   The web config in cloud.js is public by design; never commit service-account keys.
+- `js/friends.js`: the Friends page (needs sign-in). `social/{uid}` { name, code, friends } (owner only)
+  and `profiles/{code}` (the short summary friends see: class, path, done/total, area, next quest,
+  needs, spares; any signed-in player who knows the code may read it, nobody can list them).
+  The summary is built by `friendSummary()` in index.html and republished a few seconds after changes.
+  Never put anything in a profile that identifies the person (Google name, email, uid in the name).
+  Pure helpers tested by `node scripts/test-friends.js`.
 - `data/maps.json`: regions (overview picture), maps (`box` on the 530x540 overview or a `parent`,
   two-way `links`), and `names`: every map text used in quests -> map ids (first = default).
   validate.js fails when a quest uses a map text that isn't listed.

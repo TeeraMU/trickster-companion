@@ -2989,8 +2989,22 @@ a.btn {
 }
 
 @media (max-width: 900px) {
+  /* one column per tab, however many tabs there are */
   .app-header .view-tabs {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-header .view-tab {
+    font-size: 0.62rem;
+    letter-spacing: -0.01em;
+  }
+
+  .app-header .view-tab .tab-label {
+    white-space: nowrap;
   }
 }
 
@@ -3143,4 +3157,185 @@ a.btn {
   height: 100%;
   border-radius: 999px;
   background: var(--progress-gradient);
+}
+
+/* ---------------------------------------------------------------------------------------
+   Friends page (js/friends.js)
+   --------------------------------------------------------------------------------------- */
+.friends-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.friends-intro h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.friends-intro p {
+  margin: 0 0 10px;
+}
+
+.friends-muted {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.friends-error {
+  margin: 8px 0 0;
+  color: var(--ink-red);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.friends-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.friends-me {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.friends-me-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px 10px;
+}
+
+.friends-me-row > div {
+  margin-right: auto;
+}
+
+.friend-code {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ink-blue);
+}
+
+.friends-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
+.friends-form .friends-label {
+  flex-basis: 100%;
+}
+
+.friends-form input {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+
+.friends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.friend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.friend-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+
+.friend-head .icon-btn {
+  margin-left: auto;
+}
+
+.friend-name {
+  font-size: 1.02rem;
+}
+
+.friend-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.friend-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--progress-gradient);
+}
+
+.friend-line {
+  margin: 0;
+  font-size: 0.86rem;
+}
+
+.friend-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.friend-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.friend-tag.tag-give { background: color-mix(in srgb, var(--accent-green) 18%, var(--bg-card)); color: var(--ink-green); }
+.friend-tag.tag-get { background: color-mix(in srgb, var(--accent-blue) 16%, var(--bg-card)); color: var(--ink-blue); }
+.friend-tag.tag-need { background: color-mix(in srgb, var(--accent-gold) 18%, var(--bg-card)); color: var(--ink-gold); }
+.friend-tag.tag-spare { background: color-mix(in srgb, var(--accent-purple) 14%, var(--bg-card)); color: var(--ink-purple); }
+
+.friend-missing {
+  opacity: 0.85;
+  border-style: dashed;
+}
+
+/* 📌 focus bar in Items to collect: the scope friends see needs for */
+.focus-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 4px 0 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border-strong);
+  font-size: 0.82rem;
+}
+
+.focus-bar.is-pinned {
+  border-style: solid;
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 12%, var(--bg-card));
+}
+
+.focus-note {
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+}
+
+.friend-focus {
+  color: var(--ink-gold);
 }
