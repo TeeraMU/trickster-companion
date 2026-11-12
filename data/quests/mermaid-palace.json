@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "mp-key-01",
-      "order": 304,
+      "order": 400,
       "title": "Captain Stan - Mermaid Palace Stickers",
       "categories": [
         "key",
@@ -74,7 +74,7 @@
     },
     {
       "id": "mp-key-02",
-      "order": 305,
+      "order": 401,
       "title": "Captain Stan - Captain's Stan Past",
       "categories": [
         "key"
@@ -135,7 +135,7 @@
     },
     {
       "id": "mp-key-03",
-      "order": 306,
+      "order": 402,
       "title": "Mermaid Marin - Marin's Sister",
       "categories": [
         "key"
@@ -201,6 +201,2082 @@
       "notes": "To iniate the quest, bring her Tanya's Sword and show it to her. Tanya's Sword is dropped by Tanya (Lv.150). Adventurer's Book is obtained by completing Min's Weakness.",
       "source": {
         "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Marin_-_Marin's_Sister.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-01",
+      "order": 403,
+      "title": "Captain Stan - Megalo Ship's Heidi",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Captain Stan",
+      "npcIds": [
+        "captain-stan"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-key-02"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Captain Stan - Captain's Stan Past",
+      "steps": [
+        "Talk to Captain Stan at Gate of Mermaid Palace.",
+        "Find and talk to Heidi."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 399105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Heidi is found in Southeast Forest, near Path to Ghost Blue 1 entrance.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Captain_Stan_-_Megalo_Ship's_Heidi.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-02",
+      "order": 404,
+      "title": "Card Girl - Mermaid Palace Card Girl Quest (1)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Card Girl (Lv.75+)",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 75,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Card Girl at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Mermaid Little Card: dropped by Mermaid Little (Lv.73) (use Take on it) in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mermaid Little Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Little (Lv.73) (use Take on it)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2932113,
+        "galder": 0,
+        "items": [
+          "4x Arcana Smart Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Mermaid Little Card. Riddle: \"Overweight Fish\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Mermaid_Palace_Card_Girl_Quest_(1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-03",
+      "order": 405,
+      "title": "Card Girl - Mermaid Palace Card Girl Quest (2)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Card Girl (Lv.75+)",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Card Girl at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Water Weed Witch Card: dropped by Waterweed Witch (Lv.95) (use Take on it) in Mermaid Palace Field 3 - Coral Square.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Water Weed Witch Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Waterweed Witch (Lv.95) (use Take on it)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2975934,
+        "galder": 0,
+        "items": [
+          "5x Arcana Smart Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Water Weed Witch Card. Riddle: \"The remedy made from your hands will take away one's voice\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Mermaid_Palace_Card_Girl_Quest_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-04",
+      "order": 406,
+      "title": "Card Girl - Mermaid Palace Card Girl Quest (3)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Card Girl (Lv.75+)",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Card Girl at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Officer Okto Card: dropped by Okto (Lv.129) (use Take on it) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Officer Okto Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Okto (Lv.129) (use Take on it)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2975934,
+        "galder": 0,
+        "items": [
+          "6x Arcana Smart Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Officer Okto Card. Riddle: \"Their eight legs have been inherited from their ancestors\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Mermaid_Palace_Card_Girl_Quest_(3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-05",
+      "order": 407,
+      "title": "Card Girl - Mermaid Palace Card Girl Quest (4)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Card Girl (Lv.75+)",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 85,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 85+",
+      "steps": [
+        "Talk to Card Girl at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x S. Golden Mole Card: dropped by Super Golden Mole (Lv.80) (use Take on it) in Path to Mermaid Palace 1.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "S. Golden Mole Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Super Golden Mole (Lv.80) (use Take on it)",
+            "map": "Path to Mermaid Palace 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3046958,
+        "galder": 0,
+        "items": [
+          "7x Arcana Smart Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is S. Golden Mole Card. Riddle: \"A crown and a cape aren't enough to shut this creature\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Mermaid_Palace_Card_Girl_Quest_(4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-06",
+      "order": 408,
+      "title": "Card Girl - Mermaid Palace Card Girl Quest (5)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Card Girl (Lv.75+)",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 85,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 85+",
+      "steps": [
+        "Talk to Card Girl at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Tink Card: dropped by Fish Guardian Tink (Lv.85) (use Take on it) in Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square.",
+        "Get 1x Bell Card: dropped by Fish Guardian Bell (Lv.88) (use Take on it) in Mermaid Palace Field 3 - Coral Square.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tink Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Tink (Lv.85) (use Take on it)",
+            "map": "Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bell Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Bell (Lv.88) (use Take on it)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3046958,
+        "galder": 0,
+        "items": [
+          "8x Arcana Smart Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Tink Card and Bell Card. Riddle: \"Warriors who protect the sea (2 types)\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Mermaid_Palace_Card_Girl_Quest_(5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-07",
+      "order": 409,
+      "title": "Genius Cochma - Mermaid Palace Survey - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Mermaid Palace.",
+        "Defeat 15x Mermaid Little (Lv.73) within 10 min in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mermaid Little",
+          "level": 73,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+        }
+      ],
+      "rewards": {
+        "baseExp": 149744,
+        "tmExp": 430694,
+        "galder": 0,
+        "items": [
+          "5x Pink Potion C",
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Mermaid_Palace_Survey_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-08",
+      "order": 410,
+      "title": "Genius Cochma - Mermaid Palace Survey - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-07"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Mermaid Palace Survey 1",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Mermaid Palace.",
+        "Get 5x Lip Gloss: dropped by Mermaid Little (Lv.73) in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lip Gloss",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Little (Lv.73)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 451581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 1x Chochma Card"
+        ]
+      },
+      "notes": "Lip Gloss is dropped by Mermaid Little (Lv.73).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Mermaid_Palace_Survey_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-09",
+      "order": 411,
+      "title": "Genius Cochma - Mermaid Palace Survey - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-08"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Mermaid Palace Survey 2",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Mermaid Palace.",
+        "Get 3x Lip Brush: drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lip Brush",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square (drill depth not on the wiki)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 451581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Pink Potion C"
+        ]
+      },
+      "notes": "Lip Brush is drilled in Mermaid Palace Field 1 / 2.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Mermaid_Palace_Survey_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-10",
+      "order": 412,
+      "title": "Genius Cochma - Mermaid Palace Survey - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-09"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Mermaid Palace Survey 3",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Mermaid Palace.",
+        "Get 5x Scraggy Towel: drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Scraggy Towel",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square (drill depth not on the wiki)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 645116,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Scraggy Towel is drilled in Mermaid Palace Field 1 / 2. Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Mermaid_Palace_Survey_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-11",
+      "order": 413,
+      "title": "Frog Shaman - Mermaid Palace Magic Ingredient - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Frog Shaman at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 5x Nail Polish: dropped by Fish Guardian Bell (Lv.80) in Mermaid Palace Field 3 - Coral Square.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nail Polish",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Bell (Lv.80)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 451581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Pink Potion C"
+        ]
+      },
+      "notes": "Nail Polish is dropped by Fish Guardian Bell (Lv.80).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Mermaid_Palace_Magic_Ingredient_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-12",
+      "order": 414,
+      "title": "Frog Shaman - Mermaid Palace Magic Ingredient - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-11"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Mermaid Palace Magic Ingredient 1",
+      "steps": [
+        "Talk to Frog Shaman at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 5x Fur Brush: dropped by Fish Guardian Tink (Lv.85) or Merman Aqu (Lv.86) in Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square / Mermaid Palace Field 4 - Rock Square.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fur Brush",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Tink (Lv.85) or Merman Aqu (Lv.86)",
+            "map": "Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square / Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 451581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 1x La Befana Card"
+        ]
+      },
+      "notes": "Fur Brush is dropped by Fish Guardian Tink (Lv.85) or Merman Aqu (Lv.86).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Mermaid_Palace_Magic_Ingredient_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-13",
+      "order": 415,
+      "title": "Frog Shaman - Mermaid Palace Magic Ingredient - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-12"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Mermaid Palace Magic Ingredient 2",
+      "steps": [
+        "Talk to Frog Shaman at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 5x Bubble: dropped by Waterweed Witch (Lv.95) in Mermaid Palace Field 3 - Coral Square.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bubble",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Waterweed Witch (Lv.95)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 451581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Pink Potion C"
+        ]
+      },
+      "notes": "Bubble is dropped by Water Weed Witch (Lv.95).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Mermaid_Palace_Magic_Ingredient_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-14",
+      "order": 416,
+      "title": "Frog Shaman - Mermaid Palace Magic Ingredient - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-13"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Mermaid Magic Ingredient 3",
+      "steps": [
+        "Talk to Frog Shaman at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 3x Whale Jawbone: drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Whale Jawbone",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square (drill depth not on the wiki)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 645116,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Whale Jawbone is drilled in Mermaid Palace Fields 1 / 4. Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Mermaid_Palace_Magic_Ingredient_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-15",
+      "order": 417,
+      "title": "La Vida - La Vida's Treasure Map 1",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "La Vida",
+      "npcIds": [
+        "la-vida"
+      ],
+      "location": "Mermaid Palace Field 1 - Water Park",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to La Vida at Mermaid Palace Field 1 - Water Park.",
+        "Get 1x Fragmented Map 1: dropped by Merman Ale (Lv.89) in Mermaid Palace Field 4 - Rock Square.",
+        "Bring everything back to La Vida (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fragmented Map 1",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Merman Ale (Lv.89)",
+            "map": "Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Mermaid Scale",
+          "Cycle 2: 1x Mermaid Scale + 1x 10,000 Galder Coupon",
+          "Cycle 5: 1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Fragmented Map 1 is dropped by Merman Ale (Lv.89). Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/La_Vida_-_La_Vida's_Treasure_Map_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-16",
+      "order": 418,
+      "title": "La Vida - La Vida's Treasure Map 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "La Vida",
+      "npcIds": [
+        "la-vida"
+      ],
+      "location": "Mermaid Palace Field 1 - Water Park",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-15"
+        }
+      ],
+      "prereqText": "Level 75+, have completed La Vida's Treasure Map 1",
+      "steps": [
+        "Talk to La Vida at Mermaid Palace Field 1 - Water Park.",
+        "Get 1x Fragmented Map 2: drilled in Mermaid Palace Fields.",
+        "Bring everything back to La Vida (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fragmented Map 2",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Fragmented Map 2 is drilled in Mermaid Palace Fields. Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/La_Vida_-_La_Vida's_Treasure_Map_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-17",
+      "order": 419,
+      "title": "Prince Sebastian - Prince the Merman 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Prince Sebastian",
+      "npcIds": [
+        "prince-sebastian"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Prince Sebastian at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 5x Lip Gloss: dropped by Mermaid Little (Lv.73) in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Prince Sebastian (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lip Gloss",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Little (Lv.73)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Lip Gloss is dropped by Mermaid Little (Lv.73).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Prince_Sebastian_-_Prince_the_Merman_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-18",
+      "order": 420,
+      "title": "Sea Spirit Rumo - I Want to Ride a Fish",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Sea Spirit Rumo",
+      "npcIds": [
+        "sea-spirit-rumo"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Sea Spirit Rumo at Mermaid Palace Field 4 - Rock Square.",
+        "Get 3x Tink's Fishbone: dropped by Fish Guardian Tink (Lv.85) in Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square.",
+        "Get 3x Bell's Fishbone: dropped by Fish Guardian Bell (Lv.88) in Mermaid Palace Field 3 - Coral Square.",
+        "Bring everything back to Sea Spirit Rumo (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tink's Fishbone",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Tink (Lv.85)",
+            "map": "Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bell's Fishbone",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Bell (Lv.88)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Rumo's Remedy",
+          "Cycle 2: 1x Rumo's Remedy + 1x Mermaid Scale",
+          "Cycle 3: 1x Rumo's Remedy",
+          "Cycle 4: 1x Rumo's Remedy + 1x Mermaid Scale",
+          "Cycle 5: 1x Rumo's Remedy + 1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Tink's Fishbone is dropped by Fish Guardian Tink (Lv.85) and Bell's Fishbone is dropped by Fish Guardian Bell (Lv.88). Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sea_Spirit_Rumo_-_I_Want_to_Ride_a_Fish.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-19",
+      "order": 421,
+      "title": "Fairy Asrai - Make a Merperson Potion",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Fairy Asrai",
+      "npcIds": [
+        "fairy-asrai"
+      ],
+      "location": "Mermaid Palace Field 3 - Coral Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-20",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 75+, have Prince the Merman 2 in quest log",
+      "steps": [
+        "Talk to Fairy Asrai at Mermaid Palace Field 3 - Coral Square.",
+        "Get 1x Rumo's Remedy: reward from Sea Spirit Rumo - I Want to Ride a Fish.",
+        "Get 1x Whale Jawbone: drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square.",
+        "Get 3x Sea Herbs: dropped by Waterweed Witch (Lv.95) in Mermaid Palace Field 3 - Coral Square.",
+        "Bring everything back to Fairy Asrai (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rumo's Remedy",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Sea Spirit Rumo - I Want to Ride a Fish",
+            "map": "Mermaid Palace Field 4 - Rock Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Whale Jawbone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square (drill depth not on the wiki)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 4 - Rock Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sea Herbs",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Waterweed Witch (Lv.95)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Merperson Potion",
+          "Cycle 2: 1x Compound Waste + 1x Mermaid Scale",
+          "Cycle 3: 1x Merperson Potion",
+          "Cycle 4: 1x Compound Waste + 1x Mermaid Scale",
+          "Cycle 5: 1x Merperson Potion + 1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Rumo's Remedy is obtained from completing Sea Spirit Rumo - I Want to Ride a Fish. Sea Herbs is dropped by Water Weed Witch (Lv 95). Whale Jawbone is drilled in Mermaid Palace Fields 1 / 4. Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Asrai_-_Make_a_Merperson_Potion.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-20",
+      "order": 422,
+      "title": "Prince Sebastian - Prince the Merman 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Prince Sebastian",
+      "npcIds": [
+        "prince-sebastian"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 3,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-17"
+        }
+      ],
+      "prereqText": "Level 75+, have completed Prince the Merman 1",
+      "steps": [
+        "Talk to Prince Sebastian at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 1x Merperson Potion: reward from Fairy Asrai - Make a Merperson Potion.",
+        "Bring everything back to Prince Sebastian (repeat 3 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Merperson Potion",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Asrai - Make a Merperson Potion",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Merperson Potion is obtained by completing Fairy Asrai - Make a Merperson Potion. Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Prince_Sebastian_-_Prince_the_Merman_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-21",
+      "order": 423,
+      "title": "Sea Spirit Rumo - I Want Okto's Staff",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Sea Spirit Rumo",
+      "npcIds": [
+        "sea-spirit-rumo"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-18"
+        }
+      ],
+      "prereqText": "Level 75+, have completed I Want to Ride a Fish",
+      "steps": [
+        "Talk to Sea Spirit Rumo at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Okto's Staff: dropped by Okto (Lv.129) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Sea Spirit Rumo (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Okto's Staff",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Okto (Lv.129)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Mermaid Scale",
+          "Cycle 2: 1x 10,000 Galder Coupon",
+          "Cycle 5: 1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Okto's Staff is dropped by Okto (Lv.129). Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sea_Spirit_Rumo_-_I_Want_Okto's_Staff.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-22",
+      "order": 424,
+      "title": "Mermaid Marin - Marin's Worry",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Mermaid Marin",
+      "npcIds": [
+        "mermaid-marin"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 75,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Mermaid Marin at Mermaid Palace Field 4 - Rock Square.",
+        "Get 3x Royal Mermaid Linen: drilled in Mermaid Palace Fields.",
+        "Bring everything back to Mermaid Marin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Royal Mermaid Linen",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 358398,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Royal Mermaid Linen is drilled in Mermaid Palace Fields. Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Marin_-_Marin's_Worry.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-23",
+      "order": 425,
+      "title": "Guard Gilbert - Gilbert Wants Better Weapons",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Guard Gilbert",
+      "npcIds": [
+        "guard-gilbert"
+      ],
+      "location": "Mermaid Dungeon 1 - Underworld",
+      "minLevel": 80,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Guard Gilbert at Mermaid Dungeon 1 - Underworld.",
+        "Get 5x Chele's Claw: dropped by Chele (Lv.117) in Mermaid Dungeon 1 - Underworld.",
+        "Bring everything back to Guard Gilbert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chele's Claw",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chele (Lv.117)",
+            "map": "Mermaid Dungeon 1 - Underworld"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 498881,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Chele's Claw is dropped by Chele (Lv.117). Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Guard_Gilbert_-_Gilbert_Wants_Better_Weapons.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-24",
+      "order": 426,
+      "title": "Guard Gilbert - Gilbert Wants Better Armor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Guard Gilbert",
+      "npcIds": [
+        "guard-gilbert"
+      ],
+      "location": "Mermaid Dungeon 1 - Underworld",
+      "minLevel": 80,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-23"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Gilbert Wants Better Weapons",
+      "steps": [
+        "Talk to Guard Gilbert at Mermaid Dungeon 1 - Underworld.",
+        "Get 5x Sulaphat's Shell: dropped by Sulaphat (Lv.123) in Mermaid Dungeon 1 - Underworld / Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Guard Gilbert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sulaphat's Shell",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sulaphat (Lv.123)",
+            "map": "Mermaid Dungeon 1 - Underworld / Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 498881,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Water Pistol Gun"
+        ]
+      },
+      "notes": "Sulaphat's Shell is dropped by Sulaphat (Lv.123).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Guard_Gilbert_-_Gilbert_Wants_Better_Armor.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-25",
+      "order": 427,
+      "title": "Lethos - Beauty Secrets of Mermaids - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 85,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 85+",
+      "steps": [
+        "Talk to Lethos at Gate of Mermaid Dungeon.",
+        "Get 5x Pearl: drilled in Mermaid Palace Fields / Mermaid Dungeon.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pearl",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields / Mermaid Dungeon (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields / Mermaid Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 601771,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Pearl is drilled in Mermaid Palace Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Beauty_Secrets_of_Mermaids_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-26",
+      "order": 428,
+      "title": "Lethos - Beauty Secrets of Mermaids - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 85,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-25"
+        }
+      ],
+      "prereqText": "Level 85+, have completed Beauty Secrets of Mermaids 1",
+      "steps": [
+        "Talk to Lethos at Gate of Mermaid Dungeon.",
+        "Get 5x Sulaphat's Shell: dropped by Sulaphat (Lv.123) in Mermaid Dungeon 1 - Underworld / Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sulaphat's Shell",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sulaphat (Lv.123)",
+            "map": "Mermaid Dungeon 1 - Underworld / Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 601771,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Lethos Card"
+        ]
+      },
+      "notes": "Sulaphat's Shell is dropped by Sulaphat (Lv.123).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Beauty_Secrets_of_Mermaids_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-27",
+      "order": 429,
+      "title": "Lethos - Beauty Secrets of Mermaids - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 85,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-26"
+        }
+      ],
+      "prereqText": "Level 85+, have completed Beauty Secrets of Mermaids 2",
+      "steps": [
+        "Talk to Lethos at Gate of Mermaid Dungeon.",
+        "Get 5x Okto's Staff: dropped by Okto (Lv.129) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Okto's Staff",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Okto (Lv.129)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 601771,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Okto's Staff is dropped by Okto (Lv.129).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Beauty_Secrets_of_Mermaids_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-28",
+      "order": 430,
+      "title": "Lethos - Beauty Secrets of Mermaids - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Mermaid Palace - Sticker Quests (Lv.75+)",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 85,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-27"
+        }
+      ],
+      "prereqText": "Level 85+, have completed Beauty Secrets of Mermaids 3",
+      "steps": [
+        "Talk to Lethos at Gate of Mermaid Dungeon.",
+        "Get 2x Tanya's Sword: dropped by Tanya (Lv.150) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tanya's Sword",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Tanya (Lv.150)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 859673,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Palace Proof Sticker"
+        ]
+      },
+      "notes": "Tanya's Sword is dropped by Tanya (Lv.150). Gives a Palace Proof Sticker: Captain Stan - Mermaid Palace Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Beauty_Secrets_of_Mermaids_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-29",
+      "order": 431,
+      "title": "Clerk Z. Smith - Mermaid Palace's Rare Stone Collection",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Clerk Z. Smith",
+      "npcIds": [
+        "clerk-z-smith"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 80,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Clerk Z. Smith at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Abalone Pearl: drilled in Mermaid Dungeon.",
+        "Get 1x Conch Pearl: drilled in Mermaid Dungeon.",
+        "Get 1x Melo Pearl: drilled in Mermaid Dungeon.",
+        "Bring everything back to Clerk Z. Smith (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Abalone Pearl",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Dungeon (drill depth not on the wiki)",
+            "map": "Mermaid Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Conch Pearl",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Dungeon (drill depth not on the wiki)",
+            "map": "Mermaid Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Melo Pearl",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Dungeon (drill depth not on the wiki)",
+            "map": "Mermaid Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2071360,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Abalone Pearl, Conch Pearl, Melo Pearl are drilled in Mermaid Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clerk_Z._Smith_-_Mermaid_Palace's_Rare_Stone_Collection.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-30",
+      "order": 432,
+      "title": "Entertainer Elicia - Daily Quest - Mermaid Palace",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Daily",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Entertainer Elicia at Mermaid Palace Field 4 - Rock Square.",
+        "Get 2x Executioner's Gills: dropped by Punisher Merman Ale (Lv.100) in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square / Mermaid Palace Field 4 - Rock Square.",
+        "Bring everything back to Entertainer Elicia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Executioner's Gills",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Punisher Merman Ale (Lv.100)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square / Mermaid Palace Field 3 - Coral Square / Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1157331,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "15x 500 Galder Coupon",
+          "10x Half Pink Potion",
+          "10x Half Blue Potion",
+          "1x Strong Sten Gun",
+          "1x Strong Square Shield",
+          "1x Sharp Flat Sword",
+          "1x Moon Stone Rod or Sharp Katana"
+        ]
+      },
+      "notes": "Executioner's Gills are dropped by Punisher Merman Ale (Lv.100). In next season the request will be 2x Elicia's Pouch.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Entertainer_Elicia_-_Daily_Quest_-_Mermaid_Palace.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-31",
+      "order": 433,
+      "title": "Love Hunter Robin - Mermaid Dungeon Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Dungeon - Monster Quest (Lv.80+)",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 80,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Love Hunter Robin at Gate of Mermaid Dungeon.",
+        "Defeat 20x Chele (Lv.117) within 30 min in Mermaid Dungeon 1 - Underworld.",
+        "Bring everything back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chele",
+          "level": 117,
+          "count": 20,
+          "timeLimit": "30 min",
+          "map": "Mermaid Dungeon 1 - Underworld"
+        }
+      ],
+      "rewards": {
+        "baseExp": 453589,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.121~130: 20x Okto (Lv.129) in 30 min, reward 2x 10,000 Galder Coupon. Lv.131+: 5x Tanya (Lv.150) in 10 min, reward 3x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Mermaid_Dungeon_Monster_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-32",
+      "order": 434,
+      "title": "Monkey T - Monkey T's Request (5)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Mermaid Palace Field 2 - Seaweeds Square",
+      "minLevel": 75,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 75+",
+      "steps": [
+        "Talk to Monkey T at Mermaid Palace Field 2 - Seaweeds Square.",
+        "Get 10x Eternal Glamor Grass: dropped by Mermaid Little (Lv.73) in Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Glamor Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Little (Lv.73)",
+            "map": "Mermaid Palace Field 1 - Water Park / Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1047183,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Glamor Grass is dropped by Mermaid Little (Lv.73).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-33",
+      "order": 435,
+      "title": "Explorer Reina - Treasure Hunting 1 - Mermaid Palace",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Mermaid Palace Field 1 - Water Park",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 70~260, have completed Indiana John - Old Man's Dream, haven't Worn Sea Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Mermaid Palace Field 1 - Water Park.",
+        "Get 1x Worn Sea Map A: drilled in Mermaid Palace Fields.",
+        "Get 1x Worn Sea Map B: drilled in Mermaid Palace Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Sea Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Sea Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Sea Treasure Map"
+        ]
+      },
+      "notes": "Worn Sea Map A and Worn Sea Map B are drilled in Mermaid Palace Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Mermaid_Palace.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-34",
+      "order": 436,
+      "title": "Explorer Reina - Treasure Hunting 2 - Mermaid Palace",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Mermaid Palace Field 1 - Water Park",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "mp-33"
+        }
+      ],
+      "prereqText": "Lv.70~260, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Mermaid Palace 50 times, haven't Old Sea Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Mermaid Palace Field 1 - Water Park.",
+        "Get 1x Old Sea Map A: drilled in Mermaid Palace Fields.",
+        "Get 1x Old Sea Map B: drilled in Mermaid Palace Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Sea Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Sea Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 111395,
+        "tmExp": 111395,
+        "galder": 0,
+        "items": [
+          "1x Old Sea Treasure Map"
+        ]
+      },
+      "notes": "Old Sea Map A and Old Sea Map B are drilled in Mermaid Palace Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Mermaid_Palace.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-35",
+      "order": 437,
+      "title": "Driller King Marky - Romance of Drilling - Mermaid Palace",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mermaid Palace - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 70~260, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Weird Sea Map A: drilled in Mermaid Palace Fields.",
+        "Get 1x Weird Sea Map B: drilled in Mermaid Palace Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Sea Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Sea Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 111395,
+        "tmExp": 111395,
+        "galder": 0,
+        "items": [
+          "1x Weird Sea Treasure Map"
+        ]
+      },
+      "notes": "Weird Sea Map A and Weird Sea Map B are drilled in Mermaid Palace Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Mermaid_Palace.html",
         "checked": "2026-11-12",
         "verifiedInGame": false
       }

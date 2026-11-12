@@ -47,6 +47,24 @@
     "n": 1,
     "src": "wiki"
   },
+  "card-girl@mermaid-field-4": {
+    "x": 63.7,
+    "y": 14.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "card-girl@wharf-field-4": {
+    "x": 7.4,
+    "y": 78.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "clerk-z-smith@mermaid-field-4": {
+    "x": 94.7,
+    "y": 19.7,
+    "n": 1,
+    "src": "wiki"
+  },
   "clever-owl@paradise": {
     "x": 65.8,
     "y": 65.4,
@@ -83,9 +101,27 @@
     "n": 1,
     "src": "wiki"
   },
+  "driller-king-marky@mermaid-field-4": {
+    "x": 39.1,
+    "y": 84.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "driller-king-marky@oops-wharf": {
+    "x": 9.1,
+    "y": 63.6,
+    "n": 1,
+    "src": "wiki"
+  },
   "driller-marky@gate-of-desert-beach": {
     "x": 19.4,
     "y": 22.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "eclipse@oops-wharf": {
+    "x": 34.9,
+    "y": 68.2,
     "n": 1,
     "src": "wiki"
   },
@@ -107,9 +143,39 @@
     "n": 1,
     "src": "wiki"
   },
+  "entertainer-elicia@mermaid-field-4": {
+    "x": 75,
+    "y": 21.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "explorer-reina@mermaid-field-1": {
+    "x": 14.4,
+    "y": 7,
+    "n": 1,
+    "src": "wiki"
+  },
   "explorer-reina@mermaid-path-1": {
     "x": 32.3,
     "y": 10.6,
+    "n": 1,
+    "src": "wiki"
+  },
+  "explorer-reina@oops-wharf": {
+    "x": 86.6,
+    "y": 54.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "explorer-reina@wharf-field-1": {
+    "x": 33.5,
+    "y": 81,
+    "n": 1,
+    "src": "wiki"
+  },
+  "fairy-asrai@mermaid-field-3": {
+    "x": 84.9,
+    "y": 7,
     "n": 1,
     "src": "wiki"
   },
@@ -125,9 +191,51 @@
     "n": 1,
     "src": "wiki"
   },
+  "fortune-teller@gate-of-oops-wharf": {
+    "x": 25,
+    "y": 47.3,
+    "n": 1,
+    "src": "wiki"
+  },
   "fortune-teller@mirage-field-1": {
     "x": 70.8,
     "y": 33.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "frog-shaman@mermaid-field-2": {
+    "x": 79.9,
+    "y": 28.2,
+    "n": 1,
+    "src": "wiki"
+  },
+  "frog-shaman@wharf-field-2": {
+    "x": 91.9,
+    "y": 73.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "genius-cochma@gate-of-mermaid-palace": {
+    "x": 49.6,
+    "y": 44.6,
+    "n": 1,
+    "src": "wiki"
+  },
+  "genius-cochma@gate-of-oops-wharf": {
+    "x": 35.6,
+    "y": 54.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "grandpa-tango@gate-of-oops-wharf": {
+    "x": 81.3,
+    "y": 54.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "guard-gilbert@mermaid-dungeon-1": {
+    "x": 18,
+    "y": 29.1,
     "n": 1,
     "src": "wiki"
   },
@@ -155,9 +263,21 @@
     "n": 1,
     "src": "wiki"
   },
+  "inventor-gale@wharf-field-4": {
+    "x": 18,
+    "y": 35.2,
+    "n": 1,
+    "src": "wiki"
+  },
   "kahlihara@gate-of-mermaid-dungeon": {
     "x": 82.7,
     "y": 63.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "keeper-julio@gate-of-oops-wharf": {
+    "x": 76.4,
+    "y": 13.5,
     "n": 1,
     "src": "wiki"
   },
@@ -179,15 +299,39 @@
     "n": 1,
     "src": "wiki"
   },
+  "la-vida@mermaid-field-1": {
+    "x": 18,
+    "y": 8.5,
+    "n": 1,
+    "src": "wiki"
+  },
   "lachesis@mirage-dungeon-2": {
     "x": 96,
     "y": 8.5,
     "n": 1,
     "src": "wiki"
   },
+  "lethos@gate-of-mermaid-dungeon": {
+    "x": 60.2,
+    "y": 60.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "lethos@oops-wharf": {
+    "x": 59.1,
+    "y": 80,
+    "n": 1,
+    "src": "wiki"
+  },
   "louis-bitton@azteca": {
     "x": 59.6,
     "y": 59.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "love-hunter-robin@gate-of-mermaid-dungeon": {
+    "x": 28.5,
+    "y": 47.8,
     "n": 1,
     "src": "wiki"
   },
@@ -200,6 +344,24 @@
   "love-hunter-robin@path-to-caballa": {
     "x": 43,
     "y": 88,
+    "n": 1,
+    "src": "wiki"
+  },
+  "magician-louie@mermaid-dungeon-2": {
+    "x": 15.1,
+    "y": 20.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "marinel@oops-wharf": {
+    "x": 69.4,
+    "y": 86.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "merchant-miguel@oops-wharf": {
+    "x": 65.1,
+    "y": 63.6,
     "n": 1,
     "src": "wiki"
   },
@@ -221,6 +383,18 @@
     "n": 1,
     "src": "wiki"
   },
+  "monkey-t@mermaid-field-2": {
+    "x": 60.2,
+    "y": 84.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "monkey-t@wharf-field-1": {
+    "x": 22.2,
+    "y": 26.1,
+    "n": 1,
+    "src": "wiki"
+  },
   "nefertiti-2@mirage-dungeon-1": {
     "x": 91.9,
     "y": 7,
@@ -236,6 +410,24 @@
   "officer-robert@paradise": {
     "x": 91.9,
     "y": 84.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "officer-tera@gate-of-mermaid-dungeon": {
+    "x": 39.1,
+    "y": 35.7,
+    "n": 1,
+    "src": "wiki"
+  },
+  "officer-tera@gate-of-oops-wharf": {
+    "x": 42.6,
+    "y": 33.8,
+    "n": 1,
+    "src": "wiki"
+  },
+  "officer-tera@oops-wharf": {
+    "x": 82.3,
+    "y": 18.2,
     "n": 1,
     "src": "wiki"
   },
@@ -257,6 +449,12 @@
     "n": 1,
     "src": "wiki"
   },
+  "prince-sebastian@mermaid-field-2": {
+    "x": 18,
+    "y": 7,
+    "n": 1,
+    "src": "wiki"
+  },
   "rosaline-gracia@megalo-square": {
     "x": 51.8,
     "y": 68.2,
@@ -266,6 +464,12 @@
   "rosaline-gracia@oops-wharf": {
     "x": 67.7,
     "y": 39.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "rosemary@gate-of-oops-wharf": {
+    "x": 84.9,
+    "y": 81.1,
     "n": 1,
     "src": "wiki"
   },
@@ -287,9 +491,27 @@
     "n": 1,
     "src": "wiki"
   },
+  "sea-spirit-rumo@mermaid-field-4": {
+    "x": 77.8,
+    "y": 21.1,
+    "n": 1,
+    "src": "wiki"
+  },
   "sea-spirit-rumo@mirage-field-3": {
     "x": 47.5,
     "y": 62.7,
+    "n": 1,
+    "src": "wiki"
+  },
+  "shaman-girl-jia@gate-of-oops-wharf": {
+    "x": 35.6,
+    "y": 54.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "shaman-girl-jia@oops-wharf": {
+    "x": 30.6,
+    "y": 63.6,
     "n": 1,
     "src": "wiki"
   },
@@ -311,6 +533,24 @@
     "n": 1,
     "src": "wiki"
   },
+  "sophia@gate-of-oops-wharf": {
+    "x": 49.6,
+    "y": 40.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "star-gazer-stella@oops-wharf": {
+    "x": 39.2,
+    "y": 45.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "stella@oops-wharf": {
+    "x": 26.3,
+    "y": 59.1,
+    "n": 1,
+    "src": "wiki"
+  },
   "steve-ryu@paradise": {
     "x": 68.7,
     "y": 70.1,
@@ -326,6 +566,12 @@
   "vagabond-eloy@oops-wharf": {
     "x": 22,
     "y": 18.2,
+    "n": 1,
+    "src": "wiki"
+  },
+  "warrior-kei@wharf-field-4": {
+    "x": 77.8,
+    "y": 72.5,
     "n": 1,
     "src": "wiki"
   },

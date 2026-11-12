@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "rg-key-01",
-      "order": 310,
+      "order": 600,
       "title": "Rosaline Gracia - Rose Garden Stickers",
       "categories": [
         "key",
@@ -74,7 +74,7 @@
     },
     {
       "id": "rg-key-02",
-      "order": 311,
+      "order": 601,
       "title": "Rosaline Gracia - Childhood Promise",
       "categories": [
         "key"
@@ -145,7 +145,7 @@
     },
     {
       "id": "rg-key-03",
-      "order": 312,
+      "order": 602,
       "title": "Princess Rosetta - Unbroken Magic",
       "categories": [
         "key"
@@ -206,7 +206,7 @@
     },
     {
       "id": "rg-key-04",
-      "order": 313,
+      "order": 603,
       "title": "Prince Stephano - A Happy Ending",
       "categories": [
         "key"

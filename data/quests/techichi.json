@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "tv-key-01",
-      "order": 325,
+      "order": 900,
       "title": "Grandpa Tango - Techichi Recommendation Sticker",
       "categories": [
         "key",
@@ -63,7 +63,7 @@
     },
     {
       "id": "tv-key-02",
-      "order": 326,
+      "order": 901,
       "title": "Grandma Tango - Tango Cabin Soup",
       "categories": [
         "key"
@@ -118,7 +118,7 @@
     },
     {
       "id": "tv-key-03",
-      "order": 327,
+      "order": 902,
       "title": "Indiana John - Indiana John's Theory",
       "categories": [
         "key"
@@ -189,7 +189,7 @@
     },
     {
       "id": "tv-key-04",
-      "order": 328,
+      "order": 903,
       "title": "Indiana John - Checking Out",
       "categories": [
         "key"
@@ -245,7 +245,7 @@
     },
     {
       "id": "tv-key-05",
-      "order": 329,
+      "order": 904,
       "title": "Grandpa Tango - Grandpa Tango's Appreciation",
       "categories": [
         "key"
@@ -341,7 +341,7 @@
     },
     {
       "id": "tv-key-06",
-      "order": 330,
+      "order": 905,
       "title": "Indiana John - Supporting Evidence",
       "categories": [
         "key"

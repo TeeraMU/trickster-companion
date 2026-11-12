@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "gb-key-01",
-      "order": 307,
+      "order": 500,
       "title": "Chief Koha - Collect Ritual Supplies",
       "categories": [
         "key"
@@ -85,7 +85,7 @@
     },
     {
       "id": "gb-key-02",
-      "order": 308,
+      "order": 501,
       "title": "Chief Koha - Get a Date",
       "categories": [
         "key"
@@ -156,7 +156,7 @@
     },
     {
       "id": "gb-key-03",
-      "order": 309,
+      "order": 502,
       "title": "Shaman Girl Jia - Collect the Changed Spirits",
       "categories": [
         "key"
