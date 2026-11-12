@@ -1,0 +1,346 @@
+{
+  "region": "Black Swamp",
+  "quests": [
+    {
+      "id": "bs-key-01",
+      "order": 314,
+      "title": "Pastor Tau - Swamp Stickers",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Black Swamp - Key Quests (Lv.150+)",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-key-02"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Rosaline Gracia - Childhood Promise",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Town - Carbigal.",
+        "Get 13x Swamp Sticker: Black Swamp sticker quests: Bard La Fimmel, Clerk Z. Smith, Cluck Cluck Warrior, Farmer Tsetsech, Favian, Frog Prince, Frog Shaman - Swamp Magic 4, Genius Cochma - Black Swamp Survey 4, Kristoffer J., Lethos - Black Swamp Treasure 4, Madam Sarah, Monkey T - Monkey T Business 4, Pastor Tau - Tau's Request 2, Poppuri, Princess Rosetta, Swampy Suu, Vagabond Eloy, Vinosh.",
+        "Get 1x Adventurer's Book: reward from Rosaline Gracia - Childhood Promise.",
+        "Bring everything back to Pastor Tau."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Swamp Sticker",
+          "qty": 13,
+          "source": {
+            "kind": "quest",
+            "from": "Black Swamp sticker quests: Bard La Fimmel, Clerk Z. Smith, Cluck Cluck Warrior, Farmer Tsetsech, Favian, Frog Prince, Frog Shaman - Swamp Magic 4, Genius Cochma - Black Swamp Survey 4, Kristoffer J., Lethos - Black Swamp Treasure 4, Madam Sarah, Monkey T - Monkey T Business 4, Pastor Tau - Tau's Request 2, Poppuri, Princess Rosetta, Swampy Suu, Vagabond Eloy, Vinosh",
+            "map": "Swamp Town - Carbigal"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaline Gracia - Childhood Promise",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3770503,
+        "tmExp": 3649166,
+        "galder": 0,
+        "items": [
+          "1x Flower of Revival"
+        ]
+      },
+      "notes": "Swamp Sticker comes from that area's sticker quests (see the source on the item). Adventurer's Book is obtained by completing Rosaline Gracia - Childhood Promise.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Swamp_Stickers.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-key-02",
+      "order": 315,
+      "title": "Madam Sarah - Sarah's Flashback",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Black Swamp - Key Quests (Lv.150+)",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Carbigal Tea House",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-key-01"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Pastor Tau - Swamp Stickers",
+      "steps": [
+        "Talk to Madam Sarah at Carbigal Tea House.",
+        "Get 1x Lotus Flower: dropped by Lotus Wormhole (Lv.219) in Swamp Dungeon 4 - Marshy Garden / 5 - Marshy Lawn.",
+        "Get 5x Lotus Leaf: dropped by Chameleon Frog (Lv.169) in Swamp Field 2 - Beaver's Swamp / 4 - Dark Omen.",
+        "Bring everything back to Madam Sarah."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lotus Flower",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Lotus Wormhole (Lv.219)",
+            "map": "Swamp Dungeon 4 - Marshy Garden / 5 - Marshy Lawn"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lotus Leaf",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chameleon Frog (Lv.169)",
+            "map": "Swamp Field 2 - Beaver's Swamp / 4 - Dark Omen"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3770503,
+        "tmExp": 3649166,
+        "galder": 0,
+        "items": [
+          "1x Flower Tea"
+        ]
+      },
+      "notes": "Lotus Flower is dropped by Lotus Wormhole (Lv.219). Lotus Leaf is dropped by Chameleon Frog (Lv.169).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Sarah's_Flashback.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-key-03",
+      "order": 316,
+      "title": "Pastor Tau - Tau's Dream",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Black Swamp - Key Quests (Lv.150+)",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-key-01"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Pastor Tau - Swamp Stickers",
+      "steps": [
+        "Talk to Pastor Tau at Swamp Town - Carbigal.",
+        "Get 1x Flower Tea: reward from Madam Sarah - Sarah's Flashback.",
+        "Bring everything back to Pastor Tau."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Flower Tea",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Madam Sarah - Sarah's Flashback",
+            "map": "Carbigal Tea House"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3770503,
+        "tmExp": 3649166,
+        "galder": 0,
+        "items": [
+          "1x Flower of Revival"
+        ]
+      },
+      "notes": "Flower Tea is obtained by completing Sarah's Flashback.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Tau's_Dream.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-key-04",
+      "order": 317,
+      "title": "Little Chagan - Chagan's Dream",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Black Swamp - Key Quests (Lv.150+)",
+      "npc": "Little Chagan",
+      "npcIds": [
+        "little-chagan"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-key-03"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Pastor Tau - Tau's Dream",
+      "steps": [
+        "Talk to Little Chagan at Swamp Town - Carbigal.",
+        "Get 1x Lotus Fruit: dropped by Lotus Wormhole (Lv.219) in Swamp Dungeon 4 - Marshy Garden / 5 - Marshy Lawn.",
+        "Get 5x Ginseng Root: dropped by Mandragora (Lv.53) in Path to Caballa Relics & Relics Field 1.",
+        "Get 5x Herb Potion: Where to get it is not on the wiki page.",
+        "Bring everything back to Little Chagan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lotus Fruit",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Lotus Wormhole (Lv.219)",
+            "map": "Swamp Dungeon 4 - Marshy Garden / 5 - Marshy Lawn"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ginseng Root",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Mandragora (Lv.53)",
+            "map": "Path to Caballa Relics & Relics Field 1"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Herb Potion",
+          "qty": 5,
+          "source": {
+            "kind": "quest",
+            "from": "Where to get it is not on the wiki page",
+            "map": "Swamp Town - Carbigal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3770503,
+        "tmExp": 3649166,
+        "galder": 0,
+        "items": [
+          "1x Dream Note"
+        ]
+      },
+      "notes": "Lotus Fruit is dropped by Lotus Wormhole (Lv.219). Ginseng Root is dropped by Mandragora (Lv.53).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Little_Chagan_-_Chagan's_Dream.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "bs-key-05",
+      "order": 318,
+      "title": "Little Chagan - Interpret Chagan's Dream",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Black Swamp - Key Quests (Lv.150+)",
+      "npc": "Little Chagan",
+      "npcIds": [
+        "little-chagan"
+      ],
+      "location": "Swamp Town - Carbigal",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-key-04"
+        }
+      ],
+      "prereqText": "Level 150+, have completed Little Chagan - Chagan's Dream",
+      "steps": [
+        "Talk to Little Chagan at Swamp Town - Carbigal.",
+        "Get 1x Dream Interpretation: reward from Fortune Teller - Dream Reader.",
+        "Bring everything back to Little Chagan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dream Interpretation",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fortune Teller - Dream Reader",
+            "map": "Swamp Town - Carbigal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3770503,
+        "tmExp": 3649166,
+        "galder": 0,
+        "items": [
+          "1x Adventurer's Book",
+          "1x Weapon Exchange G"
+        ]
+      },
+      "notes": "Dream Interpretation is obtained by completing Fortune Teller - Dream Reader.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Little_Chagan_-_Interpret_Chagan's_Dream.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

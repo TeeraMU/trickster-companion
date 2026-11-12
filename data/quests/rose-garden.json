@@ -1,0 +1,256 @@
+{
+  "region": "Rose Garden",
+  "quests": [
+    {
+      "id": "rg-key-01",
+      "order": 310,
+      "title": "Rosaline Gracia - Rose Garden Stickers",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Rose Garden - Key Quests (Lv.125+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-key-02"
+        }
+      ],
+      "prereqText": "Level 125+, have completed Get a Date",
+      "steps": [
+        "Talk to Rosaline Gracia at Rose Field 1 - Stairway to Sorrow.",
+        "Get 13x Rose Garden Sticker: Rose Garden sticker quests: Butler of Vamp Castle, Clever Owl - Owl's Letter Delivery, Genius Cochma - Rose Garden Survey 4, Horse Hiddink, Fairy Godmother, Farmer Tsetsech, Frog Shaman - Rose Garden Magic 4, King Edward - Guardian Knight 2, Lethos - Vampire Collections? 4, Louis Bitton, Majordomo Felix, Prince Sebastian, Queen Cecilia, Rosemary - Dance Woman!, Vamp Lydia.",
+        "Get 1x Adventurer's Book: reward from Chief Koha - Get a Date.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rose Garden Sticker",
+          "qty": 13,
+          "source": {
+            "kind": "quest",
+            "from": "Rose Garden sticker quests: Butler of Vamp Castle, Clever Owl - Owl's Letter Delivery, Genius Cochma - Rose Garden Survey 4, Horse Hiddink, Fairy Godmother, Farmer Tsetsech, Frog Shaman - Rose Garden Magic 4, King Edward - Guardian Knight 2, Lethos - Vampire Collections? 4, Louis Bitton, Majordomo Felix, Prince Sebastian, Queen Cecilia, Rosemary - Dance Woman!, Vamp Lydia",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Chief Koha - Get a Date",
+            "map": "Ghost Blue Seabed Town - Aquarius"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3485492,
+        "tmExp": 5306493,
+        "galder": 0,
+        "items": [
+          "20x Blue Potion C"
+        ]
+      },
+      "notes": "Rose Garden Sticker comes from that area's sticker quests (see the source on the item). Adventurer's Book is obtained by completing Chief Koha - Get a Date.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_Rose_Garden_Stickers.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-key-02",
+      "order": 311,
+      "title": "Rosaline Gracia - Childhood Promise",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Rose Garden - Key Quests (Lv.125+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-key-01"
+        }
+      ],
+      "prereqText": "Level 125+, have completed Rose Garden Stickers",
+      "steps": [
+        "Talk to Rosaline Gracia at Rose Field 1 - Stairway to Sorrow.",
+        "Get 1x D's Letter: reward from Prince Stephano - A Happy Ending.",
+        "Get 1x Rosaline's Story Book (B): reward from Princess Rosetta - Unbroken Magic.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "D's Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Prince Stephano - A Happy Ending",
+            "map": "Beast Garden"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Rosaline's Story Book (B)",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Princess Rosetta - Unbroken Magic",
+            "map": "Beast Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5046042,
+        "tmExp": 6908240,
+        "galder": 0,
+        "items": [
+          "1x Adventurer's Book",
+          "1x Weapon Exchange Ticket F"
+        ]
+      },
+      "notes": "D's Letter is obtained by completing Prince Stephano - A Happy Ending. Rosaline's Story Book (B) is obtained by completing Princess Rosetta - Unbroken Magic.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_Childhood_Promise.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-key-03",
+      "order": 312,
+      "title": "Princess Rosetta - Unbroken Magic",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Rose Garden - Key Quests (Lv.125+)",
+      "npc": "Princess Rosetta",
+      "npcIds": [
+        "princess-rosetta"
+      ],
+      "location": "Beast Garden",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-key-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 125+, have Rosaline Gracia - Childhood Promise in quest log",
+      "steps": [
+        "Talk to Princess Rosetta at Beast Garden.",
+        "Get 1x Rose of Love: dropped by Open a Beast's Rose, dropped by Rose Bush (Lv.200); not every rose has one in Beast Garden.",
+        "Bring everything back to Princess Rosetta."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rose of Love",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Open a Beast's Rose, dropped by Rose Bush (Lv.200); not every rose has one",
+            "map": "Beast Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3485492,
+        "tmExp": 5306493,
+        "galder": 0,
+        "items": [
+          "1x Rose of True Love",
+          "1x Rosaline's Story Book (B)"
+        ]
+      },
+      "notes": "To access Beast Garden, you must drill for Rosaline's Jewel Box in any Rose Garden field. Double-click the item to obtain Rosaline's Story Book (A), a port that will take you to Beast Garden. Rose of Love is obtained by opening Beast's Rose which is an item dropped by Rose Bush (Lv.200). You may need multiple Rosaline's Story Book (A)'s, as there are a limited number of Rose Bush in the area and the Beast's Rose does not always net a Rose of Love.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Princess_Rosetta_-_Unbroken_Magic.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-key-04",
+      "order": 313,
+      "title": "Prince Stephano - A Happy Ending",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Rose Garden - Key Quests (Lv.125+)",
+      "npc": "Prince Stephano",
+      "npcIds": [
+        "prince-stephano"
+      ],
+      "location": "Beast Garden",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-key-03"
+        }
+      ],
+      "prereqText": "Level 125+, give Rose of True Love to Beast Vincento in Beast Garden",
+      "steps": [
+        "Talk to Prince Stephano at Beast Garden.",
+        "Talk to him again after initiating the quest."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3485492,
+        "tmExp": 5306493,
+        "galder": 0,
+        "items": [
+          "1x D's Letter",
+          "2x 10",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Prince_Stephano_-_A_Happy_Ending.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

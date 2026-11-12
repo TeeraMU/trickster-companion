@@ -68,6 +68,10 @@
     "name": "Bunny Maid"
   },
   {
+    "id": "captain-stan",
+    "name": "Captain Stan"
+  },
+  {
     "id": "card-girl",
     "name": "Card Girl"
   },
@@ -78,6 +82,10 @@
   {
     "id": "centakonus-messenger",
     "name": "Centakonus' Messenger"
+  },
+  {
+    "id": "chief-koha",
+    "name": "Chief Koha"
   },
   {
     "id": "clerk-z-smith",
@@ -168,6 +176,10 @@
     "name": "Fairy Feria"
   },
   {
+    "id": "fairy-godmother",
+    "name": "Fairy Godmother"
+  },
+  {
     "id": "fairy-nono",
     "name": "Fairy Nono"
   },
@@ -190,6 +202,14 @@
   {
     "id": "golden-ants-messenger",
     "name": "Golden Ant's Messenger"
+  },
+  {
+    "id": "grandma-tango",
+    "name": "Grandma Tango"
+  },
+  {
+    "id": "grandpa-tango",
+    "name": "Grandpa Tango"
   },
   {
     "id": "guardians-messenger",
@@ -268,6 +288,10 @@
     "name": "Lifeguard Deen"
   },
   {
+    "id": "little-chagan",
+    "name": "Little Chagan"
+  },
+  {
     "id": "louis-bitton",
     "name": "Louis Bitton"
   },
@@ -280,8 +304,20 @@
     "name": "Love Hunter Robin"
   },
   {
+    "id": "madam-sarah",
+    "name": "Madam Sarah"
+  },
+  {
     "id": "magician-louie",
     "name": "Magician Louie"
+  },
+  {
+    "id": "mermaid-marin",
+    "name": "Mermaid Marin"
+  },
+  {
+    "id": "mighty-captain-stan",
+    "name": "Mighty Captain Stan"
   },
   {
     "id": "mirabo-watty",
@@ -324,6 +360,10 @@
     "name": "Old Artist"
   },
   {
+    "id": "pastor-tau",
+    "name": "Pastor Tau"
+  },
+  {
     "id": "pharaoh-boy",
     "name": "Pharaoh Boy"
   },
@@ -334,6 +374,14 @@
   {
     "id": "portina",
     "name": "Portina"
+  },
+  {
+    "id": "prince-stephano",
+    "name": "Prince Stephano"
+  },
+  {
+    "id": "princess-rosetta",
+    "name": "Princess Rosetta"
   },
   {
     "id": "rosaline-gracia",
@@ -354,6 +402,10 @@
   {
     "id": "sandman",
     "name": "Sandman"
+  },
+  {
+    "id": "santa-claus-2",
+    "name": "Santa Claus (2)"
   },
   {
     "id": "scared-poppuri",
@@ -434,5 +486,9 @@
   {
     "id": "wise-hen",
     "name": "Wise Hen"
+  },
+  {
+    "id": "witch-la-befana",
+    "name": "Witch La Befana"
   }
 ]

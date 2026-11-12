@@ -1,0 +1,414 @@
+{
+  "region": "Techichi Volcano",
+  "quests": [
+    {
+      "id": "tv-key-01",
+      "order": 325,
+      "title": "Grandpa Tango - Techichi Recommendation Sticker",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Techichi Volcano - Key Quests (Lv.210+)",
+      "npc": "Grandpa Tango",
+      "npcIds": [
+        "grandpa-tango"
+      ],
+      "location": "Techichi Volcano - Tango Cabin",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-key-05"
+        }
+      ],
+      "prereqText": "Level 210+ and finished Snow Hill Key Quests",
+      "steps": [
+        "Talk to Grandpa Tango at Techichi Volcano - Tango Cabin.",
+        "Get 13x Techichi Sticker: Techichi Volcano quests (16 stickers in total).",
+        "Bring everything back to Grandpa Tango."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Techichi Sticker",
+          "qty": 13,
+          "source": {
+            "kind": "quest",
+            "from": "Techichi Volcano quests (16 stickers in total)",
+            "map": "Techichi Volcano - Tango Cabin"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7817197,
+        "tmExp": 5007082,
+        "galder": 0,
+        "items": [
+          "1x Indiana's Portfolio"
+        ]
+      },
+      "notes": "Techichi Stickers can be obtained from completing all the available quests at Techichi Volcano. There are 16 stickers obtainable.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandpa_Tango_-_Techichi_Recommendation_Sticker.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "tv-key-02",
+      "order": 326,
+      "title": "Grandma Tango - Tango Cabin Soup",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Techichi Volcano - Key Quests (Lv.210+)",
+      "npc": "Grandma Tango",
+      "npcIds": [
+        "grandma-tango"
+      ],
+      "location": "Techichi Volcano - Tango Cabin",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 210+",
+      "steps": [
+        "Talk to Grandma Tango at Techichi Volcano - Tango Cabin.",
+        "Get 5x Blister Fruit: dropped by Dekumanus (Lv.312) in Techichi Field 4.",
+        "Bring everything back to Grandma Tango."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blister Fruit",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Dekumanus (Lv.312)",
+            "map": "Techichi Field 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7817197,
+        "tmExp": 5007082,
+        "galder": 0,
+        "items": [
+          "1x Thermos"
+        ]
+      },
+      "notes": "Blister Fruit is dropped by Dekumanus (Lv. 312).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandma_Tango_-_Tango_Cabin_Soup.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "tv-key-03",
+      "order": 327,
+      "title": "Indiana John - Indiana John's Theory",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Techichi Volcano - Key Quests (Lv.210+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Techichi Field 3",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "tv-key-01"
+        },
+        {
+          "quest": "tv-key-02"
+        }
+      ],
+      "prereqText": "Level 210+",
+      "steps": [
+        "Talk to Indiana John at Techichi Field 3.",
+        "Get 1x Indiana's Portfolio: reward from Grandpa Tango - Techichi Recommendation Sticker.",
+        "Get 1x Thermos: reward from Grandma Tango - Tango Cabin Soup.",
+        "Bring everything back to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Indiana's Portfolio",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Grandpa Tango - Techichi Recommendation Sticker",
+            "map": "Techichi Volcano - Tango Cabin"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Thermos",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Grandma Tango - Tango Cabin Soup",
+            "map": "Techichi Volcano - Tango Cabin"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7817197,
+        "tmExp": 5007082,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Indiana's Portfolio is obtained by completing Grandpa Tango - Techichi Recommendation Sticker and Thermos is obtained by completing Grandma Tango - Tango's Soup.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Indiana_John_-_Indiana_John's_Theory.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "tv-key-04",
+      "order": 328,
+      "title": "Indiana John - Checking Out",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Techichi Volcano - Key Quests (Lv.210+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Techichi Field 3",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 210+",
+      "steps": [
+        "Talk to Indiana John at Techichi Field 3.",
+        "Get 3x Tough Rope: dropped by Ponchichi (Lv.286) in Techichi Field 2 / 3.",
+        "Bring everything back to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tough Rope",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Ponchichi (Lv.286)",
+            "map": "Techichi Field 2 / 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7817197,
+        "tmExp": 5007082,
+        "galder": 0,
+        "items": [
+          "1x Empty Thermos",
+          "1x Lodging Fee Envelope"
+        ]
+      },
+      "notes": "Tough Rope is dropped by Ponchichi (Lv.286).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Indiana_John_-_Checking_Out.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "tv-key-05",
+      "order": 329,
+      "title": "Grandpa Tango - Grandpa Tango's Appreciation",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Techichi Volcano - Key Quests (Lv.210+)",
+      "npc": "Grandpa Tango",
+      "npcIds": [
+        "grandpa-tango"
+      ],
+      "location": "Techichi Volcano - Tango Cabin",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "tv-key-04"
+        },
+        {
+          "quest": "sh-key-06"
+        }
+      ],
+      "prereqText": "Level 210+",
+      "steps": [
+        "Talk to Grandpa Tango at Techichi Volcano - Tango Cabin.",
+        "Get 1x Empty Thermos: reward from Indiana John - Checking Out.",
+        "Get 1x Lodging Fee Envelope: reward from Indiana John - Checking Out.",
+        "Get 5x Dry Wood: Drilled in Techichi Fields.",
+        "Get 1x Adventurer's Book: reward from Fairy Godmother - Finding Peace Again.",
+        "Bring everything back to Grandpa Tango."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Empty Thermos",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Checking Out",
+            "map": "Techichi Field 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lodging Fee Envelope",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Checking Out",
+            "map": "Techichi Field 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dry Wood",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi Fields (drill depth not on the wiki)",
+            "map": "Techichi Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Godmother - Finding Peace Again",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7817197,
+        "tmExp": 5007082,
+        "galder": 0,
+        "items": [
+          "1x Adventurer's Book",
+          "1x Weapon Ticket I"
+        ]
+      },
+      "notes": "Empty Thermos and Lodging Fee Envelope is obtained by completing Indiana John - Checking Out. Dry Wood is drilled in Techichi Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandpa_Tango_-_Grandpa_Tango's_Appreciation.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "tv-key-06",
+      "order": 330,
+      "title": "Indiana John - Supporting Evidence",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Techichi Volcano - Key Quests (Lv.210+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Techichi Field 3",
+      "minLevel": 210,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "tv-key-03"
+        }
+      ],
+      "prereqText": "Level 210+",
+      "steps": [
+        "Talk to Indiana John at Techichi Field 3.",
+        "Get 1x Orconio Plaster Statue: dropped by Orconio (Lv.290) in Techichi Field 3.",
+        "Get 1x Orpeo Plaster Statue: dropped by Orpeo (Lv.299) in Techichi Field 3.",
+        "Bring everything back to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Orconio Plaster Statue",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Orconio (Lv.290)",
+            "map": "Techichi Field 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Orpeo Plaster Statue",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Orpeo (Lv.299)",
+            "map": "Techichi Field 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7817197,
+        "tmExp": 5007082,
+        "galder": 0,
+        "items": [
+          "1x 10",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "notes": "Orconio Plaster Statue is dropped by Orconio (Lv.290) and Orpeo Plaster Statue is dropped by Orpeo (Lv.299).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Indiana_John_-_Supporting_Evidence.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}
