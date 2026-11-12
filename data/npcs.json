@@ -188,6 +188,10 @@
     "name": "Explorer Reina"
   },
   {
+    "id": "fairy-asrai",
+    "name": "Fairy Asrai"
+  },
+  {
     "id": "fairy-feria",
     "name": "Fairy Feria"
   },
@@ -230,6 +234,10 @@
   {
     "id": "grandpa-tango",
     "name": "Grandpa Tango"
+  },
+  {
+    "id": "guard-gilbert",
+    "name": "Guard Gilbert"
   },
   {
     "id": "guardians-messenger",
@@ -410,6 +418,10 @@
   {
     "id": "portina",
     "name": "Portina"
+  },
+  {
+    "id": "prince-sebastian",
+    "name": "Prince Sebastian"
   },
   {
     "id": "prince-stephano",

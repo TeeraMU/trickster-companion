@@ -47,9 +47,21 @@
     "n": 1,
     "src": "wiki"
   },
+  "card-girl@mermaid-field-4": {
+    "x": 63.7,
+    "y": 14.1,
+    "n": 1,
+    "src": "wiki"
+  },
   "card-girl@wharf-field-4": {
     "x": 7.4,
     "y": 78.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "clerk-z-smith@mermaid-field-4": {
+    "x": 94.7,
+    "y": 19.7,
     "n": 1,
     "src": "wiki"
   },
@@ -89,6 +101,12 @@
     "n": 1,
     "src": "wiki"
   },
+  "driller-king-marky@mermaid-field-4": {
+    "x": 39.1,
+    "y": 84.5,
+    "n": 1,
+    "src": "wiki"
+  },
   "driller-king-marky@oops-wharf": {
     "x": 9.1,
     "y": 63.6,
@@ -125,6 +143,18 @@
     "n": 1,
     "src": "wiki"
   },
+  "entertainer-elicia@mermaid-field-4": {
+    "x": 75,
+    "y": 21.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "explorer-reina@mermaid-field-1": {
+    "x": 14.4,
+    "y": 7,
+    "n": 1,
+    "src": "wiki"
+  },
   "explorer-reina@mermaid-path-1": {
     "x": 32.3,
     "y": 10.6,
@@ -140,6 +170,12 @@
   "explorer-reina@wharf-field-1": {
     "x": 33.5,
     "y": 81,
+    "n": 1,
+    "src": "wiki"
+  },
+  "fairy-asrai@mermaid-field-3": {
+    "x": 84.9,
+    "y": 7,
     "n": 1,
     "src": "wiki"
   },
@@ -167,9 +203,21 @@
     "n": 1,
     "src": "wiki"
   },
+  "frog-shaman@mermaid-field-2": {
+    "x": 79.9,
+    "y": 28.2,
+    "n": 1,
+    "src": "wiki"
+  },
   "frog-shaman@wharf-field-2": {
     "x": 91.9,
     "y": 73.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "genius-cochma@gate-of-mermaid-palace": {
+    "x": 49.6,
+    "y": 44.6,
     "n": 1,
     "src": "wiki"
   },
@@ -182,6 +230,12 @@
   "grandpa-tango@gate-of-oops-wharf": {
     "x": 81.3,
     "y": 54.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "guard-gilbert@mermaid-dungeon-1": {
+    "x": 18,
+    "y": 29.1,
     "n": 1,
     "src": "wiki"
   },
@@ -245,9 +299,21 @@
     "n": 1,
     "src": "wiki"
   },
+  "la-vida@mermaid-field-1": {
+    "x": 18,
+    "y": 8.5,
+    "n": 1,
+    "src": "wiki"
+  },
   "lachesis@mirage-dungeon-2": {
     "x": 96,
     "y": 8.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "lethos@gate-of-mermaid-dungeon": {
+    "x": 60.2,
+    "y": 60.9,
     "n": 1,
     "src": "wiki"
   },
@@ -263,6 +329,12 @@
     "n": 1,
     "src": "wiki"
   },
+  "love-hunter-robin@gate-of-mermaid-dungeon": {
+    "x": 28.5,
+    "y": 47.8,
+    "n": 1,
+    "src": "wiki"
+  },
   "love-hunter-robin@mirage-field-1": {
     "x": 42.6,
     "y": 28.2,
@@ -272,6 +344,12 @@
   "love-hunter-robin@path-to-caballa": {
     "x": 43,
     "y": 88,
+    "n": 1,
+    "src": "wiki"
+  },
+  "magician-louie@mermaid-dungeon-2": {
+    "x": 15.1,
+    "y": 20.9,
     "n": 1,
     "src": "wiki"
   },
@@ -305,6 +383,12 @@
     "n": 1,
     "src": "wiki"
   },
+  "monkey-t@mermaid-field-2": {
+    "x": 60.2,
+    "y": 84.5,
+    "n": 1,
+    "src": "wiki"
+  },
   "monkey-t@wharf-field-1": {
     "x": 22.2,
     "y": 26.1,
@@ -326,6 +410,12 @@
   "officer-robert@paradise": {
     "x": 91.9,
     "y": 84.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "officer-tera@gate-of-mermaid-dungeon": {
+    "x": 39.1,
+    "y": 35.7,
     "n": 1,
     "src": "wiki"
   },
@@ -356,6 +446,12 @@
   "portina@mirage-field-2": {
     "x": 53.2,
     "y": 72.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "prince-sebastian@mermaid-field-2": {
+    "x": 18,
+    "y": 7,
     "n": 1,
     "src": "wiki"
   },
@@ -392,6 +488,12 @@
   "scared-poppuri@southeast-forest": {
     "x": 49.5,
     "y": 5.6,
+    "n": 1,
+    "src": "wiki"
+  },
+  "sea-spirit-rumo@mermaid-field-4": {
+    "x": 77.8,
+    "y": 21.1,
     "n": 1,
     "src": "wiki"
   },
