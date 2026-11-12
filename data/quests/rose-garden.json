@@ -3500,7 +3500,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "rg-52"
+        }
+      ],
       "prereqText": "Level 130+",
       "steps": [
         "Talk to Lethos at Gate of Vamp Castle.",
@@ -3551,7 +3555,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "rg-53"
+        }
+      ],
       "prereqText": "Level 130+",
       "steps": [
         "Talk to Lethos at Gate of Vamp Castle.",
@@ -3605,7 +3613,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "rg-54"
+        }
+      ],
       "prereqText": "Level 130+",
       "steps": [
         "Talk to Lethos at Gate of Vamp Castle.",

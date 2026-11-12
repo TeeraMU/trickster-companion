@@ -935,6 +935,7 @@
     }
 
     function renderQuestList() {
+      STATUS_CACHE = null;
       const filtered = getFilteredQuests();
       document.getElementById("badgeQuestCount").textContent = filtered.length;
 
@@ -1032,8 +1033,28 @@
         reportUrl: q => TQReport.reportUrl("data", { quest: q.id + " · " + q.title }),
         have: appState.inventory,
         itemUse: name => (ITEM_USE.get(name) || 0),
-        friendsHave: friendsHaveHtml
+        friendsHave: friendsHaveHtml,
+        lockedBy: questBlockers
       });
+    }
+
+    // What stands between a locked quest and "available": prerequisites not done yet (or, for
+    // "accepted" ones, still locked themselves). Statuses are worked out once per render pass.
+    let STATUS_CACHE = null;
+    function questStatus(id) {
+      if (!STATUS_CACHE) {
+        const m = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
+        STATUS_CACHE = id2 => (m.get ? m.get(id2) : m[id2]);
+      }
+      return STATUS_CACHE(id);
+    }
+    function questBlockers(q) {
+      if (questStatus(q.id) !== "locked") return [];
+      const byId = id => QUESTS.find(x => x.id === id);
+      const short = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
+      return (PREREQS[q.id] || [])
+        .filter(p => byId(p.quest) && (p.active ? questStatus(p.quest) === "locked" : !appState.completedQuests[p.quest]))
+        .map(p => short(byId(p.quest).title) + (p.active ? " (accept it)" : ""));
     }
 
     // a friend's shared Bag changed: redraw the item rows that show it (several updates -> one redraw)
@@ -1475,6 +1496,7 @@
     }
 
     function renderAll() {
+      STATUS_CACHE = null; // progress may have changed
       renderBag();
       renderCategoryTabs();
       renderEpisodes();

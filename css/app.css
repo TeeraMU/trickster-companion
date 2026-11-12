@@ -3401,3 +3401,16 @@ a.btn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* 🔒 locked quest on the Quests page: what to do first */
+.qc-locked {
+  background: color-mix(in srgb, var(--accent-orange) 16%, var(--bg-card));
+  color: var(--ink-orange);
+  border: 1.5px solid color-mix(in srgb, var(--accent-orange) 45%, transparent);
+}
+
+.qc-blocked {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--ink-orange);
+}

@@ -2914,7 +2914,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-42"
+        }
+      ],
       "prereqText": "Level 160+",
       "steps": [
         "Talk to Genius Cochma at Gate of Snow Hill.",
@@ -2971,7 +2975,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-43"
+        }
+      ],
       "prereqText": "Level 160+",
       "steps": [
         "Talk to Genius Cochma at Gate of Snow Hill.",
@@ -3031,7 +3039,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-44"
+        }
+      ],
       "prereqText": "Level 160+",
       "steps": [
         "Talk to Genius Cochma at Gate of Snow Hill.",
@@ -3775,7 +3787,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-57"
+        }
+      ],
       "prereqText": "Level 170+",
       "steps": [
         "Talk to Lethos at Gate of Blue Ice Dungeon.",
@@ -3828,7 +3844,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-58"
+        }
+      ],
       "prereqText": "Level 170+",
       "steps": [
         "Talk to Lethos at Gate of Blue Ice Dungeon.",
@@ -3882,7 +3902,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-59"
+        }
+      ],
       "prereqText": "Level 170+",
       "steps": [
         "Talk to Lethos at Gate of Blue Ice Dungeon.",
@@ -6079,7 +6103,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-98"
+        }
+      ],
       "prereqText": "Level 160+, after Cupid of Love 1",
       "steps": [
         "Talk to Xote at Snow Hill Town - Laplanoel.",
@@ -6132,7 +6160,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-99"
+        }
+      ],
       "prereqText": "Level 160+, after Cupid of Love 2",
       "steps": [
         "Talk to Xote at Snow Hill Town - Laplanoel.",
@@ -6186,7 +6218,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "sh-100"
+        }
+      ],
       "prereqText": "Level 160+, after Cupid of Love 3",
       "steps": [
         "Talk to Xote at Snow Hill Town - Laplanoel.",
