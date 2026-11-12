@@ -416,7 +416,7 @@
     };
     let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
     let MAP_INDEX = null;      // data/maps.json, indexed by TQRoute.indexMaps
-    let DEFAULT_PINS = {};     // data/npc-pins.json { npcId: { map, x, y } }
+    let DEFAULT_PINS = {};     // data/npc-pins.json { "npcId@mapId": { x, y, n, src } }
     let NPC_NAMES = {};        // npcId -> name
     // route panel UI (not saved): selected stop, region shown, pin mode
     const routeUi = { stop: 0, region: null, regionFollows: true, pinMode: false, pinNpc: null };
@@ -871,12 +871,17 @@
     // ============================================================================
     const PIN_KEY = "tc_npc_pins";
 
+    // Pins this player placed, as { "npc@map": { x, y } } (old { npc: { map, x, y } } is converted).
     function savedPins() {
-      try { return JSON.parse(localStorage.getItem(PIN_KEY) || "{}"); } catch (e) { return {}; }
+      try { return TQRoute.normalizePins(JSON.parse(localStorage.getItem(PIN_KEY) || "{}")); } catch (e) { return {}; }
+    }
+
+    function storePins(pins) {
+      try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
     }
 
     function allPins() {
-      return Object.assign({}, DEFAULT_PINS, savedPins());
+      return Object.assign({}, TQRoute.normalizePins(DEFAULT_PINS), savedPins());
     }
 
     function renderRoute(m) {
@@ -889,6 +894,7 @@
         idx: MAP_INDEX,
         ui: routeUi,
         pins: allPins(),
+        mine: savedPins(),
         pinCount: Object.keys(savedPins()).length,
         npcName: id => NPC_NAMES[id] || id,
         hint: "Where to go, in order, for what's left of " + scopeName + ". Tap a stop to see its map. Follows the Whole EP / This chapter switch under Items."
@@ -922,16 +928,16 @@
       const x = Math.round((event.clientX - box.left) / box.width * 1000) / 10;
       const y = Math.round((event.clientY - box.top) / box.height * 1000) / 10;
       const pins = savedPins();
-      pins[npcId] = { map: mapId, x: Math.min(100, Math.max(0, x)), y: Math.min(100, Math.max(0, y)) };
-      try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
+      pins[TQRoute.pinKey(npcId, mapId)] = { x: Math.min(100, Math.max(0, x)), y: Math.min(100, Math.max(0, y)) };
+      storePins(pins);
       routeUi.pinNpc = npcId;
       renderEpisodes();
     }
 
-    function removeNpcPin(npcId) {
+    function removeNpcPin(npcId, mapId) {
       const pins = savedPins();
-      delete pins[npcId];
-      try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
+      delete pins[TQRoute.pinKey(npcId, mapId)];
+      storePins(pins);
       renderEpisodes();
     }
 

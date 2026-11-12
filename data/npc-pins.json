@@ -1,1 +1,290 @@
-{}
+{
+  "alchemist-nate@paradise": {
+    "x": 85.5,
+    "y": 65.8,
+    "n": 1,
+    "src": "wiki"
+  },
+  "andrew@paradise": {
+    "x": 73.6,
+    "y": 70.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "bard-la-fimmel@gate-of-mirage": {
+    "x": 91.9,
+    "y": 51,
+    "n": 1,
+    "src": "wiki"
+  },
+  "blacksmith-marx@gate-of-mermaid-dungeon": {
+    "x": 56.7,
+    "y": 36.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "blacksmith-marx@paradise": {
+    "x": 90.5,
+    "y": 52.6,
+    "n": 1,
+    "src": "wiki"
+  },
+  "bunny-maid@coral-town": {
+    "x": 28.5,
+    "y": 56,
+    "n": 1,
+    "src": "wiki"
+  },
+  "clever-owl@paradise": {
+    "x": 65.8,
+    "y": 65.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "clotho@mirage-dungeon-2": {
+    "x": 96,
+    "y": 7,
+    "n": 1,
+    "src": "wiki"
+  },
+  "don-giuvanni@gate-of-desert-beach": {
+    "x": 18,
+    "y": 19.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "don-giuvanni@oops-wharf": {
+    "x": 41.8,
+    "y": 84.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "don-giuvanni@paradise": {
+    "x": 63.7,
+    "y": 65.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "dorothy@paradise": {
+    "x": 56.7,
+    "y": 72,
+    "n": 1,
+    "src": "wiki"
+  },
+  "driller-marky@gate-of-desert-beach": {
+    "x": 19.4,
+    "y": 22.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "enkicladus-1@mirage-field-2": {
+    "x": 71.5,
+    "y": 83.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "enkicladus-1@mirage-field-3": {
+    "x": 95.4,
+    "y": 42.3,
+    "n": 1,
+    "src": "wiki"
+  },
+  "enkicladus-2@mirage-dungeon-1": {
+    "x": 70.8,
+    "y": 25.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "explorer-reina@mermaid-path-1": {
+    "x": 32.3,
+    "y": 10.6,
+    "n": 1,
+    "src": "wiki"
+  },
+  "fairy-nono@mermaid-path-2": {
+    "x": 19.8,
+    "y": 35.2,
+    "n": 1,
+    "src": "wiki"
+  },
+  "fortune-teller@mirage-field-1": {
+    "x": 70.8,
+    "y": 33.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "guide-sabrina@azteca": {
+    "x": 85.6,
+    "y": 38.7,
+    "n": 1,
+    "src": "wiki"
+  },
+  "heidi@coral-town": {
+    "x": 35.6,
+    "y": 80,
+    "n": 1,
+    "src": "wiki"
+  },
+  "indiana-john@relics-dungeon-1": {
+    "x": 56.7,
+    "y": 45.8,
+    "n": 1,
+    "src": "wiki"
+  },
+  "indiana-john@relics-field-2": {
+    "x": 42.6,
+    "y": 14.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "kahlihara@gate-of-mermaid-dungeon": {
+    "x": 82.7,
+    "y": 63.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "knight-scar@mirage-field-2": {
+    "x": 42.6,
+    "y": 82.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "kristoffer-j@paradise": {
+    "x": 51.8,
+    "y": 81.3,
+    "n": 1,
+    "src": "wiki"
+  },
+  "lachesis@mirage-dungeon-2": {
+    "x": 96,
+    "y": 8.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "louis-bitton@azteca": {
+    "x": 59.6,
+    "y": 59.9,
+    "n": 1,
+    "src": "wiki"
+  },
+  "love-hunter-robin@mirage-field-1": {
+    "x": 42.6,
+    "y": 28.2,
+    "n": 1,
+    "src": "wiki"
+  },
+  "love-hunter-robin@path-to-caballa": {
+    "x": 43,
+    "y": 88,
+    "n": 1,
+    "src": "wiki"
+  },
+  "monkey-t@gate-of-caballa": {
+    "x": 18,
+    "y": 37,
+    "n": 1,
+    "src": "wiki"
+  },
+  "nefertiti-2@mirage-dungeon-1": {
+    "x": 91.9,
+    "y": 7,
+    "n": 1,
+    "src": "wiki"
+  },
+  "nefertiti-2@mirage-field-3": {
+    "x": 74.3,
+    "y": 52.8,
+    "n": 1,
+    "src": "wiki"
+  },
+  "officer-robert@paradise": {
+    "x": 91.9,
+    "y": 84.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "officer-tera@paradise": {
+    "x": 91.9,
+    "y": 42.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "old-artist@desert-field-2": {
+    "x": 21.5,
+    "y": 61.3,
+    "n": 1,
+    "src": "wiki"
+  },
+  "portina@mirage-field-2": {
+    "x": 53.2,
+    "y": 72.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "rosaline-gracia@megalo-square": {
+    "x": 51.8,
+    "y": 68.2,
+    "n": 1,
+    "src": "wiki"
+  },
+  "rosaline-gracia@oops-wharf": {
+    "x": 67.7,
+    "y": 39.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "rosemary@paradise": {
+    "x": 89.8,
+    "y": 37.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "sea-spirit-rumo@mirage-field-3": {
+    "x": 47.5,
+    "y": 62.7,
+    "n": 1,
+    "src": "wiki"
+  },
+  "shaman-girl-jia@wharf-field-4": {
+    "x": 42.6,
+    "y": 70.4,
+    "n": 1,
+    "src": "wiki"
+  },
+  "skipper-min@gate-of-oops-wharf": {
+    "x": 42.6,
+    "y": 67.6,
+    "n": 1,
+    "src": "wiki"
+  },
+  "steve-ryu@paradise": {
+    "x": 68.7,
+    "y": 70.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "tango@gate-of-oops-wharf": {
+    "x": 81.3,
+    "y": 54.1,
+    "n": 1,
+    "src": "wiki"
+  },
+  "vagabond-eloy@oops-wharf": {
+    "x": 22,
+    "y": 18.2,
+    "n": 1,
+    "src": "wiki"
+  },
+  "weird-box@relics-dungeon-1": {
+    "x": 53.2,
+    "y": 43,
+    "n": 1,
+    "src": "wiki"
+  },
+  "winnie@coral-town": {
+    "x": 25,
+    "y": 28,
+    "n": 1,
+    "src": "wiki"
+  }
+}

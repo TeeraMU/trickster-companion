@@ -21,7 +21,7 @@ Quest tracker & guides for **Trickster Online** (fan-made): how many items each 
 Open **⚙️ → 🐞 Report a problem** (or the link at the bottom of a quest's details). It opens a short Google Form, **no sign-in needed**, with the quest already filled in. Mention what you saw in game. If you have a GitHub account you can also open an issue (link at the bottom of the page).
 
 ### NPC pins
-On the Route, tap **📍 Pin NPCs**, choose an NPC and tap where they stand on the map. Then share them:
+Many NPCs are already circled (📍 from the wiki). If one is wrong or missing: on the Route, tap **📍 Pin NPCs**, choose an NPC and tap where they stand on the map. Then share them:
 - **📤 Send**: opens the same Google Form with your pins filled in, just press *Submit* (no sign-in), or
 - **📋 Copy**: paste the text in a message to the project owner (LINE / Discord).
 
