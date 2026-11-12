@@ -135,7 +135,7 @@
 
   <main class="main-container">
     <!-- Region Quick Filter Cards -->
-    <div class="region-grid" id="regionCardsContainer"></div>
+    <div class="area-chips" id="regionCardsContainer" role="group" aria-label="Area"></div>
 
     <!-- Shared Filter Bar -->
     <div class="filters-panel" id="filtersPanel">
@@ -663,36 +663,38 @@
       document.getElementById("statTmExp").textContent = earnedTm.toLocaleString();
       document.getElementById("statTmExpRem").textContent = `${remTm.toLocaleString()} remaining`;
 
-      // Region Cards
-      const regions = [
-        { key: "All", title: "All Regions", sub: "Complete Quest Guide" },
-        { key: "Episode 0", title: "Episode 0", sub: "Ch.1-3 Story & Tutorials" },
-        { key: "Coral Beach", title: "Coral Beach", sub: "Lv.1-15 Side & Daily" },
-        { key: "Desert Beach", title: "Desert Beach", sub: "Lv.15-35 Stickers & Pyramid" },
-        { key: "Megalopolis", title: "Megalopolis", sub: "Lv.25-50 Poppuri & Forest" },
-        { key: "Episode 1", title: "Episode 1", sub: "Ch.1-3 Main Storyline" },
-        { key: "Caballa Relics", title: "Caballa Relics", sub: "Lv.45-65 Stickers & 2nd Job" }
-      ];
-
-      const regHtml = regions.map(r => {
+      // Area chips: one scrolling row built from the data, episodes first (EP0, EP1 …), then the
+      // other areas in the order you reach them. New episodes / towns appear by themselves.
+      const areas = new Map();
+      QUESTS.forEach(q => {
+        if (!areas.has(q.region)) areas.set(q.region, { key: q.region, first: q.order });
+        areas.get(q.region).first = Math.min(areas.get(q.region).first, q.order);
+      });
+      const isEp = k => /^Episode \d+$/.test(k);
+      const list = [...areas.values()].sort((a, b) =>
+        (isEp(b.key) - isEp(a.key)) || (isEp(a.key) ? num(a.key) - num(b.key) : a.first - b.first));
+      const chip = r => {
         const pool = r.key === "All" ? activePool : activePool.filter(q => q.region === r.key);
+        if (!pool.length) return "";
         const done = pool.filter(q => !!appState.completedQuests[q.id]).length;
-        const rPct = pool.length ? Math.round((done / pool.length) * 100) : 0;
-        const isActive = appState.selectedRegion === r.key;
-        return `
-          <div class="region-card ${isActive ? 'active' : ''}" onclick="setRegionFilter('${r.key}')">
-            <div class="region-card-top">
-              <span>${r.title}</span>
-              <span style="color:var(--accent-cyan);font-size:0.78rem;">${done}/${pool.length}</span>
-            </div>
-            <div class="region-card-sub">${r.sub}</div>
-            <div class="progress-track" style="height:6px;">
-              <div class="progress-fill" style="width:${rPct}%;"></div>
-            </div>
-          </div>
-        `;
-      }).join("");
-      document.getElementById("regionCardsContainer").innerHTML = regHtml;
+        const pct = Math.round(done / pool.length * 100);
+        const label = r.key === "All" ? "All areas" : isEp(r.key) ? "EP" + num(r.key) : r.key;
+        const active = (appState.selectedRegion || "All") === r.key;
+        return `<button type="button" class="area-chip ${active ? "active" : ""} ${pct === 100 ? "is-done" : ""}" aria-pressed="${active}"
+            onclick="setRegionFilter('${r.key}')" title="${r.key}: ${done} of ${pool.length} done">
+            <span class="area-name">${label}</span><span class="area-count">${done}/${pool.length}</span>
+            <span class="area-bar"><span style="width:${pct}%"></span></span>
+          </button>`;
+      };
+      const eps = list.filter(r => isEp(r.key)), places = list.filter(r => !isEp(r.key));
+      document.getElementById("regionCardsContainer").innerHTML =
+        chip({ key: "All" }) +
+        (eps.length ? `<span class="area-group" aria-hidden="true">📖</span>` + eps.map(chip).join("") : "") +
+        (places.length ? `<span class="area-group" aria-hidden="true">📍</span>` + places.map(chip).join("") : "");
+    }
+
+    function num(s) {
+      return Number(String(s).replace(/\D/g, "")) || 0;
     }
 
     function renderQuestList() {

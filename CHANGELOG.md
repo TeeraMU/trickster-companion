@@ -5,6 +5,8 @@
 - New **🎒 Bag** page: type how many of each item you have (− / + or type a number). **🔒 Keep** lists every item still needed by a quest you haven't finished (don't sell these), **🎯 Still missing** what you still have to get, **💰 Extra** what you have more than you need (and items no quest needs any more: OK to sell).
 - Items in your Bag are subtracted everywhere: *Items to collect* shows "×1 have 1 of 2" or "✅ have all", the Route skips farm stops you already have enough for, and quest cards show 🎒 have N and 🔒 +N quests when other quests need the same item.
 - The Bag is saved with your progress (Export / Import include it).
+- Quests page: the area cards are now one row of chips (📖 EP0, EP1, EP2 … then 📍 towns), built from the data so new episodes and towns appear by themselves; scrolls sideways when it gets long.
+
 - **NPC positions from the wiki**: 48 NPCs are already circled on their maps (taken from the circle the wiki draws on each Episode 0–2 quest), marked "📍 from the wiki". Your own pins still win.
 - Pins are now kept per NPC **and** map, so an NPC who stands in several maps (Monkey T, Nefertiti) can be pinned in each. Pins saved the old way are converted automatically.
 - `merge-pins.js`: a player pin replaces a wiki pin (the wiki is from 2013); players who disagree are still reported as conflicts.
