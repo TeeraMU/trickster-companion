@@ -140,6 +140,10 @@
     "name": "Dreams"
   },
   {
+    "id": "driller-king-marky",
+    "name": "Driller King Marky"
+  },
+  {
     "id": "driller-marky",
     "name": "Driller Marky"
   },
@@ -194,6 +198,10 @@
   {
     "id": "fortune-teller",
     "name": "Fortune Teller"
+  },
+  {
+    "id": "frog-shaman",
+    "name": "Frog Shaman"
   },
   {
     "id": "genius-cochma",
@@ -280,6 +288,10 @@
     "name": "Lachesis"
   },
   {
+    "id": "lethos",
+    "name": "Lethos"
+  },
+  {
     "id": "lifeguard-bean",
     "name": "Lifeguard Bean"
   },
@@ -310,6 +322,14 @@
   {
     "id": "magician-louie",
     "name": "Magician Louie"
+  },
+  {
+    "id": "marinel",
+    "name": "Marinel"
+  },
+  {
+    "id": "merchant-miguel",
+    "name": "Merchant Miguel"
   },
   {
     "id": "mermaid-marin",
@@ -430,6 +450,10 @@
   {
     "id": "skipper-min",
     "name": "Skipper Min"
+  },
+  {
+    "id": "sophia",
+    "name": "Sophia"
   },
   {
     "id": "star-gazer-stella",

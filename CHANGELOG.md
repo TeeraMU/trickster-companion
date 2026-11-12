@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- **Oops Wharf town quests** (29 new): the 12 quests that give an **Oops Sticker** (Skipper Min - Urgent Issue needs 7), Frog Shaman, Genius Cochma, Lethos, Officer Tera, Monkey T, Explorer Reina's treasure hunts, Marinel's daily and the way to Mermaid Palace. Where every item comes from (monster, level and maps, or drill area) is taken from each item's wiki page. 22 more NPCs circled on their maps from the wiki. Not in yet: the Oops Wharf boss Requiem chain, Fading Tower, Phantom Dungeon and the Lv.240 Mind's Eye quests.
+- Category tabs combine: tap 🔑 Key, then 🏷️ Sticker, to see only key quests and the sticker quests they need. Tap a lit tab again to drop it; ✨ All shows everything again.
+
 ## 0.4.0 (2026-11-12): Episode 2, 3rd job, key quests to Techichi, Bag
 
 ### New quests

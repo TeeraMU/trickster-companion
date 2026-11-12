@@ -269,6 +269,1662 @@
         "checked": "2026-11-12",
         "verifiedInGame": false
       }
+    },
+    {
+      "id": "ow-01",
+      "order": 304,
+      "title": "Keeper Julio - Captain Stan at Oops Wharf",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Keeper Julio",
+      "npcIds": [
+        "keeper-julio"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 55,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "cr-key-03c"
+        }
+      ],
+      "prereqText": "Have completed Keeper Julio - Path to Oops Wharf",
+      "steps": [
+        "Talk to Keeper Julio at Gate of Oops Wharf.",
+        "Talk to Mighty Captain Stan at Oops Wharf."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 166845,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 1",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "notes": "You need to be Level 70 to be able to talk to Mighty Captain Stan.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Keeper_Julio_-_Captain_Stan_at_Oops_Wharf.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-02",
+      "order": 305,
+      "title": "Fortune Teller - Ghost Exorcism 1",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Fortune Teller at Gate of Oops Wharf.",
+        "Get 5x Blue Soul Bottle: dropped by Requi (Lv.72) in Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Fortune Teller (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Soul Bottle",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Requi (Lv.72)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 213300,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Shell",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Blue Soul Bottle is dropped by Requi (Lv.72). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fortune_Teller_-_Ghost_Exorcism_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-03",
+      "order": 306,
+      "title": "Fortune Teller - Ghost Exorcism 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-02"
+        }
+      ],
+      "prereqText": "Have completed Ghost Exorcism 1",
+      "steps": [
+        "Talk to Fortune Teller at Gate of Oops Wharf.",
+        "Get 5x Red Soul Bottle: dropped by Quiem (Lv.75) in Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Fortune Teller (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Soul Bottle",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 213300,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Oops Shell",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Red Soul Bottle is dropped by Quiem (Lv.75). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fortune_Teller_-_Ghost_Exorcism_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-04",
+      "order": 307,
+      "title": "Fortune Teller - Ghost Exorcism 3",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-03"
+        }
+      ],
+      "prereqText": "Have completed Ghost Exorcism 2",
+      "steps": [
+        "Talk to Fortune Teller at Gate of Oops Wharf.",
+        "Get 5x Crow's Claw: dropped by Crow (Lv.88) in Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Fortune Teller (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Crow's Claw",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Crow (Lv.88)",
+            "map": "Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 319950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "3x Oops Shell",
+          "1x Fortune Teller Card",
+          "1x Guardian's Seal",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Crow's Claw is dropped by Crow (Lv.88). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fortune_Teller_-_Ghost_Exorcism_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-05",
+      "order": 308,
+      "title": "Explorer Reina - God of Sea Poseidon",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 65,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 65+",
+      "steps": [
+        "Talk to Explorer Reina at Oops Wharf.",
+        "Get 1x Sculpture of Poseidon: drilled in Oops Wharf Fields 1-4.",
+        "Bring everything back to Explorer Reina (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sculpture of Poseidon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257209,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Shell",
+          "1x Reina Card",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Sculpture of Poseidon is drilled in Oops Wharf Fields. Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_God_of_Sea_Poseidon.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-06",
+      "order": 309,
+      "title": "Frog Shaman - Oops Wharf Magic - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Wharf Field 2 - Devil Crow",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
+        "Get 5x Baby Powder: dropped by Quiem (Lv.75) in Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Baby Powder",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 268758,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Pink Potion C"
+        ]
+      },
+      "notes": "Baby Powder is dropped by Quiem (Lv.75).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Oops_Wharf_Magic_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-07",
+      "order": 310,
+      "title": "Frog Shaman - Oops Wharf Magic - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Wharf Field 2 - Devil Crow",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
+        "Get 5x Black Feather: dropped by Crow (Lv.88) in Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Black Feather",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Crow (Lv.88)",
+            "map": "Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 268758,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 1x La Befana Card"
+        ]
+      },
+      "notes": "Black Feather is dropped by Crow (Lv.88).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Oops_Wharf_Magic_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-08",
+      "order": 311,
+      "title": "Frog Shaman - Oops Wharf Magic - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Wharf Field 2 - Devil Crow",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
+        "Get 5x Pirate Towel: dropped by Black Foe (Lv.79) in Wharf Field 4 - Chrono Wharf.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pirate Towel",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Black Foe (Lv.79)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 268758,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Pink Potion C"
+        ]
+      },
+      "notes": "Pirate Towel is dropped by Black Foe (Lv.79).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Oops_Wharf_Magic_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-09",
+      "order": 312,
+      "title": "Frog Shaman - Oops Wharf Magic - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Wharf Field 2 - Devil Crow",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
+        "Get 5x Golden Eyepatch: dropped by Master Foe (Lv.84) in Wharf Field 4 - Chrono Wharf.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Eyepatch",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Master Foe (Lv.84)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 383940,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Golden Eyepatch is dropped by Master Foe (Lv.84). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Oops_Wharf_Magic_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-10",
+      "order": 313,
+      "title": "Genius Cochma - Oops Wharf Survey - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Oops Wharf.",
+        "Get 5x Black Herbal Medicine: dropped by Sea Tiger (Lv.70) (use Take on it) in Path to Oops Wharf.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Black Herbal Medicine",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Tiger (Lv.70) (use Take on it)",
+            "map": "Path to Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 268758,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 1x Chochma Card"
+        ]
+      },
+      "notes": "Black Herbal Medicine is dropped by Sea Tiger (Lv.70).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Oops_Wharf_Survey_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-11",
+      "order": 314,
+      "title": "Genius Cochma - Oops Wharf Survey - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Oops Wharf.",
+        "Get 5x A Boy's Dream: dropped by Requi (Lv.72) in Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "A Boy's Dream",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Requi (Lv.72)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 268758,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Pink Potion C",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Blue Potion C",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Pink Potion C"
+        ]
+      },
+      "notes": "A Boy's Dream is dropped by Requi (Lv.72).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Oops_Wharf_Survey_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-12",
+      "order": 315,
+      "title": "Genius Cochma - Oops Wharf Survey - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Oops Wharf.",
+        "Get 5x A Girl's Wish: dropped by Quiem (Lv.75) in Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "A Girl's Wish",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 383940,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "A Girl's Wish is dropped by Quiem (Lv.75). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Oops_Wharf_Survey_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-13",
+      "order": 316,
+      "title": "Grandpa Tango - Destination: Sea Palace!",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Grandpa Tango",
+      "npcIds": [
+        "grandpa-tango"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Grandpa Tango at Gate of Oops Wharf.",
+        "Get 1x Sea Palace Ticket: dropped by Ironclad Turtle (Lv.68) in Path to Oops Wharf.",
+        "Bring everything back to Grandpa Tango (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sea Palace Ticket",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ironclad Turtle (Lv.68)",
+            "map": "Path to Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 213300,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Shell",
+          "1x Grandpa Tango Card",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Sea Palace Ticket is dropped by Ironclad Turtle (Lv.68). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandpa_Tango_-_Destination:_Sea_Palace!.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-14",
+      "order": 317,
+      "title": "Lethos - Elixir of Life? - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70+",
+      "steps": [
+        "Talk to Lethos at Oops Wharf.",
+        "Get 5x Stone Ginseng: drilled in Path to Mermaid Palace 1 / 2.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Stone Ginseng",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Mermaid Palace 1 / 2 (drill depth not on the wiki)",
+            "map": "Path to Mermaid Palace 1 / 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 385012,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Stone Ginseng is drilled in Path to Mermaid Palace 1 / 2.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Elixir_of_Life%3F_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-15",
+      "order": 318,
+      "title": "Lethos - Elixir of Life? - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70+",
+      "steps": [
+        "Talk to Lethos at Oops Wharf.",
+        "Get 5x Waterworm: dropped by Super Golden Mole (Lv.80) in Path to Mermaid Palace 1.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Waterworm",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Super Golden Mole (Lv.80)",
+            "map": "Path to Mermaid Palace 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 385012,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Lethos Card"
+        ]
+      },
+      "notes": "Waterworm is dropped by Super Golden Mole (Lv.80).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Elixir_of_Life%3F_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-16",
+      "order": 319,
+      "title": "Lethos - Elixir of Life? - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70+",
+      "steps": [
+        "Talk to Lethos at Oops Wharf.",
+        "Get 5x Premium Limestone: dropped by Cone Stone (Lv.84) in Path to Mermaid Palace 1 / Path to Mermaid Palace 2.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Premium Limestone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Cone Stone (Lv.84)",
+            "map": "Path to Mermaid Palace 1 / Path to Mermaid Palace 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 385012,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Premium Limestone is dropped by Cone Stone (Lv.84).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Elixir_of_Life%3F_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-17",
+      "order": 320,
+      "title": "Lethos - Elixir of Life? - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70+",
+      "steps": [
+        "Talk to Lethos at Oops Wharf.",
+        "Get 5x Turtle Medicine: dropped by Pirate Boxer B (Lv.86) in Path to Mermaid Palace 2.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Turtle Medicine",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Boxer B (Lv.86)",
+            "map": "Path to Mermaid Palace 2"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 550017,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Turtle Medicine is dropped by Pirate Boxer B (Lv.86). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Elixir_of_Life%3F_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-18",
+      "order": 321,
+      "title": "Merchant Miguel - Rare Ivory",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Merchant Miguel",
+      "npcIds": [
+        "merchant-miguel"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 65,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 65+",
+      "steps": [
+        "Talk to Merchant Miguel at Oops Wharf.",
+        "Get 4x Sea Ivory: drilled in Oops Wharf Fields 1-4.",
+        "Bring everything back to Merchant Miguel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sea Ivory",
+          "qty": 4,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257209,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Shell",
+          "1x Miguel Card",
+          "1x 100k Galder Check",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Sea Ivory is drilled in Oops Wharf Fields. Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Merchant_Miguel_-_Rare_Ivory.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-19",
+      "order": 322,
+      "title": "Officer Tera - Fend Off Pirates! 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Officer Tera",
+      "npcIds": [
+        "officer-tera"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 65,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 65+",
+      "steps": [
+        "Talk to Officer Tera at Oops Wharf.",
+        "Get 10x Pirate Hood: dropped by Black Foe (Lv.79) in Wharf Field 4 - Chrono Wharf.",
+        "Bring everything back to Officer Tera (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pirate Hood",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Black Foe (Lv.79)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 257209,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Pirate Hood is dropped by Black Foe (Lv.79).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Tera_-_Fend_Off_Pirates!_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-20",
+      "order": 323,
+      "title": "Officer Tera - Fend Off Pirates! 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Officer Tera",
+      "npcIds": [
+        "officer-tera"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 65,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-19"
+        }
+      ],
+      "prereqText": "Have completed Fend Off Pirates! 1",
+      "steps": [
+        "Talk to Officer Tera at Oops Wharf.",
+        "Get 10x Pirate Eye Patch: dropped by Master Foe (Lv.84) in Wharf Field 4 - Chrono Wharf.",
+        "Bring everything back to Officer Tera (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pirate Eye Patch",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Master Foe (Lv.84)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 308651,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Oops Shell",
+          "1x Officer Tera Card",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Pirate Eye Patch is dropped by Master Foe (Lv.84). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Tera_-_Fend_Off_Pirates!_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-21",
+      "order": 324,
+      "title": "Rosemary - Make a Luxury Coat",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Rosemary",
+      "npcIds": [
+        "rosemary"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Rosemary at Gate of Oops Wharf.",
+        "Get 5x Tiger Blanket: dropped by Sea Tiger (Lv.70) in Path to Oops Wharf.",
+        "Bring everything back to Rosemary (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tiger Blanket",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Tiger (Lv.70)",
+            "map": "Path to Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 213300,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Oops Shell",
+          "1x Rosemary Card",
+          "1x Oops Sticker"
+        ]
+      },
+      "notes": "Tiger Blanket is dropped by Sea Tiger (Lv.70). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosemary_-_Make_a_Luxury_Coat.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-22",
+      "order": 325,
+      "title": "Sophia - Let's be Healthy!",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Oops Wharf - Sticker Quests (Lv.60+)",
+      "npc": "Sophia",
+      "npcIds": [
+        "sophia"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Sophia at Gate of Oops Wharf.",
+        "Get 2x Turtle Shell: dropped by Ironclad Turtle (Lv.68) in Path to Oops Wharf.",
+        "Get 2x Ironclad Turtle's Egg: dropped by Ironclad Turtle (Lv.68) in Path to Oops Wharf.",
+        "Bring everything back to Sophia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Turtle Shell",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Ironclad Turtle (Lv.68)",
+            "map": "Path to Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ironclad Turtle's Egg",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Ironclad Turtle (Lv.68)",
+            "map": "Path to Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 213300,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Megalo Dragon Drink",
+          "Cycle 2: 1x Oops Shell",
+          "Cycle 3: 20x Megalo Dragon Drink",
+          "Cycle 4: 1x Oops Shell",
+          "Cycle 5: 20x Megalo Dragon Drink + 1x Oops Shell + 1x Sophia Card + 1x Oops Sticker"
+        ]
+      },
+      "notes": "Turtle Shell and Ironclad Turtle's Egg are dropped by Ironclad Turtle (Lv.68). Gives an Oops Sticker: Skipper Min - Urgent Issue needs 7.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sophia_-_Let's_be_Healthy!.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-23",
+      "order": 326,
+      "title": "Marinel - Daily Quest - Oops Wharf",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Daily",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 65,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 65+",
+      "steps": [
+        "Talk to Marinel at Oops Wharf.",
+        "Get 2x Thick Rope: drilled in Oops Wharf Fields 1-4.",
+        "Bring everything back to Marinel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Thick Rope",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1120782,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "5x Half Pink Potion or 5x Half Blue Potion or 10x 500 Galder Coupon or Sharp Dirk"
+        ]
+      },
+      "notes": "Thick Rope is drilled in Oops Wharf Fields. In next season the request will be Fire Extinguisher.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_Daily_Quest_-_Oops_Wharf.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-24",
+      "order": 327,
+      "title": "Skipper Min - The Way to Mermaid Palace",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Skipper Min",
+      "npcIds": [
+        "skipper-min"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-key-04"
+        }
+      ],
+      "prereqText": "Level 70+, have completed Skipper Min - Min's Weakness",
+      "steps": [
+        "Talk to Skipper Min at Oops Wharf.",
+        "Buy Diving Gear from Item Girl and talk to Marinel."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 293342,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 1",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "notes": "Diving Gear is bought from Item Girl's shop in Oops Wharf. Marinel is found in Oops Wharf.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Skipper_Min_-_The_Way_to_Mermaid_Palace.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-25",
+      "order": 328,
+      "title": "Marinel - Mermaid Palace's Entertainer Elicia",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 70,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-24"
+        }
+      ],
+      "prereqText": "Level 70+, have completed Skipper Min - The Way to Mermaid Palace",
+      "steps": [
+        "Talk to Marinel at Oops Wharf.",
+        "Find and talk to Entertainer Elicia."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 293342,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 1",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "notes": "Entertainer Elicia is found in Mermaid Palace Field 4 - Rock Square.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_Mermaid_Palace's_Entertainer_Elicia.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-26",
+      "order": 329,
+      "title": "Monkey T - Monkey T's Request (4)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Wharf Field 1 - Haunted Town",
+      "minLevel": 60,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Monkey T at Wharf Field 1 - Haunted Town.",
+        "Get 10x Eternal Life Grass: dropped by Quiem (Lv.75) in Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Life Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 915291,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Life Grass is dropped by Quiem (Lv.75).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-27",
+      "order": 330,
+      "title": "Explorer Reina - Treasure Hunting 1 - Oops Wharf",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Wharf Field 1 - Haunted Town",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 60~160, have completed Indiana John - Old Man's Dream, haven't Worn Wharf Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Wharf Field 1 - Haunted Town.",
+        "Get 1x Worn Wharf Map A: drilled in Oops Wharf Fields 1-4.",
+        "Get 1x Worn Wharf Map B: drilled in Oops Wharf Fields 1-4.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Wharf Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Wharf Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Wharf Treasure Map"
+        ]
+      },
+      "notes": "Worn Wharf Map A and Worn Wharf Map B are drilled in Oops Wharf Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Oops_Wharf.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-28",
+      "order": 331,
+      "title": "Explorer Reina - Treasure Hunting 2 - Oops Wharf",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Wharf Field 1 - Haunted Town",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "ow-27"
+        }
+      ],
+      "prereqText": "Level 60~160, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Oops Wharf 50 times, haven't Old Wharf Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Wharf Field 1 - Haunted Town.",
+        "Get 1x Old Wharf Map A: drilled in Oops Wharf Fields 1-4.",
+        "Get 1x Old Wharf Map B: drilled in Oops Wharf Fields 1-4.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Wharf Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Wharf Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 77760,
+        "tmExp": 77760,
+        "galder": 0,
+        "items": [
+          "1x Old Wharf Treasure Map"
+        ]
+      },
+      "notes": "Old Wharf Map A and Old Wharf Map B are drilled in Oops Wharf Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Oops_Wharf.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-29",
+      "order": 332,
+      "title": "Driller King Marky - Romance of Drilling - Oops Wharf",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 60~160, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Oops Wharf.",
+        "Get 1x Weird Wharf Map A: drilled in Oops Wharf Fields 1-4.",
+        "Get 1x Weird Wharf Map B: drilled in Oops Wharf Fields 1-4.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Wharf Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Wharf Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Oops Wharf Fields 1-4 (drill depth not on the wiki)",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 77760,
+        "tmExp": 77760,
+        "galder": 0,
+        "items": [
+          "1x Weird Wharf Treasure Map"
+        ]
+      },
+      "notes": "Weird Wharf Map A and Weird Wharf Map B are drilled in Oops Wharf Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Oops_Wharf.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
     }
   ]
 }
