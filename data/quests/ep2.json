@@ -1,0 +1,1909 @@
+{
+  "region": "Episode 2",
+  "quests": [
+    {
+      "id": "ep2-c1-01",
+      "order": 122,
+      "title": "Kahlihara - Kahlihara's Request",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Kahlihara",
+      "npcIds": [
+        "kahlihara"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Kahlihara at Gate of Mermaid Dungeon.",
+        "Get 1x Tanya's Sword: dropped by Tanya (Lv.150).",
+        "Bring everything back to Kahlihara."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tanya's Sword",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Tanya (Lv.150)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Sword of Vengeance"
+        ]
+      },
+      "notes": "Tanya's Sword is dropped by Tanya (Lv.150).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-02",
+      "order": 123,
+      "title": "Kahlihara - The Sword Deal",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Kahlihara",
+      "npcIds": [
+        "kahlihara"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-01"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Kahlihara at Gate of Mermaid Dungeon.",
+        "Get 1x Tear Soaked Check: reward from Don Giuvanni - Man's Tears.",
+        "Bring everything back to Kahlihara."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tear Soaked Check",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Don Giuvanni - Man's Tears",
+            "map": "Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Voucher of Promise",
+          "1x Kahlihara Card"
+        ]
+      },
+      "notes": "Tear Soaked Check is obtained by completing Don Giuvanni - Man's Tears.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-03",
+      "order": 124,
+      "title": "Rosaline Gracia - Rosaline's Worry",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+, have Kahlihara - The Sword Deal in quest log",
+      "steps": [
+        "Talk to Rosaline Gracia at Oops Wharf.",
+        "Get 1x Sword of Vengeance: reward from Kahlihara - Kahlihara's Request.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sword of Vengeance",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kahlihara - Kahlihara's Request",
+            "map": "Gate of Mermaid Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Sword of Vengeance",
+          "1x Nefertiti's Portrait"
+        ]
+      },
+      "notes": "Sword of Vengeance is obtained by completing Kahlihara's Request.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-04",
+      "order": 125,
+      "title": "Rosaline Gracia - Fate of the Portrait",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-03"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Rosaline Gracia - Rosaline's Worry",
+      "steps": [
+        "Talk to Rosaline Gracia at Oops Wharf.",
+        "Get 1x Robin's Letter: reward from Love Hunter Robin - Robin's Acceptance.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Robin's Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Love Hunter Robin - Robin's Acceptance",
+            "map": "Path to Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Art Stone Rod"
+        ]
+      },
+      "notes": "Robin's Letter is obtained by completing Love Hunter Robin - Robin's Acceptance.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-05",
+      "order": 126,
+      "title": "Love Hunter Robin - Robin's Acceptance",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Path to Caballa Relics",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-04",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+, have Fate of the Portrait in quest log",
+      "steps": [
+        "Talk to Love Hunter Robin at Path to Caballa Relics.",
+        "Get 1x Nefertiti's Portrait: reward from Rosaline Gracia - Rosaline's Worry.",
+        "Get 3x Dark Cloth: dropped by Crow (Lv.88).",
+        "Bring everything back to Love Hunter Robin."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nefertiti's Portrait",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaline Gracia - Rosaline's Worry",
+            "map": "Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dark Cloth",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Crow (Lv.88)",
+            "map": "Wharf Field 2 & Field 3"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Robin's Letter"
+        ]
+      },
+      "notes": "Nefertiti's Portrait is obtained by completing Rosaline's Worry. Dark Cloth is dropped by Crow (Lv.88).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-06",
+      "order": 127,
+      "title": "Blacksmith Marx - Marx's Sheath",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-07",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+, have Don Giuvanni - Knife's New Owner in quest log",
+      "steps": [
+        "Talk to Blacksmith Marx at Gate of Mermaid Dungeon.",
+        "Get 3x Black Pearl: Drilled in Mermaid Palace Fields and Mermaid Dungeon.",
+        "Get 3x Pearl: Drilled in Mermaid Palace Fields and Mermaid Dungeon.",
+        "Get 3x Sturdy Scale: dropped by Merman Aqu (Lv.86).",
+        "Bring everything back to Blacksmith Marx."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Black Pearl",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields and Mermaid Dungeon (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields & Mermaid Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Pearl",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields and Mermaid Dungeon (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields & Mermaid Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sturdy Scale",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Merman Aqu (Lv.86)",
+            "map": "Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Scabbard",
+          "1x Blacksmith Marx Card"
+        ]
+      },
+      "notes": "Black Pearl, Pearl are drilled in Mermaid Palace Fields and Mermaid Dungeon. Sturdy Scale is dropped by Merman Aqu (Lv.86).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-07",
+      "order": 128,
+      "title": "Don Giuvanni - Knife's New Owner",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-04"
+        },
+        {
+          "quest": "ep2-c1-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+, have completed Rosaline Gracia - Fate of the Portrait and have Kahlihara - The Sword Deal in quest log",
+      "steps": [
+        "Talk to Don Giuvanni at Oops Wharf.",
+        "Get 1x Sword of Vengeance: reward from Rosaline Gracia - Rosaline's Worry.",
+        "Get 1x Scabbard: reward from Blacksmith Marx - Marx's Sheath.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sword of Vengeance",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaline Gracia - Rosaline's Worry",
+            "map": "Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Scabbard",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Blacksmith Marx - Marx's Sheath",
+            "map": "Gate of Mermaid Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Blank Check"
+        ]
+      },
+      "notes": "Sword of Vengeance is obtained by completing Rosaline's Worry. Scabbard is obtained by completing Marx's Sheath.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-08",
+      "order": 129,
+      "title": "Don Giuvanni - Man's Tears",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-06"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Marx Sheath's",
+      "steps": [
+        "Talk to Don Giuvanni at Oops Wharf.",
+        "Get 1x Giuvanni's Tear: dropped by Don Giuvanni (Lv.150) - you are sent to his Secret Room when the quest starts.",
+        "Get 1x Blank Check: reward from Don Giuvanni - Knife's New Owner.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Giuvanni's Tear",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Don Giuvanni (Lv.150) - you are sent to his Secret Room when the quest starts",
+            "map": "Don Giuvanni's Secret Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Blank Check",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Don Giuvanni - Knife's New Owner",
+            "map": "Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Tear Soaked Check"
+        ]
+      },
+      "notes": "After you start this quest, Don Giuvanni will transfer you to Don Giuvanni's Secret Room with Don Giuvanni in it. Giuvanni's Tear is dropped by Don Giuvanni (Lv.150). Blank Check is obtained by completing Don Giuvanni - Knife's New Owner.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-09",
+      "order": 130,
+      "title": "Don Giuvanni - Writing on the Knife",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-02"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Kahlihara - The Sword Deal (Must be in-game NIGHTTIME!)",
+      "steps": [
+        "Talk to Don Giuvanni at Oops Wharf.",
+        "Get 1x Decoded Document: reward from Indiana John - Clay Tablet Discovered.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Decoded Document",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Clay Tablet Discovered",
+            "map": "Relics Field 2 - Hand of Giant"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7095200,
+        "tmExp": 13551300,
+        "galder": 0,
+        "items": [
+          "1x Cruise Ticket",
+          "1x Don Giuvanni's Mask"
+        ]
+      },
+      "notes": "Decoded Document is obtained by completing Indiana John - Clay Tablet Discovered.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c1-10",
+      "order": 131,
+      "title": "Indiana John - Clay Tablet Discovered",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.1: Sword of Vengeance (Lv.80+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Relics Field 2 - Hand of Giant",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-09",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+, have Don Giuvanni - Writing on the Knife in quest log",
+      "steps": [
+        "Talk to Indiana John at Relics Field 2 - Hand of Giant.",
+        "Get 5x Clay Tablet: Drilled in Caballa Relics Fields.",
+        "Bring everything back to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Clay Tablet",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Caballa Relics Fields (drill depth not on the wiki)",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Decoded Document",
+          "1x Indiana John Card"
+        ]
+      },
+      "notes": "Clay Tablet is drilled in Caballa Relics Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c2-01",
+      "order": 132,
+      "title": "Bard La Fimmel - Incense of Flame 1",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.2: Song of Memories (Lv.80+)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Gate of Mirage Island",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c1-09"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Bard La Fimmel at Gate of Mirage Island.",
+        "Get 1x Yellow Flame Incense: reward from Portina - Portina, Remembered.",
+        "Bring everything back to Bard La Fimmel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Yellow Flame Incense",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Portina - Portina, Remembered",
+            "map": "Mirage Island Field 2 - Cliff of Fate"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Yellow Musical Score"
+        ]
+      },
+      "notes": "Yellow Flame Incense is obtained by completing Portina, Remembered.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c2-02",
+      "order": 133,
+      "title": "Portina - Portina, Remembered",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.2: Song of Memories (Lv.80+)",
+      "npc": "Portina",
+      "npcIds": [
+        "portina"
+      ],
+      "location": "Mirage Island Field 2 - Cliff of Fate",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c2-01",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Portina at Mirage Island Field 2 - Cliff of Fate.",
+        "Get 5x Abiox: dropped by Sea Spirit (Lv.121).",
+        "Bring everything back to Portina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Abiox",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Spirit (Lv.121)",
+            "map": "Mirage Island Field 3 - Fremeia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Yellow Flame Incense",
+          "1x Portina Card"
+        ]
+      },
+      "notes": "Abiox is dropped by Sea Spirit (Lv.121).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c2-03",
+      "order": 134,
+      "title": "Bard La Fimmel - Incense of Flame 2",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.2: Song of Memories (Lv.80+)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Gate of Mirage Island",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c2-01"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Bard La Fimmel at Gate of Mirage Island.",
+        "Get 1x Purple Flame Incense: reward from Nefertiti 2 - Queen Nefertiti, Remembered.",
+        "Bring everything back to Bard La Fimmel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Purple Flame Incense",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Nefertiti 2 - Queen Nefertiti, Remembered",
+            "map": "Mirage Island Field 3 - Fremeia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Purple Musical Score"
+        ]
+      },
+      "notes": "Purple Flame Incense is obtained by completing Queen Nefertiti, Remembered.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c2-04",
+      "order": 135,
+      "title": "Nefertiti 2 - Queen Nefertiti, Remembered",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.2: Song of Memories (Lv.80+)",
+      "npc": "Nefertiti 2",
+      "npcIds": [
+        "nefertiti-2"
+      ],
+      "location": "Mirage Island Field 3 - Fremeia",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c2-03",
+          "active": true
+        }
+      ],
+      "prereqText": "80+",
+      "steps": [
+        "Talk to Nefertiti 2 at Mirage Island Field 3 - Fremeia.",
+        "Get 1x Magical Silver Platter: reward from Fortune Teller - Magical Silver Platter.",
+        "Bring everything back to Nefertiti 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Magical Silver Platter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fortune Teller - Magical Silver Platter",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Purple Flame Incense"
+        ]
+      },
+      "notes": "Magical Silver Platter is obtained by completing Fortune Teller - Magical Silver Platter.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c2-05",
+      "order": 136,
+      "title": "Fortune Teller - Magical Silver Platter",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.2: Song of Memories (Lv.80+)",
+      "npc": "Fortune Teller",
+      "npcIds": [
+        "fortune-teller"
+      ],
+      "location": "Mirage Island Field 1 - Alteo",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c2-04",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Fortune Teller at Mirage Island Field 1 - Alteo.",
+        "Get 1x Silver Platter: dropped by Werepot (Lv.98).",
+        "Get 1x Mirror Spring Water: Drilled in Mirage Island Field 1 - Alteo.",
+        "Bring everything back to Fortune Teller."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Silver Platter",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Werepot (Lv.98)",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Mirror Spring Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 1 - Alteo (drill depth not on the wiki)",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Magical Silver Platter",
+          "1x Fortune Teller Card"
+        ]
+      },
+      "notes": "Silver Platter is dropped by Werepot (Lv.98) and Mirror Spring Water is drilled in Mirage Island Field 1 - Alteo.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c2-06",
+      "order": 137,
+      "title": "Bard La Fimmel - Gift From La Fimmel",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.2: Song of Memories (Lv.80+)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Gate of Mirage Island",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c2-05"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Bard La Fimmel at Gate of Mirage Island.",
+        "Get 5x Moonlight Coral: Drilled in Mirage Island Field 3 - Fremeia.",
+        "Get 5x Whale Baleen: dropped by Sea Hyena (Lv.126).",
+        "Bring everything back to Bard La Fimmel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Moonlight Coral",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 3 - Fremeia (drill depth not on the wiki)",
+            "map": "Mirage Island Field 3 - Fremeia"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Whale Baleen",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Hyena (Lv.126)",
+            "map": "Mirage Island Field 3 - Fremeia / Dungeon 1 - Ocean's End"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7095200,
+        "tmExp": 13551300,
+        "galder": 0,
+        "items": [
+          "1x Crescent",
+          "1x La Fimmel Card"
+        ]
+      },
+      "notes": "Moonlight Coral is drilled in Mirage Island Field 3 - Fremeia. Whale Baleen is dropped by Sea Hyena (Lv.126).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-01",
+      "order": 138,
+      "title": "Enkicladus 1 - Act 1 Scene 1, End of the Cliff",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Enkicladus 1",
+      "npcIds": [
+        "enkicladus-1"
+      ],
+      "location": "Mirage Island Field 2 - Cliff of Fate",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c2-06"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Enkicladus 1 at Mirage Island Field 2 - Cliff of Fate.",
+        "Collect 6x Cacao and 3x Mysterious Milk, then combine them into 3x Dark Choco Piece with Compounder Paul.",
+        "Bring everything back to Enkicladus 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cacao",
+          "qty": 6,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Coral Beach Fields (drill depth not on the wiki) - for Dark Choco Piece",
+            "map": "Coral Beach Fields 1-3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Mysterious Milk",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Clione (Lv.10) - for Dark Choco Piece",
+            "map": "Coral Beach Field 3 - Sunny Beach"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dark Choco Piece",
+          "qty": 3,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul (Blooming Cora Shop): 2x Cacao + 1x Mysterious Milk",
+            "map": "Coral Town - Blooming Cora"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "3x Dark Attribute Stone"
+        ]
+      },
+      "notes": "Dark Choco Piece is obtained by compounding 2x Cacao and 1x Mysterious Milk with Compounder Paul at Blooming Cora Shop. Cacao is drilled in Coral Beach Fields and Mysterious Milk is dropped by Clione (Lv.10).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-02",
+      "order": 139,
+      "title": "Knight Scar - Act 1 Scene 2: Badly Aimed Spear",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Knight Scar",
+      "npcIds": [
+        "knight-scar"
+      ],
+      "location": "Mirage Island Field 2 - Cliff of Fate",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-01"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Knight Scar at Mirage Island Field 2 - Cliff of Fate.",
+        "Get 1x Witch's Deadly Poison: reward from Kahlihara - Witch's Deadly Poison.",
+        "Get 1x Sharp Spear: dropped by Fabilsag (Lv.106).",
+        "Bring everything back to Knight Scar."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Witch's Deadly Poison",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kahlihara - Witch's Deadly Poison",
+            "map": "Gate of Mermaid Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sharp Spear",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Fabilsag (Lv.106)",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Light Attribute Stone",
+          "1x Knight Scar Card"
+        ]
+      },
+      "notes": "Witch's Deadly Poison is obtained by completing Witch's Deadly Poison, Sharp Spear is dropped by Fabilsag (Lv.106).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-03",
+      "order": 140,
+      "title": "Kahlihara - Witch's Deadly Poison",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Kahlihara",
+      "npcIds": [
+        "kahlihara"
+      ],
+      "location": "Gate of Mermaid Dungeon",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Kahlihara at Gate of Mermaid Dungeon.",
+        "Get 1x Voucher of Promise: reward from Kahlihara - The Sword Deal.",
+        "Get 5x Fabilsag's Stinger: dropped by Fabilsag G (Lv.110).",
+        "Get 5x Venomous Canine: dropped by Uraeus (Lv.34).",
+        "Bring everything back to Kahlihara."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voucher of Promise",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kahlihara - The Sword Deal",
+            "map": "Gate of Mermaid Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fabilsag's Stinger",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Fabilsag G (Lv.110)",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Venomous Canine",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Uraeus (Lv.34)",
+            "map": "Pyramid Dungeon 2 - Hall of Harpy"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Witch's Deadly Poison",
+          "1x Kahlihara Card"
+        ]
+      },
+      "notes": "Voucher of Promise is obtained by completing The Sword Deal, Fabilsag's Stinger is dropped by Fabilsag G (Lv.110) and Venomous Canine is dropped by Uraeus (Lv.34).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-04",
+      "order": 141,
+      "title": "Enkicladus 1 - Act 1 Scene 3, Love's Sacrifice",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Enkicladus 1",
+      "npcIds": [
+        "enkicladus-1"
+      ],
+      "location": "Mirage Island Field 2 - Cliff of Fate",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-02"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Enkicladus 1 at Mirage Island Field 2 - Cliff of Fate.",
+        "Get 1x White Lily Bouquet: dropped by Sea Spirit (Lv.121).",
+        "Bring everything back to Enkicladus 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "White Lily Bouquet",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Spirit (Lv.121)",
+            "map": "Mirage Island Field 3 - Fremeia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Mirage Drill",
+          "1x Ember of Memory 1",
+          "1x Enkicladus 1 Card"
+        ]
+      },
+      "notes": "White Lily Bouquet is dropped by Sea Spirit (Lv.121).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-05",
+      "order": 142,
+      "title": "Clotho - Act 1 Scene 4, Curse of Moirae",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Clotho",
+      "npcIds": [
+        "clotho"
+      ],
+      "location": "Mirage Island Dungeon 2 - Deepest Cave",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-04"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Clotho at Mirage Island Dungeon 2 - Deepest Cave.",
+        "Get 5x Fluorescent Marble: dropped by Dark Hollow (Lv.122).",
+        "Bring everything back to Clotho."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fluorescent Marble",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Dark Hollow (Lv.122)",
+            "map": "Mirage Island Field 2 - Cliff of Fate / Dungeon 2 - Deepest Cave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Cursed Scroll",
+          "1x Clotho Card"
+        ]
+      },
+      "notes": "Fluorescent Marble is dropped by Dark Hollow (Lv.122). Talk with Sea Spirit Rumo to enter Mirage Island Dungeon 2 - Deepest Cave. Abiox consumed.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-06",
+      "order": 143,
+      "title": "Nefertiti 2 - Act 2, Scene 1: Reunion of Nefertiti",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Nefertiti 2",
+      "npcIds": [
+        "nefertiti-2"
+      ],
+      "location": "Mirage Island Field 3 - Fremeia",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-05"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Nefertiti 2 at Mirage Island Field 3 - Fremeia.",
+        "Get 1x Earthen Fate Necklace: reward from Sea Spirit Rumo - Confession of the Spirit of the Ocean.",
+        "Bring everything back to Nefertiti 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Earthen Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Sea Spirit Rumo - Confession of the Spirit of the Ocean",
+            "map": "Mirage Island Field 3 - Fremeia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "2x Water Attribute Stone"
+        ]
+      },
+      "notes": "Earthen Fate Necklace is obtained by completing Confession of the Spirit of the Ocean.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-07",
+      "order": 144,
+      "title": "Sea Spirit Rumo - Confession of the Spirit of the Ocean",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Sea Spirit Rumo",
+      "npcIds": [
+        "sea-spirit-rumo"
+      ],
+      "location": "Mirage Island Field 3 - Fremeia",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-06",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Sea Spirit Rumo at Mirage Island Field 3 - Fremeia.",
+        "Get 5x Anklet of Ocean Spirit: dropped by Sea Spirit (Lv.121).",
+        "Bring everything back to Sea Spirit Rumo."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Anklet of Ocean Spirit",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Spirit (Lv.121)",
+            "map": "Mirage Island Field 3 - Fremeia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Earthen Fate Necklace",
+          "1x Sea Spirit Rumo Card"
+        ]
+      },
+      "notes": "Anklet of Ocean Spirit is dropped by Sea Spirit (Lv.121).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-08",
+      "order": 145,
+      "title": "Enkicladus 1 - Act 2 Scene 2, Reunion of Enkicladus",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Enkicladus 1",
+      "npcIds": [
+        "enkicladus-1"
+      ],
+      "location": "Mirage Island Field 3 - Fremeia",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-06"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Enkicladus 1 at Mirage Island Field 3 - Fremeia.",
+        "Get 5x Ocean Conch: dropped by Sea Hyena (Lv.126).",
+        "Bring everything back to Enkicladus 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ocean Conch",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Hyena (Lv.126)",
+            "map": "Mirage Island Field 3 - Fremeia / Dungeon 1 - Ocean's End"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Mirage Shield"
+        ]
+      },
+      "notes": "Ocean Conch is dropped by Sea Hyena (Lv.126).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-09",
+      "order": 146,
+      "title": "Love Hunter Robin - Robin's Secret",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Mirage Island Field 1 - Alteo",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-08"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Love Hunter Robin at Mirage Island Field 1 - Alteo.",
+        "Get 1x Papyrus: Drilled in Pyramid Dungeon or Mirage Island Field 1 / 6.",
+        "Get 1x Ancient Feather Pen: Drilled in Mirage Island Field 1 / 5 / 6.",
+        "Bring everything back to Love Hunter Robin."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Papyrus",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Pyramid Dungeon or Mirage Island Field 1 / 6 (drill depth not on the wiki)",
+            "map": "Pyramid Dungeon / Mirage Island Field 1 & 6"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ancient Feather Pen",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 1 / 5 / 6 (drill depth not on the wiki)",
+            "map": "Mirage Island Field 1, 5 & 6"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Contract of Secrecy",
+          "1x L. Hunter Robin Card"
+        ]
+      },
+      "notes": "Papyrus is drilled in Pyramid Dungeon, Mirage Island Field 1 / 6. Ancient Feather Pen is drilled in Mirage Island Field 1 / 5 / 6.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-10",
+      "order": 147,
+      "title": "Nefertiti 2 - Act 3 Scene 1, Death of Enkicladus",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Nefertiti 2",
+      "npcIds": [
+        "nefertiti-2"
+      ],
+      "location": "Mirage Island Dungeon 1 - Ocean's End",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-09"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Nefertiti 2 at Mirage Island Dungeon 1 - Ocean's End.",
+        "Get 1x Sky's Fate Necklace: reward from Enkicladus 2 - The Final Request.",
+        "Bring everything back to Nefertiti 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sky's Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Enkicladus 2 - The Final Request",
+            "map": "Mirage Island Dungeon 1 - Ocean's End"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Dark Earth Fate Necklace"
+        ]
+      },
+      "notes": "Sky's Fate Necklace is obtained by completing Enkicladus 2 - The Final Request.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-11",
+      "order": 148,
+      "title": "Enkicladus 2 - The Final Request",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Enkicladus 2",
+      "npcIds": [
+        "enkicladus-2"
+      ],
+      "location": "Mirage Island Dungeon 1 - Ocean's End",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-10",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Enkicladus 2 at Mirage Island Dungeon 1 - Ocean's End.",
+        "Get 1x Bloody Rune of Fate: Drilled in Mirage Island Dungeon 1 - Ocean's End.",
+        "Bring everything back to Enkicladus 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bloody Rune of Fate",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Dungeon 1 - Ocean's End (drill depth not on the wiki)",
+            "map": "Mirage Island Dungeon 1 - Ocean's End"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Sky's Fate Necklace",
+          "1x Mirage Helm",
+          "1x Enkicladus 2 Card"
+        ]
+      },
+      "notes": "Bloody Rune of Fate is drilled in Mirage Island Dungeon 1 - Ocean's End.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-12",
+      "order": 149,
+      "title": "Lachesis - Act 3 Scene 2, Recall of Spirit",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Lachesis",
+      "npcIds": [
+        "lachesis"
+      ],
+      "location": "Mirage Island Dungeon 2 - Deepest Cave",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-10"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Lachesis at Mirage Island Dungeon 2 - Deepest Cave.",
+        "Get 1x Shard of Spirit: dropped by Sea Hyena (Lv.126).",
+        "Bring everything back to Lachesis."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shard of Spirit",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sea Hyena (Lv.126)",
+            "map": "Mirage Island Field 3 - Fremeia / Dungeon 1 - Ocean's End"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 506800,
+        "tmExp": 967950,
+        "galder": 0,
+        "items": [
+          "1x Blessed Scroll",
+          "1x Lachesis Card"
+        ]
+      },
+      "notes": "Shard of Spirit is dropped by Sea Hyena (Lv.126).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep2-c3-13",
+      "order": 150,
+      "title": "Nefertiti 2 - Final Act, Waiting",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep2"
+      ],
+      "chapter": "Episode 2 - Ch.3: Prelude of The Cursed Soul (Lv.80+)",
+      "npc": "Nefertiti 2",
+      "npcIds": [
+        "nefertiti-2"
+      ],
+      "location": "Mirage Island Dungeon 1 - Ocean's End",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep2-c3-12"
+        }
+      ],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Nefertiti 2 at Mirage Island Dungeon 1 - Ocean's End.",
+        "Get 1x Cursed Scroll: reward from Clotho - Act 1 Scene 4, Curse of Moirae.",
+        "Get 1x Blessed Scroll: reward from Lachesis - Act 3 Scene 2, Recall of Spirit.",
+        "Get 1x Dark Earth Fate Necklace: reward from Nefertiti 2 - Act 3 Scene 1, Death of Enkicladus.",
+        "Bring everything back to Nefertiti 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cursed Scroll",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Clotho - Act 1 Scene 4, Curse of Moirae",
+            "map": "Mirage Island Dungeon 2 - Deepest Cave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Blessed Scroll",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Lachesis - Act 3 Scene 2, Recall of Spirit",
+            "map": "Mirage Island Dungeon 2 - Deepest Cave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dark Earth Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Nefertiti 2 - Act 3 Scene 1, Death of Enkicladus",
+            "map": "Mirage Island Dungeon 1 - Ocean's End"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7095200,
+        "tmExp": 13551300,
+        "galder": 0,
+        "items": [
+          "1x Ember of Memory 2",
+          "1x Ancient Treasure Box",
+          "1x Queen Nefertiti Card"
+        ]
+      },
+      "notes": "Cursed Scroll is obtained by completing Clotho - Act 1 Scene 4, Curse of Moirae, Blessed Scroll is obtained by completing Lachesis - Act 3 Scene 2, Recall of Spirit, Dark Earth Fate Necklace is obtained by completing Nefertiti - Act 3 Scene 1, Death of Enkicladus.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_2_Quests.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}
