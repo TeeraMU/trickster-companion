@@ -416,6 +416,5797 @@
         "checked": "2026-11-12",
         "verifiedInGame": false
       }
+    },
+    {
+      "id": "sh-01",
+      "order": 806,
+      "title": "??? - A Suspicious Request",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Precious Jewel Mining Lots",
+      "npc": "???",
+      "npcIds": [
+        "mystery-npc"
+      ],
+      "location": "2nd Mining Lot of Precious Jewel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-05",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Blacksmith Marx - Dark Alexandrite in quest log",
+      "steps": [
+        "Talk to ??? at 2nd Mining Lot of Precious Jewel.",
+        "Get 1x Janus's Mask: dropped by Nightmare (Lv.182) in Phantom School Annex - 1F Hallway / Phantom School - Machine Room.",
+        "Bring everything back to ???."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Janus's Mask",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Nightmare (Lv.182)",
+            "map": "Phantom School Annex - 1F Hallway / Phantom School - Machine Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 100,
+        "tmExp": 100,
+        "galder": 0,
+        "items": [
+          "1x Ominous Janus Mask"
+        ]
+      },
+      "notes": "Janus's Mask is dropped by Nightmare (Lv.182).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/%3F%3F%3F_-_A_Suspicious_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "path": "dark-lord"
+    },
+    {
+      "id": "sh-02",
+      "order": 807,
+      "title": "Ancient Polar Bear - Bring a Life Preserver",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Ancient Polar Bear",
+      "npcIds": [
+        "ancient-polar-bear"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Ancient Polar Bear at Snow Field 2 - Snowflake Park.",
+        "Get 1x XL Life Preserver: reward from Lifeguard Deen - Make Some Ice Cream!.",
+        "Bring everything back to Ancient Polar Bear (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "XL Life Preserver",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Lifeguard Deen - Make Some Ice Cream!",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Pink Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "XL Life Preserver is obtained by completing Make Some Ice Cream!. Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Ancient_Polar_Bear_-_Bring_a_Life_Preserver.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-03",
+      "order": 808,
+      "title": "Ancient Polar Bear - Facing Global Warming",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Ancient Polar Bear",
+      "npcIds": [
+        "ancient-polar-bear"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Ancient Polar Bear at Snow Field 2 - Snowflake Park.",
+        "Get 5x Portable AC: drilled in Snow Hill Fields.",
+        "Bring everything back to Ancient Polar Bear (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Portable AC",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Blue Potion",
+          "Cycle 5: 1x Miniature Snowman"
+        ]
+      },
+      "notes": "Portable AC is drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Ancient_Polar_Bear_-_Facing_Global_Warming.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-04",
+      "order": 809,
+      "title": "Assistant Hunter Poppuri - Laplanoel Monster Guild Assistant Hunter Poppuri's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Monster Quests",
+      "npc": "Assistant Hunter Poppuri",
+      "npcIds": [
+        "assistant-hunter-poppuri"
+      ],
+      "location": "Laplanoel Monster Guild",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+, have completed at least 1 Hunter Yuna Quest",
+      "steps": [
+        "Talk to Assistant Hunter Poppuri at Laplanoel Monster Guild.",
+        "Defeat 20x Old Snow Kid (Lv.215) within 10 min in Snow Field 1 - Merry Christmas.",
+        "Report back to Assistant Hunter Poppuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Old Snow Kid",
+          "level": 215,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Snow Field 1 - Merry Christmas"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2430102,
+        "tmExp": 356801,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_Poppuri_-_Laplanoel_Monster_Guild_Assistant_Hunter_Poppuri's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-05",
+      "order": 810,
+      "title": "Blacksmith Marx - Dark Alexandrite",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Precious Jewel Mining Lots",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Snow Hill Mine - Precious Jewel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-02-dark-lord",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Janus' Messenger - Dark Lord Quest and Magician Louie - Find Dark Lord Guardian Stone in quest log",
+      "steps": [
+        "Talk to Blacksmith Marx at Snow Hill Mine - Precious Jewel.",
+        "Get 1x Ominous Janus Mask: reward from ??? - A Suspicious Request.",
+        "Bring everything back to Blacksmith Marx."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ominous Janus Mask",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from ??? - A Suspicious Request",
+            "map": "2nd Mining Lot of Precious Jewel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 100,
+        "tmExp": 100,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Ominous Janus Mask is obtained by completing ??? - A Suspicious Request. Part of the Dark Lord 3rd job: Magician Louie - Find Dark Lord Guardian Stone asks for Dark Alexandrite.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Blacksmith_Marx_-_Dark_Alexandrite.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "path": "dark-lord"
+    },
+    {
+      "id": "sh-06",
+      "order": 811,
+      "title": "Blacksmith Marx - Find Ingredients for Precious Jewel",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Precious Jewel Mining Lots",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Snow Hill Mine - Precious Jewel",
+      "minLevel": 95,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 95+",
+      "steps": [
+        "Talk to Blacksmith Marx at Snow Hill Mine - Precious Jewel.",
+        "Get 3x Pure Tantalum: drilled in 1st Mining Lot of Precious Jewel.",
+        "Get 3x Flawless Opal: drilled in 2nd Mining Lot of Precious Jewel.",
+        "Bring everything back to Blacksmith Marx (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Tantalum",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 1st Mining Lot of Precious Jewel (drill depth not on the wiki)",
+            "map": "1st Mining Lot of Precious Jewel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Flawless Opal",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 2nd Mining Lot of Precious Jewel (drill depth not on the wiki)",
+            "map": "2nd Mining Lot of Precious Jewel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2778683,
+        "tmExp": 1099488,
+        "galder": 0,
+        "items": [
+          "1x Harkon"
+        ]
+      },
+      "notes": "Pure Tantalum is drilled in 1st Mining Lot of Precious Jewel. Flawless Opal is drilled in 2nd Mining Lot of Precious Jewel.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Blacksmith_Marx_-_Find_Ingredients_for_Precious_Jewel.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-07",
+      "order": 812,
+      "title": "Blacksmith Marx - Light Alexandrite",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Precious Jewel Mining Lots",
+      "npc": "Blacksmith Marx",
+      "npcIds": [
+        "blacksmith-marx"
+      ],
+      "location": "Snow Hill Mine - Precious Jewel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-05"
+        }
+      ],
+      "prereqText": "Have completed Blacksmith Marx - Dark Alexandrite",
+      "steps": [
+        "Talk to Blacksmith Marx at Snow Hill Mine - Precious Jewel.",
+        "Get 5x Titanium Fragment: drilled in 1st Mining Lot of Precious Jewel.",
+        "Get 5x Tiger's Eye Fragment: drilled in 2nd Mining Lot of Precious Jewel.",
+        "Bring everything back to Blacksmith Marx."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Titanium Fragment",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 1st Mining Lot of Precious Jewel (drill depth not on the wiki)",
+            "map": "1st Mining Lot of Precious Jewel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tiger's Eye Fragment",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 2nd Mining Lot of Precious Jewel (drill depth not on the wiki)",
+            "map": "2nd Mining Lot of Precious Jewel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 100,
+        "tmExp": 100,
+        "galder": 0,
+        "items": [
+          "1x Light Alexandrite",
+          "1x Dark Alexandrite"
+        ]
+      },
+      "notes": "Titanium Fragment is drilled in 1st Mining Lot of Precious Jewel and Tiger's Eye Fragment is drilled in 2nd Mining Lot of Precious Jewel.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Blacksmith_Marx_-_Light_Alexandrite.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "path": "dark-lord"
+    },
+    {
+      "id": "sh-08",
+      "order": 813,
+      "title": "Card Girl - Snow Hill Card Girl Quest (1)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 165,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 165+",
+      "steps": [
+        "Talk to Card Girl at Gate of Snow Hill.",
+        "Get 1x Bug Bear Card: dropped by Bug Bear (Lv.192) (use Take on it) in Frost Wind Forest 2 / Path to Snow Hill.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bug Bear Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Bug Bear (Lv.192) (use Take on it)",
+            "map": "Frost Wind Forest 2 / Path to Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 5139187,
+        "galder": 0,
+        "items": [
+          "3x Arcana Love Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Bug Bear Card. Riddle: \"Those wings don't really look right on your body\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Snow_Hill_Card_Girl_Quest_(1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-09",
+      "order": 814,
+      "title": "Card Girl - Snow Hill Card Girl Quest (2)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 165,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 165+",
+      "steps": [
+        "Talk to Card Girl at Gate of Snow Hill.",
+        "Get 1x Ice Cream Card: dropped by Ice Cream (Lv.220) (use Take on it) in Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ice Cream Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ice Cream (Lv.220) (use Take on it)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 5139187,
+        "galder": 0,
+        "items": [
+          "4x Arcana Love Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Ice Cream Card. Riddle: \"Want to eat\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Snow_Hill_Card_Girl_Quest_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-10",
+      "order": 815,
+      "title": "Card Girl - Snow Hill Card Girl Quest (3)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Card Girl at Gate of Snow Hill.",
+        "Get 1x Freyja Card: dropped by Freyja (Lv.264) (use Take on it) in Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Freyja Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Freyja (Lv.264) (use Take on it)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 5363353,
+        "galder": 0,
+        "items": [
+          "5x Arcana Love Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Freyja Card. Riddle: \"No one reaches out to the pale girl\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Snow_Hill_Card_Girl_Quest_(3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-11",
+      "order": 816,
+      "title": "Card Girl - Snow Hill Card Girl Quest (4)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 180,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 180+",
+      "steps": [
+        "Talk to Card Girl at Gate of Snow Hill.",
+        "Get 1x Great Coolem Card: dropped by Great Coolem (Lv.280) (use Take on it) in Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Great Coolem Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Great Coolem (Lv.280) (use Take on it)",
+            "map": "Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 5560151,
+        "galder": 0,
+        "items": [
+          "6x Arcana Love Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Great Coolem Card. Riddle: \"The power of the Ice Giant comes from his brain\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Snow_Hill_Card_Girl_Quest_(4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-12",
+      "order": 817,
+      "title": "Card Girl - Snow Hill Card Girl Quest (5)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 190,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 190+",
+      "steps": [
+        "Talk to Card Girl at Gate of Snow Hill.",
+        "Get 1x Icicler Card: dropped by Icicler (Lv.228) (use Take on it) in Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Icicler Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Icicler (Lv.228) (use Take on it)",
+            "map": "Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 5618956,
+        "galder": 0,
+        "items": [
+          "7x Arcana Love Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Icicler Card. Riddle: \"The ice drill is one that drills the skies\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Snow_Hill_Card_Girl_Quest_(5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-13",
+      "order": 818,
+      "title": "Daisy - Find a Letter to Santa",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Daisy",
+      "npcIds": [
+        "daisy"
+      ],
+      "location": "Laplanoel - Santa's Post Office",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Daisy at Laplanoel - Santa's Post Office.",
+        "Get 5x Letter to Santa: drilled in Snow Hill Fields.",
+        "Bring everything back to Daisy (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Letter to Santa",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Letter to Santa is drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Daisy_-_Find_a_Letter_to_Santa.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-14",
+      "order": 819,
+      "title": "Daisy - Find the Lazy Fairy",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Daisy",
+      "npcIds": [
+        "daisy"
+      ],
+      "location": "Laplanoel - Santa's Post Office",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Daisy at Laplanoel - Santa's Post Office.",
+        "Get 1x Kokomelo's Note: reward from Kokomelo - Things Fairies Likes.",
+        "Bring everything back to Daisy."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Kokomelo's Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Kokomelo - Things Fairies Likes",
+            "map": "Laplanoel Monster Guild"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 1,000 Galder Coupon"
+        ]
+      },
+      "notes": "Kokomelo's Note is obtained by completing Kokomelo - Things Fairies Likes.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Daisy_-_Find_the_Lazy_Fairy.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-15",
+      "order": 820,
+      "title": "Dorothy - Fossil Collecting",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Dorothy",
+      "npcIds": [
+        "dorothy"
+      ],
+      "location": "Snow Field 3 - Stairway of Snowflake",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Dorothy at Snow Field 3 - Stairway of Snowflake.",
+        "Get 1x Dragonfly Fossil: drilled in Snow Hill Fields.",
+        "Get 1x Dinosaur Egg Fossil: drilled in Snow Hill Fields.",
+        "Get 1x Ammonite Fossil: drilled in Snow Hill Fields.",
+        "Get 1x Sea Scorpion Fossil: drilled in Snow Hill Fields.",
+        "Bring everything back to Dorothy (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dragonfly Fossil",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dinosaur Egg Fossil",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ammonite Fossil",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sea Scorpion Fossil",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Pink Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Dragonfly Fossil, Dinosaur Egg Fossil, Ammonite Fossil, Sea Scorpion Fossil are drilled in Snow Hill Fields. Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Dorothy_-_Fossil_Collecting.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-16",
+      "order": 821,
+      "title": "Driller King Marky - Romance of Drilling - Snow Hill",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Snow Field 4 - Happy New Year",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 130+, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Snow Field 4 - Happy New Year.",
+        "Get 1x Weird Snow Map A: drilled in Snow Hill Fields 1 / 2 / 3 / 4.",
+        "Get 1x Weird Snow Map B: drilled in Snow Hill Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Snow Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields 1 / 2 / 3 / 4 (drill depth not on the wiki)",
+            "map": "Snow Hill Fields 1 / 2 / 3 / 4"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Snow Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 452182,
+        "tmExp": 452182,
+        "galder": 0,
+        "items": [
+          "1x Weird Snow Treasure Map"
+        ]
+      },
+      "notes": "Weird Snow Map A, Weird Snow Map B are drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Snow_Hill.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-87",
+      "order": 822,
+      "title": "Stella - Shadow Star 9",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Mind's Eye (Lv.300+)",
+      "npc": "Stella",
+      "npcIds": [
+        "stella"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 300,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 300+, use Mind's Eye",
+      "steps": [
+        "Talk to Stella at Snow Hill Town - Laplanoel.",
+        "Get 5x Voodoo Doll: dropped by Shadow Joker (Lv.541) in Northwest Forest / Frost Wind Forest 1.",
+        "Bring everything back to Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voodoo Doll",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Shadow Joker (Lv.541)",
+            "map": "Northwest Forest / Frost Wind Forest 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5483102,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.5",
+          "12x Half Pink Potion",
+          "12x Half Blue Potion or Story of the Star Gazer Girl 9"
+        ]
+      },
+      "notes": "Voodoo Doll is dropped by Shadow Joker (Lv.541), Shadow Goma (Lv.542), Shadow Santa Bear (Lv.547), Shadow Ice Cream (Lv.549), Shadow Icicler (Lv.550), Shadow Yeti (Lv.548)",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stella_-_Shadow_Star_9.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-17",
+      "order": 823,
+      "title": "Eclipse - The Story of the Gods 9",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Mind's Eye (Lv.300+)",
+      "npc": "Eclipse",
+      "npcIds": [
+        "eclipse"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 300,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-15"
+        },
+        {
+          "quest": "sh-87"
+        }
+      ],
+      "prereqText": "Level 300+, use Mind's Eye, have completed The Story of the Gods 8 and have completed Shadow Star 9 at least once",
+      "steps": [
+        "Talk to Eclipse at Snow Hill Town - Laplanoel.",
+        "Get 2x Shadow Light Diamond: dropped by Blue Ice Dungeon shadow monsters (seen with Mind's Eye) in Blue Ice Dungeon.",
+        "Get 2x Shadow White Opal: dropped by Blue Ice Dungeon shadow monsters (seen with Mind's Eye) in Blue Ice Dungeon.",
+        "Bring everything back to Eclipse."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Light Diamond",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Blue Ice Dungeon shadow monsters (seen with Mind's Eye)",
+            "map": "Blue Ice Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shadow White Opal",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Blue Ice Dungeon shadow monsters (seen with Mind's Eye)",
+            "map": "Blue Ice Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 16684879,
+        "tmExp": 8643814,
+        "galder": 0,
+        "items": [
+          "5x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Shadow Light Diamond and Shadow White Opal are dropped by Shadow Blue Ice Dungeon Monsters. Eclipse only shows up between 19:00 and 19:20.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Eclipse_-_The_Story_of_the_Gods_9.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-18",
+      "order": 824,
+      "title": "Explorer Reina - Treasure Hunting 1 - Snow Hill",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Snow Field 1 - Merry Christmas",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 130+, have completed Indiana John - Old Man's Dream, haven't Worn Snow Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Snow Field 1 - Merry Christmas.",
+        "Get 1x Worn Snow Map A: drilled in Snow Hill Fields.",
+        "Get 1x Worn Snow Map B: drilled in Snow Hill Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Snow Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Snow Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Snow Treasure Map"
+        ]
+      },
+      "notes": "Worn Snow Map A and Worn Snow Map B are drilled in Snow Hill Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Snow_Hill.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-19",
+      "order": 825,
+      "title": "Explorer Reina - Treasure Hunting 2 - Snow Hill",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Snow Field 1 - Merry Christmas",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "sh-18"
+        }
+      ],
+      "prereqText": "Level 130+, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Snow Hill 50 times, haven't Old Snow Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Snow Field 1 - Merry Christmas.",
+        "Get 1x Old Snow Map A: drilled in Snow Hill Fields.",
+        "Get 1x Old Snow Map B: drilled in Snow Hill Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Snow Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Snow Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 452182,
+        "tmExp": 452182,
+        "galder": 0,
+        "items": [
+          "1x Old Snow Treasure Map"
+        ]
+      },
+      "notes": "Old Snow Map A and Old Snow Map B are drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Snow_Hill.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-20",
+      "order": 826,
+      "title": "Fairy Asrai - Find the Escaped Toy Soldiers",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Fairy Asrai",
+      "npcIds": [
+        "fairy-asrai"
+      ],
+      "location": "Snow Hill Gift Factory",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Fairy Asrai at Snow Hill Gift Factory.",
+        "Get 3x Toy Soldier Gift Set: dropped by Toy Soldier (Lv.202) in Snow Field 1 - Merry Christmas / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake / Snow Field 4 - Happy New Year.",
+        "Bring everything back to Fairy Asrai (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Toy Soldier Gift Set",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Toy Soldier (Lv.202)",
+            "map": "Snow Field 1 - Merry Christmas / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake / Snow Field 4 - Happy New Year"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Toy Soldier Gift Set is dropped by Toy Soldier (Lv.202).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Asrai_-_Find_the_Escaped_Toy_Soldiers.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-21",
+      "order": 827,
+      "title": "Fairy Asrai - Scattered Potion Traces",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Fairy Asrai",
+      "npcIds": [
+        "fairy-asrai"
+      ],
+      "location": "Snow Hill Gift Factory",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Fairy Asrai at Snow Hill Gift Factory.",
+        "Get 3x Potion Drops: drilled in Snow Field 1 - Merry Christmas.",
+        "Bring everything back to Fairy Asrai (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Potion Drops",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Field 1 - Merry Christmas (drill depth not on the wiki)",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Potion Drops is drilled in Snow Field 1 - Merry Christmas.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Asrai_-_Scattered_Potion_Traces.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-22",
+      "order": 828,
+      "title": "Fairy Feria - Fairy Village",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Fairy Feria",
+      "npcIds": [
+        "fairy-feria"
+      ],
+      "location": "Snow Hill Gift Factory",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "bs-49"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Little Chagan - Fairy at Snow Hill",
+      "steps": [
+        "Talk to Fairy Feria at Snow Hill Gift Factory.",
+        "Find and talk to Tacky."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Tacky is found in Snow Hill Town - Laplanoel, at the Christmas Tree on the ladder.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Feria_-_Fairy_Village.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-23",
+      "order": 829,
+      "title": "Farmer Tsetsech - Frozen Plants Study",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Farmer Tsetsech",
+      "npcIds": [
+        "farmer-tsetsech"
+      ],
+      "location": "Snow Field 4 - Happy New Year",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Farmer Tsetsech at Snow Field 4 - Happy New Year.",
+        "Get 1x Agave: drilled in Snow Hill Fields.",
+        "Get 1x Bamboo Flower: drilled in Snow Hill Fields.",
+        "Get 1x Udambara: drilled in Snow Hill Fields.",
+        "Get 1x Edelweiss: drilled in Snow Hill Fields.",
+        "Bring everything back to Farmer Tsetsech (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Agave",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bamboo Flower",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Udambara",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Edelweiss",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x 500 Galder Coupon",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x 500 Galder Coupon",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Agave, Bamboo Flower, Udambara, Edelweiss are drilled in Snow Hill Fields. Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Farmer_Tsetsech_-_Frozen_Plants_Study.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-24",
+      "order": 830,
+      "title": "Freyja (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 1)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyja (NPC)",
+      "npcIds": [
+        "freyja-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyja (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Green Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyja (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Green Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyja she will transfer you to Area 4 (Click on the small picture to see how the Areas are mapped). Green Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyja_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-25",
+      "order": 831,
+      "title": "Freyja (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 2)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyja (NPC)",
+      "npcIds": [
+        "freyja-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyja (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Green Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyja (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Green Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyja she will transfer you to Area 3 (Click on the small picture to see how the Areas are mapped). Green Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyja_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-26",
+      "order": 832,
+      "title": "Freyja (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 3)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyja (NPC)",
+      "npcIds": [
+        "freyja-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyja (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Green Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyja (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Green Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyja she will transfer you to Area 5 (Click on the small picture to see how the Areas are mapped). Green Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyja_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-27",
+      "order": 833,
+      "title": "Freyja (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 4)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyja (NPC)",
+      "npcIds": [
+        "freyja-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyja (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Green Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyja (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Green Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyja she will transfer you to Blue Ice Trial 5 - Ice Palace Jail (1). Green Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyja_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-28",
+      "order": 834,
+      "title": "Freyja (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 5)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyja (NPC)",
+      "npcIds": [
+        "freyja-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyja (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Green Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyja (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Green Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyja she will transfer you to where General Granada is for the next quest. Green Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyja_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-29",
+      "order": 835,
+      "title": "Freyr (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 1)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyr (NPC)",
+      "npcIds": [
+        "freyr-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyr (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Red Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyr (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyr he will transfer you to Area 1 (Click on the small picture to see how the Areas are mapped). Red Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyr_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-30",
+      "order": 836,
+      "title": "Freyr (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 2)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyr (NPC)",
+      "npcIds": [
+        "freyr-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyr (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Red Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyr (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyr he will transfer you to Area 4 (Click on the small picture to see how the Areas are mapped). Red Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyr_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-31",
+      "order": 837,
+      "title": "Freyr (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 3)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyr (NPC)",
+      "npcIds": [
+        "freyr-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyr (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Red Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyr (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyr he will transfer you to Area 2 (Click on the small picture to see how the Areas are mapped). Red Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyr_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-32",
+      "order": 838,
+      "title": "Freyr (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 4)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyr (NPC)",
+      "npcIds": [
+        "freyr-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyr (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Red Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyr (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyr he will transfer you to Area 3 (Click on the small picture to see how the Areas are mapped). Red Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyr_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-33",
+      "order": 839,
+      "title": "Freyr (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 5)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Freyr (NPC)",
+      "npcIds": [
+        "freyr-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Freyr (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Red Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Freyr (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Freyr he will transfer you to Blue Ice Trial 5 - Ice Palace Jail (1). Red Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Freyr_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-34",
+      "order": 840,
+      "title": "Frog Shaman - Snow Hill Magic - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Frog Shaman at Snow Field 2 - Snowflake Park.",
+        "Get 5x Crumpled Socks: dropped by Old Snow Kid (Lv.215) in Snow Field 1 - Merry Christmas.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Crumpled Socks",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Old Snow Kid (Lv.215)",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Crumpled Socks is dropped by Old Snow Kid (Lv.215).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Snow_Hill_Magic_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-35",
+      "order": 841,
+      "title": "Frog Shaman - Snow Hill Magic - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-34"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Snow Hill Magic - 1",
+      "steps": [
+        "Talk to Frog Shaman at Snow Field 2 - Snowflake Park.",
+        "Get 5x Fresh Cream: dropped by Ice Cream (Lv.220) in Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fresh Cream",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Ice Cream (Lv.220)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 1x La Befana Card"
+        ]
+      },
+      "notes": "Fresh Cream is dropped by Ice Cream (Lv.220).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Snow_Hill_Magic_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-36",
+      "order": 842,
+      "title": "Frog Shaman - Snow Hill Magic - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-35"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Snow Hill Magic - 2",
+      "steps": [
+        "Talk to Frog Shaman at Snow Field 2 - Snowflake Park.",
+        "Get 5x Footprint Fossil: dropped by Yeti (Lv.226) in Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Footprint Fossil",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Yeti (Lv.226)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Footprint Fossil is dropped by Yeti (Lv.226).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Snow_Hill_Magic_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-37",
+      "order": 843,
+      "title": "Frog Shaman - Snow Hill Magic - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-36"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Snow Hill Magic - 3",
+      "steps": [
+        "Talk to Frog Shaman at Snow Field 2 - Snowflake Park.",
+        "Get 5x Icicle: dropped by Icicler (Lv.228) in Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Icicle",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Icicler (Lv.228)",
+            "map": "Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4226802,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Icicle is dropped by Icicler (Lv.228). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Snow_Hill_Magic_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-38",
+      "order": 844,
+      "title": "General Granada - Attack for the Queen 1",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "General Granada",
+      "npcIds": [
+        "general-granada"
+      ],
+      "location": "Blue Ice Trial 4 - Ice Palace Maid's Room",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to General Granada at Blue Ice Trial 4 - Ice Palace Maid's Room.",
+        "Defeat 1x Queen's Maid 1 (Lv.280) within 2 min in Blue Ice Trial 4 - Ice Palace Maid's Room.",
+        "Report back to General Granada."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Queen's Maid 1",
+          "level": 280,
+          "count": 1,
+          "timeLimit": "2 min",
+          "map": "Blue Ice Trial 4 - Ice Palace Maid's Room"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/General_Granada_-_Attack_for_the_Queen_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-39",
+      "order": 845,
+      "title": "General Granada - Attack for the Queen 2",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "General Granada",
+      "npcIds": [
+        "general-granada"
+      ],
+      "location": "Blue Ice Trial 4 - Ice Palace Maid's Room",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-38"
+        }
+      ],
+      "prereqText": "Level 1+, have completed General Granada - Attack for the Queen 1",
+      "steps": [
+        "Talk to General Granada at Blue Ice Trial 4 - Ice Palace Maid's Room.",
+        "Get 1x Maid's Room Key: dropped by Queen's Maid 2 (Lv.280) in Blue Ice Trial 4 - Ice Palace Maid's Room.",
+        "Bring everything back to General Granada."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Maid's Room Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Queen's Maid 2 (Lv.280)",
+            "map": "Blue Ice Trial 4 - Ice Palace Maid's Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Maid's Room Key is dropped by Queen's Maid 2 (Lv.280).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/General_Granada_-_Attack_for_the_Queen_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-40",
+      "order": 846,
+      "title": "General Granada - Changed Granada",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "General Granada",
+      "npcIds": [
+        "general-granada"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to General Granada at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Defeat 3x General's Peon Niwerth (Lv.265) within 1 min in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Report back to General Granada."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "General's Peon Niwerth",
+          "level": 265,
+          "count": 3,
+          "timeLimit": "1 min",
+          "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Teleport to Blue Ice Trial 3 - Ice Palace Hallway"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/General_Granada_-_Changed_Granada.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-41",
+      "order": 847,
+      "title": "General Granada - Time Keeps Ticking...",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "General Granada",
+      "npcIds": [
+        "general-granada"
+      ],
+      "location": "Ice Dungeon 2 - Cave of Crystal",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to General Granada at Ice Dungeon 2 - Cave of Crystal.",
+        "Get 2x Red Underpants: dropped by Freyr (Lv.259) in Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal.",
+        "Get 2x Red Undershirt: dropped by Niwerth (Lv.252) in Ice Dungeon 1 - Cave of Darkblue.",
+        "Bring everything back to General Granada (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Underpants",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Freyr (Lv.259)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Red Undershirt",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Niwerth (Lv.252)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 15x 500 Galder Coupon",
+          "Cycle 2: 1x Miniature Snowman",
+          "Cycle 3: 15x 500 Galder Coupon",
+          "Cycle 4: 1x Miniature Snowman",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Red Underpants is dropped by Freyr (Lv.259). Red Undershirt is dropped by Niwerth (Lv.252). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/General_Granada_-_Time_Keeps_Ticking....html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-42",
+      "order": 848,
+      "title": "Genius Cochma - Snow Hill Survey - 1",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Monster Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Snow Hill.",
+        "Defeat 15x Snowman (Lv.200) within 10 min in Snow Field 1 - Merry Christmas.",
+        "Report back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Snowman",
+          "level": 200,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Snow Field 1 - Merry Christmas"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1963375,
+        "tmExp": 1729642,
+        "galder": 0,
+        "items": [
+          "5x Herb Potion",
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Snow_Hill_Survey_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-43",
+      "order": 849,
+      "title": "Genius Cochma - Snow Hill Survey - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Snow Hill.",
+        "Get 5x Unidentifiable CD: dropped by Old Snow Kid (Lv.215) in Snow Field 1 - Merry Christmas.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Unidentifiable CD",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Old Snow Kid (Lv.215)",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 1x Chochma Card"
+        ]
+      },
+      "notes": "Unidentifiable CD is dropped by Old Snow Kid (Lv.215).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Snow_Hill_Survey_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-44",
+      "order": 850,
+      "title": "Genius Cochma - Snow Hill Survey - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Snow Hill.",
+        "Get 5x Pure White Mask: dropped by Polar Bear (Lv.207) in Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure White Mask",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Polar Bear (Lv.207)",
+            "map": "Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 2: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 3: 5x 500 Galder Coupon + 5x Herb Potion",
+          "Cycle 4: 5x 500 Galder Coupon + 5x Gold Pearl Potion",
+          "Cycle 5: 5x 500 Galder Coupon + 5x Herb Potion"
+        ]
+      },
+      "notes": "Pure White Mask is dropped by Polar Bear (Lv.207).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Snow_Hill_Survey_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-45",
+      "order": 851,
+      "title": "Genius Cochma - Snow Hill Survey - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Snow Hill.",
+        "Get 5x Bear Paw: dropped by Santa Bear (Lv.212) in Snow Field 2 - Snowflake Park.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bear Paw",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Santa Bear (Lv.212)",
+            "map": "Snow Field 2 - Snowflake Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4226802,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Bear Paw is dropped by Santa Bear (Lv.212). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Snow_Hill_Survey_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-46",
+      "order": 852,
+      "title": "Grandma Tango - Gathering Yarn",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Grandma Tango",
+      "npcIds": [
+        "grandma-tango"
+      ],
+      "location": "Snow Hill Gift Factory",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Grandma Tango at Snow Hill Gift Factory.",
+        "Get 2x Red Woolen Yarn: dropped by Snowkid (Lv.198) in Snow Field 1 - Merry Christmas.",
+        "Get 2x Black Woolen Yarn: dropped by Snowman (Lv.200) in Snow Field 1 - Merry Christmas.",
+        "Bring everything back to Grandma Tango (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Woolen Yarn",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Snowkid (Lv.198)",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Black Woolen Yarn",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Snowman (Lv.200)",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Red Cardigan + 1x Miniature Snowman",
+          "Cycle 2: 1x Red Cardigan",
+          "Cycle 3: 1x Red Cardigan + 1x Miniature Snowman",
+          "Cycle 4: 1x Red Cardigan",
+          "Cycle 5: 1x Red Cardigan + 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Red Woolen Yarn is dropped by Snowkid (Lv.198). Black Woolen Yarn is dropped by Snowman (Lv.200). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandma_Tango_-_Gathering_Yarn.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-47",
+      "order": 853,
+      "title": "Grandpa Tango - Collecting Empty Bottles",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Grandpa Tango",
+      "npcIds": [
+        "grandpa-tango"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Grandpa Tango at Snow Field 2 - Snowflake Park.",
+        "Get 5x Empty Coke Bottle: dropped by Santa Bear (Lv.212) in Snow Field 2 - Snowflake Park.",
+        "Bring everything back to Grandpa Tango (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Empty Coke Bottle",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Santa Bear (Lv.212)",
+            "map": "Snow Field 2 - Snowflake Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x Half Pink Potion",
+          "Cycle 2: 1x Miniature Snowman",
+          "Cycle 3: 10x Half Pink Potion",
+          "Cycle 4: 1x Miniature Snowman",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Empty Coke Bottle is dropped by Santa Bear (Lv.212). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandpa_Tango_-_Collecting_Empty_Bottles.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-48",
+      "order": 854,
+      "title": "Horse Hiddink - Against Icy Roads",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Horse Hiddink",
+      "npcIds": [
+        "horse-hiddink"
+      ],
+      "location": "Snow Field 4 - Happy New Year",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Horse Hiddink at Snow Field 4 - Happy New Year.",
+        "Get 4x Winter Horseshoe: dropped by Icicler (Lv.228) in Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Horse Hiddink (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Winter Horseshoe",
+          "qty": 4,
+          "source": {
+            "kind": "drop",
+            "from": "Icicler (Lv.228)",
+            "map": "Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Pink Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Winter Horseshoe is dropped by Icicler (Lv.228). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Horse_Hiddink_-_Against_Icy_Roads.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-49",
+      "order": 855,
+      "title": "Horse Hiddink - Errands from Fairy God Mother",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Horse Hiddink",
+      "npcIds": [
+        "horse-hiddink"
+      ],
+      "location": "Ice Dungeon 1 - Cave of Dark Blue",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Horse Hiddink at Ice Dungeon 1 - Cave of Dark Blue.",
+        "Get 5x Ice Cube: dropped by Coolem (Lv.272) in Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways.",
+        "Bring everything back to Horse Hiddink (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ice Cube",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Coolem (Lv.272)",
+            "map": "Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x All Mighty Firebolt + 10x Half Pink Potion",
+          "Cycle 2: 1x All Mighty Firebolt + 1x Miniature Snowman",
+          "Cycle 3: 1x All Mighty Firebolt + 10x Half Blue Potion",
+          "Cycle 4: 1x All Mighty Firebolt + 1x Miniature Snowman",
+          "Cycle 5: 1x All Mighty Firebolt + 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Ice Cube is dropped by Coolem (Lv.272). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Horse_Hiddink_-_Errands_from_Fairy_God_Mother.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-50",
+      "order": 856,
+      "title": "Horse Hiddink - Jailer Coolem",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Horse Hiddink",
+      "npcIds": [
+        "horse-hiddink"
+      ],
+      "location": "Blue Ice Trial 5 - Ice Palace Jail (3)",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Horse Hiddink at Blue Ice Trial 5 - Ice Palace Jail (3).",
+        "Defeat 5x Jailer Coolem (Lv.280) within 2 min in Blue Ice Trial 5 - Ice Palace Jail (3).",
+        "Report back to Horse Hiddink."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Jailer Coolem",
+          "level": 280,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Blue Ice Trial 5 - Ice Palace Jail (3)"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Teleport to Blue Ice Trial 4 - Ice Palace Maid's Room"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Horse_Hiddink_-_Jailer_Coolem.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-51",
+      "order": 857,
+      "title": "Horse Hiddink - Jailer Ice Cream",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Horse Hiddink",
+      "npcIds": [
+        "horse-hiddink"
+      ],
+      "location": "Blue Ice Trial 5 - Ice Palace Jail (2)",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Horse Hiddink at Blue Ice Trial 5 - Ice Palace Jail (2).",
+        "Defeat 5x Jailer Ice Cream (Lv.270) within 2 min in Blue Ice Trial 5 - Ice Palace Jail (2).",
+        "Report back to Horse Hiddink."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Jailer Ice Cream",
+          "level": 270,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Blue Ice Trial 5 - Ice Palace Jail (2)"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Teleport to Blue Ice Trial 3 - Ice Palace Hallway"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Horse_Hiddink_-_Jailer_Ice_Cream.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-52",
+      "order": 858,
+      "title": "Horse Hiddink - Jailer Santa Bear",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Horse Hiddink",
+      "npcIds": [
+        "horse-hiddink"
+      ],
+      "location": "Blue Ice Trial 5 - Ice Palace Jail (1)",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Horse Hiddink at Blue Ice Trial 5 - Ice Palace Jail (1).",
+        "Defeat 5x Jailer Santa Bear (Lv.260) within 2 min in Blue Ice Trial 5 - Ice Palace Jail (1).",
+        "Report back to Horse Hiddink."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Jailer Santa Bear",
+          "level": 260,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Blue Ice Trial 5 - Ice Palace Jail (1)"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Teleport to Blue Ice Trial 2 - Ice Palace Stairs"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Horse_Hiddink_-_Jailer_Santa_Bear.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-53",
+      "order": 859,
+      "title": "Hunter Master Leviathan - Laplanoel Monster Guild Hunter Master Leviathan's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Monster Quests",
+      "npc": "Hunter Master Leviathan",
+      "npcIds": [
+        "hunter-master-leviathan"
+      ],
+      "location": "Laplanoel Monster Guild",
+      "minLevel": 180,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 180+, have completed at least 1 Hunter Yuna Quest and Assistant Hunter Poppuri's Quest",
+      "steps": [
+        "Talk to Hunter Master Leviathan at Laplanoel Monster Guild.",
+        "Defeat 30x Great Coolem (Lv.280) within 10 minutes in Ice Dungeon 3 / 4.",
+        "Report back to Hunter Master Leviathan (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Great Coolem",
+          "level": 280,
+          "count": 30,
+          "timeLimit": "10 minutes",
+          "map": "Ice Dungeon 3 / 4"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4176389,
+        "tmExp": 922843,
+        "galder": 0,
+        "items": [
+          "1x Hat Exchange H"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Master_Leviathan_-_Laplanoel_Monster_Guild_Hunter_Master_Leviathan's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-54",
+      "order": 860,
+      "title": "Hunter Yuna - Laplanoel Monster Guild Hunter Yuna's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Monster Quests",
+      "npc": "Hunter Yuna",
+      "npcIds": [
+        "hunter-yuna"
+      ],
+      "location": "Laplanoel Monster Guild",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Hunter Yuna at Laplanoel Monster Guild.",
+        "Defeat 30x Bug Bear (Lv.192) within 20 min in Frost Wind Forest 2 / Path to Snow Hill.",
+        "Report back to Hunter Yuna (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Bug Bear",
+          "level": 192,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Frost Wind Forest 2 / Path to Snow Hill"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1135504,
+        "tmExp": 285807,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.164~167: 30x Snowkid (Lv.198) in 20 min, reward 2x 10,000 Galder Coupon. Lv.168~171: 30x Polar Bear (Lv.207) in 20 min, reward 2x 10,000 Galder Coupon. Lv.172~175: 30x Ice Cream (Lv.220) in 15 min, reward 2x 10,000 Galder Coupon. Lv.176+: 30x Icicler (Lv.228) in 15 min, reward 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuna_-_Laplanoel_Monster_Guild_Hunter_Yuna's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-55",
+      "order": 861,
+      "title": "Inventor Gale - Make a Defroster",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Gate of Snow Hill",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-99",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 160+, have Cupid of Love 2 in quest log",
+      "steps": [
+        "Talk to Inventor Gale at Gate of Snow Hill.",
+        "Get 5x Portable AC: drilled in Snow Hill Fields.",
+        "Get 5x Closed Circuit: drilled in Path to Snow Hill.",
+        "Get 5x Edelweiss: drilled in Snow Hill Fields.",
+        "Bring everything back to Inventor Gale."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Portable AC",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Closed Circuit",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Snow Hill (drill depth not on the wiki)",
+            "map": "Path to Snow Hill"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Edelweiss",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x Fresh Edelweiss"
+        ]
+      },
+      "notes": "Portable AC is drilled in Snow Hill Fields. Closed Circuit is drilled in Path to Snow Hill. Edelweiss is drilled in Snow Hill Fields and is obtained by completing Xote - Cupid of Love 1.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Inventor_Gale_-_Make_a_Defroster.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-56",
+      "order": 862,
+      "title": "Kokomelo - Things Fairies Likes",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Kokomelo",
+      "npcIds": [
+        "kokomelo"
+      ],
+      "location": "Laplanoel Monster Guild",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-14",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 160+, have Find the Lazy Fairy in quest log",
+      "steps": [
+        "Talk to Kokomelo at Laplanoel Monster Guild.",
+        "Get 5x Reindeer Candy: dropped by Wild Reindeer (Lv.230) in Snow Field 4 - Happy New Year.",
+        "Bring everything back to Kokomelo (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Reindeer Candy",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Wild Reindeer (Lv.230)",
+            "map": "Snow Field 4 - Happy New Year"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Kokomelo's Note"
+        ]
+      },
+      "notes": "Reindeer Candy is dropped by Wild Reindeer (Lv.230).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kokomelo_-_Things_Fairies_Likes.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-57",
+      "order": 863,
+      "title": "Lethos - How to Beat the Cold? - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Blue Ice Dungeon",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Lethos at Gate of Blue Ice Dungeon.",
+        "Get 3x Bear Fur: drilled in Blue Ice Dungeon.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bear Fur",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Dungeon (drill depth not on the wiki)",
+            "map": "Blue Ice Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4019166,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Bear Fur is drilled in Blue Ice Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_How_to_Beat_the_Cold%3F_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-58",
+      "order": 864,
+      "title": "Lethos - How to Beat the Cold? - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Blue Ice Dungeon",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Lethos at Gate of Blue Ice Dungeon.",
+        "Get 3x Luxurious Blanket: dropped by Freyja (Lv.264) in Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Luxurious Blanket",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Freyja (Lv.264)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4019166,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Lethos Card"
+        ]
+      },
+      "notes": "Luxurious Blanket is dropped by Freyja (Lv.264).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_How_to_Beat_the_Cold%3F_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-59",
+      "order": 865,
+      "title": "Lethos - How to Beat the Cold? - 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Blue Ice Dungeon",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Lethos at Gate of Blue Ice Dungeon.",
+        "Get 3x Thick Socks: dropped by Niwerth (Lv.252) in Ice Dungeon 1 - Cave of Darkblue.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Thick Socks",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Niwerth (Lv.252)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4019166,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Thick Socks is dropped by Niwerth (Lv.252).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_How_to_Beat_the_Cold%3F_-_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-60",
+      "order": 866,
+      "title": "Lethos - How to Beat the Cold? - 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Blue Ice Dungeon",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Lethos at Gate of Blue Ice Dungeon.",
+        "Get 3x Queen's Spell: dropped by Coolem (Lv.272) in Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Queen's Spell",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Coolem (Lv.272)",
+            "map": "Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4823000,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Queen's Spell is dropped by Coolem (Lv.272). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_How_to_Beat_the_Cold%3F_-_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-61",
+      "order": 867,
+      "title": "Lifeguard Deen - Make Some Ice Cream!",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Lifeguard Deen",
+      "npcIds": [
+        "lifeguard-deen"
+      ],
+      "location": "Snow Field 3 - Stairway of Snowflake",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Lifeguard Deen at Snow Field 3 - Stairway of Snowflake.",
+        "Get 1x Bubble Beater: dropped by Ice Cream (Lv.220) in Snow Field 3 - Stairway of Snowflake.",
+        "Get 1x Fresh Cream: dropped by Ice Cream (Lv.220) in Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Lifeguard Deen (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bubble Beater",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ice Cream (Lv.220)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fresh Cream",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ice Cream (Lv.220)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 2x XL Life Preserver",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Bubble Beater and Fresh Cream are dropped by Ice Cream (Lv. 220). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lifeguard_Deen_-_Make_Some_Ice_Cream!.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-62",
+      "order": 868,
+      "title": "Louis Bitton - Fashion Show Prep",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Louis Bitton",
+      "npcIds": [
+        "louis-bitton"
+      ],
+      "location": "Snow Field 2 - Snowflake Park",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Louis Bitton at Snow Field 2 - Snowflake Park.",
+        "Get 3x Pure White Fur: dropped by Polar Bear (Lv.207) in Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Louis Bitton (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure White Fur",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Polar Bear (Lv.207)",
+            "map": "Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x 500 Galder Coupon",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x 500 Galder Coupon",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Pure White Fur is dropped by Polar Bear (Lv.207). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Louis_Bitton_-_Fashion_Show_Prep.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-63",
+      "order": 869,
+      "title": "Love Hunter Robin - Blue Ice Dungeon Love Hunter Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Gate of Blue Ice Dungeon",
+      "minLevel": 180,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 180+",
+      "steps": [
+        "Talk to Love Hunter Robin at Gate of Blue Ice Dungeon.",
+        "Defeat 20x Niwerth (Lv.252) within 10 min in Ice Dungeon 1 - Cave of Dark Blue.",
+        "Report back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Niwerth",
+          "level": 252,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Ice Dungeon 1 - Cave of Dark Blue"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1418387,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon",
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.184~187: 20x Freyr (Lv.259) in 10 min, reward 10x 500 Galder Coupon, 2x 10,000 Galder Coupon. Lv.188~191: 20x Freyja (Lv.264) in 10 min, reward 10x 500 Galder Coupon, 2x 10,000 Galder Coupon. Lv.192~195: 20x Coolem (Lv.272) in 15 min, reward 10x 500 Galder Coupon, 2x 10,000 Galder Coupon. Lv.196+: 20x Giant Coolem (Lv.277) in 10 min, reward 10x 500 Galder Coupon, 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Blue_Ice_Dungeon_Love_Hunter_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-64",
+      "order": 870,
+      "title": "Monkey T - Monkey T's Request (9)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Snow Field 3 - Stairway of Snowflake",
+      "minLevel": 160,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Monkey T at Snow Field 3 - Stairway of Snowflake.",
+        "Get 10x Eternal Ice Grass: dropped by Yeti (Lv.226) in Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Ice Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Yeti (Lv.226)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1751259,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Ice Grass is dropped by Yeti (Lv.226).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(9).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-65",
+      "order": 871,
+      "title": "Niwerth (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 1)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Niwerth (NPC)",
+      "npcIds": [
+        "niwerth-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Niwerth (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Blue Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Niwerth (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Niwerth he will transfer you to Area 2 (Click on the small picture to see how the Areas are mapped). Blue Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Niwerth_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-66",
+      "order": 872,
+      "title": "Niwerth (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 2)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Niwerth (NPC)",
+      "npcIds": [
+        "niwerth-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Niwerth (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Blue Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Niwerth (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Niwerth he will transfer you to Area 1 (Click on the small picture to see how the Areas are mapped). Blue Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Niwerth_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-67",
+      "order": 873,
+      "title": "Niwerth (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 3)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Niwerth (NPC)",
+      "npcIds": [
+        "niwerth-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Niwerth (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Blue Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Niwerth (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Niwerth he will transfer you to Area 4 (Click on the small picture to see how the Areas are mapped). Blue Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Niwerth_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-68",
+      "order": 874,
+      "title": "Niwerth (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 4)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Niwerth (NPC)",
+      "npcIds": [
+        "niwerth-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Niwerth (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Blue Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Niwerth (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Niwerth he will transfer you to Area 1 (Click on the small picture to see how the Areas are mapped). Blue Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Niwerth_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-69",
+      "order": 875,
+      "title": "Niwerth (NPC) - Blue Ice Trial 2 - Ice Palace Stairs (Area 5)",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Niwerth (NPC)",
+      "npcIds": [
+        "niwerth-npc"
+      ],
+      "location": "Blue Ice Trial 2 - Ice Palace Stairs",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Niwerth (NPC) at Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Get 1x Blue Plank: drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+        "Bring everything back to Niwerth (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Plank",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 2 - Ice Palace Stairs (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 2 - Ice Palace Stairs"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "When you talk to Niwerth he will transfer you to Area 4 (Click on the small picture to see how the Areas are mapped). Blue Plank is drilled in Blue Ice Trial 2 - Ice Palace Stairs.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Niwerth_(NPC)_-_Blue_Ice_Trial_2_-_Ice_Palace_Stairs_(Area_5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-70",
+      "order": 876,
+      "title": "Old Artist - Ice Statue",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Ice Dungeon 4 - Teardrop Walkways",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Old Artist at Ice Dungeon 4 - Teardrop Walkways.",
+        "Get 1x Tool 1: dropped by Coolem (Lv.272) in Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways.",
+        "Get 1x Tool 2: dropped by Giant Coolem (Lv.277) in Ice Dungeon 4 - Teardrop Walkways.",
+        "Get 1x Tool 3: dropped by Great Coolem (Lv.280) in Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways.",
+        "Bring everything back to Old Artist (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tool 1",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Coolem (Lv.272)",
+            "map": "Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tool 2",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Giant Coolem (Lv.277)",
+            "map": "Ice Dungeon 4 - Teardrop Walkways"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tool 3",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Great Coolem (Lv.280)",
+            "map": "Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 15x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 15x Half Blue Potion",
+          "Cycle 5: 15x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Tool 1 is dropped by Coolem (Lv.272). Tool 2 is dropped by Giant Coolem (Lv.277). Tool 3 is dropped by Great Coolem (Lv.280).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Old_Artist_-_Ice_Statue.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-71",
+      "order": 877,
+      "title": "Old Artist - My hands are freezing!",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Ice Dungeon 4 - Teardrop Walkways",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Old Artist at Ice Dungeon 4 - Teardrop Walkways.",
+        "Get 3x Hot Pack: dropped by Freyr (Lv.259) in Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal.",
+        "Bring everything back to Old Artist (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Hot Pack",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Freyr (Lv.259)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 15x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 15x Half Pink Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Hot Pack is dropped by Freyr (Lv.259). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Old_Artist_-_My_hands_are_freezing!.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-72",
+      "order": 878,
+      "title": "Poppuri - Poppuri's Fur Care",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Poppuri",
+      "npcIds": [
+        "poppuri"
+      ],
+      "location": "Snow Field 3 - Stairway of Snowflake",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Poppuri at Snow Field 3 - Stairway of Snowflake.",
+        "Get 1x King Comb: dropped by Yeti (Lv.226) in Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Poppuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "King Comb",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Yeti (Lv.226)",
+            "map": "Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Blue Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "King Comb is dropped by Yeti (Lv.226). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poppuri_-_Poppuri's_Fur_Care.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-73",
+      "order": 879,
+      "title": "Primrose - Healthy Snacks for Fairies",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Primrose",
+      "npcIds": [
+        "primrose"
+      ],
+      "location": "Laplanoel - Santa's Post Office",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+, after Cupid of Love 3",
+      "steps": [
+        "Talk to Primrose at Laplanoel - Santa's Post Office.",
+        "Get 5x Reindeer Milk: reward from Tame Reindeer - Gather Fellow Reindeer.",
+        "Get 5x Fresh Edelweiss: reward from Xote - Cupid of Love 2.",
+        "Bring everything back to Primrose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Reindeer Milk",
+          "qty": 5,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Tame Reindeer - Gather Fellow Reindeer",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fresh Edelweiss",
+          "qty": 5,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Xote - Cupid of Love 2",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Edelweiss Bouquet"
+        ]
+      },
+      "notes": "Reindeer Milk is obtained by completing Tame Reindeer - Gather Fellow Reindeer. Fresh Edelweiss is obtained by completing Xote - Cupid of Love 2.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Primrose_-_Healthy_Snacks_for_Fairies.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-74",
+      "order": 880,
+      "title": "Prince Stephano - Prince Stephano's Request",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Prince Stephano",
+      "npcIds": [
+        "prince-stephano"
+      ],
+      "location": "Ice Dungeon 3 - Heart of Crystal",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Prince Stephano at Ice Dungeon 3 - Heart of Crystal.",
+        "Get 1x Ice Flower Ring: drilled in Blue Ice Dungeon.",
+        "Get 1x Icy Flower Earrings: drilled in Blue Ice Dungeon.",
+        "Get 1x Ice Wristlet: dropped by Great Coolem (Lv.280) in Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways.",
+        "Bring everything back to Prince Stephano (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ice Flower Ring",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Dungeon (drill depth not on the wiki)",
+            "map": "Blue Ice Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Icy Flower Earrings",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Dungeon (drill depth not on the wiki)",
+            "map": "Blue Ice Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ice Wristlet",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Great Coolem (Lv.280)",
+            "map": "Ice Dungeon 3 - Heart of Crystal / Ice Dungeon 4 - Teardrop Walkways"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 15x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 15x Half Pink Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Ice Wristlet is dropped by Great Coolem (Lv.280). Ice Flower Ring and Icy Flower Earrings are drilled in Blue Ice Dungeon. Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Prince_Stephano_-_Prince_Stephano's_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-75",
+      "order": 881,
+      "title": "Princess Rosetta - Princess Rosetta's Request",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Princess Rosetta",
+      "npcIds": [
+        "princess-rosetta"
+      ],
+      "location": "Ice Dungeon 1 - Cave of Dark Blue",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Princess Rosetta at Ice Dungeon 1 - Cave of Dark Blue.",
+        "Get 2x Pink Lipstick: dropped by Freyja (Lv.264) in Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal.",
+        "Bring everything back to Princess Rosetta (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pink Lipstick",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Freyja (Lv.264)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 15x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 15x Half Pink Potion",
+          "Cycle 5: 15x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Pink Lipstick is dropped by Freyja (Lv.264).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Princess_Rosetta_-_Princess_Rosetta's_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-76",
+      "order": 882,
+      "title": "Princess Rosetta - Ready to save the prince?",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Princess Rosetta",
+      "npcIds": [
+        "princess-rosetta"
+      ],
+      "location": "Ice Dungeon 1 - Cave of Dark Blue",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Princess Rosetta at Ice Dungeon 1 - Cave of Dark Blue.",
+        "Get 1x All Mighty Firebolt: reward from Horse Hiddink - Errands from Fairy God Mother.",
+        "Get 5x Throwing Dart: dropped by Niwerth (Lv.252) in Ice Dungeon 1 - Cave of Darkblue.",
+        "Bring everything back to Princess Rosetta (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "All Mighty Firebolt",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Horse Hiddink - Errands from Fairy God Mother",
+            "map": "Ice Dungeon 1 - Cave of Dark Blue"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Throwing Dart",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Niwerth (Lv.252)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4465741,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 15x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 15x Half Blue Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Throwing Dart is dropped by Niwerth (Lv.252). All Mighty Firebolt is obtained by completing Horse Hiddink - Errands from Fairy God Mother. Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Princess_Rosetta_-_Ready_to_save_the_prince%3F.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-77",
+      "order": 883,
+      "title": "Princess Rosetta - Send Me a Hero",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Princess Rosetta",
+      "npcIds": [
+        "princess-rosetta"
+      ],
+      "location": "Blue Ice Trial 1 - Gate of Ice Palace",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Princess Rosetta at Blue Ice Trial 1 - Gate of Ice Palace.",
+        "Defeat 3x Gate Keeper Coolem (Lv.275) within 2 min in Blue Ice Trial 1 - Gate of Ice Palace.",
+        "Report back to Princess Rosetta."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Gate Keeper Coolem",
+          "level": 275,
+          "count": 3,
+          "timeLimit": "2 min",
+          "map": "Blue Ice Trial 1 - Gate of Ice Palace"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Teleport to Blue Ice Trial 2 - Ice Palace Stairs"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Princess_Rosetta_-_Send_Me_a_Hero.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-78",
+      "order": 884,
+      "title": "Queen Odinea (NPC) - Odinea's Demands",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Queen Odinea (NPC)",
+      "npcIds": [
+        "queen-odinea-npc"
+      ],
+      "location": "Blue Ice Trial 5 - Ice Palace Jail (3)",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-79",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 240+, have Rudolph - Crush Odinea's Ambitions in quest log",
+      "steps": [
+        "Talk to Queen Odinea (NPC) at Blue Ice Trial 5 - Ice Palace Jail (3).",
+        "Defeat 5x Queen's Maid 3 (Lv.260) within 3 min in Blue Ice Trial 5 - Ice Palace Jail (3).",
+        "Report back to Queen Odinea (NPC)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Queen's Maid 3",
+          "level": 260,
+          "count": 5,
+          "timeLimit": "3 min",
+          "map": "Blue Ice Trial 5 - Ice Palace Jail (3)"
+        }
+      ],
+      "rewards": {
+        "baseExp": 38226093,
+        "tmExp": 5984372,
+        "galder": 0,
+        "items": [
+          "1x Odinea's Crystal"
+        ]
+      },
+      "notes": "Queen Odinea's NPC is located in Blue Ice Trial 5 - Ice Palace Jail (3) with Jailer Coolems and can be reached by failing Star Gazer Stella (2) - The Hex on the Queen's Room at Blue Ice Trial 4 - Ice Palace Maid's Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Queen_Odinea_(NPC)_-_Odinea's_Demands.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-81",
+      "order": 885,
+      "title": "Santa Claus - I'm Okay",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Santa Claus",
+      "npcIds": [
+        "santa-claus"
+      ],
+      "location": "Blue Ice Trial 3 - Ice Palace Hallway",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-80",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 240+, have Rudolph - Santa Expert Kidnapee in quest log",
+      "steps": [
+        "Talk to Santa Claus at Blue Ice Trial 3 - Ice Palace Hallway.",
+        "Talk to him again."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 41998500,
+        "tmExp": 6574950,
+        "galder": 0,
+        "items": [
+          "1x Santa's Inquiry Note"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Santa_Claus_-_I'm_Okay.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-79",
+      "order": 886,
+      "title": "Rudolph - Crush Odinea's Ambitions",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Rudolph",
+      "npcIds": [
+        "rudolph"
+      ],
+      "location": "Path to Snow Hill",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-81"
+        }
+      ],
+      "prereqText": "Level 240+, have completed Santa Claus - I'm Okay",
+      "steps": [
+        "Talk to Rudolph at Path to Snow Hill.",
+        "Get 1x Odinea's Crystal: reward from Queen Odinea (NPC) - Odinea's Demands.",
+        "Bring everything back to Rudolph."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Odinea's Crystal",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Queen Odinea (NPC) - Odinea's Demands",
+            "map": "Blue Ice Trial 5 - Ice Palace Jail (3)"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 41998500,
+        "tmExp": 6574950,
+        "galder": 0,
+        "items": [
+          "1x Ice Nail"
+        ]
+      },
+      "notes": "Odinea's Crystal is obtained by completing Queen Odinea (NPC) - Odinea's Demands.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rudolph_-_Crush_Odinea's_Ambitions.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-80",
+      "order": 887,
+      "title": "Rudolph - Santa Expert Kidnapee",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Rudolph",
+      "npcIds": [
+        "rudolph"
+      ],
+      "location": "Path to Snow Hill",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 240+, have Ice Heart Sword, Ice Diadem and Ice Shield in inventory",
+      "steps": [
+        "Talk to Rudolph at Path to Snow Hill.",
+        "Get 1x Santa's Inquiry Note: reward from Santa Claus - I'm Okay.",
+        "Bring everything back to Rudolph."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Santa's Inquiry Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Santa Claus - I'm Okay",
+            "map": "Blue Ice Trial 3 - Ice Palace Hallway"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 41998500,
+        "tmExp": 6574950,
+        "galder": 0,
+        "items": [
+          "10x Half Pink Potion",
+          "10x Half Blue Potion"
+        ]
+      },
+      "notes": "Ice Heart Sword, Ice Diadem and Ice Shield are dropped by Queen Odinea (Lv.520). Santa's Inquiry Note is obtained by completing Santa Claus - I'm Okay.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rudolph_-_Santa_Expert_Kidnapee.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-82",
+      "order": 888,
+      "title": "Santa Claus - I'm Worried about La Befana",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Santa Claus",
+      "npcIds": [
+        "santa-claus"
+      ],
+      "location": "Blue Ice Trial 3 - Ice Palace Hallway",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Santa Claus at Blue Ice Trial 3 - Ice Palace Hallway.",
+        "Defeat 5x Queen's Icicler (Lv.270) within 2 min in Blue Ice Trial 3 - Ice Palace Hallway.",
+        "Report back to Santa Claus."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Queen's Icicler",
+          "level": 270,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Blue Ice Trial 3 - Ice Palace Hallway"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Talk to him"
+        ]
+      },
+      "notes": "When you talk to Santa Claus he will give you Santa's Note, then you have 2 minutes to complete his request. If you fail on the MQ you will be banished to Blue Ice Trial 5 - Ice Palace Jail (2) where you have to do a MQ to get teleported back to the beginning of Blue Ice Trial 3 - Ice Palace Hallway. Once you complete the MQ hand in the quest to Witch La Befana at the end of the map.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Santa_Claus_-_I'm_Worried_about_La_Befana.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-83",
+      "order": 889,
+      "title": "Santa Claus - Santa's Severe Cold - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Santa Claus",
+      "npcIds": [
+        "santa-claus"
+      ],
+      "location": "Snow Field 1 - Merry Christmas",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Santa Claus at Snow Field 1 - Merry Christmas.",
+        "Get 1x Bear Stew: Compound 1x Herb Potion 1x Bear Paw 1x Edelweiss with Compounder Paul at Gift Factory used for Santa Claus - Santa's Severe Cold - 1 .",
+        "Bring everything back to Santa Claus (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bear Stew",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compound 1x Herb Potion 1x Bear Paw 1x Edelweiss with Compounder Paul at Gift Factory used for Santa Claus - Santa's Severe Cold - 1 ",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Pink Potion",
+          "Cycle 5: 1x Miniature Snowman"
+        ]
+      },
+      "notes": "Bear Stew is obtained by compounding Herb Potion + Bear Paw + Edelweiss with Compounder Paul at Snow Hill Gift Factory or Laplanoel Shopping Mall. Herb Potion can be bought in various shops and can be drilled in several maps. Bear Paw is dropped by Santa Bear (Lv.212). Edelweiss is drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Santa_Claus_-_Santa's_Severe_Cold_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-84",
+      "order": 890,
+      "title": "Santa Claus - Santa's Severe Cold - 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Santa Claus",
+      "npcIds": [
+        "santa-claus"
+      ],
+      "location": "Snow Field 1 - Merry Christmas",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-83"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Santa Claus - Santa's Severe Cold - 1",
+      "steps": [
+        "Talk to Santa Claus at Snow Field 1 - Merry Christmas.",
+        "Get 1x Red Cardigan: reward from Grandma Tango - Gathering Yarn.",
+        "Get 1x Red Scarf: dropped by Santa Bear (Lv.212) in Snow Field 2 - Snowflake Park.",
+        "Bring everything back to Santa Claus (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Cardigan",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Grandma Tango - Gathering Yarn",
+            "map": "Snow Hill Gift Factory"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Red Scarf",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Santa Bear (Lv.212)",
+            "map": "Snow Field 2 - Snowflake Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Blue Potion",
+          "Cycle 5: 1x Miniature Snowman"
+        ]
+      },
+      "notes": "Red Scarf is dropped by Santa Bear (Lv.212). Red Cardigan is obtained by completing Grandma Tango - Gathering Yarn.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Santa_Claus_-_Santa's_Severe_Cold_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-85",
+      "order": 891,
+      "title": "Shaman Girl Jia - Dark Spirit Punishment 9",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Mind's Eye (Lv.300+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 300,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 300+, use Mind's Eye",
+      "steps": [
+        "Talk to Shaman Girl Jia at Snow Hill Town - Laplanoel.",
+        "Defeat 3x Shadow King Yamu (Lv.540) within 12 min in Northwest Forest.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Shadow King Yamu",
+          "level": 540,
+          "count": 3,
+          "timeLimit": "12 min",
+          "map": "Northwest Forest"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2930826,
+        "tmExp": 433814,
+        "galder": 0,
+        "items": [
+          "8x Half Pink Potion",
+          "8x Half Blue Potion"
+        ]
+      },
+      "notes": "At other levels: Lv.304~307: 3x Shadow Bug Bear (Lv.543) in 10 min, reward 8x Half Pink Potion, 8x Half Blue Potion. Lv.308~311: 3x Shadow Polar Bear (Lv.546) in 10 min, reward 8x Half Pink Potion, 8x Half Blue Potion. Lv.312~315: 3x Shadow Niwerth (Lv.552) in 11 min, reward 8x Half Pink Potion, 8x Half Blue Potion. Lv.316+: 3x Shadow Coolem (Lv.558) in 10 min, reward 8x Half Pink Potion, 8x Half Blue Potion.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Spirit_Punishment_9.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-86",
+      "order": 892,
+      "title": "Star Gazer Stella (2) - The Hex on the Queen's Room",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Star Gazer Stella (2)",
+      "npcIds": [
+        "star-gazer-stella-2"
+      ],
+      "location": "Blue Ice Trial 4 - Ice Palace Maid's Room",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+, talk to her and pass her first trial",
+      "steps": [
+        "Talk to Star Gazer Stella (2) at Blue Ice Trial 4 - Ice Palace Maid's Room.",
+        "Get 1x Queen's Room Key: dropped by Sly Snow Kid (Lv.252) in Blue Ice Trial 4 - Ice Palace Maid's Room.",
+        "Bring everything back to Star Gazer Stella (2)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Queen's Room Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Sly Snow Kid (Lv.252)",
+            "map": "Blue Ice Trial 4 - Ice Palace Maid's Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Talk to her and choose \"Defend\", after that keep clicking \"Attack\" to proceed to the quest. When you fail her little game you will be banished to Blue Ice Trial 5 - Ice Palace Jail (3) where you have to do a MQ to get teleported back to the beginning of Blue Ice Trial 4 - Ice Palace Maid's Room. Queen's Room Key is dropped by Sly Snow Kid (Lv.252).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Star_Gazer_Stella_(2)_-_The_Hex_on_the_Queen's_Room.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-88",
+      "order": 893,
+      "title": "Tacky - Christmas Tree Decoration 1",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Tacky",
+      "npcIds": [
+        "tacky"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Tacky at Snow Hill Town - Laplanoel.",
+        "Get 100x Snow Pine Cone: dropped by Snow Pine Tree (Lv.100) in Snow Hill Town - Laplanoel.",
+        "Bring everything back to Tacky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Snow Pine Cone",
+          "qty": 100,
+          "source": {
+            "kind": "drop",
+            "from": "Snow Pine Tree (Lv.100)",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5635737,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 1,000 Galder Coupon",
+          "1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Snow Pine Cone is dropped by Snow Pine Tree (Lv.100). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Tacky_-_Christmas_Tree_Decoration_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-89",
+      "order": 894,
+      "title": "Tacky - Christmas Tree Decoration 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Tacky",
+      "npcIds": [
+        "tacky"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Tacky at Snow Hill Town - Laplanoel.",
+        "Get 100x Clean Floccus: dropped by Bug Bear (Lv.192) in Frost Wind Forest 2 / Path to Snow Hill.",
+        "Bring everything back to Tacky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Clean Floccus",
+          "qty": 100,
+          "source": {
+            "kind": "drop",
+            "from": "Bug Bear (Lv.192)",
+            "map": "Frost Wind Forest 2 / Path to Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5635737,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 1,000 Galder Coupon",
+          "1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Clean Floccus is dropped by Bug Bear (Lv.192). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Tacky_-_Christmas_Tree_Decoration_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-90",
+      "order": 895,
+      "title": "Tame Reindeer - Gather Fellow Reindeer",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Monster Quests",
+      "npc": "Tame Reindeer",
+      "npcIds": [
+        "tame-reindeer"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-73",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 160+, have Primrose - Healthy Snacks for Fairies in quest log",
+      "steps": [
+        "Talk to Tame Reindeer at Snow Hill Town - Laplanoel.",
+        "Defeat 20x Wild Reindeer (Lv.230) within 10 min in Snow Field 4 - Happy New Year.",
+        "Report back to Tame Reindeer (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Wild Reindeer",
+          "level": 230,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Snow Field 4 - Happy New Year"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1047568,
+        "tmExp": 922858,
+        "galder": 0,
+        "items": [
+          "1x Reindeer Milk"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Tame_Reindeer_-_Gather_Fellow_Reindeer.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-91",
+      "order": 896,
+      "title": "Tame Reindeer - Healthy Diet for Reindeer",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Tame Reindeer",
+      "npcIds": [
+        "tame-reindeer"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Tame Reindeer at Snow Hill Town - Laplanoel.",
+        "Get 5x Snow Pine Needle: dropped by Snow Pine Tree (Lv.100) in Snow Hill Town - Laplanoel.",
+        "Bring everything back to Tame Reindeer (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Snow Pine Needle",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Snow Pine Tree (Lv.100)",
+            "map": "Snow Hill Town - Laplanoel"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Snow Pine Needle is dropped by Snow Pine Tree (Lv.100).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Tame_Reindeer_-_Healthy_Diet_for_Reindeer.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-92",
+      "order": 897,
+      "title": "Tango - Finding Models",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Tango",
+      "npcIds": [
+        "tango"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Tango at Snow Hill Town - Laplanoel.",
+        "Get 1x Modeling Contract: dropped by Polar Bear (Lv.207) in Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Tango (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Modeling Contract",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Polar Bear (Lv.207)",
+            "map": "Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 10x Half Blue Potion",
+          "Cycle 2: 1x Miniature Snowman",
+          "Cycle 3: 10x Half Blue Potion",
+          "Cycle 4: 1x Miniature Snowman",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Modeling Contract is dropped by Polar Bear (Lv.207). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Tango_-_Finding_Models.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-93",
+      "order": 898,
+      "title": "Winnie - Daily Quest - Snow Hill",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Daily",
+      "npc": "Winnie",
+      "npcIds": [
+        "winnie"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 170,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Winnie at Snow Hill Town - Laplanoel.",
+        "Get 2x Icicler's Crystal: dropped by Punisher Icicler (Lv.233) in Snow Field 1 - Merry Christmas / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake / Snow Field 4 - Happy New Year.",
+        "Bring everything back to Winnie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Icicler's Crystal",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Punisher Icicler (Lv.233)",
+            "map": "Snow Field 1 - Merry Christmas / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake / Snow Field 4 - Happy New Year"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2107031,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "35x 500 Galder Coupon",
+          "10x Pink Potion C",
+          "10x Blue Potion C",
+          "1x Sharp Kalis",
+          "1x or Strong Shotgun"
+        ]
+      },
+      "notes": "Icicler's Crystal is dropped by Punisher Icicler (Lv.233). In next season the request will be Spirit of Icicler.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Winnie_-_Daily_Quest_-_Snow_Hill.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-94",
+      "order": 899,
+      "title": "Witch La Befana - Christmas Nightmare Project - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Witch La Befana at Snow Hill Town - Laplanoel.",
+        "Get 5x Snowman Jelly: dropped by Snowkid (Lv.198) in Snow Field 1 - Merry Christmas.",
+        "Bring everything back to Witch La Befana (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Snowman Jelly",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Snowkid (Lv.198)",
+            "map": "Snow Field 1 - Merry Christmas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Pink Potion",
+          "Cycle 5: 1x Miniature Snowman"
+        ]
+      },
+      "notes": "Snowman Jelly is dropped by Snowkid (Lv.198).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Christmas_Nightmare_Project_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-95",
+      "order": 900,
+      "title": "Witch La Befana - Christmas Nightmare Project - 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Snow Hill - Sticker Quests",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Witch La Befana at Snow Hill Town - Laplanoel.",
+        "Get 5x Ice Pick: dropped by Icicler (Lv.228) in Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Bring everything back to Witch La Befana (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ice Pick",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Icicler (Lv.228)",
+            "map": "Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Pink Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Pink Potion",
+          "Cycle 5: 1x Snow Hill Sticker"
+        ]
+      },
+      "notes": "Ice Pick is dropped by Icicler (Lv.228). Gives a Snow Hill Sticker: Fairy Godmother - Snow Hill Recommendation Sticker needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Christmas_Nightmare_Project_-_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-96",
+      "order": 901,
+      "title": "Witch La Befana - Find the Special Broom",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Blue Ice Trial - Ice Palace (Lv.240+)",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Blue Ice Trial 3 - Ice Palace Hallway",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "sh-82"
+        }
+      ],
+      "prereqText": "Level 1+, have Santa's Note and completed Santa Claus - I'm Worried about La Befana",
+      "steps": [
+        "Talk to Witch La Befana at Blue Ice Trial 3 - Ice Palace Hallway.",
+        "Get 1x Special Broom: drilled in Blue Ice Trial 3 - Ice Palace Hallway.",
+        "Bring everything back to Witch La Befana."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Special Broom",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Blue Ice Trial 3 - Ice Palace Hallway (drill depth not on the wiki)",
+            "map": "Blue Ice Trial 3 - Ice Palace Hallway"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Santa's Note is obtained by talking to Santa Claus. Special Broom is drilled in Blue Ice Trial 3 - Ice Palace Hallway.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Find_the_Special_Broom.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-97",
+      "order": 902,
+      "title": "Witch La Befana - Quick Strength Potion",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Town Quests",
+      "npc": "Witch La Befana",
+      "npcIds": [
+        "witch-la-befana"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Witch La Befana at Snow Hill Town - Laplanoel.",
+        "Get 1x Bear Paw: dropped by Santa Bear (Lv.212) in Snow Field 2 - Snowflake Park.",
+        "Get 1x Icicle: dropped by Icicler (Lv.228) in Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake.",
+        "Get 1x Teardrop: dropped by Freyja (Lv.264) in Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal.",
+        "Bring everything back to Witch La Befana (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bear Paw",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Santa Bear (Lv.212)",
+            "map": "Snow Field 2 - Snowflake Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Icicle",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Icicler (Lv.228)",
+            "map": "Snow Field 4 - Happy New Year / Snow Field 2 - Snowflake Park / Snow Field 3 - Stairway of Snowflake"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Teardrop",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Freyja (Lv.264)",
+            "map": "Ice Dungeon 1 - Cave of Darkblue / Ice Dungeon 2 - Cave of Crystal / Ice Dungeon 3 - Heart of Crystal"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3522335,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Miniature Snowman",
+          "Cycle 2: 10x Half Blue Potion",
+          "Cycle 3: 1x Miniature Snowman",
+          "Cycle 4: 10x Half Blue Potion",
+          "Cycle 5: 1x Miniature Snowman"
+        ]
+      },
+      "notes": "Bear Paw is dropped by Santa Bear (Lv.212), Icicle is dropped by Icicler (Lv.228), Teardrop is dropped by Freyja (Lv.264).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Witch_La_Befana_-_Quick_Strength_Potion.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-98",
+      "order": 903,
+      "title": "Xote - Cupid of Love 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Cupid of Love",
+      "npc": "Xote",
+      "npcIds": [
+        "xote"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Xote at Snow Hill Town - Laplanoel.",
+        "Get 5x Edelweiss: drilled in Snow Hill Fields.",
+        "Bring everything back to Xote."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Edelweiss",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Snow Hill Fields (drill depth not on the wiki)",
+            "map": "Snow Hill Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x Edelweiss"
+        ]
+      },
+      "notes": "Edelweiss is drilled in Snow Hill Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Xote_-_Cupid_of_Love_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-99",
+      "order": 904,
+      "title": "Xote - Cupid of Love 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Cupid of Love",
+      "npc": "Xote",
+      "npcIds": [
+        "xote"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+, after Cupid of Love 1",
+      "steps": [
+        "Talk to Xote at Snow Hill Town - Laplanoel.",
+        "Get 5x Fresh Edelweiss: reward from Inventor Gale - Make a Defroster.",
+        "Bring everything back to Xote."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fresh Edelweiss",
+          "qty": 5,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Inventor Gale - Make a Defroster",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x Fresh Edelweiss"
+        ]
+      },
+      "notes": "Fresh Edelweiss is obtained by completing Inventor Gale - Make a Defroster.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Xote_-_Cupid_of_Love_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-100",
+      "order": 905,
+      "title": "Xote - Cupid of Love 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Cupid of Love",
+      "npc": "Xote",
+      "npcIds": [
+        "xote"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+, after Cupid of Love 2",
+      "steps": [
+        "Talk to Xote at Snow Hill Town - Laplanoel.",
+        "Get 5x Edelweiss Bouquet: reward from Primrose - Healthy Snacks for Fairies.",
+        "Bring everything back to Xote."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Edelweiss Bouquet",
+          "qty": 5,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Primrose - Healthy Snacks for Fairies",
+            "map": "Laplanoel - Santa's Post Office"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Edelweiss Bouquet",
+          "1x Fairy Foot Warmer"
+        ]
+      },
+      "notes": "Edelweiss Bouquet is obtained by completing Primrose - Healthy Snacks for Fairies.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Xote_-_Cupid_of_Love_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "sh-101",
+      "order": 906,
+      "title": "Xote - Cupid of Love 4",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Snow Hill - Cupid of Love",
+      "npc": "Xote",
+      "npcIds": [
+        "xote"
+      ],
+      "location": "Snow Hill Town - Laplanoel",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+, after Cupid of Love 3",
+      "steps": [
+        "Talk to Xote at Snow Hill Town - Laplanoel.",
+        "Give Edelweiss Bouquet to Kyu in Laplanoel."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Edelweiss Bouquet is obtained by completing Xote - Cupid of Love 3.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Xote_-_Cupid_of_Love_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
     }
   ]
 }

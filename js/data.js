@@ -71,12 +71,33 @@
     return out;
   }
 
+  // GitHub Pages sometimes answers 503 for a moment (often right after a deploy). One failed file
+  // used to leave the page with no quests, so retry: network errors, 5xx and 429 get 3 more tries
+  // (after 0.5 s, 1.5 s, 3 s); a 404 doesn't, since a missing file won't appear by waiting.
+  const RETRY_WAITS = [500, 1500, 3000];
+
+  async function fetchJson(url, fetchImpl, wait) {
+    const f = fetchImpl || (typeof fetch !== "undefined" ? fetch : null);
+    const sleep = wait || (ms => new Promise(r => setTimeout(r, ms)));
+    let lastError;
+    for (let attempt = 0; attempt <= RETRY_WAITS.length; attempt++) {
+      if (attempt) await sleep(RETRY_WAITS[attempt - 1]);
+      let res;
+      try {
+        res = await f(url, { cache: "no-cache" });
+      } catch (e) {
+        lastError = e; // offline / dropped connection: try again
+        continue;
+      }
+      if (res.ok) return res.json();
+      lastError = new Error(`HTTP ${res.status}`);
+      if (res.status !== 429 && res.status < 500) break;
+    }
+    throw lastError;
+  }
+
   async function loadAll(base) {
-    const get = async path => {
-      const res = await fetch(base + path, { cache: "no-cache" });
-      if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
-      return res.json();
-    };
+    const get = path => fetchJson(base + path).catch(e => { throw new Error(`${path}: ${e.message}`); });
     const index = await get("quests/index.json");
     const [questFiles, images, npcs, maps, npcPins] = await Promise.all([
       Promise.all(index.files.map(f => get("quests/" + f))),
@@ -88,5 +109,5 @@
     return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, maps, npcPins, questFiles };
   }
 
-  root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, buildPrereqIndex, loadAll };
+  root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, buildPrereqIndex, loadAll, fetchJson, RETRY_WAITS };
 })(typeof window !== "undefined" ? window : globalThis);

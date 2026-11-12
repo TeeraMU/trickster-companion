@@ -3360,3 +3360,44 @@ a.btn {
   border-radius: 999px;
   background: color-mix(in srgb, var(--accent-purple) 16%, var(--bg-card));
 }
+
+/* ---------------------------------------------------------------------------------------
+   Loading screen (until the quest data is in): Lottie of two running characters
+   --------------------------------------------------------------------------------------- */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: linear-gradient(180deg, var(--page-top) 0%, var(--page-bottom) 100%) var(--page-bottom);
+  transition: opacity 0.35s ease;
+}
+
+.loading-screen.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-anim {
+  width: min(420px, 86vw);
+  aspect-ratio: 1000 / 430;
+  /* fast loads finish before this shows, so nothing flashes */
+  animation: loading-in 0.3s ease 0.25s both;
+}
+
+.loading-text {
+  margin: 0;
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+  color: var(--text-secondary);
+  animation: loading-in 0.3s ease 0.25s both;
+}
+
+@keyframes loading-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

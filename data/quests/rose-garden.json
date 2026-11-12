@@ -251,6 +251,4655 @@
         "checked": "2026-11-12",
         "verifiedInGame": false
       }
+    },
+    {
+      "id": "rg-01",
+      "order": 604,
+      "title": "Assistant Hunter - Event Garden - Ceremonia",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Event Garden - Ceremonia",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 70,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70+",
+      "steps": [
+        "Talk to Assistant Hunter at Event Garden - Ceremonia.",
+        "Defeat 15x Dancer Isabelle within 20 mins in Rose Field 1 - Stairway to Sorrow.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Dancer Isabelle",
+          "count": 15,
+          "timeLimit": "20 mins",
+          "map": "Rose Field 1 - Stairway to Sorrow"
+        }
+      ],
+      "rewards": {
+        "baseExp": 99694,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.101-120: 15 Captain Arman in 20 mins, reward 5x 500 Galder Coupon. Lv.121-130: 15 Madame Chiffon in 20 mins, reward 5x 500 Galder Coupon. Lv.131+: 15 Madame Fondue in 20 mins, reward 5x 500 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Event_Garden_-_Ceremonia.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-02",
+      "order": 605,
+      "title": "Assistant Hunter - Event Garden - Ceremonia - Request 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Event Garden - Ceremonia",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 101,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 101-120",
+      "steps": [
+        "Talk to Assistant Hunter at Event Garden - Ceremonia.",
+        "Defeat 15x Captain Arman within 20 mins in Rose Field 2 - Maze of Black Rose.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Captain Arman",
+          "count": 15,
+          "timeLimit": "20 mins",
+          "map": "Rose Field 2 - Maze of Black Rose"
+        }
+      ],
+      "rewards": {
+        "baseExp": 234950,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Retired at July 2nd",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Event_Garden_-_Ceremonia_-_Request_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-03",
+      "order": 606,
+      "title": "Assistant Hunter - Event Garden - Ceremonia - Request 4",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Event Garden - Ceremonia",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 131,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 131+",
+      "steps": [
+        "Talk to Assistant Hunter at Event Garden - Ceremonia.",
+        "Defeat 15x Madame Fondue within 20 mins in Event Garden - Ceremonia.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Madame Fondue",
+          "count": 15,
+          "timeLimit": "20 mins",
+          "map": "Event Garden - Ceremonia"
+        }
+      ],
+      "rewards": {
+        "baseExp": 423581,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Retired at July 2nd",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Event_Garden_-_Ceremonia_-_Request_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-04",
+      "order": 607,
+      "title": "Assistant Hunter - Gate of Vamp Castle - Request 2",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200+",
+      "steps": [
+        "Talk to Assistant Hunter at Gate of Vamp Castle.",
+        "Defeat 15x Bone Magician (Lv.231) within 30 mins in Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Bone Magician",
+          "level": 231,
+          "count": 15,
+          "timeLimit": "30 mins",
+          "map": "Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1200059,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Gate_of_Vamp_Castle_-_Request_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-42",
+      "order": 608,
+      "title": "Hunter Yuri - Rose Garden Hunter Girl Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 115,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 115+",
+      "steps": [
+        "Talk to Hunter Yuri at Rose Field 3 - Maze of Blue Rose.",
+        "Defeat 30x Captain Arman (Lv.145) within 20 min in Rose Field 2 - Maze of Black Rose.",
+        "Report back to Hunter Yuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Captain Arman",
+          "level": 145,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Rose Field 2 - Maze of Black Rose"
+        }
+      ],
+      "rewards": {
+        "baseExp": 510940,
+        "tmExp": 208420,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.120~124: 30x Captain Norman (Lv.148) in 20 min, reward 10,000 Galder Coupon. Lv.125~129: 30x Madam Chiffon (Lv.150) in 20 min, reward 10,000 Galder Coupon. Lv.130+: 30x Madam Moncher (Lv.153) in 15 min, reward 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Rose_Garden_Hunter_Girl_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-05",
+      "order": 609,
+      "title": "Assistant Hunter - Rose Garden Assistant Hunter Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 115,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-42"
+        }
+      ],
+      "prereqText": "Level 115+, have completed at least 1 Rose Garden Hunter Girl Quest",
+      "steps": [
+        "Talk to Assistant Hunter at Rose Field 3 - Maze of Blue Rose.",
+        "Defeat 20x Ballerino Michell (Lv.149) within 10 min in Rose Field 1 - Stairway to Sorrow.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Ballerino Michell",
+          "level": 149,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Rose Field 1 - Stairway to Sorrow"
+        }
+      ],
+      "rewards": {
+        "baseExp": 425942,
+        "tmExp": 608120,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Rose_Garden_Assistant_Hunter_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-06",
+      "order": 610,
+      "title": "Atropos - Atropos's Deal",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Atropos",
+      "npcIds": [
+        "atropos"
+      ],
+      "location": "Rose Garden Park",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+, 3rd Job",
+      "steps": [
+        "Talk to Atropos at Rose Garden Park.",
+        "Defeat 5x Mutated Madam Fondue (Lv.180) within 2 min in Rose Garden Park.",
+        "Report back to Atropos."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mutated Madam Fondue",
+          "level": 180,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Rose Garden Park"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2409432,
+        "tmExp": 850704,
+        "galder": 0,
+        "items": [
+          "1x Elixir of Gods"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Atropos_-_Atropos's_Deal.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-09",
+      "order": 611,
+      "title": "Butler of Vamp Castle - Preparing for the Banquet",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Butler of Vamp Castle",
+      "npcIds": [
+        "butler-of-vamp-castle"
+      ],
+      "location": "Vamp Dungeon 1 - Banquet of the Vamp",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Butler of Vamp Castle at Vamp Dungeon 1 - Banquet of the Vamp.",
+        "Get 2x Golden Cup: drilled in Rose Garden Fields.",
+        "Bring everything back to Butler of Vamp Castle (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Cup",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 992289,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 2x Rose Crest",
+          "Cycle 5: 1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Golden Cup is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Butler_of_Vamp_Castle_-_Preparing_for_the_Banquet.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-07",
+      "order": 612,
+      "title": "Butler of Vamp Castle - Bloody Liquid",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Butler of Vamp Castle",
+      "npcIds": [
+        "butler-of-vamp-castle"
+      ],
+      "location": "Vamp Dungeon 1 - Banquet of the Vamp",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-09"
+        }
+      ],
+      "prereqText": "Level 130+, have completed Butler of Vamp Castle - Preparing for the Banquet",
+      "steps": [
+        "Talk to Butler of Vamp Castle at Vamp Dungeon 1 - Banquet of the Vamp.",
+        "Get 5x Wild Strawberry Juice: dropped by Maid Lydia (Lv.185) in Vamp Dungeon 1 - Banquet of the Vamp / Vamp Dungeon 2 - Banquet of the Dead.",
+        "Bring everything back to Butler of Vamp Castle (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Wild Strawberry Juice",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Maid Lydia (Lv.185)",
+            "map": "Vamp Dungeon 1 - Banquet of the Vamp / Vamp Dungeon 2 - Banquet of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 992289,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 2x Rose Crest",
+          "Cycle 5: 1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Wild Strawberry Juice is dropped by Maid Lydia (Lv.185). Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Butler_of_Vamp_Castle_-_Bloody_Liquid.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-08",
+      "order": 613,
+      "title": "Butler of Vamp Castle - Butler's Request",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Butler of Vamp Castle",
+      "npcIds": [
+        "butler-of-vamp-castle"
+      ],
+      "location": "Vamp Dungeon 1 - Banquet of the Vamp",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Butler of Vamp Castle at Vamp Dungeon 1 - Banquet of the Vamp.",
+        "Get 1x Pocket Watch: drilled in Rose Garden Fields.",
+        "Get 1x Monocle: drilled in Rose Garden Fields.",
+        "Bring everything back to Butler of Vamp Castle (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pocket Watch",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Monocle",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 992289,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 4: 2x Rose Crest",
+          "Cycle 5: 1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Pocket Watch and Monocle are drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Butler_of_Vamp_Castle_-_Butler's_Request.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-10",
+      "order": 614,
+      "title": "Card Girl - Rose Garden Card Girl Quest (1)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Card Girl at Rose Field 4 - Bloom Grave.",
+        "Get 1x Beast Vincento Card: dropped by Beast Vincento (Lv.156) (use Take on it) in Rose Field 4 - Bloom Grave / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Beast Vincento Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Beast Vincento (Lv.156) (use Take on it)",
+            "map": "Rose Field 4 - Bloom Grave / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4229112,
+        "galder": 0,
+        "items": [
+          "1x 3~4x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Beast Vincento Card. Riddle: \"Only the red rose knows your true self\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Rose_Garden_Card_Girl_Quest_(1).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-11",
+      "order": 615,
+      "title": "Card Girl - Rose Garden Card Girl Quest (2)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125+",
+      "steps": [
+        "Talk to Card Girl at Rose Field 4 - Bloom Grave.",
+        "Get 1x Kerberos Card: dropped by Kerberos (Lv.179) (use Take on it) in Vamp Dungeon 1 - Banquet of the Vamp.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Kerberos Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Kerberos (Lv.179) (use Take on it)",
+            "map": "Vamp Dungeon 1 - Banquet of the Vamp"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4428359,
+        "galder": 0,
+        "items": [
+          "4x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Kerberos Card. Riddle: \"Green snow shines on a dark body\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Rose_Garden_Card_Girl_Quest_(2).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-12",
+      "order": 616,
+      "title": "Card Girl - Rose Garden Card Girl Quest (3)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125+",
+      "steps": [
+        "Talk to Card Girl at Rose Field 4 - Bloom Grave.",
+        "Get 1x Bone Magician Card: dropped by Bone Magician (Lv.231) (use Take on it) in Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bone Magician Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Bone Magician (Lv.231) (use Take on it)",
+            "map": "Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4428359,
+        "galder": 0,
+        "items": [
+          "5x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Bone Magician Card. Riddle: \"Bones and magic met in the darkness and created you\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Rose_Garden_Card_Girl_Quest_(3).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-13",
+      "order": 617,
+      "title": "Card Girl - Rose Garden Card Girl Quest (4)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Card Girl at Rose Field 4 - Bloom Grave.",
+        "Get 1x Dancer Isabelle Card: dropped by Dancer Isabelle (Lv.141) (use Take on it) in Rose Field 1 - Stairway to Sorrow.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dancer Isabelle Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Dancer Isabelle (Lv.141) (use Take on it)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4615530,
+        "galder": 0,
+        "items": [
+          "6x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Dancer Isabelle Card. Riddle: \"A never ending dance. That's a ballerina destiny\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Rose_Garden_Card_Girl_Quest_(4).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-14",
+      "order": 618,
+      "title": "Card Girl - Rose Garden Card Girl Quest (5)",
+      "categories": [
+        "card"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Card Girl",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125+",
+      "steps": [
+        "Talk to Card Girl at Rose Field 4 - Bloom Grave.",
+        "Get 1x Captain Norman Card: dropped by Captain Norman (Lv.148) (use Take on it) in Rose Field 2 - Maze of Black Rose / Rose Field 4 - Bloom Grave.",
+        "Get 1x Captain Arman Card: dropped by Captain Arman (Lv.145) (use Take on it) in Rose Field 2 - Maze of Black Rose.",
+        "Get 1x Captain Charman Card: dropped by Captain Charman (Lv.142) (use Take on it) in Rose Field 2 - Maze of Black Rose.",
+        "Bring everything back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Captain Norman Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Norman (Lv.148) (use Take on it)",
+            "map": "Rose Field 2 - Maze of Black Rose / Rose Field 4 - Bloom Grave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Captain Arman Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Arman (Lv.145) (use Take on it)",
+            "map": "Rose Field 2 - Maze of Black Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Captain Charman Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Charman (Lv.142) (use Take on it)",
+            "map": "Rose Field 2 - Maze of Black Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 4615530,
+        "galder": 0,
+        "items": [
+          "7x Arcana Dream Card"
+        ]
+      },
+      "notes": "Card Girl's \"Unknown Item\" is Captain Norman Card and Captain Arman Card and Captain Charman Card. Riddle: \"Sun, Moon, Star\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Rose_Garden_Card_Girl_Quest_(5).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-15",
+      "order": 619,
+      "title": "Clerk Z. Smith - Vamp Castle's Rare Gems",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Clerk Z. Smith",
+      "npcIds": [
+        "clerk-z-smith"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Clerk Z. Smith at Rose Field 4 - Bloom Grave.",
+        "Get 1x Star Sapphire: drilled in Vamp Dungeon.",
+        "Get 1x Moonstone: drilled in Vamp Dungeon.",
+        "Get 1x Solar Stone: drilled in Vamp Dungeon.",
+        "Bring everything back to Clerk Z. Smith (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Star Sapphire",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Moonstone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Solar Stone",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3894353,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Star Sapphire, Moonstone, Solar Stone are drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clerk_Z._Smith_-_Vamp_Castle's_Rare_Gems.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-16",
+      "order": 620,
+      "title": "Clever Owl - Owl's Letter Delivery",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Clever Owl",
+      "npcIds": [
+        "clever-owl"
+      ],
+      "location": "Rose Field 2 - Maze of Black Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+, have Princess's Hair in your inventory",
+      "steps": [
+        "Talk to Clever Owl at Rose Field 2 - Maze of Black Rose.",
+        "Get 3x Worm from Rose Garden: drilled in Rose Garden Fields.",
+        "Get 1x 100 Galder Coupon: Quest rewards (many quests give Galder Coupons).",
+        "Bring everything back to Clever Owl (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worm from Rose Garden",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "100 Galder Coupon",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Quest rewards (many quests give Galder Coupons)",
+            "map": "Rose Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 823772,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker",
+          "1x Princess' Letter"
+        ]
+      },
+      "notes": "Worm from Rose Garden is drilled in Rose Garden Fields. 100 Galder Coupon can be drilled in various places including Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clever_Owl_-_Owl's_Letter_Delivery.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-17",
+      "order": 621,
+      "title": "Clotho - Clotho's Deal",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Clotho",
+      "npcIds": [
+        "clotho"
+      ],
+      "location": "Rose Garden Park",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+, 3rd Job",
+      "steps": [
+        "Talk to Clotho at Rose Garden Park.",
+        "Defeat 5x Mutated Dancer Michel (Lv.120) within 2 min in Rose Garden Park.",
+        "Report back to Clotho."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mutated Dancer Michel",
+          "level": 120,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Rose Garden Park"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2196835,
+        "tmExp": 775642,
+        "galder": 0,
+        "items": [
+          "10x Half Pink Potion",
+          "10x Half Blue Potion",
+          "1x Flower of Revival"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clotho_-_Clotho's_Deal.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-18",
+      "order": 622,
+      "title": "Driller King Marky - Romance of Drilling - Rose Garden",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Rose Field 4 - Bloom Grave.",
+        "Get 1x Weird Garden Map A: drilled in Rose Garden Fields.",
+        "Get 1x Weird Garden Map B: drilled in Rose Garden Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Garden Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Garden Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 251729,
+        "tmExp": 251729,
+        "galder": 0,
+        "items": [
+          "1x Weird Garden Treasure Map"
+        ]
+      },
+      "notes": "Weird Garden Map A and Weird Garden Map B are drilled in Rose Garden Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Rose_Garden.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-71",
+      "order": 623,
+      "title": "Stella - Shadow Star 7",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Mind's Eye (Lv.270+)",
+      "npc": "Stella",
+      "npcIds": [
+        "stella"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 270,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 270+, use Mind's Eye",
+      "steps": [
+        "Talk to Stella at Event Garden - Ceremonia.",
+        "Get 5x Sharp Needle: dropped by Shadow Dancer Isabelle (Lv.487) in Rose Field 1 - Stairway to Sorrow.",
+        "Bring everything back to Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sharp Needle",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Shadow Dancer Isabelle (Lv.487)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4388956,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.5",
+          "10x Half Pink Potion",
+          "10x Half Blue Potion or Story of the Star Gazer Girl 7"
+        ]
+      },
+      "notes": "Sharp Needle is dropped by Shadow Dancer Isabelle (Lv.487), Shadow Captain Charman (Lv.488), Shadow Captain Arman (Lv.489), Shadow Madam Fondue (Lv.493), and Shadow Beast Vincento (Lv.494).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stella_-_Shadow_Star_7.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-19",
+      "order": 624,
+      "title": "Eclipse - The Story of the Gods 7",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Mind's Eye (Lv.270+)",
+      "npc": "Eclipse",
+      "npcIds": [
+        "eclipse"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 270,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-24"
+        },
+        {
+          "quest": "rg-71"
+        }
+      ],
+      "prereqText": "Level 270+, use Mind's Eye, have completed The Story of the Gods 6 and have completed Shadow Star 7 at least once",
+      "steps": [
+        "Talk to Eclipse at Event Garden - Ceremonia.",
+        "Get 2x Shadow Amber: dropped by Vamp Castle shadow monsters (seen with Mind's Eye) in Vamp Dungeon.",
+        "Get 2x Shadow Peridot: dropped by Vamp Castle shadow monsters (seen with Mind's Eye) in Vamp Dungeon.",
+        "Bring everything back to Eclipse."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Amber",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Vamp Castle shadow monsters (seen with Mind's Eye)",
+            "map": "Vamp Dungeon"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shadow Peridot",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Vamp Castle shadow monsters (seen with Mind's Eye)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 13355431,
+        "tmExp": 6865937,
+        "galder": 0,
+        "items": [
+          "4x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Shadow Amber and Shadow Peridot are dropped by Shadow Vamp Castle Monsters. Eclipse only shows up between 21:00 and 21:20 or until the Harkon Sanctuary falls.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Eclipse_-_The_Story_of_the_Gods_7.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-20",
+      "order": 625,
+      "title": "Explorer Reina - Treasure Hunting 1 - Rose Garden",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Rose Field 2 - Maze of Black Rose",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Indiana John - Old Man's Dream, haven't Worn Garden Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Rose Field 2 - Maze of Black Rose.",
+        "Get 1x Worn Garden Map A: drilled in Rose Garden Fields.",
+        "Get 1x Worn Garden Map B: drilled in Rose Garden Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Garden Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Garden Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Garden Treasure Map"
+        ]
+      },
+      "notes": "Worn Garden Map A and Worn Garden Map B are drilled in Rose Garden Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Rose_Garden.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-21",
+      "order": 626,
+      "title": "Explorer Reina - Treasure Hunting 2 - Rose Garden",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Rose Field 2 - Maze of Black Rose",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "rg-20"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Rose Garden 50 times, haven't Old Garden Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Rose Field 2 - Maze of Black Rose.",
+        "Get 1x Old Garden Map A: drilled in Rose Garden Fields.",
+        "Get 1x Old Garden Map B: drilled in Rose Garden Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Garden Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Garden Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 251729,
+        "tmExp": 251729,
+        "galder": 0,
+        "items": [
+          "1x Old Garden Treasure Map"
+        ]
+      },
+      "notes": "Old Garden Map A and Old Garden Map B are drilled in Rose Garden Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Rose_Garden.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-22",
+      "order": 627,
+      "title": "Fairy Godmother - Fairy God Mother",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Fairy Godmother",
+      "npcIds": [
+        "fairy-godmother"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-40",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 120+, have Horse Hiddink - Breaking Contract in quest log",
+      "steps": [
+        "Talk to Fairy Godmother at Rose Field 3 - Maze of Blue Rose.",
+        "Get 1x Golden Carriage Contract: drilled in Rose Field 3.",
+        "Get 1x Magic Crystal: drilled in Rose Garden Fields / Beast Garden.",
+        "Bring everything back to Fairy Godmother (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Carriage Contract",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Field 3 (drill depth not on the wiki)",
+            "map": "Rose Field 3"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Magic Crystal",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields / Beast Garden (drill depth not on the wiki)",
+            "map": "Rose Garden Fields / Beast Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 830896,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker",
+          "1x Horseshoe of Freedom"
+        ]
+      },
+      "notes": "Golden Carriage Contract is drilled in Rose Field 3. Magic Crystal is drilled in Rose Garden Fields, Beast Garden or dropped by Beast Vincento (Lv.156). Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Godmother_-_Fairy_God_Mother.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-23",
+      "order": 628,
+      "title": "Farmer Tsetsech - Farmer Tsetsech's Worry",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Farmer Tsetsech",
+      "npcIds": [
+        "farmer-tsetsech"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125+",
+      "steps": [
+        "Talk to Farmer Tsetsech at Rose Field 3 - Maze of Blue Rose.",
+        "Get 10x Worm from Rose Garden: drilled in Rose Garden Fields.",
+        "Bring everything back to Farmer Tsetsech."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worm from Rose Garden",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2232651,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Worm from Rose Garden is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Farmer_Tsetsech_-_Farmer_Tsetsech's_Worry.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-24",
+      "order": 629,
+      "title": "Frog Shaman - Rose Garden Magic 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Frog Shaman at Rose Field 3 - Maze of Blue Rose.",
+        "Get 5x Coffee Creamer: dropped by Dancer Isabelle (Lv.141) in Rose Field 1 - Stairway to Sorrow.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Coffee Creamer",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Dancer Isabelle (Lv.141)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1869517,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Coffee Creamer is dropped by Dancer Isabelle (Lv.141).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Rose_Garden_Magic_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-25",
+      "order": 630,
+      "title": "Frog Shaman - Rose Garden Magic 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-24"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Rose Garden Magic 1",
+      "steps": [
+        "Talk to Frog Shaman at Rose Field 3 - Maze of Blue Rose.",
+        "Get 5x Red Eye Shadow: dropped by Captain Charman (Lv.142) in Rose Field 2 - Maze of Black Rose.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Eye Shadow",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Charman (Lv.142)",
+            "map": "Rose Field 2 - Maze of Black Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1869517,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x La Befana Card"
+        ]
+      },
+      "notes": "Red Eye Shadow is dropped by Captain Charman (Lv.142).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Rose_Garden_Magic_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-26",
+      "order": 631,
+      "title": "Frog Shaman - Rose Garden Magic 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-25"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Rose Garden Magic 2",
+      "steps": [
+        "Talk to Frog Shaman at Rose Field 3 - Maze of Blue Rose.",
+        "Get 5x Ostrich Feather: dropped by Madam Fondue (Lv.155) in Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ostrich Feather",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Fondue (Lv.155)",
+            "map": "Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1869517,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Ostrich Feather is dropped by Madam Fondue (Lv.155).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Rose_Garden_Magic_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-27",
+      "order": 632,
+      "title": "Frog Shaman - Rose Garden Magic 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Frog Shaman",
+      "npcIds": [
+        "frog-shaman"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-26"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Rose Garden Magic 3",
+      "steps": [
+        "Talk to Frog Shaman at Rose Field 3 - Maze of Blue Rose.",
+        "Get 5x Red Rose of Passion: dropped by Beast Vincento (Lv.156) in Rose Field 4 - Bloom Grave / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose.",
+        "Bring everything back to Frog Shaman (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Rose of Passion",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Beast Vincento (Lv.156)",
+            "map": "Rose Field 4 - Bloom Grave / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2243421,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Red Rose of Passion is dropped by Beast Vincento (Lv.156). Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Frog_Shaman_-_Rose_Garden_Magic_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-28",
+      "order": 633,
+      "title": "Genius Cochma - Rose Garden Survey 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Genius Cochma at Rose Field 1 - Stairway to Sorrow.",
+        "Defeat 15x Captain Arman (Lv.145) within 10 min in Rose Field 2 - Maze of Black Rose.",
+        "Report back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Captain Arman",
+          "level": 145,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Rose Field 2 - Maze of Black Rose"
+        }
+      ],
+      "rewards": {
+        "baseExp": 480102,
+        "tmExp": 687272,
+        "galder": 0,
+        "items": [
+          "5x Pink Potion C",
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Rose_Garden_Survey_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-29",
+      "order": 634,
+      "title": "Genius Cochma - Rose Garden Survey 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-28"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Rose Garden Survey 1",
+      "steps": [
+        "Talk to Genius Cochma at Rose Field 1 - Stairway to Sorrow.",
+        "Get 5x Delicate Doll: dropped by Dancer Michel (Lv.138) in Rose Field 1 - Stairway to Sorrow.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Delicate Doll",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Dancer Michel (Lv.138)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1869517,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Chochma Card"
+        ]
+      },
+      "notes": "Delicate Doll is dropped by Dancer Michel (Lv.138).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Rose_Garden_Survey_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-30",
+      "order": 635,
+      "title": "Genius Cochma - Rose Garden Survey 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-29"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Rose Garden Survey 2",
+      "steps": [
+        "Talk to Genius Cochma at Rose Field 1 - Stairway to Sorrow.",
+        "Get 5x Ballet Manual: dropped by Dancer Isabelle (Lv.141) in Rose Field 1 - Stairway to Sorrow.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ballet Manual",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Dancer Isabelle (Lv.141)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1869517,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Ballet Manual is dropped by Dancer Isabelle (Lv.141).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Rose_Garden_Survey_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-31",
+      "order": 636,
+      "title": "Genius Cochma - Rose Garden Survey 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-30"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Rose Garden Survey 3",
+      "steps": [
+        "Talk to Genius Cochma at Rose Field 1 - Stairway to Sorrow.",
+        "Get 5x Gold Tights: dropped by Captain Norman (Lv.148) in Rose Field 2 - Maze of Black Rose / Rose Field 4 - Bloom Grave.",
+        "Bring everything back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold Tights",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Norman (Lv.148)",
+            "map": "Rose Field 2 - Maze of Black Rose / Rose Field 4 - Bloom Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2243421,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Gold Tights is dropped by Captain Norman (Lv.148). Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Rose_Garden_Survey_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-32",
+      "order": 637,
+      "title": "Guard Gilbert - Knight Test 1 - Basic Test",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Guard Gilbert",
+      "npcIds": [
+        "guard-gilbert"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Guard Gilbert at Gate of Vamp Castle.",
+        "Get 1x Rust Remover: dropped by Iron Knight (Lv.203) in Vamp Dungeon 2 - Banquet of the Dead / Vamp Dungeon 3 - Song of Moonlight.",
+        "Get 1x Anticorrosive Agent: dropped by Brass Knight (Lv.209) in Vamp Dungeon 3 - Song of Moonlight.",
+        "Bring everything back to Guard Gilbert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rust Remover",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Iron Knight (Lv.203)",
+            "map": "Vamp Dungeon 2 - Banquet of the Dead / Vamp Dungeon 3 - Song of Moonlight"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Anticorrosive Agent",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Brass Knight (Lv.209)",
+            "map": "Vamp Dungeon 3 - Song of Moonlight"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 787813,
+        "tmExp": 874017,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Rust Remover is dropped by Iron Knight (Lv.203) and Anticorrosive Agent is dropped by Brass Knight (Lv.209).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Guard_Gilbert_-_Knight_Test_1_-_Basic_Test.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-74",
+      "order": 638,
+      "title": "Warrior Kei - Knight Test 2",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-32"
+        }
+      ],
+      "prereqText": "Level 130+, have completed Guard Gilbert - Knight Test 1 - Basic Test",
+      "steps": [
+        "Talk to Warrior Kei at Gate of Vamp Castle.",
+        "Defeat 10x Bone Warrior (Lv.225) within 15 min in Vamp Dungeon 4 / 5.",
+        "Report back to Warrior Kei."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Bone Warrior",
+          "level": 225,
+          "count": 10,
+          "timeLimit": "15 min",
+          "map": "Vamp Dungeon 4 / 5"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Dark Attribute Stone"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Warrior_Kei_-_Knight_Test_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-33",
+      "order": 639,
+      "title": "Guard Gilbert - Knight Test 3 - Bravery Test",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Guard Gilbert",
+      "npcIds": [
+        "guard-gilbert"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-74"
+        }
+      ],
+      "prereqText": "Level 130+, have completed Warrior Kei - Knight Test 2",
+      "steps": [
+        "Talk to Guard Gilbert at Gate of Vamp Castle.",
+        "Get 1x Dark Eye: dropped by Count Blood (Lv.330) in Vamp Castle Boss Room.",
+        "Bring everything back to Guard Gilbert."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dark Eye",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Count Blood (Lv.330)",
+            "map": "Vamp Castle Boss Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2800000,
+        "tmExp": 3200000,
+        "galder": 0,
+        "items": [
+          "1x Warrior's Sword",
+          "1x Warrior's Helmet",
+          "1x Warrior's Shield"
+        ]
+      },
+      "notes": "Dark Eye is dropped by Count Blood (Lv.330).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Guard_Gilbert_-_Knight_Test_3_-_Bravery_Test.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-34",
+      "order": 640,
+      "title": "Guardian Kerberos - Lower Gate",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Vamp Castle - Boss Rooms (Lv.130+)",
+      "npc": "Guardian Kerberos",
+      "npcIds": [
+        "guardian-kerberos"
+      ],
+      "location": "Vamp Castle Boss Room 1 - Lower Gate",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Guardian Kerberos at Vamp Castle Boss Room 1 - Lower Gate.",
+        "Cross the room full of Guardian Kerberos and reach the opposite portal."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Guardian_Kerberos_-_Lower_Gate.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-35",
+      "order": 641,
+      "title": "Hair of Rosetta - Recorded Message from the Princess",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Hair of Rosetta",
+      "npcIds": [
+        "hair-of-rosetta"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-45",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 120+, have King Edward - Is the Princess Safe? in quest log",
+      "steps": [
+        "Talk to Hair of Rosetta at Secret Garden of Rosetta.",
+        "Get 1x Spit Comb: dropped by Madam Fondue (Lv.155) in Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave.",
+        "Bring everything back to Hair of Rosetta."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Spit Comb",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Fondue (Lv.155)",
+            "map": "Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1107862,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Crest",
+          "1x Princess's Hair"
+        ]
+      },
+      "notes": "Spit Comb is dropped by Madam Fondue (Lv.155).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hair_of_Rosetta_-_Recorded_Message_from_the_Princess.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-36",
+      "order": 642,
+      "title": "Happisto Stallone - 1st Harkon Sanctuary Collection",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Harkon Sanctuaries - Happisto Stallone",
+      "npc": "Happisto Stallone",
+      "npcIds": [
+        "happisto-stallone"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30~79",
+      "steps": [
+        "Talk to Happisto Stallone at Event Garden - Ceremonia.",
+        "Get 5x Corrupt Soul 1: dropped by Wicked Addax (Lv.20) in 1st Harkon Sanctuary.",
+        "Get 3x Essence of Evil 1: dropped by Wicked Scylla (Lv.60) in 1st Harkon Sanctuary.",
+        "Get 1x Chronos' Ancient Seal 1: dropped by Wicked Chronos (Lv.80) in 1st Harkon Sanctuary.",
+        "Bring everything back to Happisto Stallone."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Corrupt Soul 1",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Wicked Addax (Lv.20)",
+            "map": "1st Harkon Sanctuary"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Essence of Evil 1",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Wicked Scylla (Lv.60)",
+            "map": "1st Harkon Sanctuary"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chronos' Ancient Seal 1",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Wicked Chronos (Lv.80)",
+            "map": "1st Harkon Sanctuary"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 27633,
+        "tmExp": 22945,
+        "galder": 0,
+        "items": [
+          "1x ?"
+        ]
+      },
+      "notes": "Corrupt Soul 1 is dropped by Wicked Addax (Lv.20) and Wicked Silver Beetle (Lv.20), Essence of Evil 1 is dropped by Wicked Scylla (Lv.60), Wicked Hecate (Lv.60), Wicked Charybdis (Lv.60), and Wicked Gorgon (Lv.60) and Chronos' Ancient Seal 1 is dropped by Wicked Chronos (Lv.80).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Happisto_Stallone_-_1st_Harkon_Sanctuary_Collection.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-37",
+      "order": 643,
+      "title": "Happisto Stallone - 2nd Harkon Sanctuary Collection",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Harkon Sanctuaries - Happisto Stallone",
+      "npc": "Happisto Stallone",
+      "npcIds": [
+        "happisto-stallone"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80~129",
+      "steps": [
+        "Talk to Happisto Stallone at Event Garden - Ceremonia.",
+        "Get 5x Corrupt Soul 2: dropped by Violent Master Foe (Lv.70) in 2nd Harkon Sanctuary.",
+        "Get 3x Essence of Evil 2: dropped by Violent Scylla (Lv.110) in 2nd Harkon Sanctuary.",
+        "Get 1x Chronos' Ancient Seal 2: dropped by Violent Chronos (Lv.140) in 2nd Harkon Sanctuary.",
+        "Bring everything back to Happisto Stallone."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Corrupt Soul 2",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Violent Master Foe (Lv.70)",
+            "map": "2nd Harkon Sanctuary"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Essence of Evil 2",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Violent Scylla (Lv.110)",
+            "map": "2nd Harkon Sanctuary"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chronos' Ancient Seal 2",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Violent Chronos (Lv.140)",
+            "map": "2nd Harkon Sanctuary"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 285070,
+        "tmExp": 473453,
+        "galder": 0,
+        "items": [
+          "1x ?"
+        ]
+      },
+      "notes": "Corrupt Soul 2 is dropped by Violent Master Foe (Lv.70), Violent Crow (Lv.80), Violent Siremaid (Lv.100), and Violent Merman Ale (Lv.80), Essence of Evil 2 is dropped by Violent Scylla (Lv.110), Violent Hecate (Lv.110), Violent Charybdis (Lv.110), and Violent Gorgon (Lv.110), and Chronos' Ancient Seal 2 is dropped by Violent Chronos (Lv.140).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Happisto_Stallone_-_2nd_Harkon_Sanctuary_Collection.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-38",
+      "order": 644,
+      "title": "Happisto Stallone - 3rd Harkon Sanctuary Collection",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Harkon Sanctuaries - Happisto Stallone",
+      "npc": "Happisto Stallone",
+      "npcIds": [
+        "happisto-stallone"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130~179",
+      "steps": [
+        "Talk to Happisto Stallone at Event Garden - Ceremonia.",
+        "Get 5x Corrupt Soul 3: dropped by Corrupt Shadow (Lv.120) in Event Garden - Ceremonia.",
+        "Get 3x Essence of Evil 3: dropped by Corrupt Scylla (Lv.160) in Event Garden - Ceremonia.",
+        "Get 1x Chronos' Ancient Seal 3: dropped by Corrupt Chronos (Lv.200) in Event Garden - Ceremonia.",
+        "Bring everything back to Happisto Stallone."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Corrupt Soul 3",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Shadow (Lv.120)",
+            "map": "Event Garden - Ceremonia"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Essence of Evil 3",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Scylla (Lv.160)",
+            "map": "Event Garden - Ceremonia"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chronos' Ancient Seal 3",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Chronos (Lv.200)",
+            "map": "Event Garden - Ceremonia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 850534,
+        "tmExp": 741781,
+        "galder": 0,
+        "items": [
+          "1x Cleansed Chaos Stone 3"
+        ]
+      },
+      "notes": "Corrupt Soul 3 is dropped by Corrupt Shadow (Lv.120) and Corrupt Nora Big (Lv.130), Essence of Evil 3 is dropped by Corrupt Scylla (Lv.160), Corrupt Hecate (Lv.160), Corrupt Charybdis (Lv.160), and Corrupt Gorgon (Lv.160), and Chronos' Ancient Seal 3 is dropped by Corrupt Chronos (Lv.200).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Happisto_Stallone_-_3rd_Harkon_Sanctuary_Collection.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-39",
+      "order": 645,
+      "title": "Homeless Ian - Daily Quest - Rose Garden",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Daily",
+      "npc": "Homeless Ian",
+      "npcIds": [
+        "homeless-ian"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Homeless Ian at Rose Field 1 - Stairway to Sorrow.",
+        "Get 2x Punisher B.V. Claws: dropped by Punisher Beast Vincento (Lv.161) in Rose Field 1 - Stairway to Sorrow / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave.",
+        "Bring everything back to Homeless Ian."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Punisher B.V. Claws",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Punisher Beast Vincento (Lv.161)",
+            "map": "Rose Field 1 - Stairway to Sorrow / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1661437,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "25x 500 Galder Coupon or 10x First-Aid Pink Potion or 10x First-Aid Blue Potion or Strong Crest Shield"
+        ]
+      },
+      "notes": "Punisher B.V. Claws are dropped by Punisher Beast Vincento (Lv.161). In next season the request will be Dusty Chalk.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Homeless_Ian_-_Daily_Quest_-_Rose_Garden.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-40",
+      "order": 646,
+      "title": "Horse Hiddink - Breaking Contract",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Horse Hiddink",
+      "npcIds": [
+        "horse-hiddink"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Horse Hiddink at Rose Field 3 - Maze of Blue Rose.",
+        "Get 1x Horseshoe of Freedom: reward from Fairy Godmother - Fairy God Mother.",
+        "Bring everything back to Horse Hiddink (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Horseshoe of Freedom",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Godmother - Fairy God Mother",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 830896,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Horseshoe of Freedom is obtained by completing Fairy God Mother. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Horse_Hiddink_-_Breaking_Contract.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-41",
+      "order": 647,
+      "title": "Hunter Master - Rose Garden Hunter Master Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Hunter Master",
+      "npcIds": [
+        "hunter-master"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 115,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-42"
+        }
+      ],
+      "prereqText": "Level 115+, have completed at least 1 Rose Garden Hunter Girl Quest and Assistant Hunter Quest",
+      "steps": [
+        "Talk to Hunter Master at Gate of Vamp Castle.",
+        "Defeat 15x Beast Vincento (Lv.156) within 10 min in Rose Field 4 - Bloom Grave.",
+        "Report back to Hunter Master (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Beast Vincento",
+          "level": 156,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Rose Field 4 - Bloom Grave"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1227192,
+        "tmExp": 500591,
+        "galder": 0,
+        "items": [
+          "1x Hat Ticket F"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Master_-_Rose_Garden_Hunter_Master_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-45",
+      "order": 648,
+      "title": "King Edward - Is the Princess Safe?",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "King Edward",
+      "npcIds": [
+        "king-edward"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to King Edward at Secret Garden of Rosetta.",
+        "Get 1x Princess' Letter: reward from Clever Owl - Owl's Letter Delivery.",
+        "Bring everything back to King Edward."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Princess' Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Clever Owl - Owl's Letter Delivery",
+            "map": "Rose Field 2 - Maze of Black Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1530760,
+        "tmExp": 1154010,
+        "galder": 0,
+        "items": [
+          "1x Princess Rosetta Card",
+          "1x Rose Crest",
+          "1x Princess's Passcode"
+        ]
+      },
+      "notes": "Princess' Letter is obtained by completing Owl's Letter Delivery.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/King_Edward_-_Is_the_Princess_Safe%3F.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-43",
+      "order": 649,
+      "title": "King Edward - Guardian Knight 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "King Edward",
+      "npcIds": [
+        "king-edward"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-45"
+        }
+      ],
+      "prereqText": "Level 120+, have completed King Edward - Is the Princess Safe?",
+      "steps": [
+        "Talk to King Edward at Secret Garden of Rosetta.",
+        "Get 1x Rusty Sword: drilled in Vamp Dungeons.",
+        "Get 1x Rusty Shield: drilled in Vamp Dungeons.",
+        "Get 1x Rusty Helmet: drilled in Vamp Dungeon.",
+        "Bring everything back to King Edward."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rusty Sword",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeons (drill depth not on the wiki)",
+            "map": "Vamp Dungeons"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Rusty Shield",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeons (drill depth not on the wiki)",
+            "map": "Vamp Dungeons"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Rusty Helmet",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1530760,
+        "tmExp": 1154010,
+        "galder": 0,
+        "items": [
+          "1x King Edward Card",
+          "1x Knight Appointment Letter",
+          "1x Rose Crest"
+        ]
+      },
+      "notes": "Rusty Sword, Rusty Shield, Rusty Helmet are drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/King_Edward_-_Guardian_Knight_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-44",
+      "order": 650,
+      "title": "King Edward - Guardian Knight 2",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "King Edward",
+      "npcIds": [
+        "king-edward"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-43"
+        }
+      ],
+      "prereqText": "Level 120+, have completed King Edward - Guardian Knight 1",
+      "steps": [
+        "Talk to King Edward at Secret Garden of Rosetta.",
+        "Get 1x Blood Moonstone: reward from Werewolf Lycan - Lycan's Answer.",
+        "Bring everything back to King Edward."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blood Moonstone",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Werewolf Lycan - Lycan's Answer",
+            "map": "Secret Room of Rosetta"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1530760,
+        "tmExp": 1154010,
+        "galder": 0,
+        "items": [
+          "1x Magician's Staff",
+          "1x Rose Garden Sticker",
+          "1x Rose Crest"
+        ]
+      },
+      "notes": "Blood Moonstone is obtained by completing Lycan's Answer. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/King_Edward_-_Guardian_Knight_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-46",
+      "order": 651,
+      "title": "King Edward - King Remembers 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "King Edward",
+      "npcIds": [
+        "king-edward"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125~360, have Blood Sword in inventory",
+      "steps": [
+        "Talk to King Edward at Secret Garden of Rosetta.",
+        "Get 1x Portrait of a Woman: drilled in Vamp Dungeon.",
+        "Bring everything back to King Edward."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Portrait of a Woman",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 8151298,
+        "tmExp": 3188418,
+        "galder": 0,
+        "items": [
+          "1x King Edward Card"
+        ]
+      },
+      "notes": "Blood Sword is dropped by Count Blood (Lv.330). Portrait of a Woman is drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/King_Edward_-_King_Remembers_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-47",
+      "order": 652,
+      "title": "King Edward - King Remembers 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "King Edward",
+      "npcIds": [
+        "king-edward"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-46"
+        }
+      ],
+      "prereqText": "Level 125~360, have completed King Edward - King Remembers 1",
+      "steps": [
+        "Talk to King Edward at Secret Garden of Rosetta.",
+        "Get 1x Pendant: dropped by Count Blood (Lv.330) in Vamp Castle Boss Room.",
+        "Bring everything back to King Edward."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pendant",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Count Blood (Lv.330)",
+            "map": "Vamp Castle Boss Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12226948,
+        "tmExp": 4782628,
+        "galder": 0,
+        "items": [
+          "1x Mary's Portrait"
+        ]
+      },
+      "notes": "Pendant is dropped by Count Blood (Lv.330).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/King_Edward_-_King_Remembers_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-48",
+      "order": 653,
+      "title": "Kochi - Vamp Castle Teleport Service",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Kochi",
+      "npcIds": [
+        "kochi"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Kochi at Gate of Vamp Castle.",
+        "Register with Kochi."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 100,
+        "tmExp": 100,
+        "galder": 0,
+        "items": [
+          "1x Teleport access granted to Gate of Vamp Castle."
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kochi_-_Vamp_Castle_Teleport_Service.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-49",
+      "order": 654,
+      "title": "Kyu - Two in Harmony",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Event Garden - Ceremonia",
+      "npc": "Kyu",
+      "npcIds": [
+        "kyu"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 30,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 30+, have a partner",
+      "steps": [
+        "Talk to Kyu at Event Garden - Ceremonia.",
+        "Get 1x Pure Wedding Ticket: reward from Louis Bitton - Pure White (groom).",
+        "Get 1x Charming Wedding Ticket: reward from Louis Bitton - Charming Black (bride).",
+        "Get 1x Forever Wedding Ticket: reward from Fusion Master Arlene - Love Forever (groom).",
+        "Get 1x Promise Wedding Ticket: reward from Fusion Master Arlene - Promise of Love (bride).",
+        "Bring everything back to Kyu."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Wedding Ticket",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Louis Bitton - Pure White (groom)",
+            "map": "Event Garden - Ceremonia"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Charming Wedding Ticket",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Louis Bitton - Charming Black (bride)",
+            "map": "Event Garden - Ceremonia"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Forever Wedding Ticket",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fusion Master Arlene - Love Forever (groom)",
+            "map": "Event Garden - Ceremonia"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Promise Wedding Ticket",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fusion Master Arlene - Promise of Love (bride)",
+            "map": "Event Garden - Ceremonia"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Get a Wedding Title",
+          "1x select Wedding Rings",
+          "1x MyShop Outfits."
+        ]
+      },
+      "notes": "Pure Wedding Ticket is obtained by completing Louis Bitton - Pure White (groom), Charming Wedding Ticket is obtained by completing Louis Bitton - Charming Black (bride), Forever Wedding Ticket is obtained by completing Fusion Master Arlene - Love Forever (groom), Promise Wedding Ticket is obtained by completing Fusion Master Arlene - Promise of Love (bride). These tickets are tradeable.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Kyu_-_Two_in_Harmony.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-50",
+      "order": 655,
+      "title": "La Vida - Soul Essence",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "La Vida",
+      "npcIds": [
+        "la-vida"
+      ],
+      "location": "Vamp Castle Parlor - Soul Sanctuary",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+, 3rd Job",
+      "steps": [
+        "Talk to La Vida at Vamp Castle Parlor - Soul Sanctuary.",
+        "Get 10x Iron Knight's Soul: dropped by Iron Knight (Lv.203) in Vamp Dungeon 2 - Banquet of the Dead / Vamp Dungeon 3 - Song of Moonlight.",
+        "Get 10x Brass Knight's Soul: dropped by Brass Knight (Lv.209) in Vamp Dungeon 3 - Song of Moonlight.",
+        "Get 10x Bone Fighter's Soul: dropped by Bone Fighter (Lv.219) in Vamp Dungeon 4 - Center of the Dark.",
+        "Get 10x Bone Warrior's Soul: dropped by Bone Warrior (Lv.225) in Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark.",
+        "Get 10x Bone Magician's Soul: dropped by Bone Magician (Lv.231) in Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark.",
+        "Bring everything back to La Vida."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Iron Knight's Soul",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Iron Knight (Lv.203)",
+            "map": "Vamp Dungeon 2 - Banquet of the Dead / Vamp Dungeon 3 - Song of Moonlight"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Brass Knight's Soul",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Brass Knight (Lv.209)",
+            "map": "Vamp Dungeon 3 - Song of Moonlight"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bone Fighter's Soul",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Bone Fighter (Lv.219)",
+            "map": "Vamp Dungeon 4 - Center of the Dark"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bone Warrior's Soul",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Bone Warrior (Lv.225)",
+            "map": "Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Bone Magician's Soul",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Bone Magician (Lv.231)",
+            "map": "Vamp Dungeon 4 - Center of the Dark / Vamp Dungeon 5 - Resurrection of the Dark"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2013276,
+        "tmExp": 710832,
+        "galder": 0,
+        "items": [
+          "1x Soul Essence"
+        ]
+      },
+      "notes": "Iron Knight's Soul is dropped by Iron Knight (Lv.203), Brass Knight's Soul is dropped by Brass Knight (Lv.209), Bone Fighter's Soul is dropped by Bone Fighter (Lv.219), Bone Warrior's Soul is dropped by Bone Warrior (Lv.225), and Bone Magician's Soul is dropped by Bone Magician (Lv.231).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/La_Vida_-_Soul_Essence.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-51",
+      "order": 656,
+      "title": "Lachesis - Lachesis's Deal",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Lachesis",
+      "npcIds": [
+        "lachesis"
+      ],
+      "location": "Rose Garden Park",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+, 3rd Job",
+      "steps": [
+        "Talk to Lachesis at Rose Garden Park.",
+        "Defeat 5x Mutated Captain Norman (Lv.150) within 2 min in Rose Garden Park.",
+        "Report back to Lachesis."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Mutated Captain Norman",
+          "level": 150,
+          "count": 5,
+          "timeLimit": "2 min",
+          "map": "Rose Garden Park"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2303133,
+        "tmExp": 813173,
+        "galder": 0,
+        "items": [
+          "10x Half Pink Potion",
+          "10x Half Blue Potion",
+          "1x Flower of Revival"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lachesis_-_Lachesis's_Deal.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-52",
+      "order": 657,
+      "title": "Lethos - Vampire Collections? 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Lethos at Gate of Vamp Castle.",
+        "Get 3x Diary: drilled in Vamp Dungeon.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Diary",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2232651,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Diary is drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Vampire_Collections%3F_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-53",
+      "order": 658,
+      "title": "Lethos - Vampire Collections? 2",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Lethos at Gate of Vamp Castle.",
+        "Get 3x Kerbero's Paw: dropped by Kerberos (Lv.179) in Vamp Dungeon 1 - Banquet of the Vamp.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Kerbero's Paw",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Kerberos (Lv.179)",
+            "map": "Vamp Dungeon 1 - Banquet of the Vamp"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2232651,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Kerbero's Paw is dropped by Kerberos (Lv.179)",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Vampire_Collections%3F_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-54",
+      "order": 659,
+      "title": "Lethos - Vampire Collections? 3",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Lethos at Gate of Vamp Castle.",
+        "Get 3x Lacey Headband: dropped by Maid Lydia (Lv.185) in Vamp Dungeon 1 - Banquet of the Vamp / Vamp Dungeon 2 - Banquet of the Dead.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lacey Headband",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Maid Lydia (Lv.185)",
+            "map": "Vamp Dungeon 1 - Banquet of the Vamp / Vamp Dungeon 2 - Banquet of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2232651,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Lacey Headband is dropped by Maid Lydia (Lv.185)",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Vampire_Collections%3F_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-55",
+      "order": 660,
+      "title": "Lethos - Vampire Collections? 4",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Lethos",
+      "npcIds": [
+        "lethos"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 130,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Lethos at Gate of Vamp Castle.",
+        "Get 3x Vampire's Canine: dropped by Mister Freaks (Lv.191) in Vamp Dungeon 2 - Banquet of the Dead.",
+        "Bring everything back to Lethos (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Vampire's Canine",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Mister Freaks (Lv.191)",
+            "map": "Vamp Dungeon 2 - Banquet of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2232651,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Vampire's Canine is dropped by Mister Freaks (Lv.191) Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lethos_-_Vampire_Collections%3F_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-56",
+      "order": 661,
+      "title": "Louis Bitton - Maintaining Dignity",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Louis Bitton",
+      "npcIds": [
+        "louis-bitton"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-64",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 120+, have Queen Cecilia - New Garments are Here in quest log",
+      "steps": [
+        "Talk to Louis Bitton at Rose Field 1 - Stairway to Sorrow.",
+        "Get 1x Extravagant Lace: dropped by Madam Moncher (Lv.153) in Rose Field 3 - Maze of Blue Rose.",
+        "Get 1x Extravagant Silk: dropped by Madam Chiffon (Lv.150) in Rose Field 3 - Maze of Blue Rose.",
+        "Get 1x Extravagant Thread: dropped by Madam Fondue (Lv.155) in Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave.",
+        "Get 1x Jewel Box: drilled in Rose Garden Fields / Vamp Dungeon.",
+        "Bring everything back to Louis Bitton (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Extravagant Lace",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Moncher (Lv.153)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Extravagant Silk",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Chiffon (Lv.150)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Extravagant Thread",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Fondue (Lv.155)",
+            "map": "Rose Field 3 - Maze of Blue Rose / Rose Field 4 - Bloom Grave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Jewel Box",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields / Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Rose Garden Fields / Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 830896,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker",
+          "1x Royal Garment Set"
+        ]
+      },
+      "notes": "Extravagant Lace is dropped by Madam Moncher (Lv.153), Extravagant Silk is dropped by Madam Chiffon (Lv.150), Extravagant Thread is dropped by Madam Fondue (Lv.155). Jewel Box is drilled in Rose Garden Fields and Vamp Dungeon. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Louis_Bitton_-_Maintaining_Dignity.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-57",
+      "order": 662,
+      "title": "Love Hunter Robin - Rose Garden Love Hunter Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 115,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 115+",
+      "steps": [
+        "Talk to Love Hunter Robin at Rose Field 1 - Stairway to Sorrow.",
+        "Defeat 30x Dancer Michel (Lv.138) within 20 min in Rose Field 1 - Stairway to Sorrow.",
+        "Report back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Dancer Michel",
+          "level": 138,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Rose Field 1 - Stairway to Sorrow"
+        }
+      ],
+      "rewards": {
+        "baseExp": 687195,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.120~124: 30x Dancer Isabelle (Lv.141) in 20 min, reward 10,000 Galder Coupon. Lv.125~129: 30x Captain Charman (Lv.142) in 20 min, reward 10,000 Galder Coupon. Lv.130+: 30x Madam Fondue (Lv.155) in 15 min, reward 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Rose_Garden_Love_Hunter_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-58",
+      "order": 663,
+      "title": "Love Hunter Robin - Vamp Castle Love Hunter Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Gate of Vamp Castle",
+      "minLevel": 125,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125+",
+      "steps": [
+        "Talk to Love Hunter Robin at Gate of Vamp Castle.",
+        "Defeat 20x Kerberos (Lv.175) within 10 min in Vamp Dungeon 1 - Banquet of the Vamp.",
+        "Report back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Kerberos",
+          "level": 175,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Vamp Dungeon 1 - Banquet of the Vamp"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1013997,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.129~132: 20x Mister Freaks (Lv.191) in 10 min, reward 2x 10,000 Galder Coupon. Lv.133~136: 20x Iron Knight (Lv.184) in 10 min, reward 2x 10,000 Galder Coupon. Lv.137~140: 20x Bone Fighter (Lv.190) in 10 min, reward 2x 10,000 Galder Coupon. Lv.141+: 20x Bone Magician (Lv.196) in 10 min, reward 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Vamp_Castle_Love_Hunter_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-59",
+      "order": 664,
+      "title": "Majordomo Felix - Stern Majordomo Felix",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Majordomo Felix",
+      "npcIds": [
+        "majordomo-felix"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Majordomo Felix at Rose Field 3 - Maze of Blue Rose.",
+        "Get 1x Silver Rose: drilled in Rose Garden Fields.",
+        "Bring everything back to Majordomo Felix (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Silver Rose",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2973595,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Silver Rose is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Majordomo_Felix_-_Stern_Majordomo_Felix.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-60",
+      "order": 665,
+      "title": "Majordomo Felix - Sudoku Puzzles",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Vamp Castle - Boss Rooms (Lv.130+)",
+      "npc": "Majordomo Felix",
+      "npcIds": [
+        "majordomo-felix"
+      ],
+      "location": "Vamp Castle Boss Room 3 - Wisdom",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Majordomo Felix at Vamp Castle Boss Room 3 - Wisdom.",
+        "Solve 2 Sudoku puzzles."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "For the answers to the sudoku puzzles, see Majordomo Felix's Trial.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Majordomo_Felix_-_Sudoku_Puzzles.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-61",
+      "order": 666,
+      "title": "Monkey T - Monkey T's Request (7)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Rose Field 2 - Maze of Black Rose",
+      "minLevel": 120,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Monkey T at Rose Field 2 - Maze of Black Rose.",
+        "Get 10x Eternal Charm Grass: dropped by Beast Vincento (Lv.156) in Rose Field 4 - Bloom Grave / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Charm Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Beast Vincento (Lv.156)",
+            "map": "Rose Field 4 - Bloom Grave / Rose Field 2 - Maze of Black Rose / Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1510397,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Charm Grass is dropped by Beast Vincento (Lv.156)",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(7).html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-62",
+      "order": 667,
+      "title": "Prince Sebastian - Sebastian's Okay Plan",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Prince Sebastian",
+      "npcIds": [
+        "prince-sebastian"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Prince Sebastian at Rose Field 3 - Maze of Blue Rose.",
+        "Get 10x Rose Petal: drilled in Rose Garden Fields.",
+        "Bring everything back to Prince Sebastian (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rose Petal",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 830896,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Rose Petal is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Prince_Sebastian_-_Sebastian's_Okay_Plan.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-63",
+      "order": 668,
+      "title": "Queen Cecilia - Fan Chat Method",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Queen Cecilia",
+      "npcIds": [
+        "queen-cecilia"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Queen Cecilia at Secret Garden of Rosetta.",
+        "Get 1x Fan Chat Method: dropped by Madam Chiffon (Lv.150) in Rose Field 3 - Maze of Blue Rose.",
+        "Get 2x Aristocratic Fan: dropped by Madam Chiffon (Lv.150) in Rose Field 3 - Maze of Blue Rose.",
+        "Bring everything back to Queen Cecilia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fan Chat Method",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Chiffon (Lv.150)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Aristocratic Fan",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Chiffon (Lv.150)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 236507,
+        "tmExp": 451710,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Queen Cecilia Card",
+          "Cycle 2: 1x Queen Cecilia Card + 1x Pink Earring + 1x Violet Earring",
+          "Cycle 3: 1x Queen Cecilia Card + 1x Pink Earring",
+          "Cycle 4: 1x Queen Cecilia Card + 1x Pink Earring",
+          "Cycle 5: 1x Rose Garden Sticker + 4x Rose Crest + 1x Queen Cecilia Card"
+        ]
+      },
+      "notes": "Fan Chat Method and Aristocratic Fan are dropped by Madam Chiffon (Lv.150). Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Queen_Cecilia_-_Fan_Chat_Method.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-64",
+      "order": 669,
+      "title": "Queen Cecilia - New Garments are Here",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Queen Cecilia",
+      "npcIds": [
+        "queen-cecilia"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-63"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Queen Cecilia - Fan Chat Method",
+      "steps": [
+        "Talk to Queen Cecilia at Secret Garden of Rosetta.",
+        "Get 1x Royal Garment Set: reward from Louis Bitton - Maintaining Dignity.",
+        "Bring everything back to Queen Cecilia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Royal Garment Set",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Louis Bitton - Maintaining Dignity",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1038621,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Royal Garment Set is obtained by completing Louis Bitton - Maintaining Dignity. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Queen_Cecilia_-_New_Garments_are_Here.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-65",
+      "order": 670,
+      "title": "Queen Cecilia - Queen Remembers",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Queen Cecilia",
+      "npcIds": [
+        "queen-cecilia"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125~360, have Blood Shield in inventory",
+      "steps": [
+        "Talk to Queen Cecilia at Secret Garden of Rosetta.",
+        "Get 1x Diary: drilled in Vamp Dungeon.",
+        "Bring everything back to Queen Cecilia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Diary",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 8151298,
+        "tmExp": 3188418,
+        "galder": 0,
+        "items": [
+          "1x Mary's Diary"
+        ]
+      },
+      "notes": "Blood Shield is dropped by Count Blood (Lv.330). Diary is drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Queen_Cecilia_-_Queen_Remembers.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-66",
+      "order": 671,
+      "title": "Queen Cecilia - Secret Garden Queen's Quest",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Queen Cecilia",
+      "npcIds": [
+        "queen-cecilia"
+      ],
+      "location": "Secret Garden of Rosetta",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Queen Cecilia at Secret Garden of Rosetta.",
+        "Get 5x Moncher Pie: dropped by Madam Moncher (Lv.153) in Rose Field 3 - Maze of Blue Rose.",
+        "Get 5x Cocoa Powder: drilled in Rose Garden Fields.",
+        "Bring everything back to Queen Cecilia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Moncher Pie",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Moncher (Lv.153)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Cocoa Powder",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 300000,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x King Edward Card + 1x Queen Cecilia Card",
+          "Cycle 2: 1x King Edward Card + 1x Queen Cecilia Card + 1x Scarlet Earring + 1x Violet Earring",
+          "Cycle 3: 1x King Edward Card + 1x Queen Cecilia Card + 1x Violet Earring + 1x Blue Earring + 1x Pink Earring",
+          "Cycle 4: 1x King Edward Card + 1x Queen Cecilia Card + 1x Blue Earring + 1x Pink Earring",
+          "Cycle 5: 1x Queen Cecilia Card + 1x Rose Garden Sticker + 4x Rose Crest"
+        ]
+      },
+      "notes": "Moncher Pie is dropped by Madam Moncher (Lv.153) and Cocoa Powder is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Queen_Cecilia_-_Secret_Garden_Queen's_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-67",
+      "order": 672,
+      "title": "Rosaline Gracia - The Swamp Beyond Azteca",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-key-02"
+        }
+      ],
+      "prereqText": "Level 125+, have completed Rosaline Gracia - Childhood Promise",
+      "steps": [
+        "Talk to Rosaline Gracia at Rose Field 1 - Stairway to Sorrow.",
+        "Find and talk to Explorer Reina."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1905196,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Nothing"
+        ]
+      },
+      "notes": "Explorer Reina is found in Gate of Black Swamp.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_The_Swamp_Beyond_Azteca.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-68",
+      "order": 673,
+      "title": "Rosemary - Dance Woman!",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Rosemary",
+      "npcIds": [
+        "rosemary"
+      ],
+      "location": "Rose Field 1 - Stairway to Sorrow",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Rosemary at Rose Field 1 - Stairway to Sorrow.",
+        "Get 1x Ballet Manual: dropped by Dancer Isabelle (Lv.141) in Rose Field 1 - Stairway to Sorrow.",
+        "Get 1x Red Clay Doll Shoes: drilled in Rose Garden Fields.",
+        "Bring everything back to Rosemary (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ballet Manual",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Dancer Isabelle (Lv.141)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Red Clay Doll Shoes",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 830896,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Ballet Manual is dropped by Dancer Isabelle (Lv.141). Red Clay Doll Shoes is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosemary_-_Dance_Woman!.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-69",
+      "order": 674,
+      "title": "Servant Alfredo - Garden Key' Monster Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Monster Quests",
+      "npc": "Servant Alfredo",
+      "npcIds": [
+        "servant-alfredo"
+      ],
+      "location": "Rose Field 4 - Bloom Grave",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Servant Alfredo at Rose Field 4 - Bloom Grave.",
+        "Defeat 5x Maid Lydia (Lv.178) within 10 min in Vamp Dungeon 1 / 2.",
+        "Report back to Servant Alfredo."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Maid Lydia",
+          "level": 178,
+          "count": 5,
+          "timeLimit": "10 min",
+          "map": "Vamp Dungeon 1 / 2"
+        }
+      ],
+      "rewards": {
+        "baseExp": 600000,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Garden Key",
+          "5x 500 Galder Coupon",
+          "1x Alfredo Card"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Servant_Alfredo_-_Garden_Key'_Monster_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-70",
+      "order": 675,
+      "title": "Shaman Girl Jia - Dark Spirit Punishment 7",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Mind's Eye (Lv.270+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Event Garden - Ceremonia",
+      "minLevel": 270,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 270+, use Mind's Eye",
+      "steps": [
+        "Talk to Shaman Girl Jia at Event Garden - Ceremonia.",
+        "Defeat 3x Shadow Dancer Michel (Lv.483) within 12 min in Rose Field 1 - Stairway to Sorrow.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Shadow Dancer Michel",
+          "level": 483,
+          "count": 3,
+          "timeLimit": "12 min",
+          "map": "Rose Field 1 - Stairway to Sorrow"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2224172,
+        "tmExp": 326694,
+        "galder": 0,
+        "items": [
+          "6x Half Pink Potion",
+          "6x Half Blue Potion"
+        ]
+      },
+      "notes": "At other levels: Lv.274~277: 3x Shadow Captain Norman (Lv.490) in 12 min, reward 6x Half Pink Potion, 6x Half Blue Potion. Lv.278~281: 3x Shadow Madam Chiffon (Lv.491) in 11 min, reward 6x Half Pink Potion, 6x Half Blue Potion. Lv.282~285: 3x Shadow Maid Lydia (Lv.498) in 11 min, reward 6x Half Pink Potion, 6x Half Blue Potion. Lv.286+: 3x Shadow Bone Warrior (Lv.508) in 10 min, reward 6x Half Pink Potion, 6x Half Blue Potion.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Spirit_Punishment_7.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-72",
+      "order": 676,
+      "title": "Vamp Lydia - Sacrifice Test",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Vamp Castle - Boss Rooms (Lv.130+)",
+      "npc": "Vamp Lydia",
+      "npcIds": [
+        "vamp-lydia"
+      ],
+      "location": "Vamp Castle Boss Room 2 - Sacrifice",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Vamp Lydia at Vamp Castle Boss Room 2 - Sacrifice.",
+        "Defeat 30x Vampire Bat (Lv.230) within 10 min in Vamp Castle Boss Room 2 - Sacrifice.",
+        "Report back to Vamp Lydia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Vampire Bat",
+          "level": 230,
+          "count": 30,
+          "timeLimit": "10 min",
+          "map": "Vamp Castle Boss Room 2 - Sacrifice"
+        }
+      ],
+      "rewards": {
+        "baseExp": 255214,
+        "tmExp": 58233,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Reward: a transfer onwards. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vamp_Lydia_-_Sacrifice_Test.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-73",
+      "order": 677,
+      "title": "Vamp Lydia - Troublemaker Lydia",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Rose Garden - Sticker Quests",
+      "npc": "Vamp Lydia",
+      "npcIds": [
+        "vamp-lydia"
+      ],
+      "location": "Rose Field 2 - Maze of Black Rose",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+",
+      "steps": [
+        "Talk to Vamp Lydia at Rose Field 2 - Maze of Black Rose.",
+        "Get 1x Monocle: drilled in Rose Garden Fields.",
+        "Bring everything back to Vamp Lydia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Monocle",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1869517,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Rose Garden Sticker"
+        ]
+      },
+      "notes": "Monocle is drilled in Rose Garden Fields. Gives a Rose Garden Sticker: Rosaline Gracia - Rose Garden Stickers needs them.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vamp_Lydia_-_Troublemaker_Lydia.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-75",
+      "order": 678,
+      "title": "Werewolf Lycan - Choices",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Vamp Castle - Boss Rooms (Lv.130+)",
+      "npc": "Werewolf Lycan",
+      "npcIds": [
+        "werewolf-lycan"
+      ],
+      "location": "Vamp Castle Boss Room 4 - Choices",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1+",
+      "steps": [
+        "Talk to Werewolf Lycan at Vamp Castle Boss Room 4 - Choices.",
+        "Pick the right carpet."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Transfer to Vamp Castle Boss Room or Vamp Dungeon 4 - Center of the Dark"
+        ]
+      },
+      "notes": "After talking to Werewolf Lycan, you are offered to choose between two paths: the red carpet (talk to Vamp Lydia), or the blue carpet (talk to Majordomo Felix). Only one of them will lead you to the Vamp Castle Boss Room, while the other leads you back to Vamp Dungeon 4. The chances for picking the right carpet is 50/50. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Werewolf_Lycan_-_Choices.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-76",
+      "order": 679,
+      "title": "Werewolf Lycan - Lycan's Answer",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Werewolf Lycan",
+      "npcIds": [
+        "werewolf-lycan"
+      ],
+      "location": "Secret Room of Rosetta",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-44",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 120+, have Guardian Knight 2 in quest log and Garden Key in inventory",
+      "steps": [
+        "Talk to Werewolf Lycan at Secret Room of Rosetta.",
+        "Get 1x Knight Appointment Letter: reward from King Edward - Guardian Knight 1.",
+        "Get 3x Moonstone: drilled in Vamp Dungeon.",
+        "Bring everything back to Werewolf Lycan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Knight Appointment Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from King Edward - Guardian Knight 1",
+            "map": "Secret Garden of Rosetta"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Moonstone",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4500000,
+        "tmExp": 3300000,
+        "galder": 0,
+        "items": [
+          "1x Blood Moonstone",
+          "3x Coffin Witch's Broom",
+          "1x Rose Crest"
+        ]
+      },
+      "notes": "Garden Key is obtained by completing Garden Key' Monster Quest, Knight Appointment Letter is obtained by completing King Edward - Guardian Knight 1 and Moonstone is drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Werewolf_Lycan_-_Lycan's_Answer.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-77",
+      "order": 680,
+      "title": "Werewolf Lycan - Lycan's Question",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Werewolf Lycan",
+      "npcIds": [
+        "werewolf-lycan"
+      ],
+      "location": "Vamp Dungeon 4 - Center of the Dark",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 125~360, have Mark of the Vampire in inventory",
+      "steps": [
+        "Talk to Werewolf Lycan at Vamp Dungeon 4 - Center of the Dark.",
+        "Get 1x Dark Red Notebook: dropped by Brass Knight (Lv.209) in Vamp Dungeon 3 - Song of Moonlight.",
+        "Bring everything back to Werewolf Lycan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dark Red Notebook",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Brass Knight (Lv.209)",
+            "map": "Vamp Dungeon 3 - Song of Moonlight"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 10189123,
+        "tmExp": 3985523,
+        "galder": 0,
+        "items": [
+          "1x Count Blood's Notebook"
+        ]
+      },
+      "notes": "Dark Red Notebook is dropped by Brass Knight (Lv.209).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Werewolf_Lycan_-_Lycan's_Question.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-78",
+      "order": 681,
+      "title": "Werewolf Lycan - Lycan's Words",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Werewolf Lycan",
+      "npcIds": [
+        "werewolf-lycan"
+      ],
+      "location": "Vamp Dungeon 4 - Center of the Dark",
+      "minLevel": 125,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "rg-77"
+        }
+      ],
+      "prereqText": "Level 125~360, have completed Lycan's Question and have Mark of the Vampire in inventory",
+      "steps": [
+        "Talk to Werewolf Lycan at Vamp Dungeon 4 - Center of the Dark.",
+        "Get 1x Mary's Portrait: reward from King Edward - King Remembers 2.",
+        "Get 1x Mary's Diary: reward from Queen Cecilia - Queen Remembers.",
+        "Bring everything back to Werewolf Lycan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mary's Portrait",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from King Edward - King Remembers 2",
+            "map": "Secret Garden of Rosetta"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Mary's Diary",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Queen Cecilia - Queen Remembers",
+            "map": "Secret Garden of Rosetta"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 15283685,
+        "tmExp": 5978285,
+        "galder": 0,
+        "items": [
+          "1x Earring of Sacrifice"
+        ]
+      },
+      "notes": "Mark of the Vampire is dropped by Count Blood (Lv.330). Mary's Portrait is obtained by completing King Remembers 2 and Mary's Diary is obtained by completing Queen Remembers.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Werewolf_Lycan_-_Lycan's_Words.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "rg-79",
+      "order": 682,
+      "title": "Werewolf Lycan - Vamp Castle Werewolf Quest",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Rose Garden - Town Quests",
+      "npc": "Werewolf Lycan",
+      "npcIds": [
+        "werewolf-lycan"
+      ],
+      "location": "Secret Room of Rosetta",
+      "minLevel": 120,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 120+, have Garden Key",
+      "steps": [
+        "Talk to Werewolf Lycan at Secret Room of Rosetta.",
+        "Get 5x Solar Stone: drilled in Vamp Dungeon.",
+        "Bring everything back to Werewolf Lycan (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Solar Stone",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Vamp Dungeon (drill depth not on the wiki)",
+            "map": "Vamp Dungeon"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 500000,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Werewolf Lycan Card + 1x Mystery Frame Card",
+          "Cycle 2: 1x Mystery Frame Card"
+        ]
+      },
+      "notes": "Garden Key is obtained by completing Garden Key' Monster Quest. Once you enter Vamp Dungeon 2, follow the carpet straight forward until you reach the wall with the talking painting. Show the painting the Garden Key to get in. Solar Stone is drilled in Vamp Dungeon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Werewolf_Lycan_-_Vamp_Castle_Werewolf_Quest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
     }
   ]
 }

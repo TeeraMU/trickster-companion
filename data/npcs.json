@@ -16,6 +16,10 @@
     "name": "Amethysta's Messenger"
   },
   {
+    "id": "ancient-polar-bear",
+    "name": "Ancient Polar Bear"
+  },
+  {
     "id": "andrew",
     "name": "Andrew"
   },
@@ -34,6 +38,22 @@
   {
     "id": "assistant-hunter",
     "name": "Assistant Hunter"
+  },
+  {
+    "id": "assistant-hunter-poppuri",
+    "name": "Assistant Hunter Poppuri"
+  },
+  {
+    "id": "atropos",
+    "name": "Atropos"
+  },
+  {
+    "id": "automatic-plant-incubator",
+    "name": "Automatic Plant Incubator"
+  },
+  {
+    "id": "banker-lisa",
+    "name": "Banker Lisa"
   },
   {
     "id": "bard-la-fimmel",
@@ -68,8 +88,16 @@
     "name": "Boxer Jeanne / Warrior Kei / Bard La Fimmel / Magician Louie / Explorer Reina / Inventor Gale / Entertainer Elicia / Card Master Taniel"
   },
   {
+    "id": "brother-tango",
+    "name": "Brother Tango"
+  },
+  {
     "id": "bunny-maid",
     "name": "Bunny Maid"
+  },
+  {
+    "id": "butler-of-vamp-castle",
+    "name": "Butler of Vamp Castle"
   },
   {
     "id": "captain-stan",
@@ -104,8 +132,24 @@
     "name": "Clotho"
   },
   {
+    "id": "cluck-cluck-warrior",
+    "name": "Cluck Cluck Warrior"
+  },
+  {
+    "id": "compounder-nadia",
+    "name": "Compounder Nadia"
+  },
+  {
+    "id": "compounder-paul",
+    "name": "Compounder Paul"
+  },
+  {
     "id": "copyfish-domdom",
     "name": "Copyfish DomDom"
+  },
+  {
+    "id": "daisy",
+    "name": "Daisy"
   },
   {
     "id": "delphinus-messenger",
@@ -122,6 +166,10 @@
   {
     "id": "dorothy",
     "name": "Dorothy"
+  },
+  {
+    "id": "dr-cat",
+    "name": "Dr. Cat"
   },
   {
     "id": "dr-cat-far-left",
@@ -164,6 +212,10 @@
     "name": "Eliza Bath"
   },
   {
+    "id": "elsa-key-kuan",
+    "name": "Elsa Key Kuan"
+  },
+  {
     "id": "enigmo-van-peruozas-messenger",
     "name": "Enigmo Van Peruoza's Messenger"
   },
@@ -204,6 +256,10 @@
     "name": "Fairy Nono"
   },
   {
+    "id": "farmer-tsetsech",
+    "name": "Farmer Tsetsech"
+  },
+  {
     "id": "favian",
     "name": "Favian"
   },
@@ -216,8 +272,24 @@
     "name": "Fortune Teller"
   },
   {
+    "id": "freyja-npc",
+    "name": "Freyja (NPC)"
+  },
+  {
+    "id": "freyr-npc",
+    "name": "Freyr (NPC)"
+  },
+  {
+    "id": "frog-prince",
+    "name": "Frog Prince"
+  },
+  {
     "id": "frog-shaman",
     "name": "Frog Shaman"
+  },
+  {
+    "id": "general-granada",
+    "name": "General Granada"
   },
   {
     "id": "genius-cochma",
@@ -240,6 +312,10 @@
     "name": "Guard Gilbert"
   },
   {
+    "id": "guardian-kerberos",
+    "name": "Guardian Kerberos"
+  },
+  {
     "id": "guardians-messenger",
     "name": "Guardian's Messenger"
   },
@@ -250,6 +326,10 @@
   {
     "id": "guild-clerk-esther",
     "name": "Guild Clerk Esther"
+  },
+  {
+    "id": "hair-of-rosetta",
+    "name": "Hair of Rosetta"
   },
   {
     "id": "happisto-stallone",
@@ -264,12 +344,24 @@
     "name": "Homeless Ian"
   },
   {
+    "id": "horse-hiddink",
+    "name": "Horse Hiddink"
+  },
+  {
     "id": "hungry-poppuri",
     "name": "Hungry Poppuri"
   },
   {
     "id": "hunter-master",
     "name": "Hunter Master"
+  },
+  {
+    "id": "hunter-master-leviathan",
+    "name": "Hunter Master Leviathan"
+  },
+  {
+    "id": "hunter-yuna",
+    "name": "Hunter Yuna"
   },
   {
     "id": "hunter-yuri",
@@ -284,12 +376,20 @@
     "name": "Inventor Gale"
   },
   {
+    "id": "irina",
+    "name": "Irina"
+  },
+  {
     "id": "kahlihara",
     "name": "Kahlihara"
   },
   {
     "id": "keeper-julio",
     "name": "Keeper Julio"
+  },
+  {
+    "id": "king-edward",
+    "name": "King Edward"
   },
   {
     "id": "king-enigmos-messenger",
@@ -300,8 +400,20 @@
     "name": "Knight Scar"
   },
   {
+    "id": "kochi",
+    "name": "Kochi"
+  },
+  {
+    "id": "kokomelo",
+    "name": "Kokomelo"
+  },
+  {
     "id": "kristoffer-j",
     "name": "Kristoffer J."
+  },
+  {
+    "id": "kyu",
+    "name": "Kyu"
   },
   {
     "id": "la-vida",
@@ -348,8 +460,28 @@
     "name": "Magician Louie"
   },
   {
+    "id": "majordomo-felix",
+    "name": "Majordomo Felix"
+  },
+  {
+    "id": "marie-elle",
+    "name": "Marie Elle"
+  },
+  {
     "id": "marinel",
     "name": "Marinel"
+  },
+  {
+    "id": "marion",
+    "name": "Marion"
+  },
+  {
+    "id": "marked-stone",
+    "name": "Marked Stone"
+  },
+  {
+    "id": "match-girl-annie",
+    "name": "Match Girl Annie"
   },
   {
     "id": "merchant-miguel",
@@ -380,12 +512,20 @@
     "name": "Monkey T"
   },
   {
+    "id": "mystery-npc",
+    "name": "???"
+  },
+  {
     "id": "nefertiti",
     "name": "Nefertiti"
   },
   {
     "id": "nefertiti-2",
     "name": "Nefertiti 2"
+  },
+  {
+    "id": "niwerth-npc",
+    "name": "Niwerth (NPC)"
   },
   {
     "id": "oddeye-dragons-messenger",
@@ -404,6 +544,14 @@
     "name": "Old Artist"
   },
   {
+    "id": "orconio-npc",
+    "name": "Orconio (NPC)"
+  },
+  {
+    "id": "orpeo-npc",
+    "name": "Orpeo (NPC)"
+  },
+  {
     "id": "pastor-tau",
     "name": "Pastor Tau"
   },
@@ -412,12 +560,20 @@
     "name": "Pharaoh Boy"
   },
   {
+    "id": "ponchichi-npc",
+    "name": "Ponchichi (NPC)"
+  },
+  {
     "id": "poppuri",
     "name": "Poppuri"
   },
   {
     "id": "portina",
     "name": "Portina"
+  },
+  {
+    "id": "primrose",
+    "name": "Primrose"
   },
   {
     "id": "prince-sebastian",
@@ -432,6 +588,38 @@
     "name": "Princess Rosetta"
   },
   {
+    "id": "prof-neil",
+    "name": "Prof. Neil"
+  },
+  {
+    "id": "queen-cecilia",
+    "name": "Queen Cecilia"
+  },
+  {
+    "id": "queen-odinea-npc",
+    "name": "Queen Odinea (NPC)"
+  },
+  {
+    "id": "ravenwood",
+    "name": "Ravenwood"
+  },
+  {
+    "id": "ray",
+    "name": "Ray"
+  },
+  {
+    "id": "rebecca",
+    "name": "Rebecca"
+  },
+  {
+    "id": "relic-site-dungeon",
+    "name": "Relic Site (Dungeon)"
+  },
+  {
+    "id": "relic-site-field",
+    "name": "Relic Site (Field)"
+  },
+  {
     "id": "rosaline-gracia",
     "name": "Rosaline Gracia"
   },
@@ -444,12 +632,20 @@
     "name": "Rosemary"
   },
   {
+    "id": "rudolph",
+    "name": "Rudolph"
+  },
+  {
     "id": "sacred-espers-messenger",
     "name": "Sacred Esper's Messenger"
   },
   {
     "id": "sandman",
     "name": "Sandman"
+  },
+  {
+    "id": "santa-claus",
+    "name": "Santa Claus"
   },
   {
     "id": "santa-claus-2",
@@ -464,6 +660,10 @@
     "name": "Sea Spirit Rumo"
   },
   {
+    "id": "servant-alfredo",
+    "name": "Servant Alfredo"
+  },
+  {
     "id": "shaman-girl-jia",
     "name": "Shaman Girl Jia"
   },
@@ -474,6 +674,10 @@
   {
     "id": "sissy-cello",
     "name": "Sissy Cello"
+  },
+  {
+    "id": "sissy-viole",
+    "name": "Sissy Viole"
   },
   {
     "id": "skipper-min",
@@ -488,6 +692,10 @@
     "name": "Star Gazer Stella"
   },
   {
+    "id": "star-gazer-stella-2",
+    "name": "Star Gazer Stella (2)"
+  },
+  {
     "id": "stella",
     "name": "Stella"
   },
@@ -500,6 +708,18 @@
     "name": "Steve Ryu"
   },
   {
+    "id": "swampy-suu",
+    "name": "Swampy Suu"
+  },
+  {
+    "id": "tacky",
+    "name": "Tacky"
+  },
+  {
+    "id": "tame-reindeer",
+    "name": "Tame Reindeer"
+  },
+  {
     "id": "tango",
     "name": "Tango"
   },
@@ -510,6 +730,10 @@
   {
     "id": "vagabond-eloy",
     "name": "Vagabond Eloy"
+  },
+  {
+    "id": "vamp-lydia",
+    "name": "Vamp Lydia"
   },
   {
     "id": "vice-captain",
@@ -528,12 +752,20 @@
     "name": "Warrior Kei"
   },
   {
+    "id": "weepy-nora",
+    "name": "Weepy Nora"
+  },
+  {
     "id": "weird-box",
     "name": "Weird Box"
   },
   {
     "id": "weirdo-hen",
     "name": "Weirdo Hen"
+  },
+  {
+    "id": "werewolf-lycan",
+    "name": "Werewolf Lycan"
   },
   {
     "id": "winnie",
@@ -550,5 +782,9 @@
   {
     "id": "witch-la-befana",
     "name": "Witch La Befana"
+  },
+  {
+    "id": "xote",
+    "name": "Xote"
   }
 ]

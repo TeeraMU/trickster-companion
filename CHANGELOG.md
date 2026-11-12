@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.0 (2026-11-13): Every zone to Techichi, loading screen
+
+- Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.
+- New loading screen: two characters running while the quests load (fades out when ready; stands still if your device asks for reduced motion).
+- **Every zone from Ghost Blue to Techichi Volcano** (448 new quests, 826 in all): Ghost Blue 79, Rose Garden 83, Black Swamp 86, Snow Hill 107, Techichi Volcano 117. Sticker quests for each key quest, Card Girl 1-5 (cards and riddles spelled out), town chains, hunts, dailies, treasure hunts, Mind's Eye (Lv.255+), and the dungeon paths: Pirate King Karan and the Copyfish trench, Vamp Castle boss rooms, Calm Down Suu, the Blue Ice Trial / Ice Palace, the Path to Soki. Item sources come from the quest notes and the wiki's item and monster pages.
+- New key quest: **Chief Koha - Ghost Blue Sticker** (10 Ghost Stickers) now comes before Collect Ritual Supplies.
+- Light / Dark Alexandrite (Snow Hill) only show on the Dark Lord 3rd job path.
+- Area chips show the level a zone's key quests start at (side quests like weddings no longer make a zone look like a Lv.30 area).
+- Hunts without a level on the wiki show "Hunt" instead of a level.
+
 ## 0.6.1 (2026-11-12): See what friends have, Bag up to 999
 
 - Bag counts go up to 999 (3-digit numbers used to be cut off in the box).

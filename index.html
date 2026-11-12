@@ -30,6 +30,11 @@
   <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
+  <!-- covers the page until the quest data is in (two running characters, assets/loading/) -->
+  <div class="loading-screen" id="loadingScreen" role="status" aria-live="polite">
+    <div class="loading-anim" id="loadingAnim" aria-hidden="true"></div>
+    <p class="loading-text">Loading quests…</p>
+  </div>
   <div class="bg-art" aria-hidden="true"><div class="bg-chars"></div></div>
 
   <header class="app-header">
@@ -767,7 +772,10 @@
       });
       const order = { story: 0, zones: 1, job: 2 };
       AREAS = [...byKey.values()].map(a => {
-        const levels = a.quests.map(q => q.minLevel || 0).filter(Boolean);
+        // the level the area's main path (its key quests) starts at; side quests (weddings, events)
+        // can start much lower and would make a zone look like a beginner area
+        const keyLevels = a.quests.filter(q => q.categories.includes("Key")).map(q => q.minLevel || 0).filter(Boolean);
+        const levels = keyLevels.length ? keyLevels : a.quests.map(q => q.minLevel || 0).filter(Boolean);
         return {
           key: a.key,
           group: /^Episode \d+$/.test(a.key) ? "story" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",
@@ -1580,7 +1588,38 @@
       ITEM_IMAGES = data.images;
     }
 
+    // ----- loading screen: Lottie (lottie-web light, loaded in parallel; the data never waits for it)
+    const LOTTIE_SRC = "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie_light.min.js";
+    let loadingAnim = null, loadingDone = false;
+
+    function startLoadingAnimation() {
+      const box = document.getElementById("loadingAnim");
+      if (!box) return;
+      const s = document.createElement("script");
+      s.src = LOTTIE_SRC;
+      s.async = true;
+      s.onload = () => {
+        if (loadingDone || !window.lottie) return;
+        const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        loadingAnim = lottie.loadAnimation({ container: box, renderer: "svg", loop: !still, autoplay: !still, path: "assets/loading/running.json" });
+        if (still) loadingAnim.addEventListener("DOMLoaded", () => loadingAnim.goToAndStop(0, true));
+      };
+      document.head.appendChild(s); // no animation (offline, blocked)? the text still shows
+    }
+
+    function hideLoadingScreen() {
+      loadingDone = true;
+      const el = document.getElementById("loadingScreen");
+      if (!el) return;
+      el.classList.add("is-done");
+      setTimeout(() => {
+        if (loadingAnim) { loadingAnim.destroy(); loadingAnim = null; }
+        el.remove();
+      }, 400);
+    }
+
     function showLoadError(err) {
+      hideLoadingScreen();
       console.error("Could not load quest data:", err);
       const fileHint = location.protocol === "file:"
         ? "<p>The page was opened as a local file, which browsers block from reading the data files. Run <code>node scripts/serve.js</code> in the project folder and open <a href=\"http://localhost:8080/\">http://localhost:8080/</a>.</p>"
@@ -1590,12 +1629,14 @@
     }
 
     window.addEventListener("DOMContentLoaded", () => {
+      startLoadingAnimation();
       loadData()
         .then(() => {
           loadState(); renderAll(); switchView(appState.currentView);
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
           TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged });
           TQEpisode.setFriendsHave(friendsHaveHtml);
+          hideLoadingScreen();
         })
         .catch(showLoadError);
     });
