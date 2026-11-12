@@ -5,26 +5,26 @@ Quest tracker & guides for **Trickster Online** (fan-made): how many items each 
 🌐 **Open it:** https://teeramu.github.io/trickster-companion/ (works on phone and computer)
 
 ## Quick start
-1. Open the link. Pick your character's class at the top so class-only quests are filtered.
+1. Open the link. Pick your class in the **🎭** chip at the top so class-only quests are filtered. On a phone, the pages are in the bar at the bottom.
 2. **📖 Episodes**: choose EP0 or EP1. The quest marked **▶ Now** is the one to do next.
    - **🗺️ Route**: the stops in order, drawn on the region map. Tap a stop to see that map.
    - **🎒 Items**: everything still to collect, grouped by map (monster + level, drill depth, shop, combine).
-3. Tick steps or the whole quest as you play. Progress is saved **in this browser only**: use **💾 Export** / **📂 Import** to move it to another device.
+3. Tick steps or the whole quest as you play. The **▓░ %** chip at the top shows your overall progress (tap it for details). Progress is saved **in this browser only**: use **⚙️ → 💾 Export / 📂 Import** to move it to another device.
 4. **📜 Quests & Items**: every quest with category tabs (Story, Key, Sticker, Card Girl, Town, …) and the items list for whatever you filter.
-5. ☀️ / 🌙 switches light and dark; **🖼️ Background** turns the pictures off (off by default on phones).
+5. **⚙️** also has the theme (Auto / ☀️ Light / 🌙 Dark), **🐞 Report a problem** and **🗑️ Reset**.
 
 ### เริ่มใช้ (ภาษาไทย)
-เปิดลิงก์ด้านบน → เลือกอาชีพ → แท็บ **📖 Episodes** เลือก EP ที่เล่นอยู่ เควสที่มีป้าย **▶ Now** คือเควสถัดไป แท็บ **🗺️ Route** บอกลำดับ map ที่ต้องไป และ **🎒 Items** บอกของที่ต้องเก็บ ติ๊กเควสเมื่อทำเสร็จ (บันทึกไว้ในเบราว์เซอร์เครื่องนั้น ย้ายเครื่องใช้ปุ่ม Export / Import) เจอข้อมูลผิดกด **🐞 Report**
+เปิดลิงก์ด้านบน → เลือกอาชีพที่ปุ่ม 🎭 → แท็บ **📖 Episodes** เลือก EP ที่เล่นอยู่ เควสที่มีป้าย **▶ Now** คือเควสถัดไป แท็บ **🗺️ Route** บอกลำดับ map ที่ต้องไป และ **🎒 Items** บอกของที่ต้องเก็บ ติ๊กเควสเมื่อทำเสร็จ (บันทึกไว้ในเบราว์เซอร์เครื่องนั้น ย้ายเครื่องใช้ ⚙️ → Export / Import) เจอข้อมูลผิดกด ⚙️ → **🐞 Report** ไม่ต้องล็อกอิน
 
 ## Found something wrong?
-Press **🐞 Report** at the top of the page (or the link at the bottom of a quest's details). It opens a short form on GitHub (a free GitHub account is needed). Mention what you saw in game.
+Open **⚙️ → 🐞 Report a problem** (or the link at the bottom of a quest's details). It opens a short Google Form, **no sign-in needed**, with the quest already filled in. Mention what you saw in game. If you have a GitHub account you can also open an issue (link at the bottom of the page).
 
 ### NPC pins
 On the Route, tap **📍 Pin NPCs**, choose an NPC and tap where they stand on the map. Then share them:
-- **📤 Send**: opens a GitHub form with your pins filled in, just press *Submit* (free GitHub account), or
+- **📤 Send**: opens the same Google Form with your pins filled in, just press *Submit* (no sign-in), or
 - **📋 Copy**: paste the text in a message to the project owner (LINE / Discord).
 
-The owner merges everyone's pins (`node scripts/merge-pins.js`) so they show for all players.
+The owner downloads the form's answers as CSV and merges everyone's pins (`node scripts/merge-pins.js answers.csv`) so they show for all players.
 
 ## What's inside
 - Episode 0 – Episode 1 plus Coral Beach, Desert Beach, Megalopolis and Caballa Relics quests (138)
