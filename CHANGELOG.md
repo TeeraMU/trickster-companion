@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- New loading screen: two characters running while the quests load (fades out when ready; stands still if your device asks for reduced motion).
+
 ## 0.6.1 (2026-11-12): See what friends have, Bag up to 999
 
 - Bag counts go up to 999 (3-digit numbers used to be cut off in the box).
