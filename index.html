@@ -46,6 +46,7 @@
         <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
         <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
+        <button class="view-tab" id="tabBtnFriends" onclick="switchView('friends')"><span class="tab-icon" aria-hidden="true">👥</span><span class="tab-label">Friends</span></button>
         <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')"><span class="tab-icon" aria-hidden="true">⛏️</span><span class="tab-label">Drill guide</span></button>
         <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')"><span class="tab-icon" aria-hidden="true">🗺️</span><span class="tab-label">Roadmap</span></button>
       </nav>
@@ -108,6 +109,13 @@
     </div>
 
     <div class="header-panel settings-panel" id="settingsPanel" hidden>
+      <div class="settings-group sync-group" id="syncGroup">
+        <span class="settings-title">Sync <small>(optional)</small></span>
+        <div class="sync-box" id="syncBox">
+          <button class="btn btn-google" onclick="TQCloud.signIn()">Sign in with Google</button>
+          <span class="sync-note">Keep your progress on every device. Without signing in it stays in this browser.</span>
+        </div>
+      </div>
       <div class="settings-group">
         <span class="settings-title">Theme</span>
         <div class="pref-switch" role="group" aria-label="Color theme">
@@ -117,7 +125,7 @@
         </div>
       </div>
       <div class="settings-group">
-        <span class="settings-title">My progress <small>(saved in this browser)</small></span>
+        <span class="settings-title">My progress <small>(as a file)</small></span>
         <div class="settings-row">
           <button class="btn" onclick="exportProgress()">💾 Export</button>
           <button class="btn" onclick="importProgressPrompt()">📂 Import</button>
@@ -132,6 +140,20 @@
       </div>
     </div>
   </header>
+
+  <dialog class="sync-dialog" id="syncChoice" aria-labelledby="syncChoiceTitle">
+    <h2 id="syncChoiceTitle">☁️ Which progress do you want to keep?</h2>
+    <p>This browser and your Google account both have progress, and they're different.</p>
+    <div class="sync-compare">
+      <div><strong>📱 This browser</strong><span id="syncLocal"></span></div>
+      <div><strong>☁️ Your account</strong><span id="syncCloud"></span></div>
+    </div>
+    <div class="sync-choices">
+      <button class="btn btn-primary" data-choice="merge">🔀 Merge both <small>(ticked on either stays ticked)</small></button>
+      <button class="btn" data-choice="cloud">☁️ Use my account's</button>
+      <button class="btn" data-choice="local">📱 Use this browser's</button>
+    </div>
+  </dialog>
 
   <main class="main-container">
     <!-- Region Quick Filter Cards -->
@@ -188,6 +210,10 @@
     </div>
 
     <!-- VIEW 2: BAG (js/bag.js) -->
+    <div id="viewFriends" class="hidden">
+      <div id="friendsContainer"></div>
+    </div>
+
     <div id="viewBag" class="hidden">
       <div id="bagContainer"></div>
     </div>
@@ -387,6 +413,9 @@
   <script src="js/route.js"></script>
   <script src="js/report.js"></script>
   <script src="js/bag.js"></script>
+  <script src="js/sync-merge.js"></script>
+  <script src="js/cloud.js"></script>
+  <script src="js/friends.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -408,6 +437,7 @@
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
+      focus: null,             // pinned scope friends see needs for: { region, group, cats, path } (Friends)
       currentView: "episodes",
       selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
       episodeScope: "episode", // items list: "episode" | "chapter"
@@ -450,7 +480,12 @@
       } catch (e) {
         console.warn("Could not load state from localStorage:", e);
       }
-      // Ensure step checkboxes and quest completion are strictly synchronized
+      normalizeCompletion();
+      document.getElementById("charClassSelect").value = appState.selectedClass || "All";
+    }
+
+    // Ensure step checkboxes and quest completion are strictly synchronized
+    function normalizeCompletion() {
       QUESTS.forEach(q => {
         const steps = q.steps || [];
         if (steps.length > 0) {
@@ -463,7 +498,6 @@
           syncQuestCompletionFromSteps(q);
         }
       });
-      document.getElementById("charClassSelect").value = appState.selectedClass || "All";
     }
 
     function saveState() {
@@ -472,6 +506,76 @@
       } catch (e) {
         console.warn("Could not save state to localStorage:", e);
       }
+      if (window.TQCloud) TQCloud.changed();
+      if (window.TQFriends) TQFriends.changed();
+    }
+
+    // ============================================================================
+    // CLOUD SYNC (optional Google sign-in; js/cloud.js + js/sync-merge.js)
+    // ============================================================================
+    function cloudPayload() {
+      return TQSync.pick(appState, savedPins());
+    }
+
+    // Progress from the cloud (or a merge) replaces this browser's progress
+    function applyCloudPayload(p) {
+      appState.completedQuests = Object.assign({}, p.completedQuests);
+      appState.completedCycles = Object.assign({}, p.completedCycles);
+      appState.completedSteps = Object.assign({}, p.completedSteps);
+      appState.inventory = Object.assign({}, p.inventory);
+      appState.selectedClass = p.selectedClass || "All";
+      appState.selectedJobPath = p.selectedJobPath || "";
+      appState.focus = p.focus || null;
+      storePins(p.pins || {});
+      normalizeCompletion();
+      document.getElementById("charClassSelect").value = appState.selectedClass;
+      saveState();
+      renderAll();
+      if (appState.currentView === "episodes") renderEpisodes();
+    }
+
+    // First sign-in on a browser that already has different progress: ask which copy to keep
+    function chooseSyncCopy(local, cloud) {
+      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins`;
+      document.getElementById("syncLocal").textContent = say(local);
+      document.getElementById("syncCloud").textContent = say(cloud);
+      const dlg = document.getElementById("syncChoice");
+      return new Promise(resolve => {
+        const pick = e => {
+          const b = e.target.closest("[data-choice]");
+          if (!b) return;
+          dlg.removeEventListener("click", pick);
+          dlg.close();
+          resolve(b.dataset.choice);
+        };
+        dlg.addEventListener("click", pick);
+        dlg.addEventListener("cancel", ev => ev.preventDefault(), { once: true }); // Esc: must choose
+        dlg.showModal();
+      });
+    }
+
+    function renderSyncStatus(s) {
+      const box = document.getElementById("syncBox");
+      if (!box) return;
+      const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const who = s.user ? esc(s.user.name || s.user.email) : "";
+      const when = s.at ? new Date(s.at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "";
+      const line = {
+        loading: "⏳ Connecting…",
+        saving: "⏳ Saving…",
+        synced: `✅ Synced${when ? " at " + when : ""}`,
+        offline: "📴 Offline: saved here, will sync later",
+        error: "⚠️ " + esc(s.message || "Sync problem")
+      }[s.state];
+      box.innerHTML = s.user
+        ? `<span class="sync-user">☁️ ${who}</span>
+           <span class="sync-state sync-${s.state}" role="status">${line || ""}</span>
+           <button class="btn" onclick="TQCloud.signOut()">Sign out</button>`
+        : `<button class="btn btn-google" onclick="TQCloud.signIn()" ${s.state === "loading" ? "disabled" : ""}>${s.state === "loading" ? "⏳ Signing in…" : "Sign in with Google"}</button>
+           ${s.state === "error" ? `<span class="sync-state sync-error" role="status">${line}</span>` : ""}
+           <span class="sync-note">Keep your progress on every device. Without signing in it stays in this browser.</span>`;
+      const chip = document.getElementById("settingsBtn");
+      if (chip) chip.classList.toggle("is-synced", !!s.user && s.state === "synced");
     }
 
     // ============================================================================
@@ -717,7 +821,7 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", drillref: "DrillRef", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", friends: "Friends", drillref: "DrillRef", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
@@ -732,6 +836,7 @@
       document.getElementById("regionCardsContainer").classList.toggle("hidden", !usesFilters);
       if (appState.currentView !== viewName) { appState.currentView = viewName; saveState(); }
       if (viewName === "bag") renderBag();
+      if (viewName === "friends") renderFriends();
     }
 
     // ============================================================================
@@ -943,12 +1048,68 @@
             <button type="button" aria-pressed="${!everything}" onclick="setChecklistFarmAll(false)">Still needed</button>
             <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
           </div>`,
-        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map. Items handed over by earlier quests aren't listed.`
+        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map. Items handed over by earlier quests aren't listed.`,
+        afterHint: focusBarHtml()
       });
       const pane = appState.checklistPane === "farm" ? "farm" : "quests";
       document.getElementById("checklistLayout").setAttribute("data-pane", pane);
       document.getElementById("ckTabQuests").setAttribute("aria-selected", String(pane === "quests"));
       document.getElementById("ckTabFarm").setAttribute("aria-selected", String(pane === "farm"));
+    }
+
+    // ============================================================================
+    // FOCUS: the Quests page scope (area / group, category tabs, 3rd job path) a player pins so
+    // friends see the items *that* needs. Search and status filters don't count. Saved and synced.
+    // ============================================================================
+    function currentScope() {
+      return { region: appState.selectedRegion || "All", group: appState.selectedAreaGroup || "all",
+        cats: selectedCats().slice().sort(), path: appState.selectedJobPath || "" };
+    }
+
+    function sameScope(a, b) {
+      return !!a && !!b && a.region === b.region && a.group === b.group && (a.path || "") === (b.path || "") &&
+        (a.cats || []).slice().sort().join() === (b.cats || []).slice().sort().join();
+    }
+
+    function inScope(q, s) {
+      if (s.region && s.region !== "All") { if (q.area !== s.region) return false; }
+      else if (s.group && s.group !== "all" && areaGroupOf(q.area) !== s.group) return false;
+      if ((s.cats || []).length && !s.cats.some(c => q.categories.includes(c))) return false;
+      if (q.path && s.path && q.path !== s.path) return false;
+      return true;
+    }
+
+    function scopeLabel(s) {
+      const cats = (s.cats || []).map(k => CATEGORY_TABS.find(t => t.key === k)).filter(Boolean).map(t => t.icon + " " + t.label);
+      const grp = AREA_GROUPS.find(g => g.key === s.group);
+      const area = s.region && s.region !== "All" ? (/^Episode \d+$/.test(s.region) ? "EP" + num(s.region) : s.region)
+        : grp && grp.key !== "all" ? grp.icon + " " + grp.label : "all areas";
+      const path = jobPaths().find(p => p.key === s.path);
+      return [cats.join(" + "), area, path ? path.label : ""].filter(Boolean).join(" · ");
+    }
+
+    function focusBarHtml() {
+      const focus = appState.focus, cur = currentScope();
+      const signedIn = window.TQFriends && TQFriends.signedIn();
+      const here = sameScope(focus, cur);
+      const note = signedIn ? "" : `<span class="focus-note">Friends see it once you sign in (👥 Friends).</span>`;
+      if (here) {
+        return `<div class="focus-bar is-pinned">
+            <span>📌 Your friends see these needs: <b>${scopeLabel(focus)}</b></span>
+            <button type="button" class="btn" onclick="toggleFocus()">Unpin</button>${note}
+          </div>`;
+      }
+      return `<div class="focus-bar">
+          <button type="button" class="btn" onclick="toggleFocus()" title="Friends see the items these quests need">📌 Share as my focus</button>
+          <span class="focus-note">${focus ? `Now sharing: ${scopeLabel(focus)}` : "Friends see what your current area needs."}</span>${note}
+        </div>`;
+    }
+
+    function toggleFocus() {
+      const cur = currentScope();
+      appState.focus = sameScope(appState.focus, cur) ? null : cur;
+      saveState();
+      renderChecklistFarm();
     }
 
     function setChecklistFarmAll(all) {
@@ -1008,6 +1169,7 @@
 
     function storePins(pins) {
       try { localStorage.setItem(PIN_KEY, JSON.stringify(pins)); } catch (e) { /* private mode */ }
+      if (window.TQCloud) TQCloud.changed();
     }
 
     function allPins() {
@@ -1182,6 +1344,61 @@
     }
 
     // ============================================================================
+    // FRIENDS (js/friends.js): the short summary friends see, and the page
+    // ============================================================================
+    function friendSummary() {
+      const cls = appState.selectedClass || "All";
+      const pool = QUESTS.filter(q => matchesClassFilter(q, cls));
+      const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
+      const st = id => (statuses.get ? statuses.get(id) : statuses[id]);
+      const open = pool.filter(q => st(q.id) === "available").sort((a, b) => a.order - b.order);
+      // where they are: the next key quest open to them, else the first open quest in play order
+      const ref = open.find(q => q.categories.includes("Key")) || open[0];
+      const short = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "").replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
+      const area = a => (/^Episode \d+$/.test(a) ? "EP" + num(a) : a);
+      // needs: what the quests open right now still need (what a friend could help with today),
+      // the current area's first, then the rest in play order. Not money (Galder checks / coupons:
+      // nobody can farm those for you) and not items only other quests hand over.
+      const money = item => /Galder (Coupon|Check)$/i.test(item);
+      const byId = new Map(open.map(q => [q.id, q]));
+      const rank = r => Math.min(...r.quests.map(x => {
+        const q = byId.get(x.id);
+        return (q && ref && q.area === ref.area ? 0 : 1e6) + (q ? q.order : 1e6);
+      }));
+      // a pinned focus (📌 in Items to collect) replaces that: every unfinished quest in it, play order
+      const focus = appState.focus;
+      const fq = focus ? pool.filter(q => inScope(q, focus)) : null;
+      const orderOf = new Map(QUESTS.map(q => [q.id, q.order]));
+      const needs = (fq
+        ? TQBag.bagList(fq, appState, appState.inventory)
+            .sort((a, b) => Math.min(...a.quests.map(x => orderOf.get(x.id))) - Math.min(...b.quests.map(x => orderOf.get(x.id))))
+        : TQBag.bagList(open, appState, appState.inventory).sort((a, b) => rank(a) - rank(b)))
+        .filter(r => r.left > 0 && !r.chain && !money(r.item))
+        .slice(0, 12).map(r => ({ item: r.item, n: r.left }));
+      const needed = new Map(TQBag.bagList(pool, appState, appState.inventory).map(r => [r.item, r.need]));
+      const spares = Object.entries(appState.inventory || {})
+        .map(([item, have]) => ({ item, n: have - (needed.get(item) || 0) }))
+        .filter(x => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 12);
+      const path = jobPaths().find(p => p.key === appState.selectedJobPath);
+      return {
+        cls, path: path ? path.label : "",
+        done: pool.filter(q => appState.completedQuests[q.id]).length, total: pool.length,
+        area: ref ? area(ref.area) : "", next: ref ? short(ref.title) : "",
+        needs, spares,
+        focus: fq ? { label: scopeLabel(focus), done: fq.filter(q => appState.completedQuests[q.id]).length, total: fq.length } : null
+      };
+    }
+
+    function renderFriends() {
+      const el = document.getElementById("friendsContainer");
+      if (!el || !window.TQFriends) return;
+      // don't redraw under someone typing in a box on this page
+      const typing = document.activeElement && el.contains(document.activeElement) && document.activeElement.tagName === "INPUT";
+      if (typing && document.activeElement.value) return;
+      el.innerHTML = TQFriends.render();
+    }
+
+    // ============================================================================
     // BAG (items in hand, keep list) — model + markup in js/bag.js
     // ============================================================================
     let ITEM_USE = new Map(); // item name -> how many unfinished quests still need it
@@ -1352,7 +1569,11 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       loadData()
-        .then(() => { loadState(); renderAll(); switchView(appState.currentView); })
+        .then(() => {
+          loadState(); renderAll(); switchView(appState.currentView);
+          TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
+          TQFriends.init({ summary: friendSummary, render: renderFriends });
+        })
         .catch(showLoadError);
     });
   </script>

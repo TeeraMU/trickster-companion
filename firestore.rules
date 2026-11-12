@@ -1,0 +1,58 @@
+rules_version = '2';
+
+// Trickster Companion. Paste into Firebase console -> Firestore -> Rules -> Publish whenever this
+// file changes (the repo copy is not deployed by itself).
+//   users/{uid}      full progress: only its owner
+//   social/{uid}     character name, own friend code, codes of friends added: only its owner
+//   profiles/{code}  short summary a player chose to share: any signed-in player who knows the code
+//                    can read it (no listing / browsing); only its owner can write or delete it
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+    function goodName(n) { return n is string && n.size() >= 2 && n.size() <= 20; }
+
+    match /users/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['schema', 'progress', 'device', 'updatedAt'])
+        && request.resource.data.progress is map
+        && request.resource.data.device is string
+        && request.resource.data.device.size() < 40;
+    }
+
+    match /social/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['name', 'code', 'friends', 'updatedAt'])
+        && goodName(request.resource.data.name)
+        && request.resource.data.code is string
+        && request.resource.data.friends is list
+        && request.resource.data.friends.size() <= 50;
+    }
+
+    match /profiles/{code} {
+      allow get: if signedIn();
+      allow list: if false;
+      allow create: if signedIn()
+        && code.matches('TC-[A-Z0-9]{4}-[A-Z0-9]{2}')
+        && request.resource.data.ownerUid == request.auth.uid
+        && validProfile();
+      allow update: if signedIn()
+        && resource.data.ownerUid == request.auth.uid
+        && request.resource.data.ownerUid == request.auth.uid
+        && validProfile();
+      allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+
+      function validProfile() {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['ownerUid', 'name', 'cls', 'path', 'done', 'total', 'area', 'next', 'needs', 'spares', 'focus', 'updatedAt'])
+          && goodName(d.name)
+          && (!('focus' in d) || d.focus == null || d.focus is map)
+          && d.needs is list && d.needs.size() <= 12
+          && d.spares is list && d.spares.size() <= 12;
+      }
+    }
+  }
+}
