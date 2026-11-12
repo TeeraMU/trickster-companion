@@ -1925,6 +1925,1787 @@
         "checked": "2026-11-12",
         "verifiedInGame": false
       }
+    },
+    {
+      "id": "ow-30",
+      "order": 333,
+      "title": "Genius Cochma - Oops Wharf Survey - 1",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Town Quests",
+      "npc": "Genius Cochma",
+      "npcIds": [
+        "genius-cochma"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 60,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 60+",
+      "steps": [
+        "Talk to Genius Cochma at Gate of Oops Wharf.",
+        "Defeat 15x Ironclad Turtle (Lv.68) within 10 min in Path to Oops Wharf.",
+        "Report back to Genius Cochma (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Ironclad Turtle",
+          "level": 68,
+          "count": 15,
+          "timeLimit": "10 min",
+          "map": "Path to Oops Wharf"
+        }
+      ],
+      "rewards": {
+        "baseExp": 86827,
+        "tmExp": 366762,
+        "galder": 0,
+        "items": [
+          "5x Pink Potion C",
+          "5x 500 Galder Coupon"
+        ]
+      },
+      "notes": "The other Survey steps (2-4) need no Survey 1; Survey 4 gives an Oops Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Genius_Cochma_-_Oops_Wharf_Survey_-_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-31",
+      "order": 334,
+      "title": "Shaman Girl Jia - Requiem Song for the Spirits 1",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Path to Oops Wharf Boss 1 - Not This Ship",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 1~210",
+      "steps": [
+        "Talk to Shaman Girl Jia at Path to Oops Wharf Boss 1 - Not This Ship.",
+        "Defeat 10x Dread Black Foe (Lv.119) within 2 min in Path to Oops Wharf Boss 1 - Not This Ship.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Dread Black Foe",
+          "level": 119,
+          "count": 10,
+          "timeLimit": "2 min",
+          "map": "Path to Oops Wharf Boss 1 - Not This Ship"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Requiem Priest Certificate Piece"
+        ]
+      },
+      "notes": "Shaman Girl Jia teleports you to the battlefield. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Requiem_Song_for_the_Spirits_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-32",
+      "order": 335,
+      "title": "Card Girl - Requiem Song for the Spirits 2",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Card Girl",
+      "npcIds": [
+        "card-girl"
+      ],
+      "location": "Path to Oops Wharf Boss 1 - Not This Ship",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-31"
+        }
+      ],
+      "prereqText": "Level 1~210, have Requiem Priest Certificate Piece in inventory",
+      "steps": [
+        "Talk to Card Girl at Path to Oops Wharf Boss 1 - Not This Ship.",
+        "Defeat 10x Dread Master Foe (Lv.126) within 2 min in Path to Oops Wharf Boss 1 - Not This Ship.",
+        "Report back to Card Girl."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Dread Master Foe",
+          "level": 126,
+          "count": 10,
+          "timeLimit": "2 min",
+          "map": "Path to Oops Wharf Boss 1 - Not This Ship"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Requiem Priest Certificate"
+        ]
+      },
+      "notes": "Needs the Requiem Priest Certificate Piece from Requiem Song for the Spirits 1. Card Girl teleports you to the battlefield. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Girl_-_Requiem_Song_for_the_Spirits_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-33",
+      "order": 336,
+      "title": "Shaman Girl Jia - Requiem Melody",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Path to Oops Wharf Boss 1 - Not This Ship",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-32"
+        }
+      ],
+      "prereqText": "Level 1~210, have completed Requiem Song for the Spirits 2",
+      "steps": [
+        "Talk to Shaman Girl Jia at Path to Oops Wharf Boss 1 - Not This Ship.",
+        "Get 1x Requiem Priest Certificate: reward from Card Girl - Requiem Song for the Spirits 2.",
+        "Get 5x Love Crystal: drilled in Path to Oops Wharf Boss 1 - Not This Ship.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Requiem Priest Certificate",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Card Girl - Requiem Song for the Spirits 2",
+            "map": "Path to Oops Wharf Boss 1 - Not This Ship"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Love Crystal",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 1 - Not This Ship (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 1 - Not This Ship"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Requiem_Melody.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-34",
+      "order": 337,
+      "title": "Copyfish DomDom - Crystallized Sound",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Path to Oops Wharf Boss 2 - Not This Map",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-33"
+        }
+      ],
+      "prereqText": "Level 1~210",
+      "steps": [
+        "Talk to Copyfish DomDom at Path to Oops Wharf Boss 2 - Not This Map.",
+        "Get 1x Crystallized Sound 1: dropped by Dread Requi (Lv.108) in Path to Oops Wharf Boss 2 - Not This Map.",
+        "Get 1x Crystallized Sound 2: dropped by Dread Quiem (Lv.113) in Path to Oops Wharf Boss 2 - Not This Map.",
+        "Get 1x Crystallized Sound 3: dropped by Dread Crow (Lv.132) in Path to Oops Wharf Boss 2 - Not This Map.",
+        "Get 1x Crystallized Sound 4: drilled in Path to Oops Wharf Boss 2 - Not This Map.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Crystallized Sound 1",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Dread Requi (Lv.108)",
+            "map": "Path to Oops Wharf Boss 2 - Not This Map"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystallized Sound 2",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Dread Quiem (Lv.113)",
+            "map": "Path to Oops Wharf Boss 2 - Not This Map"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystallized Sound 3",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Dread Crow (Lv.132)",
+            "map": "Path to Oops Wharf Boss 2 - Not This Map"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystallized Sound 4",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 2 - Not This Map (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 2 - Not This Map"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Hand them to the other Copyfish DomDom behind the stand on the right of the map; it sends you on to the next trial. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Crystallized_Sound.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-35",
+      "order": 338,
+      "title": "Copyfish DomDom - Requiem Test 1",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-34"
+        }
+      ],
+      "prereqText": "Level 1~210",
+      "steps": [
+        "Talk to Copyfish DomDom at Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Get 6x Requiem Mass Candle: drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Get 1x Requiem Mass Candelabrum: drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Requiem Mass Candle",
+          "qty": 6,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Requiem Mass Candelabrum",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Dom Dom Approval Letter 1"
+        ]
+      },
+      "notes": "Talk to the Copyfish DomDom up the ramp; it moves you to the one who gives this quest. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Requiem_Test_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-36",
+      "order": 339,
+      "title": "Copyfish DomDom - Requiem Song for the Spirits 3",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-35"
+        }
+      ],
+      "prereqText": "Level 1~210, have Dom Dom Approval Letter 1 in inventory",
+      "steps": [
+        "Talk to Copyfish DomDom at Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Defeat 1x Black Hearted Requi (Lv.108) within 1 min in Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Black Hearted Requi",
+          "level": 108,
+          "count": 1,
+          "timeLimit": "1 min",
+          "map": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Dom Dom Approval Letter 2"
+        ]
+      },
+      "notes": "Needs Dom Dom Approval Letter 1 (Requiem Test 1). Talk to the Copyfish DomDom on the middle left of the map first. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Requiem_Song_for_the_Spirits_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-37",
+      "order": 340,
+      "title": "Copyfish DomDom - Requiem Test 2",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-36"
+        }
+      ],
+      "prereqText": "Level 1~210, have Dom Dom Approval Letter 2",
+      "steps": [
+        "Talk to Copyfish DomDom at Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Get 1x Requiem Mass Brush: drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Get 1x Requiem Mass Sword: drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Requiem Mass Brush",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Requiem Mass Sword",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 3 - Real Wharf of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Dom Dom Approval Letter 3"
+        ]
+      },
+      "notes": "Needs Dom Dom Approval Letter 2. Talk to the Copyfish DomDom on the middle right of the map first. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Requiem_Test_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-38",
+      "order": 341,
+      "title": "Copyfish DomDom - Requiem Song for the Spirits 4",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-37"
+        }
+      ],
+      "prereqText": "Level 1~210, have Dom Dom Approval Letter 3 in inventory",
+      "steps": [
+        "Talk to Copyfish DomDom at Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Defeat 1x Black Hearted Quiem (Lv.113) within 1 min in Path to Oops Wharf Boss 3 - Real Wharf of Darkness.",
+        "Report back to Copyfish DomDom."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Black Hearted Quiem",
+          "level": 113,
+          "count": 1,
+          "timeLimit": "1 min",
+          "map": "Path to Oops Wharf Boss 3 - Real Wharf of Darkness"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Needs Dom Dom Approval Letter 3 (Requiem Test 2). After it, talk to the last two Copyfish DomDom to reach Shaman Girl Jia. Reward: a transfer to the next Copyfish DomDom. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Requiem_Song_for_the_Spirits_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-39",
+      "order": 342,
+      "title": "La Vida - A Requiem Song for an Old Friend",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "La Vida",
+      "npcIds": [
+        "la-vida"
+      ],
+      "location": "Path to Oops Wharf Boss 4 - Real Dock of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-38"
+        }
+      ],
+      "prereqText": "Level 1~210",
+      "steps": [
+        "Talk to La Vida at Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x Pirate's Combined Song: reward from Vice Captain - Sea Men's Requiem Song 1.",
+        "Report back to La Vida."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pirate's Combined Song",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Vice Captain - Sea Men's Requiem Song 1",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Accept it first: La Vida gives you Sailor's Requiem pt. 1 and sends you to the lower dock, where the Vice Captain and the Black Pirate Swabs are. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/La_Vida_-_A_Requiem_Song_for_an_Old_Friend.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-40",
+      "order": 343,
+      "title": "Vice Captain - Sea Men's Requiem Song 1",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Vice Captain",
+      "npcIds": [
+        "vice-captain"
+      ],
+      "location": "Path to Oops Wharf Boss 4 - Real Dock of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-39",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 1~210, have La Vida - A Requiem Song for an Old Friend in quest log",
+      "steps": [
+        "Talk to Vice Captain at Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x Sailor's Requiem pt. 1: reward from La Vida - A Requiem Song for an Old Friend (given when you accept it).",
+        "Get 1x Pirate's F Note: reward from Black Pirate Swab - Sea Men's Requiem Song 4.",
+        "Report back to Vice Captain."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sailor's Requiem pt. 1",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from La Vida - A Requiem Song for an Old Friend (given when you accept it)",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Pirate's F Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Black Pirate Swab - Sea Men's Requiem Song 4",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Pirate's Combined Song"
+        ]
+      },
+      "notes": "Accept it, do the three Black Pirate Swab quests in order (2, 3, 4), then come back. The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Vice_Captain_-_Sea_Men's_Requiem_Song_1.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-41",
+      "order": 344,
+      "title": "Black Pirate Swab - Sea Men's Requiem Song 2",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Black Pirate Swab",
+      "npcIds": [
+        "black-pirate-swab"
+      ],
+      "location": "Path to Oops Wharf Boss 4 - Real Dock of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-40",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 1~210, have Vice Captain - Sea Men's Requiem Song 1 in quest log",
+      "steps": [
+        "Talk to Black Pirate Swab at Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x G Note: drilled in Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Report back to Black Pirate Swab."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "G Note",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 4 - Real Dock of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Pirate's G Note"
+        ]
+      },
+      "notes": "The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Black_Pirate_Swab_-_Sea_Men's_Requiem_Song_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-42",
+      "order": 345,
+      "title": "Black Pirate Swab - Sea Men's Requiem Song 3",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Black Pirate Swab",
+      "npcIds": [
+        "black-pirate-swab"
+      ],
+      "location": "Path to Oops Wharf Boss 4 - Real Dock of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-40",
+          "active": true
+        },
+        {
+          "quest": "ow-41"
+        }
+      ],
+      "prereqText": "Level 1~210, have Vice Captain - Sea Men's Requiem Song 1 in quest log, have Pirate's G Note",
+      "steps": [
+        "Talk to Black Pirate Swab at Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x A Note: drilled in Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x Pirate's G Note: reward from Black Pirate Swab - Sea Men's Requiem Song 2.",
+        "Report back to Black Pirate Swab."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "A Note",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 4 - Real Dock of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Pirate's G Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Black Pirate Swab - Sea Men's Requiem Song 2",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Pirate's A Note"
+        ]
+      },
+      "notes": "The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Black_Pirate_Swab_-_Sea_Men's_Requiem_Song_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-43",
+      "order": 346,
+      "title": "Black Pirate Swab - Sea Men's Requiem Song 4",
+      "categories": [
+        "dungeon"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf Boss - Requiem for the Spirits (Lv.100+)",
+      "npc": "Black Pirate Swab",
+      "npcIds": [
+        "black-pirate-swab"
+      ],
+      "location": "Path to Oops Wharf Boss 4 - Real Dock of Darkness",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-40",
+          "active": true
+        },
+        {
+          "quest": "ow-42"
+        }
+      ],
+      "prereqText": "Level 1~210, have Vice Captain - Sea Men's Requiem Song 1 in quest log, have Pirate's A Note",
+      "steps": [
+        "Talk to Black Pirate Swab at Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x F Note: drilled in Path to Oops Wharf Boss 4 - Real Dock of Darkness.",
+        "Get 1x Pirate's A Note: reward from Black Pirate Swab - Sea Men's Requiem Song 3.",
+        "Report back to Black Pirate Swab."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "F Note",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Path to Oops Wharf Boss 4 - Real Dock of Darkness (drill depth not on the wiki)",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Pirate's A Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Black Pirate Swab - Sea Men's Requiem Song 3",
+            "map": "Path to Oops Wharf Boss 4 - Real Dock of Darkness"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Pirate's F Note"
+        ]
+      },
+      "notes": "The wiki lists Level 1~210; the monsters here are Lv.108-132.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Black_Pirate_Swab_-_Sea_Men's_Requiem_Song_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-44",
+      "order": 347,
+      "title": "Star Gazer Stella - An Area of Bad Vibes",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Captain Skull's Dread Pirate set (Lv.120~210)",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "db-gen-02"
+        }
+      ],
+      "prereqText": "Level 120~210, have Dread Cutlass and Dread Pirate Hat in inventory, have completed Star Gazer Stella - The Star Gazer Girl",
+      "steps": [
+        "Talk to Star Gazer Stella at Oops Wharf.",
+        "Get 1x Dread Cutlass: dropped by Captain Skull (Lv.152), the Oops Wharf boss in Oops Wharf Boss Room.",
+        "Get 1x Dread Pirate Hat: dropped by Captain Skull (Lv.152), the Oops Wharf boss in Oops Wharf Boss Room.",
+        "Report back to Star Gazer Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dread Cutlass",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Skull (Lv.152), the Oops Wharf boss",
+            "map": "Oops Wharf Boss Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dread Pirate Hat",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Skull (Lv.152), the Oops Wharf boss",
+            "map": "Oops Wharf Boss Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 31569451,
+        "tmExp": 5777403,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.5"
+        ]
+      },
+      "notes": "Dread Cutlass and Dread Pirate Hat only have to be in your inventory: keep them for the next two quests.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Star_Gazer_Stella_-_An_Area_of_Bad_Vibes.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-45",
+      "order": 348,
+      "title": "Star Gazer Stella - Quack Requiem Mass Priest",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Captain Skull's Dread Pirate set (Lv.120~210)",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-44"
+        }
+      ],
+      "prereqText": "Have Dread Cutlass and Dread Pirate Hat in inventory, have completed Star Gazer Stella - An Area of Bad Vibes",
+      "steps": [
+        "Talk to Star Gazer Stella at Oops Wharf.",
+        "Get 1x Requiem Charm: reward from Shaman Girl Jia - The Requiem Mass for the One With Golden Eyes.",
+        "Report back to Star Gazer Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Requiem Charm",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Shaman Girl Jia - The Requiem Mass for the One With Golden Eyes",
+            "map": "Gate of Oops Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 31569451,
+        "tmExp": 5777403,
+        "galder": 0,
+        "items": [
+          "1x Dread Dagger Sheath"
+        ]
+      },
+      "notes": "Accept it, do Shaman Girl Jia - The Requiem Mass for the One With Golden Eyes, then come back. Keep the Dread Cutlass and Dread Pirate Hat in your inventory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Star_Gazer_Stella_-_Quack_Requiem_Mass_Priest.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-46",
+      "order": 349,
+      "title": "Shaman Girl Jia - The Requiem Mass for the One With Golden Eyes",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Captain Skull's Dread Pirate set (Lv.120~210)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Gate of Oops Wharf",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-45",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 120~210, Have Dread Cutlass and Dread Pirate Hat in inventory, have Star Gazer Stella - Quack Requiem Mass Priest in quest log",
+      "steps": [
+        "Talk to Shaman Girl Jia at Gate of Oops Wharf.",
+        "Get 1x Requi Card: dropped by Requi (Lv.72) in Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Get 1x Quiem Card: dropped by Quiem (Lv.75) in Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park.",
+        "Get 1x Crow Card: dropped by Crow (Lv.88) in Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Get 1x Black Foe Card: dropped by Black Foe (Lv.79) in Wharf Field 4 - Chrono Wharf.",
+        "Get 1x Master Foe Card: dropped by Master Foe (Lv.84) in Wharf Field 4 - Chrono Wharf.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Requi Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Requi (Lv.72)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Quiem Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Quiem (Lv.75)",
+            "map": "Wharf Field 1 - Haunted Town / Wharf Field 3 - Phantom Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crow Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Crow (Lv.88)",
+            "map": "Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Black Foe Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Black Foe (Lv.79)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Master Foe Card",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Master Foe (Lv.84)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 31569451,
+        "tmExp": 5777403,
+        "galder": 0,
+        "items": [
+          "1x Requiem Charm"
+        ]
+      },
+      "notes": "Keep the Dread Cutlass and Dread Pirate Hat in your inventory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_The_Requiem_Mass_for_the_One_With_Golden_Eyes.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-47",
+      "order": 350,
+      "title": "Hunter Yuri - Explore Fading 2",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 2nd Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 2nd Floor.",
+        "Defeat 20x Chaos Leaf Bird (Lv.75) within 15 min in Fading Tower - 2nd Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Leaf Bird",
+          "level": 75,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 2nd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 105337,
+        "tmExp": 708193,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_2.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-48",
+      "order": 351,
+      "title": "Hunter Yuri - Explore Fading 3",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 4th Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 4th Floor.",
+        "Defeat 20x Chaos Stone Soldier (Lv.80) within 15 min in Fading Tower - 4th Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Stone Soldier",
+          "level": 80,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 4th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 106253,
+        "tmExp": 714351,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_3.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-49",
+      "order": 352,
+      "title": "Hunter Yuri - Explore Fading 4",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 5th Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 5th Floor.",
+        "Defeat 20x Chaos Guiana (Lv.85) within 15 min in Fading Tower - 5th Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Guiana",
+          "level": 85,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 5th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 107169,
+        "tmExp": 720510,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_4.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-50",
+      "order": 353,
+      "title": "Hunter Yuri - Explore Fading 5",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 6th Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 6th Floor.",
+        "Defeat 20x Chaos Monkya (Lv.90) within 15 min in Fading Tower - 6th Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Monkya",
+          "level": 90,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 6th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 147054,
+        "tmExp": 732686,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_5.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-51",
+      "order": 354,
+      "title": "Hunter Yuri - Explore Fading 6",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 8th Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 8th Floor.",
+        "Defeat 20x Chaos Chibcha (Lv.95) within 15 min in Fading Tower - 8th Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Chibcha",
+          "level": 95,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 8th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 148300,
+        "tmExp": 738895,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_6.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-52",
+      "order": 355,
+      "title": "Hunter Yuri - Explore Fading 7",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 9th Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 9th Floor.",
+        "Defeat 20x Chaos Quiem (Lv.100) within 15 min in Fading Tower - 9th Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Quiem",
+          "level": 100,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 9th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 149546,
+        "tmExp": 745104,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_7.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-53",
+      "order": 356,
+      "title": "Hunter Yuri - Explore Fading 8",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Fading Tower - Hunter Yuri (Lv.70-109)",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Fading Tower - 10th Floor",
+      "minLevel": 70,
+      "cycles": 10,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 70-109",
+      "steps": [
+        "Talk to Hunter Yuri at Fading Tower - 10th Floor.",
+        "Defeat 20x Chaos Black Foe (Lv.105) within 15 min in Fading Tower - 10th Floor.",
+        "Report back to Hunter Yuri (repeat 10 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Black Foe",
+          "level": 105,
+          "count": 20,
+          "timeLimit": "15 min",
+          "map": "Fading Tower - 10th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 150793,
+        "tmExp": 751313,
+        "galder": 0,
+        "items": [
+          "1x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Explore_Fading_8.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-54",
+      "order": 357,
+      "title": "Shaman Girl Jia - Protect Silent Hallway",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Phantom Dungeon - Shaman Girl Jia (Lv.170+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Phantom Dungeon - 1F Silent Hallway",
+      "minLevel": 170,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 170+",
+      "steps": [
+        "Talk to Shaman Girl Jia at Phantom Dungeon - 1F Silent Hallway.",
+        "Defeat 25x Hell Book (Lv.175) within 10 min in Phantom Dungeon - 1F Silent Hallway / Phantom Dungeon 1-2.",
+        "Report back to Shaman Girl Jia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Hell Book",
+          "level": 175,
+          "count": 25,
+          "timeLimit": "10 min",
+          "map": "Phantom Dungeon - 1F Silent Hallway / Phantom Dungeon 1-2"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2231034,
+        "tmExp": 1256002,
+        "galder": 10000,
+        "items": []
+      },
+      "notes": "At other levels: Lv.181+: 25x Dark Ball (Lv.190) in 10 min, reward 15, 000 Galder, 2,612,700 / 1,330,568 EXP/TM.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Protect_Silent_Hallway.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-55",
+      "order": 358,
+      "title": "Shaman Girl Jia - Chilly Hallway Cleaning",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Phantom Dungeon - Shaman Girl Jia (Lv.170+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Phantom Dungeon - 2F Chilly Hallway",
+      "minLevel": 190,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 190+",
+      "steps": [
+        "Talk to Shaman Girl Jia at Phantom Dungeon - 2F Chilly Hallway.",
+        "Defeat 10x Blanket Ghost (Lv.200) within 25 min in Phantom Dungeon 2-1 / 2-2 / 2-4.",
+        "Report back to Shaman Girl Jia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Blanket Ghost",
+          "level": 200,
+          "count": 10,
+          "timeLimit": "25 min",
+          "map": "Phantom Dungeon 2-1 / 2-2 / 2-4"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2943600,
+        "tmExp": 1345886,
+        "galder": 30000,
+        "items": []
+      },
+      "notes": "At other levels: Lv.201+: 10x Undead Stranger (Lv.210) in 25 min, reward 35, 000 Galder, 3,370,492 / 1,455,736 EXP/TM.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Chilly_Hallway_Cleaning.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-56",
+      "order": 359,
+      "title": "Shaman Girl Jia - Shiver Hallway Cleaning",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Phantom Dungeon - Shaman Girl Jia (Lv.170+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Phantom Dungeon - 3F Shiver Hallway",
+      "minLevel": 210,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 210+",
+      "steps": [
+        "Talk to Shaman Girl Jia at Phantom Dungeon - 3F Shiver Hallway.",
+        "Defeat 10x Outsider (Lv.229) within 25 min in Phantom Dungeon - 3F Shiver Hallway / 3F Toilet.",
+        "Report back to Shaman Girl Jia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Outsider",
+          "level": 229,
+          "count": 10,
+          "timeLimit": "25 min",
+          "map": "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3802116,
+        "tmExp": 1623558,
+        "galder": 30000,
+        "items": []
+      },
+      "notes": "At other levels: Lv.221+: 10x Haunted Prisoner (Lv.230) in 25 min, reward 35, 000 Galder, 4,247,408 / 1,708,820 EXP/TM.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Shiver_Hallway_Cleaning.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-57",
+      "order": 360,
+      "title": "Stella - Shadow Star 5",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Mind's Eye (Lv.240+)",
+      "npc": "Stella",
+      "npcIds": [
+        "stella"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 240+, use Mind's Eye",
+      "steps": [
+        "Talk to Stella at Oops Wharf.",
+        "Get 5x Hair Tie: dropped by Oops Wharf shadow monsters (Lv.433+, seen with Mind's Eye): Shadow Sea Tiger, Shadow Quiem, Shadow Crow, Shadow Black Foe, Shadow Master Foe… in Oops Wharf Fields 1-4.",
+        "Report back to Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Hair Tie",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Oops Wharf shadow monsters (Lv.433+, seen with Mind's Eye): Shadow Sea Tiger, Shadow Quiem, Shadow Crow, Shadow Black Foe, Shadow Master Foe…",
+            "map": "Oops Wharf Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3417599,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "9x Half Pink Potion",
+          "9x Half Blue Potion",
+          "1x Story of the Star Gazer Girl 5"
+        ]
+      },
+      "notes": "Use Mind's Eye to see Stella and the shadow monsters.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stella_-_Shadow_Star_5.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-58",
+      "order": 361,
+      "title": "Shaman Girl Jia - Dark Spirit Punishment 5",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Mind's Eye (Lv.240+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 240+, use Mind's Eye",
+      "steps": [
+        "Talk to Shaman Girl Jia at Oops Wharf.",
+        "Defeat 3x Shadow Ironclad Turtle (Lv.432) within 12 min in Path to Oops Wharf.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Shadow Ironclad Turtle",
+          "level": 432,
+          "count": 3,
+          "timeLimit": "12 min",
+          "map": "Path to Oops Wharf"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1637070,
+        "tmExp": 256286,
+        "galder": 0,
+        "items": [
+          "5x Half Pink Potion",
+          "5x Half Blue Potion"
+        ]
+      },
+      "notes": "Use Mind's Eye. At other levels: Lv.244~247: 3x Shadow Requi (Lv.434) in 12 min, reward 5x Half Pink Potion, 5x Half Blue Potion, 1,699,351 / 267,496 EXP/TM. Lv.248~251: 3x Shadow Black Foe (Lv.437) in 11 min, reward 5x Half Pink Potion, 5x Half Blue Potion, 1,764,816 / 278,748 EXP/TM. Lv.252~255: 3x Shadow Cone Stone (Lv.440) in 11 min, reward 5x Half Pink Potion, 5x Half Blue Potion, 1,831,720 / 289,401 EXP/TM. Lv.256+: 3x Shadow Pirate Boxer B (Lv.441) in 10 min, reward 5x Half Pink Potion, 5x Half Blue Potion, 1,896,043 / 297,238 EXP/TM.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Spirit_Punishment_5.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ow-59",
+      "order": 362,
+      "title": "Eclipse - The Story of the Gods 5",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Oops Wharf - Mind's Eye (Lv.240+)",
+      "npc": "Eclipse",
+      "npcIds": [
+        "eclipse"
+      ],
+      "location": "Oops Wharf",
+      "minLevel": 240,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-57"
+        }
+      ],
+      "prereqText": "Level 240+, use Mind's Eye, have completed The Story of the Gods 4 and have completed Shadow Star 5 at least once",
+      "steps": [
+        "Talk to Eclipse at Oops Wharf.",
+        "Get 2x Shadow Onyx: dropped by Mermaid Palace shadow monsters (seen with Mind's Eye) in Mermaid Palace Fields.",
+        "Get 2x Shadow Drop Agate: dropped by Mermaid Palace shadow monsters (seen with Mind's Eye) in Mermaid Palace Fields.",
+        "Report back to Eclipse."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Onyx",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Palace shadow monsters (seen with Mind's Eye)",
+            "map": "Mermaid Palace Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shadow Drop Agate",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Mermaid Palace shadow monsters (seen with Mind's Eye)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 10399628,
+        "tmExp": 5698290,
+        "galder": 0,
+        "items": [
+          "3x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Use Mind's Eye. Eclipse only shows up between 13:00 and 13:20. Also needs The Story of the Gods 4 (not in this app yet).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Eclipse_-_The_Story_of_the_Gods_5.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
     }
   ]
 }

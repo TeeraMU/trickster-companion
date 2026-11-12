@@ -101,6 +101,12 @@
     "n": 1,
     "src": "wiki"
   },
+  "eclipse@oops-wharf": {
+    "x": 34.9,
+    "y": 68.2,
+    "n": 1,
+    "src": "wiki"
+  },
   "enkicladus-1@mirage-field-2": {
     "x": 71.5,
     "y": 83.1,
@@ -434,6 +440,12 @@
   "star-gazer-stella@oops-wharf": {
     "x": 39.2,
     "y": 45.5,
+    "n": 1,
+    "src": "wiki"
+  },
+  "stella@oops-wharf": {
+    "x": 26.3,
+    "y": 59.1,
     "n": 1,
     "src": "wiki"
   },

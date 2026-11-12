@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "sh-key-01",
-      "order": 319,
+      "order": 800,
       "title": "Fairy Godmother - Snow Hill Recommendation Sticker",
       "categories": [
         "key",
@@ -74,7 +74,7 @@
     },
     {
       "id": "sh-key-02",
-      "order": 320,
+      "order": 801,
       "title": "Witch La Befana - Broken Promise",
       "categories": [
         "key"
@@ -145,7 +145,7 @@
     },
     {
       "id": "sh-key-03",
-      "order": 321,
+      "order": 802,
       "title": "Fairy Godmother - Truth Draught",
       "categories": [
         "key"
@@ -217,7 +217,7 @@
     },
     {
       "id": "sh-key-04",
-      "order": 322,
+      "order": 803,
       "title": "Santa Claus (2) - Save the Snow Machine",
       "categories": [
         "key"
@@ -313,7 +313,7 @@
     },
     {
       "id": "sh-key-05",
-      "order": 323,
+      "order": 804,
       "title": "Santa Claus (2) - Fix the Remote Control",
       "categories": [
         "key"
@@ -372,7 +372,7 @@
     },
     {
       "id": "sh-key-06",
-      "order": 324,
+      "order": 805,
       "title": "Fairy Godmother - Finding Peace Again",
       "categories": [
         "key"

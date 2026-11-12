@@ -44,6 +44,10 @@
     "name": "Bastet"
   },
   {
+    "id": "black-pirate-swab",
+    "name": "Black Pirate Swab"
+  },
+  {
     "id": "black-wings-messenger",
     "name": "Black Wings' Messenger"
   },
@@ -100,6 +104,10 @@
     "name": "Clotho"
   },
   {
+    "id": "copyfish-domdom",
+    "name": "Copyfish DomDom"
+  },
+  {
     "id": "delphinus-messenger",
     "name": "Delphinus' Messenger"
   },
@@ -146,6 +154,10 @@
   {
     "id": "driller-marky",
     "name": "Driller Marky"
+  },
+  {
+    "id": "eclipse",
+    "name": "Eclipse"
   },
   {
     "id": "eliza-bath",
@@ -282,6 +294,10 @@
   {
     "id": "kristoffer-j",
     "name": "Kristoffer J."
+  },
+  {
+    "id": "la-vida",
+    "name": "La Vida"
   },
   {
     "id": "lachesis",
@@ -460,6 +476,10 @@
     "name": "Star Gazer Stella"
   },
   {
+    "id": "stella",
+    "name": "Stella"
+  },
+  {
     "id": "stern-poppuri",
     "name": "Stern Poppuri"
   },
@@ -478,6 +498,10 @@
   {
     "id": "vagabond-eloy",
     "name": "Vagabond Eloy"
+  },
+  {
+    "id": "vice-captain",
+    "name": "Vice Captain"
   },
   {
     "id": "vinosh",

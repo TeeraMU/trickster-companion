@@ -3,7 +3,7 @@
   "quests": [
     {
       "id": "bs-key-01",
-      "order": 314,
+      "order": 700,
       "title": "Pastor Tau - Swamp Stickers",
       "categories": [
         "key",
@@ -74,7 +74,7 @@
     },
     {
       "id": "bs-key-02",
-      "order": 315,
+      "order": 701,
       "title": "Madam Sarah - Sarah's Flashback",
       "categories": [
         "key"
@@ -144,7 +144,7 @@
     },
     {
       "id": "bs-key-03",
-      "order": 316,
+      "order": 702,
       "title": "Pastor Tau - Tau's Dream",
       "categories": [
         "key"
@@ -203,7 +203,7 @@
     },
     {
       "id": "bs-key-04",
-      "order": 317,
+      "order": 703,
       "title": "Little Chagan - Chagan's Dream",
       "categories": [
         "key"
@@ -284,7 +284,7 @@
     },
     {
       "id": "bs-key-05",
-      "order": 318,
+      "order": 704,
       "title": "Little Chagan - Interpret Chagan's Dream",
       "categories": [
         "key"
