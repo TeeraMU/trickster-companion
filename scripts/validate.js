@@ -52,6 +52,7 @@ for (const { q, file } of quests) {
   byId.set(q.id, { q, file });
 
   for (const k of ["title", "chapter", "npc", "location", "prereqText"]) if (!isStr(q[k])) err(at, `missing ${k}`);
+  if ("area" in q && !isStr(q.area)) err(at, "area must be a non-empty text");
   if (!isInt(q.order, 1)) err(at, "order must be a positive integer");
   if (!isInt(q.minLevel, 1)) err(at, "minLevel must be a positive integer");
   if (!isInt(q.cycles, 1)) err(at, "cycles must be a positive integer");

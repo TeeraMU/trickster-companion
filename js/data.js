@@ -27,6 +27,9 @@
       npcIds: q.npcIds,
       location: q.location,
       region: region,
+      // the area chip a quest sits under: its file's region, unless the quest names another
+      // (job quests from the towns sit with 3rd Job under 🎓 Job)
+      area: q.area || region,
       subRegion: q.chapter,
       category: CATEGORY_LABEL[q.categories[0]],
       categories: q.categories.map(c => CATEGORY_LABEL[c]),

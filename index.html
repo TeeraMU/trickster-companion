@@ -134,7 +134,7 @@
 
   <main class="main-container">
     <!-- Region Quick Filter Cards -->
-    <div class="area-chips" id="regionCardsContainer" role="group" aria-label="Area"></div>
+    <div class="area-picker" id="regionCardsContainer"></div>
 
     <!-- Shared Filter Bar -->
     <div class="filters-panel" id="filtersPanel">
@@ -397,6 +397,7 @@
       expandedQuests: {},  // { [questId]: true }
       selectedClass: "All",
       selectedRegion: "All",
+      selectedAreaGroup: "all",
       selectedCategory: "All",
       currentView: "episodes",
       selectedEpisode: null,   // e.g. "Episode 1"; null = first unfinished
@@ -483,7 +484,7 @@
 
       let list = QUESTS.filter(q => {
         if (!matchesClassFilter(q, cls)) return false;
-        if (reg !== "All" && q.region !== reg) return false;
+        if (!inSelectedArea(q)) return false;
         if (cat !== "All" && !q.categories.includes(cat)) return false;
 
         const isDone = !!appState.completedQuests[q.id];
@@ -492,7 +493,7 @@
 
         if (search) {
           const hay = [
-            q.title, q.npc, q.location, q.region, q.subRegion, ...q.categories, q.prereq, q.notes || "",
+            q.title, q.npc, q.location, q.region, q.area, q.subRegion, ...q.categories, q.prereq, q.notes || "",
             ...(q.steps || []),
             ...(q.items || []).map(i => `${i.name} ${i.source} ${i.map}`),
             ...(q.hunts || []).map(h => `${h.monster} ${h.map}`),
@@ -584,8 +585,59 @@
       renderAll();
     }
 
+    // Areas are grouped: 📖 Story (EP0, EP1 …), 📍 Zones (towns, by level), 🎓 Job (every job change).
+    // A group button shows the whole group; a chip narrows it to one area (click it again to go back).
+    const AREA_GROUPS = [
+      { key: "all", icon: "✨", label: "All" },
+      { key: "story", icon: "📖", label: "Story" },
+      { key: "zones", icon: "📍", label: "Zones" },
+      { key: "job", icon: "🎓", label: "Job" }
+    ];
+    let AREAS = null; // [{ key, group, minLevel, first }] built once from the data
+
+    function areaList() {
+      if (AREAS) return AREAS;
+      const byKey = new Map();
+      QUESTS.forEach(q => {
+        if (!byKey.has(q.area)) byKey.set(q.area, { key: q.area, quests: [] });
+        byKey.get(q.area).quests.push(q);
+      });
+      const order = { story: 0, zones: 1, job: 2 };
+      AREAS = [...byKey.values()].map(a => {
+        const levels = a.quests.map(q => q.minLevel || 0).filter(Boolean);
+        return {
+          key: a.key,
+          group: /^Episode \d+$/.test(a.key) ? "story" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",
+          minLevel: levels.length ? Math.min(...levels) : 0,
+          first: Math.min(...a.quests.map(q => q.order))
+        };
+      }).sort((a, b) => (order[a.group] - order[b.group]) ||
+        (a.group === "story" ? num(a.key) - num(b.key) : (a.minLevel - b.minLevel) || (a.first - b.first)));
+      return AREAS;
+    }
+
+    function areaGroupOf(key) {
+      const a = areaList().find(x => x.key === key);
+      return a ? a.group : "all";
+    }
+
+    function inSelectedArea(q) {
+      const reg = appState.selectedRegion || "All";
+      if (reg !== "All") return q.area === reg;
+      const grp = appState.selectedAreaGroup || "all";
+      return grp === "all" || areaGroupOf(q.area) === grp;
+    }
+
+    function setAreaGroup(grp) {
+      appState.selectedAreaGroup = grp;
+      appState.selectedRegion = "All";
+      saveState();
+      renderAll();
+    }
+
     function setRegionFilter(reg) {
       appState.selectedRegion = (appState.selectedRegion === reg && reg !== "All") ? "All" : reg;
+      if (reg !== "All") appState.selectedAreaGroup = areaGroupOf(reg);
       saveState();
       renderAll();
     }
@@ -652,34 +704,45 @@
       document.getElementById("statTmExp").textContent = earnedTm.toLocaleString();
       document.getElementById("statTmExpRem").textContent = `${remTm.toLocaleString()} remaining`;
 
-      // Area chips: one scrolling row built from the data, episodes first (EP0, EP1 …), then the
-      // other areas in the order you reach them. New episodes / towns appear by themselves.
-      const areas = new Map();
-      QUESTS.forEach(q => {
-        if (!areas.has(q.region)) areas.set(q.region, { key: q.region, first: q.order });
-        areas.get(q.region).first = Math.min(areas.get(q.region).first, q.order);
-      });
-      const isEp = k => /^Episode \d+$/.test(k);
-      const list = [...areas.values()].sort((a, b) =>
-        (isEp(b.key) - isEp(a.key)) || (isEp(a.key) ? num(a.key) - num(b.key) : a.first - b.first));
-      const chip = r => {
-        const pool = r.key === "All" ? activePool : activePool.filter(q => q.region === r.key);
+      // Area picker: group buttons (✨ All, 📖 Story, 📍 Zones, 🎓 Job), then the chosen group's chips,
+      // built from the data so new episodes / towns / jobs appear by themselves.
+      const areas = areaList();
+      const reg = appState.selectedRegion || "All";
+      if (reg !== "All" && !areas.some(a => a.key === reg)) appState.selectedRegion = "All"; // area gone from the data
+      const grp = appState.selectedRegion !== "All" ? areaGroupOf(appState.selectedRegion) : (appState.selectedAreaGroup || "all");
+      const count = pool => [pool.filter(q => !!appState.completedQuests[q.id]).length, pool.length];
+      const groupBtn = g => {
+        const pool = g.key === "all" ? activePool : activePool.filter(q => areaGroupOf(q.area) === g.key);
         if (!pool.length) return "";
-        const done = pool.filter(q => !!appState.completedQuests[q.id]).length;
-        const pct = Math.round(done / pool.length * 100);
-        const label = r.key === "All" ? "All areas" : isEp(r.key) ? "EP" + num(r.key) : r.key;
-        const active = (appState.selectedRegion || "All") === r.key;
+        const [done, total] = count(pool);
+        const on = grp === g.key;
+        return `<button type="button" class="area-group-btn ${on ? "active" : ""}" aria-pressed="${on}"
+            onclick="setAreaGroup('${g.key}')" title="${g.label}: ${done} of ${total} done">
+            <span aria-hidden="true">${g.icon}</span> ${g.label} <span class="area-count">${done}/${total}</span></button>`;
+      };
+      const chip = a => {
+        const pool = activePool.filter(q => q.area === a.key);
+        if (!pool.length) return "";
+        const [done, total] = count(pool);
+        const pct = Math.round(done / total * 100);
+        const label = a.group === "story" ? "EP" + num(a.key) : a.key;
+        const active = appState.selectedRegion === a.key;
         return `<button type="button" class="area-chip ${active ? "active" : ""} ${pct === 100 ? "is-done" : ""}" aria-pressed="${active}"
-            onclick="setRegionFilter('${r.key}')" title="${r.key}: ${done} of ${pool.length} done">
-            <span class="area-name">${label}</span><span class="area-count">${done}/${pool.length}</span>
+            onclick="setRegionFilter('${a.key.replace(/'/g, "\\'")}')" title="${a.key}: ${done} of ${total} done">
+            <span class="area-name">${label}</span><span class="area-count">${done}/${total}</span>
+            ${a.minLevel ? `<span class="area-lv">Lv.${a.minLevel}+</span>` : ""}
             <span class="area-bar"><span style="width:${pct}%"></span></span>
           </button>`;
       };
-      const eps = list.filter(r => isEp(r.key)), places = list.filter(r => !isEp(r.key));
       document.getElementById("regionCardsContainer").innerHTML =
-        chip({ key: "All" }) +
-        (eps.length ? `<span class="area-group" aria-hidden="true">📖</span>` + eps.map(chip).join("") : "") +
-        (places.length ? `<span class="area-group" aria-hidden="true">📍</span>` + places.map(chip).join("") : "");
+        `<div class="area-groups" role="group" aria-label="Area group">${AREA_GROUPS.map(groupBtn).join("")}</div>` +
+        (grp === "all"
+          ? `<p class="area-hint">Every quest in play order. Pick a group to narrow it down.</p>`
+          : `<div class="area-chips" role="group" aria-label="Area">${areas.filter(a => a.group === grp).map(chip).join("")}</div>`);
+      // keep the chosen chip in sight when the row scrolls sideways (later towns sit far right)
+      const row = document.querySelector("#regionCardsContainer .area-chips");
+      const on = row && row.querySelector(".area-chip.active");
+      if (on) row.scrollLeft = Math.max(0, on.offsetLeft - row.offsetLeft - 24);
     }
 
     function num(s) {
@@ -793,7 +856,9 @@
       const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
       const farm = TQEpisode.farmList(filtered, progress, statuses);
       const cat = appState.selectedCategory && appState.selectedCategory !== "All" ? CATEGORY_TABS.find(t => t.key === appState.selectedCategory) : null;
-      const reg = appState.selectedRegion && appState.selectedRegion !== "All" ? appState.selectedRegion : null;
+      const grp = AREA_GROUPS.find(g => g.key === (appState.selectedAreaGroup || "all"));
+      const reg = appState.selectedRegion && appState.selectedRegion !== "All" ? appState.selectedRegion
+        : grp && grp.key !== "all" ? grp.icon + " " + grp.label : null;
       const scope = [cat ? cat.icon + " " + cat.label : null, reg].filter(Boolean).join(" · ") || "all quests";
       document.getElementById("checklistFarm").innerHTML = TQEpisode.renderFarmPanel(farm, {
         switchHtml: `
@@ -1018,7 +1083,7 @@
     function renderCategoryTabs() {
       const cls = appState.selectedClass || "All";
       const reg = appState.selectedRegion || "All";
-      const pool = QUESTS.filter(q => matchesClassFilter(q, cls) && (reg === "All" || q.region === reg));
+      const pool = QUESTS.filter(q => matchesClassFilter(q, cls) && inSelectedArea(q));
       let selected = appState.selectedCategory || "All";
       const tabs = CATEGORY_TABS.map(t => {
         const qs = t.key === "All" ? pool : pool.filter(q => q.categories.includes(t.key));

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Quests page: areas are now grouped: **✨ All · 📖 Story · 📍 Zones · 🎓 Job**. Pick a group to see its quests, then a chip to narrow it to one area (tap it again to go back). Each chip shows the level it starts at, and zones are sorted by level. 🎓 Job holds every job change: 2nd Job, Enlightenment and 3rd Job (2nd Job and Enlightenment moved out of Caballa Relics and Megalopolis).
+
 - **Key quests after Caballa Relics** (30 quests): Oops Wharf (4), Mermaid Palace (3), Ghost Blue (3), Rose Garden (4), Black Swamp (5), Snow Hill (6) and Techichi Volcano (6), in unlock order, with where each item comes from (monster and map, drill area, or which quest hands it over, including the Adventurer's Book chain). Sticker items list that area's sticker quests; the sticker quests themselves aren't in yet.
 
 - **3rd job advancement** (Lv.130+, TM 120+) for all 17 3rd jobs, in 4 steps: Path of Tribulation → your job's Guardian Stone and Happisto's Compass Frame → the 16 Tribunal hunts → become your 3rd job. Pick your class at the top to see only your two (Dragon: three) paths. Shown on the Quests page under 🎓 Job / 📍 3rd Job; maps outside the route maps (Rose Garden, Seabed, Vamp Dungeon, Snow Hill…) are named but not drawn yet.
