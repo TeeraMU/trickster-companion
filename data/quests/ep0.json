@@ -708,10 +708,10 @@
       ],
       "prereqs": [
         {
-          "quest": "ep0-c2-05"
+          "quest": "ep0-c2-04"
         }
       ],
-      "prereqText": "Alchemist Nate - Let's Try Maturing Compounding!",
+      "prereqText": "Have completed Officer Robert - Don Giuvanni's Training Pt. 2",
       "steps": [
         "Bring 1x Nate's Certification from Alchemist Nate back to Officer Robert in Beach Town - Paradise."
       ],
@@ -812,10 +812,10 @@
       ],
       "prereqs": [
         {
-          "quest": "ep0-c2-07"
+          "quest": "ep0-c2-06"
         }
       ],
-      "prereqText": "Blacksmith Marx - Learn to Refine!",
+      "prereqText": "Have completed Officer Robert - Don's Push - 3rd Stage",
       "steps": [
         "Use Blacksmith Marx's refining service in Paradise Shop to refine your Wooden Sword to Level 1 using 1x Bronze Fragment.",
         "Bring 1x Refining Guide and the Refined Lv.1 Wooden Sword to Officer Robert in Beach Town - Paradise to complete Episode 0: Chapter 2!"

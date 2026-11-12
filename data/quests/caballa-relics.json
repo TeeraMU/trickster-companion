@@ -324,12 +324,8 @@
       "classes": [
         "all"
       ],
-      "prereqs": [
-        {
-          "quest": "cr-stk-04"
-        }
-      ],
-      "prereqText": "Fairy Feria - I'm Not a Crook! (5 Cycles)",
+      "prereqs": [],
+      "prereqText": "Level 50+",
       "steps": [
         "Bring 1x Yellow Monkey Fur (from Cycle 5 of Fairy Feria - I'm Not a Crook!) back to Guide Sabrina in Relics Town - Azteca for an instant second Caballa Sticker!"
       ],
@@ -726,21 +722,8 @@
       "classes": [
         "all"
       ],
-      "prereqs": [
-        {
-          "quest": "cr-stk-08"
-        },
-        {
-          "quest": "cr-stk-09"
-        },
-        {
-          "quest": "cr-stk-10"
-        },
-        {
-          "quest": "cr-stk-11"
-        }
-      ],
-      "prereqText": "Completed all 4 Dr. Cat quests above",
+      "prereqs": [],
+      "prereqText": "Level 55+ (finish it after the 4 Dr. Cat quests)",
       "steps": [
         "Turn in 1x Steel Punch, 1x Steel Heart, 1x Steel Body, and 1x Laser Eyes to Genius Cochma in Relics Town - Azteca for your 5th Caballa Sticker from the Caballa V set + Megalo UFO!"
       ],

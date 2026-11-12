@@ -115,14 +115,16 @@ for (const { q, file } of quests) {
   }
 }
 
-// Loops among "must be finished first" prerequisites ("active" ones only need the other quest accepted).
+// Loops among prerequisites. "Active" ones count too: the app unlocks a quest that needs another one
+// accepted only once that one is itself unlocked, so any loop locks every quest in it for good
+// (EP1 Ch.1 had one: Sabrina needed Old Artist's Needs accepted, which needed Sabrina finished).
 const state = new Map(); // id -> 1 visiting, 2 done
 function visit(id, trail) {
   if (state.get(id) === 2) return;
-  if (state.get(id) === 1) { err("prerequisites", `loop: ${[...trail, id].join(" -> ")}`); return; }
+  if (state.get(id) === 1) { err("prerequisites", `loop (these quests can never unlock): ${[...trail.slice(trail.indexOf(id)), id].join(" -> ")}`); return; }
   state.set(id, 1);
   const node = byId.get(id);
-  for (const p of (node ? node.q.prereqs : []) || []) if (!p.active && byId.has(p.quest)) visit(p.quest, [...trail, id]);
+  for (const p of (node ? node.q.prereqs : []) || []) if (byId.has(p.quest)) visit(p.quest, [...trail, (p.active ? "~" : "") + id].map(x => x.replace(/^~~/, "~")));
   state.set(id, 2);
 }
 for (const id of byId.keys()) visit(id, []);
