@@ -1,0 +1,209 @@
+{
+  "region": "Mermaid Palace",
+  "quests": [
+    {
+      "id": "mp-key-01",
+      "order": 304,
+      "title": "Captain Stan - Mermaid Palace Stickers",
+      "categories": [
+        "key",
+        "sticker"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Mermaid Palace - Key Quests (Lv.80+)",
+      "npc": "Captain Stan",
+      "npcIds": [
+        "captain-stan"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ow-key-04"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Skipper Min - Min's Weakness",
+      "steps": [
+        "Talk to Captain Stan at Gate of Mermaid Palace.",
+        "Get 7x Palace Proof Sticker: Mermaid Palace sticker quests: Genius Cochma - Mermaid Palace Survey 4, La Vida - Treasure Map 1/2, Prince Sebastian - Prince the Merman 2, Frog Shaman - Magic Ingredient 4, Fairy Asrai - Make a Merperson Potion, Mermaid Marin - Marin's Worry, Sea Spirit Rumo - Ride a Fish / Okto's Staff, Lethos - Beauty Secrets 4, Guard Gilbert - Better Weapons.",
+        "Get 1x Old Picture: Drilled in Mermaid Palace Fields.",
+        "Bring everything back to Captain Stan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Palace Proof Sticker",
+          "qty": 7,
+          "source": {
+            "kind": "quest",
+            "from": "Mermaid Palace sticker quests: Genius Cochma - Mermaid Palace Survey 4, La Vida - Treasure Map 1/2, Prince Sebastian - Prince the Merman 2, Frog Shaman - Magic Ingredient 4, Fairy Asrai - Make a Merperson Potion, Mermaid Marin - Marin's Worry, Sea Spirit Rumo - Ride a Fish / Okto's Staff, Lethos - Beauty Secrets 4, Guard Gilbert - Better Weapons",
+            "map": "Gate of Mermaid Palace"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Picture",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mermaid Palace Fields (drill depth not on the wiki)",
+            "map": "Mermaid Palace Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 141904,
+        "tmExp": 353512,
+        "galder": 0,
+        "items": [
+          "1x Captain Stan's Log"
+        ]
+      },
+      "notes": "Palace Proof Sticker comes from that area's sticker quests (see the source on the item). Old Picture is drilled in Mermaid Palace Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Captain_Stan_-_Mermaid_Palace_Stickers.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-key-02",
+      "order": 305,
+      "title": "Captain Stan - Captain's Stan Past",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Mermaid Palace - Key Quests (Lv.80+)",
+      "npc": "Captain Stan",
+      "npcIds": [
+        "captain-stan"
+      ],
+      "location": "Gate of Mermaid Palace",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-key-01"
+        }
+      ],
+      "prereqText": "Level 80+, have completed Mermaid Palace Stickers",
+      "steps": [
+        "Talk to Captain Stan at Gate of Mermaid Palace.",
+        "Get 1x Tanya's Letter: reward from Mermaid Marin - Marin's Sister.",
+        "Bring everything back to Captain Stan."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tanya's Letter",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Mermaid Marin - Marin's Sister",
+            "map": "Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1844752,
+        "tmExp": 4595658,
+        "galder": 0,
+        "items": [
+          "1x Wep Exchange D",
+          "1x 10",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "notes": "Tanya's Letter is obtained by completing Mermaid Marin - Marin's Sister.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Captain_Stan_-_Captain's_Stan_Past.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mp-key-03",
+      "order": 306,
+      "title": "Mermaid Marin - Marin's Sister",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Mermaid Palace - Key Quests (Lv.80+)",
+      "npc": "Mermaid Marin",
+      "npcIds": [
+        "mermaid-marin"
+      ],
+      "location": "Mermaid Palace Field 4 - Rock Square",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-key-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 80+, have Captain's Stan Past in quest log",
+      "steps": [
+        "Talk to Mermaid Marin at Mermaid Palace Field 4 - Rock Square.",
+        "Get 1x Adventurer's Book: reward from Skipper Min - Min's Weakness.",
+        "Get 1x Tanya's Sword: dropped by Tanya (Lv.150) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Bring everything back to Mermaid Marin."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Skipper Min - Min's Weakness",
+            "map": "Oops Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Tanya's Sword",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Tanya (Lv.150)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 141904,
+        "tmExp": 353512,
+        "galder": 0,
+        "items": [
+          "1x Tanya's Letter",
+          "1x Adventurer's Book"
+        ]
+      },
+      "notes": "To iniate the quest, bring her Tanya's Sword and show it to her. Tanya's Sword is dropped by Tanya (Lv.150). Adventurer's Book is obtained by completing Min's Weakness.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Marin_-_Marin's_Sister.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

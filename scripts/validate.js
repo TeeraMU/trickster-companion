@@ -8,7 +8,7 @@ const path = require("path");
 const DATA = path.join(__dirname, "..", "data");
 const read = p => JSON.parse(fs.readFileSync(path.join(DATA, p), "utf8"));
 
-const CATEGORIES = ["episode", "general", "card", "monster", "dungeon", "daily", "key", "sticker", "job"];
+const CATEGORIES = ["episode", "general", "card", "monster", "dungeon", "daily", "key", "sticker", "job", "guardian"];
 const SOURCE_KINDS = ["drop", "drill", "quest", "compound", "shop"];
 const CLASSES = ["bunny", "buffalo", "white-bear", "sheep", "dragon", "fox", "lion", "cat", "raccoon"];
 
@@ -52,6 +52,8 @@ for (const { q, file } of quests) {
   byId.set(q.id, { q, file });
 
   for (const k of ["title", "chapter", "npc", "location", "prereqText"]) if (!isStr(q[k])) err(at, `missing ${k}`);
+  if ("area" in q && !isStr(q.area)) err(at, "area must be a non-empty text");
+  if ("path" in q && !/^[a-z]+(-[a-z]+)*$/.test(q.path)) err(at, "path must be a lowercase id like \"soul-master\"");
   if (!isInt(q.order, 1)) err(at, "order must be a positive integer");
   if (!isInt(q.minLevel, 1)) err(at, "minLevel must be a positive integer");
   if (!isInt(q.cycles, 1)) err(at, "cycles must be a positive integer");
@@ -152,10 +154,13 @@ for (const t of Object.keys(maps.names)) if (!mapTexts.has(t)) warn("maps.json n
 
 // --- npc-pins.json: pins point at real NPCs and maps -------------------------------------------
 const pins = read("npc-pins.json");
-for (const [npc, p] of Object.entries(pins)) {
-  if (!npcIds.has(npc)) err("npc-pins.json", `unknown NPC "${npc}"`);
-  if (!mapIds.has(p.map)) err("npc-pins.json", `${npc}: unknown map "${p.map}"`);
-  if (!(p.x >= 0 && p.x <= 100 && p.y >= 0 && p.y <= 100)) err("npc-pins.json", `${npc}: x / y must be 0-100 (%)`);
+for (const [key, p] of Object.entries(pins)) {
+  const [npc, map] = key.split("@");
+  if (!map) { err("npc-pins.json", `"${key}" must be "npcId@mapId"`); continue; }
+  if (!npcIds.has(npc)) err("npc-pins.json", `${key}: unknown NPC "${npc}"`);
+  if (!mapIds.has(map)) err("npc-pins.json", `${key}: unknown map "${map}"`);
+  if (!(p.x >= 0 && p.x <= 100 && p.y >= 0 && p.y <= 100)) err("npc-pins.json", `${key}: x / y must be 0-100 (%)`);
+  if (p.src && p.src !== "wiki") err("npc-pins.json", `${key}: src must be "wiki" when set`);
 }
 
 // --- report --------------------------------------------------------------------------------

@@ -1,0 +1,5834 @@
+{
+  "region": "3rd Job",
+  "quests": [
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 1: Path of Tribulation (Lv.130+, TM 120+)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-01",
+      "order": 200,
+      "title": "Door of Tribulation - Path of Tribulation",
+      "npc": "Door of Tribulation",
+      "npcIds": [
+        "door-of-tribulation"
+      ],
+      "location": "Garden of Skill Master",
+      "prereqText": "Level 130+ (TM Level 120+ for the rest of the advancement)",
+      "steps": [
+        "Buy 3x 1 Mil Galder Check from Andrew at Megalopolis Bank (1,050,000 Galder each).",
+        "Get a Ticket of the Valiant: dropped by Clurican (Lv.240) in 2nd Closed Lot of Jade Steel, or drilled in Swamp Dungeon.",
+        "Talk to the Door of Tribulation in the Garden of Skill Master and hand them in."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ticket of the Valiant",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Clurican (Lv.240), or drilled in Swamp Dungeon",
+            "map": "2nd Closed Lot of Jade Steel"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "1 Mil Galder Check",
+          "qty": 3,
+          "source": {
+            "kind": "shop",
+            "from": "Andrew, Megalopolis Bank (1,050,000 Galder each)",
+            "map": "Megalopolis Bank"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 10000000,
+        "galder": 0,
+        "items": [
+          "1x Marble of Triumph"
+        ]
+      },
+      "notes": "Next, decide your 3rd job: each job has its own Guardian Stone quest (Step 2). "
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "champion",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-champion",
+      "order": 201,
+      "title": "Boxer Jeanne - Find 3rd Job Guardian Stone (Champion)",
+      "npc": "Boxer Jeanne",
+      "npcIds": [
+        "boxer-jeanne"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Champion.",
+      "steps": [
+        "Get 1x Red Ruby: dropped by Chele (Lv.117) in Mermaid Dungeon 1 - Underworld.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Boxer Jeanne at Desert Beach Field 3 - Statue of Anubis."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Red Ruby",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Chele (Lv.117)",
+            "map": "Mermaid Dungeon 1 - Underworld"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Champion. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "duelist",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-duelist",
+      "order": 201,
+      "title": "Boxer Jeanne - Find 3rd Job Guardian Stone (Duelist)",
+      "npc": "Boxer Jeanne",
+      "npcIds": [
+        "boxer-jeanne"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Duelist.",
+      "steps": [
+        "Get 1x Special Jade: dropped by Nora Joe (Lv.126) in Nora Sewer.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Boxer Jeanne at Desert Beach Field 3 - Statue of Anubis."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Special Jade",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Nora Joe (Lv.126)",
+            "map": "Nora Sewer"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Duelist. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "gladiator",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-gladiator",
+      "order": 201,
+      "title": "Warrior Kei - Find 3rd Job Guardian Stone (Gladiator)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Gladiator.",
+      "steps": [
+        "Get 1x Blue Turquoise: dropped by Siremaid (Lv.120) in Seabed Field 4 - Undersea Grave.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Warrior Kei at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Turquoise",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Siremaid (Lv.120)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Gladiator. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "mercenary",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-mercenary",
+      "order": 201,
+      "title": "Warrior Kei - Find 3rd Job Guardian Stone (Mercenary)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Mercenary.",
+      "steps": [
+        "Get 1x Onyx: dropped by Tanya (Lv.150) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Warrior Kei at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Onyx",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Tanya (Lv.150)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Mercenary. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "soul-master",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-soul-master",
+      "order": 201,
+      "title": "Bard La Fimmel - Find 3rd Job Guardian Stone (Soul Master)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Soul Master.",
+      "steps": [
+        "Get 1x Pure Sapphire: dropped by Popeyed Anemone (Lv.105) in Seabed Field 1 - North.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Bard La Fimmel at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Sapphire",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Popeyed Anemone (Lv.105)",
+            "map": "Seabed Field 1 - North"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Soul Master. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "witch",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-witch",
+      "order": 201,
+      "title": "Bard La Fimmel - Find 3rd Job Guardian Stone (Witch)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Witch.",
+      "steps": [
+        "Get 1x Amber: dropped by Captain Norman (Lv.148) in Rose Field 2 - Maze of Black Rose.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Bard La Fimmel at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Amber",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Norman (Lv.148)",
+            "map": "Rose Field 2 - Maze of Black Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Witch. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "dark-lord",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-dark-lord",
+      "order": 201,
+      "title": "Magician Louie - Find 3rd Job Guardian Stone (Dark Lord)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Mermaid Dungeon 2 - Legend of the Sea",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Dark Lord.",
+      "steps": [
+        "Get 1x Alexandrite: Drilled in 2nd Mining Lot of Precious Jewel and Tapasco Mine 2 - Silent Lava.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Magician Louie at Mermaid Dungeon 2 - Legend of the Sea."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Alexandrite",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 2nd Mining Lot of Precious Jewel and Tapasco Mine 2 - Silent Lava (drill depth not on the wiki)",
+            "map": "2nd Mining Lot of Precious Jewel / Tapasco Mine 2 - Silent Lava"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Dark Lord. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "priest",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-priest",
+      "order": 201,
+      "title": "Magician Louie - Find 3rd Job Guardian Stone (Priest)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Priest.",
+      "steps": [
+        "Get 1x Shiny Diamond: dropped by Captain Arman (Lv.145) in Rose Field 2 - Maze of Black Rose.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Magician Louie at Pyramid Dungeon 1 - Hall of the Slave."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shiny Diamond",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Captain Arman (Lv.145)",
+            "map": "Rose Field 2 - Maze of Black Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Priest. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "wizard",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-wizard",
+      "order": 201,
+      "title": "Magician Louie - Find 3rd Job Guardian Stone (Wizard)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Wizard.",
+      "steps": [
+        "Get 1x Green Emerald: dropped by Merrow (Lv.118) in Seabed Field 3 - Undersea Park.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Magician Louie at Pyramid Dungeon 1 - Hall of the Slave."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Green Emerald",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Merrow (Lv.118)",
+            "map": "Seabed Field 3 - Undersea Park"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Wizard. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "thief-master",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-thief-master",
+      "order": 201,
+      "title": "Explorer Reina - Find 3rd Job Guardian Stone (Thief Master)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Thief Master.",
+      "steps": [
+        "Get 1x Peridot: dropped by Cora Pyupyu (Lv.115) in Seabed Field 2 - East.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Explorer Reina at Caballa Relics Dungeon 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Peridot",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Cora Pyupyu (Lv.115)",
+            "map": "Seabed Field 2 - East"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Thief Master. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "hunter-lord",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-hunter-lord",
+      "order": 201,
+      "title": "Explorer Reina - Find 3rd Job Guardian Stone (Hunter Lord)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Hunter Lord.",
+      "steps": [
+        "Get 1x Silver Aquamarine: dropped by Water Weed Witch (Lv.95) in Mermaid Palace Field 3 - Coral Square.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Explorer Reina at Caballa Relics Dungeon 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Silver Aquamarine",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Water Weed Witch (Lv.95)",
+            "map": "Mermaid Palace Field 3 - Coral Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Hunter Lord. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "scientist",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-scientist",
+      "order": 201,
+      "title": "Inventor Gale - Find 3rd Job Guardian Stone (Scientist)",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Scientist.",
+      "steps": [
+        "Get 1x Water Agate: dropped by Merman Ale (Lv.89) in Mermaid Palace Field 4 - Rock Square.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Inventor Gale at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Water Agate",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Merman Ale (Lv.89)",
+            "map": "Mermaid Palace Field 4 - Rock Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Scientist. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "cyber-hunter",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-cyber-hunter",
+      "order": 201,
+      "title": "Inventor Gale - Find 3rd Job Guardian Stone (Cyber Hunter)",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Cyber Hunter.",
+      "steps": [
+        "Get 1x Sky Topaz: dropped by Dancer Isabelle (Lv.141) in Rose Field 1 - Stairway to Sorrow.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Inventor Gale at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sky Topaz",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Dancer Isabelle (Lv.141)",
+            "map": "Rose Field 1 - Stairway to Sorrow"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Cyber Hunter. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "primadonna",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-primadonna",
+      "order": 201,
+      "title": "Entertainer Elicia - Find 3rd Job Guardian Stone (Primadonna)",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Primadonna.",
+      "steps": [
+        "Get 1x Rodonite: dropped by Beast Vincento (Lv.156) in Rose Field 4 - Bloom Grave.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Entertainer Elicia at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rodonite",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Beast Vincento (Lv.156)",
+            "map": "Rose Field 4 - Bloom Grave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Primadonna. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "diva",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-diva",
+      "order": 201,
+      "title": "Entertainer Elicia - Find 3rd Job Guardian Stone (Diva)",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Diva.",
+      "steps": [
+        "Get 1x Dusk Amethyst: dropped by Fish Guardian Tink (Lv.85) in Mermaid Palace Field 2 - Seaweeds Square.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Entertainer Elicia at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dusk Amethyst",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Fish Guardian Tink (Lv.85)",
+            "map": "Mermaid Palace Field 2 - Seaweeds Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Diva. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "gambler",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-gambler",
+      "order": 201,
+      "title": "Card Master Taniel - Find 3rd Job Guardian Stone (Gambler)",
+      "npc": "Card Master Taniel",
+      "npcIds": [
+        "card-master-taniel"
+      ],
+      "location": "Northwest Forest",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Gambler.",
+      "steps": [
+        "Get 1x Blue Lapis Lazuli: dropped by Okto (Lv.129) in Mermaid Dungeon 2 - Legend of the Sea.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Card Master Taniel at Northwest Forest."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blue Lapis Lazuli",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Okto (Lv.129)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Gambler. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "duke",
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-02-duke",
+      "order": 201,
+      "title": "Card Master Taniel - Find 3rd Job Guardian Stone (Duke)",
+      "npc": "Card Master Taniel",
+      "npcIds": [
+        "card-master-taniel"
+      ],
+      "location": "Northwest Forest",
+      "prereqText": "Level 130+, TM Level 120+, holding Marble of Triumph (from Door of Tribulation - Path of Tribulation). For Duke.",
+      "steps": [
+        "Get 1x White Opal: dropped by Madam Fondue (Lv.155) in Rose Field 3 - Maze of Blue Rose.",
+        "Drill 1x Sacred Water in Black Swamp Fields.",
+        "Bring both to Card Master Taniel at Northwest Forest."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "White Opal",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Madam Fondue (Lv.155)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sacred Water",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Black Swamp Fields (drill depth not on the wiki)",
+            "map": "Black Swamp Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Sealed Guardian",
+          "1x Scroll"
+        ]
+      },
+      "notes": "Only for players who want to become Duke. The Scroll lets you start Happisto Stallone - Make Happisto's Compass Frame."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-03",
+      "order": 202,
+      "title": "Happisto Stallone - Make Happisto's Compass Frame",
+      "npc": "Happisto Stallone",
+      "npcIds": [
+        "happisto-stallone"
+      ],
+      "location": "Gate of Snow Hill",
+      "prereqText": "Have the Scroll from your Guardian Stone quest in your inventory",
+      "steps": [
+        "Collect 3x Brass (Brass Knight), 3x Magnetite (Iron Knight), 3x Glass Piece (Bone Warrior) and 3x Magic Powder (Bone Magician) in Vamp Dungeon.",
+        "Bring them to Happisto Stallone at Gate of Snow Hill."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Brass",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Brass Knight (Lv.186)",
+            "map": "Vamp Dungeon 3 - Song of Moonlight"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Glass Piece",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Bone Warrior (Lv.225)",
+            "map": "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Magnetite",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Iron Knight (Lv.184)",
+            "map": "Vamp Dungeon 2 - Banquet of the Dead / 3 - Song of Moonlight"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Magic Powder",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Bone Magician (Lv.231)",
+            "map": "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7497300,
+        "tmExp": 7615625,
+        "galder": 0,
+        "items": [
+          "1x Compass Frame"
+        ]
+      },
+      "notes": "The wiki request lists one of each; the advancement requirements list 3x of each. Verify in game."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "champion",
+      "prereqs": [
+        {
+          "quest": "job3-02-champion"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-champion",
+      "order": 203,
+      "title": "Boxer Jeanne - Room of Ordeal Key (Champion)",
+      "npc": "Boxer Jeanne",
+      "npcIds": [
+        "boxer-jeanne"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "prereqText": "Level 130+, TM Level 120+, have completed Boxer Jeanne - Find 3rd Job Guardian Stone (Champion)",
+      "steps": [
+        "Bring the Compass Frame to Boxer Jeanne at Desert Beach Field 3 - Statue of Anubis."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "duelist",
+      "prereqs": [
+        {
+          "quest": "job3-02-duelist"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-duelist",
+      "order": 203,
+      "title": "Boxer Jeanne - Room of Ordeal Key (Duelist)",
+      "npc": "Boxer Jeanne",
+      "npcIds": [
+        "boxer-jeanne"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "prereqText": "Level 130+, TM Level 120+, have completed Boxer Jeanne - Find 3rd Job Guardian Stone (Duelist)",
+      "steps": [
+        "Bring the Compass Frame to Boxer Jeanne at Desert Beach Field 3 - Statue of Anubis."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "gladiator",
+      "prereqs": [
+        {
+          "quest": "job3-02-gladiator"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-gladiator",
+      "order": 203,
+      "title": "Warrior Kei - Room of Ordeal Key (Gladiator)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, have completed Warrior Kei - Find 3rd Job Guardian Stone (Gladiator)",
+      "steps": [
+        "Bring the Compass Frame to Warrior Kei at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "mercenary",
+      "prereqs": [
+        {
+          "quest": "job3-02-mercenary"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-mercenary",
+      "order": 203,
+      "title": "Warrior Kei - Room of Ordeal Key (Mercenary)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, have completed Warrior Kei - Find 3rd Job Guardian Stone (Mercenary)",
+      "steps": [
+        "Bring the Compass Frame to Warrior Kei at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "soul-master",
+      "prereqs": [
+        {
+          "quest": "job3-02-soul-master"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-soul-master",
+      "order": 203,
+      "title": "Bard La Fimmel - Room of Ordeal Key (Soul Master)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, have completed Bard La Fimmel - Find 3rd Job Guardian Stone (Soul Master)",
+      "steps": [
+        "Bring the Compass Frame to Bard La Fimmel at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "witch",
+      "prereqs": [
+        {
+          "quest": "job3-02-witch"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-witch",
+      "order": 203,
+      "title": "Bard La Fimmel - Room of Ordeal Key (Witch)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, have completed Bard La Fimmel - Find 3rd Job Guardian Stone (Witch)",
+      "steps": [
+        "Bring the Compass Frame to Bard La Fimmel at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "dark-lord",
+      "prereqs": [
+        {
+          "quest": "job3-02-dark-lord"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-dark-lord",
+      "order": 203,
+      "title": "Magician Louie - Room of Ordeal Key (Dark Lord)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Mermaid Dungeon 2 - Legend of the Sea",
+      "prereqText": "Level 130+, TM Level 120+, have completed Magician Louie - Find 3rd Job Guardian Stone (Dark Lord)",
+      "steps": [
+        "Bring the Compass Frame to Magician Louie at Mermaid Dungeon 2 - Legend of the Sea."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "priest",
+      "prereqs": [
+        {
+          "quest": "job3-02-priest"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-priest",
+      "order": 203,
+      "title": "Magician Louie - Room of Ordeal Key (Priest)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "prereqText": "Level 130+, TM Level 120+, have completed Magician Louie - Find 3rd Job Guardian Stone (Priest)",
+      "steps": [
+        "Bring the Compass Frame to Magician Louie at Pyramid Dungeon 1 - Hall of the Slave."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "wizard",
+      "prereqs": [
+        {
+          "quest": "job3-02-wizard"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-wizard",
+      "order": 203,
+      "title": "Magician Louie - Room of Ordeal Key (Wizard)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "prereqText": "Level 130+, TM Level 120+, have completed Magician Louie - Find 3rd Job Guardian Stone (Wizard)",
+      "steps": [
+        "Bring the Compass Frame to Magician Louie at Pyramid Dungeon 1 - Hall of the Slave."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "thief-master",
+      "prereqs": [
+        {
+          "quest": "job3-02-thief-master"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-thief-master",
+      "order": 203,
+      "title": "Explorer Reina - Room of Ordeal Key (Thief Master)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "prereqText": "Level 130+, TM Level 120+, have completed Explorer Reina - Find 3rd Job Guardian Stone (Thief Master)",
+      "steps": [
+        "Bring the Compass Frame to Explorer Reina at Caballa Relics Dungeon 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "hunter-lord",
+      "prereqs": [
+        {
+          "quest": "job3-02-hunter-lord"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-hunter-lord",
+      "order": 203,
+      "title": "Explorer Reina - Room of Ordeal Key (Hunter Lord)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "prereqText": "Level 130+, TM Level 120+, have completed Explorer Reina - Find 3rd Job Guardian Stone (Hunter Lord)",
+      "steps": [
+        "Bring the Compass Frame to Explorer Reina at Caballa Relics Dungeon 1."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "scientist",
+      "prereqs": [
+        {
+          "quest": "job3-02-scientist"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-scientist",
+      "order": 203,
+      "title": "Inventor Gale - Room of Ordeal Key (Scientist)",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, have completed Inventor Gale - Find 3rd Job Guardian Stone (Scientist)",
+      "steps": [
+        "Bring the Compass Frame to Inventor Gale at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "cyber-hunter",
+      "prereqs": [
+        {
+          "quest": "job3-02-cyber-hunter"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-cyber-hunter",
+      "order": 203,
+      "title": "Inventor Gale - Room of Ordeal Key (Cyber Hunter)",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Level 130+, TM Level 120+, have completed Inventor Gale - Find 3rd Job Guardian Stone (Cyber Hunter)",
+      "steps": [
+        "Bring the Compass Frame to Inventor Gale at Wharf Field 4 - Chrono Wharf."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "primadonna",
+      "prereqs": [
+        {
+          "quest": "job3-02-primadonna"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-primadonna",
+      "order": 203,
+      "title": "Entertainer Elicia - Room of Ordeal Key (Primadonna)",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, have completed Entertainer Elicia - Find 3rd Job Guardian Stone (Primadonna)",
+      "steps": [
+        "Bring the Compass Frame to Entertainer Elicia at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "diva",
+      "prereqs": [
+        {
+          "quest": "job3-02-diva"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-diva",
+      "order": 203,
+      "title": "Entertainer Elicia - Room of Ordeal Key (Diva)",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Level 130+, TM Level 120+, have completed Entertainer Elicia - Find 3rd Job Guardian Stone (Diva)",
+      "steps": [
+        "Bring the Compass Frame to Entertainer Elicia at Rose Field 3 - Maze of Blue Rose."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "gambler",
+      "prereqs": [
+        {
+          "quest": "job3-02-gambler"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-gambler",
+      "order": 203,
+      "title": "Card Master Taniel - Room of Ordeal Key (Gambler)",
+      "npc": "Card Master Taniel",
+      "npcIds": [
+        "card-master-taniel"
+      ],
+      "location": "Northwest Forest",
+      "prereqText": "Level 130+, TM Level 120+, have completed Card Master Taniel - Find 3rd Job Guardian Stone (Gambler)",
+      "steps": [
+        "Bring the Compass Frame to Card Master Taniel at Northwest Forest."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 2: Guardian Stone & Compass Frame",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "duke",
+      "prereqs": [
+        {
+          "quest": "job3-02-duke"
+        },
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-04-duke",
+      "order": 203,
+      "title": "Card Master Taniel - Room of Ordeal Key (Duke)",
+      "npc": "Card Master Taniel",
+      "npcIds": [
+        "card-master-taniel"
+      ],
+      "location": "Northwest Forest",
+      "prereqText": "Level 130+, TM Level 120+, have completed Card Master Taniel - Find 3rd Job Guardian Stone (Duke)",
+      "steps": [
+        "Bring the Compass Frame to Card Master Taniel at Northwest Forest."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Compass Frame",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Happisto Stallone - Make Happisto's Compass Frame",
+            "map": "Gate of Snow Hill"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x The Key of Trials"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h01",
+      "order": 204,
+      "title": "Vulcanus Phoenix's Messenger - Hunt Tribunal Flame Moth",
+      "npc": "Vulcanus Phoenix's Messenger",
+      "npcIds": [
+        "vulcanus-phoenixs-messenger"
+      ],
+      "location": "Room of Tribulation 1",
+      "prereqText": "Have your Room of Ordeal Key quest done and the Needleless Compass quest in your quest log",
+      "steps": [
+        "Talk to Vulcanus Phoenix's Messenger in Room of Tribulation 1.",
+        "Defeat 3x Tribunal Flame Moth (Lv.150) within 5 minutes.",
+        "Talk to Vulcanus Phoenix's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Flame Moth",
+          "level": 150,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 1"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": [
+          "1x Flower of Revival"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h01"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h02",
+      "order": 205,
+      "title": "Alsiedo Bird's Messenger - Hunt Tribunal Siremaid",
+      "npc": "Alsiedo Bird's Messenger",
+      "npcIds": [
+        "alsiedo-birds-messenger"
+      ],
+      "location": "Room of Tribulation 2",
+      "prereqText": "Have completed Vulcanus Phoenix's Messenger - Hunt Tribunal Flame Moth",
+      "steps": [
+        "Talk to Alsiedo Bird's Messenger in Room of Tribulation 2.",
+        "Defeat 3x Tribunal Siremaid (Lv.150) within 5 minutes.",
+        "Talk to Alsiedo Bird's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Siremaid",
+          "level": 150,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 2"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h02"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h03",
+      "order": 206,
+      "title": "Dragon Tale's Messenger - Hunt Tribunal Crow",
+      "npc": "Dragon Tale's Messenger",
+      "npcIds": [
+        "dragon-tales-messenger"
+      ],
+      "location": "Room of Tribulation 3",
+      "prereqText": "Have completed Alsiedo Bird's Messenger - Hunt Tribunal Siremaid",
+      "steps": [
+        "Talk to Dragon Tale's Messenger in Room of Tribulation 3.",
+        "Defeat 3x Tribunal Crow (Lv.150) within 5 minutes.",
+        "Talk to Dragon Tale's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Crow",
+          "level": 150,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 3"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h03"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h04",
+      "order": 207,
+      "title": "Black Wings' Messenger - Hunt Tribunal Seth",
+      "npc": "Black Wings' Messenger",
+      "npcIds": [
+        "black-wings-messenger"
+      ],
+      "location": "Room of Tribulation 4",
+      "prereqText": "Have completed Dragon Tale's Messenger - Hunt Tribunal Crow",
+      "steps": [
+        "Talk to Black Wings' Messenger in Room of Tribulation 4.",
+        "Defeat 3x Tribunal Seth (Lv.150) within 5 minutes.",
+        "Talk to Black Wings' Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Seth",
+          "level": 150,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 4"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h04"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h05",
+      "order": 208,
+      "title": "Sacred Esper's Messenger - Hunt Tribunal Shadow",
+      "npc": "Sacred Esper's Messenger",
+      "npcIds": [
+        "sacred-espers-messenger"
+      ],
+      "location": "Room of Tribulation 5",
+      "prereqText": "Have completed Black Wings' Messenger - Hunt Tribunal Seth",
+      "steps": [
+        "Talk to Sacred Esper's Messenger in Room of Tribulation 5.",
+        "Defeat 3x Tribunal Shadow (Lv.160) within 5 minutes.",
+        "Talk to Sacred Esper's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Shadow",
+          "level": 160,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 5"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h05"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h06",
+      "order": 209,
+      "title": "Golden Ant's Messenger - Hunt Tribunal Tooth Flower",
+      "npc": "Golden Ant's Messenger",
+      "npcIds": [
+        "golden-ants-messenger"
+      ],
+      "location": "Room of Tribulation 6",
+      "prereqText": "Have completed Sacred Esper's Messenger - Hunt Tribunal Shadow",
+      "steps": [
+        "Talk to Golden Ant's Messenger in Room of Tribulation 6.",
+        "Defeat 3x Tribunal Tooth Flower (Lv.160) within 5 minutes.",
+        "Talk to Golden Ant's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Tooth Flower",
+          "level": 160,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 6"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": [
+          "1x Flower of Revival"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h06"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h07",
+      "order": 210,
+      "title": "Eternal Knight's Messenger - Hunt Tribunal Hell Knight",
+      "npc": "Eternal Knight's Messenger",
+      "npcIds": [
+        "eternal-knights-messenger"
+      ],
+      "location": "Room of Tribulation 7",
+      "prereqText": "Have completed Golden Ant's Messenger - Hunt Tribunal Tooth Flower",
+      "steps": [
+        "Talk to Eternal Knight's Messenger in Room of Tribulation 7.",
+        "Defeat 3x Tribunal Hell Knight (Lv.160) within 5 minutes.",
+        "Talk to Eternal Knight's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Hell Knight",
+          "level": 160,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 7"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h07"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h08",
+      "order": 211,
+      "title": "Silvanian's Messenger - Hunt Tribunal Yeti",
+      "npc": "Silvanian's Messenger",
+      "npcIds": [
+        "silvanians-messenger"
+      ],
+      "location": "Room of Tribulation 8",
+      "prereqText": "Have completed Eternal Knight's Messenger - Hunt Tribunal Hell Knight",
+      "steps": [
+        "Talk to Silvanian's Messenger in Room of Tribulation 8.",
+        "Defeat 3x Tribunal Yeti (Lv.160) within 5 minutes.",
+        "Talk to Silvanian's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Yeti",
+          "level": 160,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 8"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h08"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h09",
+      "order": 212,
+      "title": "King Enigmo's Messenger - Hunt Tribunal Koom",
+      "npc": "King Enigmo's Messenger",
+      "npcIds": [
+        "king-enigmos-messenger"
+      ],
+      "location": "Room of Tribulation 9",
+      "prereqText": "Have completed Silvanian's Messenger - Hunt Tribunal Yeti",
+      "steps": [
+        "Talk to King Enigmo's Messenger in Room of Tribulation 9.",
+        "Defeat 3x Tribunal Koom (Lv.170) within 5 minutes.",
+        "Talk to King Enigmo's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Koom",
+          "level": 170,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 9"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h09"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h10",
+      "order": 213,
+      "title": "Enigmo Van Peruoza's Messenger - Hunt Tribunal Merman Aku",
+      "npc": "Enigmo Van Peruoza's Messenger",
+      "npcIds": [
+        "enigmo-van-peruozas-messenger"
+      ],
+      "location": "Room of Tribulation 10",
+      "prereqText": "Have completed King Enigmo's Messenger - Hunt Tribunal Koom",
+      "steps": [
+        "Talk to Enigmo Van Peruoza's Messenger in Room of Tribulation 10.",
+        "Defeat 3x Tribunal Merman Aku (Lv.170) within 5 minutes.",
+        "Talk to Enigmo Van Peruoza's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Merman Aku",
+          "level": 170,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 10"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h10"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h11",
+      "order": 214,
+      "title": "Centakonus' Messenger - Hunt Tribunal Addax",
+      "npc": "Centakonus' Messenger",
+      "npcIds": [
+        "centakonus-messenger"
+      ],
+      "location": "Room of Tribulation 11",
+      "prereqText": "Have completed Enigmo Van Peruoza's Messenger - Hunt Tribunal Merman Aku",
+      "steps": [
+        "Talk to Centakonus' Messenger in Room of Tribulation 11.",
+        "Defeat 3x Tribunal Addax (Lv.170) within 5 minutes.",
+        "Talk to Centakonus' Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Addax",
+          "level": 170,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 11"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h11"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h12",
+      "order": 215,
+      "title": "Oddeye Dragon's Messenger - Hunt Tribunal Stoor Worm",
+      "npc": "Oddeye Dragon's Messenger",
+      "npcIds": [
+        "oddeye-dragons-messenger"
+      ],
+      "location": "Room of Tribulation 12",
+      "prereqText": "Have completed Centakonus' Messenger - Hunt Tribunal Addax",
+      "steps": [
+        "Talk to Oddeye Dragon's Messenger in Room of Tribulation 12.",
+        "Defeat 3x Tribunal Stoor Worm (Lv.170) within 5 minutes.",
+        "Talk to Oddeye Dragon's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Stoor Worm",
+          "level": 170,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 12"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": [
+          "1x Flower of Revival"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h12"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h13",
+      "order": 216,
+      "title": "Rosaspina's Messenger - Hunt Tribunal Madame Chiffon",
+      "npc": "Rosaspina's Messenger",
+      "npcIds": [
+        "rosaspinas-messenger"
+      ],
+      "location": "Room of Tribulation 13",
+      "prereqText": "Have completed Oddeye Dragon's Messenger - Hunt Tribunal Stoor Worm",
+      "steps": [
+        "Talk to Rosaspina's Messenger in Room of Tribulation 13.",
+        "Defeat 3x Tribunal Madame Chiffon (Lv.180) within 5 minutes.",
+        "Talk to Rosaspina's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Madame Chiffon",
+          "level": 180,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 13"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h13"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h14",
+      "order": 217,
+      "title": "Amethysta's Messenger - Hunt Tribunal Freyja",
+      "npc": "Amethysta's Messenger",
+      "npcIds": [
+        "amethystas-messenger"
+      ],
+      "location": "Room of Tribulation 14",
+      "prereqText": "Have completed Rosaspina's Messenger - Hunt Tribunal Madame Chiffon",
+      "steps": [
+        "Talk to Amethysta's Messenger in Room of Tribulation 14.",
+        "Defeat 3x Tribunal Freyja (Lv.180) within 5 minutes.",
+        "Talk to Amethysta's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Freyja",
+          "level": 180,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 14"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h14"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h15",
+      "order": 218,
+      "title": "Delphinus' Messenger - Hunt Tribunal Fish Guardian Tink",
+      "npc": "Delphinus' Messenger",
+      "npcIds": [
+        "delphinus-messenger"
+      ],
+      "location": "Room of Tribulation 15",
+      "prereqText": "Have completed Amethysta's Messenger - Hunt Tribunal Freyja",
+      "steps": [
+        "Talk to Delphinus' Messenger in Room of Tribulation 15.",
+        "Defeat 3x Tribunal Fish Guardian Tink (Lv.180) within 5 minutes.",
+        "Talk to Delphinus' Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Fish Guardian Tink",
+          "level": 180,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 15"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": []
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 3: 16 Tribunal Hunts (Room of Tribulation)",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "job3-h15"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-h16",
+      "order": 219,
+      "title": "Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+      "npc": "Flashire Snake's Messenger",
+      "npcIds": [
+        "flashire-snakes-messenger"
+      ],
+      "location": "Room of Tribulation 16",
+      "prereqText": "Have completed Delphinus' Messenger - Hunt Tribunal Fish Guardian Tink",
+      "steps": [
+        "Talk to Flashire Snake's Messenger in Room of Tribulation 16.",
+        "Defeat 3x Tribunal Leviathan (Lv.180) within 5 minutes.",
+        "Talk to Flashire Snake's Messenger again."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tribunal Leviathan",
+          "level": 180,
+          "count": 3,
+          "timeLimit": "5 min",
+          "map": "Room of Tribulation 16"
+        }
+      ],
+      "rewards": {
+        "baseExp": 749730,
+        "tmExp": 761562,
+        "galder": 0,
+        "items": [
+          "1x Stone of Patience"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "champion",
+      "prereqs": [
+        {
+          "quest": "job3-04-champion"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-champion",
+      "order": 220,
+      "title": "Boxer Jeanne - Find 16 Guardian Stones for the Needleless Compass (Champion)",
+      "npc": "Boxer Jeanne",
+      "npcIds": [
+        "boxer-jeanne"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Boxer Jeanne."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "duelist",
+      "prereqs": [
+        {
+          "quest": "job3-04-duelist"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-duelist",
+      "order": 220,
+      "title": "Boxer Jeanne - Find 16 Guardian Stones for the Needleless Compass (Duelist)",
+      "npc": "Boxer Jeanne",
+      "npcIds": [
+        "boxer-jeanne"
+      ],
+      "location": "Desert Beach Field 3 - Statue of Anubis",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Boxer Jeanne."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "gladiator",
+      "prereqs": [
+        {
+          "quest": "job3-04-gladiator"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-gladiator",
+      "order": 220,
+      "title": "Warrior Kei - Find 16 Guardian Stones for the Needleless Compass (Gladiator)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Warrior Kei."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "mercenary",
+      "prereqs": [
+        {
+          "quest": "job3-04-mercenary"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-mercenary",
+      "order": 220,
+      "title": "Warrior Kei - Find 16 Guardian Stones for the Needleless Compass (Mercenary)",
+      "npc": "Warrior Kei",
+      "npcIds": [
+        "warrior-kei"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Warrior Kei."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "soul-master",
+      "prereqs": [
+        {
+          "quest": "job3-04-soul-master"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-soul-master",
+      "order": 220,
+      "title": "Bard La Fimmel - Find 16 Guardian Stones for the Needleless Compass (Soul Master)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Bard La Fimmel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "witch",
+      "prereqs": [
+        {
+          "quest": "job3-04-witch"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-witch",
+      "order": 220,
+      "title": "Bard La Fimmel - Find 16 Guardian Stones for the Needleless Compass (Witch)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Bard La Fimmel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "dark-lord",
+      "prereqs": [
+        {
+          "quest": "job3-04-dark-lord"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-dark-lord",
+      "order": 220,
+      "title": "Magician Louie - Find 16 Guardian Stones for the Needleless Compass (Dark Lord)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Mermaid Dungeon 2 - Legend of the Sea",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Magician Louie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "priest",
+      "prereqs": [
+        {
+          "quest": "job3-04-priest"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-priest",
+      "order": 220,
+      "title": "Magician Louie - Find 16 Guardian Stones for the Needleless Compass (Priest)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Magician Louie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "wizard",
+      "prereqs": [
+        {
+          "quest": "job3-04-wizard"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-wizard",
+      "order": 220,
+      "title": "Magician Louie - Find 16 Guardian Stones for the Needleless Compass (Wizard)",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Pyramid Dungeon 1 - Hall of the Slave",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Magician Louie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "thief-master",
+      "prereqs": [
+        {
+          "quest": "job3-04-thief-master"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-thief-master",
+      "order": 220,
+      "title": "Explorer Reina - Find 16 Guardian Stones for the Needleless Compass (Thief Master)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "hunter-lord",
+      "prereqs": [
+        {
+          "quest": "job3-04-hunter-lord"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-hunter-lord",
+      "order": 220,
+      "title": "Explorer Reina - Find 16 Guardian Stones for the Needleless Compass (Hunter Lord)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Caballa Relics Dungeon 1",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "scientist",
+      "prereqs": [
+        {
+          "quest": "job3-04-scientist"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-scientist",
+      "order": 220,
+      "title": "Inventor Gale - Find 16 Guardian Stones for the Needleless Compass (Scientist)",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Inventor Gale."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "cyber-hunter",
+      "prereqs": [
+        {
+          "quest": "job3-04-cyber-hunter"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-cyber-hunter",
+      "order": 220,
+      "title": "Inventor Gale - Find 16 Guardian Stones for the Needleless Compass (Cyber Hunter)",
+      "npc": "Inventor Gale",
+      "npcIds": [
+        "inventor-gale"
+      ],
+      "location": "Wharf Field 4 - Chrono Wharf",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Inventor Gale."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "primadonna",
+      "prereqs": [
+        {
+          "quest": "job3-04-primadonna"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-primadonna",
+      "order": 220,
+      "title": "Entertainer Elicia - Find 16 Guardian Stones for the Needleless Compass (Primadonna)",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Entertainer Elicia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "diva",
+      "prereqs": [
+        {
+          "quest": "job3-04-diva"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-diva",
+      "order": 220,
+      "title": "Entertainer Elicia - Find 16 Guardian Stones for the Needleless Compass (Diva)",
+      "npc": "Entertainer Elicia",
+      "npcIds": [
+        "entertainer-elicia"
+      ],
+      "location": "Rose Field 3 - Maze of Blue Rose",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Entertainer Elicia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "gambler",
+      "prereqs": [
+        {
+          "quest": "job3-04-gambler"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-gambler",
+      "order": 220,
+      "title": "Card Master Taniel - Find 16 Guardian Stones for the Needleless Compass (Gambler)",
+      "npc": "Card Master Taniel",
+      "npcIds": [
+        "card-master-taniel"
+      ],
+      "location": "Northwest Forest",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Card Master Taniel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "duke",
+      "prereqs": [
+        {
+          "quest": "job3-04-duke"
+        },
+        {
+          "quest": "job3-h16"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-05-duke",
+      "order": 220,
+      "title": "Card Master Taniel - Find 16 Guardian Stones for the Needleless Compass (Duke)",
+      "npc": "Card Master Taniel",
+      "npcIds": [
+        "card-master-taniel"
+      ],
+      "location": "Northwest Forest",
+      "prereqText": "Have completed Happisto Stallone - Make Happisto's Compass Frame and hold The Key of Trials",
+      "steps": [
+        "Accept it before the Tribunal hunts; when they are done, bring the Marble of Triumph and the Stone of Patience to Card Master Taniel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Marble of Triumph",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Door of Tribulation - Path of Tribulation",
+            "map": "Garden of Skill Master"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Stone of Patience",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Flashire Snake's Messenger - Hunt Tribunal Leviathan",
+            "map": "Room of Tribulation 16"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x Needleless Compass"
+        ]
+      }
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "champion",
+      "prereqs": [
+        {
+          "quest": "job3-05-champion"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-champion",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Champion",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Champion. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Boxer Jeanne - Find 16 Guardian Stones for the Needleless Compass (Champion)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Boxer Jeanne - Find 3rd Job Guardian Stone (Champion)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Champion accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Champion."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "bunny"
+      ],
+      "path": "duelist",
+      "prereqs": [
+        {
+          "quest": "job3-05-duelist"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-duelist",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Duelist",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Duelist. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Boxer Jeanne - Find 16 Guardian Stones for the Needleless Compass (Duelist)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Boxer Jeanne - Find 3rd Job Guardian Stone (Duelist)",
+            "map": "Desert Beach Field 3 - Statue of Anubis"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Duelist accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Duelist."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "gladiator",
+      "prereqs": [
+        {
+          "quest": "job3-05-gladiator"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-gladiator",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Gladiator",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Gladiator. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find 16 Guardian Stones for the Needleless Compass (Gladiator)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find 3rd Job Guardian Stone (Gladiator)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Gladiator accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Gladiator."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "buffalo"
+      ],
+      "path": "mercenary",
+      "prereqs": [
+        {
+          "quest": "job3-05-mercenary"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-mercenary",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Mercenary",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Mercenary. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find 16 Guardian Stones for the Needleless Compass (Mercenary)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Warrior Kei - Find 3rd Job Guardian Stone (Mercenary)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Mercenary accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Mercenary."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "soul-master",
+      "prereqs": [
+        {
+          "quest": "job3-05-soul-master"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-soul-master",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Soul Master",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Soul Master. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Bard La Fimmel - Find 16 Guardian Stones for the Needleless Compass (Soul Master)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Bard La Fimmel - Find 3rd Job Guardian Stone (Soul Master)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Soul Master accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Soul Master."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "sheep"
+      ],
+      "path": "witch",
+      "prereqs": [
+        {
+          "quest": "job3-05-witch"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-witch",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Witch",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Witch. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Bard La Fimmel - Find 16 Guardian Stones for the Needleless Compass (Witch)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Bard La Fimmel - Find 3rd Job Guardian Stone (Witch)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Witch accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Witch."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "dark-lord",
+      "prereqs": [
+        {
+          "quest": "job3-05-dark-lord"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-dark-lord",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Dark Lord",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Drill 1x Adamantite and 1x Alexandrite (Precious Jewel mining lots / Tapasco mines).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Dark Lord. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Adamantite",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 1st Mining Lot of Precious Jewel and Tapasco Mine 1 - Silent Lava (drill depth not on the wiki)",
+            "map": "1st Mining Lot of Precious Jewel / Tapasco Mine 1 - Silent Lava"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Alexandrite",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in 2nd Mining Lot of Precious Jewel and Tapasco Mine 2 - Silent Lava (drill depth not on the wiki)",
+            "map": "2nd Mining Lot of Precious Jewel / Tapasco Mine 2 - Silent Lava"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Magician Louie - Find 16 Guardian Stones for the Needleless Compass (Dark Lord)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Magician Louie - Find 3rd Job Guardian Stone (Dark Lord)",
+            "map": "Mermaid Dungeon 2 - Legend of the Sea"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Dark Lord accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Dark Lord."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "priest",
+      "prereqs": [
+        {
+          "quest": "job3-05-priest"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-priest",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Priest",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Priest. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Magician Louie - Find 16 Guardian Stones for the Needleless Compass (Priest)",
+            "map": "Pyramid Dungeon 1 - Hall of the Slave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Magician Louie - Find 3rd Job Guardian Stone (Priest)",
+            "map": "Pyramid Dungeon 1 - Hall of the Slave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Priest accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Priest."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "dragon"
+      ],
+      "path": "wizard",
+      "prereqs": [
+        {
+          "quest": "job3-05-wizard"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-wizard",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Wizard",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Wizard. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Magician Louie - Find 16 Guardian Stones for the Needleless Compass (Wizard)",
+            "map": "Pyramid Dungeon 1 - Hall of the Slave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Magician Louie - Find 3rd Job Guardian Stone (Wizard)",
+            "map": "Pyramid Dungeon 1 - Hall of the Slave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Wizard accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Wizard."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "thief-master",
+      "prereqs": [
+        {
+          "quest": "job3-05-thief-master"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-thief-master",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Thief Master",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Thief Master. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Explorer Reina - Find 16 Guardian Stones for the Needleless Compass (Thief Master)",
+            "map": "Caballa Relics Dungeon 1"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Explorer Reina - Find 3rd Job Guardian Stone (Thief Master)",
+            "map": "Caballa Relics Dungeon 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Thief Master accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Thief Master."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "fox"
+      ],
+      "path": "hunter-lord",
+      "prereqs": [
+        {
+          "quest": "job3-05-hunter-lord"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-hunter-lord",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Hunter Lord",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Hunter Lord. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Explorer Reina - Find 16 Guardian Stones for the Needleless Compass (Hunter Lord)",
+            "map": "Caballa Relics Dungeon 1"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Explorer Reina - Find 3rd Job Guardian Stone (Hunter Lord)",
+            "map": "Caballa Relics Dungeon 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Hunter Lord accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Hunter Lord."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "scientist",
+      "prereqs": [
+        {
+          "quest": "job3-05-scientist"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-scientist",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Scientist",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Scientist. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Inventor Gale - Find 16 Guardian Stones for the Needleless Compass (Scientist)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Inventor Gale - Find 3rd Job Guardian Stone (Scientist)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Scientist accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Scientist."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "lion"
+      ],
+      "path": "cyber-hunter",
+      "prereqs": [
+        {
+          "quest": "job3-05-cyber-hunter"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-cyber-hunter",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Cyber Hunter",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Cyber Hunter. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Inventor Gale - Find 16 Guardian Stones for the Needleless Compass (Cyber Hunter)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Inventor Gale - Find 3rd Job Guardian Stone (Cyber Hunter)",
+            "map": "Wharf Field 4 - Chrono Wharf"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Cyber Hunter accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Cyber Hunter."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "primadonna",
+      "prereqs": [
+        {
+          "quest": "job3-05-primadonna"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-primadonna",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Primadonna",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Primadonna. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Entertainer Elicia - Find 16 Guardian Stones for the Needleless Compass (Primadonna)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Entertainer Elicia - Find 3rd Job Guardian Stone (Primadonna)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Primadonna accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Primadonna."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "cat"
+      ],
+      "path": "diva",
+      "prereqs": [
+        {
+          "quest": "job3-05-diva"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-diva",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Diva",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Diva. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Entertainer Elicia - Find 16 Guardian Stones for the Needleless Compass (Diva)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Entertainer Elicia - Find 3rd Job Guardian Stone (Diva)",
+            "map": "Rose Field 3 - Maze of Blue Rose"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Diva accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Diva."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "gambler",
+      "prereqs": [
+        {
+          "quest": "job3-05-gambler"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-gambler",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Gambler",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Gambler. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Card Master Taniel - Find 16 Guardian Stones for the Needleless Compass (Gambler)",
+            "map": "Northwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Card Master Taniel - Find 3rd Job Guardian Stone (Gambler)",
+            "map": "Northwest Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Gambler accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Gambler."
+    },
+    {
+      "categories": [
+        "job"
+      ],
+      "tags": [
+        "job3"
+      ],
+      "chapter": "3rd Job - Step 4: Become your 3rd job",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "raccoon"
+      ],
+      "path": "duke",
+      "prereqs": [
+        {
+          "quest": "job3-05-duke"
+        }
+      ],
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Third_Job_Advancement.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      },
+      "id": "job3-06-duke",
+      "order": 221,
+      "title": "Guardian's Messenger - Become Duke",
+      "npc": "Guardian's Messenger",
+      "npcIds": [
+        "guardians-messenger"
+      ],
+      "location": "Room of Guardian",
+      "prereqText": "Level 130+, TM Level 120+, have completed Door of Tribulation - Path of Tribulation",
+      "steps": [
+        "Get 1x Harkon (drilled in the volcano fields, Chaos Tower battlefields or Abyss, or from Blacksmith Marx quests).",
+        "Bring it with the Needleless Compass and the Sealed Guardian to the Guardian's Messenger in the Room of Guardian.",
+        "You become Duke. Louis Bitton can switch between your 2nd and 3rd job look for 50,000 Galder."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Harkon",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Techichi / Tapasco Volcano Fields, Chaos Tower battlefields, Gate of Abyss and Abyss Fields; also from Blacksmith Marx quests (drill depth not on the wiki)",
+            "map": "Volcano / Chaos Tower / Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Needleless Compass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Card Master Taniel - Find 16 Guardian Stones for the Needleless Compass (Duke)",
+            "map": "Northwest Forest"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sealed Guardian",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Card Master Taniel - Find 3rd Job Guardian Stone (Duke)",
+            "map": "Northwest Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 16000000,
+        "galder": 0,
+        "items": [
+          "1x Light Compass",
+          "1x Guardian (Duke accessory)"
+        ]
+      },
+      "notes": "Completes the 3rd job advancement: you become Duke."
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "region": "Ghost Blue",
+  "quests": [
+    {
+      "id": "gb-key-01",
+      "order": 307,
+      "title": "Chief Koha - Collect Ritual Supplies",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Ghost Blue - Key Quests (Lv.100+)",
+      "npc": "Chief Koha",
+      "npcIds": [
+        "chief-koha"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mp-key-02"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Chief Koha - Ghost Blue Sticker",
+      "steps": [
+        "Talk to Chief Koha at Ghost Blue Seabed Town - Aquarius.",
+        "Get 3x Pure Water: Drilled in Seabed Fields.",
+        "Get 3x Dead Man's Incense: dropped by Merrow (Lv.118) in Seabed Field 3 - Undersea Park / 4 - Undersea Grave.",
+        "Get 3x Whale Essence: Drilled in Seabed Fields.",
+        "Bring everything back to Chief Koha."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Water",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dead Man's Incense",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Merrow (Lv.118)",
+            "map": "Seabed Field 3 - Undersea Park / 4 - Undersea Grave"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Whale Essence",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Seabed Fields (drill depth not on the wiki)",
+            "map": "Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1599860,
+        "tmExp": 3383004,
+        "galder": 0,
+        "items": [
+          "1x 10",
+          "1x 000 Galder Coupon"
+        ]
+      },
+      "notes": "Pure Water and Whale Essence are drilled in Seabed Fields. Dead Man's Incense is dropped by Merrow (Lv.118).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Koha_-_Collect_Ritual_Supplies.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-key-02",
+      "order": 308,
+      "title": "Chief Koha - Get a Date",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Ghost Blue - Key Quests (Lv.100+)",
+      "npc": "Chief Koha",
+      "npcIds": [
+        "chief-koha"
+      ],
+      "location": "Ghost Blue Seabed Town - Aquarius",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-key-01"
+        }
+      ],
+      "prereqText": "Level 100+, have completed Chief Koha - Collect Ritual Supplies",
+      "steps": [
+        "Talk to Chief Koha at Ghost Blue Seabed Town - Aquarius.",
+        "Get 1x Jia's Pouch: reward from Shaman Girl Jia - Collect the Changed Spirits.",
+        "Get 1x Adventurer's Book: reward from Mermaid Marin - Marin's Sister.",
+        "Bring everything back to Chief Koha."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Jia's Pouch",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Shaman Girl Jia - Collect the Changed Spirits",
+            "map": "Aquarius Shrine"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Adventurer's Book",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Mermaid Marin - Marin's Sister",
+            "map": "Mermaid Palace Field 4 - Rock Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3064018,
+        "tmExp": 5830557,
+        "galder": 0,
+        "items": [
+          "1x Adventurer's Book",
+          "1x Wep Exchange Ticket E"
+        ]
+      },
+      "notes": "Jia's Pouch is obtained by completing Collect the Changed Spirits. Adventurer's Book is obtained by completing Mermaid Marin - Marin's Sister.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Koha_-_Get_a_Date.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "gb-key-03",
+      "order": 309,
+      "title": "Shaman Girl Jia - Collect the Changed Spirits",
+      "categories": [
+        "key"
+      ],
+      "tags": [
+        "key"
+      ],
+      "chapter": "Ghost Blue - Key Quests (Lv.100+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Aquarius Shrine",
+      "minLevel": 100,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "gb-key-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 100+, have Chief Koha - Get a Date in quest log",
+      "steps": [
+        "Talk to Shaman Girl Jia at Aquarius Shrine.",
+        "Get 5x Ghost Blue Spirit: dropped by Pirate Ghost (Lv.121) in Seabed Field 4 - Undersea Grave.",
+        "Bring everything back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ghost Blue Spirit",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Pirate Ghost (Lv.121)",
+            "map": "Seabed Field 4 - Undersea Grave"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1599860,
+        "tmExp": 3383004,
+        "galder": 0,
+        "items": [
+          "1x Jia's Pouch",
+          "1x Jia's Amulet"
+        ]
+      },
+      "notes": "Ghost Blue Spirit is dropped by Pirate Ghost (Lv.121).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Collect_the_Changed_Spirits.html",
+        "checked": "2026-11-12",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

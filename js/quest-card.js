@@ -113,10 +113,21 @@
       <li class="qc-obj ${done ? "is-done" : ""}">
         ${iconImg(ctx.getItemImage(item.name), "item-icon", how.icon)}
         <div class="qc-obj-main">
-          <div class="qc-obj-name"><strong>${esc(item.name)}</strong> ${qtyHtml}</div>
+          <div class="qc-obj-name"><strong>${esc(item.name)}</strong> ${qtyHtml}${bagBadges(item, q, c, ctx)}</div>
           <div class="qc-obj-src">${source}</div>
         </div>
       </li>`;
+  }
+
+  /** "🎒 have 3" (enough / not yet) and "🔒 also for 2 more quests" from the Bag. */
+  function bagBadges(item, q, c, ctx) {
+    if (c.left === 0) return "";
+    let out = "";
+    const have = (ctx.have && ctx.have[item.name]) || 0;
+    if (have) out += ` <span class="qc-have ${have >= c.left ? "is-enough" : ""}" title="In your Bag (all quests share it)">🎒 have ${have}</span>`;
+    const others = ctx.itemUse ? ctx.itemUse(item.name) - 1 : 0;
+    if (others > 0) out += ` <span class="qc-keep" title="Don't sell: other unfinished quests need it too">🔒 +${others} quest${others === 1 ? "" : "s"}</span>`;
+    return out;
   }
 
   function huntRow(h) {

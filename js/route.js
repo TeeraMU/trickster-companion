@@ -58,7 +58,9 @@
    * into one stop. Each stop lists the maps walked through to get there ("via").
    * action: { type: talk|accept|turnin|drop|drill|hunt|other|buy|combine, quest, text, alts }
    */
-  function buildRoute(quests, state, idx, parse) {
+  function buildRoute(quests, state, idx, parse, have) {
+    // items already in the bag are used up quest by quest; fully covered items need no farm stop
+    const pool = Object.assign({}, have || {});
     const stops = [];
     let cur = null;
     const where = text => (idx.names[text] || []).filter(id => idx.byId.has(id));
@@ -77,7 +79,10 @@
       const todo = [];
       for (const it of q.items || []) {
         if (it.method === "Quest") continue;
-        const left = itemLeft(it, q, state);
+        const need = itemLeft(it, q, state);
+        const got = Math.min(need, Math.max(0, pool[it.name] || 0));
+        pool[it.name] = (pool[it.name] || 0) - got;
+        const left = need - got;
         if (!left) continue;
         let type = "other", text = `${it.name} ×${left}`;
         if (it.method === "Drop") {
@@ -118,7 +123,21 @@
     return null;
   }
 
-  const model = { indexMaps, shortestPath, nearest, buildRoute, boxOf };
+  // NPC pins are kept per NPC *and* map ("monkey-t@coral-field-3"): many NPCs stand in several maps.
+  const pinKey = (npcId, mapId) => npcId + "@" + mapId;
+
+  /** Accept both the current { "npc@map": { x, y } } and the old { npc: { map, x, y } } layout. */
+  function normalizePins(pins) {
+    const out = {};
+    for (const [k, v] of Object.entries(pins || {})) {
+      if (!v || typeof v !== "object") continue;
+      if (k.includes("@")) out[k] = v;
+      else if (v.map) { const { map, ...rest } = v; out[pinKey(k, map)] = rest; }
+    }
+    return out;
+  }
+
+  const model = { indexMaps, shortestPath, nearest, buildRoute, boxOf, pinKey, normalizePins };
 
   // ---------------------------------------------------------------------------------------
   // Renderer
@@ -188,7 +207,7 @@
   function mapCard(idx, stop, i, ctx) {
     const m = idx.byId.get(stop.map);
     const npcs = stopNpcs(stop, ctx.npcName);
-    const pins = npcs.map(n => ({ n, pin: ctx.pins[n.id] })).filter(p => p.pin && p.pin.map === m.id);
+    const pins = npcs.map(n => ({ n, pin: ctx.pins[pinKey(n.id, m.id)] })).filter(p => p.pin);
     const pinMode = ctx.ui.pinMode;
     const pinNpc = ctx.ui.pinNpc && npcs.some(n => n.id === ctx.ui.pinNpc) ? ctx.ui.pinNpc : (npcs[0] || {}).id;
     const image = m.image
@@ -199,10 +218,12 @@
       : `<div class="rt-noimage">No map picture on the wiki for this map.</div>`;
     const npcList = npcs.length ? `
       <ul class="rt-npcs">${npcs.map(n => {
-        const p = ctx.pins[n.id];
-        const here = p && p.map === m.id;
-        return `<li>🙋 <strong>${esc(n.name)}</strong> ${here ? `<span class="rt-pinned">📍 pinned</span>` : `<span class="rt-unpinned">not pinned yet</span>`}
-          ${pinMode && here ? `<button type="button" class="btn qc-small-btn" onclick="removeNpcPin('${n.id}')">Remove pin</button>` : ""}</li>`;
+        const p = ctx.pins[pinKey(n.id, m.id)];
+        const label = !p ? `<span class="rt-unpinned">not pinned yet</span>`
+          : p.src === "wiki" && !ctx.mine[pinKey(n.id, m.id)] ? `<span class="rt-pinned">📍 from the wiki</span>`
+          : `<span class="rt-pinned">📍 pinned${p.n > 1 ? ` · ${p.n} players` : ""}</span>`;
+        return `<li>🙋 <strong>${esc(n.name)}</strong> ${label}
+          ${pinMode && ctx.mine[pinKey(n.id, m.id)] ? `<button type="button" class="btn qc-small-btn" onclick="removeNpcPin('${n.id}', '${m.id}')">Remove my pin</button>` : ""}</li>`;
       }).join("")}</ul>` : "";
     const pinTools = npcs.length && m.image ? `
       <div class="rt-pin-tools">
