@@ -35,6 +35,7 @@
   let fb = null, auth = null, db = null, user = null, unsubscribe = null;
   let sdkPromise = null, pushTimer = null, ready = false, applying = false;
   let status = { state: "signed-out" };
+  const readyListeners = []; // fn(user | null): signed in and synced / signed out (js/friends.js)
 
   function setStatus(s) {
     status = Object.assign({ user: user ? { name: user.displayName || "", email: user.email || "" } : null }, s);
@@ -71,13 +72,19 @@
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
     user = u;
     ready = false;
-    if (!u) { store.del(KEY_ON); setStatus({ state: "signed-out" }); return; }
+    if (!u) {
+      store.del(KEY_ON);
+      setStatus({ state: "signed-out" });
+      readyListeners.forEach(fn => { try { fn(null); } catch (e) { console.warn(e); } });
+      return;
+    }
     store.set(KEY_ON, "1");
     setStatus({ state: "loading" });
     try {
       await join();
       ready = true;
       listen();
+      readyListeners.forEach(fn => { try { fn(user); } catch (e) { console.warn(e); } });
     } catch (e) {
       console.warn("Cloud sync:", e);
       setStatus({ state: "error", message: friendly(e) });
@@ -190,5 +197,17 @@
     }
   }
 
-  root.TQCloud = { init, signIn, signOut, changed, status: () => status };
+  // For js/friends.js: the signed-in user and Firestore, once sync is ready
+  function onReady(fn) {
+    readyListeners.push(fn);
+    if (user && ready) fn(user);
+  }
+
+  root.TQCloud = {
+    init, signIn, signOut, changed, onReady,
+    status: () => status,
+    user: () => (ready ? user : null),
+    db: () => db,
+    serverTime: () => fb.firestore.FieldValue.serverTimestamp()
+  };
 })(this);

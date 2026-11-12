@@ -46,6 +46,7 @@
         <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
         <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
+        <button class="view-tab" id="tabBtnFriends" onclick="switchView('friends')"><span class="tab-icon" aria-hidden="true">👥</span><span class="tab-label">Friends</span></button>
         <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')"><span class="tab-icon" aria-hidden="true">⛏️</span><span class="tab-label">Drill guide</span></button>
         <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')"><span class="tab-icon" aria-hidden="true">🗺️</span><span class="tab-label">Roadmap</span></button>
       </nav>
@@ -209,6 +210,10 @@
     </div>
 
     <!-- VIEW 2: BAG (js/bag.js) -->
+    <div id="viewFriends" class="hidden">
+      <div id="friendsContainer"></div>
+    </div>
+
     <div id="viewBag" class="hidden">
       <div id="bagContainer"></div>
     </div>
@@ -410,6 +415,7 @@
   <script src="js/bag.js"></script>
   <script src="js/sync-merge.js"></script>
   <script src="js/cloud.js"></script>
+  <script src="js/friends.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -500,6 +506,7 @@
         console.warn("Could not save state to localStorage:", e);
       }
       if (window.TQCloud) TQCloud.changed();
+      if (window.TQFriends) TQFriends.changed();
     }
 
     // ============================================================================
@@ -812,7 +819,7 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", drillref: "DrillRef", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", friends: "Friends", drillref: "DrillRef", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
@@ -827,6 +834,7 @@
       document.getElementById("regionCardsContainer").classList.toggle("hidden", !usesFilters);
       if (appState.currentView !== viewName) { appState.currentView = viewName; saveState(); }
       if (viewName === "bag") renderBag();
+      if (viewName === "friends") renderFriends();
     }
 
     // ============================================================================
@@ -1278,6 +1286,45 @@
     }
 
     // ============================================================================
+    // FRIENDS (js/friends.js): the short summary friends see, and the page
+    // ============================================================================
+    function friendSummary() {
+      const cls = appState.selectedClass || "All";
+      const pool = QUESTS.filter(q => matchesClassFilter(q, cls));
+      const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
+      const st = id => (statuses.get ? statuses.get(id) : statuses[id]);
+      const open = pool.filter(q => st(q.id) === "available").sort((a, b) => a.order - b.order);
+      // where they are: the next key quest open to them, else the first open quest in play order
+      const ref = open.find(q => q.categories.includes("Key")) || open[0];
+      const short = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "").replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
+      const area = a => (/^Episode \d+$/.test(a) ? "EP" + num(a) : a);
+      // needs: what the quests open right now still need (what a friend could help with today);
+      // spares: what's in the Bag beyond everything their unfinished quests will ever need
+      const needs = TQBag.bagList(open, appState, appState.inventory)
+        .filter(r => r.left > 0 && !r.chain).slice(0, 12).map(r => ({ item: r.item, n: r.left }));
+      const needed = new Map(TQBag.bagList(pool, appState, appState.inventory).map(r => [r.item, r.need]));
+      const spares = Object.entries(appState.inventory || {})
+        .map(([item, have]) => ({ item, n: have - (needed.get(item) || 0) }))
+        .filter(x => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 12);
+      const path = jobPaths().find(p => p.key === appState.selectedJobPath);
+      return {
+        cls, path: path ? path.label : "",
+        done: pool.filter(q => appState.completedQuests[q.id]).length, total: pool.length,
+        area: ref ? area(ref.area) : "", next: ref ? short(ref.title) : "",
+        needs, spares
+      };
+    }
+
+    function renderFriends() {
+      const el = document.getElementById("friendsContainer");
+      if (!el || !window.TQFriends) return;
+      // don't redraw under someone typing in a box on this page
+      const typing = document.activeElement && el.contains(document.activeElement) && document.activeElement.tagName === "INPUT";
+      if (typing && document.activeElement.value) return;
+      el.innerHTML = TQFriends.render();
+    }
+
+    // ============================================================================
     // BAG (items in hand, keep list) — model + markup in js/bag.js
     // ============================================================================
     let ITEM_USE = new Map(); // item name -> how many unfinished quests still need it
@@ -1450,7 +1497,8 @@
       loadData()
         .then(() => {
           loadState(); renderAll(); switchView(appState.currentView);
-          TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: renderSyncStatus });
+          TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
+          TQFriends.init({ summary: friendSummary, render: renderFriends });
         })
         .catch(showLoadError);
     });
