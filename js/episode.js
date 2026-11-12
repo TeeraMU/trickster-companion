@@ -140,7 +140,7 @@
       }
       for (const h of q.hunts || []) {
         const rows = mapGroup(h.map, q);
-        add(rows, "hunt|" + h.monster, { kind: "hunt", item: h.monster, level: String(h.level), how: h.timeLimit ? "within " + h.timeLimit : "" }, h.count * cycles, q);
+        add(rows, "hunt|" + h.monster, { kind: "hunt", item: h.monster, level: h.level ? String(h.level) : "", how: h.timeLimit ? "within " + h.timeLimit : "" }, h.count * cycles, q);
       }
     }
 
@@ -217,7 +217,7 @@
     const usedIn = r.quests.map(x => x.title).join(" · ");
     let how = "";
     if (r.kind === "drop") how = `${esc(r.monster)} <span class="ep-lv">Lv.${esc(r.level)}</span>`;
-    else if (r.kind === "hunt") how = `<span class="ep-lv">Lv.${esc(r.level)}</span> ${esc(r.how)}`;
+    else if (r.kind === "hunt") how = `${r.level ? `<span class="ep-lv">Lv.${esc(r.level)}</span> ` : ""}${esc(r.how)}`;
     else if (r.kind === "drill") how = esc(r.depth);
     else how = esc(r.how);
     return `

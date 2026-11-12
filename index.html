@@ -772,7 +772,10 @@
       });
       const order = { story: 0, zones: 1, job: 2 };
       AREAS = [...byKey.values()].map(a => {
-        const levels = a.quests.map(q => q.minLevel || 0).filter(Boolean);
+        // the level the area's main path (its key quests) starts at; side quests (weddings, events)
+        // can start much lower and would make a zone look like a beginner area
+        const keyLevels = a.quests.filter(q => q.categories.includes("Key")).map(q => q.minLevel || 0).filter(Boolean);
+        const levels = keyLevels.length ? keyLevels : a.quests.map(q => q.minLevel || 0).filter(Boolean);
         return {
           key: a.key,
           group: /^Episode \d+$/.test(a.key) ? "story" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",

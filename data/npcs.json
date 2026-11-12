@@ -36,6 +36,10 @@
     "name": "Assistant Hunter"
   },
   {
+    "id": "atropos",
+    "name": "Atropos"
+  },
+  {
     "id": "banker-lisa",
     "name": "Banker Lisa"
   },
@@ -74,6 +78,10 @@
   {
     "id": "bunny-maid",
     "name": "Bunny Maid"
+  },
+  {
+    "id": "butler-of-vamp-castle",
+    "name": "Butler of Vamp Castle"
   },
   {
     "id": "captain-stan",
@@ -212,6 +220,10 @@
     "name": "Fairy Nono"
   },
   {
+    "id": "farmer-tsetsech",
+    "name": "Farmer Tsetsech"
+  },
+  {
     "id": "favian",
     "name": "Favian"
   },
@@ -248,6 +260,10 @@
     "name": "Guard Gilbert"
   },
   {
+    "id": "guardian-kerberos",
+    "name": "Guardian Kerberos"
+  },
+  {
     "id": "guardians-messenger",
     "name": "Guardian's Messenger"
   },
@@ -260,6 +276,10 @@
     "name": "Guild Clerk Esther"
   },
   {
+    "id": "hair-of-rosetta",
+    "name": "Hair of Rosetta"
+  },
+  {
     "id": "happisto-stallone",
     "name": "Happisto Stallone"
   },
@@ -270,6 +290,10 @@
   {
     "id": "homeless-ian",
     "name": "Homeless Ian"
+  },
+  {
+    "id": "horse-hiddink",
+    "name": "Horse Hiddink"
   },
   {
     "id": "hungry-poppuri",
@@ -300,6 +324,10 @@
     "name": "Keeper Julio"
   },
   {
+    "id": "king-edward",
+    "name": "King Edward"
+  },
+  {
     "id": "king-enigmos-messenger",
     "name": "King Enigmo's Messenger"
   },
@@ -308,8 +336,16 @@
     "name": "Knight Scar"
   },
   {
+    "id": "kochi",
+    "name": "Kochi"
+  },
+  {
     "id": "kristoffer-j",
     "name": "Kristoffer J."
+  },
+  {
+    "id": "kyu",
+    "name": "Kyu"
   },
   {
     "id": "la-vida",
@@ -354,6 +390,10 @@
   {
     "id": "magician-louie",
     "name": "Magician Louie"
+  },
+  {
+    "id": "majordomo-felix",
+    "name": "Majordomo Felix"
   },
   {
     "id": "marie-elle",
@@ -444,6 +484,10 @@
     "name": "Princess Rosetta"
   },
   {
+    "id": "queen-cecilia",
+    "name": "Queen Cecilia"
+  },
+  {
     "id": "rosaline-gracia",
     "name": "Rosaline Gracia"
   },
@@ -474,6 +518,10 @@
   {
     "id": "sea-spirit-rumo",
     "name": "Sea Spirit Rumo"
+  },
+  {
+    "id": "servant-alfredo",
+    "name": "Servant Alfredo"
   },
   {
     "id": "shaman-girl-jia",
@@ -528,6 +576,10 @@
     "name": "Vagabond Eloy"
   },
   {
+    "id": "vamp-lydia",
+    "name": "Vamp Lydia"
+  },
+  {
     "id": "vice-captain",
     "name": "Vice Captain"
   },
@@ -554,6 +606,10 @@
   {
     "id": "weirdo-hen",
     "name": "Weirdo Hen"
+  },
+  {
+    "id": "werewolf-lycan",
+    "name": "Werewolf Lycan"
   },
   {
     "id": "winnie",
