@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.0 (2026-11-13): Every zone to Techichi, loading screen
 
 - Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.
 - New loading screen: two characters running while the quests load (fades out when ready; stands still if your device asks for reduced motion).
