@@ -8,6 +8,14 @@
     "name": "Alchemist Nate"
   },
   {
+    "id": "alsiedo-birds-messenger",
+    "name": "Alsiedo Bird's Messenger"
+  },
+  {
+    "id": "amethystas-messenger",
+    "name": "Amethysta's Messenger"
+  },
+  {
     "id": "andrew",
     "name": "Andrew"
   },
@@ -36,12 +44,20 @@
     "name": "Bastet"
   },
   {
+    "id": "black-wings-messenger",
+    "name": "Black Wings' Messenger"
+  },
+  {
     "id": "blacksmith-marx",
     "name": "Blacksmith Marx"
   },
   {
     "id": "blue-muffler-poppuri",
     "name": "Blue Muffler Poppuri"
+  },
+  {
+    "id": "boxer-jeanne",
+    "name": "Boxer Jeanne"
   },
   {
     "id": "boxer-jeanne-warrior-kei-bard-la-fimmel-magician-louie-explorer-reina-inventor-gale-entertainer-elicia-card-master-taniel",
@@ -56,6 +72,14 @@
     "name": "Card Girl"
   },
   {
+    "id": "card-master-taniel",
+    "name": "Card Master Taniel"
+  },
+  {
+    "id": "centakonus-messenger",
+    "name": "Centakonus' Messenger"
+  },
+  {
     "id": "clerk-z-smith",
     "name": "Clerk Z. Smith"
   },
@@ -68,8 +92,16 @@
     "name": "Clotho"
   },
   {
+    "id": "delphinus-messenger",
+    "name": "Delphinus' Messenger"
+  },
+  {
     "id": "don-giuvanni",
     "name": "Don Giuvanni"
+  },
+  {
+    "id": "door-of-tribulation",
+    "name": "Door of Tribulation"
   },
   {
     "id": "dorothy",
@@ -92,6 +124,10 @@
     "name": "Dr. Cat (Middle Right)"
   },
   {
+    "id": "dragon-tales-messenger",
+    "name": "Dragon Tale's Messenger"
+  },
+  {
     "id": "dreams",
     "name": "Dreams"
   },
@@ -104,12 +140,24 @@
     "name": "Eliza Bath"
   },
   {
+    "id": "enigmo-van-peruozas-messenger",
+    "name": "Enigmo Van Peruoza's Messenger"
+  },
+  {
     "id": "enkicladus-1",
     "name": "Enkicladus 1"
   },
   {
     "id": "enkicladus-2",
     "name": "Enkicladus 2"
+  },
+  {
+    "id": "entertainer-elicia",
+    "name": "Entertainer Elicia"
+  },
+  {
+    "id": "eternal-knights-messenger",
+    "name": "Eternal Knight's Messenger"
   },
   {
     "id": "explorer-reina",
@@ -128,6 +176,10 @@
     "name": "Favian"
   },
   {
+    "id": "flashire-snakes-messenger",
+    "name": "Flashire Snake's Messenger"
+  },
+  {
     "id": "fortune-teller",
     "name": "Fortune Teller"
   },
@@ -136,12 +188,24 @@
     "name": "Genius Cochma"
   },
   {
+    "id": "golden-ants-messenger",
+    "name": "Golden Ant's Messenger"
+  },
+  {
+    "id": "guardians-messenger",
+    "name": "Guardian's Messenger"
+  },
+  {
     "id": "guide-sabrina",
     "name": "Guide Sabrina"
   },
   {
     "id": "guild-clerk-esther",
     "name": "Guild Clerk Esther"
+  },
+  {
+    "id": "happisto-stallone",
+    "name": "Happisto Stallone"
   },
   {
     "id": "heidi",
@@ -168,12 +232,20 @@
     "name": "Indiana John"
   },
   {
+    "id": "inventor-gale",
+    "name": "Inventor Gale"
+  },
+  {
     "id": "kahlihara",
     "name": "Kahlihara"
   },
   {
     "id": "keeper-julio",
     "name": "Keeper Julio"
+  },
+  {
+    "id": "king-enigmos-messenger",
+    "name": "King Enigmo's Messenger"
   },
   {
     "id": "knight-scar",
@@ -208,6 +280,10 @@
     "name": "Love Hunter Robin"
   },
   {
+    "id": "magician-louie",
+    "name": "Magician Louie"
+  },
+  {
     "id": "mirabo-watty",
     "name": "Mirabo Watty"
   },
@@ -230,6 +306,10 @@
   {
     "id": "nefertiti-2",
     "name": "Nefertiti 2"
+  },
+  {
+    "id": "oddeye-dragons-messenger",
+    "name": "Oddeye Dragon's Messenger"
   },
   {
     "id": "officer-robert",
@@ -260,8 +340,16 @@
     "name": "Rosaline Gracia"
   },
   {
+    "id": "rosaspinas-messenger",
+    "name": "Rosaspina's Messenger"
+  },
+  {
     "id": "rosemary",
     "name": "Rosemary"
+  },
+  {
+    "id": "sacred-espers-messenger",
+    "name": "Sacred Esper's Messenger"
   },
   {
     "id": "sandman",
@@ -278,6 +366,10 @@
   {
     "id": "shaman-girl-jia",
     "name": "Shaman Girl Jia"
+  },
+  {
+    "id": "silvanians-messenger",
+    "name": "Silvanian's Messenger"
   },
   {
     "id": "sissy-cello",
@@ -314,6 +406,10 @@
   {
     "id": "vinosh",
     "name": "Vinosh"
+  },
+  {
+    "id": "vulcanus-phoenixs-messenger",
+    "name": "Vulcanus Phoenix's Messenger"
   },
   {
     "id": "warrior-kei",

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **3rd job advancement** (Lv.130+, TM 120+) for all 17 3rd jobs, in 4 steps: Path of Tribulation → your job's Guardian Stone and Happisto's Compass Frame → the 16 Tribunal hunts → become your 3rd job. Pick your class at the top to see only your two (Dragon: three) paths. Shown on the Quests page under 🎓 Job / 📍 3rd Job; maps outside the route maps (Rose Garden, Seabed, Vamp Dungeon, Snow Hill…) are named but not drawn yet.
+
 - Quests page: the area cards are now one row of chips (📖 EP0, EP1, EP2 … then 📍 towns), built from the data so new episodes and towns appear by themselves; scrolls sideways when it gets long.
 
 - **NPC positions from the wiki**: 48 NPCs are already circled on their maps (taken from the circle the wiki draws on each Episode 0–2 quest), marked "📍 from the wiki". Your own pins still win.
