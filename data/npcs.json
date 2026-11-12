@@ -28,6 +28,10 @@
     "name": "Assistant Hunter"
   },
   {
+    "id": "bard-la-fimmel",
+    "name": "Bard La Fimmel"
+  },
+  {
     "id": "bastet",
     "name": "Bastet"
   },
@@ -58,6 +62,10 @@
   {
     "id": "clever-owl",
     "name": "Clever Owl"
+  },
+  {
+    "id": "clotho",
+    "name": "Clotho"
   },
   {
     "id": "don-giuvanni",
@@ -94,6 +102,14 @@
   {
     "id": "eliza-bath",
     "name": "Eliza Bath"
+  },
+  {
+    "id": "enkicladus-1",
+    "name": "Enkicladus 1"
+  },
+  {
+    "id": "enkicladus-2",
+    "name": "Enkicladus 2"
   },
   {
     "id": "explorer-reina",
@@ -152,12 +168,24 @@
     "name": "Indiana John"
   },
   {
+    "id": "kahlihara",
+    "name": "Kahlihara"
+  },
+  {
     "id": "keeper-julio",
     "name": "Keeper Julio"
   },
   {
+    "id": "knight-scar",
+    "name": "Knight Scar"
+  },
+  {
     "id": "kristoffer-j",
     "name": "Kristoffer J."
+  },
+  {
+    "id": "lachesis",
+    "name": "Lachesis"
   },
   {
     "id": "lifeguard-bean",
@@ -200,6 +228,10 @@
     "name": "Nefertiti"
   },
   {
+    "id": "nefertiti-2",
+    "name": "Nefertiti 2"
+  },
+  {
     "id": "officer-robert",
     "name": "Officer Robert"
   },
@@ -220,6 +252,10 @@
     "name": "Poppuri"
   },
   {
+    "id": "portina",
+    "name": "Portina"
+  },
+  {
     "id": "rosaline-gracia",
     "name": "Rosaline Gracia"
   },
@@ -234,6 +270,10 @@
   {
     "id": "scared-poppuri",
     "name": "Scared Poppuri"
+  },
+  {
+    "id": "sea-spirit-rumo",
+    "name": "Sea Spirit Rumo"
   },
   {
     "id": "shaman-girl-jia",

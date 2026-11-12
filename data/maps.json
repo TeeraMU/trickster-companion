@@ -1,5 +1,5 @@
 {
-  "source": "ggftw Trickster wiki via wikimirror.lifeto.co (map pages, portal lists); boxes measured on the region overview maps (px, 530x540)",
+  "source": "ggftw Trickster wiki via wikimirror.lifeto.co (map pages, portal lists); boxes measured on the region overview maps (px, 530x540); Mirage Island and Mermaid Palace added 2026-11-12",
   "regions": [
     {
       "id": "coral-beach",
@@ -41,6 +41,24 @@
       "id": "oops-wharf",
       "name": "Oops Wharf",
       "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/69/Oops_Wharf_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    },
+    {
+      "id": "mirage-island",
+      "name": "Mirage Island",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/4f/Mirage_Island_Map.png",
+      "size": [
+        530,
+        540
+      ]
+    },
+    {
+      "id": "mermaid-palace",
+      "name": "Mermaid Palace",
+      "overview": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2b/Mermaid_Palace_Map.png",
       "size": [
         530,
         540
@@ -167,7 +185,8 @@
       ],
       "links": [
         "coral-dark-cave",
-        "desert-field-1"
+        "desert-field-1",
+        "mermaid-field-1"
       ]
     },
     {
@@ -885,7 +904,11 @@
       "links": [
         "wharf-field-4",
         "megalo-square",
-        "mermaid-path-1"
+        "mermaid-path-1",
+        "gate-of-mirage",
+        "gate-of-mermaid-palace",
+        "gate-of-mermaid-dungeon",
+        "don-giuvanni-secret-room"
       ]
     },
     {
@@ -963,26 +986,344 @@
     {
       "id": "mermaid-path-1",
       "name": "Path to Mermaid Palace 1",
-      "region": "oops-wharf",
+      "region": "mermaid-palace",
       "kind": "path",
       "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b0/Path_to_Mermaid_Palace_1_big.png",
       "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Mermaid_Palace_1.html",
-      "parent": "oops-wharf",
       "links": [
         "oops-wharf",
         "mermaid-path-2"
+      ],
+      "box": [
+        80,
+        15,
+        155,
+        185
       ]
     },
     {
       "id": "mermaid-path-2",
       "name": "Path to Mermaid Palace 2",
-      "region": "oops-wharf",
+      "region": "mermaid-palace",
       "kind": "path",
       "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/06/Path_to_Mermaid_Palace_2_big.png",
       "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Path_to_Mermaid_Palace_2.html",
+      "links": [
+        "mermaid-path-1",
+        "gate-of-mermaid-palace"
+      ],
+      "box": [
+        80,
+        185,
+        155,
+        325
+      ]
+    },
+    {
+      "id": "gate-of-mirage",
+      "name": "Gate of Mirage Island",
+      "region": "mirage-island",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/thumb/7/77/Gate_of_Mirage_Island2_big.png/300px-Gate_of_Mirage_Island2_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Mirage_Island.html",
+      "box": [
+        175,
+        410,
+        300,
+        470
+      ],
+      "links": [
+        "oops-wharf",
+        "mirage-field-1"
+      ]
+    },
+    {
+      "id": "mirage-field-1",
+      "name": "Mirage Island Field 1 - Alteo",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2e/Mirage_Island_Field_1_-_Alteo_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_1_-_Alteo.html",
+      "box": [
+        185,
+        255,
+        350,
+        418
+      ],
+      "links": [
+        "gate-of-mirage",
+        "mirage-field-2",
+        "mirage-field-3",
+        "mirage-field-4",
+        "mirage-dungeon-1"
+      ]
+    },
+    {
+      "id": "mirage-field-2",
+      "name": "Mirage Island Field 2 - Cliff of Fate",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a9/Mirage_Island_Field_2_-_Cliff_of_Fate2_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_2_-_Cliff_of_Fate.html",
+      "box": [
+        18,
+        255,
+        185,
+        418
+      ],
+      "links": [
+        "mirage-field-1",
+        "mirage-dungeon-2"
+      ]
+    },
+    {
+      "id": "mirage-field-3",
+      "name": "Mirage Island Field 3 - Fremeia",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2b/Mirage_Island_Field_3_-_Fremeia_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_3_-_Fremeia.html",
+      "box": [
+        350,
+        255,
+        512,
+        418
+      ],
+      "links": [
+        "mirage-field-1"
+      ]
+    },
+    {
+      "id": "mirage-field-4",
+      "name": "Mirage Island Field 4 - Alteo Construction Site",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/7b/Mirage_Island_Field_4_-_Alteo_Construction_Site_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_4_-_Alteo_Construction_Site.html",
+      "parent": "mirage-field-1",
+      "links": [
+        "mirage-field-1",
+        "mirage-field-7"
+      ]
+    },
+    {
+      "id": "mirage-field-5",
+      "name": "Mirage Island Field 5 - Alteo City",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/97/Mirage_Island_Field_5_-_Alteo_City_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_5_-_Alteo_City.html",
+      "box": [
+        18,
+        65,
+        182,
+        248
+      ],
+      "links": [
+        "mirage-field-6"
+      ]
+    },
+    {
+      "id": "mirage-field-6",
+      "name": "Mirage Island Field 6 - Water Garden",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/69/Mirage_Island_Field_6_-_Water_Garden_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_6_-_Water_Garden.html",
+      "box": [
+        182,
+        65,
+        350,
+        248
+      ],
+      "links": [
+        "mirage-field-5",
+        "mirage-field-7"
+      ]
+    },
+    {
+      "id": "mirage-field-7",
+      "name": "Mirage Island Field 7 - Guardian's Square",
+      "region": "mirage-island",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/ac/Mirage_Island_Field_7_-_Guardian%27s_Square_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Field_7_-_Guardian%27s_Square.html",
+      "box": [
+        350,
+        65,
+        512,
+        248
+      ],
+      "links": [
+        "mirage-field-4",
+        "mirage-field-6"
+      ]
+    },
+    {
+      "id": "mirage-dungeon-1",
+      "name": "Mirage Island Dungeon 1 - Ocean's End",
+      "region": "mirage-island",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/89/Mirage_Island_Dungeon_1_-_Ocean%27s_End_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Dungeon_1_-_Ocean%27s_End.html",
+      "parent": "mirage-field-1",
+      "links": [
+        "mirage-field-1"
+      ]
+    },
+    {
+      "id": "mirage-dungeon-2",
+      "name": "Mirage Island Dungeon 2 - Deepest Cave",
+      "region": "mirage-island",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6e/Mirage_Island_Dungeon_2_-_Deepest_Cave_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mirage_Island_Dungeon_2_-_Deepest_Cave.html",
+      "parent": "mirage-field-2",
+      "links": [
+        "mirage-field-2"
+      ]
+    },
+    {
+      "id": "gate-of-mermaid-palace",
+      "name": "Gate of Mermaid Palace",
+      "region": "mermaid-palace",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/58/Gate_of_Mermaid_Palace_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Mermaid_Palace.html",
+      "box": [
+        78,
+        322,
+        140,
+        372
+      ],
+      "links": [
+        "mermaid-path-2",
+        "mermaid-field-1",
+        "oops-wharf"
+      ]
+    },
+    {
+      "id": "mermaid-field-1",
+      "name": "Mermaid Palace Field 1 - Water Park",
+      "region": "mermaid-palace",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Mermaid_Palace_Field_1_-_Water_Park_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Palace_Field_1_-_Water_Park.html",
+      "box": [
+        105,
+        322,
+        250,
+        425
+      ],
+      "links": [
+        "gate-of-mermaid-palace",
+        "mermaid-field-2",
+        "gate-of-desert-beach"
+      ]
+    },
+    {
+      "id": "mermaid-field-2",
+      "name": "Mermaid Palace Field 2 - Seaweeds Square",
+      "region": "mermaid-palace",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/47/Mermaid_Palace_Field_2_-_Seaweeds_Square_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Palace_Field_2_-_Seaweeds_Square.html",
+      "box": [
+        250,
+        322,
+        352,
+        425
+      ],
+      "links": [
+        "mermaid-field-1",
+        "mermaid-field-3"
+      ]
+    },
+    {
+      "id": "mermaid-field-3",
+      "name": "Mermaid Palace Field 3 - Coral Square",
+      "region": "mermaid-palace",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/bf/Mermaid_Palace_Field_3_-_Coral_Square_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Palace_Field_3_-_Coral_Square.html",
+      "box": [
+        245,
+        425,
+        345,
+        525
+      ],
+      "links": [
+        "mermaid-field-2",
+        "mermaid-field-4"
+      ]
+    },
+    {
+      "id": "mermaid-field-4",
+      "name": "Mermaid Palace Field 4 - Rock Square",
+      "region": "mermaid-palace",
+      "kind": "field",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c2/Mermaid_Palace_Field_4_-_Rock_Square_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Palace_Field_4_-_Rock_Square.html",
+      "box": [
+        345,
+        425,
+        445,
+        525
+      ],
+      "links": [
+        "mermaid-field-3",
+        "gate-of-mermaid-dungeon"
+      ]
+    },
+    {
+      "id": "gate-of-mermaid-dungeon",
+      "name": "Gate of Mermaid Dungeon",
+      "region": "mermaid-palace",
+      "kind": "gate",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2b/Gate_of_Mermaid_Dungeon_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Gate_of_Mermaid_Dungeon.html",
+      "parent": "mermaid-field-4",
+      "links": [
+        "mermaid-field-4",
+        "oops-wharf",
+        "mermaid-dungeon-1"
+      ]
+    },
+    {
+      "id": "mermaid-dungeon-1",
+      "name": "Mermaid Dungeon 1 - Underworld",
+      "region": "mermaid-palace",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/09/Mermaid_Dungeon_1_-_Underworld_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Dungeon_1_-_Underworld.html",
+      "parent": "mermaid-field-4",
+      "links": [
+        "gate-of-mermaid-dungeon",
+        "mermaid-dungeon-2"
+      ]
+    },
+    {
+      "id": "mermaid-dungeon-2",
+      "name": "Mermaid Dungeon 2 - Legend of the Sea",
+      "region": "mermaid-palace",
+      "kind": "dungeon",
+      "image": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/thumb/3/31/Mermaid_Dungeon_2_-_Legend_of_the_Sea_big.png/500px-Mermaid_Dungeon_2_-_Legend_of_the_Sea_big.png",
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Dungeon_2_-_Legend_of_the_Sea.html",
+      "parent": "mermaid-field-4",
+      "links": [
+        "mermaid-dungeon-1"
+      ]
+    },
+    {
+      "id": "don-giuvanni-secret-room",
+      "name": "Don Giuvanni's Secret Room",
+      "region": "oops-wharf",
+      "kind": "dungeon",
+      "image": null,
+      "page": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Giuvanni%27s_Secret_Room.html",
       "parent": "oops-wharf",
       "links": [
-        "mermaid-path-1"
+        "oops-wharf"
       ]
     }
   ],
@@ -1415,6 +1756,71 @@
     ],
     "Wharf Field 4 - Chrono Wharf": [
       "wharf-field-4"
+    ],
+    "Gate of Mermaid Dungeon": [
+      "gate-of-mermaid-dungeon"
+    ],
+    "Gate of Mirage Island": [
+      "gate-of-mirage"
+    ],
+    "Mirage Island Field 1 - Alteo": [
+      "mirage-field-1"
+    ],
+    "Mirage Island Field 2 - Cliff of Fate": [
+      "mirage-field-2"
+    ],
+    "Mirage Island Field 3 - Fremeia": [
+      "mirage-field-3"
+    ],
+    "Mirage Island Dungeon 1 - Ocean's End": [
+      "mirage-dungeon-1"
+    ],
+    "Mirage Island Dungeon 2 - Deepest Cave": [
+      "mirage-dungeon-2"
+    ],
+    "Mermaid Dungeon 2 - Legend of the Sea": [
+      "mermaid-dungeon-2"
+    ],
+    "Mermaid Palace Field 4 - Rock Square": [
+      "mermaid-field-4"
+    ],
+    "Mermaid Palace Fields & Mermaid Dungeon": [
+      "mermaid-field-1",
+      "mermaid-field-2",
+      "mermaid-field-3",
+      "mermaid-field-4",
+      "mermaid-dungeon-1",
+      "mermaid-dungeon-2"
+    ],
+    "Don Giuvanni's Secret Room": [
+      "don-giuvanni-secret-room"
+    ],
+    "Wharf Field 2 & Field 3": [
+      "wharf-field-2",
+      "wharf-field-3"
+    ],
+    "Mirage Island Field 3 - Fremeia / Dungeon 1 - Ocean's End": [
+      "mirage-field-3",
+      "mirage-dungeon-1"
+    ],
+    "Mirage Island Field 2 - Cliff of Fate / Dungeon 2 - Deepest Cave": [
+      "mirage-field-2",
+      "mirage-dungeon-2"
+    ],
+    "Pyramid Dungeon / Mirage Island Field 1 & 6": [
+      "mirage-field-1",
+      "mirage-field-6",
+      "pyramid-1",
+      "pyramid-2",
+      "pyramid-3",
+      "pyramid-4",
+      "pyramid-5",
+      "pyramid-6"
+    ],
+    "Mirage Island Field 1, 5 & 6": [
+      "mirage-field-1",
+      "mirage-field-5",
+      "mirage-field-6"
     ]
   }
 }

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **Episode 2** (29 quests, 3 chapters: Sword of Vengeance, Song of Memories, Prelude of The Cursed Soul) from the wiki's Episode 2 page, with where every item comes from (monster and map from the monster pages) and the order quests unlock in.
+- New regions on the route maps: **Mirage Island** and **Mermaid Palace** (19 new maps with pictures and portals; the Paths to Mermaid Palace now sit on the Mermaid Palace map).
+
 ## 0.3.0 (2026-11-12): Compact header, no-login reports
 
 - Header is one 60px bar: logo, page tabs, class chip, progress chip (details drop down) and ⚙️ (theme, export / import, report, reset). Expand / Collapse all moved to the Quests page. On phones and small tablets the page tabs are a bottom bar.
