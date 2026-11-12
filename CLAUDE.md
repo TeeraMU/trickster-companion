@@ -64,7 +64,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/friends.js`: the Friends page (needs sign-in). `social/{uid}` { name, code, friends } (owner only)
   and `profiles/{code}` (the short summary friends see: class, path, done/total, area, next quest,
   needs, spares; any signed-in player who knows the code may read it, nobody can list them).
-  The summary is built by `friendSummary()` in index.html and republished a few seconds after changes.
+  The summary is built by `friendSummary()` in index.html and republished a few seconds after changes;
+  it includes the whole Bag (`bag` { item: count }, max 400) for the "👥 friend ×N" lines on item rows.
   Never put anything in a profile that identifies the person (Google name, email, uid in the name).
   Pure helpers tested by `node scripts/test-friends.js`.
 - `data/maps.json`: regions (overview picture), maps (`box` on the 530x540 overview or a `parent`,

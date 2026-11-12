@@ -3339,3 +3339,24 @@ a.btn {
 .friend-focus {
   color: var(--ink-gold);
 }
+
+/* 👥 friends who have an item (item rows in Items to collect and quest cards) */
+.friends-have {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--ink-purple);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.friends-have b {
+  font-weight: 800;
+}
+
+.friends-have-more {
+  padding: 0 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 16%, var(--bg-card));
+}
