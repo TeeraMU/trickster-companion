@@ -67,7 +67,7 @@
   function stepper(item, have) {
     return `<span class="bag-stepper" data-item="${esc(item)}">
       <button type="button" class="bag-step" aria-label="One less ${esc(item)}" onclick="stepHave(this, -1)">−</button>
-      <input type="number" min="0" inputmode="numeric" class="bag-count" value="${have}" aria-label="How many ${esc(item)} you have" onchange="typeHave(this)" />
+      <input type="number" min="0" max="999" inputmode="numeric" class="bag-count" value="${have}" oninput="if (this.value.length > 3) this.value = this.value.slice(0, 3)" aria-label="How many ${esc(item)} you have" onchange="typeHave(this)" />
       <button type="button" class="bag-step" aria-label="One more ${esc(item)}" onclick="stepHave(this, 1)">+</button>
     </span>`;
   }

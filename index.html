@@ -1416,7 +1416,7 @@
 
     function setHave(item, n) {
       if (!item) return;
-      const v = Math.max(0, Math.min(99999, Math.round(Number(n) || 0)));
+      const v = Math.max(0, Math.min(999, Math.round(Number(n) || 0))); // the box fits 3 digits
       if (v) appState.inventory[item] = v; else delete appState.inventory[item];
       saveState();
       renderAll();
