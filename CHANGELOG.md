@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.
+- New loading screen: two characters running while the quests load (fades out when ready; stands still if your device asks for reduced motion).
 
 ## 0.6.1 (2026-11-12): See what friends have, Bag up to 999
 
