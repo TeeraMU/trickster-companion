@@ -1100,11 +1100,10 @@
       "order": 75,
       "title": "Fairy Nono & 4 Arbiters - Card Identification & Trickster Crest (Enlightenment)",
       "categories": [
-        "job",
+        "guardian",
         "card"
       ],
       "chapter": "Megalopolis - General, Card Girl, Monster, Daily & Enlightenment",
-      "area": "Enlightenment",
       "npc": "Fairy Nono & Arbiters of Courage, Wisdom, Dreams, Love",
       "npcIds": [
         "fairy-nono",
@@ -1198,7 +1197,8 @@
           "1x Trickster Certificate",
           "4x Flower of Revival"
         ]
-      }
+      },
+      "tags": []
     }
   ]
 }

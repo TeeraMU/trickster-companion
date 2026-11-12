@@ -911,6 +911,7 @@ select:focus, input:focus {
 .cat-dungeon  { --cat-color: var(--accent-orange); }
 .cat-everyday { --cat-color: var(--accent-green); }
 .cat-job      { --cat-color: var(--accent-cyan); }
+.cat-guardian { --cat-color: var(--accent-gold); }
 
 .tag-level {
   background: var(--bg-tertiary);
@@ -2725,6 +2726,22 @@ a.btn {
   padding: 2px 2px 8px;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
+}
+
+.area-paths {
+  margin-top: 2px;
+}
+
+.area-paths-label {
+  display: block;
+  margin: 0 4px 4px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.area-paths .area-group-btn {
+  flex: 0 0 auto;
 }
 
 .area-hint {

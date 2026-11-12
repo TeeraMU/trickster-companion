@@ -8,7 +8,7 @@ const path = require("path");
 const DATA = path.join(__dirname, "..", "data");
 const read = p => JSON.parse(fs.readFileSync(path.join(DATA, p), "utf8"));
 
-const CATEGORIES = ["episode", "general", "card", "monster", "dungeon", "daily", "key", "sticker", "job"];
+const CATEGORIES = ["episode", "general", "card", "monster", "dungeon", "daily", "key", "sticker", "job", "guardian"];
 const SOURCE_KINDS = ["drop", "drill", "quest", "compound", "shop"];
 const CLASSES = ["bunny", "buffalo", "white-bear", "sheep", "dragon", "fox", "lion", "cat", "raccoon"];
 
@@ -53,6 +53,7 @@ for (const { q, file } of quests) {
 
   for (const k of ["title", "chapter", "npc", "location", "prereqText"]) if (!isStr(q[k])) err(at, `missing ${k}`);
   if ("area" in q && !isStr(q.area)) err(at, "area must be a non-empty text");
+  if ("path" in q && !/^[a-z]+(-[a-z]+)*$/.test(q.path)) err(at, "path must be a lowercase id like \"soul-master\"");
   if (!isInt(q.order, 1)) err(at, "order must be a positive integer");
   if (!isInt(q.minLevel, 1)) err(at, "minLevel must be a positive integer");
   if (!isInt(q.cycles, 1)) err(at, "cycles must be a positive integer");
