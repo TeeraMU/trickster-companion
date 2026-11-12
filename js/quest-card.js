@@ -137,7 +137,7 @@
         <span class="item-icon qc-icon-fallback" aria-hidden="true">⚔️</span>
         <div class="qc-obj-main">
           <div class="qc-obj-name"><strong>Defeat ${esc(h.monster)}</strong> <span class="item-qty-badge">×${h.count}</span></div>
-          <div class="qc-obj-src"><span class="qc-how qc-how-drop">⚔️ Lv.${esc(h.level)}${h.timeLimit ? ` · within ${esc(h.timeLimit)}` : ""}</span> <span class="qc-map">@ ${esc(h.map)}</span></div>
+          <div class="qc-obj-src"><span class="qc-how qc-how-drop">⚔️ ${h.level ? `Lv.${esc(h.level)}` : "Hunt"}${h.timeLimit ? ` · within ${esc(h.timeLimit)}` : ""}</span> <span class="qc-map">@ ${esc(h.map)}</span></div>
         </div>
       </li>`;
   }
