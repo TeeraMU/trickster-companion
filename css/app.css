@@ -3960,3 +3960,33 @@ a.btn {
   place-items: center;
   background: none;
 }
+
+/* quests with more than 5 runs: − / + counter with a small bar instead of one button per run */
+.cycle-stepper {
+  flex-wrap: nowrap;
+}
+
+.cycle-bar {
+  width: 56px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+  margin-right: 2px;
+}
+
+.cycle-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.cycle-stepper .cycle-btn {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.cycle-stepper .cycle-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
