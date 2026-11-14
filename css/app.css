@@ -2345,7 +2345,7 @@ a.btn {
 }
 
 .topbar {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 8px 24px;
   display: flex;
@@ -2684,8 +2684,25 @@ a.btn {
   gap: 8px;
 }
 
+/* six page tabs with names need ~1520px; below that tighten the bar first, then go icon-only */
+@media (max-width: 1560px) {
+  .topbar {
+    gap: 10px;
+    padding-inline: 16px;
+  }
+  .app-header .view-tabs {
+    gap: 2px;
+  }
+  .app-header .view-tab {
+    padding: 7px 9px;
+  }
+  .brand-name .fan-made {
+    display: none;
+  }
+}
+
 /* narrower laptops: tabs show icons only, names on hover */
-@media (max-width: 1180px) {
+@media (max-width: 1400px) {
   .app-header .view-tab .tab-label {
     display: none;
   }
