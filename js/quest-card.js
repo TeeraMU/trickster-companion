@@ -186,6 +186,10 @@
 
     // quests still in the way (Quests page passes ctx.lockedBy; finished quests never show it)
     const blockers = !isDone && ctx.lockedBy ? ctx.lockedBy(q) : [];
+    // quests this one opens (ctx.unlocks: [{ id, title, active }]); "accepted" ones say so
+    const unlocks = ctx.unlocks ? ctx.unlocks(q) : [];
+    // a quest title that jumps to that quest's card (clicks don't fold this card)
+    const questLink = l => `<button type="button" class="qc-link" onclick="event.stopPropagation(); jumpToQuest('${l.id}')" title="Go to this quest">${esc(l.title)}${l.active ? ` <span class="qc-h-note">(once accepted)</span>` : ""}</button>`;
 
     return `
       <div class="quest-card ${isDone ? "completed" : ""} ${isExpanded ? "expanded" : ""}" id="qcard-${q.id}">
@@ -210,7 +214,7 @@
                 <span class="quest-meta-item">🙋 <strong>${esc(q.npc)}</strong></span>
                 <span class="quest-meta-item">📍 ${esc(q.location)}</span>
               </div>
-              ${blockers.length ? `<div class="qc-blocked">🔒 First: ${blockers.map(t => `<strong>${esc(t)}</strong>`).join(" · ")}</div>` : ""}
+              ${blockers.length ? `<div class="qc-blocked">🔒 First: ${blockers.map(questLink).join(" · ")}</div>` : ""}
             </div>
           </div>
           <div class="quest-right">
@@ -229,6 +233,7 @@
             <div class="rewards-wrap">${rewardBits || `<span class="qc-none">—</span>`}</div>
           </div>
         </div>
+        ${unlocks.length ? `<div class="qc-unlocks">🔓 Unlocks: ${unlocks.slice(0, 4).map(questLink).join(" · ")}${unlocks.length > 4 ? ` <span class="qc-h-note">+${unlocks.length - 4} more</span>` : ""}</div>` : ""}
 
         <div class="quest-details">
           <div class="qc-section">
