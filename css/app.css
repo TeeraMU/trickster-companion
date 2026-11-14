@@ -2439,22 +2439,94 @@ a.btn {
 }
 
 .class-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 4px 2px 10px;
   border-radius: 999px;
   background: var(--bg-tertiary);
   border: 1.5px solid var(--border);
 }
 
-.class-chip select {
+.class-pick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px 4px 6px;
   border: none;
+  border-radius: 999px;
   background: transparent;
-  padding: 5px 6px;
+  color: var(--text-primary);
+  font: inherit;
   font-weight: 800;
-  max-width: 150px;
   cursor: pointer;
+}
+
+.class-pick-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.class-pick-label {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.class-pick-caret {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.class-pick-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 60;
+  min-width: 210px;
+  max-height: min(70vh, 460px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 14px;
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.class-pick-list:focus {
+  outline: none;
+}
+
+.class-pick-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.class-pick-list li:hover,
+.class-pick-list li.is-active {
+  background: var(--bg-tertiary);
+}
+
+.class-pick-list li.is-active {
+  outline: 2px solid color-mix(in srgb, var(--accent-blue) 60%, transparent);
+  outline-offset: -2px;
+}
+
+.class-pick-list li.is-on {
+  color: var(--ink-blue, var(--text-primary));
+}
+
+.class-pick-check {
+  margin-left: auto;
+  font-weight: 900;
 }
 
 .progress-chip,
@@ -2747,7 +2819,7 @@ a.btn {
     display: none;
   }
 
-  .class-chip select {
+  .class-pick-label {
     max-width: 92px;
     font-size: 0.78rem;
   }
@@ -3864,4 +3936,27 @@ a.btn {
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-muted);
+}
+
+/* header class chip: job sprite cropped to the head, like the friend avatars */
+.class-chip-icon {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: start center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent-blue) 14%, var(--bg-card));
+}
+
+.class-chip-icon img {
+  height: 44px;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+.class-chip-icon.is-emoji {
+  place-items: center;
+  background: none;
 }
