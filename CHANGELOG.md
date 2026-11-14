@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Friends: a **Share my Bag** switch (on by default). Turn it off and friends no longer see how many of each item you have or your spare items; your class, progress and needs are still shared. Synced with your other devices.
+- Friends: "now in" follows the story first. A new player shows as EP0 (Heidi - Trickster Registration) instead of Desert Beach; once the episodes are done it follows the next key quest as before. The items listed as a friend's needs start from that area too.
 
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
