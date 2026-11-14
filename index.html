@@ -1257,7 +1257,9 @@
       const everything = !!appState.checklistFarmAll;
       const progress = everything ? { completedQuests: {}, completedCycles: {} } : appState;
       const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
-      const farm = TQEpisode.farmList(filtered, progress, statuses);
+      // a filtered-out quest that has to be done first (Magic 1-3 before the sticker quest Magic 4) still counts
+      const plus = TQEpisode.withEarlierQuests(filtered, QUESTS, PREREQS, progress);
+      const farm = TQEpisode.farmList(plus.quests, progress, statuses, plus.earlier);
       const catTabs = selectedCats().map(k => CATEGORY_TABS.find(t => t.key === k)).filter(Boolean);
       const cat = catTabs.length ? { icon: "", label: catTabs.map(t => t.icon + " " + t.label).join(" + ") } : null;
       const grp = AREA_GROUPS.find(g => g.key === (appState.selectedAreaGroup || "all"));
@@ -1272,7 +1274,7 @@
             <button type="button" aria-pressed="${!everything}" onclick="setChecklistFarmAll(false)">Still needed</button>
             <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
           </div>`,
-        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map. Items handed over by earlier quests aren't listed.`,
+        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map.${plus.earlier.size ? ` Also for ${plus.earlier.size} earlier quest${plus.earlier.size === 1 ? "" : "s"} they need done first (↩).` : ""} Items handed over by earlier quests aren't listed.`,
         afterHint: focusBarHtml()
       });
       const pane = appState.checklistPane === "farm" ? "farm" : "quests";
