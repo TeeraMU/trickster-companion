@@ -3990,3 +3990,19 @@ a.btn {
   opacity: 0.4;
   cursor: default;
 }
+
+/* Friends page: "Share my Bag" switch */
+.friends-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 2px;
+  cursor: pointer;
+}
+
+.friends-share input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-green);
+  flex: 0 0 auto;
+}

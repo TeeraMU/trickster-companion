@@ -17,7 +17,8 @@
       pins: Object.assign({}, pins || {}),
       selectedClass: state.selectedClass || "All",
       selectedJobPath: state.selectedJobPath || "",
-      focus: state.focus || null // scope pinned for friends (Friends page)
+      focus: state.focus || null, // scope pinned for friends (Friends page)
+      hideBag: !!state.hideBag // "Share my Bag with friends" switched off
     };
   }
 
@@ -53,7 +54,8 @@
       pins: Object.assign({}, b.pins, a.pins),
       selectedClass: a.selectedClass && a.selectedClass !== "All" ? a.selectedClass : b.selectedClass || "All",
       selectedJobPath: a.selectedJobPath || b.selectedJobPath || "",
-      focus: a.focus || b.focus || null
+      focus: a.focus || b.focus || null,
+      hideBag: !!(a.hideBag || b.hideBag) // private on either copy stays private
     };
   }
 

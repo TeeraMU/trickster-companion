@@ -291,6 +291,10 @@
             <input type="text" name="name" maxlength="20" value="${esc(me.name)}" required>
             <button class="btn" ${busy ? "disabled" : ""}>Save</button>
           </form>
+          <label class="friends-share">
+            <input type="checkbox" ${mine.shareBag !== false ? "checked" : ""} onchange="setShareBag(this.checked)">
+            <span><strong>Share my Bag</strong> <span class="friends-muted">· friends see how many of each item you have and your spares</span></span>
+          </label>
           <form class="friends-form" onsubmit="event.preventDefault(); TQFriends.addFriend(this.code.value); this.code.value=''">
             <span class="friends-label">Add a friend</span>
             <input type="text" name="code" placeholder="TC-XXXX-XX" autocomplete="off" autocapitalize="characters" required>
