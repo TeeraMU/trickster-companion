@@ -58,7 +58,7 @@
 
       <div class="topbar-tools">
         <label class="class-chip" title="My character class: hides quests for other classes">
-          <span aria-hidden="true">🎭</span>
+          <span id="classChipIcon" class="class-chip-icon is-emoji" aria-hidden="true">🎭</span>
           <select id="charClassSelect" aria-label="My character class" onchange="onClassChange(this.value)">
             <option value="All">All classes</option>
             <option value="Bunny">Bunny · Power</option>
@@ -1582,6 +1582,17 @@
       return job ? { url: job.img, name: job.name } : null;
     }
 
+    // Header class chip: the picked 3rd job's sprite, else the class's first job; 🎭 for All classes
+    function renderClassChipIcon() {
+      const el = document.getElementById("classChipIcon");
+      if (!el) return;
+      const path = jobPaths().find(p => p.key === appState.selectedJobPath);
+      const icon = classIcon(appState.selectedClass, path && path.label);
+      el.classList.toggle("is-emoji", !icon);
+      el.innerHTML = icon ? `<img src="${String(icon.url).replace(/["<>&]/g, "")}" alt="" />` : "🎭";
+      el.parentElement.title = "My character class: hides quests for other classes" + (icon ? ` (${icon.name})` : "");
+    }
+
     function friendSummary() {
       const cls = appState.selectedClass || "All";
       const pool = QUESTS.filter(q => matchesClassFilter(q, cls));
@@ -1683,6 +1694,7 @@
 
     function renderAll() {
       STATUS_CACHE = null; // progress may have changed
+      renderClassChipIcon();
       renderBag();
       renderCategoryTabs();
       renderEpisodes();

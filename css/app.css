@@ -3865,3 +3865,26 @@ a.btn {
   font-weight: 600;
   color: var(--text-muted);
 }
+
+/* header class chip: job sprite cropped to the head, like the friend avatars */
+.class-chip-icon {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: start center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent-blue) 14%, var(--bg-card));
+}
+
+.class-chip-icon img {
+  height: 44px;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+.class-chip-icon.is-emoji {
+  place-items: center;
+  background: none;
+}

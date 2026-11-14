@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat).
+
 ## 0.7.2 (2026-11-14): Sticker quests under keys, earlier-quest items, header fix
 
 - Quests page: each zone's sticker quests now sit under the key quest that collects the stickers (🏷️ Sticker quests for this key, with how many are done and how many stickers it needs), instead of in a separate section.
