@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Friends: "now in" follows the story first. A new player shows as EP0 (Heidi - Trickster Registration) instead of Desert Beach; once the episodes are done it follows the next key quest as before. The items listed as a friend's needs start from that area too.
+
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
 - Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).

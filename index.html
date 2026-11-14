@@ -1688,8 +1688,9 @@
       const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
       const st = id => (statuses.get ? statuses.get(id) : statuses[id]);
       const open = pool.filter(q => st(q.id) === "available").sort((a, b) => a.order - b.order);
-      // where they are: the next key quest open to them, else the first open quest in play order
-      const ref = open.find(q => q.categories.includes("Key")) || open[0];
+      // where they are: the next story (Episode) quest open to them, then the next key quest, else the
+      // first open quest in play order. Story first: a new player is in EP0, not at Desert Beach's key.
+      const ref = open.find(q => q.categories.includes("Episode")) || open.find(q => q.categories.includes("Key")) || open[0];
       const short = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "").replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
       const area = a => (/^Episode \d+$/.test(a) ? "EP" + num(a) : a);
       // needs: what the quests open right now still need (what a friend could help with today),
