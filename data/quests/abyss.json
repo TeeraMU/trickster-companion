@@ -1,0 +1,1651 @@
+{
+  "region": "Abyss",
+  "quests": [
+    {
+      "id": "ab-12",
+      "order": 1900,
+      "title": "Hunter Yuri - Abyss Hunter Girl Yuri's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Monster Quests",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Gate of Abyss",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Hunter Yuri at Gate of Abyss.",
+        "Defeat 30x Krybeth (Lv.400) within 20 min in Abyss Field 1 - The Valley Mouth.",
+        "Report back to Hunter Yuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Krybeth",
+          "level": 400,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Abyss Field 1 - The Valley Mouth"
+        }
+      ],
+      "rewards": {
+        "baseExp": 6340545,
+        "tmExp": 946324,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.294~297: 30x Ghost Diver (Lv.405) in 20 min, reward 2x 10,000 Galder Coupon. Lv.298~301: 30x Skelefish (Lv.410) in 20 min, reward 2x 10,000 Galder Coupon. Lv.302+: 30x Phantom Dame (Lv.415) in 15 min, reward 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Abyss_Hunter_Girl_Yuri's_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-01",
+      "order": 1901,
+      "title": "Assistant Hunter - Abyss Assistant Hunter's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Monster Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Gate of Abyss",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ab-12"
+        }
+      ],
+      "prereqText": "Level 290+, have completed at least 1 Abyss Hunter Girl Yuri's Quest",
+      "steps": [
+        "Talk to Assistant Hunter at Gate of Abyss.",
+        "Defeat 20x Skelefish King (Lv.427) within 10 min in Abyss Field 4 - The Crushing Depths.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Skelefish King",
+          "level": 427,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Abyss Field 4 - The Crushing Depths"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4383730,
+        "tmExp": 2289945,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Abyss_Assistant_Hunter's_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-02",
+      "order": 1902,
+      "title": "Captain Stan - Black Box of the Santa Noriho",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Captain Stan",
+      "npcIds": [
+        "captain-stan"
+      ],
+      "location": "Abyss Field 3 - The Dark Hills",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Captain Stan at Abyss Field 3 - The Dark Hills.",
+        "Get 5x Black Box JJ-00H: drilled in Abyss Fields.",
+        "Bring everything back to Captain Stan (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Black Box JJ-00H",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Gift of God",
+          "Cycle 2: 1x Captain Stan Card",
+          "Cycle 3: 1x Gift of God",
+          "Cycle 4: 20x Half Pink Potion",
+          "Cycle 5: 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Black Box JJ-00H is drilled in Abyss Fields. Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Captain_Stan_-_Black_Box_of_the_Santa_Noriho.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-03",
+      "order": 1903,
+      "title": "Copyfish DomDom - Projection Lesson (1)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Abyss Field 1 - The Valley Mouth",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Copyfish DomDom at Abyss Field 1 - The Valley Mouth.",
+        "Get 1x Blank Scroll: dropped by Krybeth (Lv.400) in Abyss Field 1 - The Valley Mouth.",
+        "Get 1x Waterproof Ink: dropped by Skelefish (Lv.410) in Abyss Field 2 - Living Boneyard.",
+        "Bring everything back to Copyfish DomDom (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blank Scroll",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Krybeth (Lv.400)",
+            "map": "Abyss Field 1 - The Valley Mouth"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Waterproof Ink",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Skelefish (Lv.410)",
+            "map": "Abyss Field 2 - Living Boneyard"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Pink Potion",
+          "Cycle 2: 1x Gift of God",
+          "Cycle 3: 20x Half Pink Potion",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Art of Projection (1)"
+        ]
+      },
+      "notes": "Blank Scroll is dropped by Krybeth (Lv.400) and Waterproof Ink is dropped by Skelefish (Lv.410).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Projection_Lesson_(1).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-04",
+      "order": 1904,
+      "title": "Copyfish DomDom - Projection Lesson (2)",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Copyfish DomDom",
+      "npcIds": [
+        "copyfish-domdom"
+      ],
+      "location": "Abyss Field 1 - The Valley Mouth",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ab-03"
+        }
+      ],
+      "prereqText": "Level 290+, have completed Copyfish DomDom - Projection Lesson (1)",
+      "steps": [
+        "Talk to Copyfish DomDom at Abyss Field 1 - The Valley Mouth.",
+        "Get 1x Art of Projection (1): reward from Copyfish DomDom - Projection Lesson (1).",
+        "Get 3x Krybeth Tooth: dropped by Krybeth (Lv.400) in Abyss Field 1 - The Valley Mouth.",
+        "Bring everything back to Copyfish DomDom (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Art of Projection (1)",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Copyfish DomDom - Projection Lesson (1)",
+            "map": "Abyss Field 1 - The Valley Mouth"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Krybeth Tooth",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Krybeth (Lv.400)",
+            "map": "Abyss Field 1 - The Valley Mouth"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Blue Potion + 1x Art of Projection (1)",
+          "Cycle 2: 1x Gift of God + 1x Art of Projection (1)",
+          "Cycle 3: 20x Half Blue Potion + 1x Art of Projection (1)",
+          "Cycle 4: 1x Gift of God + 1x Art of Projection (1)",
+          "Cycle 5: 1x Abyss Sticker + 1x Art of Projection (2)"
+        ]
+      },
+      "notes": "Art of Projection (1) is obtained by completing Copyfish DomDom - Projection Lesson (1). Krybeth Tooth is dropped by Krybeth (Lv.400). Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Copyfish_DomDom_-_Projection_Lesson_(2).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-05",
+      "order": 1905,
+      "title": "Dr. Jelly Head - Dr. Jelly Head's Research (1)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Dr. Jelly Head",
+      "npcIds": [
+        "dr-jelly-head"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Dr. Jelly Head at Abyss Town - Platonia.",
+        "Get 5x Random Part: drilled in Abyss Fields.",
+        "Bring everything back to Dr. Jelly Head (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Random Part",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x 500 Galder Coupon",
+          "Cycle 2: 20x Half Pink Potion",
+          "Cycle 3: 20x Half Blue Potion",
+          "Cycle 4: 20x 500 Galder Coupon",
+          "Cycle 5: 1x Dr. Jelly Head Card"
+        ]
+      },
+      "notes": "Random Part is drilled in Abyss Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Dr._Jelly_Head_-_Dr._Jelly_Head's_Research_(1).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-06",
+      "order": 1906,
+      "title": "Dr. Jelly Head - Dr. Jelly Head's Research (2)",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Dr. Jelly Head",
+      "npcIds": [
+        "dr-jelly-head"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Dr. Jelly Head at Abyss Town - Platonia.",
+        "Get 5x Random Bearing: drilled in Abyss Fields.",
+        "Bring everything back to Dr. Jelly Head (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Random Bearing",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Pink Potion",
+          "Cycle 2: 20x Half Blue Potion",
+          "Cycle 3: 20x 500 Galder Coupon",
+          "Cycle 4: 20x Half Pink Potion",
+          "Cycle 5: 1x Abyss Sticker + 20x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Random Bearing is drilled in Abyss Fields. Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Dr._Jelly_Head_-_Dr._Jelly_Head's_Research_(2).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-07",
+      "order": 1907,
+      "title": "Driller King Marky - Romance of Drilling - Abyss",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Gate of Abyss",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Gate of Abyss.",
+        "Get 1x Weird Abyss Map A: drilled in Abyss Fields.",
+        "Get 1x Weird Abyss Map B: drilled in Abyss Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Abyss Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Abyss Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 713384,
+        "tmExp": 713384,
+        "galder": 0,
+        "items": [
+          "1x Weird Abyss Treasure Map"
+        ]
+      },
+      "notes": "Weird Abyss Map A and Weird Abyss Map B are drilled in Abyss Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Abyss.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-26",
+      "order": 1908,
+      "title": "Stella - Shadow Star 12",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Mind's Eye (Lv.345+)",
+      "npc": "Stella",
+      "npcIds": [
+        "stella"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 345,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 345+, use Mind's Eye",
+      "steps": [
+        "Talk to Stella at Abyss Town - Platonia.",
+        "Get 5x Sealing Gem: dropped by Shadow Channa (Lv.621) in Abyss Field 4 - The Crushing Depths.",
+        "Bring everything back to Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sealing Gem",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Shadow Channa (Lv.621)",
+            "map": "Abyss Field 4 - The Crushing Depths"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 7354680,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.5",
+          "15x Half Pink Potion",
+          "15x Half Blue Potion or Stella's Defense 3"
+        ]
+      },
+      "notes": "Sealing Gem is dropped by Shadow Channa (Lv.621) and Shadow Ghost Diver (Lv.627).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stella_-_Shadow_Star_12.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-08",
+      "order": 1909,
+      "title": "Eclipse - The Story of the Gods 12",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Mind's Eye (Lv.345+)",
+      "npc": "Eclipse",
+      "npcIds": [
+        "eclipse"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 345,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "tp-40"
+        },
+        {
+          "quest": "ab-26"
+        }
+      ],
+      "prereqText": "Level 345+, use Mind's Eye, have completed The Story of the Gods 11 and have completed Shadow Star 12 at least once",
+      "steps": [
+        "Talk to Eclipse at Abyss Town - Platonia.",
+        "Get 2x Shadow Rust Emerald: dropped by Abyss shadow monsters (seen with Mind's Eye) in Abyss.",
+        "Get 2x Shadow Azure Topaz: dropped by Abyss shadow monsters (seen with Mind's Eye) in Abyss.",
+        "Bring everything back to Eclipse."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shadow Rust Emerald",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Abyss shadow monsters (seen with Mind's Eye)",
+            "map": "Abyss"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Shadow Azure Topaz",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Abyss shadow monsters (seen with Mind's Eye)",
+            "map": "Abyss"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 22380019,
+        "tmExp": 11524771,
+        "galder": 0,
+        "items": [
+          "6x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Shadow Rust Emerald and Shadow Azure Topaz are dropped by Shadow Abyss Field Monsters.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Eclipse_-_The_Story_of_the_Gods_12.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-09",
+      "order": 1910,
+      "title": "Explorer Reina - Treasure Hunting 1 - Abyss",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 160+, , have completed Indiana John - Old Man's Dream, haven't Worn Abyss Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Abyss Town - Platonia.",
+        "Get 1x Worn Abyss Map A: drilled in Abyss Fields.",
+        "Get 1x Worn Abyss Map B: drilled in Abyss Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Abyss Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Abyss Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Abyss Treasure Map"
+        ]
+      },
+      "notes": "Worn Abyss Map A and Worn Abyss Map B are drilled in Abyss Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Abyss.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-10",
+      "order": 1911,
+      "title": "Explorer Reina - Treasure Hunting 2 - Abyss",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "ab-09"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Abyss 50 times, haven't Old Abyss Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Abyss Town - Platonia.",
+        "Get 1x Old Abyss Map A: drilled in Abyss Fields.",
+        "Get 1x Old Abyss Map B: drilled in Abyss Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Abyss Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Abyss Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 713384,
+        "tmExp": 713384,
+        "galder": 0,
+        "items": [
+          "1x Old Abyss Treasure Map"
+        ]
+      },
+      "notes": "Old Abyss Map A and Old Abyss Map B are drilled in Abyss Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Abyss.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-11",
+      "order": 1912,
+      "title": "Granpa Jelly Head - Granpa Jelly Head's Worries",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Granpa Jelly Head",
+      "npcIds": [
+        "granpa-jelly-head"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 290,
+      "cycles": 3,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Granpa Jelly Head at Abyss Town - Platonia.",
+        "Get 5x Blank Scroll: dropped by Krybeth (Lv.400) in Abyss Field 1 - The Valley Mouth.",
+        "Get 3x Waterproof Ink: dropped by Skelefish (Lv.410) in Abyss Field 2 - Living Boneyard.",
+        "Bring everything back to Granpa Jelly Head (repeat 3 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blank Scroll",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Krybeth (Lv.400)",
+            "map": "Abyss Field 1 - The Valley Mouth"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Waterproof Ink",
+          "qty": 3,
+          "source": {
+            "kind": "drop",
+            "from": "Skelefish (Lv.410)",
+            "map": "Abyss Field 2 - Living Boneyard"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 13008853,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Pink Potion",
+          "Cycle 2: 20x Half Blue Potion",
+          "Cycle 3: 1x Abyss Sticker + 1x Gift of God"
+        ]
+      },
+      "notes": "Blank Scroll is dropped by Krybeth (Lv.400) and Waterproof Ink is dropped by Skelefish (Lv.410). Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Granpa_Jelly_Head_-_Granpa_Jelly_Head's_Worries.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-13",
+      "order": 1913,
+      "title": "Jill Jelly Head - Potion of Bravery",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Jill Jelly Head",
+      "npcIds": [
+        "jill-jelly-head"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 290,
+      "cycles": 3,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Jill Jelly Head at Abyss Town - Platonia.",
+        "Get 3x Giant Octopus Leg: drilled in Abyss Fields.",
+        "Get 3x Sea Whale Sinew: drilled in Abyss Fields.",
+        "Bring everything back to Jill Jelly Head (repeat 3 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Giant Octopus Leg",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sea Whale Sinew",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 13008853,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x 500 Galder Coupon",
+          "Cycle 2: 1x Gift of God",
+          "Cycle 3: 1x Abyss Sticker + 20x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Giant Octopus Leg and Sea Whale Sinew are drilled in Abyss Fields. Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Jill_Jelly_Head_-_Potion_of_Bravery.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-14",
+      "order": 1914,
+      "title": "Jim Jelly Head - Preparing for Battle",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Jim Jelly Head",
+      "npcIds": [
+        "jim-jelly-head"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Jim Jelly Head at Abyss Town - Platonia.",
+        "Get 5x Sharp Bone: dropped by Skelefish (Lv.410) in Abyss Field 2 - Living Boneyard.",
+        "Bring everything back to Jim Jelly Head (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sharp Bone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Skelefish (Lv.410)",
+            "map": "Abyss Field 2 - Living Boneyard"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x 500 Galder Coupon",
+          "Cycle 2: 20x Half Pink Potion",
+          "Cycle 3: 20x Half Blue Potion",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Abyss Sticker + 20x Half Pink Potion"
+        ]
+      },
+      "notes": "Sharp Bone is dropped by Skelefish (Lv.410). Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Jim_Jelly_Head_-_Preparing_for_Battle.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-15",
+      "order": 1915,
+      "title": "Louis Bitton - Fashion Ideas for Jill Jelly Head",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Louis Bitton",
+      "npcIds": [
+        "louis-bitton"
+      ],
+      "location": "Abyss Field 3 - The Dark Hills",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Louis Bitton at Abyss Field 3 - The Dark Hills.",
+        "Get 10x Sea Whale Fluff: drilled in Abyss Fields.",
+        "Get 2x Sea Whale Leather: drilled in Abyss Fields.",
+        "Get 1x Sea Whale Bone Needle: drilled in Abyss Fields.",
+        "Get 2x Sea Whale Sinew: drilled in Abyss Fields.",
+        "Bring everything back to Louis Bitton (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sea Whale Fluff",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sea Whale Leather",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sea Whale Bone Needle",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sea Whale Sinew",
+          "qty": 2,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Sheer Leather Dress",
+          "Cycle 2: 1x Sheer Leather Dress",
+          "Cycle 3: 1x Sheer Leather Dress",
+          "Cycle 4: 1x Sheer Leather Dress + 1x Louis Bitton Card",
+          "Cycle 5: 1x Sheer Leather Dress + 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Sea Whale Fluff, Sea Whale Leather, Sea Whale Bone Needle and Sea Whale Sinew are drilled in Abyss Fields. Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Louis_Bitton_-_Fashion_Ideas_for_Jill_Jelly_Head.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-16",
+      "order": 1916,
+      "title": "Love Hunter Robin - Abyss Love Hunter Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Gate of Abyss",
+      "minLevel": 260,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 260+",
+      "steps": [
+        "Talk to Love Hunter Robin at Gate of Abyss.",
+        "Defeat 30x Krybeth King (Lv.418) within 20 min in Abyss Field 3 - The Dark Hills.",
+        "Report back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Krybeth King",
+          "level": 418,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Abyss Field 3 - The Dark Hills"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3217501,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.295+: 30x Phantom Witch (Lv.430) in 20 min, reward 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Abyss_Love_Hunter_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-17",
+      "order": 1917,
+      "title": "Madam Sarah - Daily Quest - Abyss",
+      "categories": [
+        "daily"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Daily",
+      "npc": "Madam Sarah",
+      "npcIds": [
+        "madam-sarah"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 290,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Madam Sarah at Abyss Town - Platonia.",
+        "Get 5x Random Part: drilled in Abyss Fields.",
+        "Get 5x Random Bearing: drilled in Abyss Fields.",
+        "Bring everything back to Madam Sarah."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Random Part",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Random Bearing",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 5721682,
+        "galder": 0,
+        "items": [
+          "1x Daily Coupon",
+          "15x Herb Potion",
+          "15x Gold Pearl Potion",
+          "50x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Random Part and Random Bearing are drilled in Abyss Fields. In next season the request will be Gasoline.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Madam_Sarah_-_Daily_Quest_-_Abyss.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-18",
+      "order": 1918,
+      "title": "Marinel - The Best Kind of Fuel",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Marinel",
+      "npcIds": [
+        "marinel"
+      ],
+      "location": "Abyss Field 2 - Living Boneyard",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Marinel at Abyss Field 2 - Living Boneyard.",
+        "Get 3x Hydelite: drilled in Abyss Fields.",
+        "Bring everything back to Marinel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Hydelite",
+          "qty": 3,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Blue Potion + 20x 500 Galder Coupon",
+          "Cycle 2: 1x Gift of God",
+          "Cycle 3: 20x Half Blue Potion + 20x 500 Galder Coupon",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Hydelite is drilled in Abyss Fields. Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Marinel_-_The_Best_Kind_of_Fuel.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-19",
+      "order": 1919,
+      "title": "Mermaid Babe - Mermaid Babe's Ocean Diet (1)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Mermaid Babe",
+      "npcIds": [
+        "mermaid-babe"
+      ],
+      "location": "Abyss Field 2 - Living Boneyard",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Mermaid Babe at Abyss Field 2 - Living Boneyard.",
+        "Get 1x Golden Concoction: dropped by Phantom Dame (Lv.415) in Abyss Field 2 - Living Boneyard.",
+        "Bring everything back to Mermaid Babe (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Concoction",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Phantom Dame (Lv.415)",
+            "map": "Abyss Field 2 - Living Boneyard"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x Gift of God",
+          "Cycle 2: 20x Half Pink Potion",
+          "Cycle 3: 1x Gift of God",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Gift of God"
+        ]
+      },
+      "notes": "Golden Concoction is dropped by Phantom Dame (Lv.415)",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Babe_-_Mermaid_Babe's_Ocean_Diet_(1).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-20",
+      "order": 1920,
+      "title": "Mermaid Babe - Mermaid Babe's Ocean Diet (2)",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Mermaid Babe",
+      "npcIds": [
+        "mermaid-babe"
+      ],
+      "location": "Abyss Field 2 - Living Boneyard",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ab-19"
+        }
+      ],
+      "prereqText": "Level 290+, have completed Mermaid Babe's Ocean Diet (1)",
+      "steps": [
+        "Talk to Mermaid Babe at Abyss Field 2 - Living Boneyard.",
+        "Get 1x Sheer Leather Dress: reward from Louis Bitton - Fashion Ideas for Jill Jelly Head.",
+        "Bring everything back to Mermaid Babe (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sheer Leather Dress",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Louis Bitton - Fashion Ideas for Jill Jelly Head",
+            "map": "Abyss Field 3 - The Dark Hills"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Blue Potion",
+          "Cycle 2: 20x Half Blue Potion",
+          "Cycle 3: 1x Gift of God",
+          "Cycle 4: 20x 500 Galder Coupon",
+          "Cycle 5: 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Sheer Leather Dress is obtained by completing Fashion Ideas for Jill Jelly Head. Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mermaid_Babe_-_Mermaid_Babe's_Ocean_Diet_(2).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-21",
+      "order": 1921,
+      "title": "Monkey T - Monkey T's Business (7)",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Abyss Field 4 - The Crushing Depths",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Monkey T at Abyss Field 4 - The Crushing Depths.",
+        "Get 10x Fake Eyeball: dropped by Ghost Diver (Lv.405) in Abyss Field 1 - The Valley Mouth.",
+        "Bring everything back to Monkey T (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fake Eyeball",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Ghost Diver (Lv.405)",
+            "map": "Abyss Field 1 - The Valley Mouth"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Blue Potion",
+          "Cycle 2: 1x Gift of God",
+          "Cycle 3: 20x Half Blue Potion",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Fake Eyeball is dropped by Ghost Diver (Lv.405). Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Business_(7).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-22",
+      "order": 1922,
+      "title": "Monkey T - Monkey T's Business (8)",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Abyss Field 4 - The Crushing Depths",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ab-21"
+        }
+      ],
+      "prereqText": "290+, have completed Monkey T's Business (7)",
+      "steps": [
+        "Talk to Monkey T at Abyss Field 4 - The Crushing Depths.",
+        "Get 5x Sharp Bone: dropped by Skelefish (Lv.410) in Abyss Field 2 - Living Boneyard.",
+        "Bring everything back to Monkey T (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sharp Bone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Skelefish (Lv.410)",
+            "map": "Abyss Field 2 - Living Boneyard"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Pink Potion",
+          "Cycle 2: 1x Gift of God",
+          "Cycle 3: 1x Monkey T Card",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Sharp Bone is dropped by Skelefish (Lv.410). Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Business_(8).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-23",
+      "order": 1923,
+      "title": "Monkey T - Monkey T's Request (12)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Abyss Field 1 - The Valley Mouth",
+      "minLevel": 290,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Monkey T at Abyss Field 1 - The Valley Mouth.",
+        "Get 10x Eternal Bestial Grass: dropped by Ghost Diver (Lv.405) in Abyss Field 1 - The Valley Mouth.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Bestial Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Ghost Diver (Lv.405)",
+            "map": "Abyss Field 1 - The Valley Mouth"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 3715343,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Bestial Grass is dropped by Ghost Diver (Lv.405).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request_(12).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-24",
+      "order": 1924,
+      "title": "Shaman Girl Jia - Dark Spirit Punishment 12",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Abyss - Mind's Eye (Lv.345+)",
+      "npc": "Shaman Girl Jia",
+      "npcIds": [
+        "shaman-girl-jia"
+      ],
+      "location": "Abyss Town - Platonia",
+      "minLevel": 345,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 345+, use Mind's Eye",
+      "steps": [
+        "Talk to Shaman Girl Jia at Abyss Town - Platonia.",
+        "Defeat 3x Shadow Krybeth (Lv.624) within 12 min in Abyss Field 1 / 3.",
+        "Report back to Shaman Girl Jia."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Shadow Krybeth",
+          "level": 624,
+          "count": 3,
+          "timeLimit": "12 min",
+          "map": "Abyss Field 1 / 3"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4248742,
+        "tmExp": 625121,
+        "galder": 0,
+        "items": [
+          "10x Half Pink Potion",
+          "10x Half Blue Potion"
+        ]
+      },
+      "notes": "At other levels: Lv.349+: 3x Shadow Skelefish (Lv.630) in 12 min, reward 10x Half Pink Potion, 10x Half Blue Potion.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Shaman_Girl_Jia_-_Dark_Spirit_Punishment_12.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ab-25",
+      "order": 1925,
+      "title": "Sophia - Special Octopus Dish",
+      "categories": [
+        "sticker",
+        "general"
+      ],
+      "tags": [
+        "sticker"
+      ],
+      "chapter": "Abyss - Sticker Quests",
+      "npc": "Sophia",
+      "npcIds": [
+        "sophia"
+      ],
+      "location": "Abyss Field 1 - The Valley Mouth",
+      "minLevel": 290,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 290+",
+      "steps": [
+        "Talk to Sophia at Abyss Field 1 - The Valley Mouth.",
+        "Get 5x Giant Octopus Leg: drilled in Abyss Fields.",
+        "Get 1x Golden Concoction: dropped by Phantom Dame (Lv.415) in Abyss Field 2 - Living Boneyard.",
+        "Bring everything back to Sophia (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Giant Octopus Leg",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Abyss Fields (drill depth not on the wiki)",
+            "map": "Abyss Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Golden Concoction",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Phantom Dame (Lv.415)",
+            "map": "Abyss Field 2 - Living Boneyard"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 12602326,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 20x Half Pink Potion",
+          "Cycle 2: 1x Gift of God",
+          "Cycle 3: 1x Sophia Card",
+          "Cycle 4: 1x Gift of God",
+          "Cycle 5: 1x Abyss Sticker"
+        ]
+      },
+      "notes": "Giant Octopus Leg is drilled in Abyss Fields and Golden Concoction is dropped by Phantom Dame (Lv.415) Gives an Abyss Sticker.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sophia_-_Special_Octopus_Dish.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

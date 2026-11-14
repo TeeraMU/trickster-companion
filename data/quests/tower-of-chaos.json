@@ -1,0 +1,3882 @@
+{
+  "region": "Tower of Chaos",
+  "quests": [
+    {
+      "id": "toc-01",
+      "order": 2000,
+      "title": "Developer Project Manager L - Investigating Committee Work",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Developer Project Manager L",
+      "npcIds": [
+        "developer-project-manager-l"
+      ],
+      "location": "Tower of Chaos Entrance (1st Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Developer Project Manager L at Tower of Chaos Entrance (1st Floor).",
+        "Talk to Part-Timer G on Tower of Chaos 2nd Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 200,
+        "tmExp": 200,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_Project_Manager_L_-_Investigating_Committee_Work.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-02",
+      "order": 2001,
+      "title": "Developer Project Manager L - Poirot Entrance Promise",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Developer Project Manager L",
+      "npcIds": [
+        "developer-project-manager-l"
+      ],
+      "location": "Tower of Chaos Entrance (1st Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-37",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Poirot - Issue the Tower of Chaos Entrance Pass in quest log",
+      "steps": [
+        "Talk to Developer Project Manager L at Tower of Chaos Entrance (1st Floor).",
+        "Get 1x Mercenary Contract: reward from Wandering Warrior Tan - Mercenary Contract Stage 3 Test.",
+        "Bring everything back to Developer Project Manager L."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mercenary Contract",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Wandering Warrior Tan - Mercenary Contract Stage 3 Test",
+            "map": "Relics Field 1 - Atlas"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 407815,
+        "tmExp": 492160,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Mercenary Contract is obtained by completing Wandering Warrior Tan - Mercenary Contract Stage 3 Test.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_Project_Manager_L_-_Poirot_Entrance_Promise.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-04",
+      "order": 2002,
+      "title": "Don Giuvanni - Take the Mysterious Video Disk",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Tower of Chaos 6th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Don Giuvanni at Tower of Chaos 6th Floor.",
+        "Get 1x Mysterious Video CD: dropped by Win64 Worm (Lv.102) in Tower of Chaos 6th Floor.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mysterious Video CD",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win64 Worm (Lv.102)",
+            "map": "Tower of Chaos 6th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4949668,
+        "tmExp": 2691126,
+        "galder": 0,
+        "items": [
+          "1x Don Giuvanni's Action Log"
+        ]
+      },
+      "notes": "Mysterious Video CD is dropped by Win64 Worm (Lv.102).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Giuvanni_-_Take_the_Mysterious_Video_Disk.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-03",
+      "order": 2003,
+      "title": "Don Giuvanni - Deliver the Action Log Info",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Tower of Chaos 6th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-04"
+        }
+      ],
+      "prereqText": "Have completed Don Giuvanni - Take the Mysterious Video Disk",
+      "steps": [
+        "Talk to Don Giuvanni at Tower of Chaos 6th Floor.",
+        "Give Don Giuvanni's Action Log to Developer Project Manager L on the Tower of Chaos 7th Floor (Safe Floor)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 100,
+        "tmExp": 100,
+        "galder": 0,
+        "items": [
+          "1x Requiem Marble"
+        ]
+      },
+      "notes": "Don Giuvanni's Action Log is obtained by completing Don Giuvanni - Take the Mysterious Video Disk.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Giuvanni_-_Deliver_the_Action_Log_Info.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-05",
+      "order": 2004,
+      "title": "Intern G - Collect Chaos Integer.26Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Intern G",
+      "npcIds": [
+        "intern-g"
+      ],
+      "location": "Tower of Chaos 26th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Intern G at Tower of Chaos 26th Floor.",
+        "Get 50x Chaos Integer.26Byte: dropped by Corrupt Freyr (Lv.202) in Tower of Chaos 26th Floor.",
+        "Bring everything back to Intern G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.26Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Freyr (Lv.202)",
+            "map": "Tower of Chaos 26th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 716836,
+        "tmExp": 615868,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.26Byte is dropped by Corrupt Freyr (Lv.202) and Chaos Freyr (Lv.204).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Intern_G_-_Collect_Chaos_Integer.26Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-06",
+      "order": 2005,
+      "title": "Intern G - Collect Chaos Integer.32Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Intern G",
+      "npcIds": [
+        "intern-g"
+      ],
+      "location": "Tower of Chaos 32nd Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Intern G at Tower of Chaos 32nd Floor.",
+        "Get 50x Chaos Integer.32Byte: dropped by Corrupt Bone Fighter (Lv.227) in Tower of Chaos 32nd Floor.",
+        "Bring everything back to Intern G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.32Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Bone Fighter (Lv.227)",
+            "map": "Tower of Chaos 32nd Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 936354,
+        "tmExp": 733020,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.32Byte is dropped by Corrupt Bone Fighter (Lv.227) and Chaos Bone Fighter (Lv.229).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Intern_G_-_Collect_Chaos_Integer.32Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-07",
+      "order": 2006,
+      "title": "Intern G - Collect Chaos Integer.36Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Intern G",
+      "npcIds": [
+        "intern-g"
+      ],
+      "location": "Tower of Chaos 36th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Intern G at Tower of Chaos 36th Floor.",
+        "Get 50x Chaos Integer.36Byte: dropped by Corrupt Freyja (Lv.242) in Tower of Chaos 36th Floor.",
+        "Bring everything back to Intern G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.36Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Freyja (Lv.242)",
+            "map": "Tower of Chaos 36th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1133419,
+        "tmExp": 771889,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.36Byte is dropped by Corrupt Freyja (Lv.242) and Chaos Freyja (Lv.244).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Intern_G_-_Collect_Chaos_Integer.36Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-08",
+      "order": 2007,
+      "title": "Intern G - Collect Chaos Integer.48Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Intern G",
+      "npcIds": [
+        "intern-g"
+      ],
+      "location": "Tower of Chaos 48th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Intern G at Tower of Chaos 48th Floor.",
+        "Get 50x Chaos Integer.48Byte: dropped by Corrupt Queen Mummy (Lv.307) in Tower of Chaos 48th Floor.",
+        "Bring everything back to Intern G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.48Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Queen Mummy (Lv.307)",
+            "map": "Tower of Chaos 48th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1709595,
+        "tmExp": 1093042,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.48Byte is dropped by Corrupt Queen Mummy (Lv.307) and Chaos Queen Mummy (Lv.309).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Intern_G_-_Collect_Chaos_Integer.48Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-09",
+      "order": 2008,
+      "title": "Part-Timer G - Collect Chaos Integer.16Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Part-Timer G",
+      "npcIds": [
+        "part-timer-g"
+      ],
+      "location": "Tower of Chaos 16th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Part-Timer G at Tower of Chaos 16th Floor.",
+        "Get 50x Chaos Integer.16Byte: dropped by Corrupt Goma (Lv.162) in Tower of Chaos 16th Floor.",
+        "Bring everything back to Part-Timer G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.16Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Goma (Lv.162)",
+            "map": "Tower of Chaos 16th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 446539,
+        "tmExp": 519898,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.16Byte is dropped by Corrupt Goma (Lv.162) and Chaos Goma (Lv.164).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Part-Timer_G_-_Collect_Chaos_Integer.16Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-10",
+      "order": 2009,
+      "title": "Part-Timer G - Collect Chaos Integer.18Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Part-Timer G",
+      "npcIds": [
+        "part-timer-g"
+      ],
+      "location": "Tower of Chaos 18th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Part-Timer G at Tower of Chaos 18th Floor.",
+        "Get 50x Chaos Integer.18Byte: dropped by Corrupt King Mole (Lv.172) in Tower of Chaos 18th Floor.",
+        "Bring everything back to Part-Timer G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.18Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt King Mole (Lv.172)",
+            "map": "Tower of Chaos 18th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 513179,
+        "tmExp": 555393,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.18Byte is dropped by Corrupt King Mole (Lv.172) and Chaos King Mole (Lv.174).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Part-Timer_G_-_Collect_Chaos_Integer.18Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-11",
+      "order": 2010,
+      "title": "Part-Timer G - Collect Chaos Integer.2Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Part-Timer G",
+      "npcIds": [
+        "part-timer-g"
+      ],
+      "location": "Tower of Chaos 2nd Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Part-Timer G at Tower of Chaos 2nd Floor.",
+        "Get 50x Chaos Integer.2Byte: dropped by Corrupt Scarab (Lv.102) in Tower of Chaos 2nd Floor.",
+        "Bring everything back to Part-Timer G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.2Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Scarab (Lv.102)",
+            "map": "Tower of Chaos 2nd Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 184349,
+        "tmExp": 422620,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.2Byte is dropped by Corrupt Scarab (Lv.102) and Chaos Scarab (Lv.104).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Part-Timer_G_-_Collect_Chaos_Integer.2Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-12",
+      "order": 2011,
+      "title": "Part-Timer G - Collect Chaos Integer.4Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Part-Timer G",
+      "npcIds": [
+        "part-timer-g"
+      ],
+      "location": "Tower of Chaos 4th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Part-Timer G at Tower of Chaos 4th Floor.",
+        "Get 50x Chaos Integer.4Byte: dropped by Corrupt Thief Mole (Lv.112) in Tower of Chaos 3rd Floor / Tower of Chaos 4th Floor.",
+        "Bring everything back to Part-Timer G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.4Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Thief Mole (Lv.112)",
+            "map": "Tower of Chaos 3rd Floor / Tower of Chaos 4th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 227355,
+        "tmExp": 428295,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.4Byte is dropped by Corrupt Thief Mole (Lv.112) and Chaos Thief Mole (Lv.114).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Part-Timer_G_-_Collect_Chaos_Integer.4Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-13",
+      "order": 2012,
+      "title": "Part-Timer G - Collect Chaos Integer.8Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Part-Timer G",
+      "npcIds": [
+        "part-timer-g"
+      ],
+      "location": "Tower of Chaos 8th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Part-Timer G at Tower of Chaos 8th Floor.",
+        "Get 50x Chaos Integer.8Byte: dropped by Corrupt Xeper (Lv.127) in Tower of Chaos 6th Floor / Tower of Chaos 8th Floor.",
+        "Bring everything back to Part-Timer G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.8Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Xeper (Lv.127)",
+            "map": "Tower of Chaos 6th Floor / Tower of Chaos 8th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 300687,
+        "tmExp": 500454,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.8Byte is dropped by Corrupt Xeper (Lv.127) and Chaos Xeper (Lv.129).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Part-Timer_G_-_Collect_Chaos_Integer.8Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-14",
+      "order": 2013,
+      "title": "Poirot - 12th Floor Dimensional Gap Investigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 12th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Warrior Tan - Deliver the Completed 2nd Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 12th Floor.",
+        "Defeat 1x Requiem Grudge (Lv.194) within 5 min in 12F Chaotic Space.",
+        "Report back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Grudge",
+          "level": 194,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "12F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 11201643,
+        "tmExp": 3097476,
+        "galder": 0,
+        "items": [
+          "1x Stage 1 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 13th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_12th_Floor_Dimensional_Gap_Investigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-15",
+      "order": 2014,
+      "title": "Poirot - 12th Floor Dimensional Gap Reinvestigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 12th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-14"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 12th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 12th Floor.",
+        "Defeat 1x Requiem Grudge (Lv.194) within 5 min in 12F Chaotic Space.",
+        "Report back to Poirot (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Grudge",
+          "level": 194,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "12F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 751658,
+        "tmExp": 323319,
+        "galder": 0,
+        "items": [
+          "1x Stage 1 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 13th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_12th_Floor_Dimensional_Gap_Reinvestigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-16",
+      "order": 2015,
+      "title": "Poirot - 24th Floor Dimensional Gap Investigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 24th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 4th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 24th Floor.",
+        "Defeat 1x Requiem Spirit (Lv.297) within 5 min in 24F Chaotic Space.",
+        "Report back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Spirit",
+          "level": 297,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "24F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 22521435,
+        "tmExp": 4171658,
+        "galder": 0,
+        "items": [
+          "1x Stage 2 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 25th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_24th_Floor_Dimensional_Gap_Investigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-17",
+      "order": 2016,
+      "title": "Poirot - 24th Floor Dimensional Gap Reinvestigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 24th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-16"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 24th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 24th Floor.",
+        "Defeat 1x Requiem Spirit (Lv.297) within 5 min in 24F Chaotic Space.",
+        "Report back to Poirot (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Spirit",
+          "level": 297,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "24F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1654636,
+        "tmExp": 476760,
+        "galder": 0,
+        "items": [
+          "1x Stage 2 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 25th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_24th_Floor_Dimensional_Gap_Reinvestigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-47",
+      "order": 2017,
+      "title": "Wandering Warrior Tan - Deliver the Completed 6th Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 36th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 36th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 36th Floor.",
+        "Give Completed 6th Survey Notebook to Poirot on the Tower of Chaos 36th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3800,
+        "tmExp": 3800,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Completed 6th Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 36th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Deliver_the_Completed_6th_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-18",
+      "order": 2018,
+      "title": "Poirot - 36th Floor Dimensional Gap Investigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 36th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-47"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 6th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 36th Floor.",
+        "Defeat 1x Requiem Body (Lv.400) within 5 min in 36F Chaotic Space.",
+        "Report back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Body",
+          "level": 400,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "36F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 38884216,
+        "tmExp": 6147840,
+        "galder": 0,
+        "items": [
+          "1x Stage 3 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 37th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_36th_Floor_Dimensional_Gap_Investigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-19",
+      "order": 2019,
+      "title": "Poirot - 36th Floor Dimensional Gap Reinvestigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 36th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-18"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 36th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 36th Floor.",
+        "Defeat 1x Requiem Body (Lv.400) within 5 min in 36F Chaotic Space.",
+        "Report back to Poirot (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Body",
+          "level": 400,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "36F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3523627,
+        "tmExp": 866612,
+        "galder": 0,
+        "items": [
+          "1x Stage 3 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 37th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_36th_Floor_Dimensional_Gap_Reinvestigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-20",
+      "order": 2020,
+      "title": "Poirot - 48th Floor Dimensional Gap Investigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 48th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 8th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 48th Floor.",
+        "Defeat 1x Requiem Core (Lv.503) within 5 min in 48F Chaotic Space.",
+        "Report back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Core",
+          "level": 503,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "48F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 61007341,
+        "tmExp": 9030180,
+        "galder": 0,
+        "items": [
+          "1x Stage 4 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 49th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_48th_Floor_Dimensional_Gap_Investigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-21",
+      "order": 2021,
+      "title": "Poirot - 48th Floor Dimensional Gap Reinvestigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 48th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-20"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 48th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 48th Floor.",
+        "Defeat 1x Requiem Core (Lv.503) within 5 min in 48F Chaotic Space.",
+        "Report back to Poirot (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Core",
+          "level": 503,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "48F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 5480731,
+        "tmExp": 1261939,
+        "galder": 0,
+        "items": [
+          "1x Stage 4 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 49th Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_48th_Floor_Dimensional_Gap_Reinvestigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-22",
+      "order": 2022,
+      "title": "Poirot - 60th Floor Dimensional Gap Investigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 60th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 10th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 60th Floor.",
+        "Defeat 1x Requiem Identity (Lv.666) within 5 min in 60F Chaotic Space.",
+        "Report back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Identity",
+          "level": 666,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "60F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 89605392,
+        "tmExp": 13073786,
+        "galder": 0,
+        "items": [
+          "1x Stage 5 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 61st Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_60th_Floor_Dimensional_Gap_Investigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-23",
+      "order": 2023,
+      "title": "Poirot - 60th Floor Dimensional Gap Reinvestigation",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 60th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-22"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 60th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 60th Floor.",
+        "Defeat 1x Requiem Identity (Lv.666) within 5 min in 60F Chaotic Space.",
+        "Report back to Poirot (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Requiem Identity",
+          "level": 666,
+          "count": 1,
+          "timeLimit": "5 min",
+          "map": "60F Chaotic Space"
+        }
+      ],
+      "rewards": {
+        "baseExp": 11323459,
+        "tmExp": 2569977,
+        "galder": 0,
+        "items": [
+          "1x Stage 5 Requiem Box"
+        ]
+      },
+      "notes": "You finish this quest by talking with Poirot in Tower of Chaos 61st Floor (Safe Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_60th_Floor_Dimensional_Gap_Reinvestigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-24",
+      "order": 2024,
+      "title": "Poirot - Defeat Outraged Requiem",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 72nd Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 12th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 72nd Floor.",
+        "Defeat 1x Outraged Requiem (Lv.769) in Tower of Chaos 72nd Floor.",
+        "Report back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Outraged Requiem",
+          "level": 769,
+          "count": 1,
+          "map": "Tower of Chaos 72nd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 166142361,
+        "tmExp": 24978893,
+        "galder": 0,
+        "items": [
+          "1x Stage 6 Requiem Box"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Defeat_Outraged_Requiem.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-25",
+      "order": 2025,
+      "title": "Poirot - Deliver the 14th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 13th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-14"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 12th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 13th Floor (Safe Floor).",
+        "Give 14F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 14th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1500,
+        "tmExp": 1500,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "14F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_14th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-26",
+      "order": 2026,
+      "title": "Poirot - Deliver the 20th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 19th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 3rd Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 19th Floor (Safe Floor).",
+        "Give 20F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 20th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 2100,
+        "tmExp": 2100,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "20F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_20th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-27",
+      "order": 2027,
+      "title": "Poirot - Deliver the 26th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 25th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-16"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 24th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 25th Floor (Safe Floor).",
+        "Give 26F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 26th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1500,
+        "tmExp": 1500,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "26F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_26th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-61",
+      "order": 2028,
+      "title": "Poirot - Get to the Bottom of the Rumours",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Gate of Caballa Relics",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Poirot - Make a Missing Ed Flyer",
+      "steps": [
+        "Talk to Poirot at Gate of Caballa Relics.",
+        "Talk to Poirot in Tower of Chaos Entrance (1st Floor)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 100,
+        "tmExp": 100,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Get_to_the_Bottom_of_the_Rumours.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-37",
+      "order": 2029,
+      "title": "Poirot - Issue the Tower of Chaos Entrance Pass",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos Entrance (1st Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-61"
+        }
+      ],
+      "prereqText": "Have completed Poirot - Get to the Bottom of the Rumours",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos Entrance (1st Floor).",
+        "Get 1x Tower of Chaos Pass: reward from Developer Project Manager L - Poirot Entrance Promise.",
+        "Bring everything back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Tower of Chaos Pass",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Developer Project Manager L - Poirot Entrance Promise",
+            "map": "Tower of Chaos Entrance (1st Floor)"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1528934,
+        "tmExp": 1845227,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Tower of Chaos Pass is obtained by completing Developer Project Manager L - Poirot Entrance Promise.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Issue_the_Tower_of_Chaos_Entrance_Pass.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-28",
+      "order": 2030,
+      "title": "Poirot - Deliver the 2nd Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos Entrance (1st Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-37"
+        }
+      ],
+      "prereqText": "Have completed Poirot - Issue the Tower of Chaos Entrance Pass",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos Entrance (1st Floor).",
+        "Give 2F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 2nd Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 300,
+        "tmExp": 300,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "2F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_2nd_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-29",
+      "order": 2031,
+      "title": "Poirot - Deliver the 32nd Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 31st Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver Completed 5th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 31st Floor (Safe Floor).",
+        "Give 32F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 32nd Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3300,
+        "tmExp": 3300,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "32F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_32nd_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-30",
+      "order": 2032,
+      "title": "Poirot - Deliver the 38th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 37th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-18"
+        }
+      ],
+      "prereqText": "Have completed Poirot - 36th Floor Dimensional Gap Investigation",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 37th Floor (Safe Floor).",
+        "Give 38F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 38th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3900,
+        "tmExp": 3900,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "38F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_38th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-31",
+      "order": 2033,
+      "title": "Poirot - Deliver the 44th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 43rd Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 7th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 43rd Floor (Safe Floor).",
+        "Give 44F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 44th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 4500,
+        "tmExp": 4500,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "44F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_44th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-32",
+      "order": 2034,
+      "title": "Poirot - Deliver the 50th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 49th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 8th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 49th Floor (Safe Floor).",
+        "Give 50F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 50th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 5100,
+        "tmExp": 5100,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "50F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_50th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-33",
+      "order": 2035,
+      "title": "Poirot - Deliver the 56th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 55th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 9th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 55th Floor (Safe Floor).",
+        "Give 56F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 56th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 5700,
+        "tmExp": 5700,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "56F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_56th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-34",
+      "order": 2036,
+      "title": "Poirot - Deliver the 62nd Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 61st Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 10th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 61st Floor (Safe Floor).",
+        "Give 62F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 62nd Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6300,
+        "tmExp": 6300,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "62F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_62nd_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-44",
+      "order": 2037,
+      "title": "Wandering Warrior Tan - Deliver the Completed 11th Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 66th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 66th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 66th Floor.",
+        "Give Completed 11th Survey Notebook to Poirot on the Tower of Chaos 67th Floor (Safe Floor)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6800,
+        "tmExp": 6800,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Completed 11th Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 66th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Deliver_the_Completed_11th_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-35",
+      "order": 2038,
+      "title": "Poirot - Deliver the 68th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 67th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-44"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 11th Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 67th Floor (Safe Floor).",
+        "Give 68F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 68th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6900,
+        "tmExp": 6900,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "68F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_68th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-67",
+      "order": 2039,
+      "title": "Wandering Warrior Tan - Search the 6th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 6th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Warrior Tan - Go Survey the 6th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 6th Floor.",
+        "Defeat 30x Chaos King Yamu (Lv.124) within 15 min in Tower of Chaos 6th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos King Yamu",
+          "level": 124,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 6th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 467148,
+        "tmExp": 1337456,
+        "galder": 0,
+        "items": [
+          "1x Completed 1st Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_6th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-45",
+      "order": 2040,
+      "title": "Wandering Warrior Tan - Deliver the Completed 1st Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 6th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-67"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 6th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 6th Floor.",
+        "Give Completed 1st Survey Notebook to Poirot on the Tower of Chaos 7th Floor (Safe Floor)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 800,
+        "tmExp": 800,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Completed 1st Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 6th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Deliver_the_Completed_1st_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-36",
+      "order": 2041,
+      "title": "Poirot - Deliver the 8th Floor Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 7th Floor (Safe Floor)",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-45"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Deliver the Completed 1st Survey Notebook",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 7th Floor (Safe Floor).",
+        "Give 8F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 8th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 900,
+        "tmExp": 900,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "8F Survey Notebook is obtained with Poirot when the quest starts.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Deliver_the_8th_Floor_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-38",
+      "order": 2042,
+      "title": "Poirot - Reinvestigate Outraged Requiem",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Tower of Chaos 72nd Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-24"
+        }
+      ],
+      "prereqText": "Have completed Poirot - Defeat Outraged Requiem",
+      "steps": [
+        "Talk to Poirot at Tower of Chaos 72nd Floor.",
+        "Defeat 1x Outraged Requiem (Lv.769) in Tower of Chaos 72nd Floor.",
+        "Report back to Poirot (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Outraged Requiem",
+          "level": 769,
+          "count": 1,
+          "map": "Tower of Chaos 72nd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 8765608,
+        "tmExp": 5780398,
+        "galder": 0,
+        "items": [
+          "1x Stage 6 Requiem Box"
+        ]
+      },
+      "notes": "This is a daily quest.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Reinvestigate_Outraged_Requiem.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-39",
+      "order": 2043,
+      "title": "Poirot - Talk to the Awaken Ed",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "location": "Requiem Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-24"
+        }
+      ],
+      "prereqText": "Have completed Poirot - Defeat Outraged Requiem",
+      "steps": [
+        "Talk to Poirot at Requiem Room.",
+        "Talk to Requiem Seized Ed."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 10100,
+        "tmExp": 10100,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "After complete this quest Requiem Seized Ed teleports you to Tower of Chaos Entrance (1st Floor).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Talk_to_the_Awaken_Ed.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-40",
+      "order": 2044,
+      "title": "Rookie G - Collect Chaos Integer.50Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Rookie G",
+      "npcIds": [
+        "rookie-g"
+      ],
+      "location": "Tower of Chaos 50th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Rookie G at Tower of Chaos 50th Floor.",
+        "Get 50x Chaos Integer.50Byte: dropped by Corrupt Iron Golem (Lv.312) in Tower of Chaos 50th Floor.",
+        "Bring everything back to Rookie G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.50Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Iron Golem (Lv.312)",
+            "map": "Tower of Chaos 50th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1773779,
+        "tmExp": 1145350,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.50Byte is dropped by Corrupt Iron Golem (Lv.312) and Chaos Iron Golem (Lv.314).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rookie_G_-_Collect_Chaos_Integer.50Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-41",
+      "order": 2045,
+      "title": "Rookie G - Collect Chaos Integer.60Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Rookie G",
+      "npcIds": [
+        "rookie-g"
+      ],
+      "location": "Tower of Chaos 60th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Rookie G at Tower of Chaos 60th Floor.",
+        "Get 50x Chaos Integer.60Byte: dropped by Corrupt Agrippa (Lv.367) in Tower of Chaos 60th Floor.",
+        "Bring everything back to Rookie G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.60Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Agrippa (Lv.367)",
+            "map": "Tower of Chaos 60th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2375060,
+        "tmExp": 1529153,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.60Byte is dropped by Corrupt Agrippa (Lv.367) and Chaos Agrippa (Lv.369).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rookie_G_-_Collect_Chaos_Integer.60Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-42",
+      "order": 2046,
+      "title": "Rookie G - Collect Chaos Integer.64Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Rookie G",
+      "npcIds": [
+        "rookie-g"
+      ],
+      "location": "Tower of Chaos 64th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Rookie G at Tower of Chaos 64th Floor.",
+        "Get 50x Chaos Integer.64Byte: dropped by Corrupt Fire Golem (Lv.387) in Tower of Chaos 64th Floor.",
+        "Bring everything back to Rookie G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.64Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Fire Golem (Lv.387)",
+            "map": "Tower of Chaos 64th Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2605597,
+        "tmExp": 1655838,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.64Byte is dropped by Corrupt Fire Golem (Lv.387) and Chaos Fire Golem (Lv.389).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rookie_G_-_Collect_Chaos_Integer.64Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-43",
+      "order": 2047,
+      "title": "Rookie G - Collect Chaos Integer.72Byte",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Rookie G",
+      "npcIds": [
+        "rookie-g"
+      ],
+      "location": "Tower of Chaos 72nd Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-01"
+        }
+      ],
+      "prereqText": "Have completed Developer Project Manager L - Investigating Committee Work",
+      "steps": [
+        "Talk to Rookie G at Tower of Chaos 72nd Floor.",
+        "Get 50x Chaos Integer.72Byte: dropped by Corrupt Bio Junk (Lv.437) in Tower of Chaos 72nd Floor.",
+        "Bring everything back to Rookie G."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chaos Integer.72Byte",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Corrupt Bio Junk (Lv.437)",
+            "map": "Tower of Chaos 72nd Floor"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3185343,
+        "tmExp": 2093890,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chaos Integer.72Byte is dropped by Corrupt Bio Junk (Lv.437) and Chaos Bio Junk (Lv.439).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rookie_G_-_Collect_Chaos_Integer.72Byte.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-46",
+      "order": 2048,
+      "title": "Wandering Warrior Tan - Deliver the Completed 5th Survey Notebook",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 30th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 30th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 30th Floor.",
+        "Give Completed 5th Survey Notebook to Poirot on the Tower of Chaos 31th Floor (Safe Floor)."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3200,
+        "tmExp": 3200,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Completed 5th Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 30th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Deliver_the_Completed_5th_Survey_Notebook.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-68",
+      "order": 2049,
+      "title": "Wandering Warrior Tan - Search the 8th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 8th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-36"
+        }
+      ],
+      "prereqText": "Have completed Poirot - Deliver the 8th Floor Survey Notebook",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 8th Floor.",
+        "Defeat 30x Chaos Xeper (Lv.129) within 15 min in Tower of Chaos 8th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Xeper",
+          "level": 129,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 8th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 470891,
+        "tmExp": 1348173,
+        "galder": 0,
+        "items": [
+          "1x 9F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_8th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-55",
+      "order": 2050,
+      "title": "Wandering Warrior Tan - Go Survey the 9th Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 8th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-68"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 8th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 8th Floor.",
+        "Give 9F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 9th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1000,
+        "tmExp": 1000,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "9F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 8th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_9th_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-69",
+      "order": 2051,
+      "title": "Wandering Warrior Tan - Search the 9th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 9th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-55"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Go Survey the 9th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 9th Floor.",
+        "Defeat 30x Chaos Chimu (Lv.134) within 15 min in Tower of Chaos 9th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Chimu",
+          "level": 134,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 9th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 474635,
+        "tmExp": 1358890,
+        "galder": 0,
+        "items": [
+          "1x 10F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_9th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-48",
+      "order": 2052,
+      "title": "Wandering Warrior Tan - Go Survey the 10th Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 9th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-69"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 9th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 9th Floor.",
+        "Give 10F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 10th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1100,
+        "tmExp": 1100,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "10F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 9th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_10th_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-70",
+      "order": 2053,
+      "title": "Wandering Warrior Tan - Search the 10th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 10th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-48"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Go Survey the 10th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 10th Floor.",
+        "Defeat 30x Chaos Isis (Lv.139) within 15 min in Tower of Chaos 10th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Isis",
+          "level": 139,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 10th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 478378,
+        "tmExp": 1369607,
+        "galder": 0,
+        "items": [
+          "1x 11F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_10th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-49",
+      "order": 2054,
+      "title": "Wandering Warrior Tan - Go Survey the 11th Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 10th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-70"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 10th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 10th Floor.",
+        "Give 11F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 11th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1300,
+        "tmExp": 1300,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "11F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 10th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_11th_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-71",
+      "order": 2055,
+      "title": "Wandering Warrior Tan - Search the 11th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 11th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-49"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Go Survey the 11th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 11th Floor.",
+        "Defeat 30x Chaos Kerberos (Lv.144) within 15 min in Tower of Chaos 11th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Kerberos",
+          "level": 144,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 11th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 678012,
+        "tmExp": 1550348,
+        "galder": 0,
+        "items": [
+          "1x 12F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_11th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-50",
+      "order": 2056,
+      "title": "Wandering Warrior Tan - Go Survey the 12th Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 11th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-71"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 11th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 11th Floor.",
+        "Give 12F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 12th Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 1300,
+        "tmExp": 1300,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "12F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 11th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_12th_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-51",
+      "order": 2057,
+      "title": "Wandering Warrior Tan - Go Survey the 21st Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 20th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 20th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 20th Floor.",
+        "Give 21F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 21st Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 2200,
+        "tmExp": 2200,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "21F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 20th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_21st_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-52",
+      "order": 2058,
+      "title": "Wandering Warrior Tan - Go Survey the 41st Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 40th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 40th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 40th Floor.",
+        "Give 41F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 41st Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 4200,
+        "tmExp": 4200,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "41F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 40th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_41st_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-53",
+      "order": 2059,
+      "title": "Wandering Warrior Tan - Go Survey the 51st Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 50th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 50th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 50th Floor.",
+        "Give 51F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 51st Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 5200,
+        "tmExp": 5200,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "51F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 50th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_51st_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-54",
+      "order": 2060,
+      "title": "Wandering Warrior Tan - Go Survey the 71st Floor",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Town Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 70th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Wandering Warrior Tan - Search the 70th Floor for Ed's Traces",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 70th Floor.",
+        "Give 71F Survey Notebook to Wandering Warrior Tan on the Tower of Chaos 71st Floor."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 7200,
+        "tmExp": 7200,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "71F Survey Notebook is obtained by completing Wandering Warrior Tan - Search the 70th Floor for Ed's Traces.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Go_Survey_the_71st_Floor.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-56",
+      "order": 2061,
+      "title": "Wandering Warrior Tan - Harsh Training (17)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 17th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 17th Floor.",
+        "Defeat 100x Corrupt Niwerth (Lv.167) within 30 min in Tower of Chaos 16th Floor / Tower of Chaos 17th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Niwerth",
+          "level": 167,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 16th Floor / Tower of Chaos 17th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 454349,
+        "tmExp": 800520,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(17).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-57",
+      "order": 2062,
+      "title": "Wandering Warrior Tan - Harsh Training (2)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 2nd Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 2nd Floor.",
+        "Defeat 100x Corrupt Scarab (Lv.102) within 30 min in Tower of Chaos 2nd Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Scarab",
+          "level": 102,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 2nd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 144700,
+        "tmExp": 550706,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(2).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-58",
+      "order": 2063,
+      "title": "Wandering Warrior Tan - Harsh Training (5)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 5th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 5th Floor.",
+        "Defeat 100x Corrupt Chocho (Lv.117) within 30 min in Tower of Chaos 4th Floor / Tower of Chaos 5th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Chocho",
+          "level": 117,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 4th Floor / Tower of Chaos 5th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 148306,
+        "tmExp": 564428,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(5).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-59",
+      "order": 2064,
+      "title": "Wandering Warrior Tan - Harsh Training (51)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 51st Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 51st Floor.",
+        "Defeat 100x Corrupt Part-Timer Mon (Lv.317) within 30 min in Tower of Chaos 50th Floor / Tower of Chaos 51st Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Part-Timer Mon",
+          "level": 317,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 50th Floor / Tower of Chaos 51st Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2535078,
+        "tmExp": 2626659,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(51).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-60",
+      "order": 2065,
+      "title": "Wandering Warrior Tan - Harsh Training (54)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 54th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 54th Floor.",
+        "Defeat 100x Corrupt Aposis (Lv.337) within 30 min in Tower of Chaos 53rd Floor / Tower of Chaos 54th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Aposis",
+          "level": 337,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 53rd Floor / Tower of Chaos 54th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2957855,
+        "tmExp": 2989914,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(54).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-62",
+      "order": 2066,
+      "title": "Wandering Warrior Tan - Mercenary Contract Stage 3 Test",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Relics Field 1 - Atlas",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Developer Project Manager L - Poirot Entrance Promise in quest log, have completed Wandering Warrior Tan - Mercenary Contract Stage 2 Test",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Relics Field 1 - Atlas.",
+        "Defeat 2x Punisher Aposis (Lv.71) within 15 min in Relics Field 1 - Atlas / Relics Field 2 - Hand of Giant / Relics Field 3 - Monkey Statues / Relics Field 4 - An Altar for Sacrifice.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Punisher Aposis",
+          "level": 71,
+          "count": 2,
+          "timeLimit": "15 min",
+          "map": "Relics Field 1 - Atlas / Relics Field 2 - Hand of Giant / Relics Field 3 - Monkey Statues / Relics Field 4 - An Altar for Sacrifice"
+        }
+      ],
+      "rewards": {
+        "baseExp": 302114,
+        "tmExp": 1149794,
+        "galder": 0,
+        "items": [
+          "1x Mercenary Contract"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Mercenary_Contract_Stage_3_Test.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-63",
+      "order": 2067,
+      "title": "Wandering Warrior Tan - Search the 2nd Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 2nd Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-28"
+        }
+      ],
+      "prereqText": "Have completed Poirot - Deliver the 2nd Floor Survey Notebook",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 2nd Floor.",
+        "Defeat 30x Chaos Scarab (Lv.104) within 15 min in Tower of Chaos 2nd Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Scarab",
+          "level": 104,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 2nd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 300621,
+        "tmExp": 1141111,
+        "galder": 0,
+        "items": [
+          "1x 3F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_2nd_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-64",
+      "order": 2068,
+      "title": "Wandering Warrior Tan - Search the 3rd Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 3rd Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Warrior Tan - Go Survey the 3rd Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 3rd Floor.",
+        "Defeat 30x Chaos Nephthys (Lv.109) within 15 min in Tower of Chaos 3rd Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Nephthys",
+          "level": 109,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 3rd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 303109,
+        "tmExp": 1153582,
+        "galder": 0,
+        "items": [
+          "1x 4F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_3rd_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-65",
+      "order": 2069,
+      "title": "Wandering Warrior Tan - Search the 4th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 4th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Warrior Tan - Go Survey the 4th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 4th Floor.",
+        "Defeat 30x Chaos Thief Mole (Lv.114) within 15 min in Tower of Chaos 4th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Thief Mole",
+          "level": 114,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 4th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 305598,
+        "tmExp": 1163053,
+        "galder": 0,
+        "items": [
+          "1x 5F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_4th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-66",
+      "order": 2070,
+      "title": "Wandering Warrior Tan - Search the 5th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 5th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed Warrior Tan - Go Survey the 5th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 5th Floor.",
+        "Defeat 30x Chaos Chocho (Lv.119) within 15 min in Tower of Chaos 5th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Chocho",
+          "level": 119,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 5th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 308086,
+        "tmExp": 1172524,
+        "galder": 0,
+        "items": [
+          "1x 6F Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_5th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-72",
+      "order": 2071,
+      "title": "Wandering Warrior Tan - Search the 12th Floor for Ed's Traces",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 12th Floor",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-50"
+        }
+      ],
+      "prereqText": "Have completed Wandering Warrior Tan - Go Survey the 12th Floor",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 12th Floor.",
+        "Defeat 30x Chaos Golden Mole (Lv.149) within 15 min in Tower of Chaos 12th Floor.",
+        "Report back to Wandering Warrior Tan."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Chaos Golden Mole",
+          "level": 149,
+          "count": 30,
+          "timeLimit": "15 min",
+          "map": "Tower of Chaos 12th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 683277,
+        "tmExp": 1562385,
+        "galder": 0,
+        "items": [
+          "1x Completed 2nd Survey Notebook"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Search_the_12th_Floor_for_Ed's_Traces.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-73",
+      "order": 2072,
+      "title": "Wandering Warrior Tan - Harsh Training (8)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 8th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 8th Floor.",
+        "Defeat 100x Corrupt Xeper (Lv.127) within 30 min in Tower of Chaos 6th Floor / Tower of Chaos 8th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Xeper",
+          "level": 127,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 6th Floor / Tower of Chaos 8th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 226688,
+        "tmExp": 649015,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(8).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-74",
+      "order": 2073,
+      "title": "Wandering Warrior Tan - Harsh Training (63)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 63rd Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 63rd Floor.",
+        "Defeat 100x Corrupt Sulaphat (Lv.382) within 30 min in Tower of Chaos 62nd Floor / Tower of Chaos 63rd Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Sulaphat",
+          "level": 382,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 62nd Floor / Tower of Chaos 63rd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3502264,
+        "tmExp": 3635114,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(63).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-75",
+      "order": 2074,
+      "title": "Wandering Warrior Tan - Harsh Training (65)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 65th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 65th Floor.",
+        "Defeat 100x Corrupt Crow (Lv.397) within 30 min in Tower of Chaos 64th Floor / Tower of Chaos 65th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Crow",
+          "level": 397,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 64th Floor / Tower of Chaos 65th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 3979794,
+        "tmExp": 4117987,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(65).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-76",
+      "order": 2075,
+      "title": "Wandering Warrior Tan - Harsh Training (66)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 66th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 66th Floor.",
+        "Defeat 100x Corrupt Raver Skeleton (Lv.402) within 30 min in Tower of Chaos 65th Floor / Tower of Chaos 66th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Raver Skeleton",
+          "level": 402,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 65th Floor / Tower of Chaos 66th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4002825,
+        "tmExp": 4141736,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(66).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-77",
+      "order": 2076,
+      "title": "Wandering Warrior Tan - Harsh Training (69)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 69th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 69th Floor.",
+        "Defeat 100x Corrupt Moa Stone (Lv.412) within 30 min in Tower of Chaos 68th Floor / Tower of Chaos 69th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Moa Stone",
+          "level": 412,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 68th Floor / Tower of Chaos 69th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 4048887,
+        "tmExp": 6047304,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(69).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-78",
+      "order": 2077,
+      "title": "Wandering Warrior Tan - Harsh Training (70)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 70th Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 70th Floor.",
+        "Defeat 100x Corrupt Tanya (Lv.422) within 30 min in Tower of Chaos 69th Floor / Tower of Chaos 70th Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Tanya",
+          "level": 422,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 69th Floor / Tower of Chaos 70th Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 5698628,
+        "tmExp": 6081586,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(70).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-79",
+      "order": 2078,
+      "title": "Wandering Warrior Tan - Harsh Training (72)",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Monster Quests",
+      "npc": "Wandering Warrior Tan",
+      "npcIds": [
+        "wandering-warrior-tan"
+      ],
+      "location": "Tower of Chaos 72nd Floor",
+      "minLevel": 150,
+      "cycles": 199,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Wandering Warrior Tan at Tower of Chaos 72nd Floor.",
+        "Defeat 100x Corrupt Bio Junk (Lv.437) within 30 min in Tower of Chaos 71st Floor / Tower of Chaos 72nd Floor.",
+        "Report back to Wandering Warrior Tan (repeat 199 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Corrupt Bio Junk",
+          "level": 437,
+          "count": 100,
+          "timeLimit": "30 min",
+          "map": "Tower of Chaos 71st Floor / Tower of Chaos 72nd Floor"
+        }
+      ],
+      "rewards": {
+        "baseExp": 5763092,
+        "tmExp": 5782432,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Warrior_Tan_-_Harsh_Training_(72).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

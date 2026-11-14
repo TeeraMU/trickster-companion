@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-- **Episodes 3 to 6** (129 quests): EP3 Mirage Island (Lv.130+), EP4 Underground Dev Room (Lv.150+), EP5 memories and the Sarcophagus (Lv.160+) and EP6 Alteo Empire (Lv.200+, with the bonus chapter), each in its chapters and story order, with where to get every item. A few quests whose wiki page is empty aren't in yet (e.g. Rose Fairy's First / Second Test, Pastor Tau - Tau and Chagan).
+- **Episodes 3 to 6** (129 quests): EP3 Mirage Island (Lv.130+), EP4 Underground Dev Room (Lv.150+), EP5 memories and the Sarcophagus (Lv.160+) and EP6 Alteo Empire (Lv.200+, with the bonus chapter), each in its chapters and story order, with where to get every item. A few quests whose wiki page is empty aren't in yet (e.g. Pastor Tau - Tau and Chagan).
+- **Six new zones** (272 quests): Mirage Island side quests (11), Underground Dev Room (15), Alteo Empire (18), **Tapasco Volcano** (123, with its key quest Tapasco Recommendation Sticker in the Key roadmap), Abyss (26) and **Tower of Chaos** (79: floor surveys, Ed's traces, Harsh Training, Poirot). Episode quests listed under these zones on the wiki stay in their episode. About 100 Tower of Chaos pages (Collect Chaos Integer, some floor surveys) aren't on the wiki mirror, so they're missing for now.
 
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
