@@ -1,0 +1,1638 @@
+{
+  "region": "Episode 4",
+  "quests": [
+    {
+      "id": "ep4-01",
+      "order": 1200,
+      "title": "Coward Craven - Broken Elevator",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.1: Company Invitation (Lv.150+)",
+      "npc": "Coward Craven",
+      "npcIds": [
+        "coward-craven"
+      ],
+      "location": "Underground Dev Room - Underground Passage 4",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Coward Craven at Underground Dev Room - Underground Passage 4.",
+        "Get 5x Merchant Mon's Bag: dropped by Merchant Mon (Lv.186) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5.",
+        "Bring everything back to Coward Craven."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Merchant Mon's Bag",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Merchant Mon (Lv.186)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5075677,
+        "tmExp": 1403525,
+        "galder": 0,
+        "items": [
+          "1x Emergency Key"
+        ]
+      },
+      "notes": "Merchant Mon's Bag is dropped by Merchant Mon (Lv.186).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coward_Craven_-_Broken_Elevator.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-02",
+      "order": 1201,
+      "title": "Don Giuvanni - Welcome!",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.1: Company Invitation (Lv.150+)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-01"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Don Giuvanni at Underground Dev Room - Lobby.",
+        "Get 1x Nondisclosure Agreement: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Get 1x Pen: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Nondisclosure Agreement",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Pen",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "15x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Nondisclosure Agreement and Pen are dropped by Robber Mole (Lv.230). This Pen is NOT the same as the Pen dropped by Cannon Shell (Lv.33).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Giuvanni_-_Welcome!.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-03",
+      "order": 1202,
+      "title": "Lead Developer - The Star of Developer Photo2",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.1: Company Invitation (Lv.150+)",
+      "npc": "Lead Developer",
+      "npcIds": [
+        "lead-developer"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-02"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Lead Developer at Underground Dev Room - Lobby.",
+        "Get 1x Americano: Compound Company Mug + Coffee Beans with Water Dispenser at Underground Dev Room - Lobby ..",
+        "Bring everything back to Lead Developer."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Americano",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compound Company Mug + Coffee Beans with Water Dispenser at Underground Dev Room - Lobby .",
+            "map": "Underground Dev Room - Lobby"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "15x 500 Galder Coupon",
+          "1x Leader Dev Card"
+        ]
+      },
+      "notes": "Americano is obtained by compounding Company Mug and Coffee Beans with Water Dispenser at Underground Dev Room - Lobby. Company Mug is drilled in System Control Room and Coffee Beans is dropped by Guiana (Lv.66) and Merchant Mon (Lv.186).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lead_Developer_-_The_Star_of_Developer_Photo2.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-04",
+      "order": 1203,
+      "title": "Developer J - Dev J Quest",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.1: Company Invitation (Lv.150+)",
+      "npc": "Developer J",
+      "npcIds": [
+        "developer-j"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-03"
+        }
+      ],
+      "prereqText": "Level 150+, daytime",
+      "steps": [
+        "Talk to Developer J at Underground Dev Room - Dev Room.",
+        "Get 10x Merchant Mon's Leaflet Bundle: dropped by Merchant Mon (Lv.186) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5.",
+        "Bring everything back to Developer J."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Merchant Mon's Leaflet Bundle",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Merchant Mon (Lv.186)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "10x Blue Potion C",
+          "1x Dev J Card",
+          "1x Poppuri Card"
+        ]
+      },
+      "notes": "Merchant Mon's Leaflet Bundle is dropped by Merchant Mon (Lv.186).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_J_-_Dev_J_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-05",
+      "order": 1204,
+      "title": "Developer H - Dev H's Request",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.1: Company Invitation (Lv.150+)",
+      "npc": "Developer H",
+      "npcIds": [
+        "developer-h"
+      ],
+      "location": "Underground Dev Room - System Control Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-04"
+        }
+      ],
+      "prereqText": "Level 150+, daytime",
+      "steps": [
+        "Talk to Developer H at Underground Dev Room - System Control Room.",
+        "Get 1x Hot Cup Noodles: Compound 1x Cup Noodles + 1x Wooden Chopsticks with Water Dispenser at Underground Dev Room - Lobby ..",
+        "Bring everything back to Developer H."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Hot Cup Noodles",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compound 1x Cup Noodles + 1x Wooden Chopsticks with Water Dispenser at Underground Dev Room - Lobby .",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "10x Pink Potion C",
+          "1x Dev H Card"
+        ]
+      },
+      "notes": "Hot Cup Noodles is obtained by compounding Cup Noodles and Wooden Chopsticks with Water Dispenser at Underground Dev Room - Lobby. Cup Noodles and Wooden Chopsticks are drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_H_-_Dev_H's_Request.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-06",
+      "order": 1205,
+      "title": "Developer K - Dev K Quest",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.1: Company Invitation (Lv.150+)",
+      "npc": "Developer K",
+      "npcIds": [
+        "developer-k"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-05"
+        }
+      ],
+      "prereqText": "Level 150+, daytime",
+      "steps": [
+        "Talk to Developer K at Underground Dev Room - Dev Room.",
+        "Get 1x Fan Art A: drilled in Underground Dev Room - Dev Room.",
+        "Get 1x Fan Art B: drilled in Underground Dev Room - Dev Room.",
+        "Get 1x Fan Art C: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Get 1x Fan Art D: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Get 1x Fan Art E: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Get 1x Fan Art F: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Bring everything back to Developer K."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fan Art A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Dev Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fan Art B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Dev Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fan Art C",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fan Art D",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fan Art E",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fan Art F",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5075677,
+        "tmExp": 1403525,
+        "galder": 0,
+        "items": [
+          "10x Blue Potion C",
+          "1x Dev K Card"
+        ]
+      },
+      "notes": "Fan Art A, Fan Art B are drilled in Underground Dev Room - Dev Room. Fan Art C, Fan Art D, Fan Art E, Fan Art F are dropped by Robber Mole (Lv.230).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_K_-_Dev_K_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-07",
+      "order": 1206,
+      "title": "Developer's PC - Defeat the Virus!",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.2: Development Diary (Lv.150+)",
+      "npc": "Developer's PC",
+      "npcIds": [
+        "developers-pc"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-06"
+        }
+      ],
+      "prereqText": "Level 150+, insert the right password",
+      "steps": [
+        "Talk to Developer's PC at Underground Dev Room - Dev Room.",
+        "Get 1x H Key: dropped by Win32 Worm (Lv.235) in Underground Dev Room - System Control Room.",
+        "Get 1x O Key: dropped by Win32 Worm (Lv.235) in Underground Dev Room - System Control Room.",
+        "Get 1x T Key: dropped by Win32 Worm (Lv.235) in Underground Dev Room - System Control Room.",
+        "Get 1x S Key: dropped by Win32 Worm (Lv.235) in Underground Dev Room - System Control Room.",
+        "Get 1x G Key: dropped by Win32 Worm (Lv.235) in Underground Dev Room - System Control Room.",
+        "Bring everything back to Developer's PC."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "H Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win32 Worm (Lv.235)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "O Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win32 Worm (Lv.235)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "T Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win32 Worm (Lv.235)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "S Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win32 Worm (Lv.235)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "G Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win32 Worm (Lv.235)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5075677,
+        "tmExp": 1403525,
+        "galder": 0,
+        "items": [
+          "10x Blue Potion C"
+        ]
+      },
+      "notes": "H Key, O Key, T Key, S Key, G Key are dropped by Win32 Worm (Lv.235). The password is \"GHOST\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer's_PC_-_Defeat_the_Virus!.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-08",
+      "order": 1207,
+      "title": "Developer's PC - Find the Backup CD",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.2: Development Diary (Lv.150+)",
+      "npc": "Developer's PC",
+      "npcIds": [
+        "developers-pc"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-07"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Developer's PC at Underground Dev Room - Dev Room.",
+        "Get 1x Backup CD: dropped by Merchant Mon (Lv.186) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5.",
+        "Bring everything back to Developer's PC."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Backup CD",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Merchant Mon (Lv.186)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "10x Blue Potion C"
+        ]
+      },
+      "notes": "Backup CD is dropped by Merchant Mon (Lv.186).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer's_PC_-_Find_the_Backup_CD.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-09",
+      "order": 1208,
+      "title": "Developer's PC - Find the Vaccine",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.2: Development Diary (Lv.150+)",
+      "npc": "Developer's PC",
+      "npcIds": [
+        "developers-pc"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-08"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Developer's PC at Underground Dev Room - Dev Room.",
+        "Get 1x Antivirus Program: reward from Developer Y - Preparing for User Conference.",
+        "Bring everything back to Developer's PC."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Antivirus Program",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Developer Y - Preparing for User Conference",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Developer's Journal",
+          "1x Developer's PC Card"
+        ]
+      },
+      "notes": "Antivirus Program is obtained by completing Developer Y - Preparing for User Conference.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer's_PC_-_Find_the_Vaccine.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-10",
+      "order": 1209,
+      "title": "Developer Y - Preparing for User Conference",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.2: Development Diary (Lv.150+)",
+      "npc": "Developer Y",
+      "npcIds": [
+        "developer-y"
+      ],
+      "location": "Underground Dev Room - System Control Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-09"
+        }
+      ],
+      "prereqText": "Level 150+, daytime",
+      "steps": [
+        "Talk to Developer Y at Underground Dev Room - System Control Room.",
+        "Get 5x Capuccino: Compound 1x Company Mug + 1x Instant Coffee with Water Dispenser at Underground Dev Room - Lobby ..",
+        "Get 5x Green Tea: Compound 1x Company Mug + 1x Green Tea Bag with Water Dispenser at Underground Dev Room - Lobby ..",
+        "Bring everything back to Developer Y."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Capuccino",
+          "qty": 5,
+          "source": {
+            "kind": "compound",
+            "from": "Compound 1x Company Mug + 1x Instant Coffee with Water Dispenser at Underground Dev Room - Lobby .",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Green Tea",
+          "qty": 5,
+          "source": {
+            "kind": "compound",
+            "from": "Compound 1x Company Mug + 1x Green Tea Bag with Water Dispenser at Underground Dev Room - Lobby .",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Antivirus Program",
+          "1x GM Y Card"
+        ]
+      },
+      "notes": "Capuccino is obtained by compounding Instant Coffee and Company Mug, and Green Tea is obtained by compounding Green Tea Bag and Company Mug with Water Dispenser at Underground Dev Room - Lobby. Instant Coffee, Green Tea Bag, Company Mug are drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_Y_-_Preparing_for_User_Conference.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-11",
+      "order": 1210,
+      "title": "Waste Basket - Dev Room Urban Legends",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.2: Development Diary (Lv.150+)",
+      "npc": "Waste Basket",
+      "npcIds": [
+        "waste-basket"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-10"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Waste Basket at Underground Dev Room - Dev Room.",
+        "Get 100x Trash: drilled in Underground Dev Room Passages (higher drilling rate for Trash) / Dev Room(has a high drilling rate for Trash) / System Control Room.",
+        "Bring everything back to Waste Basket."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Trash",
+          "qty": 100,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room Passages (higher drilling rate for Trash) / Dev Room(has a high drilling rate for Trash) / System Control Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room Passages (higher drilling rate for Trash) / Dev Room(has a high drilling rate for Trash) / System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5075677,
+        "tmExp": 1403525,
+        "galder": 0,
+        "items": [
+          "1x Urban Legend Note",
+          "1x Trash Can Card"
+        ]
+      },
+      "notes": "Trash is drilled in Underground Dev Room Passages (higher drilling rate for Trash), Dev Room(has a high drilling rate for Trash) , and System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Waste_Basket_-_Dev_Room_Urban_Legends.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-12",
+      "order": 1211,
+      "title": "Don Danihen - The Star of the Ghost Story",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Don Danihen",
+      "npcIds": [
+        "don-danihen"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-11"
+        }
+      ],
+      "prereqText": "Level 150+, nighttime",
+      "steps": [
+        "Talk to Don Danihen at Underground Dev Room - Dev Room.",
+        "Deliver Delicate Key to Rosaline Gracia."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 5075677,
+        "tmExp": 1403525,
+        "galder": 0,
+        "items": [
+          "15x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Danihen_-_The_Star_of_the_Ghost_Story.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-13",
+      "order": 1212,
+      "title": "Rosaline Gracia - Key Necklace",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-12"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Rosaline Gracia at Underground Dev Room - Lobby.",
+        "Get 1x Delicate Key: drilled in Rose Garden Fields.",
+        "Get 1x Necklace Chain: drilled in Dev Room.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Delicate Key",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rose Garden Fields (drill depth not on the wiki)",
+            "map": "Rose Garden Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Necklace Chain",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Dev Room (drill depth not on the wiki)",
+            "map": "Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "15x 500 Galder Coupon"
+        ]
+      },
+      "notes": "Delicate Key is drilled in Rose Garden Fields. Necklace Chain is drilled in Dev Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_Key_Necklace.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-14",
+      "order": 1213,
+      "title": "Don Danihen - Interrupt Craven's Investigation",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Don Danihen",
+      "npcIds": [
+        "don-danihen"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-13"
+        }
+      ],
+      "prereqText": "Level 150+, nighttime",
+      "steps": [
+        "Talk to Don Danihen at Underground Dev Room - Dev Room.",
+        "Talk to Coward Craven and complete What Craven Needs 1 / 2."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Blank Check",
+          "15x 500 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Danihen_-_Interrupt_Craven's_Investigation.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-15",
+      "order": 1214,
+      "title": "Coward Craven - What Craven Needs 1",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Coward Craven",
+      "npcIds": [
+        "coward-craven"
+      ],
+      "location": "Underground Dev Room - System Control Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-14"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Coward Craven at Underground Dev Room - System Control Room.",
+        "Get 1x Emergency Lantern: drilled in System Control Room.",
+        "Bring everything back to Coward Craven."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Emergency Lantern",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Emergency Lantern is drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coward_Craven_-_What_Craven_Needs_1.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-16",
+      "order": 1215,
+      "title": "Coward Craven - What Craven Needs 2",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Coward Craven",
+      "npcIds": [
+        "coward-craven"
+      ],
+      "location": "Underground Dev Room - System Control Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-15"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Coward Craven at Underground Dev Room - System Control Room.",
+        "Get 1x Pork Bellies: drilled in System Control Room.",
+        "Get 1x Green Bull Tonic: drilled in System Control Room.",
+        "Bring everything back to Coward Craven."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pork Bellies",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Green Bull Tonic",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "10x Pink Potion C"
+        ]
+      },
+      "notes": "Pork Bellies and Green Bull Tonic are drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Coward_Craven_-_What_Craven_Needs_2.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-17",
+      "order": 1216,
+      "title": "Don Danihen - Commission Painting 1",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Don Danihen",
+      "npcIds": [
+        "don-danihen"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-16"
+        }
+      ],
+      "prereqText": "Level 150+, nighttime",
+      "steps": [
+        "Talk to Don Danihen at Underground Dev Room - Dev Room.",
+        "Get 1x Receipt Envelope: reward from Old Artist - Commission Painting 2.",
+        "Bring everything back to Don Danihen."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Receipt Envelope",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Old Artist - Commission Painting 2",
+            "map": "Underground Dev Room - Lobby"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Secret Letter 1"
+        ]
+      },
+      "notes": "Receipt Envelope is obtained by completing Old Artist - Commission Painting 2.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Danihen_-_Commission_Painting_1.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-18",
+      "order": 1217,
+      "title": "Old Artist - Commission Painting 2",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-17"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Old Artist at Underground Dev Room - Lobby.",
+        "Get 1x Blank Check: reward from Don Danihen - Interrupt Craven's Investigation.",
+        "Get 1x Dark Cloth: dropped by Crow (Lv.88) in Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park.",
+        "Bring everything back to Old Artist."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Blank Check",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Don Danihen - Interrupt Craven's Investigation",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dark Cloth",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Crow (Lv.88)",
+            "map": "Wharf Field 2 - Devil Crow / Wharf Field 3 - Phantom Park"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Receipt Envelope"
+        ]
+      },
+      "notes": "Blank Check is obtained by completing Don Danihen - Interrupt Craven's Investigation. Dark Cloth is dropped by Crow (Lv.88).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Old_Artist_-_Commission_Painting_2.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-19",
+      "order": 1218,
+      "title": "Lead Developer - A Request from a Long Time Ago",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Lead Developer",
+      "npcIds": [
+        "lead-developer"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-18"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Lead Developer at Underground Dev Room - Lobby.",
+        "Get 1x Secret Letter 1: reward from Don Danihen - Commission Painting 1.",
+        "Bring everything back to Lead Developer."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secret Letter 1",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Don Danihen - Commission Painting 1",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Don Cavalier Wep Exchange",
+          "1x Secret Letter 2"
+        ]
+      },
+      "notes": "Talk to Lead Developer and say: \"Fate has found us\". Secret Letter 1 is obtained by completing Don Danihen - Commission Painting 1.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lead_Developer_-_A_Request_from_a_Long_Time_Ago.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-20",
+      "order": 1219,
+      "title": "Officer Robert - A Request from a Long Time Ago",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Officer Robert",
+      "npcIds": [
+        "officer-robert"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-19"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Officer Robert at Underground Dev Room - Lobby.",
+        "Get 1x Secret Letter 2: reward from Lead Developer - A Request from a Long Time Ago.",
+        "Bring everything back to Officer Robert."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secret Letter 2",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Lead Developer - A Request from a Long Time Ago",
+            "map": "Underground Dev Room - Lobby"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Don Cavalier's Hat",
+          "1x Secret Letter 3"
+        ]
+      },
+      "notes": "Talk to Officer Robert and say: \"Don't forget about our 'previous life'\". Secret Letter 2 is obtained by completing Lead Developer - A Request from a Long Time Ago.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Robert_-_A_Request_from_a_Long_Time_Ago.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-21",
+      "order": 1220,
+      "title": "Rosaline Gracia - A Request from a Long Time Ago",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-20"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Rosaline Gracia at Underground Dev Room - Lobby.",
+        "Get 1x Secret Letter 3: reward from Officer Robert - A Request from a Long Time Ago.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secret Letter 3",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Officer Robert - A Request from a Long Time Ago",
+            "map": "Underground Dev Room - Lobby"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3045406,
+        "tmExp": 842115,
+        "galder": 0,
+        "items": [
+          "1x Don Cavalier's Shield",
+          "1x Hologram Port"
+        ]
+      },
+      "notes": "Talk to Rosaline Gracia and say: \"Do you remember our love?\". Secret Letter 3 is obtained by completing Officer Robert - A Request from a Long Time Ago.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_A_Request_from_a_Long_Time_Ago.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-22",
+      "order": 1221,
+      "title": "Don Cavalier - Memory Storage Device",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Don Cavalier",
+      "npcIds": [
+        "don-cavalier"
+      ],
+      "location": "Hologram Chamber",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-21"
+        }
+      ],
+      "prereqText": "Level 150+, use Hologram Port",
+      "steps": [
+        "Talk to Don Cavalier at Hologram Chamber.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 17764872,
+        "tmExp": 4912339,
+        "galder": 0,
+        "items": [
+          "10x Half Blue Potion",
+          "10x Half Pink Potion",
+          "1x Star Card Pack No.5"
+        ]
+      },
+      "notes": "Hologram Port is obtained by completing Rosaline Gracia - A Request from a Long Time Ago.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Cavalier_-_Memory_Storage_Device.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-23",
+      "order": 1222,
+      "title": "Waste Basket - Find Missing Item",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Waste Basket",
+      "npcIds": [
+        "waste-basket"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-22"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Waste Basket at Underground Dev Room - Dev Room.",
+        "Get 1x Urban Legend Note: reward from Waste Basket - Dev Room Urban Legends.",
+        "Get 1x Trash Bag: drilled in Dev Room.",
+        "Bring everything back to Waste Basket."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Urban Legend Note",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Waste Basket - Dev Room Urban Legends",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Trash Bag",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Dev Room (drill depth not on the wiki)",
+            "map": "Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3262935,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Lost 10,000 Galder"
+        ]
+      },
+      "notes": "Urban Legend Note is obtained by completing Waste Basket - Dev Room Urban Legends and Trash Bag is drilled in Dev Room. Lost 10,000 Galder is required for the next quest, do not accidentally click on it.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Waste_Basket_-_Find_Missing_Item.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-24",
+      "order": 1223,
+      "title": "Guild Clerk Esther - Lost Galder",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Guild Clerk Esther",
+      "npcIds": [
+        "guild-clerk-esther"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-23"
+        }
+      ],
+      "prereqText": "Level 150+, daytime",
+      "steps": [
+        "Talk to Guild Clerk Esther at Underground Dev Room - Dev Room.",
+        "Get 1x Lost 10,000 Galder: reward from Waste Basket - Find Missing Item.",
+        "Bring everything back to Guild Clerk Esther."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lost 10,000 Galder",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Waste Basket - Find Missing Item",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3262935,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Lost 10,000 Galder is obtained by completing Waste Basket - Find Missing Item.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Guild_Clerk_Esther_-_Lost_Galder.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep4-25",
+      "order": 1224,
+      "title": "Lead Developer - Autograph Request",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep4"
+      ],
+      "chapter": "Episode 4 - Ch.3: The Ghost of Dev Room (Lv.150+)",
+      "npc": "Lead Developer",
+      "npcIds": [
+        "lead-developer"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep4-24"
+        }
+      ],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Lead Developer at Underground Dev Room - Lobby.",
+        "Get 1x Pen: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Get 1x Developer Photo 2: Open Weird Box (Aria).",
+        "Get 1x Americano: Compound Company Mug + Coffee Beans with Water Dispenser at Underground Dev Room - Lobby ..",
+        "Bring everything back to Lead Developer."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pen",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Developer Photo 2",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Open Weird Box (Aria)",
+            "map": "Underground Dev Room - Lobby"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Americano",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compound Company Mug + Coffee Beans with Water Dispenser at Underground Dev Room - Lobby .",
+            "map": "Underground Dev Room - Lobby"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3262935,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Signed Developer Photo 2",
+          "1x Water Cooler Card"
+        ]
+      },
+      "notes": "Pen are dropped by Robber Mole (Lv.230). This Pen is NOT the same as the Pen dropped by Cannon Shell (Lv.33). Developer Photo 2 is obtained by opening Strange Box, Angel Ring Pack, or Weird Box. Americano is obtained by compounding Company Mug and Coffee Beans with Water Dispenser at Underground Dev Room - Lobby. Company Mug is drilled in System Control Room and Coffee Beans is dropped by Guiana (Lv.66) and Merchant Mon (Lv.186).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lead_Developer_-_Autograph_Request.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

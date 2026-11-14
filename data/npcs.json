@@ -52,6 +52,10 @@
     "name": "Automatic Plant Incubator"
   },
   {
+    "id": "bandaged-man",
+    "name": "Bandaged Man"
+  },
+  {
     "id": "banker-lisa",
     "name": "Banker Lisa"
   },
@@ -78,6 +82,14 @@
   {
     "id": "blue-muffler-poppuri",
     "name": "Blue Muffler Poppuri"
+  },
+  {
+    "id": "bob",
+    "name": "Bob"
+  },
+  {
+    "id": "bookcase",
+    "name": "Bookcase"
   },
   {
     "id": "boxer-jeanne",
@@ -116,6 +128,10 @@
     "name": "Centakonus' Messenger"
   },
   {
+    "id": "chief-architect-amos",
+    "name": "Chief Architect Amos"
+  },
+  {
     "id": "chief-koha",
     "name": "Chief Koha"
   },
@@ -148,12 +164,52 @@
     "name": "Copyfish DomDom"
   },
   {
+    "id": "coward-craven",
+    "name": "Coward Craven"
+  },
+  {
+    "id": "curator-morgos",
+    "name": "Curator Morgos"
+  },
+  {
     "id": "daisy",
     "name": "Daisy"
   },
   {
+    "id": "dancer-olinda",
+    "name": "Dancer Olinda"
+  },
+  {
     "id": "delphinus-messenger",
     "name": "Delphinus' Messenger"
+  },
+  {
+    "id": "developer-h",
+    "name": "Developer H"
+  },
+  {
+    "id": "developer-j",
+    "name": "Developer J"
+  },
+  {
+    "id": "developer-k",
+    "name": "Developer K"
+  },
+  {
+    "id": "developer-y",
+    "name": "Developer Y"
+  },
+  {
+    "id": "developers-pc",
+    "name": "Developer's PC"
+  },
+  {
+    "id": "don-cavalier",
+    "name": "Don Cavalier"
+  },
+  {
+    "id": "don-danihen",
+    "name": "Don Danihen"
   },
   {
     "id": "don-giuvanni",
@@ -190,6 +246,10 @@
   {
     "id": "dragon-tales-messenger",
     "name": "Dragon Tale's Messenger"
+  },
+  {
+    "id": "drawer",
+    "name": "Drawer"
   },
   {
     "id": "dreams",
@@ -304,6 +364,10 @@
     "name": "Grandma Tango"
   },
   {
+    "id": "grandpa-t",
+    "name": "Grandpa T"
+  },
+  {
     "id": "grandpa-tango",
     "name": "Grandpa Tango"
   },
@@ -380,6 +444,14 @@
     "name": "Irina"
   },
   {
+    "id": "jim",
+    "name": "Jim"
+  },
+  {
+    "id": "joker",
+    "name": "JOKER"
+  },
+  {
     "id": "kahlihara",
     "name": "Kahlihara"
   },
@@ -394,6 +466,10 @@
   {
     "id": "king-enigmos-messenger",
     "name": "King Enigmo's Messenger"
+  },
+  {
+    "id": "king-poppuri",
+    "name": "King Poppuri"
   },
   {
     "id": "knight-scar",
@@ -424,6 +500,14 @@
     "name": "Lachesis"
   },
   {
+    "id": "larry",
+    "name": "Larry"
+  },
+  {
+    "id": "lead-developer",
+    "name": "Lead Developer"
+  },
+  {
     "id": "lethos",
     "name": "Lethos"
   },
@@ -436,8 +520,16 @@
     "name": "Lifeguard Deen"
   },
   {
+    "id": "light-filled-egg",
+    "name": "Light Filled Egg"
+  },
+  {
     "id": "little-chagan",
     "name": "Little Chagan"
+  },
+  {
+    "id": "little-rosaline",
+    "name": "Little Rosaline"
   },
   {
     "id": "louis-bitton",
@@ -488,6 +580,10 @@
     "name": "Merchant Miguel"
   },
   {
+    "id": "merchant-vinny",
+    "name": "Merchant Vinny"
+  },
+  {
     "id": "mermaid-marin",
     "name": "Mermaid Marin"
   },
@@ -512,6 +608,14 @@
     "name": "Monkey T"
   },
   {
+    "id": "mysterious-frame",
+    "name": "Mysterious Frame"
+  },
+  {
+    "id": "mysterious-sarcophagus",
+    "name": "Mysterious Sarcophagus"
+  },
+  {
     "id": "mystery-npc",
     "name": "???"
   },
@@ -530,6 +634,10 @@
   {
     "id": "oddeye-dragons-messenger",
     "name": "Oddeye Dragon's Messenger"
+  },
+  {
+    "id": "officer-albert",
+    "name": "Officer Albert"
   },
   {
     "id": "officer-robert",
@@ -570,6 +678,10 @@
   {
     "id": "portina",
     "name": "Portina"
+  },
+  {
+    "id": "poseidons-blessing",
+    "name": "Poseidon's Blessing"
   },
   {
     "id": "primrose",
@@ -624,8 +736,16 @@
     "name": "Rosaline Gracia"
   },
   {
+    "id": "rosaspina",
+    "name": "Rosaspina"
+  },
+  {
     "id": "rosaspinas-messenger",
     "name": "Rosaspina's Messenger"
+  },
+  {
+    "id": "rose-fairy-harmony",
+    "name": "Rose Fairy Harmony"
   },
   {
     "id": "rosemary",
@@ -688,12 +808,20 @@
     "name": "Sophia"
   },
   {
+    "id": "spirit-of-nefertiti",
+    "name": "Spirit of Nefertiti"
+  },
+  {
     "id": "star-gazer-stella",
     "name": "Star Gazer Stella"
   },
   {
     "id": "star-gazer-stella-2",
     "name": "Star Gazer Stella (2)"
+  },
+  {
+    "id": "stargazer-ethel",
+    "name": "Stargazer Ethel"
   },
   {
     "id": "stella",
@@ -706,6 +834,10 @@
   {
     "id": "steve-ryu",
     "name": "Steve Ryu"
+  },
+  {
+    "id": "sue",
+    "name": "Sue"
   },
   {
     "id": "swampy-suu",
@@ -726,6 +858,14 @@
   {
     "id": "tinnie",
     "name": "Tinnie"
+  },
+  {
+    "id": "transformed-don-danihen",
+    "name": "Transformed Don Danihen"
+  },
+  {
+    "id": "transformed-rosaline",
+    "name": "Transformed Rosaline"
   },
   {
     "id": "vagabond-eloy",
@@ -752,6 +892,10 @@
     "name": "Warrior Kei"
   },
   {
+    "id": "waste-basket",
+    "name": "Waste Basket"
+  },
+  {
     "id": "weepy-nora",
     "name": "Weepy Nora"
   },
@@ -766,6 +910,10 @@
   {
     "id": "werewolf-lycan",
     "name": "Werewolf Lycan"
+  },
+  {
+    "id": "willie",
+    "name": "Willie"
   },
   {
     "id": "winnie",

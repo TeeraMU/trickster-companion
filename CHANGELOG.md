@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **Episodes 3 to 6** (129 quests): EP3 Mirage Island (Lv.130+), EP4 Underground Dev Room (Lv.150+), EP5 memories and the Sarcophagus (Lv.160+) and EP6 Alteo Empire (Lv.200+, with the bonus chapter), each in its chapters and story order, with where to get every item. A few quests whose wiki page is empty aren't in yet (e.g. Rose Fairy's First / Second Test, Pastor Tau - Tau and Chagan).
+
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
 - Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).
