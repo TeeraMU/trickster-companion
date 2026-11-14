@@ -154,7 +154,18 @@
     const npcImg = ctx.getNpcImage(q.npc);
 
     let runs = "";
-    if (q.cycles > 1) {
+    if (q.cycles > 5) {
+      // 10 / 20 / 25 runs: a − / + counter, one button per run would push the title aside
+      const pct = Math.round(runsDone / q.cycles * 100);
+      runs = `<div class="cycle-pills cycle-stepper" onclick="event.stopPropagation()">
+          <span class="qc-runs-label">🔁 Runs ${runsDone}/${q.cycles}</span>
+          <span class="cycle-bar" aria-hidden="true"><span style="width:${pct}%"></span></span>
+          <button type="button" class="cycle-btn" title="One run less" aria-label="One run less" ${runsDone <= 0 ? "disabled" : ""}
+            onclick="setCycleCount('${q.id}', ${runsDone}, event)">−</button>
+          <button type="button" class="cycle-btn" title="One more run done" aria-label="One more run done" ${runsDone >= q.cycles ? "disabled" : ""}
+            onclick="setCycleCount('${q.id}', ${runsDone + 1}, event)">+</button>
+        </div>`;
+    } else if (q.cycles > 1) {
       let btns = "";
       for (let i = 1; i <= q.cycles; i++) {
         btns += `<button type="button" class="cycle-btn ${i <= runsDone ? "done" : ""}" title="Run ${i}" aria-pressed="${i <= runsDone}" onclick="setCycleCount('${q.id}', ${i}, event)">${i}</button>`;

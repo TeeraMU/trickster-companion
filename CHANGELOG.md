@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: quests with 10, 20 or 25 runs (e.g. Monkey T's Request) showed one button per run, which squeezed the title into a narrow column. They now show 🔁 Runs 3/25 with a small bar and − / + buttons.
+
 ## 0.7.2 (2026-11-14): Sticker quests under keys, earlier-quest items, header fix
 
 - Quests page: each zone's sticker quests now sit under the key quest that collects the stickers (🏷️ Sticker quests for this key, with how many are done and how many stickers it needs), instead of in a separate section.
