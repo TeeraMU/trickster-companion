@@ -2345,7 +2345,7 @@ a.btn {
 }
 
 .topbar {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 8px 24px;
   display: flex;
@@ -2684,8 +2684,25 @@ a.btn {
   gap: 8px;
 }
 
+/* six page tabs with names need ~1520px; below that tighten the bar first, then go icon-only */
+@media (max-width: 1560px) {
+  .topbar {
+    gap: 10px;
+    padding-inline: 16px;
+  }
+  .app-header .view-tabs {
+    gap: 2px;
+  }
+  .app-header .view-tab {
+    padding: 7px 9px;
+  }
+  .brand-name .fan-made {
+    display: none;
+  }
+}
+
 /* narrower laptops: tabs show icons only, names on hover */
-@media (max-width: 1180px) {
+@media (max-width: 1400px) {
   .app-header .view-tab .tab-label {
     display: none;
   }
@@ -3810,4 +3827,41 @@ a.btn {
 
 .friend-head {
   align-items: center;
+}
+
+/* Quests page: a zone's sticker quests nested under the key quest that collects the stickers */
+.key-stickers {
+  margin: -4px 0 8px 22px;
+  padding-left: 14px;
+  border-left: 3px solid color-mix(in srgb, var(--accent-pink) 45%, transparent);
+}
+
+.key-stickers > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.key-stickers > .quest-list {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .key-stickers {
+    margin-left: 8px;
+    padding-left: 10px;
+  }
+}
+
+/* Items to collect: a row needed only by a prerequisite the filter hides */
+.ep-earlier {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }

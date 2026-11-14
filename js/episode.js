@@ -99,7 +99,31 @@
    * Returns { maps: [{ map, minOrder, locked, rows: [{ kind, item, qty, how, quests, locked }] }],
    *           shop: [...rows], compound: [...rows] }
    */
-  function farmList(quests, state, statuses) {
+  /**
+   * The given quests plus the unfinished quests they need done first (followed back through
+   * prerequisites, same area only; "just accept it" prerequisites don't count). Quests added this way
+   * come back in `earlier` (id set) so the panel can say what they're for.
+   */
+  function withEarlierQuests(quests, allQuests, prereqsById, state) {
+    const byId = new Map(allQuests.map(q => [q.id, q]));
+    const have = new Set(quests.map(q => q.id));
+    const earlier = new Set();
+    const out = quests.slice();
+    const todo = quests.slice();
+    while (todo.length) {
+      const q = todo.pop();
+      for (const p of prereqsById[q.id] || []) {
+        if (p.active || have.has(p.quest)) continue;
+        const pq = byId.get(p.quest);
+        if (!pq || pq.area !== q.area || (state.completedQuests || {})[pq.id]) continue;
+        have.add(pq.id); earlier.add(pq.id);
+        out.push(pq); todo.push(pq);
+      }
+    }
+    return { quests: out, earlier };
+  }
+
+  function farmList(quests, state, statuses, earlier) {
     const maps = new Map();
     const shop = new Map();
     const compound = new Map();
@@ -107,7 +131,7 @@
       if (!bucket.has(key)) bucket.set(key, Object.assign({ qty: 0, quests: [], locked: true }, base));
       const row = bucket.get(key);
       row.qty += qty;
-      if (!row.quests.some(x => x.id === q.id)) row.quests.push({ id: q.id, title: q.title });
+      if (!row.quests.some(x => x.id === q.id)) row.quests.push({ id: q.id, title: q.title, earlier: !!(earlier && earlier.has(q.id)) });
       if (statuses[q.id] !== "locked") row.locked = false;
     };
     const mapGroup = (name, q) => {
@@ -180,7 +204,7 @@
     };
   }
 
-  const model = { listEpisodes, parseChapterName, questStatuses, parseMonster, parseDrill, farmList, episodeModel, remainingCycles };
+  const model = { listEpisodes, parseChapterName, questStatuses, parseMonster, parseDrill, farmList, withEarlierQuests, episodeModel, remainingCycles };
 
   // ---------------------------------------------------------------------------------------
   // Renderer (browser)
@@ -226,10 +250,18 @@
         <div class="ep-farm-main">
           <div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}${r.locked ? ` <span class="ep-lock" title="Every quest that needs this is still locked">🔒</span>` : ""}</div>
           <div class="ep-farm-how"><span class="ep-kind ep-kind-${r.kind}">${KIND_LABEL[r.kind]}</span> ${how}</div>
+          ${earlierNote(r)}
           ${r.kind === "hunt" ? "" : friendsHave(r.item)}
         </div>
         ${haveStepper(r, have)}
       </li>`;
+  }
+
+  /** "↩ For earlier quest: …" when every quest needing the row is a prerequisite pulled in by the filter. */
+  function earlierNote(r) {
+    if (!r.quests.length || !r.quests.every(x => x.earlier)) return "";
+    const names = r.quests.map(x => x.title.replace(/^[^-]+ - /, ""));
+    return `<div class="ep-earlier" title="Not in your filter, but has to be done first">↩ For earlier quest: ${esc(names.join(" · "))}</div>`;
   }
 
   /**
@@ -252,7 +284,7 @@
           <li class="ep-farm-row ${r.locked ? "is-locked" : ""} ${r.done ? "is-done" : ""}" title="Used in: ${esc(r.quests.map(x => x.title).join(" · "))}">
             ${itemIcon(r.item, "item-icon")}
             <div class="ep-farm-main"><div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}</div>
-            <div class="ep-farm-how">${esc(r.how)}</div></div>
+            <div class="ep-farm-how">${esc(r.how)}</div>${earlierNote(r)}</div>
             ${haveStepper(r, have)}
           </li>`).join("")}</ul>
       </section>` : "";
