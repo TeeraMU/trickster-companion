@@ -1,0 +1,1014 @@
+{
+  "region": "Alteo Empire",
+  "quests": [
+    {
+      "id": "ae-01",
+      "order": 1700,
+      "title": "Grandpa T - Grandpa T's Request (13)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Grandpa T",
+      "npcIds": [
+        "grandpa-t"
+      ],
+      "location": "Alteo Empire Field 2 - Time Cascade",
+      "minLevel": 200,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Grandpa T at Alteo Empire Field 2 - Time Cascade.",
+        "Get 10x Ancient Elixir: dropped by Wind Spirit (Lv.250) in Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade.",
+        "Bring everything back to Grandpa T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ancient Elixir",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Wind Spirit (Lv.250)",
+            "map": "Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 2089570,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Ancient Elixir is dropped by Wind Spirit (Lv.250), Earth Spirit (Lv.250), Water Spirit (Lv.250), Electricity Spirit (Lv.250), Intermediate Spirit of Wind (Lv.285), and Intermediate Spirit of Earth (Lv.285).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Grandpa_T_-_Grandpa_T's_Request_(13).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-02",
+      "order": 1701,
+      "title": "Keeper Rachel - Chatterbox Albert's Crush",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Keeper Rachel",
+      "npcIds": [
+        "keeper-rachel"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Keeper Rachel at Gate of Alteo Empire.",
+        "Get 1x Dearly Beloved: drilled in Alteo Empire Fields.",
+        "Bring everything back to Keeper Rachel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Dearly Beloved",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Alteo Empire Fields (drill depth not on the wiki)",
+            "map": "Alteo Empire Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5710964,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon",
+          "1x Keeper Rachel Card"
+        ]
+      },
+      "notes": "Dearly Beloved is drilled in Alteo Empire Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Keeper_Rachel_-_Chatterbox_Albert's_Crush.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-03",
+      "order": 1702,
+      "title": "Keeper Rachel - How to Look Good",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Keeper Rachel",
+      "npcIds": [
+        "keeper-rachel"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Keeper Rachel at Gate of Alteo Empire.",
+        "Get 5x Sparkly Blush: dropped by Electricity Spirit (Lv.250) in Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade / Alteo Empire Field 3 - Sanctuary Forest.",
+        "Bring everything back to Keeper Rachel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sparkly Blush",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Electricity Spirit (Lv.250)",
+            "map": "Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade / Alteo Empire Field 3 - Sanctuary Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5710964,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon"
+        ]
+      },
+      "notes": "Sparkly Blush is dropped by Electricity Spirit (Lv.250).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Keeper_Rachel_-_How_to_Look_Good.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-04",
+      "order": 1703,
+      "title": "Keeper Rachel - Nice? Rachel",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Keeper Rachel",
+      "npcIds": [
+        "keeper-rachel"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ae-17",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 200, have Willie - Find the Unfriendly Employee in quest log",
+      "steps": [
+        "Talk to Keeper Rachel at Gate of Alteo Empire.",
+        "Get 10x Rachel's Picture: drilled in Alteo Empire Fields.",
+        "Get 5x Glue Stick: drilled in Alteo Empire Fields.",
+        "Bring everything back to Keeper Rachel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rachel's Picture",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Alteo Empire Fields (drill depth not on the wiki)",
+            "map": "Alteo Empire Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Glue Stick",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Alteo Empire Fields (drill depth not on the wiki)",
+            "map": "Alteo Empire Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 6853156,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon",
+          "1x Rachel's Resume"
+        ]
+      },
+      "notes": "Rachel's Picture and Glue Stick are drilled in Alteo Empire Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Keeper_Rachel_-_Nice%3F_Rachel.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-05",
+      "order": 1704,
+      "title": "King Poppuri - Holy Preparations",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "King Poppuri",
+      "npcIds": [
+        "king-poppuri"
+      ],
+      "location": "Gate of Nefertiti Shrine",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep6-30",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Madam Sarah - Sarah's Concerns in quest log",
+      "steps": [
+        "Talk to King Poppuri at Gate of Nefertiti Shrine.",
+        "Get 1x Poppuri Incense Burner: reward from Poppuri - Make a Holy Incense Burner.",
+        "Get 1x Poppuri Incense: reward from Artisan Poppuri - Make Holy Incense.",
+        "Get 1x Poppuri Snack Set: reward from Blue Muffler Poppuri - Make Holy Snacks.",
+        "Bring everything back to King Poppuri."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Poppuri Incense Burner",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Poppuri - Make a Holy Incense Burner",
+            "map": "Gate of Nefertiti Shrine"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Poppuri Incense",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Artisan Poppuri - Make Holy Incense",
+            "map": "Gate of Nefertiti Shrine"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Poppuri Snack Set",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Blue Muffler Poppuri - Make Holy Snacks",
+            "map": "Gate of Nefertiti Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 6064620,
+        "tmExp": 1123353,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Reward: a transfer onwards. Poppuri Incense Burner is obtained by completing Poppuri - Make a Holy Incense Burner. Poppuri Incense is obtained by completing Artisan Poppuri - Make Holy Incense. Poppuri Snack Set is obtained by completing Blue Muffler Poppuri - Make Holy Snacks.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/King_Poppuri_-_Holy_Preparations.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-06",
+      "order": 1705,
+      "title": "Officer Albert - A Day in the Life As a Chatterbox",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Officer Albert",
+      "npcIds": [
+        "officer-albert"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Officer Albert at Gate of Alteo Empire.",
+        "Get 5x Mint Ice Cream Cone: dropped by Water Spirit (Lv.250) in Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade / Alteo Empire Field 3 - Sanctuary Forest.",
+        "Bring everything back to Officer Albert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Mint Ice Cream Cone",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Water Spirit (Lv.250)",
+            "map": "Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade / Alteo Empire Field 3 - Sanctuary Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5710964,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon",
+          "1x Albert's Resume"
+        ]
+      },
+      "notes": "Mint Ice Cream Cone is dropped by Water Spirit (Lv.250).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Albert_-_A_Day_in_the_Life_As_a_Chatterbox.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-07",
+      "order": 1706,
+      "title": "Officer Albert - Monsters Scare Me",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Monster Quests",
+      "npc": "Officer Albert",
+      "npcIds": [
+        "officer-albert"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Officer Albert at Gate of Alteo Empire.",
+        "Defeat 30x Wind Spirit (Lv.250) within 10 min in Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade / Alteo Empire Field 3 - Sanctuary Forest.",
+        "Report back to Officer Albert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Wind Spirit",
+          "level": 250,
+          "count": 30,
+          "timeLimit": "10 min",
+          "map": "Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 2 - Time Cascade / Alteo Empire Field 3 - Sanctuary Forest"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2772510,
+        "tmExp": 513553,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Albert_-_Monsters_Scare_Me.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-08",
+      "order": 1707,
+      "title": "Officer Albert - Stop Talking Behind My Back!",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Officer Albert",
+      "npcIds": [
+        "officer-albert"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Officer Albert at Gate of Alteo Empire.",
+        "Get 10x Chewy Macaron: dropped by Earth Spirit (Lv.250) in Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 3 - Sanctuary Forest.",
+        "Bring everything back to Officer Albert (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chewy Macaron",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Earth Spirit (Lv.250)",
+            "map": "Alteo Empire Field 1 - Secret Garden / Alteo Empire Field 3 - Sanctuary Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5710964,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon",
+          "1x Albert Card"
+        ]
+      },
+      "notes": "Chewy Macaron is dropped by Earth Spirit (Lv.250) and Wind Spirit (Lv.250).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Albert_-_Stop_Talking_Behind_My_Back!.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-09",
+      "order": 1708,
+      "title": "Pastor Tau - Tau and Chagan",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Monster Quests",
+      "npc": "Pastor Tau",
+      "npcIds": [
+        "pastor-tau"
+      ],
+      "location": "Chagan's Heart (Purification)",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep6-35"
+        }
+      ],
+      "prereqText": "Had completed Pastor Tau - Chagan's Heart",
+      "steps": [
+        "Talk to Pastor Tau at Chagan's Heart (Purification).",
+        "Defeat 1x Flashire Snake (Monster) (Lv.390) within 20 min in Deep Within Chagan's Heart.",
+        "Report back to Pastor Tau."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Flashire Snake (Monster)",
+          "level": 390,
+          "count": 1,
+          "timeLimit": "20 min",
+          "map": "Deep Within Chagan's Heart"
+        }
+      ],
+      "rewards": {
+        "baseExp": 6064620,
+        "tmExp": 1123353,
+        "galder": 0,
+        "items": [
+          "1x Jade Ring",
+          "1x Pastor Tau Card"
+        ]
+      },
+      "notes": "Pastor Tau teleports you to Deep Within Chagan's Heart. After finish the quest, Pastor Tau teleports you back to the Gate of Alteo Empire.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Pastor_Tau_-_Tau_and_Chagan.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-10",
+      "order": 1709,
+      "title": "Robin Van Peruoza - To Be a Guardian",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Monster Quests",
+      "npc": "Robin Van Peruoza",
+      "npcIds": [
+        "robin-van-peruoza"
+      ],
+      "location": "The Shrine's Secret Passage",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep6-20"
+        }
+      ],
+      "prereqText": "Have completed King Poppuri - Guardian Robin",
+      "steps": [
+        "Talk to Robin Van Peruoza at The Shrine's Secret Passage.",
+        "Defeat 1x Rosaspina (Ep6) (Lv.350) within 20 min in Matrix.",
+        "Report back to Robin Van Peruoza."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Rosaspina (Ep6)",
+          "level": 350,
+          "count": 1,
+          "timeLimit": "20 min",
+          "map": "Matrix"
+        }
+      ],
+      "rewards": {
+        "baseExp": 7580776,
+        "tmExp": 1404191,
+        "galder": 0,
+        "items": [
+          "1x Robin Van Peruoza Card",
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Robin Van Peruoza, after you start this quest, teleports you to the Matrix. After you finish the quest, Robin Van Peruoza teleports you to Alteo Empire Field 1 - Secret Garden.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Robin_Van_Peruoza_-_To_Be_a_Guardian.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-15",
+      "order": 1710,
+      "title": "Stargazer Ethel - You Look Familiar",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Stargazer Ethel",
+      "npcIds": [
+        "stargazer-ethel"
+      ],
+      "location": "Alteo Empire Field 3 - Sanctuary Forest",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ae-12",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 200, have Star Gazer Stella - Family Attraction in quest log",
+      "steps": [
+        "Talk to Stargazer Ethel at Alteo Empire Field 3 - Sanctuary Forest.",
+        "Get 1x Star Card Pack No.6: dropped by Alteo Empire monsters in Alteo Empire Fields.",
+        "Get 1x Star Card Pack No.7: dropped by Alteo Empire monsters in Alteo Empire Fields.",
+        "Bring everything back to Stargazer Ethel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Star Card Pack No.6",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Alteo Empire monsters",
+            "map": "Alteo Empire Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Star Card Pack No.7",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Alteo Empire monsters",
+            "map": "Alteo Empire Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5710964,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Star Card Pack No.6",
+          "1x Star Card Pack No.7"
+        ]
+      },
+      "notes": "Star Card Pack No.6 and Star Card Pack No.7 are dropped by Alteo Empire Monsters.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stargazer_Ethel_-_You_Look_Familiar.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-14",
+      "order": 1711,
+      "title": "Stargazer Ethel - Don't Bother Me",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Stargazer Ethel",
+      "npcIds": [
+        "stargazer-ethel"
+      ],
+      "location": "Alteo Empire Field 3 - Sanctuary Forest",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ae-15"
+        }
+      ],
+      "prereqText": "Level 200, had completed Stargazer Ethel - You Look Familiar",
+      "steps": [
+        "Talk to Stargazer Ethel at Alteo Empire Field 3 - Sanctuary Forest.",
+        "Give Star Card Pack No.6 and Star Card Pack No.7 to Star Gazer Stella."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6091695,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x To a Fool"
+        ]
+      },
+      "notes": "Star Card Pack No.6 and Star Card Pack No.7 are obtained by completing Stargazer Ethel - You Look Familiar.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stargazer_Ethel_-_Don't_Bother_Me.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-11",
+      "order": 1712,
+      "title": "Star Gazer Stella - A Note From a Fool",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ae-14"
+        }
+      ],
+      "prereqText": "Level 200, had completed Stargazer Ethel - Don't Bother Me",
+      "steps": [
+        "Talk to Star Gazer Stella at Gate of Alteo Empire.",
+        "Give To a Fool to Stargazer Ethel."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 6091695,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "To a Fool is obtained by completing Stargazer Ethel - Don't Bother Me.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Star_Gazer_Stella_-_A_Note_From_a_Fool.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-12",
+      "order": 1713,
+      "title": "Star Gazer Stella - Family Attraction",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Star Gazer Stella",
+      "npcIds": [
+        "star-gazer-stella"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Star Gazer Stella at Gate of Alteo Empire.",
+        "Get 1x To a Gloomy Kid: reward from Stargazer Ethel - Bend over backwards For You?.",
+        "Bring everything back to Star Gazer Stella."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "To a Gloomy Kid",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Stargazer Ethel - Bend over backwards For You?",
+            "map": "Alteo Empire Field 3 - Sanctuary Forest"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 6091695,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "Cycle 1: 1x 2,000 Galder Coupon",
+          "Cycle 5: 1x Stella's Trash Bin + 1x Stargazer Stella Card"
+        ]
+      },
+      "notes": "To a Gloomy Kid is obtained by completing Stargazer Ethel - Bend over backwards For You?.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Star_Gazer_Stella_-_Family_Attraction.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-13",
+      "order": 1714,
+      "title": "Stargazer Ethel - Bend over backwards For You?",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Stargazer Ethel",
+      "npcIds": [
+        "stargazer-ethel"
+      ],
+      "location": "Alteo Empire Field 3 - Sanctuary Forest",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ae-11"
+        }
+      ],
+      "prereqText": "Level 200, had completed Star Gazer Stella - A Note From a Fool",
+      "steps": [
+        "Talk to Stargazer Ethel at Alteo Empire Field 3 - Sanctuary Forest.",
+        "Get 5x Fairy Dust: dropped by Intermediate Spirit of Wind (Lv.285) in Alteo Empire Field 2 - Time Cascade.",
+        "Bring everything back to Stargazer Ethel (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fairy Dust",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Intermediate Spirit of Wind (Lv.285)",
+            "map": "Alteo Empire Field 2 - Time Cascade"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5710964,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x To a Gloomy Kid",
+          "1x Stargazer Ethel Card"
+        ]
+      },
+      "notes": "Fairy Dust is dropped by Intermediate Spirit of Wind (Lv.285).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Stargazer_Ethel_-_Bend_over_backwards_For_You%3F.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-16",
+      "order": 1715,
+      "title": "Willie - Cocky Kids",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Monster Quests",
+      "npc": "Willie",
+      "npcIds": [
+        "willie"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Willie at Gate of Alteo Empire.",
+        "Defeat 30x Intermediate Spirit of Earth (Lv.285) within 10 min in Alteo Empire Field 3 - Sanctuary Forest.",
+        "Report back to Willie (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Intermediate Spirit of Earth",
+          "level": 285,
+          "count": 30,
+          "timeLimit": "10 min",
+          "map": "Alteo Empire Field 3 - Sanctuary Forest"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2901894,
+        "tmExp": 537519,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Willie_-_Cocky_Kids.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-17",
+      "order": 1716,
+      "title": "Willie - Find the Unfriendly Employee",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Willie",
+      "npcIds": [
+        "willie"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 200",
+      "steps": [
+        "Talk to Willie at Gate of Alteo Empire.",
+        "Get 1x Rachel's Resume: reward from Keeper Rachel - Nice? Rachel.",
+        "Bring everything back to Willie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rachel's Resume",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Keeper Rachel - Nice? Rachel",
+            "map": "Gate of Alteo Empire"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4873356,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Ariel Card",
+          "3x 2,000 Galder Coupon"
+        ]
+      },
+      "notes": "Rachel's Resume is obtained by completing Keeper Rachel - Nice? Rachel.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Willie_-_Find_the_Unfriendly_Employee.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ae-18",
+      "order": 1717,
+      "title": "Willie - Spy on the Strange Officer",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Alteo Empire - Town Quests",
+      "npc": "Willie",
+      "npcIds": [
+        "willie"
+      ],
+      "location": "Gate of Alteo Empire",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ae-17"
+        }
+      ],
+      "prereqText": "Level 200, had completed Willie - Find the Unfriendly Employee",
+      "steps": [
+        "Talk to Willie at Gate of Alteo Empire.",
+        "Get 1x Albert's Resume: reward from Officer Albert - A Day in the Life As a Chatterbox.",
+        "Bring everything back to Willie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Albert's Resume",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Officer Albert - A Day in the Life As a Chatterbox",
+            "map": "Gate of Alteo Empire"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4873356,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 2,000 Galder Coupon"
+        ]
+      },
+      "notes": "Albert's Resume is obtained by completing Officer Albert - A Day in the Life As a Chatterbox.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Willie_-_Spy_on_the_Strange_Officer.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

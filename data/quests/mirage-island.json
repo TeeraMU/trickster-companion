@@ -1,0 +1,685 @@
+{
+  "region": "Mirage Island",
+  "quests": [
+    {
+      "id": "mi-01",
+      "order": 1500,
+      "title": "Cluck Cluck Warrior - The Great Chicken War",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Cluck Cluck Warrior",
+      "npcIds": [
+        "cluck-cluck-warrior"
+      ],
+      "location": "Mirage Island Field 2 - Cliff of Fate",
+      "minLevel": 80,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Cluck Cluck Warrior at Mirage Island Field 2 - Cliff of Fate.",
+        "Get 5x Chickensaurus's Leg: dropped by Chickensaurus (Lv.116) in Mirage Island Field 2 - Cliff of Fate.",
+        "Bring everything back to Cluck Cluck Warrior (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chickensaurus's Leg",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chickensaurus (Lv.116)",
+            "map": "Mirage Island Field 2 - Cliff of Fate"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 177380,
+        "tmExp": 338782,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Chickensaurus's Leg is dropped by Chickensaurus (Lv.116).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Cluck_Cluck_Warrior_-_The_Great_Chicken_War.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-02",
+      "order": 1501,
+      "title": "Driller King Marky - Romance of Drilling - Mirage Island",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Gate of Mirage Island",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 80~280, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Gate of Mirage Island.",
+        "Get 1x Weird Island Map A: drilled in Mirage Island Fields.",
+        "Get 1x Weird Island Map B: drilled in Mirage Island Fields.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Island Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Fields (drill depth not on the wiki)",
+            "map": "Mirage Island Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Island Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Fields (drill depth not on the wiki)",
+            "map": "Mirage Island Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 151558,
+        "tmExp": 151558,
+        "galder": 0,
+        "items": [
+          "1x Weird Island Treasure Map"
+        ]
+      },
+      "notes": "Weird Island Map A and Weird Island Map B are drilled in Mirage Island Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Mirage_Island.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-03",
+      "order": 1502,
+      "title": "Explorer Reina - Treasure Hunting 1 - Mirage Island",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Mirage Island Field 1 - Alteo",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 80~280, have completed Indiana John - Old Man's Dream, haven't Worn Island Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Mirage Island Field 1 - Alteo.",
+        "Get 1x Worn Island Map A: drilled in Mirage Island Fields.",
+        "Get 1x Worn Island Map B: drilled in Mirage Island Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Island Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Fields (drill depth not on the wiki)",
+            "map": "Mirage Island Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Island Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Fields (drill depth not on the wiki)",
+            "map": "Mirage Island Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Island Treasure Map"
+        ]
+      },
+      "notes": "Worn Island Map A and Worn Island Map B are drilled in Mirage Island Fields. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Mirage_Island.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-04",
+      "order": 1503,
+      "title": "Explorer Reina - Treasure Hunting 2 - Mirage Island",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Mirage Island Field 1 - Alteo",
+      "minLevel": 80,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "mi-03"
+        }
+      ],
+      "prereqText": "Level 80~280, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Mirage Island 50 times, haven't Old Island Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Mirage Island Field 1 - Alteo.",
+        "Get 1x Old Island Map A: drilled in Mirage Island Fields.",
+        "Get 1x Old Island Map B: drilled in Mirage Island Fields.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Island Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Fields (drill depth not on the wiki)",
+            "map": "Mirage Island Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Island Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Fields (drill depth not on the wiki)",
+            "map": "Mirage Island Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 151558,
+        "tmExp": 151558,
+        "galder": 0,
+        "items": [
+          "1x Old Island Treasure Map"
+        ]
+      },
+      "notes": "Old Island Map A and Old Island Map B are drilled in Mirage Island Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Mirage_Island.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-05",
+      "order": 1504,
+      "title": "Magician Louie - Ancient Legacy",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Mirage Island Field 2 - Cliff of Fate",
+      "minLevel": 5,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Magician, Priest or Witch, Radiant Strike (Lv.5), Light Wave (Lv.5)",
+      "steps": [
+        "Talk to Magician Louie at Mirage Island Field 2 - Cliff of Fate.",
+        "Get 10x Ancient Feather Pen: drilled in Mirage Island Field 1 / 5 / 6.",
+        "Get 10x Papyrus: drilled in Pyramid Dungeon Halls / Path to Desert Beach / Techichi Field 2 / 3 / Mirage Island Field 1.",
+        "Bring everything back to Magician Louie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ancient Feather Pen",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 1 / 5 / 6 (drill depth not on the wiki)",
+            "map": "Mirage Island Field 1 / 5 / 6"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Papyrus",
+          "qty": 10,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Pyramid Dungeon Halls / Path to Desert Beach / Techichi Field 2 / 3 / Mirage Island Field 1 (drill depth not on the wiki)",
+            "map": "Pyramid Dungeon Halls / Path to Desert Beach / Techichi Field 2 / 3 / Mirage Island Field 1"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Celestial Strike Card"
+        ]
+      },
+      "notes": "Ancient Feather Pen is drilled in Mirage Island Field 1 / 5 / 6. Papyrus is drilled in Pyramid Dungeon Halls, Path to Desert Beach, Techichi Field 2 / 3, and Mirage Island Field 1. Besides a Magician and a Witch can completing this quest, only a Priest can learn Celestial Strike.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Magician_Louie_-_Ancient_Legacy.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-06",
+      "order": 1505,
+      "title": "Magician Louie - Power of Faith",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Magician Louie",
+      "npcIds": [
+        "magician-louie"
+      ],
+      "location": "Mirage Island Field 7 - Guardian's Square",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Magician, Priest or Witch, Oath of Light (Master)",
+      "steps": [
+        "Talk to Magician Louie at Mirage Island Field 7 - Guardian's Square.",
+        "Get 20x Golden Bell: dropped by Mister Freaks (Lv.191) in Vamp Dungeon 2 - Banquet of the Dead.",
+        "Bring everything back to Magician Louie."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Golden Bell",
+          "qty": 20,
+          "source": {
+            "kind": "drop",
+            "from": "Mister Freaks (Lv.191)",
+            "map": "Vamp Dungeon 2 - Banquet of the Dead"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Sacred Oath Card"
+        ]
+      },
+      "notes": "Golden Bell is dropped by Mister Freaks (Lv.191). Besides a Magician and a Witch can completing this quest, only a Priest can learn Sacred Oath.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Magician_Louie_-_Power_of_Faith.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-07",
+      "order": 1506,
+      "title": "Monkey T - Monkey T's Request",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Mirage Island Field 1 - Alteo",
+      "minLevel": 80,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 80+",
+      "steps": [
+        "Talk to Monkey T at Mirage Island Field 1 - Alteo.",
+        "Get 10x Panacea: dropped by Werepot (Lv.98) in Mirage Island Field 1 - Alteo.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Panacea",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Werepot (Lv.98)",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1355130,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Panacea is dropped by Werepot (Lv.98), Fabilsag (Lv.106), Fabilsag G (Lv.110), Chickensaurus (Lv.116), Dark Hollow (Lv.122), Ancient Chimu (Lv.160).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Request.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-08",
+      "order": 1507,
+      "title": "Rose Fairy Marion - Rose Fairy's First Test",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Monster Quests",
+      "npc": "Rose Fairy Marion",
+      "npcIds": [
+        "rose-fairy-marion"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-20",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 130+, have Rose Fairy's Message 1 in quest log",
+      "steps": [
+        "Talk to Rose Fairy Marion at Nefertiti's Shrine.",
+        "Defeat 15x Tooth Rose (Lv.200) within 7 min in Nefertiti's Shrine.",
+        "Report back to Rose Fairy Marion."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Tooth Rose",
+          "level": 200,
+          "count": 15,
+          "timeLimit": "7 min",
+          "map": "Nefertiti's Shrine"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1206784,
+        "tmExp": 451063,
+        "galder": 0,
+        "items": [
+          "1x Rose Certificate A"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rose_Fairy_Marion_-_Rose_Fairy's_First_Test.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-09",
+      "order": 1508,
+      "title": "Rose Fairy Marion - Rose Fairy's Second Test",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Monster Quests",
+      "npc": "Rose Fairy Marion",
+      "npcIds": [
+        "rose-fairy-marion"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-21",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 130+, have Rose Fairy's Message 2 in quest log",
+      "steps": [
+        "Talk to Rose Fairy Marion at Nefertiti's Shrine.",
+        "Defeat 15x Rose Worm (Lv.190) within 7 min in Nefertiti's Shrine.",
+        "Report back to Rose Fairy Marion."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Rose Worm",
+          "level": 190,
+          "count": 15,
+          "timeLimit": "7 min",
+          "map": "Nefertiti's Shrine"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1135797,
+        "tmExp": 424530,
+        "galder": 0,
+        "items": [
+          "1x Rose Certificate B"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rose_Fairy_Marion_-_Rose_Fairy's_Second_Test.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-11",
+      "order": 1509,
+      "title": "Spirit of Nefertiti - Gift from Nefertiti",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Spirit of Nefertiti",
+      "npcIds": [
+        "spirit-of-nefertiti"
+      ],
+      "location": "Another Dimension of Light",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 135+, 3rd Job",
+      "steps": [
+        "Talk to Spirit of Nefertiti at Another Dimension of Light.",
+        "Get 1x Soul Essence: reward from La Vida - Soul Essence.",
+        "Get 1x Essence of Life: reward from Frog Prince - Essence of Life.",
+        "Get 1x Elixir of Gods: reward from Atropos's Deal.",
+        "Bring everything back to Spirit of Nefertiti."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Soul Essence",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from La Vida - Soul Essence",
+            "map": "Another Dimension of Light"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Essence of Life",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Frog Prince - Essence of Life",
+            "map": "Another Dimension of Light"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Elixir of Gods",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Atropos's Deal",
+            "map": "Another Dimension of Light"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2013276,
+        "tmExp": 710832,
+        "galder": 0,
+        "items": [
+          "1x Poseidon Seed",
+          "1x Empathy Manual"
+        ]
+      },
+      "notes": "Soul Essence is obtained by completing La Vida - Soul Essence. Essence of Life is obtained by completing Frog Prince - Essence of Life. Elixir of Gods is obtained by completing Atropos's Deal. Spirit of Nefertiti will teleport you to Eclipse's Dimension. There, Eclipse will give you a Dimensional Key and offer teleportation to: Vamp Castle Parlor - Soul Sanctuary, Black Swamp - Site of Life, Rose Garden Park, and Another Dimension of Light.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Spirit_of_Nefertiti_-_Gift_from_Nefertiti.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "mi-10",
+      "order": 1510,
+      "title": "Spirit of Nefertiti - Be a True Trickster",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Mirage Island - Town Quests",
+      "npc": "Spirit of Nefertiti",
+      "npcIds": [
+        "spirit-of-nefertiti"
+      ],
+      "location": "Another Dimension of Light",
+      "minLevel": 135,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mi-11"
+        }
+      ],
+      "prereqText": "Level 135+, 3rd Job, have completed Gift from Nefertiti, Poseidon Seed planted",
+      "steps": [
+        "Talk to Spirit of Nefertiti at Another Dimension of Light.",
+        "Get 1x Questionable Letter: dropped by Win prize from Leveling Up (Lv.135) in Another Dimension of Light.",
+        "Get 1x Dimensional Key: dropped by Win the battle against Eclipse in Another Dimension of Light.",
+        "Bring everything back to Spirit of Nefertiti."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Questionable Letter",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win prize from Leveling Up (Lv.135)",
+            "map": "Another Dimension of Light"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Dimensional Key",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Win the battle against Eclipse",
+            "map": "Another Dimension of Light"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2013276,
+        "tmExp": 710832,
+        "galder": 0,
+        "items": [
+          "1x Dimension Card Pack"
+        ]
+      },
+      "notes": "Questionable Letter is obtained upon reaching level 135, it will be rewarded and placed in your MyShop inventory. Dimensional Key is obtained from Eclipse in Eclipse's Dimension. This quest can't be done if the Poseidon Seed has hatched.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Spirit_of_Nefertiti_-_Be_a_True_Trickster.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

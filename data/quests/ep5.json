@@ -1,0 +1,1907 @@
+{
+  "region": "Episode 5",
+  "quests": [
+    {
+      "id": "ep5-01",
+      "order": 1300,
+      "title": "JOKER - Security System JOKER",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "JOKER",
+      "npcIds": [
+        "joker"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to JOKER at Underground Dev Room - Control Room.",
+        "Talk to it."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 5844468,
+        "tmExp": 1471407,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "The password is \"F\", \"A\", \"T\", \"E\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/JOKER_-_Security_System_JOKER.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-02",
+      "order": 1301,
+      "title": "Don Giuvanni - Don Giuvanni's Hair",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-01"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Don Giuvanni at Underground Dev Room - Lobby.",
+        "Defeat 1x Don Giuvanni (Lv.238) in Underground Dev Room - Lobby.",
+        "Get 1x Don Giuvanni's Hair: dropped by Don Giuvanni (Lv.238) in Underground Dev Room - Lobby.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Don Giuvanni",
+          "level": 238,
+          "count": 1,
+          "map": "Underground Dev Room - Lobby"
+        },
+        {
+          "type": "collect",
+          "item": "Don Giuvanni's Hair",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Don Giuvanni (Lv.238)",
+            "map": "Underground Dev Room - Lobby"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5260021,
+        "tmExp": 1323951,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon",
+          "1x Don Giuvanni's Hair"
+        ]
+      },
+      "notes": "Don Giuvanni will teleport you to Giuvanni's Hidden Room. Don Giuvanni's Hair is dropped by Don Giuvanni (Lv.238).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Giuvanni_-_Don_Giuvanni's_Hair.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-03",
+      "order": 1302,
+      "title": "JOKER - Memory of Don Giuvanni",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "JOKER",
+      "npcIds": [
+        "joker"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-02"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to JOKER at Underground Dev Room - Control Room.",
+        "Get 1x Memory Kit 1: Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Don Giuvanni's Hair with Inventor Gale at Underground Dev Room - Lobby.",
+        "Bring everything back to JOKER."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Memory Kit 1",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Don Giuvanni's Hair with Inventor Gale at Underground Dev Room - Lobby",
+            "map": "Underground Dev Room - Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Approved Memory Kit 1"
+        ]
+      },
+      "notes": "The code is 12487257. Memory Kit 1 is obtained by compounding Memory Projector + Hologram Source + DNA Sensor + Don Giuvanni's Hair with Inventor Gale at Underground Dev Room - Lobby. Memory Projector and Hologram Source are dropped by Win16 Worm (Lv.232). DNA Sensor is dropped by Thief Mole (Lv.227). Don Giuvanni's Hair is obtained by completing Don Giuvanni - Don Giuvanni's Hair.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/JOKER_-_Memory_of_Don_Giuvanni.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-04",
+      "order": 1303,
+      "title": "Don Giuvanni - Don Giuvanni's Memory",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "Don Giuvanni",
+      "npcIds": [
+        "don-giuvanni"
+      ],
+      "location": "Giuvanni's Memory",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-03"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Don Giuvanni at Giuvanni's Memory.",
+        "Get 1x Voice Chip: drilled in Giuvanni's Memory.",
+        "Bring everything back to Don Giuvanni."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Giuvanni's Memory (drill depth not on the wiki)",
+            "map": "Giuvanni's Memory"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Voice Chip is drilled in Giuvanni's Memory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Giuvanni_-_Don_Giuvanni's_Memory.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-05",
+      "order": 1304,
+      "title": "Don Cavalier - Don Cavalier's Memory",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "Don Cavalier",
+      "npcIds": [
+        "don-cavalier"
+      ],
+      "location": "Giuvanni's Memory",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-04"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Don Cavalier at Giuvanni's Memory.",
+        "Get 1x Voice Chip: drilled in Giuvanni's Memory.",
+        "Bring everything back to Don Cavalier."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Giuvanni's Memory (drill depth not on the wiki)",
+            "map": "Giuvanni's Memory"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "1x Executive Room Card Key"
+        ]
+      },
+      "notes": "Voice Chip is drilled in Giuvanni's Memory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Cavalier_-_Don_Cavalier's_Memory.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-06",
+      "order": 1305,
+      "title": "Rosaline Gracia - Rosaline's Hair",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-05"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Rosaline Gracia at Underground Dev Room - Control Room.",
+        "Get 1x Comb: drilled in System Control Room.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Comb",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Rosaline's Hair"
+        ]
+      },
+      "notes": "Comb is drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_Rosaline's_Hair.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-07",
+      "order": 1306,
+      "title": "JOKER - Memory of Rosaline",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "JOKER",
+      "npcIds": [
+        "joker"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-06"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to JOKER at Underground Dev Room - Control Room.",
+        "Get 1x Memory Kit 2: Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Rosaline's Hair with Inventor Gale at Underground Dev Room - Lobby.",
+        "Bring everything back to JOKER."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Memory Kit 2",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Rosaline's Hair with Inventor Gale at Underground Dev Room - Lobby",
+            "map": "Underground Dev Room - Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Approved Memory Kit 2"
+        ]
+      },
+      "notes": "The code is 54244724. is obtained by compounding Memory Projector + Hologram Source + DNA Sensor + Rosaline's Hair with Inventor Gale at Underground Dev Room - Lobby. Memory Projector and Hologram Source are dropped by Win16 Worm (Lv.232). DNA Sensor is dropped by Thief Mole (Lv.227). Rosaline's Hair is obtained by completing Rosaline Gracia - Rosaline's Hair.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/JOKER_-_Memory_of_Rosaline.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-08",
+      "order": 1307,
+      "title": "Little Rosaline - Rosaline's Memory",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "Little Rosaline",
+      "npcIds": [
+        "little-rosaline"
+      ],
+      "location": "Rosaline's Memory",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-07"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Little Rosaline at Rosaline's Memory.",
+        "Get 1x Voice Chip: drilled in Rosaline's Memory.",
+        "Bring everything back to Little Rosaline."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rosaline's Memory (drill depth not on the wiki)",
+            "map": "Rosaline's Memory"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Voice Chip is drilled in Rosaline's Memory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Little_Rosaline_-_Rosaline's_Memory.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-09",
+      "order": 1308,
+      "title": "Don Danihen - Don Danihen's Memory",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.1: Memory Recovery (Lv.160+)",
+      "npc": "Don Danihen",
+      "npcIds": [
+        "don-danihen"
+      ],
+      "location": "Rosaline's Memory",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-08"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Don Danihen at Rosaline's Memory.",
+        "Get 1x Voice Chip: drilled in Rosaline's Memory.",
+        "Bring everything back to Don Danihen."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Rosaline's Memory (drill depth not on the wiki)",
+            "map": "Rosaline's Memory"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion",
+          "1x Don Danihen's Music Sheet"
+        ]
+      },
+      "notes": "Voice Chip is drilled in Rosaline's Memory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Danihen_-_Don_Danihen's_Memory.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-10",
+      "order": 1309,
+      "title": "Drawer - Locked Desk Drawer",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.2: Cavalier's Room (Lv.160+)",
+      "npc": "Drawer",
+      "npcIds": [
+        "drawer"
+      ],
+      "location": "Cavalier's Office",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-09"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Drawer at Cavalier's Office.",
+        "Get 1x Desk Key: drilled in Cavalier's Office.",
+        "Bring everything back to Drawer."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Desk Key",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Cavalier's Office (drill depth not on the wiki)",
+            "map": "Cavalier's Office"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Danihen's Diary (locked)"
+        ]
+      },
+      "notes": "Desk Key is drilled in Cavalier's Office. Talk to Officer Robert in Underground Dev Room - Lobby and pick \"Ask about the secret\" to reach Cavalier's Office.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Drawer_-_Locked_Desk_Drawer.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-11",
+      "order": 1310,
+      "title": "Rosaline Gracia - Danihen's Diary",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.2: Cavalier's Room (Lv.160+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-10"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Rosaline Gracia at Underground Dev Room - Control Room.",
+        "Get 1x Danihen's Diary (locked): reward from Drawer - Locked Desk Drawer.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Danihen's Diary (locked)",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Drawer - Locked Desk Drawer",
+            "map": "Cavalier's Office"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "1x Danihen's Diary (unlocked)"
+        ]
+      },
+      "notes": "Danihen's Diary (locked) is obtained by completing Drawer - Locked Desk Drawer.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_Danihen's_Diary.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-12",
+      "order": 1311,
+      "title": "Mysterious Frame - The Frame's Secret 1",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.2: Cavalier's Room (Lv.160+)",
+      "npc": "Mysterious Frame",
+      "npcIds": [
+        "mysterious-frame"
+      ],
+      "location": "Cavalier's Office",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-11"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Mysterious Frame at Cavalier's Office.",
+        "Get 1x Ladder: dropped by Part-Timer (Lv.180) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Underground Passage 5.",
+        "Bring everything back to Mysterious Frame."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ladder",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Part-Timer (Lv.180)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Underground Passage 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "10x Hologram Port"
+        ]
+      },
+      "notes": "Ladder is dropped by Part-Timer (Lv.180).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mysterious_Frame_-_The_Frame's_Secret_1.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-13",
+      "order": 1312,
+      "title": "Enkicladus 2 - The Frame's 1st Tale",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.2: Cavalier's Room (Lv.160+)",
+      "npc": "Enkicladus 2",
+      "npcIds": [
+        "enkicladus-2"
+      ],
+      "location": "Ocean of the Past",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-12"
+        }
+      ],
+      "prereqText": "Level 160+, use Hologram Port",
+      "steps": [
+        "Talk to Enkicladus 2 at Ocean of the Past.",
+        "Get 1x Pure Lily: drilled in Ocean of the Past.",
+        "Get 1x Chrysanthemum: drilled in Ocean of the Past.",
+        "Bring everything back to Enkicladus 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Lily",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Ocean of the Past (drill depth not on the wiki)",
+            "map": "Ocean of the Past"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chrysanthemum",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Ocean of the Past (drill depth not on the wiki)",
+            "map": "Ocean of the Past"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4208016,
+        "tmExp": 1059161,
+        "galder": 0,
+        "items": [
+          "1x Pure Lily",
+          "1x Chrysanthemum",
+          "1x Enkicladus's Scale"
+        ]
+      },
+      "notes": "Pure Lily and Chrysanthemum are drilled in Ocean of the Past. Hologram Port is obtained by completing The Frame's Secret 1.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Enkicladus_2_-_The_Frame's_1st_Tale.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-14",
+      "order": 1313,
+      "title": "Mysterious Frame - The Frame's Secret 2",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.2: Cavalier's Room (Lv.160+)",
+      "npc": "Mysterious Frame",
+      "npcIds": [
+        "mysterious-frame"
+      ],
+      "location": "Cavalier's Office",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-13"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Mysterious Frame at Cavalier's Office.",
+        "Get 1x Emergency Lantern: drilled in System Control Room.",
+        "Bring everything back to Mysterious Frame."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Emergency Lantern",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Memo"
+        ]
+      },
+      "notes": "Emergency Lantern is drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mysterious_Frame_-_The_Frame's_Secret_2.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-15",
+      "order": 1314,
+      "title": "Bookcase - Entrance to the Secret Room",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.2: Cavalier's Room (Lv.160+)",
+      "npc": "Bookcase",
+      "npcIds": [
+        "bookcase"
+      ],
+      "location": "Cavalier's Office",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-14"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Bookcase at Cavalier's Office.",
+        "Get 1x Danihen's Diary (unlocked): reward from Rosaline Gracia - Danihen's Diary.",
+        "Bring everything back to Bookcase."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Danihen's Diary (unlocked)",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaline Gracia - Danihen's Diary",
+            "map": "Underground Dev Room - Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "1x Danihen's Diary (unlocked)"
+        ]
+      },
+      "notes": "Danihen's Diary (unlocked) is obtained by completing Danihen's Diary.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bookcase_-_Entrance_to_the_Secret_Room.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-16",
+      "order": 1315,
+      "title": "Mysterious Sarcophagus - Mysterious Sarcophagus",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Mysterious Sarcophagus",
+      "npcIds": [
+        "mysterious-sarcophagus"
+      ],
+      "location": "Secret Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-15"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Mysterious Sarcophagus at Secret Room.",
+        "Get 1x Emergency Lantern: drilled in System Control Room.",
+        "Get 1x Magnifying Glasses: drilled in Secret Room.",
+        "Bring everything back to Mysterious Sarcophagus."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Emergency Lantern",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Magnifying Glasses",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Secret Room (drill depth not on the wiki)",
+            "map": "Secret Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Mysterious Hair"
+        ]
+      },
+      "notes": "Emergency Lantern is drilled in System Control Room and Magnifying Glasses is drilled in Secret Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mysterious_Sarcophagus_-_Mysterious_Sarcophagus.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-17",
+      "order": 1316,
+      "title": "JOKER - Mysterious Hair",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "JOKER",
+      "npcIds": [
+        "joker"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-16"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to JOKER at Underground Dev Room - Control Room.",
+        "Get 1x Memory Kit 3: Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Mysterious Hair with Inventor Gale at Underground Dev Room - Lobby.",
+        "Bring everything back to JOKER."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Memory Kit 3",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Mysterious Hair with Inventor Gale at Underground Dev Room - Lobby",
+            "map": "Underground Dev Room - Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Approved Memory Kit 3"
+        ]
+      },
+      "notes": "The code is 78252985. is obtained by compounding Memory Projector + Hologram Source + DNA Sensor + Mysterious Hair with Inventor Gale at Underground Dev Room - Lobby. Memory Projector and Hologram Source are dropped by Win16 Worm (Lv.232). DNA Sensor is dropped by Thief Mole (Lv.227). Mysterious Hair is obtained by completing Mysterious Sarcophagus.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/JOKER_-_Mysterious_Hair.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-18",
+      "order": 1317,
+      "title": "Bandaged Man - Someone's Memory",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Bandaged Man",
+      "npcIds": [
+        "bandaged-man"
+      ],
+      "location": "Memory of a Nightmare",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-17"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Bandaged Man at Memory of a Nightmare.",
+        "Get 1x Voice Chip: drilled in Memory of a Nightmare.",
+        "Bring everything back to Bandaged Man."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Memory of a Nightmare (drill depth not on the wiki)",
+            "map": "Memory of a Nightmare"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Voice Chip is drilled in Memory of a Nightmare.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bandaged_Man_-_Someone's_Memory.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-19",
+      "order": 1318,
+      "title": "Bandaged Man - Dark Nightmare",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Bandaged Man",
+      "npcIds": [
+        "bandaged-man"
+      ],
+      "location": "Memory of a Nightmare",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-18"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Bandaged Man at Memory of a Nightmare.",
+        "Get 5x Bandage: drilled in Memory of a Nightmare.",
+        "Bring everything back to Bandaged Man."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bandage",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Memory of a Nightmare (drill depth not on the wiki)",
+            "map": "Memory of a Nightmare"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Message for Rosie"
+        ]
+      },
+      "notes": "Bandage is drilled in Memory of a Nightmare.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bandaged_Man_-_Dark_Nightmare.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-20",
+      "order": 1319,
+      "title": "Mysterious Sarcophagus - The Code",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Mysterious Sarcophagus",
+      "npcIds": [
+        "mysterious-sarcophagus"
+      ],
+      "location": "Secret Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-19"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Mysterious Sarcophagus at Secret Room.",
+        "Get 1x Pen: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Get 1x Paper: drilled in Desert Beach Fields / Seabed Fields.",
+        "Bring everything back to Mysterious Sarcophagus."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pen",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Paper",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Desert Beach Fields / Seabed Fields (drill depth not on the wiki)",
+            "map": "Desert Beach Fields / Seabed Fields"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "1x Paper with Passcodes"
+        ]
+      },
+      "notes": "Pen is dropped by Robber Mole (Lv.230). This Pen is NOT the same as the Pen dropped by Cannon Shell (Lv.33). Paper can be purchased from Item Girl in various shops including the one at Underground Dev Room - Lobby.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mysterious_Sarcophagus_-_The_Code.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-21",
+      "order": 1320,
+      "title": "Rosaline Gracia - The Code of Two",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Rosaline Gracia",
+      "npcIds": [
+        "rosaline-gracia"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-20"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Rosaline Gracia at Underground Dev Room - Control Room.",
+        "Get 1x Message for Rosie: reward from Bandaged Man - Dark Nightmare.",
+        "Get 1x Paper with Passcodes: reward from Mysterious Sarcophagus - The Code.",
+        "Bring everything back to Rosaline Gracia."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Message for Rosie",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Bandaged Man - Dark Nightmare",
+            "map": "Memory of a Nightmare"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Paper with Passcodes",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Mysterious Sarcophagus - The Code",
+            "map": "Secret Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "1x Sky's Fate Necklace"
+        ]
+      },
+      "notes": "Message for Rosie is obtained by completing Bandaged Man - Dark Nightmare. Paper with Passcodes is obtained by completing Mysterious Sarcophagus - The Code. The correct answer is \"skyline\".",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaline_Gracia_-_The_Code_of_Two.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-22",
+      "order": 1321,
+      "title": "Mysterious Sarcophagus - It's Open!",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Mysterious Sarcophagus",
+      "npcIds": [
+        "mysterious-sarcophagus"
+      ],
+      "location": "Secret Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-21"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Mysterious Sarcophagus at Secret Room.",
+        "Get 1x Sky's Fate Necklace: reward from Rosaline Gracia - The Code of Two.",
+        "Get 1x Earthen Fate Necklace: reward from Queen Nefertiti - The Frame's 2nd Tale.",
+        "Bring everything back to Mysterious Sarcophagus."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Sky's Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaline Gracia - The Code of Two",
+            "map": "Underground Dev Room - Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Earthen Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Queen Nefertiti - The Frame's 2nd Tale",
+            "map": "Secret Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Sky's Fate Necklace is obtained by completing Rosaline Gracia - The Code of Two. Earthen Fate Necklace is obtained by completing Queen Nefertiti - The Frame's 2nd Tale.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mysterious_Sarcophagus_-_It's_Open!.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-23",
+      "order": 1322,
+      "title": "Mysterious Sarcophagus - Into the Dark",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Mysterious Sarcophagus",
+      "npcIds": [
+        "mysterious-sarcophagus"
+      ],
+      "location": "Secret Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-22"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Mysterious Sarcophagus at Secret Room.",
+        "Get 1x Rope: drilled in Control Room.",
+        "Get 1x Emergency Lantern: drilled in System Control Room.",
+        "Bring everything back to Mysterious Sarcophagus."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rope",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Control Room (drill depth not on the wiki)",
+            "map": "Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Emergency Lantern",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in System Control Room (drill depth not on the wiki)",
+            "map": "System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3506680,
+        "tmExp": 882634,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Rope is drilled in Control Room and Emergency Lantern is drilled in System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Mysterious_Sarcophagus_-_Into_the_Dark.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-24",
+      "order": 1323,
+      "title": "Don Cavalier - Encounter",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Don Cavalier",
+      "npcIds": [
+        "don-cavalier"
+      ],
+      "location": "Sarcophagus",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-23"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Don Cavalier at Sarcophagus.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 20455638,
+        "tmExp": 5148701,
+        "galder": 0,
+        "items": [
+          "1x Cavalier Weapon Modifier",
+          "1x Cavalier Hat Modifier",
+          "1x Cavalier Shield Modifier"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Cavalier_-_Encounter.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-25",
+      "order": 1324,
+      "title": "Bard La Fimmel - Danihen's Lost Song",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Bard La Fimmel",
+      "npcIds": [
+        "bard-la-fimmel"
+      ],
+      "location": "Underground Dev Room - Underground Passage 5",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-24"
+        }
+      ],
+      "prereqText": "Level 160+, have completed Don Cavalier - Encounter",
+      "steps": [
+        "Talk to Bard La Fimmel at Underground Dev Room - Underground Passage 5.",
+        "Get 1x Don Danihen's Music Sheet: reward from Don Danihen - Don Danihen's Memory.",
+        "Bring everything back to Bard La Fimmel."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Don Danihen's Music Sheet",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Don Danihen - Don Danihen's Memory",
+            "map": "Rosaline's Memory"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Song About a Legend"
+        ]
+      },
+      "notes": "Don Danihen's Music Sheet is obtained by completing Don Danihen's Memory.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bard_La_Fimmel_-_Danihen's_Lost_Song.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-26",
+      "order": 1325,
+      "title": "Explorer Reina - Hair in the Pumpkin",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Underground Dev Room - Underground Passage 5",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-25"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Explorer Reina at Underground Dev Room - Underground Passage 5.",
+        "Get 50x Baseball Video DVD: dropped by Merchant Mon (Lv.186) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5.",
+        "Get 50x Baseball Game CD: dropped by Merchant Mon (Lv.186) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Baseball Video DVD",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Merchant Mon (Lv.186)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Baseball Game CD",
+          "qty": 50,
+          "source": {
+            "kind": "drop",
+            "from": "Merchant Mon (Lv.186)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Dev Room / Underground Dev Room - Underground Passage 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Pumpkin with Hair"
+        ]
+      },
+      "notes": "Baseball Video DVD and Baseball Game CD are dropped by Merchant Mon (Lv.186).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Hair_in_the_Pumpkin.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-27",
+      "order": 1326,
+      "title": "JOKER - Memory of Pumpkin",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "JOKER",
+      "npcIds": [
+        "joker"
+      ],
+      "location": "Underground Dev Room - Control Room",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-26"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to JOKER at Underground Dev Room - Control Room.",
+        "Get 1x Memory Kit 4: Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Pumpkin with Hair with Inventor Gale at Underground Dev Room - Lobby.",
+        "Bring everything back to JOKER."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Memory Kit 4",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Exchange for 1x Memory Projector + 1x Hologram Source + 1x DNA Sensor + 1x Pumpkin with Hair with Inventor Gale at Underground Dev Room - Lobby",
+            "map": "Underground Dev Room - Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3757158,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Approved Memory Kit 4"
+        ]
+      },
+      "notes": "The code is 0404134. Memory Kit 4 is obtained by compounding Memory Projector + Hologram Source + DNA Sensor + Pumpkin with Hair with Inventor Gale at Underground Dev Room - Lobby. Memory Projector and Hologram Source are dropped by Win16 Worm (Lv.232). DNA Sensor is dropped by Thief Mole (Lv.227). Pumpkin with Hair is obtained by completing Explorer Reina - Hair in the Pumpkin.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/JOKER_-_Memory_of_Pumpkin.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-28",
+      "order": 1327,
+      "title": "Knight Scar - Prophecy",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Knight Scar",
+      "npcIds": [
+        "knight-scar"
+      ],
+      "location": "The Prophecy",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-27"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Knight Scar at The Prophecy.",
+        "Get 1x Voice Chip: drilled in The Prophecy.",
+        "Bring everything back to Knight Scar."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in The Prophecy (drill depth not on the wiki)",
+            "map": "The Prophecy"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Voice Chip is drilled in The Prophecy.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Knight_Scar_-_Prophecy.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-29",
+      "order": 1328,
+      "title": "Clotho - The First Prophecy",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Clotho",
+      "npcIds": [
+        "clotho"
+      ],
+      "location": "The Prophecy",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-28"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Clotho at The Prophecy.",
+        "Get 1x Voice Chip: drilled in The Prophecy.",
+        "Bring everything back to Clotho."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in The Prophecy (drill depth not on the wiki)",
+            "map": "The Prophecy"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Voice Chip is drilled in The Prophecy.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Clotho_-_The_First_Prophecy.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-30",
+      "order": 1329,
+      "title": "Lachesis - Second Prophecy",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Lachesis",
+      "npcIds": [
+        "lachesis"
+      ],
+      "location": "The Prophecy",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-29"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Lachesis at The Prophecy.",
+        "Get 1x Voice Chip: drilled in The Prophecy.",
+        "Bring everything back to Lachesis."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in The Prophecy (drill depth not on the wiki)",
+            "map": "The Prophecy"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion"
+        ]
+      },
+      "notes": "Voice Chip is drilled in The Prophecy.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Lachesis_-_Second_Prophecy.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep5-31",
+      "order": 1330,
+      "title": "Atropos - Third Prophecy",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep5"
+      ],
+      "chapter": "Episode 5 - Ch.3: Mysterious Sarcophagus (Lv.160+)",
+      "npc": "Atropos",
+      "npcIds": [
+        "atropos"
+      ],
+      "location": "The Prophecy",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep5-30"
+        }
+      ],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Atropos at The Prophecy.",
+        "Get 1x Voice Chip: drilled in The Prophecy.",
+        "Bring everything back to Atropos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Voice Chip",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in The Prophecy (drill depth not on the wiki)",
+            "map": "The Prophecy"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 3005726,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "20x Half Pink Potion",
+          "20x Half Blue Potion",
+          "1x Don Danihen's Picture"
+        ]
+      },
+      "notes": "Voice Chip is drilled in The Prophecy.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Atropos_-_Third_Prophecy.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}
