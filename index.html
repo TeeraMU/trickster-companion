@@ -75,6 +75,7 @@
           <span class="mini-track"><span class="mini-fill" id="overallProgressBar"></span></span>
           <span id="overallPct">0%</span>
         </button>
+        <button type="button" class="icon-btn" id="searchBtn" onclick="TQSearch.open()" title="Search items, monsters, NPCs and quests (press /)" aria-label="Search">🔍</button>
         <button type="button" class="icon-btn" id="settingsBtn" aria-expanded="false" aria-controls="settingsPanel" onclick="toggleHeaderPanel('settings')" title="Settings, backup and report" aria-label="Settings">⚙️</button>
       </div>
     </div>
@@ -145,6 +146,15 @@
       </div>
     </div>
   </header>
+
+  <dialog class="search-dialog" id="searchDialog" aria-label="Search">
+    <div class="srch-bar">
+      <span aria-hidden="true">🔍</span>
+      <input type="text" id="searchBox" placeholder="Item, monster, NPC or quest…" autocomplete="off" oninput="TQSearch.update(this.value)" onkeydown="if (event.key === 'Enter') { const b = document.querySelector('#searchResults .srch-main'); if (b) b.click(); }">
+      <button type="button" class="icon-btn" onclick="TQSearch.close()" aria-label="Close search">✕</button>
+    </div>
+    <div class="srch-results" id="searchResults"></div>
+  </dialog>
 
   <dialog class="sync-dialog" id="syncChoice" aria-labelledby="syncChoiceTitle">
     <h2 id="syncChoiceTitle">☁️ Which progress do you want to keep?</h2>
@@ -426,6 +436,7 @@
   <script src="js/sync-merge.js"></script>
   <script src="js/cloud.js"></script>
   <script src="js/friends.js"></script>
+  <script src="js/search.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -1793,6 +1804,7 @@
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
           TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged });
           TQEpisode.setFriendsHave(friendsHaveHtml);
+          TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage });
           hideLoadingScreen();
         })
         .catch(showLoadError);
