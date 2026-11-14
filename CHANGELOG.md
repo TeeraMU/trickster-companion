@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat).
+- Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).
 
 ## 0.7.2 (2026-11-14): Sticker quests under keys, earlier-quest items, header fix
 
