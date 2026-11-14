@@ -184,6 +184,9 @@
         </li>`;
     }).join("");
 
+    // quests still in the way (Quests page passes ctx.lockedBy; finished quests never show it)
+    const blockers = !isDone && ctx.lockedBy ? ctx.lockedBy(q) : [];
+
     return `
       <div class="quest-card ${isDone ? "completed" : ""} ${isExpanded ? "expanded" : ""}" id="qcard-${q.id}">
         <div class="quest-summary" onclick="toggleExpandQuest('${q.id}')">
@@ -201,11 +204,13 @@
                 ${q.classFilter !== "All" ? `<span class="tag tag-job">${esc(q.classFilter)}</span>` : ""}
                 ${steps.length > 1 ? `<span class="tag ${isDone ? "tag-everyday" : isPartial ? "tag-key" : "tag-level"}">Steps ${stepsDone}/${steps.length}</span>` : ""}
                 ${warnings.map(w => `<span class="tag qc-warn" title="${esc(w)}">⚠️ ${esc(w)}</span>`).join("")}
+                ${blockers.length ? `<span class="tag qc-locked" title="Do the quests below first">🔒 Locked</span>` : ""}
               </div>
               <div class="quest-meta-line">
                 <span class="quest-meta-item">🙋 <strong>${esc(q.npc)}</strong></span>
                 <span class="quest-meta-item">📍 ${esc(q.location)}</span>
               </div>
+              ${blockers.length ? `<div class="qc-blocked">🔒 First: ${blockers.map(t => `<strong>${esc(t)}</strong>`).join(" · ")}</div>` : ""}
             </div>
           </div>
           <div class="quest-right">

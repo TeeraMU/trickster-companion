@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: numbered quest series now unlock in order, as in game: Frog Shaman Magic 1→4 and Genius Cochma Survey 1→4 (Oops Wharf, Ghost Blue, Snow Hill), Lethos 1→4 (Oops Wharf, Ghost Blue, Rose Garden, Snow Hill) and Xote Cupid of Love 1→4. The wiki left out "needs part 1" for these zones (checked in game: Oops Wharf Magic 1 comes first).
+- Quests page: a locked quest shows 🔒 Locked and what to do first (e.g. "First: Officer Tera - Fend Off Pirates! 1").
+
 ## 0.7.0 (2026-11-13): Every zone to Techichi, loading screen
 
 - Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.
