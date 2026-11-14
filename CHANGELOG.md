@@ -7,6 +7,7 @@
 - Quest cards: **🔓 Unlocks** lists the quests a quest opens, and the 🔒 First quests can be tapped too; both jump to that quest's card on the Quests page.
 - Fixed: numbered quest series now unlock in order, as in game: Frog Shaman Magic 1→4 and Genius Cochma Survey 1→4 (Oops Wharf, Ghost Blue, Snow Hill), Lethos 1→4 (Oops Wharf, Ghost Blue, Rose Garden, Snow Hill) and Xote Cupid of Love 1→4. The wiki left out "needs part 1" for these zones (checked in game: Oops Wharf Magic 1 comes first).
 - Quests page: a locked quest shows 🔒 Locked and what to do first (e.g. "First: Officer Tera - Fend Off Pirates! 1").
+- Friends: each friend (and you) shows the in-game sprite of their job next to the name: the 3rd job they picked (e.g. Primadonna), else their class's first job (e.g. Model for Cat).
 
 ## 0.7.0 (2026-11-13): Every zone to Techichi, loading screen
 
