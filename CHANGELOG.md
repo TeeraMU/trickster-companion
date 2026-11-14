@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Friends: a **Share my Bag** switch (on by default). Turn it off and friends no longer see how many of each item you have or your spare items; your class, progress and needs are still shared. Synced with your other devices.
+
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
 - Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).
