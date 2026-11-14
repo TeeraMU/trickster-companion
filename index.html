@@ -1375,6 +1375,16 @@
     // ============================================================================
     // FRIENDS (js/friends.js): the short summary friends see, and the page
     // ============================================================================
+    // Job sprite for a class ("Cat") and 3rd job path label ("Primadonna"): the 3rd job when one is
+    // picked, else the class's 1st job (data/classes.json, from the wiki's class pages)
+    let CLASS_JOBS = {};
+    function classIcon(cls, pathLabel) {
+      const c = CLASS_JOBS[cls];
+      if (!c) return null;
+      const job = (pathLabel && c.jobs.find(j => j.name === pathLabel)) || c.jobs.find(j => j.stage === 1);
+      return job ? { url: job.img, name: job.name } : null;
+    }
+
     function friendSummary() {
       const cls = appState.selectedClass || "All";
       const pool = QUESTS.filter(q => matchesClassFilter(q, cls));
@@ -1585,6 +1595,7 @@
       MAP_INDEX = TQRoute.indexMaps(data.maps);
       DEFAULT_PINS = data.npcPins || {};
       NPC_NAMES = Object.fromEntries((data.npcs || []).map(n => [n.id, n.name]));
+      CLASS_JOBS = data.classes || {};
       ITEM_IMAGES = data.images;
     }
 
@@ -1634,7 +1645,7 @@
         .then(() => {
           loadState(); renderAll(); switchView(appState.currentView);
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
-          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged });
+          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon });
           TQEpisode.setFriendsHave(friendsHaveHtml);
           hideLoadingScreen();
         })

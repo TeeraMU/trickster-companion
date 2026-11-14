@@ -79,7 +79,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   run under Node; the renderer gets everything it needs through a context object.
 - `data/quests/index.json`: the list of quest files, in load order. Each `data/quests/<region>.json`
   holds `{ region, quests: [...] }`; the app sorts all quests by `order`.
-- `data/npcs.json` (id, name), `data/images.json` (name -> image URL).
+- `data/npcs.json` (id, name), `data/images.json` (name -> image URL), `data/classes.json` (class -> jobs
+  { name, stage 1/2/3, img }: job sprites for friend avatars; the app works without it).
 - `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
 - Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`.
 

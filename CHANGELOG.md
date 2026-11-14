@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Friends: each friend (and you) shows the in-game sprite of their job next to the name: the 3rd job they picked (e.g. Primadonna), else their class's first job (e.g. Model for Cat).
+
 ## 0.7.0 (2026-11-13): Every zone to Techichi, loading screen
 
 - Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.

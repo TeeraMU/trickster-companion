@@ -99,14 +99,15 @@
   async function loadAll(base) {
     const get = path => fetchJson(base + path).catch(e => { throw new Error(`${path}: ${e.message}`); });
     const index = await get("quests/index.json");
-    const [questFiles, images, npcs, maps, npcPins] = await Promise.all([
+    const [questFiles, images, npcs, maps, npcPins, classes] = await Promise.all([
       Promise.all(index.files.map(f => get("quests/" + f))),
       get("images.json"),
       get("npcs.json"),
       get("maps.json"),
-      get("npc-pins.json")
+      get("npc-pins.json"),
+      get("classes.json").catch(() => ({ classes: {} })) // job sprites; the app works without them
     ]);
-    return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, maps, npcPins, questFiles };
+    return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, maps, npcPins, questFiles, classes: classes.classes || {} };
   }
 
   root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, buildPrereqIndex, loadAll, fetchJson, RETRY_WAITS };

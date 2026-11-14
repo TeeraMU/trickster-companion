@@ -287,6 +287,7 @@
           </div>
           <form class="friends-form" onsubmit="event.preventDefault(); TQFriends.setName(this.name.value)">
             <span class="friends-label">Friends see you as</span>
+            ${avatar(mine.cls, mine.path)}
             <input type="text" name="name" maxlength="20" value="${esc(me.name)}" required>
             <button class="btn" ${busy ? "disabled" : ""}>Save</button>
           </form>
@@ -299,6 +300,14 @@
         </div>
         <div class="friends-list">${cards}</div>
       </div>`;
+  }
+
+  // job sprite (3rd job if picked, else the class's 1st job); a plain 👤 when the class isn't known
+  function avatar(cls, path) {
+    const icon = ctx.classIcon && cls && cls !== "All" ? ctx.classIcon(cls, path) : null;
+    return icon
+      ? `<span class="friend-avatar" title="${esc(icon.name)}"><img src="${esc(icon.url)}" alt="${esc(icon.name)}" loading="lazy"></span>`
+      : `<span class="friend-avatar friend-avatar-none" aria-hidden="true">👤</span>`;
   }
 
   function friendCard(code, f, mine) {
@@ -317,6 +326,7 @@
     return `
       <div class="calc-card friend-card">
         <div class="friend-head">
+          ${avatar(d.cls, d.path)}
           <strong class="friend-name">${esc(d.name)}</strong>
           <span class="friends-muted">${esc(d.cls && d.cls !== "All" ? d.cls : "")}${d.path ? " · " + esc(d.path) : ""}${seen ? " · seen " + seen : ""}</span>
           <button class="icon-btn" onclick="TQFriends.removeFriend('${code}')" title="Remove" aria-label="Remove ${esc(d.name)}">✕</button>

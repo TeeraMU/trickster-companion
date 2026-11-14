@@ -1,0 +1,268 @@
+{
+  "source": "wiki.ggftw.com/trickster class pages via wikimirror.lifeto.co (2026-11-14)",
+  "classes": {
+    "Bunny": {
+      "jobs": [
+        {
+          "name": "Schoolgirl",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/74/Schoolgirl.gif",
+          "w": 39,
+          "h": 90
+        },
+        {
+          "name": "Boxer",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/70/Boxer.gif",
+          "w": 43,
+          "h": 91
+        },
+        {
+          "name": "Champion",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3f/Champion.gif",
+          "w": 39,
+          "h": 91
+        },
+        {
+          "name": "Duelist",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b0/Duelist.gif",
+          "w": 39,
+          "h": 91
+        }
+      ]
+    },
+    "Buffalo": {
+      "jobs": [
+        {
+          "name": "Fighter",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f3/Fighter.gif",
+          "w": 69,
+          "h": 80
+        },
+        {
+          "name": "Warrior",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/30/Warrior.gif",
+          "w": 69,
+          "h": 81
+        },
+        {
+          "name": "Gladiator",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e0/Gladiator.gif",
+          "w": 69,
+          "h": 79
+        },
+        {
+          "name": "Mercenary",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a2/Mercenary.gif",
+          "w": 69,
+          "h": 79
+        }
+      ]
+    },
+    "Sheep": {
+      "jobs": [
+        {
+          "name": "Librarian",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9d/Librarian.gif",
+          "w": 50,
+          "h": 71
+        },
+        {
+          "name": "Bard",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/35/Bard.gif",
+          "w": 43,
+          "h": 71
+        },
+        {
+          "name": "Soul Master",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9e/Soul_Master.gif",
+          "w": 45,
+          "h": 71
+        },
+        {
+          "name": "Witch",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/ae/Witch.gif",
+          "w": 45,
+          "h": 71
+        }
+      ]
+    },
+    "Dragon": {
+      "jobs": [
+        {
+          "name": "Shaman",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/79/Shaman.gif",
+          "w": 41,
+          "h": 80
+        },
+        {
+          "name": "Magician",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f8/Magician.gif",
+          "w": 43,
+          "h": 81
+        },
+        {
+          "name": "Dark Lord",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ea/Dark_Lord.gif",
+          "w": 45,
+          "h": 81
+        },
+        {
+          "name": "Priest",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/65/Priest.gif",
+          "w": 45,
+          "h": 81
+        },
+        {
+          "name": "Wizard",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/4a/Wizard.gif",
+          "w": 45,
+          "h": 81
+        }
+      ]
+    },
+    "Fox": {
+      "jobs": [
+        {
+          "name": "Archaeologist",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/49/Archaeologist.gif",
+          "w": 51,
+          "h": 80
+        },
+        {
+          "name": "Explorer",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/07/Explorer.gif",
+          "w": 51,
+          "h": 80
+        },
+        {
+          "name": "Thief Master",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c5/Thief_Master.gif",
+          "w": 51,
+          "h": 80
+        },
+        {
+          "name": "Hunter Lord",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/55/Hunter_Lord.gif",
+          "w": 51,
+          "h": 80
+        }
+      ]
+    },
+    "Lion": {
+      "jobs": [
+        {
+          "name": "Engineer",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3c/Engineer.gif",
+          "w": 43,
+          "h": 75
+        },
+        {
+          "name": "Inventor",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/0e/Inventor.gif",
+          "w": 43,
+          "h": 75
+        },
+        {
+          "name": "Scientist",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/78/Scientist.gif",
+          "w": 43,
+          "h": 77
+        },
+        {
+          "name": "Cyber Hunter",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/20/Cyber_Hunter.gif",
+          "w": 43,
+          "h": 77
+        }
+      ]
+    },
+    "Cat": {
+      "jobs": [
+        {
+          "name": "Model",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ef/Model.gif",
+          "w": 41,
+          "h": 75
+        },
+        {
+          "name": "Entertainer",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a2/Entertainer.gif",
+          "w": 40,
+          "h": 75
+        },
+        {
+          "name": "Primadonna",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/87/Primadonna.gif",
+          "w": 39,
+          "h": 75
+        },
+        {
+          "name": "Diva",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b6/Diva.gif",
+          "w": 39,
+          "h": 75
+        }
+      ]
+    },
+    "Raccoon": {
+      "jobs": [
+        {
+          "name": "Teacher",
+          "stage": 1,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/fd/Teacher.gif",
+          "w": 39,
+          "h": 78
+        },
+        {
+          "name": "Card Master",
+          "stage": 2,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c0/Card_Master.gif",
+          "w": 41,
+          "h": 79
+        },
+        {
+          "name": "Gambler",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cf/Gambler.gif",
+          "w": 41,
+          "h": 79
+        },
+        {
+          "name": "Duke",
+          "stage": 3,
+          "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5e/Duke.gif",
+          "w": 41,
+          "h": 79
+        }
+      ]
+    }
+  }
+}

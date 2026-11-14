@@ -3401,3 +3401,33 @@ a.btn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* job sprite next to a friend's name (head and shoulders of the in-game sprite) */
+.friend-avatar {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: start center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent-blue) 14%, var(--bg-card));
+  border: 1.5px solid var(--border);
+  align-self: center;
+}
+
+.friend-avatar img {
+  height: 64px;
+  width: auto;
+  margin-top: 1px;
+  image-rendering: pixelated;
+}
+
+.friend-avatar-none {
+  place-items: center;
+  font-size: 1.2rem;
+}
+
+.friend-head {
+  align-items: center;
+}
