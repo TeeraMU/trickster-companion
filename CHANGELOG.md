@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Quests page, three ways to see a zone: 📜 the quests, 🎒 items to collect by map, and new **⚔️ Monsters**: every monster to hunt for the quests shown, lowest level first, with where it lives, what it drops for which quest and how many you still need. On wide screens the right column switches between Items and Monsters; on phones they're tabs.
+- Pick one zone and a bar over the list shows how far you are, with **🙈 Hide finished** and **✅ Mark zone done** (asks first; for zones you finished before using the app).
+
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
 - Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).

@@ -3990,3 +3990,122 @@ a.btn {
   opacity: 0.4;
   cursor: default;
 }
+
+/* Quests page right column: 🎒 Items to collect or ⚔️ Monsters (js/town.js) */
+.ck-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ck-side-switch {
+  align-self: flex-start;
+}
+
+.ep-layout[data-side="farm"] .ck-monsters,
+.ep-layout[data-side="monsters"] .ck-farm {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .ck-side-switch {
+    display: none;
+  }
+  .ep-layout[data-pane="quests"] > .ck-side,
+  .ep-layout[data-pane="monsters"] > .ck-quests {
+    display: none;
+  }
+}
+
+/* zone bar over the quest list when one area is picked */
+.zone-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+}
+
+.zone-bar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zone-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ⚔️ Monsters panel */
+.tw-mon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tw-mon {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--bg-tertiary);
+  border: 1.5px solid var(--border);
+}
+
+.tw-mon.is-locked {
+  opacity: 0.7;
+}
+
+.tw-mon-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tw-maps {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.tw-lines {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 8px 0 0;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.86rem;
+}
+
+.tw-lines li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tw-lines li.is-done {
+  opacity: 0.65;
+}
+
+.tw-item-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.tw-for {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
