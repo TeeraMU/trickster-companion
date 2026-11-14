@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Quests page: each zone's sticker quests now sit under the key quest that collects the stickers (🏷️ Sticker quests for this key, with how many are done and how many stickers it needs), instead of in a separate section.
 - Fixed: the top bar overlapped on laptop widths (about 1000-1560px) since the Roadmap tab was added. It now tightens first, then shows tab icons only (names on hover).
 
 ## 0.7.1 (2026-11-14): Key roadmap, search, quest links, class icons

@@ -3828,3 +3828,32 @@ a.btn {
 .friend-head {
   align-items: center;
 }
+
+/* Quests page: a zone's sticker quests nested under the key quest that collects the stickers */
+.key-stickers {
+  margin: -4px 0 8px 22px;
+  padding-left: 14px;
+  border-left: 3px solid color-mix(in srgb, var(--accent-pink) 45%, transparent);
+}
+
+.key-stickers > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.key-stickers > .quest-list {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .key-stickers {
+    margin-left: 8px;
+    padding-left: 10px;
+  }
+}
