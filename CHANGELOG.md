@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
 - Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).
 - Fixed: quests with 10, 20 or 25 runs (e.g. Monkey T's Request) showed one button per run, which squeezed the title into a narrow column. They now show 🔁 Runs 3/25 with a small bar and − / + buttons.
