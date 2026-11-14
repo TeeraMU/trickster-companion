@@ -631,7 +631,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-06"
+        }
+      ],
       "prereqText": "Level 60+",
       "steps": [
         "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
@@ -688,7 +692,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-07"
+        }
+      ],
       "prereqText": "Level 60+",
       "steps": [
         "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
@@ -748,7 +756,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-08"
+        }
+      ],
       "prereqText": "Level 60+",
       "steps": [
         "Talk to Frog Shaman at Wharf Field 2 - Devil Crow.",
@@ -784,7 +796,7 @@
     },
     {
       "id": "ow-10",
-      "order": 313,
+      "order": 314,
       "title": "Genius Cochma - Oops Wharf Survey - 2",
       "categories": [
         "general"
@@ -801,7 +813,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-30"
+        }
+      ],
       "prereqText": "Level 60+",
       "steps": [
         "Talk to Genius Cochma at Gate of Oops Wharf.",
@@ -841,7 +857,7 @@
     },
     {
       "id": "ow-11",
-      "order": 314,
+      "order": 315,
       "title": "Genius Cochma - Oops Wharf Survey - 3",
       "categories": [
         "general"
@@ -858,7 +874,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-10"
+        }
+      ],
       "prereqText": "Level 60+",
       "steps": [
         "Talk to Genius Cochma at Gate of Oops Wharf.",
@@ -898,7 +918,7 @@
     },
     {
       "id": "ow-12",
-      "order": 315,
+      "order": 316,
       "title": "Genius Cochma - Oops Wharf Survey - 4",
       "categories": [
         "sticker",
@@ -918,7 +938,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-11"
+        }
+      ],
       "prereqText": "Level 60+",
       "steps": [
         "Talk to Genius Cochma at Gate of Oops Wharf.",
@@ -954,7 +978,7 @@
     },
     {
       "id": "ow-13",
-      "order": 316,
+      "order": 317,
       "title": "Grandpa Tango - Destination: Sea Palace!",
       "categories": [
         "sticker",
@@ -1012,7 +1036,7 @@
     },
     {
       "id": "ow-14",
-      "order": 317,
+      "order": 318,
       "title": "Lethos - Elixir of Life? - 1",
       "categories": [
         "general"
@@ -1063,7 +1087,7 @@
     },
     {
       "id": "ow-15",
-      "order": 318,
+      "order": 319,
       "title": "Lethos - Elixir of Life? - 2",
       "categories": [
         "general"
@@ -1080,7 +1104,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-14"
+        }
+      ],
       "prereqText": "Level 70+",
       "steps": [
         "Talk to Lethos at Oops Wharf.",
@@ -1116,7 +1144,7 @@
     },
     {
       "id": "ow-16",
-      "order": 319,
+      "order": 320,
       "title": "Lethos - Elixir of Life? - 3",
       "categories": [
         "general"
@@ -1133,7 +1161,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-15"
+        }
+      ],
       "prereqText": "Level 70+",
       "steps": [
         "Talk to Lethos at Oops Wharf.",
@@ -1167,7 +1199,7 @@
     },
     {
       "id": "ow-17",
-      "order": 320,
+      "order": 321,
       "title": "Lethos - Elixir of Life? - 4",
       "categories": [
         "sticker",
@@ -1187,7 +1219,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "ow-16"
+        }
+      ],
       "prereqText": "Level 70+",
       "steps": [
         "Talk to Lethos at Oops Wharf.",
@@ -1223,7 +1259,7 @@
     },
     {
       "id": "ow-18",
-      "order": 321,
+      "order": 322,
       "title": "Merchant Miguel - Rare Ivory",
       "categories": [
         "sticker",
@@ -1282,7 +1318,7 @@
     },
     {
       "id": "ow-19",
-      "order": 322,
+      "order": 323,
       "title": "Officer Tera - Fend Off Pirates! 1",
       "categories": [
         "general"
@@ -1333,7 +1369,7 @@
     },
     {
       "id": "ow-20",
-      "order": 323,
+      "order": 324,
       "title": "Officer Tera - Fend Off Pirates! 2",
       "categories": [
         "sticker",
@@ -1395,7 +1431,7 @@
     },
     {
       "id": "ow-21",
-      "order": 324,
+      "order": 325,
       "title": "Rosemary - Make a Luxury Coat",
       "categories": [
         "sticker",
@@ -1453,7 +1489,7 @@
     },
     {
       "id": "ow-22",
-      "order": 325,
+      "order": 326,
       "title": "Sophia - Let's be Healthy!",
       "categories": [
         "sticker",
@@ -1524,7 +1560,7 @@
     },
     {
       "id": "ow-23",
-      "order": 326,
+      "order": 327,
       "title": "Marinel - Daily Quest - Oops Wharf",
       "categories": [
         "daily"
@@ -1578,7 +1614,7 @@
     },
     {
       "id": "ow-24",
-      "order": 327,
+      "order": 328,
       "title": "Skipper Min - The Way to Mermaid Palace",
       "categories": [
         "general"
@@ -1624,7 +1660,7 @@
     },
     {
       "id": "ow-25",
-      "order": 328,
+      "order": 329,
       "title": "Marinel - Mermaid Palace's Entertainer Elicia",
       "categories": [
         "general"
@@ -1670,7 +1706,7 @@
     },
     {
       "id": "ow-26",
-      "order": 329,
+      "order": 330,
       "title": "Monkey T - Monkey T's Request (4)",
       "categories": [
         "general"
@@ -1721,7 +1757,7 @@
     },
     {
       "id": "ow-27",
-      "order": 330,
+      "order": 331,
       "title": "Explorer Reina - Treasure Hunting 1 - Oops Wharf",
       "categories": [
         "general"
@@ -1789,7 +1825,7 @@
     },
     {
       "id": "ow-28",
-      "order": 331,
+      "order": 332,
       "title": "Explorer Reina - Treasure Hunting 2 - Oops Wharf",
       "categories": [
         "general"
@@ -1860,7 +1896,7 @@
     },
     {
       "id": "ow-29",
-      "order": 332,
+      "order": 333,
       "title": "Driller King Marky - Romance of Drilling - Oops Wharf",
       "categories": [
         "general"
@@ -1928,7 +1964,7 @@
     },
     {
       "id": "ow-30",
-      "order": 333,
+      "order": 313,
       "title": "Genius Cochma - Oops Wharf Survey - 1",
       "categories": [
         "general"

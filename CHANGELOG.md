@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.1 (2026-11-14): Key roadmap, search, quest links, class icons
+
+- **🔍 Search everything** (🔍 in the header or press /): items (where to get them, which quests use them, which quests give them as a reward), monsters (level, where they live, what they drop for quests, which hunts need them), NPCs (where they stand, their quests) and quests. Tap any quest to jump to it.
+- **🗝️ Key roadmap** (Roadmap page): the key quests that open each zone, Desert Beach to Techichi Volcano, in order. Each zone shows its level, the stickers it needs, how many of its sticker quests you've done, ✅ / ▶️ / 🔒 on each quest, "keep open" on quests a later one needs accepted, and 📍 Continue here on the zone you're in. Tap a quest to open it; 🎒 Items needed opens that zone's key and sticker items. The old early-game walkthrough is folded underneath.
+- Quest cards: **🔓 Unlocks** lists the quests a quest opens, and the 🔒 First quests can be tapped too; both jump to that quest's card on the Quests page.
+- Fixed: numbered quest series now unlock in order, as in game: Frog Shaman Magic 1→4 and Genius Cochma Survey 1→4 (Oops Wharf, Ghost Blue, Snow Hill), Lethos 1→4 (Oops Wharf, Ghost Blue, Rose Garden, Snow Hill) and Xote Cupid of Love 1→4. The wiki left out "needs part 1" for these zones (checked in game: Oops Wharf Magic 1 comes first).
+- Quests page: a locked quest shows 🔒 Locked and what to do first (e.g. "First: Officer Tera - Fend Off Pirates! 1").
+- Friends: each friend (and you) shows the in-game sprite of their job next to the name: the 3rd job they picked (e.g. Primadonna), else their class's first job (e.g. Model for Cat).
+
 ## 0.7.0 (2026-11-13): Every zone to Techichi, loading screen
 
 - Fixed: if the site answered "busy" (503) for a moment, often right after an update, the page showed no quests until you reloaded. Data files now retry up to 3 times by themselves.

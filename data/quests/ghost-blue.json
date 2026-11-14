@@ -2175,7 +2175,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-30"
+        }
+      ],
       "prereqText": "Level 100+",
       "steps": [
         "Talk to Frog Shaman at Seabed Field 2 - East.",
@@ -2232,7 +2236,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-31"
+        }
+      ],
       "prereqText": "Level 100+",
       "steps": [
         "Talk to Frog Shaman at Seabed Field 2 - East.",
@@ -2292,7 +2300,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-32"
+        }
+      ],
       "prereqText": "Level 100+",
       "steps": [
         "Talk to Frog Shaman at Seabed Field 2 - East.",
@@ -2396,7 +2408,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-34"
+        }
+      ],
       "prereqText": "Level 100+",
       "steps": [
         "Talk to Genius Cochma at Gate of Ghost Blue.",
@@ -2453,7 +2469,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-35"
+        }
+      ],
       "prereqText": "Level 100+",
       "steps": [
         "Talk to Genius Cochma at Gate of Ghost Blue.",
@@ -2513,7 +2533,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-36"
+        }
+      ],
       "prereqText": "Level 100+",
       "steps": [
         "Talk to Genius Cochma at Gate of Ghost Blue.",
@@ -2916,7 +2940,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-44"
+        }
+      ],
       "prereqText": "Level 110+",
       "steps": [
         "Talk to Lethos at Nora Sewer.",
@@ -2973,7 +3001,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-45"
+        }
+      ],
       "prereqText": "Level 110+",
       "steps": [
         "Talk to Lethos at Nora Sewer.",
@@ -3033,7 +3065,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "gb-46"
+        }
+      ],
       "prereqText": "Level 110+",
       "steps": [
         "Talk to Lethos at Nora Sewer.",

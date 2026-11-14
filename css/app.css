@@ -1874,6 +1874,7 @@ select:focus, input:focus {
   padding: 0 16px 14px 70px;
 }
 
+.quest-card.completed:not(.expanded) .qc-unlocks,
 .quest-card.completed:not(.expanded) .qc-body {
   display: none;
 }
@@ -3400,4 +3401,413 @@ a.btn {
 @keyframes loading-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* 🔒 locked quest on the Quests page: what to do first */
+.qc-locked {
+  background: color-mix(in srgb, var(--accent-orange) 16%, var(--bg-card));
+  color: var(--ink-orange);
+  border: 1.5px solid color-mix(in srgb, var(--accent-orange) 45%, transparent);
+}
+
+.qc-blocked {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--ink-orange);
+}
+
+/* ---------------------------------------------------------------------------------------
+   Key roadmap (Roadmap page) and quest links on cards
+   --------------------------------------------------------------------------------------- */
+.kr-top h2 {
+  margin: 0 0 4px;
+}
+
+.kr-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 16px;
+  font-size: 0.86rem;
+}
+
+.kr-progress .friend-bar {
+  flex: 1;
+  max-width: 320px;
+}
+
+.kr-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.kr-zone {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+}
+
+.kr-rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.kr-rail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.kr-zone:first-child .kr-rail::before { top: 18px; }
+.kr-zone:last-child .kr-rail::before { bottom: calc(100% - 18px); }
+
+.kr-dot {
+  position: relative;
+  margin-top: 6px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+.kr-zone.is-done .kr-dot {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: var(--text-on-accent);
+}
+
+.kr-zone.is-next .kr-dot {
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 30%, var(--bg-card));
+  color: var(--ink-gold);
+}
+
+.kr-body {
+  margin-bottom: 12px;
+}
+
+.kr-zone.is-next .kr-body {
+  border-color: var(--accent-gold);
+}
+
+.kr-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin-bottom: 8px;
+}
+
+.kr-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.kr-count {
+  margin-left: auto;
+  font-weight: 800;
+  color: var(--ink-cyan);
+}
+
+.kr-here {
+  background: color-mix(in srgb, var(--accent-gold) 22%, var(--bg-card));
+  color: var(--ink-gold);
+}
+
+.kr-quests {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.kr-quest {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kr-quest:hover { border-color: var(--accent-blue); }
+.kr-quest.is-done { color: var(--text-secondary); text-decoration: line-through; }
+.kr-quest.is-available { border-color: var(--accent-gold); background: color-mix(in srgb, var(--accent-gold) 12%, var(--bg-card)); }
+.kr-quest.is-locked { color: var(--text-secondary); }
+
+.kr-arrow {
+  color: var(--text-secondary);
+  font-weight: 800;
+}
+
+.kr-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 18%, var(--bg-card));
+  color: var(--ink-purple);
+  text-decoration: none;
+}
+
+.kr-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.roadmap-old {
+  margin-top: 18px;
+}
+
+.roadmap-old > summary {
+  cursor: pointer;
+  font-weight: 800;
+  padding: 8px 4px;
+}
+
+/* quest titles that jump to their card (🔒 First / 🔓 Unlocks) */
+.qc-link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 800;
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.qc-link:hover { color: var(--ink-blue); }
+
+.qc-unlocks {
+  margin: 2px 16px 10px;
+  font-size: 0.8rem;
+  color: var(--ink-cyan);
+}
+
+.quest-card.qc-flash {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+  transition: outline-color 0.4s ease;
+}
+
+@media (max-width: 680px) {
+  .qc-unlocks {
+    margin-left: 16px;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------
+   Search everything (js/search.js): / or 🔍
+   --------------------------------------------------------------------------------------- */
+.search-dialog {
+  margin: 70px auto auto;
+  width: min(640px, calc(100vw - 24px));
+  max-height: calc(100vh - 100px);
+  padding: 0;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.search-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-dialog::backdrop {
+  background: rgba(20, 30, 60, 0.45);
+}
+
+.srch-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.srch-bar input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+}
+
+.srch-results {
+  overflow-y: auto;
+  padding: 6px 12px 14px;
+}
+
+.srch-h {
+  margin: 12px 4px 6px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.srch-n {
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.srch-row {
+  border-radius: var(--radius-sm);
+}
+
+.srch-row.is-open {
+  background: var(--bg-tertiary);
+}
+
+.srch-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 7px 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.srch-main:hover,
+.srch-main:focus-visible {
+  background: var(--bg-tertiary);
+}
+
+.srch-icon {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  object-fit: contain;
+}
+
+.srch-name {
+  font-weight: 800;
+}
+
+.srch-lv {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.srch-sub {
+  margin-left: auto;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.srch-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 2px 12px 10px 46px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.srch-map {
+  color: var(--text-secondary);
+}
+
+.srch-qlink {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink-blue);
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.srch-more {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.srch-hint {
+  margin: 14px 6px;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 600px) {
+  .search-dialog {
+    margin-top: 8px;
+    max-height: calc(100vh - 16px);
+  }
+
+  .srch-sub {
+    display: none;
+  }
+
+  .srch-detail {
+    padding-left: 12px;
+  }
+}
+
+/* job sprite next to a friend's name (head and shoulders of the in-game sprite) */
+.friend-avatar {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: start center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent-blue) 14%, var(--bg-card));
+  border: 1.5px solid var(--border);
+  align-self: center;
+}
+
+.friend-avatar img {
+  height: 64px;
+  width: auto;
+  margin-top: 1px;
+  image-rendering: pixelated;
+}
+
+.friend-avatar-none {
+  place-items: center;
+  font-size: 1.2rem;
+}
+
+.friend-head {
+  align-items: center;
 }

@@ -11,6 +11,7 @@ non-commercial fan project and will be removed on request.
 | `bg/wallpaper.webp` | Character wallpaper shown on the right of the page | Provided by the project owner (2026-11-12), resized to 900px |
 | `loading/running.json`, `loading/run-sheet.webp` | Loading animation (two characters running, Lottie) | Made by the project owner (2026-11-13); the embedded 1536×1024 PNG sprite sheet was moved out to a 768×512 WebP (3.1 MB -> 175 KB), animation unchanged |
 | (hotlinked) item / NPC / reward icons in `data/images.json` | Game sprites | ggftw Trickster wiki via wikimirror.lifeto.co |
+| (hotlinked) job sprites in `data/classes.json` | In-game sprite of every job (1st, 2nd and 3rd jobs of the 8 classes), shown next to friends' names | ggftw Trickster wiki class pages via wikimirror.lifeto.co |
 | (hotlinked) region overview maps and map pictures in `data/maps.json` | Game maps | ggftw Trickster wiki via wikimirror.lifeto.co |
 
 To remove the background art: delete `bg/key-art.webp` and the `--bg-art-image` rule in `css/app.css`.
