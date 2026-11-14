@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Quests page: each zone's sticker quests now sit under the key quest that collects the stickers (🏷️ Sticker quests for this key, with how many are done and how many stickers it needs), instead of in a separate section.
+
 ## 0.7.1 (2026-11-14): Key roadmap, search, quest links, class icons
 
 - **🔍 Search everything** (🔍 in the header or press /): items (where to get them, which quests use them, which quests give them as a reward), monsters (level, where they live, what they drop for quests, which hunts need them), NPCs (where they stand, their quests) and quests. Tap any quest to jump to it.
