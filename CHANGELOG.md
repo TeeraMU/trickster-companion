@@ -4,6 +4,8 @@
 
 - Friends: a **Share my Bag** switch (on by default). Turn it off and friends no longer see how many of each item you have or your spare items; your class, progress and needs are still shared. Synced with your other devices.
 - Friends: "now in" follows the story first. A new player shows as EP0 (Heidi - Trickster Registration) instead of Desert Beach; once the episodes are done it follows the next key quest as before. The items listed as a friend's needs start from that area too.
+- Quests page, three ways to see a zone: 📜 the quests, 🎒 items to collect by map, and new **⚔️ Monsters**: every monster to hunt for the quests shown, lowest level first, with where it lives, what it drops for which quest and how many you still need. On wide screens the right column switches between Items and Monsters; on phones they're tabs.
+- Pick one zone and a bar over the list shows how far you are, with **🙈 Hide finished** and **✅ Mark zone done** (asks first; for zones you finished before using the app).
 
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 

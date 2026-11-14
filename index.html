@@ -224,11 +224,19 @@
     <div id="viewQuests" class="hidden">
       <div class="ep-subtabs" role="tablist">
         <button type="button" role="tab" id="ckTabQuests" onclick="setChecklistPane('quests')">📜 Quests</button>
-        <button type="button" role="tab" id="ckTabFarm" onclick="setChecklistPane('farm')">🎒 Items to collect</button>
+        <button type="button" role="tab" id="ckTabFarm" onclick="setChecklistPane('farm')">🎒 Items</button>
+        <button type="button" role="tab" id="ckTabMonsters" onclick="setChecklistPane('monsters')">⚔️ Monsters</button>
       </div>
-      <div class="ep-layout" id="checklistLayout" data-pane="quests">
-        <div class="ck-quests" data-pane="quests"><div id="questListContainer"></div></div>
-        <div class="ck-farm" data-pane="farm" id="checklistFarm"></div>
+      <div class="ep-layout" id="checklistLayout" data-pane="quests" data-side="farm">
+        <div class="ck-quests" data-pane="quests"><div id="zoneBar"></div><div id="questListContainer"></div></div>
+        <div class="ck-side">
+          <div class="ck-side-switch pref-switch" role="group" aria-label="Right panel">
+            <button type="button" id="ckSideFarm" onclick="setChecklistSide('farm')">🎒 Items to collect</button>
+            <button type="button" id="ckSideMonsters" onclick="setChecklistSide('monsters')">⚔️ Monsters</button>
+          </div>
+          <div class="ck-farm" id="checklistFarm"></div>
+          <div class="ck-monsters" id="checklistMonsters"></div>
+        </div>
       </div>
     </div>
 
@@ -441,6 +449,7 @@
   <script src="js/route.js"></script>
   <script src="js/report.js"></script>
   <script src="js/bag.js"></script>
+  <script src="js/town.js"></script>
   <script src="js/sync-merge.js"></script>
   <script src="js/cloud.js"></script>
   <script src="js/friends.js"></script>
@@ -960,8 +969,56 @@
       return Number(String(s).replace(/\D/g, "")) || 0;
     }
 
+    // Quests in the picked area for your class / 3rd job path, ignoring category, search and status filters
+    function zonePool() {
+      const cls = appState.selectedClass || "All";
+      return QUESTS.filter(q => matchesClassFilter(q, cls) && inSelectedArea(q));
+    }
+
+    // Bar over the list when one area is picked: progress, 🙈 Hide finished, ✅ Mark zone done
+    function renderZoneBar() {
+      const el = document.getElementById("zoneBar");
+      const reg = appState.selectedRegion || "All";
+      if (reg === "All") { el.innerHTML = ""; return; }
+      const pool = zonePool();
+      const done = pool.filter(q => appState.completedQuests[q.id]).length;
+      const hiding = (document.getElementById("statusFilter")?.value || "all") === "incomplete";
+      const label = /^Episode \d+$/.test(reg) ? "EP" + num(reg) : reg;
+      el.innerHTML = `
+        <div class="zone-bar">
+          <div class="zone-bar-title"><strong>📍 ${label}</strong>
+            <span class="badge-count">${done} / ${pool.length} done</span></div>
+          <div class="zone-bar-actions">
+            <button type="button" class="btn" aria-pressed="${hiding}" onclick="setHideFinished(${!hiding})">${hiding ? "👁️ Show finished" : "🙈 Hide finished"}</button>
+            ${done < pool.length ? `<button type="button" class="btn" onclick="markZoneDone()" title="Tick every quest here (for your class)">✅ Mark zone done</button>` : ""}
+          </div>
+        </div>`;
+    }
+
+    function setHideFinished(on) {
+      document.getElementById("statusFilter").value = on ? "incomplete" : "all";
+      renderAll();
+    }
+
+    // Tick every quest of the picked area (your class / path) after asking: for players who already
+    // finished a zone before using the app
+    function markZoneDone() {
+      const left = zonePool().filter(q => !appState.completedQuests[q.id]);
+      if (!left.length) return;
+      const reg = appState.selectedRegion;
+      if (!confirm(`Mark all ${left.length} unfinished quests in ${reg} as done?\n\nYou can untick any of them afterwards.`)) return;
+      left.forEach(q => {
+        appState.completedQuests[q.id] = true;
+        appState.completedCycles[q.id] = q.cycles;
+        (q.steps || []).forEach((_, i) => { appState.completedSteps[`${q.id}_${i}`] = true; });
+      });
+      saveState();
+      renderAll();
+    }
+
     function renderQuestList() {
       STATUS_CACHE = null;
+      renderZoneBar();
       const filtered = getFilteredQuests();
       document.getElementById("badgeQuestCount").textContent = filtered.length;
 
@@ -1286,10 +1343,34 @@
         hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map.${plus.earlier.size ? ` Also for ${plus.earlier.size} earlier quest${plus.earlier.size === 1 ? "" : "s"} they need done first (↩).` : ""} Items handed over by earlier quests aren't listed.`,
         afterHint: focusBarHtml()
       });
-      const pane = appState.checklistPane === "farm" ? "farm" : "quests";
-      document.getElementById("checklistLayout").setAttribute("data-pane", pane);
+      // ⚔️ Monsters: the same list regrouped by monster (js/town.js)
+      const monsters = TQTown.monsterList(everything ? farm : TQBag.applyHave(farm, appState.inventory));
+      const icon = name => {
+        const url = getItemImage(name);
+        return url ? `<img class="tw-item-icon" src="${url.replace(/["<>&]/g, "")}" alt="" loading="lazy" />` : "🎁";
+      };
+      document.getElementById("checklistMonsters").innerHTML = TQTown.renderMonsters(monsters, {
+        itemIcon: icon,
+        hint: `Monsters to hunt for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}) and what each one drops for them, lowest level first.${plus.earlier.size ? " ↩ = for an earlier quest your filter hides." : ""}`
+      });
+      const pane = ["farm", "monsters"].includes(appState.checklistPane) ? appState.checklistPane : "quests";
+      const side = pane !== "quests" ? pane : (appState.checklistSide === "monsters" ? "monsters" : "farm");
+      const layout = document.getElementById("checklistLayout");
+      layout.setAttribute("data-pane", pane);
+      layout.setAttribute("data-side", side);
       document.getElementById("ckTabQuests").setAttribute("aria-selected", String(pane === "quests"));
       document.getElementById("ckTabFarm").setAttribute("aria-selected", String(pane === "farm"));
+      document.getElementById("ckTabMonsters").setAttribute("aria-selected", String(pane === "monsters"));
+      document.getElementById("ckSideFarm").setAttribute("aria-pressed", String(side === "farm"));
+      document.getElementById("ckSideMonsters").setAttribute("aria-pressed", String(side === "monsters"));
+    }
+
+    // Desktop: which panel the right column shows (phones use the Quests / Items / Monsters tabs)
+    function setChecklistSide(side) {
+      appState.checklistSide = side;
+      if (appState.checklistPane !== "quests") appState.checklistPane = side;
+      saveState();
+      renderChecklistFarm();
     }
 
     // ============================================================================
@@ -1355,6 +1436,7 @@
 
     function setChecklistPane(pane) {
       appState.checklistPane = pane;
+      if (pane !== "quests") appState.checklistSide = pane;
       saveState();
       renderChecklistFarm();
     }

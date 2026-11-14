@@ -85,6 +85,9 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
 - Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`,
   `test-search.js` (search index against the real data).
+- `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
+  drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
+  ✅ Mark zone done) is in index.html (`renderZoneBar`).
 - `js/search.js`: search everything (/ or 🔍): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 
