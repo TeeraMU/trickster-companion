@@ -1,0 +1,2259 @@
+{
+  "region": "Episode 3",
+  "quests": [
+    {
+      "id": "ep3-01",
+      "order": 1100,
+      "title": "Chief Architect Amos - Amos' Orders",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Chief Architect Amos",
+      "npcIds": [
+        "chief-architect-amos"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Chief Architect Amos at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x Signed Document 4: reward from Sue - Hard Job Pt.",
+        "Bring everything back to Chief Architect Amos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Signed Document 4",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Sue - Hard Job Pt",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Alteo Passport"
+        ]
+      },
+      "notes": "Signed Document 4 is obtained by completing Sue - Hard Job Pt. 4 Transport Gems.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Architect_Amos_-_Amos'_Orders.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-02",
+      "order": 1101,
+      "title": "Larry - Hard Job Pt. 1 Pick Rocks",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Larry",
+      "npcIds": [
+        "larry"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-01"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Larry at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 20x Shard of Caliche: drilled in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Larry."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Shard of Caliche",
+          "qty": 20,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 4 - Alteo Construction Site (drill depth not on the wiki)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2074547,
+        "tmExp": 775409,
+        "galder": 0,
+        "items": [
+          "1x Signed Statement 1"
+        ]
+      },
+      "notes": "Shard of Caliche is drilled in Mirage Island Field 4 - Alteo Construction Site.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Larry_-_Hard_Job_Pt._1_Pick_Rocks.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-03",
+      "order": 1102,
+      "title": "Bob - Hard Job Pt. 2 Collect Bricks",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Bob",
+      "npcIds": [
+        "bob"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-02"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Bob at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 10x Lump of Gray Clay: dropped by Gray Clay Rock (Lv.60) in Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 10x Lump of Pale Clay: dropped by Pale Clay Rock (Lv.60) in Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 10x Lump of Red Clay: dropped by Red Clay Rock (Lv.60) in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Bob."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Lump of Gray Clay",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Gray Clay Rock (Lv.60)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lump of Pale Clay",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Pale Clay Rock (Lv.60)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Lump of Red Clay",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Red Clay Rock (Lv.60)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2074547,
+        "tmExp": 775409,
+        "galder": 0,
+        "items": [
+          "10x Blue Potion B"
+        ]
+      },
+      "notes": "Lump of Gray Clay is dropped by Gray Clay Rock (Lv.60), Lump of Pale Clay is dropped by Pale Clay Rock (Lv.60), Lump of Red Clay is dropped by Red Clay Rock (Lv.60).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bob_-_Hard_Job_Pt._2_Collect_Bricks.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-04",
+      "order": 1103,
+      "title": "Bob - Hard Job Pt. 2 Collect Timber",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Bob",
+      "npcIds": [
+        "bob"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-03"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Bob at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 10x Poplar Wood: dropped by Poplar Tree (Lv.60) in Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 10x Cherry Wood: dropped by Cherry Tree (Lv.60) in Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 10x Walnut Wood: dropped by Walnut Tree (Lv.60) in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Bob."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Poplar Wood",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Poplar Tree (Lv.60)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Cherry Wood",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Cherry Tree (Lv.60)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Walnut Wood",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Walnut Tree (Lv.60)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2074547,
+        "tmExp": 775409,
+        "galder": 0,
+        "items": [
+          "1x Signed Document 2"
+        ]
+      },
+      "notes": "Poplar Wood is dropped by Poplar Tree (Lv.60), Cherry Wood is dropped by Cherry Tree (Lv.60), Walnut Wood is dropped by Walnut Tree (Lv.60).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bob_-_Hard_Job_Pt._2_Collect_Timber.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-05",
+      "order": 1104,
+      "title": "Jim - Hard Job Pt. 3 Prepare Snacks",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Jim",
+      "npcIds": [
+        "jim"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-04"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Jim at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 5x Chickensaurus's Leg: dropped by Chickensaurus (Lv.116) in Mirage Island Field 2 - Cliff of Fate.",
+        "Bring everything back to Jim."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Chickensaurus's Leg",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Chickensaurus (Lv.116)",
+            "map": "Mirage Island Field 2 - Cliff of Fate"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2074547,
+        "tmExp": 775409,
+        "galder": 0,
+        "items": [
+          "1x Signed Document 3"
+        ]
+      },
+      "notes": "Chickensaurus's Leg is dropped by Chickensaurus (Lv.116).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Jim_-_Hard_Job_Pt._3_Prepare_Snacks.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-06",
+      "order": 1105,
+      "title": "Sue - Hard Job Pt. 4 Transport Gems",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Sue",
+      "npcIds": [
+        "sue"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-05"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Sue at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x Gem Supply Box: reward from Merchant Vinny - Gem Supply Box.",
+        "Bring everything back to Sue."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gem Supply Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Merchant Vinny - Gem Supply Box",
+            "map": "Gate of Mirage Island"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2074547,
+        "tmExp": 775409,
+        "galder": 0,
+        "items": [
+          "1x Signed Document 4"
+        ]
+      },
+      "notes": "Gem Supply Box is obtained by completing Merchant Vinny - Gem Supply Box.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sue_-_Hard_Job_Pt._4_Transport_Gems.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-07",
+      "order": 1106,
+      "title": "Merchant Vinny - Gem Supply Box",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.1: Building an Empire (Lv.130+)",
+      "npc": "Merchant Vinny",
+      "npcIds": [
+        "merchant-vinny"
+      ],
+      "location": "Gate of Mirage Island",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-06",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 130+, have Hard Job Pt. 4 Transport Gems in quest log",
+      "steps": [
+        "Talk to Merchant Vinny at Gate of Mirage Island.",
+        "Talk to him."
+      ],
+      "objectives": [],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Gem Supply Box"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Merchant_Vinny_-_Gem_Supply_Box.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-08",
+      "order": 1107,
+      "title": "Light Filled Egg - Birth of the Early Tricksters",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Light Filled Egg",
+      "npcIds": [
+        "light-filled-egg"
+      ],
+      "location": "Trickster Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-07"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Light Filled Egg at Trickster Shrine.",
+        "Get 2x Fabilsag's Stinger: dropped by Fabilsag G (Lv.110) in Mirage Island Field 1 - Alteo.",
+        "Get 5x Ancient Face: dropped by Ancient Chimu (Lv.160) in Mirage Island Field 5 - Alteo City / Mirage Island Field 7 - Guardian's Square.",
+        "Bring everything back to Light Filled Egg."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fabilsag's Stinger",
+          "qty": 2,
+          "source": {
+            "kind": "drop",
+            "from": "Fabilsag G (Lv.110)",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Ancient Face",
+          "qty": 5,
+          "source": {
+            "kind": "drop",
+            "from": "Ancient Chimu (Lv.160)",
+            "map": "Mirage Island Field 5 - Alteo City / Mirage Island Field 7 - Guardian's Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "2x Crystal of Light"
+        ]
+      },
+      "notes": "Fabilsag's Stinger is dropped by Fabilsag G (Lv.110) and Ancient Face is dropped by Ancient Chimu (Lv.160).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Light_Filled_Egg_-_Birth_of_the_Early_Tricksters.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-09",
+      "order": 1108,
+      "title": "Curator Morgos - The Story of the Mural - Birth",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Curator Morgos",
+      "npcIds": [
+        "curator-morgos"
+      ],
+      "location": "Trickster Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-08"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Curator Morgos at Trickster Shrine.",
+        "Get 1x Status Report: reward from Indiana John - Mural's Analysis.",
+        "Bring everything back to Curator Morgos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Status Report",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Mural's Analysis",
+            "map": "Mirage Island Field 7 - Guardian's Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Status Report"
+        ]
+      },
+      "notes": "Status Report is obtained by completing Indiana John - Mural's Analysis.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Curator_Morgos_-_The_Story_of_the_Mural_-_Birth.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-10",
+      "order": 1109,
+      "title": "Indiana John - Mural's Analysis",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Mirage Island Field 7 - Guardian's Square",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-09"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Indiana John at Mirage Island Field 7 - Guardian's Square.",
+        "Get 1x Fatigue Medicine: Compound 5x Panacea 1x Herb Potion = 1x Fatigue Medicine with Compounder Paul at Mirage Island Field 7 - Guardian's Square .",
+        "Bring everything back to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Fatigue Medicine",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compound 5x Panacea 1x Herb Potion = 1x Fatigue Medicine with Compounder Paul at Mirage Island Field 7 - Guardian's Square ",
+            "map": "Mirage Island Field 7 - Guardian's Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Status Report"
+        ]
+      },
+      "notes": "Fatigue Medicine is obtained by compounding 5x Panacea and 1x Herb Potion with Compounder Paul at Mirage Island Field 7. Panacea is dropped by Werepot (Lv.98), Fabilsag (Lv.106), Fabilsag G (Lv.110), Chickensaurus (Lv.116), Dark Hollow (Lv.122), Ancient Chimu (Lv.160) and Herb Potion can be bought in various shops and can be drilled in several maps.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Indiana_John_-_Mural's_Analysis.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-11",
+      "order": 1110,
+      "title": "Curator Morgos - The Story of the Mural - Growth",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Curator Morgos",
+      "npcIds": [
+        "curator-morgos"
+      ],
+      "location": "Trickster Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-10"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Curator Morgos at Trickster Shrine.",
+        "Get 1x Restoration Details: reward from Old Artist - Mural's Restoration.",
+        "Bring everything back to Curator Morgos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Restoration Details",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Old Artist - Mural's Restoration",
+            "map": "Mirage Island Field 7 - Guardian's Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "Restoration Details is obtained by completing Old Artist - Mural's Restoration.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Curator_Morgos_-_The_Story_of_the_Mural_-_Growth.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-12",
+      "order": 1111,
+      "title": "Old Artist - Mural's Restoration",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Old Artist",
+      "npcIds": [
+        "old-artist"
+      ],
+      "location": "Mirage Island Field 7 - Guardian's Square",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-11"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Old Artist at Mirage Island Field 7 - Guardian's Square.",
+        "Get 1x Restoration Box: dropped by Ancient Werepot (Lv.170) in Mirage Island Field 6 - Water Garden.",
+        "Get 1x Status Report: reward from Indiana John - Mural's Analysis.",
+        "Bring everything back to Old Artist."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Restoration Box",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ancient Werepot (Lv.170)",
+            "map": "Mirage Island Field 6 - Water Garden"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Status Report",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Mural's Analysis",
+            "map": "Mirage Island Field 7 - Guardian's Square"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Restoration Details"
+        ]
+      },
+      "notes": "Restoration Box is dropped by Ancient Werepot (Lv.170). Status Report is obtained by completing Indiana John - Mural's Analysis.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Old_Artist_-_Mural's_Restoration.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-13",
+      "order": 1112,
+      "title": "Curator Morgos - The Story of the Mural - Hero",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Curator Morgos",
+      "npcIds": [
+        "curator-morgos"
+      ],
+      "location": "Trickster Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-11"
+        },
+        {
+          "quest": "ep3-12"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Curator Morgos at Trickster Shrine.",
+        "Get 1x Bindi: dropped by Ancient Chimu (Lv.160) in Mirage Island Field 5 - Alteo City / Mirage Island Field 7 - Guardian's Square.",
+        "Get 1x Crystal of Light: reward from Light Filled Egg - Birth of the Early Tricksters.",
+        "Bring everything back to Curator Morgos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bindi",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ancient Chimu (Lv.160)",
+            "map": "Mirage Island Field 5 - Alteo City / Mirage Island Field 7 - Guardian's Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystal of Light",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Light Filled Egg - Birth of the Early Tricksters",
+            "map": "Trickster Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "2x Resurrection Marble"
+        ]
+      },
+      "notes": "Bindi is dropped by Ancient Chimu (Lv.160) and Crystal of Light is obtained by completing Light Filled Egg - Birth of the Early Tricksters.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Curator_Morgos_-_The_Story_of_the_Mural_-_Hero.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-14",
+      "order": 1113,
+      "title": "Nefertiti 2 - Reunion with the Princess",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Nefertiti 2",
+      "npcIds": [
+        "nefertiti-2"
+      ],
+      "location": "Mirage Island Field 6 - Water Garden",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-13"
+        }
+      ],
+      "prereqText": "Level 130+, have Proof of a Hero in your inventory",
+      "steps": [
+        "Talk to Nefertiti 2 at Mirage Island Field 6 - Water Garden.",
+        "Get 1x Morgos's Message: reward from Curator Morgos - Hyper Mind Control.",
+        "Bring everything back to Nefertiti 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Morgos's Message",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Curator Morgos - Hyper Mind Control",
+            "map": "Mirage Island Field 6 - Water Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 5186367,
+        "tmExp": 1938522,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Proof of a Hero is dropped by Golem (Lv.300). Morgos's Message is obtained by completing Curator Morgos - Hyper Mind Control.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Nefertiti_2_-_Reunion_with_the_Princess.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-15",
+      "order": 1114,
+      "title": "Curator Morgos - Hyper Mind Control",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Curator Morgos",
+      "npcIds": [
+        "curator-morgos"
+      ],
+      "location": "Mirage Island Field 6 - Water Garden",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-14"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Curator Morgos at Mirage Island Field 6 - Water Garden.",
+        "Get 1x Ra Weapon Box: reward from Dancer Olinda - The Ra's Complaints.",
+        "Get 1x Folkan Weapon Box: reward from Merchant Vinny - The Folkan's Complaints.",
+        "Get 1x Byzantine Weapon Box: reward from Chief Architect Amos - The Byzantine's Complaints.",
+        "Bring everything back to Curator Morgos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ra Weapon Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Dancer Olinda - The Ra's Complaints",
+            "map": "Mirage Island Field 5 - Alteo City"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Folkan Weapon Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Merchant Vinny - The Folkan's Complaints",
+            "map": "Mirage Island Field 5 - Alteo City"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Byzantine Weapon Box",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Chief Architect Amos - The Byzantine's Complaints",
+            "map": "Mirage Island Field 5 - Alteo City"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Morgos's Message",
+          "1x Legendary Gaia Box"
+        ]
+      },
+      "notes": "Ra Weapon Box is obtained by completing The Ra's Complaints, Folkan Weapon Box is obtained by completing The Folkan's Complaints, Byzantine Weapon Box is obtained by completing The Byzantine's Complaints.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Curator_Morgos_-_Hyper_Mind_Control.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-16",
+      "order": 1115,
+      "title": "Chief Architect Amos - The Byzantine's Complaints",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Chief Architect Amos",
+      "npcIds": [
+        "chief-architect-amos"
+      ],
+      "location": "Mirage Island Field 5 - Alteo City",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-15"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Chief Architect Amos at Mirage Island Field 5 - Alteo City.",
+        "Get 1x Byzantine Family's Feeling of Unity: reward from Poseidon's Blessing.",
+        "Bring everything back to Chief Architect Amos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Byzantine Family's Feeling of Unity",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Poseidon's Blessing",
+            "map": "Mirage Island Field 5 - Alteo City"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Byzantine Weapon Box"
+        ]
+      },
+      "notes": "Byzantine Family's Feeling of Unity is obtained by exchanging Byzantine Family's Grievances with Poseidon's Blessing at Nefertiti's Shrine. Amos will NOT accept the feeling of unity if you still have a grievance on you.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Architect_Amos_-_The_Byzantine's_Complaints.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-17",
+      "order": 1116,
+      "title": "Dancer Olinda - The Ra's Complaints",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Dancer Olinda",
+      "npcIds": [
+        "dancer-olinda"
+      ],
+      "location": "Mirage Island Field 5 - Alteo City",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-16"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Dancer Olinda at Mirage Island Field 5 - Alteo City.",
+        "Get 1x Ra Family's Feeling of Unity: reward from Poseidon's Blessing.",
+        "Bring everything back to Dancer Olinda."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ra Family's Feeling of Unity",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Poseidon's Blessing",
+            "map": "Mirage Island Field 5 - Alteo City"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Ra Weapon Box"
+        ]
+      },
+      "notes": "Ra Family's Feeling of Unity is obtained by exchanging Ra Family's Grievances with Poseidon's Blessing at Nefertiti's Shrine. Olinda will NOT accept the feeling of unity if you still have a grievance on you.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Dancer_Olinda_-_The_Ra's_Complaints.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-18",
+      "order": 1117,
+      "title": "Merchant Vinny - The Folkan's Complaints",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.2: A Hero Appears (Lv.130+)",
+      "npc": "Merchant Vinny",
+      "npcIds": [
+        "merchant-vinny"
+      ],
+      "location": "Mirage Island Field 5 - Alteo City",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-17"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Merchant Vinny at Mirage Island Field 5 - Alteo City.",
+        "Get 1x Folkan Family's Feeling of Unity: reward from Poseidon's Blessing.",
+        "Bring everything back to Merchant Vinny."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Folkan Family's Feeling of Unity",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Poseidon's Blessing",
+            "map": "Mirage Island Field 5 - Alteo City"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1852274,
+        "tmExp": 692329,
+        "galder": 0,
+        "items": [
+          "1x Folkan Weapon Box"
+        ]
+      },
+      "notes": "Folkan Family's Feeling of Unity is obtained by exchanging Folkan Family's Grievances with Poseidon's Blessing at Nefertiti's Shrine. Vinny will NOT accept the feeling of unity if you still have a grievance on you.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Merchant_Vinny_-_The_Folkan's_Complaints.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-19",
+      "order": 1118,
+      "title": "Love Hunter Robin - Robin's Advice",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-18"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Love Hunter Robin at Nefertiti's Shrine.",
+        "Get 1x Robin's Necklace: dropped by Rosaspina (Lv.210) (Rosaspina - The Rhodonite Guardian sends you to her) in Guardian's Room.",
+        "Bring everything back to Love Hunter Robin."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Robin's Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Rosaspina (Lv.210) (Rosaspina - The Rhodonite Guardian sends you to her)",
+            "map": "Guardian's Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Sincere Heart"
+        ]
+      },
+      "notes": "Robin's Necklace is dropped by Rosaspina (Lv.210).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Robin's_Advice.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-20",
+      "order": 1119,
+      "title": "Rose Fairy Harmony - Rose Fairy's Message 1",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Rose Fairy Harmony",
+      "npcIds": [
+        "rose-fairy-harmony"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-19",
+          "active": true
+        }
+      ],
+      "prereqText": "Level 130+, have Robin's Advice in quest log",
+      "steps": [
+        "Talk to Rose Fairy Harmony at Nefertiti's Shrine.",
+        "Get 1x Rose Certificate A: reward from Rose Fairy Marion - Rose Fairy's First Test.",
+        "Bring everything back to Rose Fairy Harmony."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rose Certificate A",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rose Fairy Marion - Rose Fairy's First Test",
+            "map": "Nefertiti's Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Rose Certificate A is obtained by completing Rose Fairy's First Test.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rose_Fairy_Harmony_-_Rose_Fairy's_Message_1.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-21",
+      "order": 1120,
+      "title": "Rose Fairy Harmony - Rose Fairy's Message 2",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Rose Fairy Harmony",
+      "npcIds": [
+        "rose-fairy-harmony"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-20"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Rose Fairy Harmony at Nefertiti's Shrine.",
+        "Get 1x Rose Certificate B: reward from Rose Fairy Marion - Rose Fairy's Second Test.",
+        "Bring everything back to Rose Fairy Harmony."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Rose Certificate B",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rose Fairy Marion - Rose Fairy's Second Test",
+            "map": "Nefertiti's Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Rose Certificate B is obtained by completing Rose Fairy's Second Test.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rose_Fairy_Harmony_-_Rose_Fairy's_Message_2.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-22",
+      "order": 1121,
+      "title": "Rosaspina - The Rhodonite Guardian",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Rosaspina",
+      "npcIds": [
+        "rosaspina"
+      ],
+      "location": "Guardian's Room",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-21"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Rosaspina at Guardian's Room.",
+        "Defeat 1x Rosaspina (Lv.210) in Guardian's Room.",
+        "Report back to Rosaspina."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Rosaspina",
+          "level": 210,
+          "count": 1,
+          "map": "Guardian's Room"
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Soul Summoning Scroll 1",
+          "1x Robin's Necklace",
+          "1x Voice of Spirits"
+        ]
+      },
+      "notes": "Rosaspina will drop Robin's Necklace.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Rosaspina_-_The_Rhodonite_Guardian.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-23",
+      "order": 1122,
+      "title": "Love Hunter Robin - Harkon Statue",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-19"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Love Hunter Robin at Nefertiti's Shrine.",
+        "Get 1x Earthen Fate Necklace: reward from Spirit of Nefertiti - Spirit Nefertiti's Message.",
+        "Bring everything back to Love Hunter Robin."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Earthen Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Spirit of Nefertiti - Spirit Nefertiti's Message",
+            "map": "Room of Light"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Earthen Fate Necklace"
+        ]
+      },
+      "notes": "Earthen Fate Necklace is obtained by completing Spirit Nefertiti's Message.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Harkon_Statue.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-24",
+      "order": 1123,
+      "title": "Poseidon's Blessing - The Voice from the Statue",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Poseidon's Blessing",
+      "npcIds": [
+        "poseidons-blessing"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-22"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Poseidon's Blessing at Nefertiti's Shrine.",
+        "Get 1x Soul Summoning Scroll 3: reward from Indiana John - Decipher the Scroll.",
+        "Get 1x Voice of Spirits: reward from Rosaspina - The Rhodonite Guardian.",
+        "Get 1x Sincere Heart: reward from Love Hunter Robin - Robin's Advice.",
+        "Get 1x Crystal of Light: reward from Light Filled Egg - Birth of the Early Tricksters.",
+        "Get 1x Spirit of Light: reward from Fairy Nono - Reunion with Nono.",
+        "Bring everything back to Poseidon's Blessing."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Soul Summoning Scroll 3",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Indiana John - Decipher the Scroll",
+            "map": "Mirage Island Field 7 - Guardian's Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Voice of Spirits",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaspina - The Rhodonite Guardian",
+            "map": "Guardian's Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Sincere Heart",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Love Hunter Robin - Robin's Advice",
+            "map": "Nefertiti's Shrine"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Crystal of Light",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Light Filled Egg - Birth of the Early Tricksters",
+            "map": "Trickster Shrine"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Spirit of Light",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Nono - Reunion with Nono",
+            "map": "Nefertiti's Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "5x Soul Summoning (Skill)"
+        ]
+      },
+      "notes": "Soul Summoning Scroll 3 is obtained by completing Decipher the Scroll, Voice of Spirits is obtained by completing The Rhodonite Guardian, Sincere Heart is obtained by completing Robin's Advice, Crystal of Light is obtained by completing Birth of the Early Tricksters and Spirit of Light is obtained by completing Reunion with Nono.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poseidon's_Blessing_-_The_Voice_from_the_Statue.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-25",
+      "order": 1124,
+      "title": "Fairy Nono - Reunion with Nono",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Fairy Nono",
+      "npcIds": [
+        "fairy-nono"
+      ],
+      "location": "Nefertiti's Shrine",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-24"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Fairy Nono at Nefertiti's Shrine.",
+        "Get 1x Soul Summoning Scroll 1: reward from Rosaspina - The Rhodonite Guardian.",
+        "Get 1x Fairy Eyedrops: dropped by Rose Worm (Lv.190) in Nefertiti's Shrine.",
+        "Bring everything back to Fairy Nono."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Soul Summoning Scroll 1",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Rosaspina - The Rhodonite Guardian",
+            "map": "Guardian's Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Fairy Eyedrops",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Rose Worm (Lv.190)",
+            "map": "Nefertiti's Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Soul Summoning Scroll 2",
+          "1x Spirit of Light"
+        ]
+      },
+      "notes": "Soul Summoning Scroll 1 is obtained by completing The Rhodonite Guardian. Fairy Eyedrops is dropped by Rose Worm (Lv.190).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Fairy_Nono_-_Reunion_with_Nono.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-26",
+      "order": 1125,
+      "title": "Indiana John - Decipher the Scroll",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Indiana John",
+      "npcIds": [
+        "indiana-john"
+      ],
+      "location": "Mirage Island Field 7 - Guardian's Square",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-25"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Indiana John at Mirage Island Field 7 - Guardian's Square.",
+        "Get 1x Bindi: dropped by Ancient Chimu (Lv.160) in Mirage Island Field 5 - Alteo City / Mirage Island Field 7 - Guardian's Square.",
+        "Get 1x Soul Summoning Scroll 2: reward from Fairy Nono - Reunion with Nono.",
+        "Bring everything back to Indiana John."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Bindi",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ancient Chimu (Lv.160)",
+            "map": "Mirage Island Field 5 - Alteo City / Mirage Island Field 7 - Guardian's Square"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Soul Summoning Scroll 2",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Fairy Nono - Reunion with Nono",
+            "map": "Nefertiti's Shrine"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Soul Summoning Scroll 3"
+        ]
+      },
+      "notes": "Bindi is dropped by Ancient Chimu (Lv.160). Soul Summoning Scroll 2 is obtained by completing Reunion with Nono.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Indiana_John_-_Decipher_the_Scroll.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-27",
+      "order": 1126,
+      "title": "Spirit of Nefertiti - Spirit Nefertiti's Message",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Spirit of Nefertiti",
+      "npcIds": [
+        "spirit-of-nefertiti"
+      ],
+      "location": "Room of Light",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-24"
+        },
+        {
+          "quest": "ep3-26"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Spirit of Nefertiti at Room of Light.",
+        "Get 1x Earthen Fate Necklace: drilled in Room of Light.",
+        "Bring everything back to Spirit of Nefertiti."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Earthen Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Room of Light (drill depth not on the wiki)",
+            "map": "Room of Light"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Earthen Fate Necklace"
+        ]
+      },
+      "notes": "Earthen Fate Necklace is drilled in Room of Light. Use a Soul Summoning (Skill) to get there, which is obtained by completing Poseidon's Blessing - The Voice from the Statue. Do note, that the Earthen Fate Necklace is an irremovable item, which you can't trade or sell or npc, however you can bank it in your warehouse.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Spirit_of_Nefertiti_-_Spirit_Nefertiti's_Message.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-28",
+      "order": 1127,
+      "title": "Officer Robert - Robert the Spy",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Officer Robert",
+      "npcIds": [
+        "officer-robert"
+      ],
+      "location": "Mirage Island Field 6 - Water Garden",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-23"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Officer Robert at Mirage Island Field 6 - Water Garden.",
+        "Get 1x Ancient Feather Pen: drilled in Mirage Island Field 1 / 5 / 6.",
+        "Get 1x Papyrus: drilled in Pyramid Dungeon / Mirage Island Field 1 / 6.",
+        "Get 1x Red Ink Pad: dropped by Ancient Naranjo (Lv.180) in Mirage Island Field 6 - Water Garden.",
+        "Bring everything back to Officer Robert."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Ancient Feather Pen",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 1 / 5 / 6 (drill depth not on the wiki)",
+            "map": "Mirage Island Field 1 / 5 / 6"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Papyrus",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Pyramid Dungeon / Mirage Island Field 1 / 6 (drill depth not on the wiki)",
+            "map": "Pyramid Dungeon / Mirage Island Field 1 / 6"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Red Ink Pad",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Ancient Naranjo (Lv.180)",
+            "map": "Mirage Island Field 6 - Water Garden"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2593183,
+        "tmExp": 969261,
+        "galder": 0,
+        "items": [
+          "1x Holographic Photo"
+        ]
+      },
+      "notes": "Ancient Feather Pen is drilled in Mirage Island Field 1 / 5 / 6. Papyrus is drilled in Pyramid Dungeon, Mirage Island Field 1 / 6. Red Ink Pad is dropped by Ancient Naranjo (Lv.180).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Officer_Robert_-_Robert_the_Spy.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-29",
+      "order": 1128,
+      "title": "Don Cavalier - Don Cavalier's Proposal",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Don Cavalier",
+      "npcIds": [
+        "don-cavalier"
+      ],
+      "location": "Hologram Chamber",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-28"
+        }
+      ],
+      "prereqText": "Level 130+, use Holographic Photo",
+      "steps": [
+        "Talk to Don Cavalier at Hologram Chamber.",
+        "Get 1x Earthen Fate Necklace: reward from Spirit of Nefertiti - Spirit Nefertiti's Message.",
+        "Bring everything back to Don Cavalier."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Earthen Fate Necklace",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Spirit of Nefertiti - Spirit Nefertiti's Message",
+            "map": "Room of Light"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 11113644,
+        "tmExp": 4153977,
+        "galder": 0,
+        "items": [
+          "1x Dev. Room Card Key",
+          "4x Legendary Gaia Box"
+        ]
+      },
+      "notes": "Earthen Fate Necklace is obtained by completing Spirit Nefertiti's Message. Holographic Photo is obtained by completing Officer Robert - Robert the Spy.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Cavalier_-_Don_Cavalier's_Proposal.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-30",
+      "order": 1129,
+      "title": "Chief Architect Amos - Find the Missing Blueprints",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Chief Architect Amos",
+      "npcIds": [
+        "chief-architect-amos"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-29"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Chief Architect Amos at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x City Blueprint: reward from Monkey T - The Criminal's Confession.",
+        "Bring everything back to Chief Architect Amos."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "City Blueprint",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Monkey T - The Criminal's Confession",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2646105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "5x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "City Blueprint is obtained by Monkey T - The Criminal's Confession.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Chief_Architect_Amos_-_Find_the_Missing_Blueprints.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-31",
+      "order": 1130,
+      "title": "Larry - Who is the Criminal?",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Larry",
+      "npcIds": [
+        "larry"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-30"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Larry at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x Secretly Hidden Gem: drilled in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Larry."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secretly Hidden Gem",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 4 - Alteo Construction Site (drill depth not on the wiki)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2646105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Secretly Hidden Gem",
+          "1x Ripped Contract"
+        ]
+      },
+      "notes": "Secretly Hidden Gem is drilled in Mirage Island Field 4 - Alteo Construction Site.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Larry_-_Who_is_the_Criminal%3F.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-32",
+      "order": 1131,
+      "title": "Bob - Who is the Criminal?",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Bob",
+      "npcIds": [
+        "bob"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-31"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Bob at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x Secretly Hidden Gem: drilled in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Bob."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secretly Hidden Gem",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 4 - Alteo Construction Site (drill depth not on the wiki)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2646105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Secretly Hidden Gem",
+          "1x Ripped Contract"
+        ]
+      },
+      "notes": "Secretly Hidden Gem is drilled in Mirage Island Field 4 - Alteo Construction Site.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Bob_-_Who_is_the_Criminal%3F.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-33",
+      "order": 1132,
+      "title": "Jim - Who is the Criminal?",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Jim",
+      "npcIds": [
+        "jim"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-32"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Jim at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x Secretly Hidden Gem: drilled in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Jim."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secretly Hidden Gem",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 4 - Alteo Construction Site (drill depth not on the wiki)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2646105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Secretly Hidden Gem",
+          "1x Ripped Contract"
+        ]
+      },
+      "notes": "Secretly Hidden Gem is drilled in Mirage Island Field 4 - Alteo Construction Site.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Jim_-_Who_is_the_Criminal%3F.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-34",
+      "order": 1133,
+      "title": "Sue - Who is the Criminal?",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Sue",
+      "npcIds": [
+        "sue"
+      ],
+      "location": "Mirage Island Field 4 - Alteo Construction Site",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-33"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Sue at Mirage Island Field 4 - Alteo Construction Site.",
+        "Get 1x Secretly Hidden Gem: drilled in Mirage Island Field 4 - Alteo Construction Site.",
+        "Bring everything back to Sue."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Secretly Hidden Gem",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 4 - Alteo Construction Site (drill depth not on the wiki)",
+            "map": "Mirage Island Field 4 - Alteo Construction Site"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2646105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "2x Secretly Hidden Gem",
+          "1x Ripped Contract"
+        ]
+      },
+      "notes": "Secretly Hidden Gem is drilled in Mirage Island Field 4 - Alteo Construction Site.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Sue_-_Who_is_the_Criminal%3F.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "ep3-35",
+      "order": 1134,
+      "title": "Monkey T - The Criminal's Confession",
+      "categories": [
+        "episode"
+      ],
+      "tags": [
+        "ep3"
+      ],
+      "chapter": "Episode 3 - Ch.3: Robin's Advice (Lv.130+)",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Mirage Island Field 1 - Alteo",
+      "minLevel": 130,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep3-34"
+        }
+      ],
+      "prereqText": "Level 130+",
+      "steps": [
+        "Talk to Monkey T at Mirage Island Field 1 - Alteo.",
+        "Get 1x Restored Contract: Compound 4x Ripped Contract with Compounder Paul at Mirage Island Field 7 - Guardian's Square .",
+        "Get 1x Secretly Hidden Gem: drilled in Mirage Island Field 4.",
+        "Bring everything back to Monkey T."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Restored Contract",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compound 4x Ripped Contract with Compounder Paul at Mirage Island Field 7 - Guardian's Square ",
+            "map": "Mirage Island Field 1 - Alteo"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Secretly Hidden Gem",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Mirage Island Field 4 (drill depth not on the wiki)",
+            "map": "Mirage Island Field 4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2646105,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x City Blueprint"
+        ]
+      },
+      "notes": "Restored Contract is obtained by exchanging all 4 pieces of Ripped Contracts with Compounder Paul at Mirage Island Field 7. Secretly Hidden Gem is drilled in Mirage Island Field 4.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_The_Criminal's_Confession.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}

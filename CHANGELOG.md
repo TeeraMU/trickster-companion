@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.0 (2026-11-15): Episodes 3-6, six new zones, Monsters view, Share my Bag
+
+- Friends: a **Share my Bag** switch (on by default). Turn it off and friends no longer see how many of each item you have or your spare items; your class, progress and needs are still shared. Synced with your other devices.
+- Friends: "now in" follows the story first. A new player shows as EP0 (Heidi - Trickster Registration) instead of Desert Beach; once the episodes are done it follows the next key quest as before. The items listed as a friend's needs start from that area too.
+- Quests page, three ways to see a zone: 📜 the quests, 🎒 items to collect by map, and new **⚔️ Monsters**: every monster to hunt for the quests shown, lowest level first, with where it lives, what it drops for which quest and how many you still need. On wide screens the right column switches between Items and Monsters; on phones they're tabs.
+- Pick one zone and a bar over the list shows how far you are, with **🙈 Hide finished** and **✅ Mark zone done** (asks first; for zones you finished before using the app).
+- **Episodes 3 to 6** (129 quests): EP3 Mirage Island (Lv.130+), EP4 Underground Dev Room (Lv.150+), EP5 memories and the Sarcophagus (Lv.160+) and EP6 Alteo Empire (Lv.200+, with the bonus chapter), each in its chapters and story order, with where to get every item. A few quests whose wiki page is empty aren't in yet (e.g. Pastor Tau - Tau and Chagan).
+- **Six new zones** (272 quests): Mirage Island side quests (11), Underground Dev Room (15), Alteo Empire (18), **Tapasco Volcano** (123, with its key quest Tapasco Recommendation Sticker in the Key roadmap), Abyss (26) and **Tower of Chaos** (79: floor surveys, Ed's traces, Harsh Training, Poirot). Episode quests listed under these zones on the wiki stay in their episode. About 100 Tower of Chaos pages (Collect Chaos Integer, some floor surveys) aren't on the wiki mirror, so they're missing for now.
+
 ## 0.7.3 (2026-11-15): Class picker with job sprites, run counter
 
 - Header: the class picker shows your job's sprite instead of 🎭 (the 3rd job you picked, else your class's first job, e.g. Model for Cat), and its list shows each class's sprite too (arrow keys, Enter and Esc work).

@@ -52,6 +52,10 @@
     "name": "Automatic Plant Incubator"
   },
   {
+    "id": "bandaged-man",
+    "name": "Bandaged Man"
+  },
+  {
     "id": "banker-lisa",
     "name": "Banker Lisa"
   },
@@ -80,6 +84,14 @@
     "name": "Blue Muffler Poppuri"
   },
   {
+    "id": "bob",
+    "name": "Bob"
+  },
+  {
+    "id": "bookcase",
+    "name": "Bookcase"
+  },
+  {
     "id": "boxer-jeanne",
     "name": "Boxer Jeanne"
   },
@@ -94,6 +106,10 @@
   {
     "id": "bunny-maid",
     "name": "Bunny Maid"
+  },
+  {
+    "id": "burner",
+    "name": "Burner"
   },
   {
     "id": "butler-of-vamp-castle",
@@ -116,12 +132,24 @@
     "name": "Centakonus' Messenger"
   },
   {
+    "id": "chef-saporin",
+    "name": "Chef Saporin"
+  },
+  {
+    "id": "chief-architect-amos",
+    "name": "Chief Architect Amos"
+  },
+  {
     "id": "chief-koha",
     "name": "Chief Koha"
   },
   {
     "id": "clerk-z-smith",
     "name": "Clerk Z. Smith"
+  },
+  {
+    "id": "cletta",
+    "name": "Cletta"
   },
   {
     "id": "clever-owl",
@@ -148,12 +176,56 @@
     "name": "Copyfish DomDom"
   },
   {
+    "id": "coward-craven",
+    "name": "Coward Craven"
+  },
+  {
+    "id": "curator-morgos",
+    "name": "Curator Morgos"
+  },
+  {
     "id": "daisy",
     "name": "Daisy"
   },
   {
+    "id": "dancer-olinda",
+    "name": "Dancer Olinda"
+  },
+  {
     "id": "delphinus-messenger",
     "name": "Delphinus' Messenger"
+  },
+  {
+    "id": "developer-h",
+    "name": "Developer H"
+  },
+  {
+    "id": "developer-j",
+    "name": "Developer J"
+  },
+  {
+    "id": "developer-k",
+    "name": "Developer K"
+  },
+  {
+    "id": "developer-project-manager-l",
+    "name": "Developer Project Manager L"
+  },
+  {
+    "id": "developer-y",
+    "name": "Developer Y"
+  },
+  {
+    "id": "developers-pc",
+    "name": "Developer's PC"
+  },
+  {
+    "id": "don-cavalier",
+    "name": "Don Cavalier"
+  },
+  {
+    "id": "don-danihen",
+    "name": "Don Danihen"
   },
   {
     "id": "don-giuvanni",
@@ -188,8 +260,24 @@
     "name": "Dr. Cat (Middle Right)"
   },
   {
+    "id": "dr-guppy",
+    "name": "Dr. Guppy"
+  },
+  {
+    "id": "dr-jelly-head",
+    "name": "Dr. Jelly Head"
+  },
+  {
+    "id": "draco-knight",
+    "name": "Draco Knight"
+  },
+  {
     "id": "dragon-tales-messenger",
     "name": "Dragon Tale's Messenger"
+  },
+  {
+    "id": "drawer",
+    "name": "Drawer"
   },
   {
     "id": "dreams",
@@ -292,8 +380,16 @@
     "name": "General Granada"
   },
   {
+    "id": "general-manager-penguin",
+    "name": "General Manager Penguin"
+  },
+  {
     "id": "genius-cochma",
     "name": "Genius Cochma"
+  },
+  {
+    "id": "giant-coolem-npc",
+    "name": "Giant Coolem (NPC)"
   },
   {
     "id": "golden-ants-messenger",
@@ -304,8 +400,16 @@
     "name": "Grandma Tango"
   },
   {
+    "id": "grandpa-t",
+    "name": "Grandpa T"
+  },
+  {
     "id": "grandpa-tango",
     "name": "Grandpa Tango"
+  },
+  {
+    "id": "granpa-jelly-head",
+    "name": "Granpa Jelly Head"
   },
   {
     "id": "guard-gilbert",
@@ -336,12 +440,20 @@
     "name": "Happisto Stallone"
   },
   {
+    "id": "head-janitor-moresco",
+    "name": "Head Janitor Moresco"
+  },
+  {
     "id": "heidi",
     "name": "Heidi"
   },
   {
     "id": "homeless-ian",
     "name": "Homeless Ian"
+  },
+  {
+    "id": "homeless-ian-spa",
+    "name": "Homeless Ian (Spa)"
   },
   {
     "id": "horse-hiddink",
@@ -368,8 +480,24 @@
     "name": "Hunter Yuri"
   },
   {
+    "id": "ice-boy-npc",
+    "name": "Ice Boy (NPC)"
+  },
+  {
+    "id": "ice-girl-npc",
+    "name": "Ice Girl (NPC)"
+  },
+  {
+    "id": "icicler-npc",
+    "name": "Icicler (NPC)"
+  },
+  {
     "id": "indiana-john",
     "name": "Indiana John"
+  },
+  {
+    "id": "intern-g",
+    "name": "Intern G"
   },
   {
     "id": "inventor-gale",
@@ -380,6 +508,26 @@
     "name": "Irina"
   },
   {
+    "id": "janitor-pavane",
+    "name": "Janitor Pavane"
+  },
+  {
+    "id": "jill-jelly-head",
+    "name": "Jill Jelly Head"
+  },
+  {
+    "id": "jim",
+    "name": "Jim"
+  },
+  {
+    "id": "jim-jelly-head",
+    "name": "Jim Jelly Head"
+  },
+  {
+    "id": "joker",
+    "name": "JOKER"
+  },
+  {
     "id": "kahlihara",
     "name": "Kahlihara"
   },
@@ -388,12 +536,20 @@
     "name": "Keeper Julio"
   },
   {
+    "id": "keeper-rachel",
+    "name": "Keeper Rachel"
+  },
+  {
     "id": "king-edward",
     "name": "King Edward"
   },
   {
     "id": "king-enigmos-messenger",
     "name": "King Enigmo's Messenger"
+  },
+  {
+    "id": "king-poppuri",
+    "name": "King Poppuri"
   },
   {
     "id": "knight-scar",
@@ -424,6 +580,18 @@
     "name": "Lachesis"
   },
   {
+    "id": "larry",
+    "name": "Larry"
+  },
+  {
+    "id": "lead-developer",
+    "name": "Lead Developer"
+  },
+  {
+    "id": "leonardo",
+    "name": "Leonardo"
+  },
+  {
     "id": "lethos",
     "name": "Lethos"
   },
@@ -436,8 +604,16 @@
     "name": "Lifeguard Deen"
   },
   {
+    "id": "light-filled-egg",
+    "name": "Light Filled Egg"
+  },
+  {
     "id": "little-chagan",
     "name": "Little Chagan"
+  },
+  {
+    "id": "little-rosaline",
+    "name": "Little Rosaline"
   },
   {
     "id": "louis-bitton",
@@ -488,6 +664,14 @@
     "name": "Merchant Miguel"
   },
   {
+    "id": "merchant-vinny",
+    "name": "Merchant Vinny"
+  },
+  {
+    "id": "mermaid-babe",
+    "name": "Mermaid Babe"
+  },
+  {
     "id": "mermaid-marin",
     "name": "Mermaid Marin"
   },
@@ -512,6 +696,18 @@
     "name": "Monkey T"
   },
   {
+    "id": "mysterious-frame",
+    "name": "Mysterious Frame"
+  },
+  {
+    "id": "mysterious-hairdresser",
+    "name": "Mysterious Hairdresser"
+  },
+  {
+    "id": "mysterious-sarcophagus",
+    "name": "Mysterious Sarcophagus"
+  },
+  {
     "id": "mystery-npc",
     "name": "???"
   },
@@ -528,8 +724,16 @@
     "name": "Niwerth (NPC)"
   },
   {
+    "id": "none",
+    "name": "None"
+  },
+  {
     "id": "oddeye-dragons-messenger",
     "name": "Oddeye Dragon's Messenger"
+  },
+  {
+    "id": "officer-albert",
+    "name": "Officer Albert"
   },
   {
     "id": "officer-robert",
@@ -552,12 +756,28 @@
     "name": "Orpeo (NPC)"
   },
   {
+    "id": "part-timer-g",
+    "name": "Part-Timer G"
+  },
+  {
     "id": "pastor-tau",
     "name": "Pastor Tau"
   },
   {
+    "id": "pet-breeder-erin",
+    "name": "Pet Breeder Erin"
+  },
+  {
+    "id": "pet-trainer-shara",
+    "name": "Pet Trainer Shara"
+  },
+  {
     "id": "pharaoh-boy",
     "name": "Pharaoh Boy"
+  },
+  {
+    "id": "poirot",
+    "name": "Poirot"
   },
   {
     "id": "ponchichi-npc",
@@ -570,6 +790,10 @@
   {
     "id": "portina",
     "name": "Portina"
+  },
+  {
+    "id": "poseidons-blessing",
+    "name": "Poseidon's Blessing"
   },
   {
     "id": "primrose",
@@ -590,6 +814,10 @@
   {
     "id": "prof-neil",
     "name": "Prof. Neil"
+  },
+  {
+    "id": "professor-komby",
+    "name": "Professor Komby"
   },
   {
     "id": "queen-cecilia",
@@ -620,12 +848,32 @@
     "name": "Relic Site (Field)"
   },
   {
+    "id": "robin-van-peruoza",
+    "name": "Robin Van Peruoza"
+  },
+  {
+    "id": "rookie-g",
+    "name": "Rookie G"
+  },
+  {
     "id": "rosaline-gracia",
     "name": "Rosaline Gracia"
   },
   {
+    "id": "rosaspina",
+    "name": "Rosaspina"
+  },
+  {
     "id": "rosaspinas-messenger",
     "name": "Rosaspina's Messenger"
+  },
+  {
+    "id": "rose-fairy-harmony",
+    "name": "Rose Fairy Harmony"
+  },
+  {
+    "id": "rose-fairy-marion",
+    "name": "Rose Fairy Marion"
   },
   {
     "id": "rosemary",
@@ -656,8 +904,16 @@
     "name": "Scared Poppuri"
   },
   {
+    "id": "scrubber-intern-kayleen",
+    "name": "Scrubber Intern Kayleen"
+  },
+  {
     "id": "sea-spirit-rumo",
     "name": "Sea Spirit Rumo"
+  },
+  {
+    "id": "sealed-cave-entrance",
+    "name": "Sealed Cave Entrance"
   },
   {
     "id": "servant-alfredo",
@@ -666,6 +922,10 @@
   {
     "id": "shaman-girl-jia",
     "name": "Shaman Girl Jia"
+  },
+  {
+    "id": "shopkeeper-laic",
+    "name": "Shopkeeper Laic"
   },
   {
     "id": "silvanians-messenger",
@@ -688,12 +948,28 @@
     "name": "Sophia"
   },
   {
+    "id": "spa-capsulmatic-9001",
+    "name": "Spa Capsulmatic 9001"
+  },
+  {
+    "id": "spa-employee-mingo",
+    "name": "Spa Employee Mingo"
+  },
+  {
+    "id": "spirit-of-nefertiti",
+    "name": "Spirit of Nefertiti"
+  },
+  {
     "id": "star-gazer-stella",
     "name": "Star Gazer Stella"
   },
   {
     "id": "star-gazer-stella-2",
     "name": "Star Gazer Stella (2)"
+  },
+  {
+    "id": "stargazer-ethel",
+    "name": "Stargazer Ethel"
   },
   {
     "id": "stella",
@@ -706,6 +982,10 @@
   {
     "id": "steve-ryu",
     "name": "Steve Ryu"
+  },
+  {
+    "id": "sue",
+    "name": "Sue"
   },
   {
     "id": "swampy-suu",
@@ -728,6 +1008,14 @@
     "name": "Tinnie"
   },
   {
+    "id": "transformed-don-danihen",
+    "name": "Transformed Don Danihen"
+  },
+  {
+    "id": "transformed-rosaline",
+    "name": "Transformed Rosaline"
+  },
+  {
     "id": "vagabond-eloy",
     "name": "Vagabond Eloy"
   },
@@ -748,8 +1036,20 @@
     "name": "Vulcanus Phoenix's Messenger"
   },
   {
+    "id": "wandering-photographer-ren",
+    "name": "Wandering Photographer Ren"
+  },
+  {
+    "id": "wandering-warrior-tan",
+    "name": "Wandering Warrior Tan"
+  },
+  {
     "id": "warrior-kei",
     "name": "Warrior Kei"
+  },
+  {
+    "id": "waste-basket",
+    "name": "Waste Basket"
   },
   {
     "id": "weepy-nora",
@@ -766,6 +1066,10 @@
   {
     "id": "werewolf-lycan",
     "name": "Werewolf Lycan"
+  },
+  {
+    "id": "willie",
+    "name": "Willie"
   },
   {
     "id": "winnie",

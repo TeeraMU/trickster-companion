@@ -1,0 +1,913 @@
+{
+  "region": "Underground Dev Room",
+  "quests": [
+    {
+      "id": "udr-09",
+      "order": 1600,
+      "title": "Hunter Yuri - Dev Room Hunter Girl Yuri's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Monster Quests",
+      "npc": "Hunter Yuri",
+      "npcIds": [
+        "hunter-yuri"
+      ],
+      "location": "Underground Dev Room - Underground Passage",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Hunter Yuri at Underground Dev Room - Underground Passage.",
+        "Defeat 30x Part-Timer (Lv.180) within 20 min in Underground Dev Room - Underground Passage 1 / 2 / 3 / 4 / 5.",
+        "Report back to Hunter Yuri (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Part-Timer",
+          "level": 180,
+          "count": 30,
+          "timeLimit": "20 min",
+          "map": "Underground Dev Room - Underground Passage 1 / 2 / 3 / 4 / 5"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1162845,
+        "tmExp": 321549,
+        "galder": 0,
+        "items": [
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.154~157: 30x Spiteful Developer's Spirit (Lv.192) in 20 min, reward 2x 10,000 Galder Coupon. Lv.158~161: 30x Thief Mole (Lv.227) in 20 min, reward 2x 10,000 Galder Coupon. Lv.162+: 30x Win16 Worm (Lv.232) in 20 min, reward 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Yuri_-_Dev_Room_Hunter_Girl_Yuri's_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-01",
+      "order": 1601,
+      "title": "Assistant Hunter - Dev Room Assistant Hunter's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Monster Quests",
+      "npc": "Assistant Hunter",
+      "npcIds": [
+        "assistant-hunter"
+      ],
+      "location": "Underground Dev Room - Underground Passage",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "udr-09"
+        }
+      ],
+      "prereqText": "Level 150+, have completed at least 1 Dev Room Hunter Girl Yuri's Quest",
+      "steps": [
+        "Talk to Assistant Hunter at Underground Dev Room - Underground Passage.",
+        "Defeat 20x Robber Mole (Lv.230) within 10 min in Underground Dev Room - Dev Room.",
+        "Report back to Assistant Hunter (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Robber Mole",
+          "level": 230,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Underground Dev Room - Dev Room"
+        }
+      ],
+      "rewards": {
+        "baseExp": 837946,
+        "tmExp": 810980,
+        "galder": 0,
+        "items": [
+          "4x 10,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Assistant_Hunter_-_Dev_Room_Assistant_Hunter's_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-02",
+      "order": 1602,
+      "title": "Developer Project Manager L - Intruder's Identity",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Developer Project Manager L",
+      "npcIds": [
+        "developer-project-manager-l"
+      ],
+      "location": "Underground Dev Room - Lobby",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "None",
+      "steps": [
+        "Talk to Developer Project Manager L at Underground Dev Room - Lobby.",
+        "Get 1x Intruder Information Memo: reward from Professor Komby - Suspicious Intruder Info.",
+        "Bring everything back to Developer Project Manager L."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Intruder Information Memo",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Professor Komby - Suspicious Intruder Info",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 18117342,
+        "tmExp": 4003408,
+        "galder": 0,
+        "items": [
+          "2x 100k Galder Check",
+          "1x Wing of Return (Tower of Chaos 1st Floor)"
+        ]
+      },
+      "notes": "Intruder Information Memo is obtained by completing Professor Komby - Suspicious Intruder Info.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Developer_Project_Manager_L_-_Intruder's_Identity.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-04",
+      "order": 1603,
+      "title": "Don Cavalier - How To Break Free From Destiny",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Monster Quests",
+      "npc": "Don Cavalier",
+      "npcIds": [
+        "don-cavalier"
+      ],
+      "location": "Sarcophagus",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "ep6-01"
+        }
+      ],
+      "prereqText": "Level 200+, had completed Don Cavalier - Final Mission for Inheritance",
+      "steps": [
+        "Talk to Don Cavalier at Sarcophagus.",
+        "Defeat 1x Don Cavalier (Monster) (Lv.395) within 20 min in Matrix.",
+        "Report back to Don Cavalier."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Don Cavalier (Monster)",
+          "level": 395,
+          "count": 1,
+          "timeLimit": "20 min",
+          "map": "Matrix"
+        }
+      ],
+      "rewards": {
+        "baseExp": 7580776,
+        "tmExp": 1404191,
+        "galder": 0,
+        "items": []
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Cavalier_-_How_To_Break_Free_From_Destiny.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-03",
+      "order": 1604,
+      "title": "Don Cavalier - Evil Don Giuvanni",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Monster Quests",
+      "npc": "Don Cavalier",
+      "npcIds": [
+        "don-cavalier"
+      ],
+      "location": "Sarcophagus",
+      "minLevel": 200,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "udr-04"
+        }
+      ],
+      "prereqText": "Level 200+, had completed Don Cavalier - How To Break Free From Destiny",
+      "steps": [
+        "Talk to Don Cavalier at Sarcophagus.",
+        "Defeat 1x Evil Don Giuvanni (Lv.400) within 20 min in Matrix.",
+        "Report back to Don Cavalier."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Evil Don Giuvanni",
+          "level": 400,
+          "count": 1,
+          "timeLimit": "20 min",
+          "map": "Matrix"
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "After the dialogue between Transformed Rosaline and Don Cavalier, interrupted by Evil Don Giuvanni, you'll be teleported to the Matrix to fight with Evil Don Giuvanni.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Don_Cavalier_-_Evil_Don_Giuvanni.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-05",
+      "order": 1605,
+      "title": "Driller King Marky - Romance of Drilling - Underground Dev Room",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Driller King Marky",
+      "npcIds": [
+        "driller-king-marky"
+      ],
+      "location": "Underground Dev Room - Underground Passage 3",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Indiana John - Old Man's Dream",
+      "steps": [
+        "Talk to Driller King Marky at Underground Dev Room - Underground Passage 3.",
+        "Get 1x Weird Underground Map A: drilled in Underground Dev Room - Underground Passages.",
+        "Get 1x Weird Underground Map B: drilled in Underground Dev Room - Underground Passages.",
+        "Bring everything back to Driller King Marky."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Weird Underground Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Underground Passages (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Underground Passages"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Weird Underground Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Underground Passages (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Underground Passages"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 378636,
+        "tmExp": 378636,
+        "galder": 0,
+        "items": [
+          "1x Weird Underground Treasure Map"
+        ]
+      },
+      "notes": "Weird Underground Map A and Weird Underground Map B are drilled in Underground Dev Room - Underground Passages.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Driller_King_Marky_-_Romance_of_Drilling_-_Underground_Dev_Room.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-06",
+      "order": 1606,
+      "title": "Explorer Reina - Treasure Hunting 1 - Underground Dev Room",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Underground Dev Room - Underground Passage 2",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Indiana John - Old Man's Dream, haven't Worn Underground Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Underground Dev Room - Underground Passage 2.",
+        "Get 1x Worn Underground Map A: drilled in Underground Dev Room - Underground Passages.",
+        "Get 1x Worn Underground Map B: drilled in Underground Dev Room - Underground Passages.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Worn Underground Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Underground Passages (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Underground Passages"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Worn Underground Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Underground Passages (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Underground Passages"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "1x Worn Underground Treasure Map"
+        ]
+      },
+      "notes": "Worn Underground Map A and Worn Underground Map B are drilled in Underground Dev Room - Underground Passages. Can be repeated as often as you like.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_1_-_Underground_Dev_Room.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-07",
+      "order": 1607,
+      "title": "Explorer Reina - Treasure Hunting 2 - Underground Dev Room",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Explorer Reina",
+      "npcIds": [
+        "explorer-reina"
+      ],
+      "location": "Underground Dev Room - Underground Passage 2",
+      "minLevel": 120,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "mg-gen-01"
+        },
+        {
+          "quest": "udr-06"
+        }
+      ],
+      "prereqText": "Level 120+, have completed Indiana John - Old Man's Dream and finished Treasure Hunting 1 - Underground Dev Room 50 times, haven't Old Underground Treasure Map in inventory",
+      "steps": [
+        "Talk to Explorer Reina at Underground Dev Room - Underground Passage 2.",
+        "Get 1x Old Underground Map A: drilled in Underground Dev Room - Underground Passages.",
+        "Get 1x Old Underground Map B: drilled in Underground Dev Room - Underground Passages.",
+        "Bring everything back to Explorer Reina."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Old Underground Map A",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Underground Passages (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Underground Passages"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Old Underground Map B",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - Underground Passages (drill depth not on the wiki)",
+            "map": "Underground Dev Room - Underground Passages"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 378636,
+        "tmExp": 378636,
+        "galder": 0,
+        "items": [
+          "1x Old Underground Treasure Map"
+        ]
+      },
+      "notes": "Old Underground Map A and Old Underground Map B are drilled in Underground Dev Room - Underground Passages.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Explorer_Reina_-_Treasure_Hunting_2_-_Underground_Dev_Room.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-08",
+      "order": 1608,
+      "title": "Hunter Master - Dev Room Hunter Master's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Monster Quests",
+      "npc": "Hunter Master",
+      "npcIds": [
+        "hunter-master"
+      ],
+      "location": "Underground Dev Room - Underground Passage",
+      "minLevel": 150,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "udr-09"
+        }
+      ],
+      "prereqText": "Level 150+, have completed at least 1 Dev Room Hunter Girl Yuri's Quest and Dev Room Assistant Hunter's Quest",
+      "steps": [
+        "Talk to Hunter Master at Underground Dev Room - Underground Passage.",
+        "Defeat 20x Win32 Worm (Lv.235) within 10 min in Underground Dev Room - System Control Room.",
+        "Report back to Hunter Master (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Win32 Worm",
+          "level": 235,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Underground Dev Room - System Control Room"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1898292,
+        "tmExp": 524915,
+        "galder": 0,
+        "items": [
+          "6x 10,000 Galder Coupon"
+        ]
+      },
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Hunter_Master_-_Dev_Room_Hunter_Master's_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-10",
+      "order": 1609,
+      "title": "Love Hunter Robin - Dev Room Love Hunter Robin's Quest",
+      "categories": [
+        "monster"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Monster Quests",
+      "npc": "Love Hunter Robin",
+      "npcIds": [
+        "love-hunter-robin"
+      ],
+      "location": "Underground Dev Room - Underground Passage",
+      "minLevel": 160,
+      "cycles": 5,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Love Hunter Robin at Underground Dev Room - Underground Passage.",
+        "Defeat 20x Merchant Mon (Lv.186) within 10 min in Underground Dev Room - Underground Passage 1 / 2 / 3 / 4 / 5 / Underground Dev Room - Dev Room.",
+        "Report back to Love Hunter Robin (repeat 5 times)."
+      ],
+      "objectives": [
+        {
+          "type": "hunt",
+          "monster": "Merchant Mon",
+          "level": 186,
+          "count": 20,
+          "timeLimit": "10 min",
+          "map": "Underground Dev Room - Underground Passage 1 / 2 / 3 / 4 / 5 / Underground Dev Room - Dev Room"
+        }
+      ],
+      "rewards": {
+        "baseExp": 1141098,
+        "tmExp": 0,
+        "galder": 0,
+        "items": [
+          "10x 500 Galder Coupon",
+          "2x 10,000 Galder Coupon"
+        ]
+      },
+      "notes": "At other levels: Lv.164+: 20x Grudging Developer's Spirit (Lv.238) in 10 min, reward 10x 500 Galder Coupon, 2x 10,000 Galder Coupon.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Love_Hunter_Robin_-_Dev_Room_Love_Hunter_Robin's_Quest.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-11",
+      "order": 1610,
+      "title": "Monkey T - Monkey T's Loyalty",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Monkey T",
+      "npcIds": [
+        "monkey-t"
+      ],
+      "location": "Underground Dev Room - Underground Passage 3",
+      "minLevel": 150,
+      "cycles": 25,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 150+",
+      "steps": [
+        "Talk to Monkey T at Underground Dev Room - Underground Passage 3.",
+        "Get 10x Eternal Youth Grass: dropped by Spiteful Developer's Spirit (Lv.192) in Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Control Room / Underground Dev Room - Underground Passage 5.",
+        "Bring everything back to Monkey T (repeat 25 times)."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Eternal Youth Grass",
+          "qty": 10,
+          "source": {
+            "kind": "drop",
+            "from": "Spiteful Developer's Spirit (Lv.192)",
+            "map": "Underground Dev Room - Underground Passage / Underground Dev Room - Underground Passage 2 / Underground Dev Room - Underground Passage 3 / Underground Dev Room - Underground Passage 4 / Underground Dev Room - Control Room / Underground Dev Room - Underground Passage 5"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 0,
+        "tmExp": 1670863,
+        "galder": 0,
+        "items": []
+      },
+      "notes": "Eternal Youth Grass is dropped by Spiteful Developer's Spirit (Lv.192).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Monkey_T_-_Monkey_T's_Loyalty.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-12",
+      "order": 1611,
+      "title": "Nefertiti 2 - The Frame's 2nd Tale",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Nefertiti 2",
+      "npcIds": [
+        "nefertiti-2"
+      ],
+      "location": "Ocean of the Past",
+      "minLevel": 160,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [],
+      "prereqText": "Level 160+",
+      "steps": [
+        "Talk to Nefertiti 2 at Ocean of the Past.",
+        "Get 1x Pure Lily: drilled in Ocean of the Past.",
+        "Get 1x Chrysanthemum: drilled in Ocean of the Past.",
+        "Get 1x Enkicladus's Scale: reward from Enkicladus2 - The Frame's 1st Tale.",
+        "Bring everything back to Nefertiti 2."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pure Lily",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Ocean of the Past (drill depth not on the wiki)",
+            "map": "Ocean of the Past"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Chrysanthemum",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Ocean of the Past (drill depth not on the wiki)",
+            "map": "Ocean of the Past"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Enkicladus's Scale",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Enkicladus2 - The Frame's 1st Tale",
+            "map": "Ocean of the Past"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 2805344,
+        "tmExp": 706107,
+        "galder": 0,
+        "items": [
+          "1x Earthen Fate Necklace"
+        ]
+      },
+      "notes": "Pure Lily and Chrysanthemum are drilled in Ocean of the Past, or obtained, along with Enkicladus's Scale, by completing Enkicladus2 - The Frame's 1st Tale.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Nefertiti_2_-_The_Frame's_2nd_Tale.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-13",
+      "order": 1612,
+      "title": "Professor Komby - Be Likeable (1)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Professor Komby",
+      "npcIds": [
+        "professor-komby"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "udr-02",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Developer Project Manager L - Intruder's Identity in quest log",
+      "steps": [
+        "Talk to Professor Komby at Underground Dev Room - Dev Room.",
+        "Get 1x Cup Noodles: drilled in Underground Dev Room - System Control Room.",
+        "Get 1x Wooden Chopsticks: drilled in Underground Dev Room - System Control Room.",
+        "Bring everything back to Professor Komby."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Cup Noodles",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - System Control Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Wooden Chopsticks",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - System Control Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4831364,
+        "tmExp": 1067649,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Cup Noodles and Wooden Chopsticks are drilled in Underground Dev Room - System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Professor_Komby_-_Be_Likeable_(1).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-14",
+      "order": 1613,
+      "title": "Professor Komby - Be Likeable (2)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Professor Komby",
+      "npcIds": [
+        "professor-komby"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "udr-13"
+        }
+      ],
+      "prereqText": "Have completed Professor Komby - Be Likeable (1)",
+      "steps": [
+        "Talk to Professor Komby at Underground Dev Room - Dev Room.",
+        "Get 5x Pork Bellies: drilled in Underground Dev Room - System Control Room.",
+        "Get 5x Green Bull Tonic: drilled in Underground Dev Room - System Control Room.",
+        "Bring everything back to Professor Komby."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Pork Bellies",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - System Control Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Green Bull Tonic",
+          "qty": 5,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Underground Dev Room - System Control Room (drill depth not on the wiki)",
+            "map": "Underground Dev Room - System Control Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4831364,
+        "tmExp": 1067649,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Pork Bellies and Green Bull Tonic are drilled in Underground Dev Room - System Control Room.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Professor_Komby_-_Be_Likeable_(2).html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "udr-15",
+      "order": 1614,
+      "title": "Professor Komby - Suspicious Intruder Info",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Underground Dev Room - Town Quests",
+      "npc": "Professor Komby",
+      "npcIds": [
+        "professor-komby"
+      ],
+      "location": "Underground Dev Room - Dev Room",
+      "minLevel": 150,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "prereqs": [
+        {
+          "quest": "udr-14"
+        }
+      ],
+      "prereqText": "Have completed Professor Komby - Be Likeable (2)",
+      "steps": [
+        "Talk to Professor Komby at Underground Dev Room - Dev Room.",
+        "Get 1x Paper: drilled in Desert Beach Fields / Seabed Fields.",
+        "Get 1x Pen: dropped by Robber Mole (Lv.230) in Underground Dev Room - Dev Room.",
+        "Bring everything back to Professor Komby."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Paper",
+          "qty": 1,
+          "source": {
+            "kind": "drill",
+            "from": "Drilled in Desert Beach Fields / Seabed Fields (drill depth not on the wiki)",
+            "map": "Desert Beach Fields / Seabed Fields"
+          }
+        },
+        {
+          "type": "collect",
+          "item": "Pen",
+          "qty": 1,
+          "source": {
+            "kind": "drop",
+            "from": "Robber Mole (Lv.230)",
+            "map": "Underground Dev Room - Dev Room"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 4831364,
+        "tmExp": 1067649,
+        "galder": 0,
+        "items": [
+          "1x Intruder Information Memo"
+        ]
+      },
+      "notes": "Paper is purchased with Item Girl. Pen is dropped by Robber Mole (Lv.230).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Professor_Komby_-_Suspicious_Intruder_Info.html",
+        "checked": "2026-11-14",
+        "verifiedInGame": false
+      }
+    }
+  ]
+}
