@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Items to collect (Quests page) now also counts the unfinished quests in the same area that the shown quests need done first, even when your filter hides them. Example: 🔑 Key + 🏷️ Sticker in Oops Wharf now lists Black Feather (Magic - 2) and Pirate Towel (Magic - 3) for the sticker quest Magic - 4, marked "↩ For earlier quest".
+
 ## 0.7.1 (2026-11-14): Key roadmap, search, quest links, class icons
 
 - **🔍 Search everything** (🔍 in the header or press /): items (where to get them, which quests use them, which quests give them as a reward), monsters (level, where they live, what they drop for quests, which hunts need them), NPCs (where they stand, their quests) and quests. Tap any quest to jump to it.

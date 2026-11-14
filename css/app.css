@@ -3811,3 +3811,11 @@ a.btn {
 .friend-head {
   align-items: center;
 }
+
+/* Items to collect: a row needed only by a prerequisite the filter hides */
+.ep-earlier {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
