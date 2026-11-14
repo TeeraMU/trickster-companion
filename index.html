@@ -330,6 +330,10 @@
 
     <!-- VIEW 4: STEP-BY-STEP PROGRESSION ROADMAP -->
     <div id="viewRoadmap" class="hidden">
+      <!-- Key roadmap: built from the key quests in the data (renderKeyRoadmap) -->
+      <div id="keyRoadmap"></div>
+      <details class="roadmap-old">
+        <summary>📜 Early-game walkthrough (Coral Beach to Caballa Relics)</summary>
       <div class="roadmap-step">
         <div class="roadmap-num">1</div>
         <div>
@@ -402,6 +406,7 @@
           </p>
         </div>
       </div>
+      </details>
     </div>
   </main>
 
@@ -845,6 +850,7 @@
       if (appState.currentView !== viewName) { appState.currentView = viewName; saveState(); }
       if (viewName === "bag") renderBag();
       if (viewName === "friends") renderFriends();
+      if (viewName === "roadmap") renderKeyRoadmap();
     }
 
     // ============================================================================
@@ -1034,7 +1040,8 @@
         have: appState.inventory,
         itemUse: name => (ITEM_USE.get(name) || 0),
         friendsHave: friendsHaveHtml,
-        lockedBy: questBlockers
+        lockedBy: questBlockers,
+        unlocks: questUnlocks
       });
     }
 
@@ -1048,13 +1055,140 @@
       }
       return STATUS_CACHE(id);
     }
+    const shortTitle = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "").replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
+    const questById = id => QUESTS.find(x => x.id === id);
+
+    // [{ id, title }] quests to do before q (empty unless q is locked)
     function questBlockers(q) {
       if (questStatus(q.id) !== "locked") return [];
-      const byId = id => QUESTS.find(x => x.id === id);
-      const short = t => t.replace(/\s*(\([^)]*\)|\[[^\]]*\])\s*$/g, "");
       return (PREREQS[q.id] || [])
-        .filter(p => byId(p.quest) && (p.active ? questStatus(p.quest) === "locked" : !appState.completedQuests[p.quest]))
-        .map(p => short(byId(p.quest).title) + (p.active ? " (accept it)" : ""));
+        .filter(p => questById(p.quest) && (p.active ? questStatus(p.quest) === "locked" : !appState.completedQuests[p.quest]))
+        .map(p => ({ id: p.quest, title: shortTitle(questById(p.quest).title) + (p.active ? " (accept it)" : "") }));
+    }
+
+    // [{ id, title, active }] quests that list q as a prerequisite (reverse of PREREQS, built once)
+    let UNLOCKS = null;
+    function questUnlocks(q) {
+      if (!UNLOCKS) {
+        UNLOCKS = {};
+        for (const [id, list] of Object.entries(PREREQS))
+          for (const p of list) (UNLOCKS[p.quest] = UNLOCKS[p.quest] || []).push({ id, active: !!p.active });
+      }
+      const cls = appState.selectedClass || "All";
+      return (UNLOCKS[q.id] || [])
+        .map(u => ({ q: questById(u.id), active: u.active }))
+        .filter(u => u.q && matchesClassFilter(u.q, cls))
+        .sort((a, b) => a.q.order - b.q.order)
+        .map(u => ({ id: u.q.id, title: shortTitle(u.q.title), active: u.active }));
+    }
+
+    // ============================================================================
+    // KEY ROADMAP (Roadmap page): the key quests zone by zone, from the data
+    // ============================================================================
+    function renderKeyRoadmap() {
+      const el = document.getElementById("keyRoadmap");
+      if (!el) return;
+      const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const keys = QUESTS.filter(q => q.categories.includes("Key")).sort((a, b) => a.order - b.order);
+      const zones = [];
+      for (const q of keys) {
+        let z = zones.find(x => x.area === q.area);
+        if (!z) zones.push(z = { area: q.area, quests: [] });
+        z.quests.push(q);
+      }
+      // quests a later quest needs *accepted*: take them, but finish them later
+      const keepOpen = new Set(Object.values(PREREQS).flat().filter(p => p.active).map(p => p.quest));
+      const done = q => !!appState.completedQuests[q.id];
+      const label = q => shortTitle(q.title).replace(/^[^-]+ - /, "");
+      let next = null;
+      const zonesDone = zones.filter(z => z.quests.every(done)).length;
+      const cards = zones.map((z, i) => {
+        const d = z.quests.filter(done).length, total = z.quests.length;
+        const complete = d === total;
+        const isNext = !complete && !next && (next = z.area);
+        const lv = Math.min(...z.quests.map(q => q.minLevel || 0).filter(Boolean));
+        const need = z.quests.flatMap(q => (q.items || []).filter(it => / Sticker$/.test(it.name))).sort((a, b) => b.qty - a.qty)[0];
+        const givers = QUESTS.filter(q => q.area === z.area && q.categories.includes("Sticker") && !q.categories.includes("Key"));
+        const giversDone = givers.filter(done).length;
+        const chips = z.quests.map(q => {
+          const st = done(q) ? "done" : questStatus(q.id);
+          const icon = st === "done" ? "✅" : st === "available" ? "▶️" : "🔒";
+          return `<button type="button" class="kr-quest is-${st}" onclick="jumpToQuest('${q.id}')" title="${esc(q.title)}">
+              <span aria-hidden="true">${icon}</span> ${esc(label(q))}${keepOpen.has(q.id) && !done(q) ? ` <span class="kr-tag" title="A later key quest needs this one accepted: take it, finish it later">keep open</span>` : ""}
+            </button>`;
+        }).join(`<span class="kr-arrow" aria-hidden="true">→</span>`);
+        return `
+          <section class="kr-zone ${complete ? "is-done" : ""} ${isNext ? "is-next" : ""}">
+            <div class="kr-rail" aria-hidden="true"><span class="kr-dot">${complete ? "✓" : i + 1}</span></div>
+            <div class="kr-body calc-card">
+              <div class="kr-head">
+                <h3>${esc(z.area)}</h3>
+                <span class="tag tag-level">Lv.${lv}+</span>
+                ${need ? `<span class="tag tag-sticker" title="${esc(need.name)}">🏷️ ×${need.qty} ${esc(need.name)}</span>` : ""}
+                ${isNext ? `<span class="tag kr-here">📍 Continue here</span>` : ""}
+                <span class="kr-count">${d}/${total}</span>
+              </div>
+              <div class="kr-quests">${chips}</div>
+              <div class="kr-foot">
+                ${givers.length ? `<span class="kr-stickers">🏷️ Sticker quests done: <b>${giversDone}/${givers.length}</b>${need ? ` (need ${need.qty})` : ""}</span>` : ""}
+                <button type="button" class="btn qc-small-btn" onclick="openKeyItems('${esc(z.area).replace(/'/g, "\\'")}')">🎒 Items needed ↗</button>
+              </div>
+            </div>
+          </section>`;
+      }).join("");
+      el.innerHTML = `
+        <div class="kr-top">
+          <h2>🗝️ Key roadmap</h2>
+          <p class="calc-desc">The key quests that open each new zone, in order. ✅ done · ▶️ you can do it now · 🔒 do the one before first. Tap a quest to open it.</p>
+          <div class="kr-progress"><span>Zones cleared <b>${zonesDone}/${zones.length}</b></span>
+            <span class="friend-bar"><span style="width:${Math.round(zonesDone / Math.max(1, zones.length) * 100)}%"></span></span></div>
+        </div>
+        <div class="kr-list">${cards}</div>`;
+    }
+
+    // Items to collect for a zone's key and sticker quests
+    function openKeyItems(area) {
+      appState.selectedAreaGroup = areaGroupOf(area);
+      appState.selectedRegion = area;
+      appState.selectedCategories = ["Key", "Sticker"];
+      appState.selectedCategory = "All";
+      appState.checklistPane = "farm";
+      saveState();
+      switchView("quests");
+      renderAll();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Open a quest's card on the Quests page: its area, no other filters, card open and flashed
+    function jumpToQuest(id) {
+      const q = questById(id);
+      if (!q) return;
+      if (!matchesClassFilter(q, appState.selectedClass || "All")) { // hidden by class / 3rd job path
+        appState.selectedJobPath = "";
+        if (!matchesClassFilter(q, appState.selectedClass || "All")) appState.selectedClass = "All";
+        document.getElementById("charClassSelect").value = appState.selectedClass || "All";
+      }
+      appState.selectedAreaGroup = areaGroupOf(q.area);
+      appState.selectedRegion = q.area;
+      appState.selectedCategories = [];
+      appState.selectedCategory = "All";
+      const search = document.getElementById("searchInput"); if (search) search.value = "";
+      const status = document.getElementById("statusFilter"); if (status) status.value = "all";
+      appState.expandedQuests[id] = true;
+      appState.checklistPane = "quests";
+      saveState();
+      switchView("quests");
+      renderAll();
+      requestAnimationFrame(() => {
+        const el = document.getElementById("qcard-" + id);
+        if (!el) return;
+        // card top just under the header (an open card can be taller than the screen)
+        const header = document.querySelector(".app-header");
+        const offset = (header && getComputedStyle(header).position !== "static" ? header.offsetHeight : 0) + 12;
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
+        el.classList.add("qc-flash");
+        setTimeout(() => el.classList.remove("qc-flash"), 1800);
+      });
     }
 
     // a friend's shared Bag changed: redraw the item rows that show it (several updates -> one redraw)
@@ -1503,6 +1637,7 @@
       renderStatsAndRegions();
       renderQuestList();
       renderChecklistFarm();
+      renderKeyRoadmap();
     }
 
     // ============================================================================

@@ -1874,6 +1874,7 @@ select:focus, input:focus {
   padding: 0 16px 14px 70px;
 }
 
+.quest-card.completed:not(.expanded) .qc-unlocks,
 .quest-card.completed:not(.expanded) .qc-body {
   display: none;
 }
@@ -3413,4 +3414,209 @@ a.btn {
   margin-top: 4px;
   font-size: 0.8rem;
   color: var(--ink-orange);
+}
+
+/* ---------------------------------------------------------------------------------------
+   Key roadmap (Roadmap page) and quest links on cards
+   --------------------------------------------------------------------------------------- */
+.kr-top h2 {
+  margin: 0 0 4px;
+}
+
+.kr-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 16px;
+  font-size: 0.86rem;
+}
+
+.kr-progress .friend-bar {
+  flex: 1;
+  max-width: 320px;
+}
+
+.kr-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.kr-zone {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+}
+
+.kr-rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.kr-rail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.kr-zone:first-child .kr-rail::before { top: 18px; }
+.kr-zone:last-child .kr-rail::before { bottom: calc(100% - 18px); }
+
+.kr-dot {
+  position: relative;
+  margin-top: 6px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+.kr-zone.is-done .kr-dot {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: var(--text-on-accent);
+}
+
+.kr-zone.is-next .kr-dot {
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 30%, var(--bg-card));
+  color: var(--ink-gold);
+}
+
+.kr-body {
+  margin-bottom: 12px;
+}
+
+.kr-zone.is-next .kr-body {
+  border-color: var(--accent-gold);
+}
+
+.kr-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin-bottom: 8px;
+}
+
+.kr-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.kr-count {
+  margin-left: auto;
+  font-weight: 800;
+  color: var(--ink-cyan);
+}
+
+.kr-here {
+  background: color-mix(in srgb, var(--accent-gold) 22%, var(--bg-card));
+  color: var(--ink-gold);
+}
+
+.kr-quests {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.kr-quest {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kr-quest:hover { border-color: var(--accent-blue); }
+.kr-quest.is-done { color: var(--text-secondary); text-decoration: line-through; }
+.kr-quest.is-available { border-color: var(--accent-gold); background: color-mix(in srgb, var(--accent-gold) 12%, var(--bg-card)); }
+.kr-quest.is-locked { color: var(--text-secondary); }
+
+.kr-arrow {
+  color: var(--text-secondary);
+  font-weight: 800;
+}
+
+.kr-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-purple) 18%, var(--bg-card));
+  color: var(--ink-purple);
+  text-decoration: none;
+}
+
+.kr-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.roadmap-old {
+  margin-top: 18px;
+}
+
+.roadmap-old > summary {
+  cursor: pointer;
+  font-weight: 800;
+  padding: 8px 4px;
+}
+
+/* quest titles that jump to their card (🔒 First / 🔓 Unlocks) */
+.qc-link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 800;
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.qc-link:hover { color: var(--ink-blue); }
+
+.qc-unlocks {
+  margin: 2px 16px 10px;
+  font-size: 0.8rem;
+  color: var(--ink-cyan);
+}
+
+.quest-card.qc-flash {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+  transition: outline-color 0.4s ease;
+}
+
+@media (max-width: 680px) {
+  .qc-unlocks {
+    margin-left: 16px;
+  }
 }
