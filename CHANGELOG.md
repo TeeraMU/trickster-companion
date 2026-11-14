@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.1 (2026-11-14): Key roadmap, search, quest links, class icons
 
 - **🔍 Search everything** (🔍 in the header or press /): items (where to get them, which quests use them, which quests give them as a reward), monsters (level, where they live, what they drop for quests, which hunts need them), NPCs (where they stand, their quests) and quests. Tap any quest to jump to it.
 - **🗝️ Key roadmap** (Roadmap page): the key quests that open each zone, Desert Beach to Techichi Volcano, in order. Each zone shows its level, the stickers it needs, how many of its sticker quests you've done, ✅ / ▶️ / 🔒 on each quest, "keep open" on quests a later one needs accepted, and 📍 Continue here on the zone you're in. Tap a quest to open it; 🎒 Items needed opens that zone's key and sticker items. The old early-game walkthrough is folded underneath.
