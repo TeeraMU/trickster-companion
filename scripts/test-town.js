@@ -69,18 +69,18 @@ const collect = state => {
   return { p, rows: f.maps.flatMap(g => g.rows) };
 };
 
-t("a missing Harkon brings in one run of the Snow Hill mine quest", () => {
+t("a missing Harkon brings in all 5 runs of the Snow Hill mine quest (only run 5 hands it out)", () => {
   const { p, rows } = collect({ completedQuests: {}, completedCycles: {}, inventory: {} });
-  assert.strictEqual(p.runs.get("sh-06"), 1);
+  assert.strictEqual(p.runs.get("sh-06"), 5);
   const ore = rows.find(r => r.item === "Pure Tantalum");
-  assert.strictEqual(ore.qty, 3);
+  assert.strictEqual(ore.qty, 15);
   assert.strictEqual(ore.quests[0].forItem, "Harkon");
 });
 
 t("Harkon in the bag: nothing extra; Snow Hill done: the next mine quest", () => {
   assert.ok(!collect({ completedQuests: {}, completedCycles: {}, inventory: { Harkon: 1 } }).p.earlier.has("sh-06"));
   const next = collect({ completedQuests: { "sh-06": true }, completedCycles: {}, inventory: {} }).p;
-  assert.strictEqual(next.runs.get("tp-07"), 1);
+  assert.strictEqual(next.runs.get("tp-07"), 5);
 });
 
 console.log(`${n} passed`);

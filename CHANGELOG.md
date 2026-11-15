@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.2 (2026-11-15): Last-run rewards, item givers on cards, locked rows in colour
+
+- Quest cards: an item another quest hands out (Harkon) shows that quest right under it: a link to it and what one run asks for (5 runs of 3x Pure Tantalum + 3x Flawless Opal, since Harkon comes on run 5). The 3rd job "Get 1x Harkon" step says the same.
+- Fixed: 117 quests that give their reward only on the last run (most sticker quests, the Blacksmith Marx mine quests, Tapasco card quests …) showed it as given every run. They now say "Cycle 5: …" as on the wiki, and Items to collect counts all the runs needed (15 of each ore for one Harkon, not 3).
+- Items to collect: locked items keep their colour (dashed outline and 🔒 only), so you can farm ahead without squinting. Same for locked monsters.
+- Fixed: with no 3rd job path picked, Items to collect counted every path's items (×6 ores for one Harkon with both Cat paths). It now counts one path per step.
+- "Which 3rd job?": the "Both paths" button is now **Not picked yet** (**Any path** with All classes), with "Pick your path for exact items" until you pick one, since a character only walks one path.
+- When one quest can't hand out enough (16 Harkon for every 3rd job path, 5 runs per mine quest), the rest goes to the next mine quest.
+
 ## 0.8.1 (2026-11-15): Harkon fix, items other quests hand out
 
 - Fixed: **Harkon** (for every 3rd job) isn't drilled: Blacksmith Marx hands it out for mine ores (Find Ingredients for Precious Jewel at Snow Hill Mine, or his Golden Ash / Silent Lava mine quests). Checked in game.
