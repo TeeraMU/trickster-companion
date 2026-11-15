@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.8.3 (2026-11-15): Monster maps on hover or tap
 
 - Monster names on quest cards, Items to collect and ⚔️ Monsters: hover (or tap on a phone) for a small box with every map the monster lives in, its level, what it drops for quests and which quests hunt it. Maps with a picture get a 🗺️ Map button; 🔍 More in search opens its full search entry.
 - Items to collect: drop and hunt rows show their map (📍 …) right on the row, with +N when the monster lives in more maps.
