@@ -76,7 +76,7 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   players agreed, `src: "wiki"` = taken from the wiki's circle marker, replaced by the first player pin). Never hand-edit or replace it: merge what players send with
   `node scripts/merge-pins.js <files or pasted text>` or `--issues` (open issues labelled `pins`),
   check the conflicts it reports, run validate.js, commit on a `data/` branch, then close the issues.
-- `js/episode.js`: the Episodes page. Model functions (quest status, items to collect) are pure and
+- `js/episode.js`: the Episodes page. Model functions (quest status, items to collect; `shareMaps` puts each row in one map, fewest stops, `splitMaps` reads wiki map shorthand) are pure and
   run under Node; the renderer gets everything it needs through a context object.
 - `data/quests/index.json`: the list of quest files, in load order. Each `data/quests/<region>.json`
   holds `{ region, quests: [...] }`; the app sorts all quests by `order`.
