@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: the monster box listed wiki shorthand as maps of its own ("5" for "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark") and showed one map twice ("Vamp Dungeon 4" and "Vamp Dungeon 4 - Center of the Dark"). Bone Warrior now shows its 2 maps, and the +N on rows counts right.
+
 ## 0.8.3 (2026-11-15): Monster maps on hover or tap
 
 - Monster names on quest cards, Items to collect and ⚔️ Monsters: hover (or tap on a phone) for a small box with every map the monster lives in, its level, what it drops for quests and which quests hunt it. Maps with a picture get a 🗺️ Map button; 🔍 More in search opens its full search entry.

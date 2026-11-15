@@ -39,6 +39,17 @@ t("a monster: level, maps, drops and hunts", () => {
   assert.ok(m.maps.some(x => /Wharf Field 4/.test(x)));
 });
 
+t("shorthand map texts are expanded, short and long names of one map merged", () => {
+  assert.deepStrictEqual(S.splitMaps("Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark"),
+    ["Vamp Dungeon 4 - Center of the Dark", "Vamp Dungeon 5 - Resurrection of the Dark"]);
+  assert.deepStrictEqual(S.splitMaps("Phantom Dungeon 2-1 / 2-2 / 2-4"), ["Phantom Dungeon 2-1", "Phantom Dungeon 2-2", "Phantom Dungeon 2-4"]);
+  assert.deepStrictEqual(S.splitMaps("Phantom Dungeon - 3F Shiver Hallway / 3F Toilet"), ["Phantom Dungeon - 3F Shiver Hallway", "Phantom Dungeon - 3F Toilet"]);
+  assert.deepStrictEqual(S.splitMaps("Path to Black Swamp / Swamp Field 1 / 2"), ["Path to Black Swamp", "Swamp Field 1", "Swamp Field 2"]);
+  const bw = S.search(index, "bone warrior").monster.find(m => m.name === "Bone Warrior");
+  assert.deepStrictEqual(bw.maps, ["Vamp Dungeon 4 - Center of the Dark", "Vamp Dungeon 5 - Resurrection of the Dark"]);
+  for (const e of index) if (e.kind === "monster") for (const mp of e.maps) assert.ok(!/^\d+(-\d+)?( - .*)?$/.test(mp), e.name + ": " + mp); // no "5" / "2-2" / "5 - Name" left
+});
+
 t("an NPC lists their quests; quests match by NPC too", () => {
   const r = S.search(index, "skipper min");
   assert.ok(r.npc[0] && r.npc[0].quests.length >= 3);
