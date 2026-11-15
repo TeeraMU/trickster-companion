@@ -154,6 +154,26 @@ for (const { q } of quests) {
 for (const t of mapTexts) if (t && !(t in maps.names)) err("maps.json names", `quest map text "${t}" is not listed (add it with the map ids it means)`);
 for (const t of Object.keys(maps.names)) if (!mapTexts.has(t)) warn("maps.json names", `"${t}" is not used by any quest`);
 
+// --- item-sources.json: source fixes point at real items, quests and map texts ------------------
+if (fs.existsSync(path.join(DATA, "item-sources.json"))) {
+  const fixes = read("item-sources.json").items || {};
+  const used = new Set(quests.flatMap(({ q }) => (q.objectives || []).filter(o => o.type === "collect").map(o => o.item)));
+  for (const [item, s] of Object.entries(fixes)) {
+    const at = `item-sources.json "${item}"`;
+    if (!used.has(item)) warn(at, "no quest collects this item");
+    if (!SOURCE_KINDS.includes(s.kind)) err(at, `unknown kind "${s.kind}"`);
+    if (!isStr(s.from)) err(at, "missing from");
+    if (!isStr(s.map)) err(at, "missing map");
+    else if (!(s.map in maps.names)) err(at, `map text "${s.map}" is not listed in maps.json names`);
+    for (const id of s.quests || []) {
+      const g = byId.get(id);
+      if (!g) { err(at, `quest "${id}" does not exist`); continue; }
+      if (!(g.q.rewards.items || []).some(r => new RegExp("^(?:Cycle \\d+: )?\\d+x " + item.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "$").test(r) || r.includes("x " + item)))
+        warn(at, `quest "${id}" doesn't list ${item} in its rewards`);
+    }
+  }
+}
+
 // --- npc-pins.json: pins point at real NPCs and maps -------------------------------------------
 const pins = read("npc-pins.json");
 for (const [key, p] of Object.entries(pins)) {

@@ -45,7 +45,8 @@
         totalQty: o.total !== undefined ? o.total : o.qty * q.cycles,
         method: SOURCE_LABEL[o.source.kind],
         source: o.source.from,
-        map: o.source.map
+        map: o.source.map,
+        ...(o.source.quests ? { givers: o.source.quests } : {}) // quests that hand it out (data/item-sources.json)
       })),
       hunts: q.objectives.filter(o => o.type === "hunt").map(o => ({
         monster: o.monster, level: o.level, count: o.count, timeLimit: o.timeLimit, map: o.map
@@ -58,10 +59,26 @@
 
   // Quest files list quests by region; regions interleave in play order, so sort by `order`
   // (stable, and quests that share an order number are always in the same file).
-  function buildQuestList(questFiles) {
+  function buildQuestList(questFiles, itemSources) {
+    if (itemSources) applyItemSources(questFiles, itemSources);
     const all = [];
     for (const file of questFiles) for (const q of file.quests) all.push(toLegacyQuest(q, file.region));
     return all.sort((a, b) => a.order - b.order);
+  }
+
+  // data/item-sources.json: { items: { name: { kind, from, map, quests? } } } replaces the source of
+  // every objective collecting that item (fixes for wiki item pages that are wrong, e.g. Harkon).
+  // Changes questFiles in place; returns how many objectives it changed.
+  function applyItemSources(questFiles, itemSources) {
+    const fix = (itemSources && itemSources.items) || {};
+    let n = 0;
+    for (const file of questFiles) for (const q of file.quests) for (const o of q.objectives || []) {
+      const s = o.type === "collect" && fix[o.item];
+      if (!s) continue;
+      o.source = { kind: s.kind, from: s.from, map: s.map, ...(s.quests ? { quests: s.quests.slice() } : {}) };
+      n++;
+    }
+    return n;
   }
 
   // { questId: [{ quest, active? }] } — prerequisites as quest ids (schema v2 only)
@@ -99,16 +116,17 @@
   async function loadAll(base) {
     const get = path => fetchJson(base + path).catch(e => { throw new Error(`${path}: ${e.message}`); });
     const index = await get("quests/index.json");
-    const [questFiles, images, npcs, maps, npcPins, classes] = await Promise.all([
+    const [questFiles, images, npcs, maps, npcPins, classes, itemSources] = await Promise.all([
       Promise.all(index.files.map(f => get("quests/" + f))),
       get("images.json"),
       get("npcs.json"),
       get("maps.json"),
       get("npc-pins.json"),
-      get("classes.json").catch(() => ({ classes: {} })) // job sprites; the app works without them
+      get("classes.json").catch(() => ({ classes: {} })), // job sprites; the app works without them
+      get("item-sources.json").catch(() => ({ items: {} })) // source fixes; the app works without them
     ]);
-    return { quests: buildQuestList(questFiles), prereqsById: buildPrereqIndex(questFiles), images, npcs, maps, npcPins, questFiles, classes: classes.classes || {} };
+    return { quests: buildQuestList(questFiles, itemSources), prereqsById: buildPrereqIndex(questFiles), images, npcs, maps, npcPins, questFiles, classes: classes.classes || {} };
   }
 
-  root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, buildPrereqIndex, loadAll, fetchJson, RETRY_WAITS };
+  root.TQData = { CATEGORY_LABEL, SOURCE_LABEL, toLegacyQuest, buildQuestList, applyItemSources, buildPrereqIndex, loadAll, fetchJson, RETRY_WAITS };
 })(typeof window !== "undefined" ? window : globalThis);

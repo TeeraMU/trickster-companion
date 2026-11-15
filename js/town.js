@@ -43,7 +43,7 @@
   }
 
   function forQuests(r) {
-    const names = r.quests.map(x => (x.earlier ? "↩ " : "") + shortTitle(x.title));
+    const names = r.quests.map(x => (x.forItem ? `↩ ${x.forItem}: ` : x.earlier ? "↩ " : "") + shortTitle(x.title));
     return `<span class="tw-for" title="${esc(r.quests.map(x => x.title).join(" · "))}">for ${esc(names.join(" · "))}</span>`;
   }
 
