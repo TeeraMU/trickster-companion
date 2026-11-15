@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.8.2 (2026-11-15): Last-run rewards, item givers on cards, locked rows in colour
 
 - Quest cards: an item another quest hands out (Harkon) shows that quest right under it: a link to it and what one run asks for (5 runs of 3x Pure Tantalum + 3x Flawless Opal, since Harkon comes on run 5). The 3rd job "Get 1x Harkon" step says the same.
 - Fixed: 117 quests that give their reward only on the last run (most sticker quests, the Blacksmith Marx mine quests, Tapasco card quests …) showed it as given every run. They now say "Cycle 5: …" as on the wiki, and Items to collect counts all the runs needed (15 of each ore for one Harkon, not 3).
