@@ -154,27 +154,40 @@
         for (const g of open) {
           if (missing <= 0) break;
           if (have.has(g.id) && !runs.has(g.id)) break; // already listed in full
-          const per = perRun(g, it.name);
+          const y = giverYield(g, it.name);
           const used = runs.get(g.id) || 0;
-          const n = Math.min(remainingCycles(g, state) - used, Math.ceil(missing / per));
+          const left = remainingCycles(g, state);
+          let n, gets;
+          if (y.atRun) {
+            // only run N hands it out ("Cycle 5: 1x Harkon"): every run up to N has to be done, once
+            const doneRuns = g.cycles - left;
+            if (used || doneRuns >= y.atRun) continue;
+            n = y.atRun - doneRuns; gets = y.qty;
+          } else {
+            n = Math.min(left - used, Math.ceil(missing / y.qty));
+            gets = n * y.qty;
+          }
           if (n <= 0) continue;
-          if (!have.has(g.id)) bring(g, it.name, n);
+          if (!have.has(g.id)) bring(g, it.name, used + n);
           else runs.set(g.id, used + n);
-          missing -= n * per;
+          missing -= gets;
         }
       }
     }
     return { quests: out, earlier, why, runs };
   }
 
-  // how many of `item` one run of quest g hands out ("1x Harkon", "Cycle 2: 2x Harkon + ...")
-  function perRun(g, item) {
+  /**
+   * What quest g hands out of `item`: { qty, atRun }. "1x Harkon" = qty 1 every run (atRun 0);
+   * "Cycle 5: 1x Harkon" = qty 1 only when run 5 is handed in (atRun 5).
+   */
+  function giverYield(g, item) {
     const esc = item.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     for (const r of (g.rewards && g.rewards.items) || []) {
-      const m = r.match(new RegExp("(\\d+)x " + esc + "(?:$|\\s*\\+)"));
-      if (m) return Math.max(1, +m[1]);
+      const m = r.match(new RegExp("(?:^Cycle (\\d+): .*?)?(\\d+)x " + esc + "(?:$|\\s*\\+)"));
+      if (m) return { qty: Math.max(1, +m[2]), atRun: m[1] ? +m[1] : 0 };
     }
-    return 1;
+    return { qty: 1, atRun: 0 };
   }
 
   /**
@@ -263,7 +276,7 @@
     };
   }
 
-  const model = { listEpisodes, parseChapterName, questStatuses, parseMonster, parseDrill, farmList, withEarlierQuests, episodeModel, remainingCycles };
+  const model = { listEpisodes, parseChapterName, questStatuses, parseMonster, parseDrill, farmList, withEarlierQuests, giverYield, episodeModel, remainingCycles };
 
   // ---------------------------------------------------------------------------------------
   // Renderer (browser)

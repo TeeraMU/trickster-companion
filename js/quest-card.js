@@ -128,17 +128,22 @@
 
   /** "↳ Blacksmith Marx - Find Ingredients… (1 run = 1 Harkon): 3x Pure Tantalum ⛏️ …" under an item */
   function giverRow(item, g, others, ctx) {
-    const per = ((g.rewards.items || []).map(r => r.match(new RegExp("(\\d+)x " + item.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?:$|\\s*\\+)"))).find(Boolean) || [0, 1])[1];
+    // "Cycle 5: 1x Harkon": only run 5 hands it out, so all 5 runs' items count
+    const y = ctx.parse.giverYield ? ctx.parse.giverYield(g, item.name) : { qty: 1, atRun: 0 };
+    const runs = y.atRun || 1;
+    const per = y.atRun ? `${runs} runs = ${y.qty} ${item.name} (handed out on run ${runs})` : `1 run = ${y.qty} ${item.name}`;
+    const times = n => runs > 1 ? `${n * runs}x` : `${n}x`;
+    const each = n => runs > 1 ? ` <span class="qc-h-note">(${n} per run)</span>` : "";
     const needs = [
       ...(g.items || []).map(it => {
         const h = howToGet(it, ctx.parse);
-        return `<li>${iconImg(ctx.getItemImage(it.name), "qc-sub-icon", h.icon)} <strong>${esc(it.qty)}x ${esc(it.name)}</strong> <span class="qc-how qc-how-${h.kind}">${h.icon} ${esc(h.text)}</span></li>`;
+        return `<li>${iconImg(ctx.getItemImage(it.name), "qc-sub-icon", h.icon)} <strong>${times(it.qty)} ${esc(it.name)}</strong>${each(it.qty)} <span class="qc-how qc-how-${h.kind}">${h.icon} ${esc(h.text)}</span></li>`;
       }),
-      ...(g.hunts || []).map(h => `<li>⚔️ <strong>Hunt ${esc(h.count)}x ${esc(h.monster)}</strong>${h.map ? ` <span class="qc-map">@ ${esc(h.map)}</span>` : ""}</li>`)
+      ...(g.hunts || []).map(h => `<li>⚔️ <strong>Hunt ${times(h.count)} ${esc(h.monster)}</strong>${each(h.count)}${h.map ? ` <span class="qc-map">@ ${esc(h.map)}</span>` : ""}</li>`)
     ];
     const link = `<button type="button" class="qc-link" onclick="event.stopPropagation(); jumpToQuest('${g.id}')" title="Go to this quest">${esc(shortTitle(g.title))}</button>`;
     return `<div class="qc-sub">
-        <div class="qc-sub-head">↳ ${link} <span class="qc-h-note">1 run = ${esc(per)} ${esc(item.name)} · Lv.${esc(g.minLevel)}+${others ? ` · or ${others} other quest${others > 1 ? "s" : ""}` : ""}</span></div>
+        <div class="qc-sub-head">↳ ${link} <span class="qc-h-note">${esc(per)} · Lv.${esc(g.minLevel)}+${others ? ` · or ${others} other quest${others > 1 ? "s" : ""}` : ""}</span></div>
         <ul class="qc-sub-list">${needs.join("")}</ul>
       </div>`;
   }
