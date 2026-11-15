@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.8.1 (2026-11-15): Harkon fix, items other quests hand out
 
 - Fixed: **Harkon** (for every 3rd job) isn't drilled: Blacksmith Marx hands it out for mine ores (Find Ingredients for Precious Jewel at Snow Hill Mine, or his Golden Ash / Silent Lava mine quests). Checked in game.
 - Items to collect now follows items another quest hands out: missing a Harkon, it lists Pure Tantalum ×3 and Flawless Opal ×3 for one run of the Snow Hill mine quest, marked "↩ For Harkon". Only the runs you need are counted, and nothing is added once the item is in your Bag.
