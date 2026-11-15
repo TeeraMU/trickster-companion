@@ -12,6 +12,34 @@
       .map(s => s.trim().replace(/^\d+x\s+/, "")).filter(Boolean);
   }
 
+  /**
+   * One map text from the wiki -> map names. Later parts are often shorthand for the first one:
+   * "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark" -> "Vamp Dungeon 5 - …",
+   * "Phantom Dungeon 2-1 / 2-2", "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet".
+   */
+  function splitMaps(text) {
+    const out = [];
+    let prev = "";
+    for (const raw of String(text || "").split(" / ")) {
+      const part = raw.trim();
+      if (!part) continue;
+      // "2nd Mining Lot …" is a real name; "5", "2-2", "5 - Name", "3F Toilet" are shorthand
+      const m = /^\d/.test(part) && !/^\d+(st|nd|rd|th)\b/.test(part) && prev.match(/^(\D+?)\s*\d/);
+      const full = m ? m[1].trimEnd() + " " + part : part;
+      out.push(full.replace(/\s+/g, " "));
+      prev = full;
+    }
+    return out;
+  }
+
+  /** Add a map name, keeping one of "Vamp Dungeon 4" and "Vamp Dungeon 4 - Center of the Dark" (the long one). */
+  function addMap(list, name) {
+    if (list.some(x => x === name || x.startsWith(name + " - "))) return;
+    const short = list.findIndex(x => name.startsWith(x + " - "));
+    if (short >= 0) list[short] = name;
+    else list.push(name);
+  }
+
   /** Build the index once from the app's quests (legacy shape from js/data.js). */
   function buildIndex(quests) {
     const items = new Map(), monsters = new Map(), npcs = new Map(), list = [];
@@ -45,14 +73,14 @@
           for (const m of String(it.source).matchAll(MONSTER_RE)) {
             const mo = monster(m[1].replace(/^(or|and)\s+/i, "").trim(), +m[2]);
             addUnique(mo.drops, it.name);
-            for (const mp of String(it.map || "").split(" / ")) if (mp) addUnique(mo.maps, mp);
+            for (const mp of splitMaps(it.map)) addMap(mo.maps, mp);
           }
         }
       }
       for (const h of q.hunts || []) {
         const mo = monster(h.monster, h.level);
         addUnique(mo.huntedIn, Object.assign({ count: h.count }, ref), "id");
-        for (const mp of String(h.map || "").split(" / ")) if (mp) addUnique(mo.maps, mp);
+        for (const mp of splitMaps(h.map)) addMap(mo.maps, mp);
       }
       const rewards = (q.rewards && q.rewards.items) || [];
       for (const line of rewards) for (const name of rewardNames(line)) {
@@ -160,7 +188,7 @@
     return sections.join("") || "";
   }
 
-  const api = { buildIndex, search, score, rewardNames };
+  const api = { buildIndex, search, score, rewardNames, splitMaps };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
 
   // ---------------------------------------------------------------------------------------------
