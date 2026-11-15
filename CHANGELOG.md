@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.8.5 (2026-11-16): Fewer trips in Items to collect
 
 - Items to collect: one section per map, with items you can get in more than one map grouped where the rest already are, so you make fewer trips. Magnetite (Iron Knight, Vamp Dungeon 2 or 3) now sits with Brass under Vamp Dungeon 3, and its row says "📍 also at Vamp Dungeon 2 - Banquet of the Dead". The same item for two quests in one map is one row. The ⚔️ Monsters view uses the same single maps.
 - Items to collect rows no longer repeat the section's map or show +N (the monster box has every map).
