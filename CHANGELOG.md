@@ -5,6 +5,7 @@
 - Quest cards: an item another quest hands out (Harkon) shows that quest right under it: a link to it and what one run asks for (3x Pure Tantalum + 3x Flawless Opal per Harkon, at the Snow Hill mining lots). The 3rd job "Get 1x Harkon" step says the same.
 - Items to collect: locked items keep their colour (dashed outline and 🔒 only), so you can farm ahead without squinting. Same for locked monsters.
 - Fixed: with no 3rd job path picked, Items to collect counted every path's items (×6 ores for one Harkon with both Cat paths). It now counts one path per step.
+- "Which 3rd job?": the "Both paths" button is now **Not picked yet** (**Any path** with All classes), with "Pick your path for exact items" until you pick one, since a character only walks one path.
 - When one quest can't hand out enough (16 Harkon for every 3rd job path, 5 runs per mine quest), the rest goes to the next mine quest.
 
 ## 0.8.1 (2026-11-15): Harkon fix, items other quests hand out

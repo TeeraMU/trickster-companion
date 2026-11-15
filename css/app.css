@@ -3163,6 +3163,13 @@ a.btn {
   color: var(--text-secondary);
 }
 
+.area-paths-hint {
+  display: block;
+  margin: 4px 4px 0;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
 .area-paths .area-group-btn {
   flex: 0 0 auto;
 }

@@ -777,13 +777,15 @@
       const paths = jobPaths().filter(p => cls === "All" || p.cls === cls);
       if (!paths.length) return "";
       const cur = appState.selectedJobPath || "";
-      const allLabel = paths.length === 2 ? "Both paths" : `All ${paths.length} paths`;
+      // a character walks one path: "no path" means not decided yet (or, for All classes, any path)
+      const allLabel = cls === "All" ? "Any path" : "Not picked yet";
       const pill = (key, label, title) => `<button type="button" class="area-group-btn ${cur === key ? "active" : ""}" aria-pressed="${cur === key}"
           onclick="setJobPath('${key}')" title="${title}">${label}</button>`;
       return `<div class="area-paths" role="group" aria-label="Which 3rd job">
           <span class="area-paths-label">Which 3rd job?</span>
-          <div class="area-chips">${pill("", allLabel, "Show every path") +
-            paths.map(p => pill(p.key, p.label, `${p.label} (${p.cls})`)).join("")}</div>
+          <div class="area-chips">${pill("", allLabel, cls === "All" ? "Every path's quests" : "Not decided yet: every path's quests, items counted for one")}` +
+            paths.map(p => pill(p.key, p.label, `${p.label} (${p.cls})`)).join("") + `</div>
+          ${cur ? "" : `<span class="area-paths-hint">Pick your path for exact items</span>`}
         </div>`;
     }
 
