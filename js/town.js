@@ -56,7 +56,7 @@
         <div class="tw-mon-head">
           <span class="item-icon ep-icon-fallback" aria-hidden="true">⚔️</span>
           <div>
-            <strong>${esc(m.monster)}</strong>${m.level ? ` <span class="ep-lv">Lv.${esc(m.level)}</span>` : ""}
+            <strong><button type="button" class="mon-link" data-mon="${esc(m.monster)}" aria-expanded="false">${esc(m.monster)}</button></strong>${m.level ? ` <span class="ep-lv">Lv.${esc(m.level)}</span>` : ""}
             ${m.locked ? ` <span class="ep-lock" title="Every quest that needs it is still locked">🔒</span>` : ""}
             ${m.done ? ` <span class="ep-have-all">✅ got everything</span>` : ""}
             <div class="tw-maps">📍 ${esc(m.maps.join(" · "))}</div>

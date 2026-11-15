@@ -4163,3 +4163,120 @@ a.btn {
   height: 20px;
   object-fit: contain;
 }
+
+/* Monster names you can hover / tap: maps, drops, hunts (popover in js/search.js) */
+.mon-link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+}
+
+.mon-link:hover,
+.mon-link[aria-expanded="true"] {
+  color: var(--ink-blue);
+}
+
+.mon-link:focus-visible {
+  outline: 2px solid var(--border-highlight);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.ep-farm-how {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 4px;
+  min-width: 0;
+}
+
+.ep-row-map {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.ep-map-more {
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 0 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+.mon-pop {
+  position: fixed;
+  z-index: 1000;
+  width: max-content;
+  max-width: min(340px, calc(100vw - 16px));
+  max-height: min(70vh, 520px);
+  overflow: auto;
+  padding: 10px 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.mon-pop-head {
+  margin-bottom: 6px;
+}
+
+.mon-pop-maps {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.mon-pop-pic {
+  border: 1px solid var(--border-strong);
+  background: none;
+  color: var(--ink-blue);
+  border-radius: 999px;
+  padding: 0 8px;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mon-pop-img {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  border-radius: 8px;
+  image-rendering: pixelated;
+}
+
+.mon-pop-line {
+  margin-top: 4px;
+}
+
+.mon-pop-none {
+  margin: 0 0 6px;
+  color: var(--text-secondary);
+}
+
+.mon-pop-more {
+  margin-top: 8px;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink-blue);
+  cursor: pointer;
+}

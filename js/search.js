@@ -215,5 +215,124 @@
     });
   }
 
-  root.TQSearch = Object.assign({ init, open: openBox, close, update, toggle, find }, api);
+  // ---------------------------------------------------------------------------------------------
+  // Monster popover: hover (mouse) or tap a monster name (<button class="mon-link" data-mon>) for
+  // where it lives, what it drops for quests and which quests hunt it. Uses the search index.
+  // ---------------------------------------------------------------------------------------------
+  function monsterInfo(name) {
+    if (!ctx) return null;
+    if (!index) index = buildIndex(ctx.quests());
+    const lc = String(name).toLowerCase();
+    return index.find(e => e.kind === "monster" && e.name === name) ||
+      index.find(e => e.kind === "monster" && e.name.toLowerCase() === lc) || null;
+  }
+
+  /** How many maps the monster is known in (for "+2 maps" next to a row's own map). */
+  function monsterMapCount(name) {
+    const m = monsterInfo(name);
+    return m ? m.maps.length : 0;
+  }
+
+  let pop = null, popFor = null, hoverTimer = 0, leaveTimer = 0;
+  const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+
+  function popHtml(name) {
+    const m = monsterInfo(name);
+    if (!m) return `<div class="mon-pop-head"><strong>${esc(name)}</strong></div><p class="mon-pop-none">No other details yet.</p>`;
+    const mapRow = mp => {
+      const img = ctx.mapImage ? ctx.mapImage(mp) : null;
+      return `<li><span>📍 ${esc(mp)}</span>${img ? ` <button type="button" class="mon-pop-pic" onclick="TQSearch.monsterMapPic(this, '${jsq(img)}')" aria-expanded="false">🗺️ Map</button>` : ""}</li>`;
+    };
+    const quests = (list, extra) => list.slice(0, 6).map(r => `<button type="button" class="srch-qlink" onclick="TQSearch.closeMonster(); jumpToQuest('${jsq(r.id)}')">${esc(r.title)}</button>${extra ? extra(r) : ""}`).join(" · ") + (list.length > 6 ? ` <span class="srch-more">+${list.length - 6} more</span>` : "");
+    return `
+      <div class="mon-pop-head"><strong>⚔️ ${esc(m.name)}</strong>${m.level ? ` <span class="ep-lv">Lv.${m.level}</span>` : ""}</div>
+      ${m.maps.length ? `<ul class="mon-pop-maps">${m.maps.map(mapRow).join("")}</ul>` : `<p class="mon-pop-none">Map not known yet.</p>`}
+      ${m.drops.length ? `<div class="mon-pop-line"><b>Drops:</b> ${m.drops.map(esc).join(" · ")}</div>` : ""}
+      ${m.huntedIn.length ? `<div class="mon-pop-line"><b>Hunt in:</b> ${quests(m.huntedIn, r => ` <span class="srch-more">×${r.count}</span>`)}</div>` : ""}
+      <button type="button" class="mon-pop-more" onclick="TQSearch.closeMonster(); TQSearch.find('${jsq(m.name)}')">🔍 More in search</button>`;
+  }
+
+  function placePop(btn) {
+    const r = btn.getBoundingClientRect();
+    const w = pop.offsetWidth, h = pop.offsetHeight, vw = innerWidth, vh = innerHeight;
+    const left = Math.max(8, Math.min(r.left, vw - w - 8));
+    const top = r.bottom + 6 + h <= vh - 8 ? r.bottom + 6 : Math.max(8, r.top - 6 - h);
+    pop.style.left = left + "px";
+    pop.style.top = top + "px";
+  }
+
+  function openMonster(btn) {
+    clearTimeout(leaveTimer);
+    if (popFor === btn && pop) return;
+    closeMonster();
+    pop = document.createElement("div");
+    pop.className = "mon-pop";
+    pop.setAttribute("role", "dialog");
+    pop.setAttribute("aria-label", btn.dataset.mon);
+    pop.innerHTML = popHtml(btn.dataset.mon);
+    pop.addEventListener("pointerenter", () => clearTimeout(leaveTimer));
+    pop.addEventListener("pointerleave", e => { if (e.pointerType === "mouse" && pop.dataset.pinned !== "1") leaveTimer = setTimeout(closeMonster, 250); });
+    document.body.appendChild(pop);
+    popFor = btn;
+    btn.setAttribute("aria-expanded", "true");
+    placePop(btn);
+  }
+
+  function closeMonster() {
+    clearTimeout(hoverTimer);
+    if (pop) pop.remove();
+    if (popFor) popFor.setAttribute("aria-expanded", "false");
+    pop = null; popFor = null;
+  }
+
+  /** "🗺️ Map" in the popover: show / hide the map picture under that map's name. */
+  function monsterMapPic(btn, url) {
+    const li = btn.closest("li");
+    const old = li.querySelector(".mon-pop-img");
+    if (old) { old.remove(); btn.setAttribute("aria-expanded", "false"); }
+    else {
+      li.insertAdjacentHTML("beforeend", `<img class="mon-pop-img" src="${esc(url)}" alt="" loading="lazy">`);
+      btn.setAttribute("aria-expanded", "true");
+      const img = li.querySelector(".mon-pop-img");
+      img.addEventListener("load", () => popFor && placePop(popFor), { once: true });
+    }
+    if (pop) pop.dataset.pinned = "1";
+    if (popFor) placePop(popFor);
+  }
+
+  if (typeof document !== "undefined") {
+    // capture phase: a monster name inside a clickable card must not also toggle the card
+    document.addEventListener("click", e => {
+      const btn = e.target.closest && e.target.closest(".mon-link");
+      if (!btn) return;
+      e.stopPropagation();
+      e.preventDefault();
+      if (popFor === btn && pop && pop.dataset.pinned === "1") { closeMonster(); return; }
+      openMonster(btn);
+      pop.dataset.pinned = "1"; // clicked or tapped: stays open until clicked away
+    }, true);
+    document.addEventListener("pointerover", e => {
+      if (e.pointerType !== "mouse") return;
+      const btn = e.target.closest && e.target.closest(".mon-link");
+      if (!btn) return;
+      clearTimeout(hoverTimer);
+      clearTimeout(leaveTimer);
+      hoverTimer = setTimeout(() => openMonster(btn), 250);
+    });
+    document.addEventListener("pointerout", e => {
+      if (e.pointerType !== "mouse") return;
+      const btn = e.target.closest && e.target.closest(".mon-link");
+      if (!btn || btn.contains(e.relatedTarget)) return;
+      clearTimeout(hoverTimer);
+      if (popFor === btn && pop && pop.dataset.pinned !== "1") leaveTimer = setTimeout(closeMonster, 250);
+    });
+    document.addEventListener("pointerdown", e => {
+      if (pop && !pop.contains(e.target) && !(e.target.closest && e.target.closest(".mon-link"))) closeMonster();
+    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && pop) closeMonster(); });
+    addEventListener("scroll", () => { if (pop && pop.dataset.pinned !== "1") closeMonster(); else if (pop) placePop(popFor); }, { passive: true, capture: true });
+    addEventListener("resize", () => { if (pop) placePop(popFor); });
+  }
+
+  root.TQSearch = Object.assign({ init, open: openBox, close, update, toggle, find, monsterInfo, monsterMapCount, closeMonster, monsterMapPic }, api);
 })(this);
