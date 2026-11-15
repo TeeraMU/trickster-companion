@@ -1055,7 +1055,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x Plant Cultivation Experiment (Mud)"
+          "Cycle 3: 1x Plant Cultivation Experiment (Mud)"
         ]
       },
       "notes": "Daily Quest. Squishy Mud is dropped by Walking Tadpole (Lv.166). The whole quest lasts 3 days (1 quest per day).",
@@ -1113,7 +1113,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x Plant Cultivation Experiment (Pebble)"
+          "Cycle 3: 1x Plant Cultivation Experiment (Pebble)"
         ]
       },
       "notes": "Daily Quest. Pebbles are drilled in Coral Beach - Dark Cave, and Path to Mermaid Palace 1 and Path to Mermaid Palace 2. The whole quest lasts 3 days (1 quest per day).",
@@ -1171,7 +1171,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x Plant Cultivation Experiment (Sand)"
+          "Cycle 3: 1x Plant Cultivation Experiment (Sand)"
         ]
       },
       "notes": "Daily Quest. Sand Powder is dropped by Fan Lizard (Lv.26). The whole quest lasts 3 days (1 quest per day).",
@@ -1480,8 +1480,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x 500 Galder Coupon",
-          "1x Bunny Maid Card"
+          "Cycle 5: 1x 500 Galder Coupon + 1x Bunny Maid Card"
         ]
       },
       "notes": "Sulfur Dioxide Capsule is dropped by Fossil Soldier (Lv.258).",
@@ -2365,9 +2364,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "5x 500 Galder Coupon",
-          "1x Elsa Key Kuan Card",
-          "1x Techichi Volcano Survey Report"
+          "Cycle 5: 5x 500 Galder Coupon + 1x Elsa Key Kuan Card + 1x Techichi Volcano Survey Report"
         ]
       },
       "notes": "Appraised Art Work is obtained by completing Ravenwood - Techichi Relic Appraisal.",
@@ -2767,8 +2764,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x 500 Galder Coupon",
-          "1x Favian Card"
+          "Cycle 5: 1x 500 Galder Coupon + 1x Favian Card"
         ]
       },
       "notes": "Oval Briquette is dropped by Fossil Soldier (Lv.258).",
@@ -3147,9 +3143,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "5x 500 Galder Coupon",
-          "1x Irina Card",
-          "1x Techichi Volcano Survey Report"
+          "Cycle 5: 5x 500 Galder Coupon + 1x Irina Card + 1x Techichi Volcano Survey Report"
         ]
       },
       "notes": "Appraised Relic is obtained by completing Ravenwood - Techichi Relic Appraisal.",
@@ -3508,8 +3502,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "5x 500 Galder Coupon",
-          "1x Marion Card"
+          "Cycle 5: 5x 500 Galder Coupon + 1x Marion Card"
         ]
       },
       "notes": "Techichi Volcano Survey Report is obtained by completing Ray - Restoration of the Broken Relics, Ravenwood - Techichi Relic Appraisal, Irina - Techichi Volcano Relics and Nearby Countries, Elsa Key Kuan - Relic's Art Value, and Rebecca - Flower Blooming in Ashes.",
@@ -3736,8 +3729,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x 500 Galder Coupon",
-          "1x Miguel Card"
+          "Cycle 5: 1x 500 Galder Coupon + 1x Miguel Card"
         ]
       },
       "notes": "Volcanic Rock is drilled in Path to Techichi 1 and Path to Techichi 2.",
@@ -5194,9 +5186,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x Restored Relic",
-          "1x Ray Card",
-          "1x Techichi Volcano Survey Report"
+          "Cycle 20: 1x Restored Relic + 1x Ray Card + 1x Techichi Volcano Survey Report"
         ]
       },
       "notes": "Unknown Relic Piece is obtained by completing Relic Site (Field) - Excavate Techichi Volcano Relic in Techichi Field 1, 2, 3, and 4, and Relic Site (Dungeon) - Excavate Techichi Volcano Relic in Black Ash Dungeon 1, 2, 3, and 4.",
@@ -6766,8 +6756,7 @@
         "tmExp": 0,
         "galder": 0,
         "items": [
-          "1x 500 Galder Coupon",
-          "1x Vinosh Card"
+          "Cycle 5: 1x 500 Galder Coupon + 1x Vinosh Card"
         ]
       },
       "notes": "Fried Chicken and Seasoned Chicken are dropped by Roaster (Lv.266).",

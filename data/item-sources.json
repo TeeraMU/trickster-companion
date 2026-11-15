@@ -3,7 +3,7 @@
   "items": {
     "Harkon": {
       "kind": "quest",
-      "from": "Reward from Blacksmith Marx - Find Ingredients for Precious Jewel (Snow Hill Mine, Lv.95+, 1 per run), or his Golden Ash / Silent Lava mine quests (Lv.120+)",
+      "from": "Reward from Blacksmith Marx - Find Ingredients for Precious Jewel (Snow Hill Mine, Lv.95+: handed out on run 5, so all 5 runs), or his Golden Ash / Silent Lava mine quests (Lv.120+)",
       "map": "Snow Hill Mine - Precious Jewel",
       "quests": ["sh-06", "tp-07", "tp-09"],
       "checked": "in game 2026-11-15: not drilled, Blacksmith Marx hands it out for mine ores"

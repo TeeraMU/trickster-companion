@@ -777,13 +777,15 @@
       const paths = jobPaths().filter(p => cls === "All" || p.cls === cls);
       if (!paths.length) return "";
       const cur = appState.selectedJobPath || "";
-      const allLabel = paths.length === 2 ? "Both paths" : `All ${paths.length} paths`;
+      // a character walks one path: "no path" means not decided yet (or, for All classes, any path)
+      const allLabel = cls === "All" ? "Any path" : "Not picked yet";
       const pill = (key, label, title) => `<button type="button" class="area-group-btn ${cur === key ? "active" : ""}" aria-pressed="${cur === key}"
           onclick="setJobPath('${key}')" title="${title}">${label}</button>`;
       return `<div class="area-paths" role="group" aria-label="Which 3rd job">
           <span class="area-paths-label">Which 3rd job?</span>
-          <div class="area-chips">${pill("", allLabel, "Show every path") +
-            paths.map(p => pill(p.key, p.label, `${p.label} (${p.cls})`)).join("")}</div>
+          <div class="area-chips">${pill("", allLabel, cls === "All" ? "Every path's quests" : "Not decided yet: every path's quests, items counted for one")}` +
+            paths.map(p => pill(p.key, p.label, `${p.label} (${p.cls})`)).join("") + `</div>
+          ${cur ? "" : `<span class="area-paths-hint">Pick your path for exact items</span>`}
         </div>`;
     }
 
@@ -1323,8 +1325,19 @@
       const everything = !!appState.checklistFarmAll;
       const progress = everything ? { completedQuests: {}, completedCycles: {} } : appState;
       const statuses = TQEpisode.questStatuses(QUESTS, appState, PREREQS);
+      // no 3rd job path picked: each path has its own copy of a step (job3-06-champion, -duelist ...)
+      // but a character only walks one, so count one copy per step, not every path's items
+      const stepSeen = new Set();
+      let samePathCopies = 0;
+      const forFarm = appState.selectedJobPath ? filtered : filtered.filter(q => {
+        if (!q.path || !q.id.endsWith("-" + q.path)) return true;
+        const step = q.id.slice(0, -(q.path.length + 1));
+        if (stepSeen.has(step)) { samePathCopies++; return false; }
+        stepSeen.add(step);
+        return true;
+      });
       // a filtered-out quest that has to be done first (Magic 1-3 before the sticker quest Magic 4) still counts
-      const plus = TQEpisode.withEarlierQuests(filtered, QUESTS, PREREQS, progress);
+      const plus = TQEpisode.withEarlierQuests(forFarm, QUESTS, PREREQS, progress);
       const farm = TQEpisode.farmList(plus.quests, progress, statuses, plus.earlier, plus);
       const catTabs = selectedCats().map(k => CATEGORY_TABS.find(t => t.key === k)).filter(Boolean);
       const cat = catTabs.length ? { icon: "", label: catTabs.map(t => t.icon + " " + t.label).join(" + ") } : null;
@@ -1340,7 +1353,7 @@
             <button type="button" aria-pressed="${!everything}" onclick="setChecklistFarmAll(false)">Still needed</button>
             <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
           </div>`,
-        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map.${plus.earlier.size ? ` Also for ${plus.earlier.size} other quest${plus.earlier.size === 1 ? "" : "s"} they need: done first, or handing out an item they use (↩).` : ""} Items handed over by earlier quests aren't listed.`,
+        hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map.${plus.earlier.size ? ` Also for ${plus.earlier.size} other quest${plus.earlier.size === 1 ? "" : "s"} they need: done first, or handing out an item they use (↩).` : ""} Items handed over by earlier quests aren't listed.${samePathCopies ? " One 3rd job path counted: pick yours to see its exact items." : ""}`,
         afterHint: focusBarHtml()
       });
       // ⚔️ Monsters: the same list regrouped by monster (js/town.js)
