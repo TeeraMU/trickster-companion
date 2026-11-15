@@ -7,7 +7,7 @@ const T = require("../js/town.js");
 const D = p => path.join(__dirname, "..", "data", p);
 const files = JSON.parse(fs.readFileSync(D("quests/index.json"), "utf8")).files
   .map(f => JSON.parse(fs.readFileSync(D("quests/" + f), "utf8")));
-const quests = globalThis.TQData.buildQuestList(files);
+const quests = globalThis.TQData.buildQuestList(files, JSON.parse(fs.readFileSync(D("item-sources.json"), "utf8")));
 const ep = globalThis.TQEpisode || E;
 const prereqs = {};
 files.forEach(f => f.quests.forEach(q => { prereqs[q.id] = q.prereqs || []; }));
@@ -52,6 +52,35 @@ t("items in the bag mark a monster done", () => {
   const B = globalThis.TQBag || bag;
   const after = T.monsterList(B.applyHave(farm, have)).find(m => m.monster === "Master Foe");
   assert.ok(after.done);
+});
+
+
+// --- data/item-sources.json + items other quests hand out (Items to collect) -------------------
+t("item-sources.json replaces the wiki's source (Harkon: Blacksmith Marx, not drilled)", () => {
+  const h = quests.find(q => q.id === "job3-06-champion").items.find(i => i.name === "Harkon");
+  assert.strictEqual(h.method, "Quest");
+  assert.deepStrictEqual(h.givers, ["sh-06", "tp-07", "tp-09"]);
+});
+
+const champ = quests.filter(q => q.id === "job3-06-champion");
+const collect = state => {
+  const p = ep.withEarlierQuests(champ, quests, prereqs, state);
+  const f = ep.farmList(p.quests, state, ep.questStatuses(quests, state, prereqs), p.earlier, p);
+  return { p, rows: f.maps.flatMap(g => g.rows) };
+};
+
+t("a missing Harkon brings in one run of the Snow Hill mine quest", () => {
+  const { p, rows } = collect({ completedQuests: {}, completedCycles: {}, inventory: {} });
+  assert.strictEqual(p.runs.get("sh-06"), 1);
+  const ore = rows.find(r => r.item === "Pure Tantalum");
+  assert.strictEqual(ore.qty, 3);
+  assert.strictEqual(ore.quests[0].forItem, "Harkon");
+});
+
+t("Harkon in the bag: nothing extra; Snow Hill done: the next mine quest", () => {
+  assert.ok(!collect({ completedQuests: {}, completedCycles: {}, inventory: { Harkon: 1 } }).p.earlier.has("sh-06"));
+  const next = collect({ completedQuests: { "sh-06": true }, completedCycles: {}, inventory: {} }).p;
+  assert.strictEqual(next.runs.get("tp-07"), 1);
 });
 
 console.log(`${n} passed`);

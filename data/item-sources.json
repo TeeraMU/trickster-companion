@@ -1,0 +1,12 @@
+{
+  "about": "Where to really get an item, when the wiki's item page is wrong or too vague. Replaces the source of every quest objective that collects the item. quests = the quests that hand it out (Items to collect then lists what those quests need). checked = where the fix came from.",
+  "items": {
+    "Harkon": {
+      "kind": "quest",
+      "from": "Reward from Blacksmith Marx - Find Ingredients for Precious Jewel (Snow Hill Mine, Lv.95+, 1 per run), or his Golden Ash / Silent Lava mine quests (Lv.120+)",
+      "map": "Snow Hill Mine - Precious Jewel",
+      "quests": ["sh-06", "tp-07", "tp-09"],
+      "checked": "in game 2026-11-15: not drilled, Blacksmith Marx hands it out for mine ores"
+    }
+  }
+}

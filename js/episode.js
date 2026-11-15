@@ -104,26 +104,79 @@
    * prerequisites, same area only; "just accept it" prerequisites don't count). Quests added this way
    * come back in `earlier` (id set) so the panel can say what they're for.
    */
+  /*
+   * It also follows items another quest hands out (data/item-sources.json `quests`, or a source like
+   * "Reward from <exact title>"): when the Bag doesn't hold enough, the first unfinished quest giving
+   * it comes in too, for just the runs needed. Those come back in `why` (id -> item) and `runs`
+   * (id -> how many runs to count).
+   */
   function withEarlierQuests(quests, allQuests, prereqsById, state) {
     const byId = new Map(allQuests.map(q => [q.id, q]));
+    const byTitle = new Map(allQuests.map(q => [q.title, q]));
+    const done = id => !!(state.completedQuests || {})[id];
     const have = new Set(quests.map(q => q.id));
     const earlier = new Set();
+    const why = new Map();
+    const runs = new Map();
+    const bag = Object.assign({}, state.inventory || {});
     const out = quests.slice();
     const todo = quests.slice();
+    const bring = (pq, item, n) => {
+      have.add(pq.id); earlier.add(pq.id);
+      if (item) { why.set(pq.id, item); runs.set(pq.id, n); }
+      out.push(pq); todo.push(pq);
+    };
     while (todo.length) {
       const q = todo.pop();
       for (const p of prereqsById[q.id] || []) {
         if (p.active || have.has(p.quest)) continue;
         const pq = byId.get(p.quest);
-        if (!pq || pq.area !== q.area || (state.completedQuests || {})[pq.id]) continue;
-        have.add(pq.id); earlier.add(pq.id);
-        out.push(pq); todo.push(pq);
+        if (!pq || pq.area !== q.area || done(pq.id)) continue;
+        bring(pq);
+      }
+      // items another quest hands out
+      const left = runs.has(q.id) ? runs.get(q.id) : remainingCycles(q, state);
+      if (!left) continue;
+      for (const it of q.items || []) {
+        if (it.method !== "Quest") continue;
+        // givers named in item-sources.json may be anywhere; a plain "Reward from <title>" only counts
+        // in the same area (otherwise items passed key quest to key quest, like the Adventurer's Book,
+        // would pull in every zone's key quests)
+        const givers = it.givers ? it.givers.map(id => byId.get(id))
+          : [byTitle.get(String(it.source).replace(/^Reward from\s+/, "").trim())].filter(x => x && x.area === q.area);
+        const g = givers.find(x => x && x !== q && !done(x.id));
+        if (!g) continue;
+        const need = it.totalQty === it.qty * q.cycles ? it.qty * left : it.totalQty;
+        const got = Math.min(need, Math.max(0, bag[it.name] || 0));
+        bag[it.name] = (bag[it.name] || 0) - got;
+        const missing = need - got;
+        if (missing <= 0) continue;
+        const per = perRun(g, it.name);
+        const n = Math.min(remainingCycles(g, state), Math.ceil(missing / per));
+        if (!n) continue;
+        if (!have.has(g.id)) bring(g, it.name, n);
+        else if (runs.has(g.id)) runs.set(g.id, Math.min(remainingCycles(g, state), runs.get(g.id) + n));
       }
     }
-    return { quests: out, earlier };
+    return { quests: out, earlier, why, runs };
   }
 
-  function farmList(quests, state, statuses, earlier) {
+  // how many of `item` one run of quest g hands out ("1x Harkon", "Cycle 2: 2x Harkon + ...")
+  function perRun(g, item) {
+    const esc = item.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    for (const r of (g.rewards && g.rewards.items) || []) {
+      const m = r.match(new RegExp("(\\d+)x " + esc + "(?:$|\\s*\\+)"));
+      if (m) return Math.max(1, +m[1]);
+    }
+    return 1;
+  }
+
+  /**
+   * opts (optional, from withEarlierQuests): { why: Map id -> item it's done for, runs: Map id -> runs to count }
+   */
+  function farmList(quests, state, statuses, earlier, opts) {
+    const why = (opts && opts.why) || new Map();
+    const runCap = (opts && opts.runs) || new Map();
     const maps = new Map();
     const shop = new Map();
     const compound = new Map();
@@ -131,7 +184,7 @@
       if (!bucket.has(key)) bucket.set(key, Object.assign({ qty: 0, quests: [], locked: true }, base));
       const row = bucket.get(key);
       row.qty += qty;
-      if (!row.quests.some(x => x.id === q.id)) row.quests.push({ id: q.id, title: q.title, earlier: !!(earlier && earlier.has(q.id)) });
+      if (!row.quests.some(x => x.id === q.id)) row.quests.push({ id: q.id, title: q.title, earlier: !!(earlier && earlier.has(q.id)), ...(why.has(q.id) ? { forItem: why.get(q.id) } : {}) });
       if (statuses[q.id] !== "locked") row.locked = false;
     };
     const mapGroup = (name, q) => {
@@ -142,7 +195,7 @@
     };
 
     for (const q of quests) {
-      const cycles = remainingCycles(q, state);
+      const cycles = runCap.has(q.id) ? Math.min(runCap.get(q.id), remainingCycles(q, state)) : remainingCycles(q, state);
       if (!cycles) continue;
       for (const it of q.items || []) {
         // most items are needed every run; a few quests (Card Girl) list one total for all runs
@@ -260,7 +313,11 @@
   /** "↩ For earlier quest: …" when every quest needing the row is a prerequisite pulled in by the filter. */
   function earlierNote(r) {
     if (!r.quests.length || !r.quests.every(x => x.earlier)) return "";
-    const names = r.quests.map(x => x.title.replace(/^[^-]+ - /, ""));
+    const short = t => t.replace(/^[^-]+ - /, "");
+    // done for an item another quest needs ("↩ For Harkon: Find Ingredients for Precious Jewel")
+    const forItem = r.quests.filter(x => x.forItem);
+    if (forItem.length) return `<div class="ep-earlier" title="Not in your filter: this quest hands out an item the quests shown need">${forItem.map(x => `↩ For ${esc(x.forItem)}: ${esc(short(x.title))}`).join("<br>")}</div>`;
+    const names = r.quests.map(x => short(x.title));
     return `<div class="ep-earlier" title="Not in your filter, but has to be done first">↩ For earlier quest: ${esc(names.join(" · "))}</div>`;
   }
 
