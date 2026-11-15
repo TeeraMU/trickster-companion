@@ -487,6 +487,16 @@
     };
     let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
     let MAP_INDEX = null;      // data/maps.json, indexed by TQRoute.indexMaps
+
+    /** Map picture for a map text used in quests ("Coral Field 3 - …"), or null. */
+    function mapImage(name) {
+      if (!MAP_INDEX) return null;
+      for (const id of MAP_INDEX.names[name] || []) {
+        const m = MAP_INDEX.byId.get(id);
+        if (m && m.image) return m.image;
+      }
+      return null;
+    }
     let DEFAULT_PINS = {};     // data/npc-pins.json { "npcId@mapId": { x, y, n, src } }
     let NPC_NAMES = {};        // npcId -> name
     // route panel UI (not saved): selected stop, region shown, pin mode
@@ -2053,7 +2063,7 @@
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
           TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon });
           TQEpisode.setFriendsHave(friendsHaveHtml);
-          TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage });
+          TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage, mapImage });
           hideLoadingScreen();
         })
         .catch(showLoadError);

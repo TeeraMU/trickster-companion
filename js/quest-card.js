@@ -62,7 +62,7 @@
       case "Drop": {
         const mon = parse.parseMonster(item.source);
         return mon
-          ? { icon: "⚔️", kind: "drop", text: `${mon.monster} · Lv.${mon.level}`, map: item.map }
+          ? { icon: "⚔️", kind: "drop", text: `${mon.monster} · Lv.${mon.level}`, map: item.map, monster: mon.monster, level: mon.level }
           : { icon: "⚔️", kind: "drop", text: item.source, map: item.map };
       }
       case "Drill": {
@@ -92,6 +92,13 @@
     return url ? `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy" />` : `<span class="${cls} qc-icon-fallback" aria-hidden="true">${fallback}</span>`;
   }
 
+  /** Monster name you can hover / tap for its maps (popover in js/search.js). */
+  const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
+  /** "⚔️ Beast Vincento · Lv.156" with the name as a monster link */
+  const howHtml = how => how.monster
+    ? `<span class="qc-how qc-how-${how.kind}">${how.icon} ${monLink(how.monster)} · Lv.${esc(how.level)}</span>`
+    : `<span class="qc-how qc-how-${how.kind}">${how.icon} ${esc(how.text)}</span>`;
+
   function objectiveRow(item, q, ctx) {
     const c = itemCounts(item, q, ctx.state);
     const how = howToGet(item, ctx.parse);
@@ -109,7 +116,7 @@
       if (from && !done && (givers.length || from.area !== q.area) && ((from.items || []).length || (from.hunts || []).length))
         giverNeeds = giverRow(item, from, givers.length > 1 ? givers.length - 1 : 0, ctx);
     } else {
-      source = `<span class="qc-how qc-how-${how.kind}">${how.icon} ${esc(how.text)}</span>${how.map ? ` <span class="qc-map">@ ${esc(how.map)}</span>` : ""}`;
+      source = `${howHtml(how)}${how.map ? ` <span class="qc-map">@ ${esc(how.map)}</span>` : ""}`;
     }
     const qtyHtml = c.showPerRun
       ? `<span class="item-qty-badge" title="Per run">×${c.perRun}</span> <span class="qc-qty-note">per run · ${c.total} total · <strong>${c.left} left</strong></span>`
@@ -137,9 +144,9 @@
     const needs = [
       ...(g.items || []).map(it => {
         const h = howToGet(it, ctx.parse);
-        return `<li>${iconImg(ctx.getItemImage(it.name), "qc-sub-icon", h.icon)} <strong>${times(it.qty)} ${esc(it.name)}</strong>${each(it.qty)} <span class="qc-how qc-how-${h.kind}">${h.icon} ${esc(h.text)}</span></li>`;
+        return `<li>${iconImg(ctx.getItemImage(it.name), "qc-sub-icon", h.icon)} <strong>${times(it.qty)} ${esc(it.name)}</strong>${each(it.qty)} ${howHtml(h)}</li>`;
       }),
-      ...(g.hunts || []).map(h => `<li>⚔️ <strong>Hunt ${times(h.count)} ${esc(h.monster)}</strong>${each(h.count)}${h.map ? ` <span class="qc-map">@ ${esc(h.map)}</span>` : ""}</li>`)
+      ...(g.hunts || []).map(h => `<li>⚔️ <strong>Hunt ${times(h.count)}</strong> ${monLink(h.monster)}${each(h.count)}${h.map ? ` <span class="qc-map">@ ${esc(h.map)}</span>` : ""}</li>`)
     ];
     const link = `<button type="button" class="qc-link" onclick="event.stopPropagation(); jumpToQuest('${g.id}')" title="Go to this quest">${esc(shortTitle(g.title))}</button>`;
     return `<div class="qc-sub">
@@ -164,7 +171,7 @@
       <li class="qc-obj">
         <span class="item-icon qc-icon-fallback" aria-hidden="true">⚔️</span>
         <div class="qc-obj-main">
-          <div class="qc-obj-name"><strong>Defeat ${esc(h.monster)}</strong> <span class="item-qty-badge">×${h.count}</span></div>
+          <div class="qc-obj-name"><strong>Defeat</strong> ${monLink(h.monster)} <span class="item-qty-badge">×${h.count}</span></div>
           <div class="qc-obj-src"><span class="qc-how qc-how-drop">⚔️ ${h.level ? `Lv.${esc(h.level)}` : "Hunt"}${h.timeLimit ? ` · within ${esc(h.timeLimit)}` : ""}</span> <span class="qc-map">@ ${esc(h.map)}</span></div>
         </div>
       </li>`;

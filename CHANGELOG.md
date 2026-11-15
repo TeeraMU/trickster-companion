@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.3 (2026-11-15): Monster maps on hover or tap
+
+- Monster names on quest cards, Items to collect and ⚔️ Monsters: hover (or tap on a phone) for a small box with every map the monster lives in, its level, what it drops for quests and which quests hunt it. Maps with a picture get a 🗺️ Map button; 🔍 More in search opens its full search entry.
+- Items to collect: drop and hunt rows show their map (📍 …) right on the row, with +N when the monster lives in more maps.
+
 ## 0.8.2 (2026-11-15): Last-run rewards, item givers on cards, locked rows in colour
 
 - Quest cards: an item another quest hands out (Harkon) shows that quest right under it: a link to it and what one run asks for (5 runs of 3x Pure Tantalum + 3x Flawless Opal, since Harkon comes on run 5). The 3rd job "Get 1x Harkon" step says the same.
