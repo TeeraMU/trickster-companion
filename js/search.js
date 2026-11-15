@@ -12,25 +12,8 @@
       .map(s => s.trim().replace(/^\d+x\s+/, "")).filter(Boolean);
   }
 
-  /**
-   * One map text from the wiki -> map names. Later parts are often shorthand for the first one:
-   * "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark" -> "Vamp Dungeon 5 - …",
-   * "Phantom Dungeon 2-1 / 2-2", "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet".
-   */
-  function splitMaps(text) {
-    const out = [];
-    let prev = "";
-    for (const raw of String(text || "").split(" / ")) {
-      const part = raw.trim();
-      if (!part) continue;
-      // "2nd Mining Lot …" is a real name; "5", "2-2", "5 - Name", "3F Toilet" are shorthand
-      const m = /^\d/.test(part) && !/^\d+(st|nd|rd|th)\b/.test(part) && prev.match(/^(\D+?)\s*\d/);
-      const full = m ? m[1].trimEnd() + " " + part : part;
-      out.push(full.replace(/\s+/g, " "));
-      prev = full;
-    }
-    return out;
-  }
+  // the map-text splitter lives in js/episode.js (Items to collect uses it too)
+  const splitMaps = text => ((typeof TQEpisode !== "undefined" && TQEpisode) || (require("./episode.js"), globalThis.TQEpisode)).splitMaps(text);
 
   /** Add a map name, keeping one of "Vamp Dungeon 4" and "Vamp Dungeon 4 - Center of the Dark" (the long one). */
   function addMap(list, name) {
@@ -255,12 +238,6 @@
       index.find(e => e.kind === "monster" && e.name.toLowerCase() === lc) || null;
   }
 
-  /** How many maps the monster is known in (for "+2 maps" next to a row's own map). */
-  function monsterMapCount(name) {
-    const m = monsterInfo(name);
-    return m ? m.maps.length : 0;
-  }
-
   let pop = null, popFor = null, hoverTimer = 0, leaveTimer = 0;
   const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
 
@@ -362,5 +339,5 @@
     addEventListener("resize", () => { if (pop) placePop(popFor); });
   }
 
-  root.TQSearch = Object.assign({ init, open: openBox, close, update, toggle, find, monsterInfo, monsterMapCount, closeMonster, monsterMapPic }, api);
+  root.TQSearch = Object.assign({ init, open: openBox, close, update, toggle, find, monsterInfo, closeMonster, monsterMapPic }, api);
 })(this);

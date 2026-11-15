@@ -83,4 +83,39 @@ t("Harkon in the bag: nothing extra; Snow Hill done: the next mine quest", () =>
   assert.strictEqual(next.runs.get("tp-07"), 5);
 });
 
+t("a row that can be farmed in several maps goes where the other rows are (fewest stops)", () => {
+  const row = (item, monster) => ({ kind: "drop", item, monster, level: "1", qty: 3, quests: [{ id: item }], locked: false });
+  const groups = new Map([
+    ["Vamp Dungeon 3 - Song of Moonlight", { map: "Vamp Dungeon 3 - Song of Moonlight", minOrder: 5, rows: new Map([["drop|Brass Knight|Brass", row("Brass", "Brass Knight")]]) }],
+    ["Vamp Dungeon 2 - Banquet of the Dead / 3 - Song of Moonlight", { map: "Vamp Dungeon 2 - Banquet of the Dead / 3 - Song of Moonlight", minOrder: 1, rows: new Map([["drop|Iron Knight|Magnetite", row("Magnetite", "Iron Knight")]]) }],
+    ["Vamp Dungeon 4", { map: "Vamp Dungeon 4", minOrder: 2, rows: new Map([["drop|Bone Warrior|Glass Piece", row("Glass Piece", "Bone Warrior")]]) }],
+    ["Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark", { map: "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark", minOrder: 3, rows: new Map([["drop|Bone Warrior|Glass Piece", row("Glass Piece", "Bone Warrior")]]) }]
+  ]);
+  const out = ep.shareMaps(groups);
+  assert.deepStrictEqual([...out.keys()].sort(), ["Vamp Dungeon 3 - Song of Moonlight", "Vamp Dungeon 4 - Center of the Dark"]);
+  const vd3 = out.get("Vamp Dungeon 3 - Song of Moonlight");
+  assert.deepStrictEqual([...vd3.rows.values()].map(r => r.item).sort(), ["Brass", "Magnetite"]);
+  assert.deepStrictEqual(vd3.rows.get("drop|Iron Knight|Magnetite").alsoAt, ["Vamp Dungeon 2 - Banquet of the Dead"]);
+  assert.strictEqual(vd3.minOrder, 1);
+  const glass = out.get("Vamp Dungeon 4 - Center of the Dark").rows.get("drop|Bone Warrior|Glass Piece");
+  assert.strictEqual(glass.qty, 6); // both quests' rows merged
+  assert.deepStrictEqual(glass.alsoAt, ["Vamp Dungeon 5 - Resurrection of the Dark"]);
+});
+
+t("real data: Items to collect sections are single maps, every row kept", () => {
+  const statuses = ep.questStatuses(quests, { completedQuests: {}, completedCycles: {} }, prereqs);
+  const farm = ep.farmList(quests, { completedQuests: {}, completedCycles: {} }, statuses);
+  for (const g of farm.maps) assert.ok(!/ \/ /.test(g.map), "section still names several maps: " + g.map);
+  const qtyOf = f => f.maps.reduce((n, g) => n + g.rows.reduce((m, r) => m + r.qty, 0), 0);
+  // same total as counting every quest's own items and hunts
+  let total = 0;
+  for (const q of quests) {
+    const c = ep.remainingCycles(q, { completedQuests: {}, completedCycles: {} });
+    if (!c) continue;
+    for (const it of q.items || []) if (["Drop", "Drill"].includes(it.method)) total += it.totalQty === it.qty * q.cycles ? it.qty * c : it.totalQty;
+    for (const h of q.hunts || []) total += h.count * c;
+  }
+  assert.strictEqual(qtyOf(farm), total);
+});
+
 console.log(`${n} passed`);
