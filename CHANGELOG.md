@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.8.4 (2026-11-16): Monster maps fix
 
 - Fixed: the monster box listed wiki shorthand as maps of its own ("5" for "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark") and showed one map twice ("Vamp Dungeon 4" and "Vamp Dungeon 4 - Center of the Dark"). Bone Warrior now shows its 2 maps, and the +N on rows counts right.
 
