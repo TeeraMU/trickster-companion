@@ -96,13 +96,18 @@
     const c = itemCounts(item, q, ctx.state);
     const how = howToGet(item, ctx.parse);
     const done = c.left === 0;
-    let source;
+    let source, giverNeeds = "";
     if (how.kind === "quest") {
-      const from = chainSource(item, ctx.quests, q);
-      const got = from && ctx.state.completedQuests[from.id];
+      // item-sources.json names the quests handing it out: the first one not done yet
+      const givers = (item.givers || []).map(id => ctx.quests.find(o => o.id === id)).filter(Boolean);
+      const from = givers.length ? (givers.find(o => !ctx.state.completedQuests[o.id]) || givers[0]) : chainSource(item, ctx.quests, q);
+      const got = from && !givers.length && ctx.state.completedQuests[from.id];
       source = from
         ? `🔗 from <em>${esc(shortTitle(from.title))}</em> ${got ? `<span class="qc-got">✓ got it</span>` : ""}`
         : `🔗 ${esc(how.text)}`;
+      // a giver somewhere else (or named in item-sources.json): what one run of it asks for
+      if (from && !done && (givers.length || from.area !== q.area) && ((from.items || []).length || (from.hunts || []).length))
+        giverNeeds = giverRow(item, from, givers.length > 1 ? givers.length - 1 : 0, ctx);
     } else {
       source = `<span class="qc-how qc-how-${how.kind}">${how.icon} ${esc(how.text)}</span>${how.map ? ` <span class="qc-map">@ ${esc(how.map)}</span>` : ""}`;
     }
@@ -115,9 +120,27 @@
         <div class="qc-obj-main">
           <div class="qc-obj-name"><strong>${esc(item.name)}</strong> ${qtyHtml}${bagBadges(item, q, c, ctx)}</div>
           <div class="qc-obj-src">${source}</div>
+          ${giverNeeds}
           ${ctx.friendsHave ? ctx.friendsHave(item.name) : ""}
         </div>
       </li>`;
+  }
+
+  /** "↳ Blacksmith Marx - Find Ingredients… (1 run = 1 Harkon): 3x Pure Tantalum ⛏️ …" under an item */
+  function giverRow(item, g, others, ctx) {
+    const per = ((g.rewards.items || []).map(r => r.match(new RegExp("(\\d+)x " + item.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?:$|\\s*\\+)"))).find(Boolean) || [0, 1])[1];
+    const needs = [
+      ...(g.items || []).map(it => {
+        const h = howToGet(it, ctx.parse);
+        return `<li>${iconImg(ctx.getItemImage(it.name), "qc-sub-icon", h.icon)} <strong>${esc(it.qty)}x ${esc(it.name)}</strong> <span class="qc-how qc-how-${h.kind}">${h.icon} ${esc(h.text)}</span></li>`;
+      }),
+      ...(g.hunts || []).map(h => `<li>⚔️ <strong>Hunt ${esc(h.count)}x ${esc(h.monster)}</strong>${h.map ? ` <span class="qc-map">@ ${esc(h.map)}</span>` : ""}</li>`)
+    ];
+    const link = `<button type="button" class="qc-link" onclick="event.stopPropagation(); jumpToQuest('${g.id}')" title="Go to this quest">${esc(shortTitle(g.title))}</button>`;
+    return `<div class="qc-sub">
+        <div class="qc-sub-head">↳ ${link} <span class="qc-h-note">1 run = ${esc(per)} ${esc(item.name)} · Lv.${esc(g.minLevel)}+${others ? ` · or ${others} other quest${others > 1 ? "s" : ""}` : ""}</span></div>
+        <ul class="qc-sub-list">${needs.join("")}</ul>
+      </div>`;
   }
 
   /** "🎒 have 3" (enough / not yet) and "🔒 also for 2 more quests" from the Bag. */

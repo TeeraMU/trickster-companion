@@ -144,18 +144,24 @@
         // would pull in every zone's key quests)
         const givers = it.givers ? it.givers.map(id => byId.get(id))
           : [byTitle.get(String(it.source).replace(/^Reward from\s+/, "").trim())].filter(x => x && x.area === q.area);
-        const g = givers.find(x => x && x !== q && !done(x.id));
-        if (!g) continue;
+        const open = givers.filter(x => x && x !== q && !done(x.id));
+        if (!open.length) continue;
         const need = it.totalQty === it.qty * q.cycles ? it.qty * left : it.totalQty;
         const got = Math.min(need, Math.max(0, bag[it.name] || 0));
         bag[it.name] = (bag[it.name] || 0) - got;
-        const missing = need - got;
-        if (missing <= 0) continue;
-        const per = perRun(g, it.name);
-        const n = Math.min(remainingCycles(g, state), Math.ceil(missing / per));
-        if (!n) continue;
-        if (!have.has(g.id)) bring(g, it.name, n);
-        else if (runs.has(g.id)) runs.set(g.id, Math.min(remainingCycles(g, state), runs.get(g.id) + n));
+        let missing = need - got;
+        // first giver first; what its runs can't cover moves on to the next one
+        for (const g of open) {
+          if (missing <= 0) break;
+          if (have.has(g.id) && !runs.has(g.id)) break; // already listed in full
+          const per = perRun(g, it.name);
+          const used = runs.get(g.id) || 0;
+          const n = Math.min(remainingCycles(g, state) - used, Math.ceil(missing / per));
+          if (n <= 0) continue;
+          if (!have.has(g.id)) bring(g, it.name, n);
+          else runs.set(g.id, used + n);
+          missing -= n * per;
+        }
       }
     }
     return { quests: out, earlier, why, runs };

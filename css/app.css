@@ -1762,18 +1762,10 @@ select:focus, input:focus {
   background: var(--bg-primary);
 }
 
-/* locked rows: dashed outline + muted, but text keeps AA contrast (no opacity) */
+/* locked rows: dashed outline and 🔒 only; names and pictures stay in full colour so they read
+   easily (you often farm ahead for quests you can't take yet) */
 .ep-farm-row.is-locked {
   border: 1.5px dashed var(--border);
-}
-
-.ep-farm-row.is-locked .ep-farm-main strong,
-.ep-map.is-locked h4 {
-  color: var(--text-secondary);
-}
-
-.ep-farm-row.is-locked .item-icon {
-  filter: grayscale(0.7);
 }
 
 .ep-farm-main {
@@ -4078,7 +4070,7 @@ a.btn {
 }
 
 .tw-mon.is-locked {
-  opacity: 0.7;
+  border-style: dashed;
 }
 
 .tw-mon-head {
@@ -4124,4 +4116,43 @@ a.btn {
 .tw-for {
   font-size: 0.76rem;
   color: var(--text-muted);
+}
+
+/* quest card: what the quest handing out an item asks for (item-sources.json givers) */
+.qc-sub {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-left: 3px solid color-mix(in srgb, var(--accent-blue) 45%, transparent);
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--accent-blue) 7%, transparent);
+  font-size: 0.8rem;
+}
+
+.qc-sub-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.qc-sub-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qc-sub-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.qc-sub-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }

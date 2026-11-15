@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Quest cards: an item another quest hands out (Harkon) shows that quest right under it: a link to it and what one run asks for (3x Pure Tantalum + 3x Flawless Opal per Harkon, at the Snow Hill mining lots). The 3rd job "Get 1x Harkon" step says the same.
+- Items to collect: locked items keep their colour (dashed outline and 🔒 only), so you can farm ahead without squinting. Same for locked monsters.
+- When one quest can't hand out enough (16 Harkon for every 3rd job path, 5 runs per mine quest), the rest goes to the next mine quest.
+
 ## 0.8.1 (2026-11-15): Harkon fix, items other quests hand out
 
 - Fixed: **Harkon** (for every 3rd job) isn't drilled: Blacksmith Marx hands it out for mine ores (Find Ingredients for Precious Jewel at Snow Hill Mine, or his Golden Ash / Silent Lava mine quests). Checked in game.
