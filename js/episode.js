@@ -191,6 +191,72 @@
   }
 
   /**
+   * One map text from the wiki -> map names. Later parts are often shorthand for the first one:
+   * "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark" -> "Vamp Dungeon 5 - …",
+   * "Phantom Dungeon 2-1 / 2-2", "Phantom Dungeon - 3F Shiver Hallway / 3F Toilet".
+   */
+  function splitMaps(text) {
+    const out = [];
+    let prev = "";
+    for (const raw of String(text || "").split(" / ")) {
+      const part = raw.trim();
+      if (!part) continue;
+      // "2nd Mining Lot …" is a real name; "5", "2-2", "5 - Name", "3F Toilet" are shorthand
+      const m = /^\d/.test(part) && !/^\d+(st|nd|rd|th)\b/.test(part) && prev.match(/^(\D+?)\s*\d/);
+      const full = m ? m[1].trimEnd() + " " + part : part;
+      out.push(full.replace(/\s+/g, " "));
+      prev = full;
+    }
+    return out;
+  }
+
+  /**
+   * Items to collect, one section per map with the fewest stops: a row whose map text names several
+   * maps ("Vamp Dungeon 2 - … / 3 - Song of Moonlight") goes where most other rows are (Vamp Dungeon 3,
+   * with Brass), and keeps the others as alsoAt. groups: Map text -> { map, minOrder, rows: Map key -> row }.
+   * Same row key in one section (same item, same monster) is merged. Returns groups in the same shape.
+   */
+  function shareMaps(groups) {
+    const rows = [];
+    for (const g of groups.values()) {
+      const cands = splitMaps(g.map);
+      for (const [key, r] of g.rows) rows.push({ key, r, minOrder: g.minOrder, cands: cands.length ? cands : [g.map || ""] });
+    }
+    // "Vamp Dungeon 4" and "Vamp Dungeon 4 - Center of the Dark" are one map: use the long name
+    const names = new Set(rows.flatMap(x => x.cands));
+    const full = n => [...names].find(o => o.startsWith(n + " - ")) || n;
+    for (const x of rows) x.cands = [...new Set(x.cands.map(full))];
+
+    const out = new Map();
+    const left = new Set(rows);
+    while (left.size) {
+      // the map most rows can be done at; ties: the earliest quest, then the order seen
+      const score = new Map();
+      for (const x of left) for (const c of x.cands) {
+        const s = score.get(c) || { n: 0, order: Infinity };
+        s.n++; s.order = Math.min(s.order, x.minOrder);
+        score.set(c, s);
+      }
+      let best = null;
+      for (const [c, s] of score) if (!best || s.n > best.s.n || (s.n === best.s.n && s.order < best.s.order)) best = { c, s };
+      const g = { map: best.c, minOrder: best.s.order, rows: new Map() };
+      for (const x of [...left]) {
+        if (!x.cands.includes(best.c)) continue;
+        left.delete(x);
+        const also = x.cands.filter(c => c !== best.c);
+        const prev = g.rows.get(x.key);
+        if (!prev) { g.rows.set(x.key, Object.assign({}, x.r, also.length ? { alsoAt: also } : {})); continue; }
+        prev.qty += x.r.qty;
+        for (const q of x.r.quests) if (!prev.quests.some(o => o.id === q.id)) prev.quests.push(q);
+        prev.locked = prev.locked && x.r.locked;
+        if (also.length) prev.alsoAt = [...new Set([...(prev.alsoAt || []), ...also])];
+      }
+      out.set(best.c, g);
+    }
+    return out;
+  }
+
+  /**
    * opts (optional, from withEarlierQuests): { why: Map id -> item it's done for, runs: Map id -> runs to count }
    */
   function farmList(quests, state, statuses, earlier, opts) {
@@ -241,7 +307,7 @@
     }
 
     const KIND_ORDER = { hunt: 0, drop: 1, drill: 2, other: 3 };
-    const mapList = [...maps.values()].map(g => {
+    const mapList = [...shareMaps(maps).values()].map(g => {
       const rows = [...g.rows.values()].sort((a, b) => KIND_ORDER[a.kind] - KIND_ORDER[b.kind]);
       return { map: g.map, minOrder: g.minOrder, rows, locked: rows.every(r => r.locked) };
     }).sort((a, b) => (a.locked - b.locked) || (a.minOrder - b.minOrder));
@@ -276,7 +342,7 @@
     };
   }
 
-  const model = { listEpisodes, parseChapterName, questStatuses, parseMonster, parseDrill, farmList, withEarlierQuests, giverYield, episodeModel, remainingCycles };
+  const model = { splitMaps, shareMaps, listEpisodes, parseChapterName, questStatuses, parseMonster, parseDrill, farmList, withEarlierQuests, giverYield, episodeModel, remainingCycles };
 
   // ---------------------------------------------------------------------------------------
   // Renderer (browser)
@@ -312,19 +378,20 @@
   const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
 
   /** "📍 Rose Field 4 - Bloom Grave +2" on a monster row: its map, and how many more it lives in */
-  function monMap(name, map) {
-    if (!map) return "";
-    const n = root.TQSearch && root.TQSearch.monsterMapCount ? root.TQSearch.monsterMapCount(name) : 0;
-    const more = n > 1 ? ` <span class="ep-map-more" title="Lives in ${n} maps: tap the name">+${n - 1}</span>` : "";
-    return ` <span class="ep-row-map" title="${esc(map)}">📍 ${esc(map)}</span>${more}`;
+  // The section heading is the map; a row only says where else the quest lets you get it
+  // (shareMaps put it with the other rows of that map to save a trip).
+  function monMap(r) {
+    if (!r.alsoAt || !r.alsoAt.length) return "";
+    const list = r.alsoAt.join(" · ");
+    return ` <span class="ep-row-map" title="Also at ${esc(list)}: grouped here with the other items of this map">📍 also at ${esc(list)}</span>`;
   }
 
-  function farmRow(r, have, map) {
+  function farmRow(r, have) {
     const usedIn = r.quests.map(x => x.title).join(" · ");
     let how = "";
-    if (r.kind === "drop") how = `${monLink(r.monster)} <span class="ep-lv">Lv.${esc(r.level)}</span>${monMap(r.monster, map)}`;
-    else if (r.kind === "hunt") how = `${r.level ? `<span class="ep-lv">Lv.${esc(r.level)}</span> ` : ""}${esc(r.how)}${monMap(r.item, map)}`;
-    else if (r.kind === "drill") how = esc(r.depth);
+    if (r.kind === "drop") how = `${monLink(r.monster)} <span class="ep-lv">Lv.${esc(r.level)}</span>${monMap(r)}`;
+    else if (r.kind === "hunt") how = `${r.level ? `<span class="ep-lv">Lv.${esc(r.level)}</span> ` : ""}${esc(r.how)}${monMap(r)}`;
+    else if (r.kind === "drill") how = esc(r.depth) + monMap(r);
     else how = esc(r.how);
     return `
       <li class="ep-farm-row ${r.locked ? "is-locked" : ""} ${r.done ? "is-done" : ""}" title="Used in: ${esc(usedIn)}">
@@ -361,7 +428,7 @@
     const maps = f.maps.map(g => `
       <section class="ep-map ${g.locked ? "is-locked" : ""} ${g.rows.every(r => r.done) ? "is-done" : ""}">
         <h4>🗺️ ${esc(g.map)} ${g.locked ? `<span class="ep-lock">🔒 later</span>` : ""}${g.rows.every(r => r.done) ? ` <span class="ep-have-all">✅ got everything</span>` : ""}</h4>
-        <ul class="ep-farm-list">${g.rows.map(r => farmRow(r, have, g.map)).join("")}</ul>
+        <ul class="ep-farm-list">${g.rows.map(r => farmRow(r, have)).join("")}</ul>
       </section>`).join("");
     const shop = f.shop.length ? `
       <section class="ep-map">

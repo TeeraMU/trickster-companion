@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Items to collect: one section per map, with items you can get in more than one map grouped where the rest already are, so you make fewer trips. Magnetite (Iron Knight, Vamp Dungeon 2 or 3) now sits with Brass under Vamp Dungeon 3, and its row says "📍 also at Vamp Dungeon 2 - Banquet of the Dead". The same item for two quests in one map is one row. The ⚔️ Monsters view uses the same single maps.
+- Items to collect rows no longer repeat the section's map or show +N (the monster box has every map).
+
 ## 0.8.4 (2026-11-16): Monster maps fix
 
 - Fixed: the monster box listed wiki shorthand as maps of its own ("5" for "Vamp Dungeon 4 - Center of the Dark / 5 - Resurrection of the Dark") and showed one map twice ("Vamp Dungeon 4" and "Vamp Dungeon 4 - Center of the Dark"). Bone Warrior now shows its 2 maps, and the +N on rows counts right.

@@ -4196,19 +4196,7 @@ a.btn {
 }
 
 .ep-row-map {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--text-secondary);
-}
-
-.ep-map-more {
-  font-weight: 800;
-  font-size: 0.72rem;
-  padding: 0 6px;
-  border-radius: 999px;
-  border: 1px solid var(--border-strong);
+  flex-basis: 100%;
   color: var(--text-secondary);
 }
 
