@@ -309,18 +309,28 @@
   let friendsHave = () => "";
   function setFriendsHave(fn) { friendsHave = fn || (() => ""); }
 
-  function farmRow(r, have) {
+  const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
+
+  /** "📍 Rose Field 4 - Bloom Grave +2" on a monster row: its map, and how many more it lives in */
+  function monMap(name, map) {
+    if (!map) return "";
+    const n = root.TQSearch && root.TQSearch.monsterMapCount ? root.TQSearch.monsterMapCount(name) : 0;
+    const more = n > 1 ? ` <span class="ep-map-more" title="Lives in ${n} maps: tap the name">+${n - 1}</span>` : "";
+    return ` <span class="ep-row-map" title="${esc(map)}">📍 ${esc(map)}</span>${more}`;
+  }
+
+  function farmRow(r, have, map) {
     const usedIn = r.quests.map(x => x.title).join(" · ");
     let how = "";
-    if (r.kind === "drop") how = `${esc(r.monster)} <span class="ep-lv">Lv.${esc(r.level)}</span>`;
-    else if (r.kind === "hunt") how = `${r.level ? `<span class="ep-lv">Lv.${esc(r.level)}</span> ` : ""}${esc(r.how)}`;
+    if (r.kind === "drop") how = `${monLink(r.monster)} <span class="ep-lv">Lv.${esc(r.level)}</span>${monMap(r.monster, map)}`;
+    else if (r.kind === "hunt") how = `${r.level ? `<span class="ep-lv">Lv.${esc(r.level)}</span> ` : ""}${esc(r.how)}${monMap(r.item, map)}`;
     else if (r.kind === "drill") how = esc(r.depth);
     else how = esc(r.how);
     return `
       <li class="ep-farm-row ${r.locked ? "is-locked" : ""} ${r.done ? "is-done" : ""}" title="Used in: ${esc(usedIn)}">
         ${r.kind === "hunt" ? `<span class="item-icon ep-icon-fallback">⚔️</span>` : itemIcon(r.item, "item-icon")}
         <div class="ep-farm-main">
-          <div><strong>${esc(r.item)}</strong> ${qtyHtml(r)}${r.locked ? ` <span class="ep-lock" title="Every quest that needs this is still locked">🔒</span>` : ""}</div>
+          <div><strong>${r.kind === "hunt" ? monLink(r.item) : esc(r.item)}</strong> ${qtyHtml(r)}${r.locked ? ` <span class="ep-lock" title="Every quest that needs this is still locked">🔒</span>` : ""}</div>
           <div class="ep-farm-how"><span class="ep-kind ep-kind-${r.kind}">${KIND_LABEL[r.kind]}</span> ${how}</div>
           ${earlierNote(r)}
           ${r.kind === "hunt" ? "" : friendsHave(r.item)}
@@ -351,7 +361,7 @@
     const maps = f.maps.map(g => `
       <section class="ep-map ${g.locked ? "is-locked" : ""} ${g.rows.every(r => r.done) ? "is-done" : ""}">
         <h4>🗺️ ${esc(g.map)} ${g.locked ? `<span class="ep-lock">🔒 later</span>` : ""}${g.rows.every(r => r.done) ? ` <span class="ep-have-all">✅ got everything</span>` : ""}</h4>
-        <ul class="ep-farm-list">${g.rows.map(r => farmRow(r, have)).join("")}</ul>
+        <ul class="ep-farm-list">${g.rows.map(r => farmRow(r, have, g.map)).join("")}</ul>
       </section>`).join("");
     const shop = f.shop.length ? `
       <section class="ep-map">
