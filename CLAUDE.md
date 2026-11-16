@@ -93,6 +93,11 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
   drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
   ✅ Mark zone done) is in index.html (`renderZoneBar`).
+- `js/build.js`: the 🧭 Build guide page (class / job picker, wiki art, growth chart, suggested build from
+  skill formulas, stat planner, skills with mastery cards). Pure model tested by `node scripts/test-build.js`.
+  State is `appState.build` (this device only, not synced). Data: `data/builds.json` (jobs, skills per job,
+  mastery items with picture / monster / maps, stat rules), loaded in the background after start-up;
+  rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki.
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.9.0 (2026-11-17): Build guide
+
+- New **🧭 Build guide** page (replaces the Drill guide): pick a class and job to see its wiki artwork, your growth chart (Power / Magic / Sense / Charm with the in-game type badges and colours, 1-4 each and 10 in all) and which stats its skills use.
+  - **📊 Stats:** a plain suggested build from the skill formulas (Primadonna: AP + HV, magicians: Pure MA) with links to player guides where we know one, and a stat planner: level, growth and how you split your 4 bonus points per level give the AP / HV / HP … you gain.
+  - **✨ Skills:** every skill of the job and the jobs before it, with its icon, TM level, prerequisite, formula and mastery cards (with pictures). Tick **Master** on the skills you want and the cards add up (Purple Worm Card ×16 for three Primadonna skills), with where each drops and your Bag count. Skills sit under the skill they need, like quests; "🔒 Needs" chips show that skill's icon and level (Master in gold) and jump to it. Each skill says how you get it when the wiki knows: 🃏 card pack, 📜 quest (linked), 🗼 Chaos Tower drop, 🐣 from the start. Each skill shows Lv.1 → Master at a glance (MP 300 → 660 · Cooldown 8s · Magnification 0.75 → 2.55 · Target 2 → 4), and **📋 All levels and notes** opens the full table from the wiki (Master row in gold) with the notes.
+- Top bar: 🔍 and ⚙️ no longer push the page sideways on phones around 400px wide.
+  - Data is from the ggFTW wiki (33 jobs, 389 skills, 68 mastery items); PlayTrickster may differ, tell us what's wrong. Equipment and damage come later.
+- Search: mastery cards are found too, with the monster and map they come from and the skills they master ("🎓 Masters: Sharp Scream (Primadonna) ×5"); tapping a card on the Build guide opens it.
+
 ## 0.8.5 (2026-11-16): Fewer trips in Items to collect
 
 - Items to collect: one section per map, with items you can get in more than one map grouped where the rest already are, so you make fewer trips. Magnetite (Iron Knight, Vamp Dungeon 2 or 3) now sits with Brass under Vamp Dungeon 3, and its row says "📍 also at Vamp Dungeon 2 - Banquet of the Dead". The same item for two quests in one map is one row. The ⚔️ Monsters view uses the same single maps.

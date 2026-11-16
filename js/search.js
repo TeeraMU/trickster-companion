@@ -24,10 +24,11 @@
   }
 
   /** Build the index once from the app's quests (legacy shape from js/data.js). */
-  function buildIndex(quests) {
+  /** builds (optional): data/builds.json, so skill mastery items and their monsters are found too */
+  function buildIndex(quests, builds) {
     const items = new Map(), monsters = new Map(), npcs = new Map(), list = [];
     const item = name => {
-      if (!items.has(name)) items.set(name, { kind: "item", name, sources: [], usedBy: [], rewardFrom: [] });
+      if (!items.has(name)) items.set(name, { kind: "item", name, sources: [], usedBy: [], rewardFrom: [], masterFor: [] });
       return items.get(name);
     };
     const monster = (name, level) => {
@@ -69,6 +70,24 @@
       for (const line of rewards) for (const name of rewardNames(line)) {
         if (/Galder (Coupon|Check)$|^Skill:/.test(name)) continue;
         addUnique(item(name).rewardFrom, ref, "id");
+      }
+    }
+    // skill mastery items (Build guide): where they drop and which skills they master
+    if (builds && builds.items) {
+      for (const [name, b] of Object.entries(builds.items)) {
+        const i = item(name);
+        if (b.img) i.img = b.img;
+        for (const f of b.from || []) {
+          const text = f.monster + (f.level ? " (Lv." + f.level + ")" : "") + (f.take ? " (use Take on it)" : "");
+          addUnique(i.sources, { method: "Drop", text, map: (f.maps || []).join(" / ") }, "text");
+          const mo = monster(f.monster, f.level);
+          addUnique(mo.drops, name);
+          for (const mp of f.maps || []) addMap(mo.maps, mp);
+        }
+        if (!(b.from || []).length && b.how) addUnique(i.sources, { method: /^Drill/.test(b.how) ? "Drill" : "Quest", text: b.how, map: "" }, "text");
+      }
+      for (const [job, skills] of Object.entries(builds.skills || {})) {
+        for (const sk of skills) for (const it of sk.items || []) addUnique(item(it.name).masterFor, { skill: sk.name, job, qty: it.qty }, "skill");
       }
     }
     return [...list, ...items.values(), ...monsters.values(), ...npcs.values()];
@@ -115,17 +134,18 @@
     const head = (icon, label, n) => `<h3 class="srch-h">${icon} ${label} <span class="srch-n">${n}</span></h3>`;
     if (results.item.length) sections.push(head("🎒", "Items", results.item.length) + results.item.map(e => {
       const key = "item:" + e.name, isOpen = open.has(key);
-      const img = ctx.itemImage ? ctx.itemImage(e.name) : null;
+      const img = (ctx.itemImage ? ctx.itemImage(e.name) : null) || e.img;
       const where = e.sources.slice(0, 3).map(s => `${METHOD_ICON[s.method] || "•"} ${esc(s.text)}${s.map && s.method !== "Quest" ? ` <span class="srch-map">@ ${esc(s.map)}</span>` : ""}`).join("<br>");
       return `<div class="srch-row ${isOpen ? "is-open" : ""}">
           <button type="button" class="srch-main" onclick="TQSearch.toggle('${esc(key).replace(/'/g, "\\'")}')" aria-expanded="${isOpen}">
             ${img ? `<img class="srch-icon" src="${esc(img)}" alt="" loading="lazy">` : `<span class="srch-icon">🎒</span>`}
             <span class="srch-name">${esc(e.name)}</span>
-            <span class="srch-sub">${e.usedBy.length ? `used in ${e.usedBy.length} quest${e.usedBy.length === 1 ? "" : "s"}` : ""}${e.usedBy.length && e.rewardFrom.length ? " · " : ""}${e.rewardFrom.length ? `reward from ${e.rewardFrom.length}` : ""}</span>
+            <span class="srch-sub">${e.masterFor.length ? `🎓 masters ${e.masterFor.length} skill${e.masterFor.length === 1 ? "" : "s"}${e.usedBy.length ? " · " : ""}` : ""}${e.usedBy.length ? `used in ${e.usedBy.length} quest${e.usedBy.length === 1 ? "" : "s"}` : ""}${e.usedBy.length && e.rewardFrom.length ? " · " : ""}${e.rewardFrom.length ? `reward from ${e.rewardFrom.length}` : ""}</span>
           </button>
           ${isOpen ? `<div class="srch-detail">
             ${where ? `<div><b>Get it:</b><br>${where}</div>` : ""}
             ${e.rewardFrom.length ? `<div><b>🎁 Reward from:</b> ${links(e.rewardFrom)}</div>` : ""}
+            ${e.masterFor.length ? `<div><b>🎓 Masters:</b> ${e.masterFor.slice(0, 12).map(m => `${esc(m.skill)} <span class="srch-more">(${esc(m.job)}) ×${m.qty}</span>`).join(" · ")}</div>` : ""}
             ${e.usedBy.length ? `<div><b>📜 Used in:</b> ${links(e.usedBy, r => ` <span class="srch-more">×${r.qty}</span>`)}</div>` : ""}
           </div>` : ""}
         </div>`;
@@ -179,11 +199,13 @@
   // ---------------------------------------------------------------------------------------------
   let index = null, ctx = null, last = "";
   function init(context) { ctx = context; }
+  /** New data (builds.json arrived): build the index again next time. */
+  function refresh() { index = null; }
 
   function openBox(text) {
     const dlg = document.getElementById("searchDialog");
     if (!dlg || !ctx) return;
-    if (!index) index = buildIndex(ctx.quests());
+    if (!index) index = buildIndex(ctx.quests(), ctx.builds ? ctx.builds() : null);
     if (!dlg.open) dlg.showModal();
     const input = document.getElementById("searchBox");
     if (typeof text === "string") input.value = text;
@@ -232,7 +254,7 @@
   // ---------------------------------------------------------------------------------------------
   function monsterInfo(name) {
     if (!ctx) return null;
-    if (!index) index = buildIndex(ctx.quests());
+    if (!index) index = buildIndex(ctx.quests(), ctx.builds ? ctx.builds() : null);
     const lc = String(name).toLowerCase();
     return index.find(e => e.kind === "monster" && e.name === name) ||
       index.find(e => e.kind === "monster" && e.name.toLowerCase() === lc) || null;
@@ -339,5 +361,5 @@
     addEventListener("resize", () => { if (pop) placePop(popFor); });
   }
 
-  root.TQSearch = Object.assign({ init, open: openBox, close, update, toggle, find, monsterInfo, closeMonster, monsterMapPic }, api);
+  root.TQSearch = Object.assign({ init, refresh, open: openBox, close, update, toggle, find, monsterInfo, closeMonster, monsterMapPic }, api);
 })(this);

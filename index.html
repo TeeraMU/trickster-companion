@@ -52,7 +52,7 @@
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
         <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
         <button class="view-tab" id="tabBtnFriends" onclick="switchView('friends')"><span class="tab-icon" aria-hidden="true">👥</span><span class="tab-label">Friends</span></button>
-        <button class="view-tab" id="tabBtnDrillRef" onclick="switchView('drillref')"><span class="tab-icon" aria-hidden="true">⛏️</span><span class="tab-label">Drill guide</span></button>
+        <button class="view-tab" id="tabBtnBuild" onclick="switchView('build')"><span class="tab-icon" aria-hidden="true">🧭</span><span class="tab-label">Build guide</span></button>
         <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')"><span class="tab-icon" aria-hidden="true">🗺️</span><span class="tab-label">Roadmap</span></button>
       </nav>
 
@@ -249,109 +249,9 @@
       <div id="bagContainer"></div>
     </div>
 
-    <!-- VIEW 3: DRILL DEPTH & SOIL REFERENCE -->
-    <div id="viewDrillRef" class="hidden">
-      <div class="calc-card" style="margin-bottom:20px;">
-        <h3>TO Complete Map Drill Depth &amp; Soil Type Reference (Coral Beach -> Episode 1)</h3>
-        <p class="calc-desc">Use this table to pick the optimal drill depth and soil proficiency for every field, mine, and dungeon from Level 1 through Episode 1.</p>
-        <table class="req-table">
-          <thead>
-            <tr>
-              <th>Region</th>
-              <th>Map Name(s)</th>
-              <th>Drill Depth</th>
-              <th>Ground / Soil Type</th>
-              <th>Key Quest &amp; Daily Items Drilled Here</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Coral Beach</strong></td>
-              <td>Coral Beach Fields 1-3 (Blue Wave, Passionate Sun, Sunny Beach), Master Mong's Lair</td>
-              <td><code>10m</code></td>
-              <td><code>Sand / Land / Artificial</code></td>
-              <td>Crystal, Cacao, Rusty Chain, Plastic Bag, Firecracker, Coin, Pink Potion A</td>
-            </tr>
-            <tr>
-              <td><strong>Coral Beach</strong></td>
-              <td>Coral Beach - Dark Cave</td>
-              <td><code>10m ~ 20m</code></td>
-              <td><code>Rock / Artificial</code></td>
-              <td>Iron Ore, Limestone, Pebbles, Piece of Stone</td>
-            </tr>
-            <tr>
-              <td><strong>Desert Beach</strong></td>
-              <td>Gate of Desert Beach, Desert Beach Fields 1-4 (Delta Island, Sand Palace, Statue of Anubis, Parasol River)</td>
-              <td><code>10m ~ 20m</code></td>
-              <td><code>Sand</code></td>
-              <td>Tanning Oil, Oasis Water, Limestone, Garden Trowel, Jenny's Photo B, Magic Sealed Letter, Salt, Red Lipstick, Swimsuit, Paper, Sun Cream, Soap, Shampoo, Bath Sponge, 5 Letters (Lucky/Cursed/Love/Confession/Farewell), Crystal, Worn/Old/Weird Beach Maps A &amp; B</td>
-            </tr>
-            <tr>
-              <td><strong>Desert Beach</strong></td>
-              <td>1st &amp; 2nd Mining Lot of Crystal Copper (Desert Beach Mine)</td>
-              <td><code>10m ~ 20m</code></td>
-              <td><code>Rock</code></td>
-              <td>Bronze Fragment (7x for Refining Tutorial), Pure Tin, Flawless Amethyst</td>
-            </tr>
-            <tr>
-              <td><strong>Desert Beach</strong></td>
-              <td>Pyramid Dungeon 1-6 (Halls of Slave, Harpy, Bastet, Dead, Love Affair, Queen)</td>
-              <td><code>20m ~ 30m</code></td>
-              <td><code>Rock / Sand</code></td>
-              <td>Glyph Tablet (Sandman Key Quest), Book of the Dead (15x for Nefertiti), Uraeus Statue, Nekhbet Statue, Round Bone Seal</td>
-            </tr>
-            <tr>
-              <td><strong>Megalopolis</strong></td>
-              <td>Southwest Forest &amp; Southeast Forest</td>
-              <td><code>10m ~ 20m</code></td>
-              <td><code>Land (Grass/Soil)</code></td>
-              <td>Ginseng (2x for Episode 1 Ginseng Tea), Worn/Old/Weird Forest Maps A &amp; B</td>
-            </tr>
-            <tr>
-              <td><strong>Megalopolis</strong></td>
-              <td>Poppuri Dungeon (Moss Cave, Rainbow Cave, Spore Cave, Root Cave, Slide Cave)</td>
-              <td><code>20m ~ 30m</code></td>
-              <td><code>Land / Mud</code></td>
-              <td>Poppuri Whistle (15x), Red Petal (15x), Battery Lasting Long (10x), Amber (5x), Moss Water (5x), Peridot Gemstone (5x)</td>
-            </tr>
-            <tr>
-              <td><strong>Caballa Relics</strong></td>
-              <td>Path to Caballa Relics, Gate of Caballa Relics, Relics Fields 1-4 (Atlas, Hand of Giant, Monkey Statues, Altar for Sacrifice)</td>
-              <td><code>20m ~ 40m</code></td>
-              <td><code>Land</code></td>
-              <td>Golden Egg, Fantastic Powder (Field 4), Aposis Statue (10x), Patterned Pottery (15x + Julio Daily), Plain Pottery (15x), Coin, Gold Ring (10x), Gold Necklace (10x), Optical Glass Crystal, Animal Bone, Expensive Film, Clay Tablet</td>
-            </tr>
-            <tr>
-              <td><strong>Caballa Relics</strong></td>
-              <td>Caballa Relics Dungeons 1-4 &amp; Boss Paths 1-2 (Waking Dream, Dread Slumber)</td>
-              <td><code>40m ~ 60m</code></td>
-              <td><code>Rock</code></td>
-              <td>Incense Burner (10x), Ash Box (10x), Lapis Penna (10x), Tortoise Shell (10x), Malachite (10x), Selinolite (10x), Jade (5x), Copal (5x), Obsidian (5x), Torn Clue 1 &amp; 2, Chaotic Guide Stone</td>
-            </tr>
-            <tr>
-              <td><strong>Caballa Relics</strong></td>
-              <td>1st &amp; 2nd Mining Lot of Jade Steel (Caballa Relics Mine)</td>
-              <td><code>50m ~ 130m</code></td>
-              <td><code>Rock</code></td>
-              <td>Pure Soft Iron (1st Lot, 15x), Flawless Cat's Eye (2nd Lot, 15x)</td>
-            </tr>
-            <tr>
-              <td><strong>Oops Wharf (Ep.1 Ch.2)</strong></td>
-              <td>Oops Wharf Fields 1-4 (Trap Zone, Devil's Canyon, Phantom Park, Chrono Wharf)</td>
-              <td><code>40m ~ 60m</code></td>
-              <td><code>Land</code></td>
-              <td>Thick Rope (3x for Skipper Min), Piece of Lumber (5x for Skipper Min)</td>
-            </tr>
-            <tr>
-              <td><strong>Mermaid Palace (Ep.1 Ch.3)</strong></td>
-              <td>Path to Mermaid Palace 1 &amp; 2</td>
-              <td><code>60m ~ 80m</code></td>
-              <td><code>Rock</code></td>
-              <td>Harkon Heirloom (opens into Harkon Necklace / Harkon Ornament / Harkon Shard), Fairy's Drink (1x for Transparent Medicine)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- VIEW 3: BUILD GUIDE (js/build.js, data/builds.json) -->
+    <div id="viewBuild" class="hidden">
+      <div id="buildContainer"><p class="calc-desc">Loading skills…</p></div>
     </div>
 
     <!-- VIEW 4: STEP-BY-STEP PROGRESSION ROADMAP -->
@@ -454,6 +354,7 @@
   <script src="js/cloud.js"></script>
   <script src="js/friends.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/build.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -473,6 +374,7 @@
       selectedRegion: "All",
       selectedAreaGroup: "all",
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
+      build: null,             // Build guide: { cls, job, tab, growth, level, bonus, picked } (this device only)
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
       focus: null,             // pinned scope friends see needs for: { region, group, cats, path } (Friends)
@@ -875,10 +777,11 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", friends: "Friends", drillref: "DrillRef", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", friends: "Friends", build: "Build", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
+      if (viewName === "drillref") viewName = "build"; // the Drill guide page became the Build guide
       if (!VIEWS[viewName]) viewName = "episodes";
       Object.entries(VIEWS).forEach(([v, id]) => {
         document.getElementById("tabBtn" + id).classList.toggle("active", v === viewName);
@@ -892,6 +795,7 @@
       if (viewName === "bag") renderBag();
       if (viewName === "friends") renderFriends();
       if (viewName === "roadmap") renderKeyRoadmap();
+      if (viewName === "build") renderBuild();
     }
 
     // ============================================================================
@@ -1684,6 +1588,78 @@
     }
 
     // ============================================================================
+    // BUILD GUIDE (js/build.js): skills, mastery cards and a stat planner per job. data/builds.json
+    // loads in the background after start-up (search uses it too); the page renders when it's in.
+    // ============================================================================
+    let BUILDS = null;
+    function loadBuilds() {
+      return TQData.fetchJson("data/builds.json").then(b => {
+        BUILDS = b;
+        TQSearch.refresh();
+        if (appState.currentView === "build") renderBuild();
+      }).catch(() => {
+        const box = document.getElementById("buildContainer");
+        if (box) box.innerHTML = '<p class="calc-desc">Couldn\'t load the skill data. Check your connection and reload.</p>';
+      });
+    }
+
+    function buildState() {
+      if (!appState.build) {
+        // start from the class and 3rd job path picked in the header
+        const cls = appState.selectedClass && appState.selectedClass !== "All" ? appState.selectedClass : "Cat";
+        const path = jobPaths().find(p => p.key === appState.selectedJobPath);
+        appState.build = { cls, job: path ? path.label : "", tab: "stats", growth: Object.assign({}, TQBuild.DEFAULT_GROWTH), level: 100, bonus: {}, picked: {} };
+      }
+      appState.build.growth = TQBuild.fixGrowth(appState.build.growth);
+      return appState.build;
+    }
+
+    function renderBuild() {
+      const box = document.getElementById("buildContainer");
+      if (!box || !BUILDS) return;
+      const lc = s => String(s).toLowerCase().replace(/\s+/g, " ").trim();
+      const questByTitle = t => QUESTS.find(q => lc(q.title) === lc(t)) || null;
+      box.innerHTML = TQBuild.render({ builds: BUILDS, state: buildState(), have: appState.inventory, questByTitle });
+    }
+
+    // handlers called from the page (TQBuild.set / growth / bonus / pick / useAdvice)
+    Object.assign(TQBuild, {
+      set(patch) {
+        const st = buildState();
+        if (patch.cls && patch.cls !== st.cls) { st.picked = {}; }
+        if ("job" in patch && patch.job !== st.job) st.picked = {};
+        Object.assign(st, patch);
+        saveState(); renderBuild();
+      },
+      growth(group, d) {
+        const st = buildState();
+        st.growth = TQBuild.stepGrowth(st.growth, group, d); // 1-4 each, 10 in all
+        saveState(); renderBuild();
+      },
+      bonus(stat, v) {
+        const st = buildState();
+        const n = Math.max(0, Math.min(100, Math.round(+v || 0)));
+        if (n) st.bonus[stat] = n; else delete st.bonus[stat];
+        saveState(); renderBuild();
+      },
+      pick(skill, on) {
+        const st = buildState();
+        if (on) st.picked[skill] = true; else delete st.picked[skill];
+        saveState(); renderBuild();
+      },
+      useAdvice() {
+        const st = buildState();
+        const c = BUILDS.classes[st.cls];
+        const job = (c.jobs.find(j => j.name === st.job) || c.jobs[c.jobs.length - 2] || c.jobs[0]).name;
+        const adv = TQBuild.advice(BUILDS, st.cls, job);
+        st.bonus = {};
+        if (adv.stats.length === 2) { st.bonus[adv.stats[0]] = 50; st.bonus[adv.stats[1]] = 50; }
+        else if (adv.stats.length === 1) st.bonus[adv.stats[0]] = 100;
+        saveState(); renderBuild();
+      }
+    });
+
+    // ============================================================================
     // FRIENDS (js/friends.js): the short summary friends see, and the page
     // ============================================================================
     // Job sprite for a class ("Cat") and 3rd job path label ("Primadonna"): the 3rd job when one is
@@ -2063,7 +2039,8 @@
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
           TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon });
           TQEpisode.setFriendsHave(friendsHaveHtml);
-          TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage, mapImage });
+          TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage, mapImage, builds: () => BUILDS });
+          loadBuilds();
           hideLoadingScreen();
         })
         .catch(showLoadError);
