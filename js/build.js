@@ -114,32 +114,42 @@
   const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
   const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
 
-  /** Growth chart: four corners like the in-game graph, each with − / + (1-4, 10 in all). */
+  // the in-game type badges (wiki, 17x15: shown at 2x with crisp pixels)
+  const WIKI_IMG = "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/";
+  const TYPE_ICON = { Power: "a/a0/Power_Icon.gif", Magic: "2/24/Magic_Icon.gif", Sense: "c/cc/Sense_Icon.gif", Charm: "5/53/Charm_Icon.gif" };
+  const typeIcon = (g, cls) => `<img class="${cls}" src="${WIKI_IMG + TYPE_ICON[g]}" alt="" width="17" height="15">`;
+
+  /** Growth chart, like the in-game one: a box per type in its corner (badge, number, %), a ring in the middle. */
   function growthChart(growth) {
     const total = GROUPS.reduce((n, g) => n + growth[g], 0);
     const left = GROWTH_TOTAL - total;
     const corner = (g, pos) => `
       <div class="bd-grow ${GROUP_CLASS[g]} bd-grow-${pos}">
         <span class="bd-grow-name">${g}</span>
+        <span class="bd-grow-badge">${typeIcon(g, "bd-grow-icon")}<b>${growth[g]}</b></span>
+        <span class="bd-grow-pct">${growth[g] * 10}%</span>
         <span class="bd-grow-ctl">
           <button type="button" class="bd-step" aria-label="Less ${g}" onclick="TQBuild.growth('${g}', -1)" ${growth[g] <= 1 ? "disabled" : ""}>−</button>
-          <strong>${growth[g]}</strong>
           <button type="button" class="bd-step" aria-label="More ${g}" onclick="TQBuild.growth('${g}', 1)" ${growth[g] >= GROWTH_MAX || left <= 0 ? "disabled" : ""}>+</button>
         </span>
-        <span class="bd-grow-pct">${growth[g] * 10}%</span>
       </div>`;
-    // the chart: one diagonal per group, pointing at its box (Power top left … Charm bottom right),
-    // as long as its growth (4 reaches the corner)
-    const r = v => 4 + v * 10.5;
-    const pts = [[-1, -1, "Power"], [1, -1, "Magic"], [1, 1, "Charm"], [-1, 1, "Sense"]]
-      .map(([x, y, g]) => [50 + x * r(growth[g]), 50 + y * r(growth[g])].map(n => n.toFixed(1)).join(",")).join(" ");
+    // one spoke per type, pointing at its box (Power top left … Charm bottom right), as long as its
+    // growth (4 reaches the ring), and the shape they make
+    const DIR = { Power: [-1, -1], Magic: [1, -1], Charm: [1, 1], Sense: [-1, 1] };
+    const end = g => { const r = 5 + growth[g] * 7.2; return [50 + DIR[g][0] * r, 50 + DIR[g][1] * r].map(n => n.toFixed(1)); };
+    const shape = ["Power", "Magic", "Charm", "Sense"].map(g => end(g).join(",")).join(" ");
+    const spokes = GROUPS.map(g => { const [x, y] = end(g); return `<g class="${GROUP_CLASS[g]}"><line x1="50" y1="50" x2="${x}" y2="${y}" class="bd-spoke" /><circle cx="${x}" cy="${y}" r="3.2" class="bd-spoke-end" /></g>`; }).join("");
     return `
       <div class="bd-growth">
         ${corner("Power", "tl")}${corner("Magic", "tr")}
         <svg class="bd-diamond" viewBox="0 0 100 100" aria-hidden="true">
-          <rect x="4" y="4" width="92" height="92" rx="10" class="bd-diamond-frame" />
-          <line x1="4" y1="4" x2="96" y2="96" class="bd-diamond-axis" /><line x1="96" y1="4" x2="4" y2="96" class="bd-diamond-axis" />
-          <polygon points="${pts}" class="bd-diamond-fill" />
+          <circle cx="50" cy="50" r="45" class="bd-ring-teeth" />
+          <circle cx="50" cy="50" r="40" class="bd-ring" />
+          <circle cx="50" cy="50" r="24" class="bd-ring-inner" />
+          <line x1="21" y1="21" x2="79" y2="79" class="bd-diamond-axis" /><line x1="79" y1="21" x2="21" y2="79" class="bd-diamond-axis" />
+          <polygon points="${shape}" class="bd-diamond-fill" />
+          ${spokes}
+          <circle cx="50" cy="50" r="4" class="bd-ring-hub" />
         </svg>
         ${corner("Sense", "bl")}${corner("Charm", "br")}
       </div>
@@ -202,7 +212,7 @@
       <section class="bd-profile">
         <div class="bd-art">${job.art ? `<img src="${esc(job.art)}" alt="${esc(job.name)}" loading="lazy">` : ""}</div>
         <div class="bd-info">
-          <h3>${esc(job.name)} <span class="bd-type ${GROUP_CLASS[c.type]}">${esc(c.type)} type</span></h3>
+          <h3>${esc(job.name)} <span class="bd-type ${GROUP_CLASS[c.type]}">${TYPE_ICON[c.type] ? typeIcon(c.type, "bd-type-icon") : ""}${esc(c.type)} type</span></h3>
           <p class="bd-note">${esc(cls)} · ${job.stage === 1 ? "1st job" : job.stage === 2 ? "2nd job" : job.hybridOf ? `3rd job (hybrid, ${esc(job.hybridOf)} skills at TM +50)` : "3rd job"} · skills from ${sets.map(s => esc(s.job)).join(" → ")}</p>
           ${growthChart(st.growth)}
           ${use.length ? `<p class="bd-uses">Skills use: ${use.slice(0, 5).map(u => `<span class="tag">${u.stat} ×${u.n}</span>`).join(" ")}</p>` : ""}
