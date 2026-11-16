@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.9.0 (2026-11-17): Build guide
 
 - New **🧭 Build guide** page (replaces the Drill guide): pick a class and job to see its wiki artwork, your growth chart (Power / Magic / Sense / Charm with the in-game type badges and colours, 1-4 each and 10 in all) and which stats its skills use.
   - **📊 Stats:** a plain suggested build from the skill formulas (Primadonna: AP + HV, magicians: Pure MA) with links to player guides where we know one, and a stat planner: level, growth and how you split your 4 bonus points per level give the AP / HV / HP … you gain.
