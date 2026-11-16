@@ -135,7 +135,23 @@
     return out;
   }
 
-  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems, skillTree };
+  /**
+   * Level 1 -> Master at a glance, from the wiki's per-level table: MP, cooldown and up to two more
+   * columns (power, targets…). [{ col, from, to }] ("8s" for "8 seconds"; from === to when it stays).
+   */
+  function levelSummary(levels) {
+    if (!levels || !levels.rows.length) return [];
+    const first = levels.rows[0], last = levels.rows[levels.rows.length - 1];
+    const short = v => String(v || "").replace(/\s*seconds?\b/i, "s").replace(/\s*minutes?\b/i, "m").trim();
+    const cols = levels.cols.map((c, i) => ({ col: c, i })).filter(c => c.i > 0 && first[c.i] && last[c.i]);
+    const isMp = c => /^MP$/i.test(c.col);
+    const isCd = c => /cool|cooltime/i.test(c.col);
+    const pick = [...cols.filter(isMp), ...cols.filter(isCd).slice(0, 1)];
+    for (const c of cols) if (pick.length < 4 && !pick.includes(c) && !isMp(c) && !isCd(c)) pick.push(c);
+    return pick.sort((a, b) => a.i - b.i).map(c => ({ col: c.col, from: short(first[c.i]), to: short(last[c.i]) }));
+  }
+
+  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems, skillTree, levelSummary };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -236,6 +252,36 @@
       : `<strong>${esc(h.text)}</strong>`}</div>`;
   }
 
+  /** "Lv.1 → Master: MP 300 → 660 · Cooldown 8s · Magnification 0.75 → 2.55 · Target 2 → 4" */
+  function levelLine(sk) {
+    const sum = levelSummary(sk.levels);
+    if (!sum.length) return "";
+    const last = sk.levels.rows[sk.levels.rows.length - 1][0];
+    const lastLabel = /^m(aster)?$/i.test(last) ? "Master" : "Lv." + last;
+    return `<div class="bd-lvsum"><span class="bd-lvsum-label">Lv.1 → ${lastLabel}</span> ${sum.map(c =>
+      `<span class="bd-lvsum-item"><b>${esc(c.col)}</b> ${c.from === c.to ? esc(c.from) : `${esc(c.from)} → <strong>${esc(c.to)}</strong>`}</span>`).join("")}</div>`;
+  }
+
+  // which skills have their detail open (kept across re-renders, e.g. ticking Master)
+  const openDetails = new Set();
+  function toggleDetail(name, open) { if (open) openDetails.add(name); else openDetails.delete(name); }
+
+  /** ▾ All levels and notes: the wiki's per-level table (Master row in gold) and the full notes. */
+  function detailBox(sk) {
+    const lv = sk.levels;
+    if (!lv && !sk.notes) return "";
+    const table = lv ? `
+      <div class="bd-lvtable-wrap"><table class="bd-lvtable">
+        <thead><tr>${lv.cols.map(c => `<th scope="col">${esc(c)}</th>`).join("")}</tr></thead>
+        <tbody>${lv.rows.map(r => `<tr class="${/^m(aster)?$/i.test(r[0]) ? "is-m" : ""}">${r.map((v, i) => i === 0 ? `<th scope="row">${esc(/^m$/i.test(v) ? "Master" : v)}</th>` : `<td>${esc(String(v).replace(/\s*seconds?\b/i, "s"))}</td>`).join("")}</tr>`).join("")}</tbody>
+      </table></div>` : "";
+    return `<details class="bd-detail" ${openDetails.has(sk.name) ? "open" : ""} ontoggle="TQBuild.toggleDetail('${jsq(sk.name)}', this.open)">
+        <summary>${lv ? "📋 All levels" : "📋 Notes"}${lv && sk.notes ? " and notes" : ""}</summary>
+        ${table}
+        ${sk.notes ? `<p class="bd-notes">${esc(sk.notes)}</p>` : ""}
+      </details>`;
+  }
+
   function skillRow(builds, node, picked, ctx) {
     const sk = node.skill;
     const on = !!picked[sk.name];
@@ -250,7 +296,9 @@
           ${howLine(sk, ctx)}
           ${sk.desc ? `<div class="bd-desc">${esc(sk.desc)}</div>` : ""}
           ${sk.formula ? `<div class="bd-formula"><code>${esc(sk.formula)}</code></div>` : ""}
+          ${levelLine(sk)}
           ${canMaster ? `<div class="bd-master">🎓 Master: ${sk.items.map(it => cardChip(builds, it)).join(" ")}</div>` : `<div class="bd-master bd-note">No mastery item</div>`}
+          ${detailBox(sk)}
         </div>
         ${canMaster ? `<label class="bd-pick"><input type="checkbox" ${on ? "checked" : ""} onchange="TQBuild.pick('${jsq(sk.name)}', this.checked)"> Master</label>` : ""}
       </li>`;
@@ -369,5 +417,5 @@
     el.classList.add("is-flash");
   }
 
-  root.TQBuild = Object.assign({ render, goSkill }, model);
+  root.TQBuild = Object.assign({ render, goSkill, toggleDetail }, model);
 })(typeof window !== "undefined" ? window : globalThis);

@@ -58,7 +58,9 @@ function clean(s, tmOverride) {
     needs: s.prereq && s.prereq !== 'None' ? parsePrereq(s.prereq) : [],
     how: howToGet(s.notes),
     desc: s.desc, formula: /^[-–\s]*$/.test(s.formula || '') ? '' : s.formula, uses,
-    notes: (s.notes || '').slice(0, 400)
+    notes: (s.notes || '').slice(0, 600),
+    // per level: { cols: ["Level", "MP", "Cooldown", …], rows: [["1", "300", …], …, ["Master", …]] }
+    levels: s.levels && s.levels.rows.length ? s.levels : null
   };
 }
 function findSkill(page, name) {
@@ -154,7 +156,8 @@ for (const [cls, c] of Object.entries(classes)) {
   };
 }
 out.skills = sets;
-fs.writeFileSync(repo + '/data/builds.json', JSON.stringify(out, null, 1) + '\n');
+// no indentation: ~700KB pretty, much less compact (the per-level tables are big)
+fs.writeFileSync(repo + '/data/builds.json', JSON.stringify(out) + '\n');
 console.log('jobs', Object.keys(sets).length, 'skills', Object.values(sets).flat().length, 'items', Object.keys(items).length);
 console.log('items without monster maps:', Object.entries(items).filter(([, v]) => !v.from.some(f => f.maps.length)).map(([k]) => k).join(', '));
 console.log('missing:', missing.join(' | '));
