@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- New **🧭 Build guide** page (replaces the Drill guide): pick a class and job to see its wiki artwork, your growth chart (Power / Magic / Sense / Charm, 1-4 each and 10 in all, drawn like the in-game graph) and which stats its skills use.
+- New **🧭 Build guide** page (replaces the Drill guide): pick a class and job to see its wiki artwork, your growth chart (Power / Magic / Sense / Charm with the in-game type badges and colours, 1-4 each and 10 in all) and which stats its skills use.
   - **📊 Stats:** a plain suggested build from the skill formulas (Primadonna: AP + HV, magicians: Pure MA) with links to player guides where we know one, and a stat planner: level, growth and how you split your 4 bonus points per level give the AP / HV / HP … you gain.
   - **✨ Skills:** every skill of the job and the jobs before it, with its icon, TM level, prerequisite, formula and mastery cards (with pictures). Tick **Master** on the skills you want and the cards add up (Purple Worm Card ×16 for three Primadonna skills), with where each drops and your Bag count.
   - Data is from the ggFTW wiki (33 jobs, 389 skills, 68 mastery items); PlayTrickster may differ, tell us what's wrong. Equipment and damage come later.
