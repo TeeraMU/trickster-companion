@@ -102,7 +102,40 @@
     return [...by.values()].sort((a, b) => b.qty - a.qty || a.name.localeCompare(b.name));
   }
 
-  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems };
+  /**
+   * One job's skills as a tree, like quests under the quest they need: a skill sits under the first
+   * skill it needs from the same job. Returns [{ skill, depth, parent }] in reading order.
+   */
+  function skillTree(skills) {
+    const byName = new Map(skills.map(s => [s.name, s]));
+    const parentOf = new Map();
+    for (const s of skills) {
+      const p = (s.needs || []).find(n => n.name !== s.name && byName.has(n.name));
+      if (p) parentOf.set(s.name, p.name);
+    }
+    // a loop in the data (A needs B needs A) would hide both: cut it
+    for (const s of skills) {
+      const seen = new Set([s.name]);
+      for (let p = parentOf.get(s.name); p; p = parentOf.get(p)) {
+        if (seen.has(p)) { parentOf.delete(s.name); break; }
+        seen.add(p);
+      }
+    }
+    const kids = new Map();
+    for (const s of skills) {
+      const p = parentOf.get(s.name);
+      if (p) { if (!kids.has(p)) kids.set(p, []); kids.get(p).push(s); }
+    }
+    const out = [];
+    const walk = (s, depth) => {
+      out.push({ skill: s, depth, parent: parentOf.get(s.name) || "" });
+      for (const k of kids.get(s.name) || []) walk(k, depth + 1);
+    };
+    for (const s of skills) if (!parentOf.has(s.name)) walk(s, 0);
+    return out;
+  }
+
+  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems, skillTree };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -173,16 +206,48 @@
     return info.from.map(f => `<span class="bd-where">${f.take ? "🫳 Take from" : "⚔️ Drop"} ${monLink(f.monster)}${f.level ? ` <span class="ep-lv">Lv.${f.level}</span>` : ""}${f.maps.length ? ` · 📍 ${esc(f.maps.join(" · "))}` : ""}</span>`).join("");
   }
 
-  function skillRow(builds, sk, picked) {
+  const skillId = name => "bd-sk-" + String(name).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const lvText = lv => lv === "M" ? "Master" : lv ? "Lv." + lv : "";
+
+  /** "🔒 needs [icon] Sacred Oath · Master" chips; a tap jumps to that skill on the page. */
+  function needChips(sk, ctx) {
+    if (!(sk.needs || []).length) return "";
+    return `<div class="bd-needs"><span class="bd-needs-label">🔒 Needs</span>${sk.needs.map(n => {
+      const other = ctx.skillByName.get(n.name);
+      const where = other && other.job !== ctx.job ? ` <span class="bd-note">(${esc(other.job)})</span>` : "";
+      const icon = other && other.skill.icon ? `<img src="${esc(other.skill.icon)}" alt="" loading="lazy">` : "";
+      const label = `${icon}<span>${esc(n.name)}</span>${n.lv ? ` <b class="bd-lv ${n.lv === "M" ? "is-m" : ""}">${lvText(n.lv)}</b>` : ""}${where}`;
+      return other
+        ? `<button type="button" class="bd-need" onclick="TQBuild.goSkill('${jsq(n.name)}')" title="Go to ${esc(n.name)}">${label}</button>`
+        : `<span class="bd-need">${label}</span>`;
+    }).join("")}</div>`;
+  }
+
+  /** How to get the skill: card pack, quest (linked when the app has it), Chaos Tower, from the start. */
+  function howLine(sk, ctx) {
+    const h = sk.how;
+    if (!h) return ""; // said once in the section heading instead
+    if (h.kind === "cardpack") return `<div class="bd-how">🃏 From <strong>${esc(h.text)}</strong></div>`;
+    if (h.kind === "drop") return `<div class="bd-how">🗼 Drops from ${esc(h.text)}</div>`;
+    if (h.kind === "start") return `<div class="bd-how">🐣 You start with it</div>`;
+    const q = ctx.questByTitle ? ctx.questByTitle(h.text) : null;
+    return `<div class="bd-how">📜 Quest: ${q
+      ? `<button type="button" class="qc-link" onclick="jumpToQuest('${jsq(q.id)}')" title="Go to this quest">${esc(h.text)}</button>`
+      : `<strong>${esc(h.text)}</strong>`}</div>`;
+  }
+
+  function skillRow(builds, node, picked, ctx) {
+    const sk = node.skill;
     const on = !!picked[sk.name];
     const canMaster = (sk.items || []).length > 0;
     return `
-      <li class="bd-skill ${on ? "is-picked" : ""}">
+      <li class="bd-skill ${on ? "is-picked" : ""} ${node.depth ? "is-child" : ""}" id="${skillId(sk.name)}" style="--depth:${node.depth}">
         ${sk.icon ? `<img class="bd-skill-icon" src="${esc(sk.icon)}" alt="" loading="lazy">` : `<span class="bd-skill-icon bd-skill-ph" aria-hidden="true">✨</span>`}
         <div class="bd-skill-main">
           <div class="bd-skill-name"><strong>${esc(sk.name)}</strong>
-            <span class="tag">TM ${sk.tm}</span> <span class="tag">${esc(sk.type || "")}</span>
-            ${sk.prereq ? `<span class="bd-prereq">needs ${esc(sk.prereq)}</span>` : ""}</div>
+            <span class="tag">TM ${sk.tm}</span> <span class="tag">${esc(sk.type || "")}</span></div>
+          ${needChips(sk, ctx)}
+          ${howLine(sk, ctx)}
           ${sk.desc ? `<div class="bd-desc">${esc(sk.desc)}</div>` : ""}
           ${sk.formula ? `<div class="bd-formula"><code>${esc(sk.formula)}</code></div>` : ""}
           ${canMaster ? `<div class="bd-master">🎓 Master: ${sk.items.map(it => cardChip(builds, it)).join(" ")}</div>` : `<div class="bd-master bd-note">No mastery item</div>`}
@@ -237,11 +302,18 @@
           }).join("")}</ul>
         </section>` : `<p class="bd-note">Tick <b>Master</b> on the skills you want to master to add up their cards here.</p>`;
       // this job's own skills first, then the earlier jobs'
-      body = totals + sets.slice().reverse().map(s => `
+      // every skill on the page by name, for the "Needs" chips
+      const skillByName = new Map();
+      for (const s of sets) for (const sk of s.skills) skillByName.set(sk.name, { skill: sk, job: s.job });
+      body = totals + sets.slice().reverse().map(s => {
+        const rowCtx = { skillByName, job: s.job, questByTitle: ctx.questByTitle };
+        return `
         <section class="bd-box">
-          <h4>${esc(s.job)} skills <span class="bd-note">${s.skills.length}</span></h4>
-          <ul class="bd-skills">${s.skills.map(sk => skillRow(b, sk, st.picked)).join("")}</ul>
-        </section>`).join("");
+          <h4>${esc(s.job)} skills <span class="bd-note">${s.skills.length} · skills that need another one sit under it</span></h4>
+          ${s.skills.some(sk => !sk.how) ? `<p class="bd-note">❔ The wiki doesn't say how to get ${s.skills.every(sk => !sk.how) ? "these skills" : "the skills without a 🃏 / 📜 / 🗼 line"}. Tell us if you know.</p>` : ""}
+          <ul class="bd-skills">${skillTree(s.skills).map(node => skillRow(b, node, st.picked, rowCtx)).join("")}</ul>
+        </section>`;
+      }).join("");
     } else {
       const plan = statPlan(b.stats, { level: st.level, growth: st.growth, bonus: st.bonus });
       const all = GROUPS.flatMap(g => b.stats.groups[g]);
@@ -287,5 +359,15 @@
       </div>`;
   }
 
-  root.TQBuild = Object.assign({ render }, model);
+  /** Scroll to a skill on the page and flash it. */
+  function goSkill(name) {
+    const el = document.getElementById(skillId(name));
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.remove("is-flash");
+    void el.offsetWidth;
+    el.classList.add("is-flash");
+  }
+
+  root.TQBuild = Object.assign({ render, goSkill }, model);
 })(typeof window !== "undefined" ? window : globalThis);

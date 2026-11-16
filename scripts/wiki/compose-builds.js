@@ -12,6 +12,38 @@ const STATS = ['AP', 'AC', 'DX', 'MP', 'MA', 'MD', 'WT', 'DA', 'LK', 'HP', 'DP',
 
 // --- skills ----------------------------------------------------------------------------
 const single = raw.single;
+// every skill name the wiki knows, longest first (prerequisite texts run names together:
+// "Seal of Water Mana Shield (Lv.10)")
+const ALL_NAMES = [...new Set([...Object.values(raw.pages).flat(), ...Object.values(single)].map(s => s.name))]
+  .sort((a, b) => b.length - a.length);
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/** "Bull's Eye (Lv.10) Burning Rave (Mastered)" -> [{ name, lv: "10" }, { name, lv: "M" }] */
+function parsePrereq(text) {
+  const out = [];
+  let rest = ' ' + String(text || '') + ' ';
+  for (const name of ALL_NAMES) {
+    const m = rest.match(new RegExp('(^|\\s)' + reEsc(name) + '(?:\\s*\\((?:Lv\\.?\\s*)?([^)]*)\\))?(?=\\s|$)', 'i'));
+    if (!m) continue;
+    let lv = (m[2] || '').trim();
+    if (/^(m|master|mastered)$/i.test(lv)) lv = 'M';
+    out.push({ name, lv, at: m.index });
+    rest = rest.slice(0, m.index) + ' '.repeat(m[0].length) + rest.slice(m.index + m[0].length);
+  }
+  return out.sort((a, b) => a.at - b.at).map(({ name, lv }) => ({ name, lv }));
+}
+
+/** How the skill is got, from the wiki's notes: card pack, quest, Chaos Tower, from the start. */
+function howToGet(notes) {
+  const n = String(notes || '');
+  let m;
+  if ((m = n.match(/(?:Acquired|Obtained) from (?:the )?((?:Card Pack \w+)|(?:\w+ Card Pack))/i))) return { kind: 'cardpack', text: m[1].replace(/^(\w+) Card Pack$/i, 'Card Pack $1') };
+  if ((m = n.match(/(?:Obtained|Acquired) (?:from|by) completing (?:the )?([^.]+?)(?: quest)?\./i))) return { kind: 'quest', text: m[1].trim() };
+  if ((m = n.match(/(?:Obtained|Acquired) from (Chaos Tower[^.]*)\./i))) return { kind: 'drop', text: m[1].trim() };
+  if (/upon creating/i.test(n)) return { kind: 'start', text: 'You start with it' };
+  return null;
+}
+
 function clean(s, tmOverride) {
   const tmText = String(s.tm || '');
   const tm = tmOverride != null ? tmOverride : (parseInt(tmText, 10) || 0);
@@ -23,7 +55,9 @@ function clean(s, tmOverride) {
     learn: +s.learn || 0, master: +s.mastery || 0,
     items: s.items.filter(i => i.qty).map(i => ({ name: i.name, qty: i.qty })),
     prereq: s.prereq && s.prereq !== 'None' ? s.prereq : '',
-    desc: s.desc, formula: s.formula || '', uses,
+    needs: s.prereq && s.prereq !== 'None' ? parsePrereq(s.prereq) : [],
+    how: howToGet(s.notes),
+    desc: s.desc, formula: /^[-–\s]*$/.test(s.formula || '') ? '' : s.formula, uses,
     notes: (s.notes || '').slice(0, 400)
   };
 }
