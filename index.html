@@ -1610,6 +1610,7 @@
         const path = jobPaths().find(p => p.key === appState.selectedJobPath);
         appState.build = { cls, job: path ? path.label : "", tab: "stats", growth: Object.assign({}, TQBuild.DEFAULT_GROWTH), level: 100, bonus: {}, picked: {} };
       }
+      appState.build.growth = TQBuild.fixGrowth(appState.build.growth);
       return appState.build;
     }
 
@@ -1630,7 +1631,7 @@
       },
       growth(group, d) {
         const st = buildState();
-        st.growth[group] = Math.max(1, Math.min(4, (st.growth[group] || 1) + d));
+        st.growth = TQBuild.stepGrowth(st.growth, group, d); // 1-4 each, 10 in all
         saveState(); renderBuild();
       },
       bonus(stat, v) {

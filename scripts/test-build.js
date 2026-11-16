@@ -50,6 +50,19 @@ t("stat planner: growth pips per level, bonus pips split by percent, 4 pips = 1 
   assert.strictEqual(ma.growthLv, 2); // 10 pips -> 2 levels
 });
 
+t("growth chart: 1-4 each, 10 in all, so at most two 4s", () => {
+  let g = { Power: 4, Magic: 1, Sense: 1, Charm: 4 };
+  assert.deepStrictEqual(B.stepGrowth(g, "Magic", 1), g); // already 10
+  assert.deepStrictEqual(B.stepGrowth(g, "Power", 1), g); // 4 is the top
+  assert.deepStrictEqual(B.stepGrowth(g, "Sense", -1), g); // 1 is the bottom
+  g = B.stepGrowth(g, "Power", -1);
+  assert.strictEqual(g.Power, 3);
+  assert.strictEqual(B.stepGrowth(g, "Magic", 1).Magic, 2); // 9 -> 10
+  assert.deepStrictEqual(B.fixGrowth({ Power: 4, Magic: 4, Sense: 4, Charm: 4 }), B.DEFAULT_GROWTH);
+  const mine = { Power: 4, Magic: 1, Sense: 1, Charm: 4 };
+  assert.strictEqual(B.fixGrowth(mine), mine);
+});
+
 t("master items add up across the skills picked", () => {
   const sets = B.skillSets(builds, "Cat", "Primadonna");
   const items = B.masterItems(builds, sets, { "Sharp Scream": true, "2 Hit Combo": true, "Raging Nail": true });
