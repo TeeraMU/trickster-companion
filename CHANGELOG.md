@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- New **🧭 Build guide** page (replaces the Drill guide): pick a class and job to see its wiki artwork, your growth chart (Power / Magic / Sense / Charm, 1-4 each, like the in-game graph) and which stats its skills use.
+  - **📊 Stats:** a plain suggested build from the skill formulas (Primadonna: AP + HV, magicians: Pure MA) with links to player guides where we know one, and a stat planner: level, growth and how you split your 4 bonus points per level give the AP / HV / HP … you gain.
+  - **✨ Skills:** every skill of the job and the jobs before it, with its icon, TM level, prerequisite, formula and mastery cards (with pictures). Tick **Master** on the skills you want and the cards add up (Purple Worm Card ×16 for three Primadonna skills), with where each drops and your Bag count.
+  - Data is from the ggFTW wiki (33 jobs, 389 skills, 68 mastery items); PlayTrickster may differ, tell us what's wrong. Equipment and damage come later.
+- Search: mastery cards are found too, with the monster and map they come from and the skills they master ("🎓 Masters: Sharp Scream (Primadonna) ×5"); tapping a card on the Build guide opens it.
+
 ## 0.8.5 (2026-11-16): Fewer trips in Items to collect
 
 - Items to collect: one section per map, with items you can get in more than one map grouped where the rest already are, so you make fewer trips. Magnetite (Iron Knight, Vamp Dungeon 2 or 3) now sits with Brass under Vamp Dungeon 3, and its row says "📍 also at Vamp Dungeon 2 - Banquet of the Dead". The same item for two quests in one map is one row. The ⚔️ Monsters view uses the same single maps.
