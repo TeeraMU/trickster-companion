@@ -4350,10 +4350,11 @@ a.btn {
 
 .bd-plan-top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
 .bd-plan-top input { width: 80px; }
-.bd-bonus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 6px; margin-bottom: 10px; }
+.bd-bonus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; margin-bottom: 10px; }
 .bd-bonus { display: flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; }
 .bd-bonus span { font-weight: 800; min-width: 26px; }
-.bd-bonus input { width: 56px; }
+.bd-bonus input { width: 4.2em; min-width: 0; text-align: right; -moz-appearance: textfield; appearance: textfield; }
+.bd-bonus input::-webkit-outer-spin-button, .bd-bonus input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .bd-bonus.is-on { border-color: var(--border-highlight); }
 .bd-plan-top input, .bd-bonus input {
   padding: 4px 6px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
