@@ -1512,6 +1512,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "It's very useful for beginners when hunting. Deals a powerful physical damage.",
     "formula": "",
     "uses": [],
@@ -1531,6 +1536,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Power-attack attacking one target.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -1550,6 +1557,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Stat booster for own character, adding AC.",
     "formula": "Total AC × A",
     "uses": [
@@ -1571,6 +1580,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Double-attack striking one target. Prerequisite for Quad Punch (at level 10).",
     "formula": "AP × Actual percentage",
     "uses": [
@@ -1592,6 +1603,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enemy debuffer lowering their AC.",
     "formula": "Enemy's AC - (AP/16) × A",
     "uses": [
@@ -1613,6 +1626,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enemy debuffer lowering their perception.",
     "formula": "Enemy's DA - (AP/16) × A",
     "uses": [
@@ -1634,6 +1649,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enemy debuffer lowering their luck.",
     "formula": "Enemy's LK - (AP/16) × A",
     "uses": [
@@ -1655,6 +1672,13 @@
      }
     ],
     "prereq": "Burning Rave (Lv.1)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Stat booster adding AP to self and party members.",
     "formula": "AP × A",
     "uses": [
@@ -1676,6 +1700,13 @@
      }
     ],
     "prereq": "Shockwave (Lv.10)",
+    "needs": [
+     {
+      "name": "Shockwave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Enemy debuffer lowering their defense.",
     "formula": "Enemy's DP × [1 - (A)]",
     "uses": [],
@@ -1695,6 +1726,13 @@
      }
     ],
     "prereq": "Bull's Eye (Lv.10)",
+    "needs": [
+     {
+      "name": "Bull's Eye",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Triple-attack attacking and stunning one target.",
     "formula": "(AP × Actual percentage)",
     "uses": [
@@ -1716,6 +1754,17 @@
      }
     ],
     "prereq": "Bull's Eye (Lv.10) Burning Rave (Lv.10)",
+    "needs": [
+     {
+      "name": "Bull's Eye",
+      "lv": "10"
+     },
+     {
+      "name": "Burning Rave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Stat booster adding attack speed.",
     "formula": "DX + A",
     "uses": [
@@ -1737,6 +1786,13 @@
      }
     ],
     "prereq": "Armor Breaker (Lv.1)",
+    "needs": [
+     {
+      "name": "Armor Breaker",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Power-attack attacking one target.",
     "formula": "Normal Attack Damage + A",
     "uses": [],
@@ -1753,6 +1809,13 @@
     "master": 0,
     "items": [],
     "prereq": "Shockwave (Lv.10)",
+    "needs": [
+     {
+      "name": "Shockwave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Takes effect when Shockwave is used. If successful, target cannot block or dodge succeeding attacks(physical skills can be missed), regardless of target's LK or HV.",
     "formula": "",
     "uses": [],
@@ -1767,6 +1830,13 @@
     "master": 0,
     "items": [],
     "prereq": "Hyper Beat (Lv.1)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Quickly moves across a small area.",
     "formula": "",
     "uses": [],
@@ -1786,6 +1856,13 @@
      }
     ],
     "prereq": "Upper Smash (Lv.10)",
+    "needs": [
+     {
+      "name": "Upper Smash",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Focused spiritual energy into an attack.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -1805,6 +1882,13 @@
      }
     ],
     "prereq": "Burning Rave (Lv.10)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Strikes four consecutive blows.",
     "formula": "Power for one hit = AP × (A) - Target Def. Total power = AP × (B) - Target Def. × 4",
     "uses": [
@@ -1826,6 +1910,13 @@
      }
     ],
     "prereq": "Uppercut (Lv.10)",
+    "needs": [
+     {
+      "name": "Uppercut",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Boost the Uppercut skill damage.",
     "formula": "Uppercut Power Increase (A) + Uppercut's Original %",
     "uses": [],
@@ -1845,6 +1936,13 @@
      }
     ],
     "prereq": "Bull's Eye (Lv.10)",
+    "needs": [
+     {
+      "name": "Bull's Eye",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases accuracy of the party.",
     "formula": "Total AC = AC × A",
     "uses": [
@@ -1866,6 +1964,13 @@
      }
     ],
     "prereq": "Hyper Beat (Lv.10)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "",
     "formula": "None.",
     "uses": [],
@@ -1885,6 +1990,13 @@
      }
     ],
     "prereq": "Quad Punch (Lv.10)",
+    "needs": [
+     {
+      "name": "Quad Punch",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Strikes four consecutive blows.",
     "formula": "First Hit:AP × (A) - Target Def. Total Hit:AP × (B) - Target Def. × 15??",
     "uses": [
@@ -1906,6 +2018,13 @@
      }
     ],
     "prereq": "Burning Rave (Lv.Master)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "\"Brings out the best in a warrior in dire situations\".",
     "formula": "",
     "uses": [],
@@ -1920,6 +2039,13 @@
     "master": 0,
     "items": [],
     "prereq": "Desperate Rally (Mastered)",
+    "needs": [
+     {
+      "name": "Desperate Rally",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Recovers from the effects of stunning skills.",
     "formula": "",
     "uses": [],
@@ -1936,6 +2062,13 @@
     "master": 0,
     "items": [],
     "prereq": "Hyper Beat (Lv.1)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Quickly moves across a small area.",
     "formula": "",
     "uses": [],
@@ -1955,6 +2088,13 @@
      }
     ],
     "prereq": "Upper Smash (Lv.10)",
+    "needs": [
+     {
+      "name": "Upper Smash",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Focused spiritual energy into an attack.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -1974,6 +2114,20 @@
      }
     ],
     "prereq": "Dash (Lv.1) Uppercut (Lv.10)",
+    "needs": [
+     {
+      "name": "Dash",
+      "lv": "1"
+     },
+     {
+      "name": "Uppercut",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ur"
+    },
     "desc": "A combination of dash and uppercut.",
     "formula": "[AP + (AC × 8)] × Mag. Ratio",
     "uses": [
@@ -1996,6 +2150,16 @@
      }
     ],
     "prereq": "Pumping Heart (Lv.10)",
+    "needs": [
+     {
+      "name": "Pumping Heart",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Feoh"
+    },
     "desc": "Increase Attack power",
     "formula": "AP × AP Increase",
     "uses": [
@@ -2017,6 +2181,17 @@
      }
     ],
     "prereq": "Burning Rave (Master) Counter Punch (Lv.10)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "M"
+     },
+     {
+      "name": "Counter Punch",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Physical skill. Attack your enemy with fists empowered by your fighting spirit. The Fire Attribute damage of the skill increases with your Fire Attribute stat.",
     "formula": "WITHOUT any Fire Attr: AP × Magnification Ratio WITH Fire Attr: AP × (Magnification Ratio + Fire Attr) × MA ÷ 100",
     "uses": [
@@ -2039,6 +2214,16 @@
      }
     ],
     "prereq": "Flash Cut (Lv.M)",
+    "needs": [
+     {
+      "name": "Flash Cut",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Wunjo"
+    },
     "desc": "Physical skill. Advanced form of Flash Cut. Strikes your enemies really quick. Your enemy will be thrown into the air for a brief moment.",
     "formula": "(AP + [AC * 16]) * Magnification",
     "uses": [
@@ -2061,6 +2246,16 @@
      }
     ],
     "prereq": "Flaming Fist (Mastered)",
+    "needs": [
+     {
+      "name": "Flaming Fist",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Releases energy in a single explosion to damage those around you.",
     "formula": "Raw Damage = AP x Magnification",
     "uses": [
@@ -2079,6 +2274,13 @@
     "master": 0,
     "items": [],
     "prereq": "Shockwave (Lv.1)",
+    "needs": [
+     {
+      "name": "Shockwave",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Enables Shockwave to paralyze an opponent (including bosses).",
     "formula": "",
     "uses": [],
@@ -2098,6 +2300,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Cuts multiple enemies by emitting a linear blade aura.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2117,6 +2321,13 @@
      }
     ],
     "prereq": "Pumping Heart (Lv.7)",
+    "needs": [
+     {
+      "name": "Pumping Heart",
+      "lv": "7"
+     }
+    ],
+    "how": null,
     "desc": "Raises attack power by releasing all the anger; uncontrollable during use.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2136,6 +2347,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Converts air inside your character's body and releases it to your enemies.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2155,6 +2368,13 @@
      }
     ],
     "prereq": "Hyper Beat (Lv.10)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases attack speed (DX) of entire party.",
     "formula": "",
     "uses": [],
@@ -2174,6 +2394,13 @@
      }
     ],
     "prereq": "Lacerator (Lv.10)",
+    "needs": [
+     {
+      "name": "Lacerator",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Attack based off the water element with a directional AoE. (?)",
     "formula": "Attack Power × (Magnification + Water Attribute × 2.5)",
     "uses": [],
@@ -2188,6 +2415,13 @@
     "master": 3,
     "items": [],
     "prereq": "Piercing Wave (Lv.10)",
+    "needs": [
+     {
+      "name": "Piercing Wave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "\"Attacks enemies with incredible shockwaves\".",
     "formula": "AP × (Magnification% - 60% + (Soil% × 2))",
     "uses": [
@@ -2209,6 +2443,13 @@
      }
     ],
     "prereq": "Aura of Haste (Lv.1)",
+    "needs": [
+     {
+      "name": "Aura of Haste",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Multiple Attacks AOE.",
     "formula": "Normal Attack Damage × A × No. of hits.",
     "uses": [],
@@ -2228,6 +2469,13 @@
      }
     ],
     "prereq": "Piercing Wave (Lv.10)",
+    "needs": [
+     {
+      "name": "Piercing Wave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": ".",
     "formula": "Attack × (Magnification Ratio + Fire Attribute × 1)",
     "uses": [],
@@ -2247,6 +2495,13 @@
      }
     ],
     "prereq": "Lacerator (Lv.10)",
+    "needs": [
+     {
+      "name": "Lacerator",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Players can create sharp circular wind motions around them to slash their enemy.",
     "formula": "AP × (Magnification + Wind Attribute × Random number between 0 and 5)",
     "uses": [
@@ -2265,6 +2520,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "It's very useful for beginners when hunting. Deals a powerful physical damage.",
     "formula": "",
     "uses": [],
@@ -2284,6 +2544,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Power-attack attacking one target.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2303,6 +2565,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Stat booster for own character, adding AC.",
     "formula": "Total AC × A",
     "uses": [
@@ -2324,6 +2588,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Double-attack striking one target. Prerequisite for Quad Punch (at level 10).",
     "formula": "AP × Actual percentage",
     "uses": [
@@ -2345,6 +2611,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enemy debuffer lowering their AC.",
     "formula": "Enemy's AC - (AP/16) × A",
     "uses": [
@@ -2366,6 +2634,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enemy debuffer lowering their perception.",
     "formula": "Enemy's DA - (AP/16) × A",
     "uses": [
@@ -2387,6 +2657,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enemy debuffer lowering their luck.",
     "formula": "Enemy's LK - (AP/16) × A",
     "uses": [
@@ -2408,6 +2680,13 @@
      }
     ],
     "prereq": "Burning Rave (Lv.1)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Stat booster adding AP to self and party members.",
     "formula": "AP × A",
     "uses": [
@@ -2429,6 +2708,13 @@
      }
     ],
     "prereq": "Shockwave (Lv.10)",
+    "needs": [
+     {
+      "name": "Shockwave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Enemy debuffer lowering their defense.",
     "formula": "Enemy's DP × [1 - (A)]",
     "uses": [],
@@ -2448,6 +2734,13 @@
      }
     ],
     "prereq": "Bull's Eye (Lv.10)",
+    "needs": [
+     {
+      "name": "Bull's Eye",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Triple-attack attacking and stunning one target.",
     "formula": "(AP × Actual percentage)",
     "uses": [
@@ -2469,6 +2762,17 @@
      }
     ],
     "prereq": "Bull's Eye (Lv.10) Burning Rave (Lv.10)",
+    "needs": [
+     {
+      "name": "Bull's Eye",
+      "lv": "10"
+     },
+     {
+      "name": "Burning Rave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Stat booster adding attack speed.",
     "formula": "DX + A",
     "uses": [
@@ -2490,6 +2794,13 @@
      }
     ],
     "prereq": "Armor Breaker (Lv.1)",
+    "needs": [
+     {
+      "name": "Armor Breaker",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Power-attack attacking one target.",
     "formula": "Normal Attack Damage + A",
     "uses": [],
@@ -2506,6 +2817,13 @@
     "master": 0,
     "items": [],
     "prereq": "Shockwave (Lv.1)",
+    "needs": [
+     {
+      "name": "Shockwave",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Enables Shockwave to paralyze an opponent (including bosses).",
     "formula": "",
     "uses": [],
@@ -2525,6 +2843,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Cuts multiple enemies by emitting a linear blade aura.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2544,6 +2864,13 @@
      }
     ],
     "prereq": "Pumping Heart (Lv.7)",
+    "needs": [
+     {
+      "name": "Pumping Heart",
+      "lv": "7"
+     }
+    ],
+    "how": null,
     "desc": "Raises attack power by releasing all the anger; uncontrollable during use.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2563,6 +2890,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Converts air inside your character's body and releases it to your enemies.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2582,6 +2911,13 @@
      }
     ],
     "prereq": "Hyper Beat (Lv.10)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases attack speed (DX) of entire party.",
     "formula": "",
     "uses": [],
@@ -2601,6 +2937,13 @@
      }
     ],
     "prereq": "Lacerator (Lv.10)",
+    "needs": [
+     {
+      "name": "Lacerator",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Attack based off the water element with a directional AoE. (?)",
     "formula": "Attack Power × (Magnification + Water Attribute × 2.5)",
     "uses": [],
@@ -2615,6 +2958,13 @@
     "master": 3,
     "items": [],
     "prereq": "Piercing Wave (Lv.10)",
+    "needs": [
+     {
+      "name": "Piercing Wave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "\"Attacks enemies with incredible shockwaves\".",
     "formula": "AP × (Magnification% - 60% + (Soil% × 2))",
     "uses": [
@@ -2636,6 +2986,13 @@
      }
     ],
     "prereq": "Aura of Haste (Lv.1)",
+    "needs": [
+     {
+      "name": "Aura of Haste",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Multiple Attacks AOE.",
     "formula": "Normal Attack Damage × A × No. of hits.",
     "uses": [],
@@ -2655,6 +3012,13 @@
      }
     ],
     "prereq": "Piercing Wave (Lv.10)",
+    "needs": [
+     {
+      "name": "Piercing Wave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": ".",
     "formula": "Attack × (Magnification Ratio + Fire Attribute × 1)",
     "uses": [],
@@ -2674,6 +3038,13 @@
      }
     ],
     "prereq": "Lacerator (Lv.10)",
+    "needs": [
+     {
+      "name": "Lacerator",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Players can create sharp circular wind motions around them to slash their enemy.",
     "formula": "AP × (Magnification + Wind Attribute × Random number between 0 and 5)",
     "uses": [
@@ -2695,6 +3066,13 @@
      }
     ],
     "prereq": "Piercing Wave (Lv.10)",
+    "needs": [
+     {
+      "name": "Piercing Wave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Attack based off the electric element it may also stun the target.",
     "formula": "Attack Power × (Magnification + Electric Attribute × 2)",
     "uses": [],
@@ -2716,6 +3094,16 @@
      }
     ],
     "prereq": "Sense Breaker (Lv.10)",
+    "needs": [
+     {
+      "name": "Sense Breaker",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ur"
+    },
     "desc": "Suffocate will reveal hidden enemies. It also renders your enemy unable to breath.",
     "formula": "N/A",
     "uses": [],
@@ -2735,6 +3123,16 @@
      }
     ],
     "prereq": "Tidal Slash (Lv.10)",
+    "needs": [
+     {
+      "name": "Tidal Slash",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Feoh"
+    },
     "desc": "Sonic Slash will rupture your enemy's eardrums.",
     "formula": "AP * (Magnification% - 2 + (Water% x 3.50))",
     "uses": [
@@ -2756,6 +3154,13 @@
      }
     ],
     "prereq": "Tempest Strike (Lv.10)",
+    "needs": [
+     {
+      "name": "Tempest Strike",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "An advanced form of Tempest Strike",
     "formula": "AP x (Magnification + Wind Attribute x Random number from 0 to 7)",
     "uses": [
@@ -2777,6 +3182,13 @@
      }
     ],
     "prereq": "Piercing Wave (Lv.M)",
+    "needs": [
+     {
+      "name": "Piercing Wave",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Physical Skill. The sword is filled with chi and grows to become a bigger sword.",
     "formula": ".",
     "uses": [],
@@ -2796,6 +3208,16 @@
      }
     ],
     "prereq": "Chi Sword",
+    "needs": [
+     {
+      "name": "Chi Sword",
+      "lv": ""
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Recovers HP continuously for a limited amount of time.",
     "formula": "HP is recovered every 2 seconds after activation.",
     "uses": [
@@ -2814,6 +3236,13 @@
     "master": 0,
     "items": [],
     "prereq": "Shockwave (Lv.10)",
+    "needs": [
+     {
+      "name": "Shockwave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Takes effect when Shockwave is used. If successful, target cannot block or dodge succeeding attacks(physical skills can be missed), regardless of target's LK or HV.",
     "formula": "",
     "uses": [],
@@ -2828,6 +3257,13 @@
     "master": 0,
     "items": [],
     "prereq": "Hyper Beat (Lv.1)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Quickly moves across a small area.",
     "formula": "",
     "uses": [],
@@ -2847,6 +3283,13 @@
      }
     ],
     "prereq": "Upper Smash (Lv.10)",
+    "needs": [
+     {
+      "name": "Upper Smash",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Focused spiritual energy into an attack.",
     "formula": "Normal Attack Damage × A",
     "uses": [],
@@ -2866,6 +3309,13 @@
      }
     ],
     "prereq": "Burning Rave (Lv.10)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Strikes four consecutive blows.",
     "formula": "Power for one hit = AP × (A) - Target Def. Total power = AP × (B) - Target Def. × 4",
     "uses": [
@@ -2887,6 +3337,13 @@
      }
     ],
     "prereq": "Uppercut (Lv.10)",
+    "needs": [
+     {
+      "name": "Uppercut",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Boost the Uppercut skill damage.",
     "formula": "Uppercut Power Increase (A) + Uppercut's Original %",
     "uses": [],
@@ -2906,6 +3363,13 @@
      }
     ],
     "prereq": "Bull's Eye (Lv.10)",
+    "needs": [
+     {
+      "name": "Bull's Eye",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases accuracy of the party.",
     "formula": "Total AC = AC × A",
     "uses": [
@@ -2927,6 +3391,13 @@
      }
     ],
     "prereq": "Hyper Beat (Lv.10)",
+    "needs": [
+     {
+      "name": "Hyper Beat",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "",
     "formula": "None.",
     "uses": [],
@@ -2946,6 +3417,13 @@
      }
     ],
     "prereq": "Quad Punch (Lv.10)",
+    "needs": [
+     {
+      "name": "Quad Punch",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Strikes four consecutive blows.",
     "formula": "First Hit:AP × (A) - Target Def. Total Hit:AP × (B) - Target Def. × 15??",
     "uses": [
@@ -2967,6 +3445,13 @@
      }
     ],
     "prereq": "Burning Rave (Lv.Master)",
+    "needs": [
+     {
+      "name": "Burning Rave",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "\"Brings out the best in a warrior in dire situations\".",
     "formula": "",
     "uses": [],
@@ -2983,6 +3468,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "A simple magic attack for beginners. It's very useful in starting your adventure in Trickster Online.",
     "formula": "",
     "uses": [],
@@ -3002,6 +3492,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Magic attack that strikes one target.",
     "formula": "(MA - 49) x Magic Power ÷ 10",
     "uses": [
@@ -3023,6 +3515,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Recovers health of yourself or others.",
     "formula": "(Max HP x Health Recovery) = Added HP",
     "uses": [
@@ -3039,6 +3533,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "If attacked while casting a spell, you will continue casting.",
     "formula": "",
     "uses": [],
@@ -3058,6 +3554,13 @@
      }
     ],
     "prereq": "Cure (Lv.10)",
+    "needs": [
+     {
+      "name": "Cure",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases party members' mana recovery.",
     "formula": "(8 x (r%/100)",
     "uses": [],
@@ -3077,6 +3580,13 @@
      }
     ],
     "prereq": "Cure (Lv.10)",
+    "needs": [
+     {
+      "name": "Cure",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases Max MP.",
     "formula": "",
     "uses": [],
@@ -3096,6 +3606,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "A debuff that lowers enemies' Attack Power.",
     "formula": "Enemy AP - (MA - 49) x Attack Reduction x 16",
     "uses": [
@@ -3117,6 +3629,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Attack speed of the enemy becomes slow.",
     "formula": "MA x DX Increase",
     "uses": [
@@ -3139,6 +3653,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Shoots three rings that have a chance of damaging multiple monsters around the target.",
     "formula": "MA x (Power/100)",
     "uses": [
@@ -3160,6 +3676,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Buff skill that adds Magic Defense.",
     "formula": "MD x Magic Defense Increase = Added MD",
     "uses": [
@@ -3181,6 +3699,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Magic spell damaging multiple enemies.",
     "formula": "MA x Power",
     "uses": [
@@ -3202,6 +3722,13 @@
      }
     ],
     "prereq": "Bottle of Mana (Lv.1)",
+    "needs": [
+     {
+      "name": "Bottle of Mana",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Support spell use to increase MA.",
     "formula": "(MA x Magic Power Up) = Added MA",
     "uses": [
@@ -3223,6 +3750,13 @@
      }
     ],
     "prereq": "Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Augments Mana Arrow to fire several arrows, with individual arrow's power and accuracy reduced.",
     "formula": "(MA - 49) x Magic Power ÷ 10",
     "uses": [
@@ -3244,6 +3778,13 @@
      }
     ],
     "prereq": "Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases the destructive power of Mana Ring.",
     "formula": "MA x ((Mana Ring Power + Bonus Power) ÷ 100)",
     "uses": [
@@ -3267,6 +3808,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Decrease the MP consumption of the party member inside the range only when the caster is not moving. If the caster moves, the effect of the skill only applies to the caster.",
     "formula": "",
     "uses": [],
@@ -3286,6 +3829,13 @@
      }
     ],
     "prereq": "Bolster Ballad (Mastered)",
+    "needs": [
+     {
+      "name": "Bolster Ballad",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Increases the your Fire, Water; Wind, Electricity and Soil attribute percentage",
     "formula": "",
     "uses": [],
@@ -3300,6 +3850,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Water skills. Once this skill is learned, player cannot learn Seal of Fire or Seal of Earth.",
     "formula": "",
     "uses": [],
@@ -3314,6 +3866,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Electric skills. Once learned, player cannot learn Seal of Wind or Seal of Earth.",
     "formula": "",
     "uses": [],
@@ -3328,6 +3882,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Fire skills. Once learned, player cannot learn Seal of Water or Seal of Wind.",
     "formula": "",
     "uses": [],
@@ -3342,6 +3898,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Earth skills. Once learned, player cannot learn Seal of Water or Seal of Thunder.",
     "formula": "",
     "uses": [],
@@ -3356,6 +3914,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Wind skills. Once learned, player cannot learn Seal of Thunder or Seal of Fire.",
     "formula": "",
     "uses": [],
@@ -3375,6 +3935,13 @@
      }
     ],
     "prereq": "Seal of Water",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Attacks the enemy using huge water cannonballs. Can lower DX target's if user has Mana Web and Water Web skill.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3396,6 +3963,13 @@
      }
     ],
     "prereq": "Seal of Water",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Traps your enemies in chains of ice.\" Target is invincible for the duration of the skill.",
     "formula": ".",
     "uses": [],
@@ -3410,6 +3984,17 @@
     "master": 0,
     "items": [],
     "prereq": "Mana Web (Lv.1) Drip Bomb (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Web",
+      "lv": "1"
+     },
+     {
+      "name": "Drip Bomb",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "It brings down the enemy's dexterity when hit with Drip Bomb.",
     "formula": "",
     "uses": [],
@@ -3429,6 +4014,17 @@
      }
     ],
     "prereq": "Seal of Water Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases resistance against water attacks",
     "formula": "Water Resist x Bonus = Added Water Resist",
     "uses": [],
@@ -3448,6 +4044,17 @@
      }
     ],
     "prereq": "Seal of Water Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     },
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Keeps the victim from moving, and reduces lightning resist.",
     "formula": "(MA + LK - 49) x Multiplier",
     "uses": [
@@ -3470,6 +4077,13 @@
      }
     ],
     "prereq": "Seal of Thunder",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Lightning ball direct damage spell which splits and attacks nearby targets. Can stun enemies if user has Electroshock skill.",
     "formula": "(MA - 25) x Power ÷ 15",
     "uses": [
@@ -3491,6 +4105,13 @@
      }
     ],
     "prereq": "Seal of Thunder",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Strikes enemies with a single, massive thunderbolt\".",
     "formula": ".",
     "uses": [],
@@ -3505,6 +4126,13 @@
     "master": 0,
     "items": [],
     "prereq": "Electro Attack (Lv.10)",
+    "needs": [
+     {
+      "name": "Electro Attack",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "It immobilizes the enemy that has been struck by Electro Attack.",
     "formula": "",
     "uses": [],
@@ -3524,6 +4152,17 @@
      }
     ],
     "prereq": "Seal of Thunder Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Electricity defense attribute magic. Raises electricity resistance temporarily.",
     "formula": "Electric Resist x Bonus = Added Electric Resist",
     "uses": [],
@@ -3543,6 +4182,17 @@
      }
     ],
     "prereq": "Electro Attack (Lv.10) Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Electro Attack",
+      "lv": "10"
+     },
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "",
     "formula": "(MA + (Max MP ÷ 120)) x Multiplier",
     "uses": [
@@ -3565,6 +4215,13 @@
      }
     ],
     "prereq": "Seal of Fire",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Causes damage to enemy by surrounding them with flame.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3586,6 +4243,13 @@
      }
     ],
     "prereq": "Seal of Fire",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Fire attribute magic attack. The caster turns the ground into fire which deals damage over time to all in the area.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3607,6 +4271,17 @@
      }
     ],
     "prereq": "Seal of Fire Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Enemy-targeted fire AoE, AoE is 2 tiles and can hit up to 2 people in pvp within proximity.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3628,6 +4303,17 @@
      }
     ],
     "prereq": "Seal of Fire Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Fire defense attribute magic. Raises fire resistance temporarily.",
     "formula": "Fire Resist x Bonus = Added Fire Resist",
     "uses": [],
@@ -3647,6 +4333,13 @@
      }
     ],
     "prereq": "Incinerate (Lv.10)",
+    "needs": [
+     {
+      "name": "Incinerate",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A fire AoE that summons flames on the ground, burning opponents and causing their HP to drop constantly.",
     "formula": "(MA - 49) x Multiplier",
     "uses": [
@@ -3668,6 +4361,13 @@
      }
     ],
     "prereq": "Seal of Earth",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Damages enemies by creating a fissure. AoE is huge, max targets are 7.",
     "formula": "(MA - 25) x Magnification Ratio",
     "uses": [
@@ -3689,6 +4389,13 @@
      }
     ],
     "prereq": "Seal of Earth",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Turns dry land into swamp\".",
     "formula": "Raw Damage = (MA + LK - 25) × Power / 20",
     "uses": [
@@ -3706,6 +4413,17 @@
     "master": 3,
     "items": [],
     "prereq": "Seal of Earth Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "AoE is like mana ring. Damage is scaled downwards from center.",
     "formula": "(MA - 25) x Power ÷ 15",
     "uses": [
@@ -3727,6 +4445,17 @@
      }
     ],
     "prereq": "Seal of Earth Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases resistance against soil attacks",
     "formula": "Soil Resist x Bonus = Added Soil Resist",
     "uses": [],
@@ -3746,6 +4475,17 @@
      }
     ],
     "prereq": "Seal of Earth Mana Web (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     },
+     {
+      "name": "Mana Web",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases target's attack delay.",
     "formula": "?",
     "uses": [],
@@ -3765,6 +4505,13 @@
      }
     ],
     "prereq": "Seal of Wind",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "AoE skill that hits up to 5 targets max. At level 10 or below, there is a small chance for the skill to fail to cast. At mastery, it always succeeds.",
     "formula": "(magic - 49) × (attack magnification + 3 × attribute value (%) ÷ 100)",
     "uses": [],
@@ -3784,6 +4531,13 @@
      }
     ],
     "prereq": "Seal of Wind",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Uses tornado-force winds to hit enemies\".",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3805,6 +4559,17 @@
      }
     ],
     "prereq": "Seal of Wind Mana Storm (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     },
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "An AoE centered on the user. Duration increases with skill level, but moving will cancel the spell regardless of its remaining duration. You can still cast other spells, melee attack, use potions or drill while the spell is taking effect.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3826,6 +4591,17 @@
      }
     ],
     "prereq": "Seal of Wind Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases resistance against air attacks",
     "formula": "Air Resist x Bonus = Added Air Resist",
     "uses": [],
@@ -3845,6 +4621,17 @@
      }
     ],
     "prereq": "Wind Blade (Lv.10) Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Wind Blade",
+      "lv": "10"
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "",
     "formula": "(MA + AC - 49) x Multiplier",
     "uses": [
@@ -3869,6 +4656,16 @@
      }
     ],
     "prereq": "Mana Shield (Mastered)",
+    "needs": [
+     {
+      "name": "Mana Shield",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Creates a rip into another dimension and captures enemies inside for a set time",
     "formula": "(MA - 25) x Magnification",
     "uses": [
@@ -3890,6 +4687,20 @@
      }
     ],
     "prereq": "Mana Arrow (Lv.10) Drip Bomb (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     },
+     {
+      "name": "Drip Bomb",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Feoh"
+    },
     "desc": "An upgraded water attack.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -3911,6 +4722,13 @@
      }
     ],
     "prereq": "Water Shield (Lv.5)",
+    "needs": [
+     {
+      "name": "Water Shield",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "A buff that counter-attacks whenever the user is attacked. Does damage regardless of whether incoming attacks hit or not.",
     "formula": "(AC + LK) x Multiplier",
     "uses": [
@@ -3933,6 +4751,13 @@
      }
     ],
     "prereq": "Seal of Water",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Targets an area with the power of Undine to decrease their resistance to Electrical attribute.",
     "formula": ".",
     "uses": [],
@@ -3952,6 +4777,20 @@
      }
     ],
     "prereq": "Mana Arrow (Lv.10) Electro Attack (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     },
+     {
+      "name": "Electro Attack",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ur"
+    },
     "desc": "An upgraded AoE Thunder attack. hit max 5 targets",
     "formula": "(MA - 25) x Power",
     "uses": [
@@ -3973,6 +4812,13 @@
      }
     ],
     "prereq": "Thunder Shield (Lv.5)",
+    "needs": [
+     {
+      "name": "Thunder Shield",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "A buff that counter-attacks whenever the user is attacked. Does damage regardless of whether incoming attacks hit or not.",
     "formula": "(AC + LK) x Multiplier",
     "uses": [
@@ -3995,6 +4841,13 @@
      }
     ],
     "prereq": "Seal of Thunder",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Targets an area with the power of Raion to decrease their resistance to Fire attribute.",
     "formula": ".",
     "uses": [],
@@ -4014,6 +4867,20 @@
      }
     ],
     "prereq": "Mana Ring (Lv.10) Whirlwind Blaze (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     },
+     {
+      "name": "Whirlwind Blaze",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Thorn"
+    },
     "desc": "A single-target fire attack.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -4035,6 +4902,13 @@
      }
     ],
     "prereq": "Fire Shield (Lv.5)",
+    "needs": [
+     {
+      "name": "Fire Shield",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "A buff that counter-attacks whenever the user is attacked. Does damage regardless of whether incoming attacks hit or not.",
     "formula": "(AC + LK) x Multiplier",
     "uses": [
@@ -4052,6 +4926,13 @@
     "master": 3,
     "items": [],
     "prereq": "Seal of Fire",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Targets an area with the power of Salamander to decrease their resistance to Soil attribute.",
     "formula": ".",
     "uses": [],
@@ -4071,6 +4952,20 @@
      }
     ],
     "prereq": "Mana Ring (Lv.10) Cleaving Terra (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     },
+     {
+      "name": "Cleaving Terra",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ansur"
+    },
     "desc": "An AoE earth attack. Hits 5 targets max, range is noticeably smaller than Cleaving Terra",
     "formula": "(MA - 25) x Multiplier",
     "uses": [
@@ -4092,6 +4987,13 @@
      }
     ],
     "prereq": "Earth Shield (Lv.5)",
+    "needs": [
+     {
+      "name": "Earth Shield",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "A buff that counter-attacks whenever the user is attacked. Does damage regardless of whether incoming attacks hit or not.",
     "formula": "(AC + LK) x Multiplier",
     "uses": [
@@ -4109,6 +5011,13 @@
     "master": 3,
     "items": [],
     "prereq": "Seal of Earth",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Targets an area with the power of Gnome to decrease their resistance to Wind attribute.",
     "formula": ".",
     "uses": [],
@@ -4128,6 +5037,20 @@
      }
     ],
     "prereq": "Mana Storm (Lv.10) Wind Blade (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     },
+     {
+      "name": "Wind Blade",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Rad"
+    },
     "desc": "An AoE wind attack that hits once.",
     "formula": "(MA + AC - 49) x Multiplier",
     "uses": [
@@ -4150,6 +5073,13 @@
      }
     ],
     "prereq": "Wind Shield (Lv.5)",
+    "needs": [
+     {
+      "name": "Wind Shield",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "A buff that counter-attacks whenever the user is attacked. Does damage regardless of whether incoming attacks hit or not.",
     "formula": "(AC + LK) x Multiplier",
     "uses": [
@@ -4172,6 +5102,13 @@
      }
     ],
     "prereq": "Seal of Wind",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Targets an area with the power of Sylph to decrease their resistance to Water attribute.",
     "formula": ".",
     "uses": [],
@@ -4188,6 +5125,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Ties up enemies around the caster for a period of time.",
     "formula": "",
     "uses": [],
@@ -4202,6 +5141,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn light skills. Cannot be used with Dark Pact.",
     "formula": "",
     "uses": [],
@@ -4221,6 +5162,13 @@
      }
     ],
     "prereq": "Light Pact",
+    "needs": [
+     {
+      "name": "Light Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Attacks the enemy with pillars of light striking the enemy from the sky.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -4242,6 +5190,13 @@
      }
     ],
     "prereq": "Light Pact, Cure (Lv.10)",
+    "needs": [
+     {
+      "name": "Cure",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill allows you to heal yourself faster in time of danger.",
     "formula": "(MA + LK) x Magnification",
     "uses": [
@@ -4264,6 +5219,13 @@
      }
     ],
     "prereq": "Light Pact",
+    "needs": [
+     {
+      "name": "Light Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Light attribute magic skill. Light magicians who have signed the Light Pact may recite the Oath of Light, which when activated, will regenerate a certain amount of HP over time.",
     "formula": "Max HP x Percentage Increase",
     "uses": [
@@ -4285,6 +5247,13 @@
      }
     ],
     "prereq": "Light Pact, Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Temporarily raises Light Resistance, DP, and MD.",
     "formula": "(MA - 49) × [DP,MD%] × 16",
     "uses": [
@@ -4303,6 +5272,13 @@
     "master": 0,
     "items": [],
     "prereq": "Light Pact, Catastrophe Heal (Lv.1)",
+    "needs": [
+     {
+      "name": "Catastrophe Heal",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Cures 1st job skills' abnormal status.",
     "formula": "",
     "uses": [],
@@ -4322,6 +5298,17 @@
      }
     ],
     "prereq": "Light Pact Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Light Pact",
+      "lv": ""
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A wave of light that hits multiple opponents 1~8",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -4343,6 +5330,17 @@
      }
     ],
     "prereq": "Arrow of Light (Lv.10) Mana Storm (Lv.10)",
+    "needs": [
+     {
+      "name": "Arrow of Light",
+      "lv": "10"
+     },
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "AoE Spell that attacks 3 targets max. No target needs to be selected specifically, the spell will be centered on the caster and monsters within the light will take damage,",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -4364,6 +5362,17 @@
      }
     ],
     "prereq": "Catastrophe Heal (Lv.10) Aura of Mana (Lv.10)",
+    "needs": [
+     {
+      "name": "Catastrophe Heal",
+      "lv": "10"
+     },
+     {
+      "name": "Aura of Mana",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increase the health recovery rate of you and your party members.",
     "formula": "((Players MAX HP / 200) + (MA x .2)) x Multiplier",
     "uses": [
@@ -4386,6 +5395,13 @@
      }
     ],
     "prereq": "Light Shield (Mastered)",
+    "needs": [
+     {
+      "name": "Light Shield",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Magical Skill. Creates a holy protective barrier around the user. The strength of the barrier is affected by the User's MA.",
     "formula": "MA x %",
     "uses": [
@@ -4402,6 +5418,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn dark skills. Cannot be used with Light Pact.",
     "formula": "",
     "uses": [],
@@ -4421,6 +5439,13 @@
      }
     ],
     "prereq": "Dark Pact",
+    "needs": [
+     {
+      "name": "Dark Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Attacks the enemy by creating dark blazes which resembles flame from hell.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -4442,6 +5467,13 @@
      }
     ],
     "prereq": "Hellfire (Lv.10)",
+    "needs": [
+     {
+      "name": "Hellfire",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A supporting skill for Hellfire: Wicked Flame continuously burns the opponent for a specified amount of time after Hellfire is used.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -4463,6 +5495,13 @@
      }
     ],
     "prereq": "Dark Pact",
+    "needs": [
+     {
+      "name": "Dark Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Raises your damage while lowering your health\".",
     "formula": "HP lost = Used Dark Skill MP X HP consumption",
     "uses": [
@@ -4485,6 +5524,13 @@
      }
     ],
     "prereq": "Dark Pact, Hinder Snare",
+    "needs": [
+     {
+      "name": "Hinder Snare",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Slows down movement speed of the victim.",
     "formula": "",
     "uses": [],
@@ -4504,6 +5550,13 @@
      }
     ],
     "prereq": "Dark Pact, Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "When cast, a lance falls from the sky, attacking one enemy directly below it.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -4525,6 +5578,13 @@
      }
     ],
     "prereq": "Dark Pact, Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Raises dark resistance and reflects physical damage.",
     "formula": "Total reflected damage = Your enemy's damage × Damage Reflection",
     "uses": [],
@@ -4544,6 +5604,13 @@
      }
     ],
     "prereq": "Dark Pact, Mana Storm (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A powerful skill that heavily damages enemies nearby the caster.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -4565,6 +5632,13 @@
      }
     ],
     "prereq": "Dark Pact, Gravity Crush (Lv. 10)",
+    "needs": [
+     {
+      "name": "Gravity Crush",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Stops the regen of the enemy",
     "formula": "",
     "uses": [],
@@ -4581,6 +5655,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "A simple magic attack for beginners. It's very useful in starting your adventure in Trickster Online.",
     "formula": "",
     "uses": [],
@@ -4600,6 +5679,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Magic attack that strikes one target.",
     "formula": "(MA - 49) x Magic Power ÷ 10",
     "uses": [
@@ -4621,6 +5702,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Recovers health of yourself or others.",
     "formula": "(Max HP x Health Recovery) = Added HP",
     "uses": [
@@ -4637,6 +5720,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "If attacked while casting a spell, you will continue casting.",
     "formula": "",
     "uses": [],
@@ -4656,6 +5741,13 @@
      }
     ],
     "prereq": "Cure (Lv.10)",
+    "needs": [
+     {
+      "name": "Cure",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases party members' mana recovery.",
     "formula": "(8 x (r%/100)",
     "uses": [],
@@ -4675,6 +5767,13 @@
      }
     ],
     "prereq": "Cure (Lv.10)",
+    "needs": [
+     {
+      "name": "Cure",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases Max MP.",
     "formula": "",
     "uses": [],
@@ -4694,6 +5793,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "A debuff that lowers enemies' Attack Power.",
     "formula": "Enemy AP - (MA - 49) x Attack Reduction x 16",
     "uses": [
@@ -4715,6 +5816,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Attack speed of the enemy becomes slow.",
     "formula": "MA x DX Increase",
     "uses": [
@@ -4737,6 +5840,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Shoots three rings that have a chance of damaging multiple monsters around the target.",
     "formula": "MA x (Power/100)",
     "uses": [
@@ -4758,6 +5863,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Buff skill that adds Magic Defense.",
     "formula": "MD x Magic Defense Increase = Added MD",
     "uses": [
@@ -4779,6 +5886,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Magic spell damaging multiple enemies.",
     "formula": "MA x Power",
     "uses": [
@@ -4800,6 +5909,13 @@
      }
     ],
     "prereq": "Bottle of Mana (Lv.1)",
+    "needs": [
+     {
+      "name": "Bottle of Mana",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Support spell use to increase MA.",
     "formula": "(MA x Magic Power Up) = Added MA",
     "uses": [
@@ -4821,6 +5937,13 @@
      }
     ],
     "prereq": "Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Augments Mana Arrow to fire several arrows, with individual arrow's power and accuracy reduced.",
     "formula": "(MA - 49) x Magic Power ÷ 10",
     "uses": [
@@ -4842,6 +5965,13 @@
      }
     ],
     "prereq": "Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases the destructive power of Mana Ring.",
     "formula": "MA x ((Mana Ring Power + Bonus Power) ÷ 100)",
     "uses": [
@@ -4860,6 +5990,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Ties up enemies around the caster for a period of time.",
     "formula": "",
     "uses": [],
@@ -4874,6 +6006,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn light skills. Cannot be used with Dark Pact.",
     "formula": "",
     "uses": [],
@@ -4893,6 +6027,13 @@
      }
     ],
     "prereq": "Light Pact",
+    "needs": [
+     {
+      "name": "Light Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Attacks the enemy with pillars of light striking the enemy from the sky.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -4914,6 +6055,13 @@
      }
     ],
     "prereq": "Light Pact, Cure (Lv.10)",
+    "needs": [
+     {
+      "name": "Cure",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill allows you to heal yourself faster in time of danger.",
     "formula": "(MA + LK) x Magnification",
     "uses": [
@@ -4936,6 +6084,13 @@
      }
     ],
     "prereq": "Light Pact",
+    "needs": [
+     {
+      "name": "Light Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Light attribute magic skill. Light magicians who have signed the Light Pact may recite the Oath of Light, which when activated, will regenerate a certain amount of HP over time.",
     "formula": "Max HP x Percentage Increase",
     "uses": [
@@ -4957,6 +6112,13 @@
      }
     ],
     "prereq": "Light Pact, Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Temporarily raises Light Resistance, DP, and MD.",
     "formula": "(MA - 49) × [DP,MD%] × 16",
     "uses": [
@@ -4975,6 +6137,13 @@
     "master": 0,
     "items": [],
     "prereq": "Light Pact, Catastrophe Heal (Lv.1)",
+    "needs": [
+     {
+      "name": "Catastrophe Heal",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Cures 1st job skills' abnormal status.",
     "formula": "",
     "uses": [],
@@ -4994,6 +6163,17 @@
      }
     ],
     "prereq": "Light Pact Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Light Pact",
+      "lv": ""
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A wave of light that hits multiple opponents 1~8",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5015,6 +6195,17 @@
      }
     ],
     "prereq": "Arrow of Light (Lv.10) Mana Storm (Lv.10)",
+    "needs": [
+     {
+      "name": "Arrow of Light",
+      "lv": "10"
+     },
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "AoE Spell that attacks 3 targets max. No target needs to be selected specifically, the spell will be centered on the caster and monsters within the light will take damage,",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5036,6 +6227,17 @@
      }
     ],
     "prereq": "Catastrophe Heal (Lv.10) Aura of Mana (Lv.10)",
+    "needs": [
+     {
+      "name": "Catastrophe Heal",
+      "lv": "10"
+     },
+     {
+      "name": "Aura of Mana",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increase the health recovery rate of you and your party members.",
     "formula": "((Players MAX HP / 200) + (MA x .2)) x Multiplier",
     "uses": [
@@ -5058,6 +6260,13 @@
      }
     ],
     "prereq": "Light Shield (Mastered)",
+    "needs": [
+     {
+      "name": "Light Shield",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Magical Skill. Creates a holy protective barrier around the user. The strength of the barrier is affected by the User's MA.",
     "formula": "MA x %",
     "uses": [
@@ -5074,6 +6283,13 @@
     "master": 0,
     "items": [],
     "prereq": "Light Pact, Oath of Light (Lv. 10)",
+    "needs": [
+     {
+      "name": "Oath of Light",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Revives anyone who has fainted.",
     "formula": "",
     "uses": [],
@@ -5088,6 +6304,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn dark skills. Cannot be used with Light Pact.",
     "formula": "",
     "uses": [],
@@ -5107,6 +6325,13 @@
      }
     ],
     "prereq": "Dark Pact",
+    "needs": [
+     {
+      "name": "Dark Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Attacks the enemy by creating dark blazes which resembles flame from hell.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5128,6 +6353,13 @@
      }
     ],
     "prereq": "Hellfire (Lv.10)",
+    "needs": [
+     {
+      "name": "Hellfire",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A supporting skill for Hellfire: Wicked Flame continuously burns the opponent for a specified amount of time after Hellfire is used.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5149,6 +6381,13 @@
      }
     ],
     "prereq": "Dark Pact",
+    "needs": [
+     {
+      "name": "Dark Pact",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Raises your damage while lowering your health\".",
     "formula": "HP lost = Used Dark Skill MP X HP consumption",
     "uses": [
@@ -5171,6 +6410,13 @@
      }
     ],
     "prereq": "Dark Pact, Hinder Snare",
+    "needs": [
+     {
+      "name": "Hinder Snare",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Slows down movement speed of the victim.",
     "formula": "",
     "uses": [],
@@ -5190,6 +6436,13 @@
      }
     ],
     "prereq": "Dark Pact, Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "When cast, a lance falls from the sky, attacking one enemy directly below it.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5211,6 +6464,13 @@
      }
     ],
     "prereq": "Dark Pact, Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Raises dark resistance and reflects physical damage.",
     "formula": "Total reflected damage = Your enemy's damage × Damage Reflection",
     "uses": [],
@@ -5230,6 +6490,13 @@
      }
     ],
     "prereq": "Dark Pact, Mana Storm (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A powerful skill that heavily damages enemies nearby the caster.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5251,6 +6518,13 @@
      }
     ],
     "prereq": "Dark Pact, Gravity Crush (Lv. 10)",
+    "needs": [
+     {
+      "name": "Gravity Crush",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Stops the regen of the enemy",
     "formula": "",
     "uses": [],
@@ -5272,6 +6546,20 @@
      }
     ],
     "prereq": "Dark Pact Dark Lance (Lv.10)",
+    "needs": [
+     {
+      "name": "Dark Pact",
+      "lv": ""
+     },
+     {
+      "name": "Dark Lance",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Rad"
+    },
     "desc": "Dark-element attack on one target. Damage based on amount of Dark Attribute on equipment.",
     "formula": "(MA - 49) x [Mag. Ratio + (15 x Darkness Attribute %)]",
     "uses": [
@@ -5293,6 +6581,20 @@
      }
     ],
     "prereq": "Dark Pact Dark Lance (Lv.10)",
+    "needs": [
+     {
+      "name": "Dark Pact",
+      "lv": ""
+     },
+     {
+      "name": "Dark Lance",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ansur"
+    },
     "desc": "Dark-element attack on one target. Damage depends on dark attribute compounds on equipment.",
     "formula": "(MA - 49) x (Multiplier + (30 x Darkness Attribute %))",
     "uses": [
@@ -5314,6 +6616,20 @@
      }
     ],
     "prereq": "Rust (Lv.10) Scythe (Lv.10)",
+    "needs": [
+     {
+      "name": "Rust",
+      "lv": "10"
+     },
+     {
+      "name": "Scythe",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Thorn"
+    },
     "desc": "Adds a status effect to Scythe, preventing target's use of physical attacks and Skills.",
     "formula": "None",
     "uses": [],
@@ -5333,6 +6649,20 @@
      }
     ],
     "prereq": "Dark Barrier (Lv.M) Fear (Lv.1)",
+    "needs": [
+     {
+      "name": "Dark Barrier",
+      "lv": "M"
+     },
+     {
+      "name": "Fear",
+      "lv": "1"
+     }
+    ],
+    "how": {
+     "kind": "quest",
+     "text": "Fortune Teller - Dark Commando"
+    },
     "desc": "Deals additional damage every time the user hits with a Dark-based attack.",
     "formula": "(MA - 49) x (Power ÷ 10)",
     "uses": [
@@ -5354,6 +6684,16 @@
      }
     ],
     "prereq": "Dark Commando (Lv.1)",
+    "needs": [
+     {
+      "name": "Dark Commando",
+      "lv": "1"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Wunjo"
+    },
     "desc": "Targets enemies with a dark presence to take damage over time.",
     "formula": "(MA - 49) × Power ÷ 10",
     "uses": [
@@ -5375,6 +6715,16 @@
      }
     ],
     "prereq": "Ghostly Whisper (Mastered)",
+    "needs": [
+     {
+      "name": "Ghostly Whisper",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Increases your Dark attribute percentage",
     "formula": "",
     "uses": [],
@@ -5396,6 +6746,20 @@
      }
     ],
     "prereq": "Mana Arrow (Lv.10) Arrow of Light (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     },
+     {
+      "name": "Arrow of Light",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Thorn"
+    },
     "desc": "A radius AoE centered on the target",
     "formula": "(MA - 25) × Multiplier",
     "uses": [
@@ -5412,6 +6776,16 @@
     "master": 0,
     "items": [],
     "prereq": "Basic Healing",
+    "needs": [
+     {
+      "name": "Basic Healing",
+      "lv": ""
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ur"
+    },
     "desc": "An advanced version of Basic Healing with the abilities to cure multiple person at once.",
     "formula": "",
     "uses": [],
@@ -5431,8 +6805,18 @@
      }
     ],
     "prereq": "Oath of Light (M)",
+    "needs": [
+     {
+      "name": "Oath of Light",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "quest",
+     "text": "Magician Louie - Power of Faith"
+    },
     "desc": "Grants its light to everyone in the party through the casters increased faith.",
-    "formula": "-",
+    "formula": "",
     "uses": [],
     "notes": "Obtained from completing Magician Louie - Power of Faith."
    },
@@ -5450,6 +6834,20 @@
      }
     ],
     "prereq": "Light Wave (Lv.5) Radiant Strike (Lv.5)",
+    "needs": [
+     {
+      "name": "Light Wave",
+      "lv": "5"
+     },
+     {
+      "name": "Radiant Strike",
+      "lv": "5"
+     }
+    ],
+    "how": {
+     "kind": "quest",
+     "text": "Magician Louie - Ancient Legacy"
+    },
     "desc": "Light Atrribute magic skill. It creates a circular area and raises a light column in the middle to strike the surrounding monsters. The more mass the light has, the more damage it deals. The mass of the light is based on the Light Attribute of the caster.",
     "formula": "(MA - 25) × (34 + Number of light attacking skills) ÷ 20 × magnification.",
     "uses": [
@@ -5471,8 +6869,18 @@
      }
     ],
     "prereq": "Sacred Oath (M)",
+    "needs": [
+     {
+      "name": "Sacred Oath",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Light Attribute magic skill. It calms you down and reduces your fatigue from using skills. Cool down time is decreased so you can go back to using skills faster.",
-    "formula": "-",
+    "formula": "",
     "uses": [],
     "notes": "Decreases cooldown time of all skills (including itself-look at Actual Cooldown). Obtained from Chaos Tower monsters above 36th floor."
    }
@@ -5492,6 +6900,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Decrease the MP consumption of the party member inside the range only when the caster is not moving. If the caster moves, the effect of the skill only applies to the caster.",
     "formula": "",
     "uses": [],
@@ -5506,6 +6916,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Water skills. Once this skill is learned, player cannot learn Seal of Fire or Seal of Earth.",
     "formula": "",
     "uses": [],
@@ -5520,6 +6932,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Electric skills. Once learned, player cannot learn Seal of Wind or Seal of Earth.",
     "formula": "",
     "uses": [],
@@ -5534,6 +6948,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Fire skills. Once learned, player cannot learn Seal of Water or Seal of Wind.",
     "formula": "",
     "uses": [],
@@ -5548,6 +6964,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Earth skills. Once learned, player cannot learn Seal of Water or Seal of Thunder.",
     "formula": "",
     "uses": [],
@@ -5562,6 +6980,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Enables you to learn Wind skills. Once learned, player cannot learn Seal of Thunder or Seal of Fire.",
     "formula": "",
     "uses": [],
@@ -5581,6 +7001,13 @@
      }
     ],
     "prereq": "Seal of Water",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Attacks the enemy using huge water cannonballs. Can lower DX target's if user has Mana Web and Water Web skill.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -5602,6 +7029,13 @@
      }
     ],
     "prereq": "Seal of Water",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Traps your enemies in chains of ice.\" Target is invincible for the duration of the skill.",
     "formula": ".",
     "uses": [],
@@ -5616,6 +7050,17 @@
     "master": 0,
     "items": [],
     "prereq": "Mana Web (Lv.1) Drip Bomb (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Web",
+      "lv": "1"
+     },
+     {
+      "name": "Drip Bomb",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "It brings down the enemy's dexterity when hit with Drip Bomb.",
     "formula": "",
     "uses": [],
@@ -5635,6 +7080,17 @@
      }
     ],
     "prereq": "Seal of Water Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases resistance against water attacks",
     "formula": "Water Resist x Bonus = Added Water Resist",
     "uses": [],
@@ -5654,6 +7110,17 @@
      }
     ],
     "prereq": "Seal of Water Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Water",
+      "lv": ""
+     },
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Keeps the victim from moving, and reduces lightning resist.",
     "formula": "(MA + LK - 49) x Multiplier",
     "uses": [
@@ -5676,6 +7143,13 @@
      }
     ],
     "prereq": "Seal of Thunder",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Lightning ball direct damage spell which splits and attacks nearby targets. Can stun enemies if user has Electroshock skill.",
     "formula": "(MA - 25) x Power ÷ 15",
     "uses": [
@@ -5697,6 +7171,13 @@
      }
     ],
     "prereq": "Seal of Thunder",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Strikes enemies with a single, massive thunderbolt\".",
     "formula": ".",
     "uses": [],
@@ -5711,6 +7192,13 @@
     "master": 0,
     "items": [],
     "prereq": "Electro Attack (Lv.10)",
+    "needs": [
+     {
+      "name": "Electro Attack",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "It immobilizes the enemy that has been struck by Electro Attack.",
     "formula": "",
     "uses": [],
@@ -5730,6 +7218,17 @@
      }
     ],
     "prereq": "Seal of Thunder Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Thunder",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Electricity defense attribute magic. Raises electricity resistance temporarily.",
     "formula": "Electric Resist x Bonus = Added Electric Resist",
     "uses": [],
@@ -5749,6 +7248,17 @@
      }
     ],
     "prereq": "Electro Attack (Lv.10) Mana Arrow (Lv.10)",
+    "needs": [
+     {
+      "name": "Electro Attack",
+      "lv": "10"
+     },
+     {
+      "name": "Mana Arrow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "",
     "formula": "(MA + (Max MP ÷ 120)) x Multiplier",
     "uses": [
@@ -5771,6 +7281,13 @@
      }
     ],
     "prereq": "Seal of Fire",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Causes damage to enemy by surrounding them with flame.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -5792,6 +7309,13 @@
      }
     ],
     "prereq": "Seal of Fire",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Fire attribute magic attack. The caster turns the ground into fire which deals damage over time to all in the area.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -5813,6 +7337,17 @@
      }
     ],
     "prereq": "Seal of Fire Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Enemy-targeted fire AoE, AoE is 2 tiles and can hit up to 2 people in pvp within proximity.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -5834,6 +7369,17 @@
      }
     ],
     "prereq": "Seal of Fire Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Fire",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Fire defense attribute magic. Raises fire resistance temporarily.",
     "formula": "Fire Resist x Bonus = Added Fire Resist",
     "uses": [],
@@ -5853,6 +7399,13 @@
      }
     ],
     "prereq": "Incinerate (Lv.10)",
+    "needs": [
+     {
+      "name": "Incinerate",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A fire AoE that summons flames on the ground, burning opponents and causing their HP to drop constantly.",
     "formula": "(MA - 49) x Multiplier",
     "uses": [
@@ -5874,6 +7427,13 @@
      }
     ],
     "prereq": "Seal of Earth",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Damages enemies by creating a fissure. AoE is huge, max targets are 7.",
     "formula": "(MA - 25) x Magnification Ratio",
     "uses": [
@@ -5895,6 +7455,13 @@
      }
     ],
     "prereq": "Seal of Earth",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Turns dry land into swamp\".",
     "formula": "Raw Damage = (MA + LK - 25) × Power / 20",
     "uses": [
@@ -5912,6 +7479,17 @@
     "master": 3,
     "items": [],
     "prereq": "Seal of Earth Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "AoE is like mana ring. Damage is scaled downwards from center.",
     "formula": "(MA - 25) x Power ÷ 15",
     "uses": [
@@ -5933,6 +7511,17 @@
      }
     ],
     "prereq": "Seal of Earth Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases resistance against soil attacks",
     "formula": "Soil Resist x Bonus = Added Soil Resist",
     "uses": [],
@@ -5952,6 +7541,17 @@
      }
     ],
     "prereq": "Seal of Earth Mana Web (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Earth",
+      "lv": ""
+     },
+     {
+      "name": "Mana Web",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases target's attack delay.",
     "formula": "?",
     "uses": [],
@@ -5971,6 +7571,13 @@
      }
     ],
     "prereq": "Seal of Wind",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "AoE skill that hits up to 5 targets max. At level 10 or below, there is a small chance for the skill to fail to cast. At mastery, it always succeeds.",
     "formula": "(magic - 49) × (attack magnification + 3 × attribute value (%) ÷ 100)",
     "uses": [],
@@ -5990,6 +7597,13 @@
      }
     ],
     "prereq": "Seal of Wind",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "\"Uses tornado-force winds to hit enemies\".",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -6011,6 +7625,17 @@
      }
     ],
     "prereq": "Seal of Wind Mana Storm (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     },
+     {
+      "name": "Mana Storm",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "An AoE centered on the user. Duration increases with skill level, but moving will cancel the spell regardless of its remaining duration. You can still cast other spells, melee attack, use potions or drill while the spell is taking effect.",
     "formula": "(MA - 49) x Power ÷ 10",
     "uses": [
@@ -6032,6 +7657,17 @@
      }
     ],
     "prereq": "Seal of Wind Mana Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Seal of Wind",
+      "lv": ""
+     },
+     {
+      "name": "Mana Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases resistance against air attacks",
     "formula": "Air Resist x Bonus = Added Air Resist",
     "uses": [],
@@ -6051,6 +7687,17 @@
      }
     ],
     "prereq": "Wind Blade (Lv.10) Mana Ring (Lv.10)",
+    "needs": [
+     {
+      "name": "Wind Blade",
+      "lv": "10"
+     },
+     {
+      "name": "Mana Ring",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "",
     "formula": "(MA + AC - 49) x Multiplier",
     "uses": [
@@ -6070,6 +7717,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "Those useless rocks on the road becomes a useful and effective weapon with this skill.",
     "formula": "",
     "uses": [],
@@ -6084,6 +7736,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Invincible Drill enhances concentration during drilling. Therefore, using drill is not canceled by interference by somebody. Once learning this skill, concentrationg can be exercised naturally during drilling without consuming specific Mana.",
     "formula": "",
     "uses": [],
@@ -6098,6 +7752,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Allows you to carry and shoot with a gun.",
     "formula": "",
     "uses": [],
@@ -6117,6 +7773,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Sixth Sense skill can enhance perceptibility temporarily to sense even small changes in environment. Practicing this skill can make perceive more precisely.",
     "formula": "DA × (%)",
     "uses": [
@@ -6138,6 +7796,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "After finely analyzing enemy's weak part and environment's force flow by excellent perceptibility, strike a severe blow with the power of destroying even rocks.",
     "formula": "(DA + 1) × Mag.Ratio",
     "uses": [
@@ -6159,6 +7819,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Heavy Carrier skill can enhance weight limit to deal with by producing extra space to store things. Steady practicing this skill can enlarge extra space and increase added weight limit.",
     "formula": "None.",
     "uses": [],
@@ -6178,6 +7840,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "This is the skill to deal with hidden weapon. Damage enemy by throwing hidden weapon equipped to me. As my perceptibility increases, its effect can be maximized by throwing hidden weapon more effectively.",
     "formula": "[(DA + Throw AP ÷ 10) × Mag.Ratio] - 1",
     "uses": [
@@ -6195,6 +7859,13 @@
     "master": 0,
     "items": [],
     "prereq": "Gun Carrier",
+    "needs": [
+     {
+      "name": "Gun Carrier",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Reloading is not interrupted by monster's interruption.",
     "formula": "",
     "uses": [],
@@ -6214,6 +7885,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Ranged status modifier, reduces enemies' HV. Max is 0.",
     "formula": "DA × Evasion Decrease %",
     "uses": [
@@ -6235,6 +7908,13 @@
      }
     ],
     "prereq": "Invincible Reload",
+    "needs": [
+     {
+      "name": "Invincible Reload",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Increases AC",
     "formula": "Added AC = Gun AP Increase ÷ 20",
     "uses": [
@@ -6257,6 +7937,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "This is the skill to detect items under the ground. It is a basic detection skill and one can judge the existence of item under the ground using insight and perceptibility specific to sensible type.",
     "formula": "None.",
     "uses": [],
@@ -6276,6 +7958,13 @@
      }
     ],
     "prereq": "Stone Strike (Lv.10)",
+    "needs": [
+     {
+      "name": "Stone Strike",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "The skill of Arrmour Destructor can weaken the defense ability of enemy for constant time by breaking enemy's defense barrier. As expertness increases, it can weaken defense ability of enemy more effectively for longer time.",
     "formula": "Target Defense × Defense Decrease%",
     "uses": [],
@@ -6290,6 +7979,13 @@
     "master": 0,
     "items": [],
     "prereq": "Invincible Reload",
+    "needs": [
+     {
+      "name": "Invincible Reload",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Allows you to reload when moving.",
     "formula": "",
     "uses": [],
@@ -6309,6 +8005,13 @@
      }
     ],
     "prereq": "Armor Destructor (Lv.1)",
+    "needs": [
+     {
+      "name": "Armor Destructor",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "The skill of lucky seven can enhance my luck for constant time due to help from the fairy of fortune. As expertness increases, my luck can be enhanced more effectively for longer time.",
     "formula": "LK × Luck Increase %",
     "uses": [
@@ -6330,6 +8033,13 @@
      }
     ],
     "prereq": "Crazy Drilling",
+    "needs": [
+     {
+      "name": "Crazy Drilling",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Card No.9 that teaches you the Anger Management skill. In increases that rate at which your Stress Points are accumulated in order to activate the Crazy Drill skill.",
     "formula": "Stress Point increases as described below",
     "uses": [],
@@ -6349,6 +8059,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases Compound accuracy for maturing compound based on LK",
     "formula": "",
     "uses": [],
@@ -6370,6 +8082,13 @@
      }
     ],
     "prereq": "Shuriken Master (Lv.10)",
+    "needs": [
+     {
+      "name": "Shuriken Master",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill enhances Shuriken Master for a short period of time. When using this skill, damage that is inflicted upon the enemy by throwing a weapon at them is amplified. As the user gains more experience, the amount of damage also increases.",
     "formula": "SM Attack, with PP = (DA × SM Mag.Ratio) + (Throw AP ÷ 10 × SM Mag.Ratio × PP Mag.Ratio)",
     "uses": [
@@ -6392,6 +8111,13 @@
      }
     ],
     "prereq": "Invincible Drilling Sixth Sense (Lv.10)",
+    "needs": [
+     {
+      "name": "Sixth Sense",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill allows the user to sense items that are buried within the ground. By using insight and perceptibility, one can predict the existence of items in the area. As the user gains more experience, the probability of detecting items increases. The depth will depend upon how well the user's Detect Ability is.",
     "formula": "Detection = DA × (Multiplier ÷ 10)",
     "uses": [
@@ -6413,6 +8139,13 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.7)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "7"
+     }
+    ],
+    "how": null,
     "desc": "This is a party skill that enables an aura that brings good luck to all party members.",
     "formula": "LK × (A)",
     "uses": [
@@ -6434,6 +8167,13 @@
      }
     ],
     "prereq": "Precise Pitch (Lv.5)",
+    "needs": [
+     {
+      "name": "Precise Pitch",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "Physical skill. User throws several knives at single target. The number of knives thrown increases with the skill level.",
     "formula": "(DA × 16 + Throw AP × PP multiplier) × m",
     "uses": [
@@ -6456,6 +8196,13 @@
      }
     ],
     "prereq": "Crazy Drilling",
+    "needs": [
+     {
+      "name": "Crazy Drilling",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "It maintains Crazy Drill mode by increasing the anger and changing it into a strong will which increases the duration of the skill.",
     "formula": "",
     "uses": [],
@@ -6470,6 +8217,8 @@
     "master": 3,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "It gives the user and the nearby user's party a defense against the skunk pouch skill.",
     "formula": "",
     "uses": [],
@@ -6489,6 +8238,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Places a powerful proximity mine. It will surface and explode on anyone that comes too close. Its effectiveness is based on one's senses. it's power will increase based on your LK and DA.",
     "formula": "(DA + LK) × Magnification",
     "uses": [
@@ -6511,6 +8262,17 @@
      }
     ],
     "prereq": "Sticky Foot (Lv.10) Armor Destructor (Lv.10)",
+    "needs": [
+     {
+      "name": "Sticky Foot",
+      "lv": "10"
+     },
+     {
+      "name": "Armor Destructor",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill allows you to lower your enemy's stats temporarily. No target needs to be selected specifically. It lowers HV, DP, and LK.",
     "formula": "LK Reduction = Caster's LK * Ratio DP Reduction = Caster's LK * 16 * Ratio HV Reduction = Caster's LK * Ratio",
     "uses": [
@@ -6534,6 +8296,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "It decreases the electric attacks that the user and the party may come in contact with. Party memebers must be nearby to receive the effect.",
     "formula": "Electric Resist = Electric Resist + Bonus",
     "uses": [],
@@ -6553,6 +8317,13 @@
      }
     ],
     "prereq": "Heavy Carrier (Lv.10)",
+    "needs": [
+     {
+      "name": "Heavy Carrier",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This pouch hurts. Especially if there are heavy items in the pouch. This skill can also attack multiple enemies at once.",
     "formula": "(Max WT - Current WT(checkable in shops)) × Magnification",
     "uses": [
@@ -6574,6 +8345,13 @@
      }
     ],
     "prereq": "Precise Pitch (Lv.M)",
+    "needs": [
+     {
+      "name": "Precise Pitch",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Physical Skill. Allows the player to attack multiple targets by throwing several thrown weapons. Player can throw up to a maximum of seven shuriken.",
     "formula": "FoK Attack = (DA + Throw AP ÷ 10) × AP% FoK Attack with PP = (DA + ([ Throw AP ÷ 10 ] × 2.4)) × AP%",
     "uses": [
@@ -6596,6 +8374,13 @@
      }
     ],
     "prereq": "Fan of Knives (Mastered)",
+    "needs": [
+     {
+      "name": "Fan of Knives",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Throws knives high up above to attack those in range.",
     "formula": "Basic Power = (Throw AP + DA) x Magnification Individual Damage = (AP% - Enemy's DP) x Physical Resistance Magnification (?)",
     "uses": [
@@ -6620,6 +8405,16 @@
      }
     ],
     "prereq": "Landmine (Lv.10)",
+    "needs": [
+     {
+      "name": "Landmine",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Thorn"
+    },
     "desc": "Physical type skill. The higher the skill level, the more mines you can plant.",
     "formula": "(DA × 2 + LK) × Magnification",
     "uses": [
@@ -6642,6 +8437,16 @@
      }
     ],
     "prereq": "Pouch of Pain (Lv.M)",
+    "needs": [
+     {
+      "name": "Pouch of Pain",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "quest",
+     "text": "Explorer Reina - Ancient Liquid"
+    },
     "desc": "Physical skill. This skill will add a touch of poison to the pouch of pain skill. It delivers poisonous damage. The damage scales based on the weight of the pouch.",
     "formula": "Pouch damage=Pouch of Pain Poison damage= Pouch of Pain * AP Weight%",
     "uses": [
@@ -6663,6 +8468,20 @@
      }
     ],
     "prereq": "Aura of Luck (Lv.10) Sixth Sense (Lv.10)",
+    "needs": [
+     {
+      "name": "Aura of Luck",
+      "lv": "10"
+     },
+     {
+      "name": "Sixth Sense",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Feoh"
+    },
     "desc": "Hide yourself from the battle. However, this skill can't be used against area of effect skills. It'll cancel if you use a skill, attack, or items.",
     "formula": "",
     "uses": [],
@@ -6682,6 +8501,20 @@
      }
     ],
     "prereq": "Shuriken Master (Lv.1) Hide (Lv.5)",
+    "needs": [
+     {
+      "name": "Shuriken Master",
+      "lv": "1"
+     },
+     {
+      "name": "Hide",
+      "lv": "5"
+     }
+    ],
+    "how": {
+     "kind": "quest",
+     "text": "Explorer Reina - Poisonous Crafts"
+    },
     "desc": "Physical Skill. Can only be used in hidden status, Throws a poisoned shuriken on the enemy while hidden. Enemies struck by this skill will lose health over time. Using this skill will pull the caster out of hidden status.",
     "formula": "Shuriken Hit Formula = (DA × Magnification) + Throw AP Poison Formula = [(DA × 16) + Throw AP] × Poison Magnification",
     "uses": [
@@ -6704,6 +8537,11 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ur"
+    },
     "desc": "Party skill. It will raise resistance against Entrancing Wink on all party members for a short time.",
     "formula": "",
     "uses": [],
@@ -6723,6 +8561,16 @@
      }
     ],
     "prereq": "Hide (Lv.10)",
+    "needs": [
+     {
+      "name": "Hide",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Feoh"
+    },
     "desc": "Physical type skill. It can only be used while using Hide skill. Hide skill will cancel once this skill is used.",
     "formula": "((DA + LK) × 16 + AP) × Magnification",
     "uses": [
@@ -6746,6 +8594,16 @@
      }
     ],
     "prereq": "Sudden Attack (Mastered)",
+    "needs": [
+     {
+      "name": "Sudden Attack",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Your attack ignores defensive skills used by the enemy.",
     "formula": "(DA x 16 +AP) x Magnification",
     "uses": [
@@ -6770,6 +8628,13 @@
      }
     ],
     "prereq": "Gun Carrier (Lv.1)",
+    "needs": [
+     {
+      "name": "Gun Carrier",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "It attacks the enemy in a close distance using a butt plate of a rifle.",
     "formula": "(DA + AC - 49) × Magnification Ratio - 1",
     "uses": [
@@ -6792,6 +8657,13 @@
      }
     ],
     "prereq": "Gun Booster (Lv.10)",
+    "needs": [
+     {
+      "name": "Gun Booster",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Cause a severe damage as the bullet carries strong energy.",
     "formula": "[(GunAP - 11) + 20(AC - 48) ] x M",
     "uses": [
@@ -6813,6 +8685,13 @@
      }
     ],
     "prereq": "Power Shot (Lv.7)",
+    "needs": [
+     {
+      "name": "Power Shot",
+      "lv": "7"
+     }
+    ],
+    "how": null,
     "desc": "Fires guns randomly without targeting a specific enemy to damage unspecified opponents.",
     "formula": "[(GunAP - 11) + 20(AC - 48) ] x M (M=Attack power/100)",
     "uses": [
@@ -6834,6 +8713,13 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.10)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A desperate blow that leaves everything to one's luck.",
     "formula": "(Enemy's Max HP ÷ 10 + LK × 8) × Power",
     "uses": [
@@ -6856,6 +8742,17 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.1) Gun Booster (Lv.10)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "1"
+     },
+     {
+      "name": "Gun Booster",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases the critical damage of normal gun shots (timed criticals) for a period of time.",
     "formula": "(AC × 20) × 1.2 × Power Increase",
     "uses": [
@@ -6877,6 +8774,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Lowers your target's HV.",
     "formula": "",
     "uses": [],
@@ -6896,6 +8795,13 @@
      }
     ],
     "prereq": "Power Shot (Lv.10)",
+    "needs": [
+     {
+      "name": "Power Shot",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Rapidly shoots 2 shots.",
     "formula": "[(GunAP - 11) + 20(AC - 48) ] x M Power per 1 shot (%) ÷ 2 (M=Attack power/100)",
     "uses": [
@@ -6917,6 +8823,13 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.10)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Can break through all shields and Sumo Suit skills.",
     "formula": "Enemy DP/HV = Enemy DP/HV x [(100 - Reduction Ratio) ÷ 100)]",
     "uses": [
@@ -6938,6 +8851,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases immunity to movement impairing attacks of the party members by strengthening their legs.",
     "formula": "None.",
     "uses": [],
@@ -6954,6 +8869,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "Those useless rocks on the road becomes a useful and effective weapon with this skill.",
     "formula": "",
     "uses": [],
@@ -6968,6 +8888,8 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Allows you to carry and shoot with a gun.",
     "formula": "",
     "uses": [],
@@ -6987,6 +8909,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Sixth Sense skill can enhance perceptibility temporarily to sense even small changes in environment. Practicing this skill can make perceive more precisely.",
     "formula": "DA × (%)",
     "uses": [
@@ -7008,6 +8932,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "After finely analyzing enemy's weak part and environment's force flow by excellent perceptibility, strike a severe blow with the power of destroying even rocks.",
     "formula": "(DA + 1) × Mag.Ratio",
     "uses": [
@@ -7029,6 +8955,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Heavy Carrier skill can enhance weight limit to deal with by producing extra space to store things. Steady practicing this skill can enlarge extra space and increase added weight limit.",
     "formula": "None.",
     "uses": [],
@@ -7048,6 +8976,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "This is the skill to deal with hidden weapon. Damage enemy by throwing hidden weapon equipped to me. As my perceptibility increases, its effect can be maximized by throwing hidden weapon more effectively.",
     "formula": "[(DA + Throw AP ÷ 10) × Mag.Ratio] - 1",
     "uses": [
@@ -7065,6 +8995,13 @@
     "master": 0,
     "items": [],
     "prereq": "Gun Carrier",
+    "needs": [
+     {
+      "name": "Gun Carrier",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Reloading is not interrupted by monster's interruption.",
     "formula": "",
     "uses": [],
@@ -7084,6 +9021,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Ranged status modifier, reduces enemies' HV. Max is 0.",
     "formula": "DA × Evasion Decrease %",
     "uses": [
@@ -7105,6 +9044,13 @@
      }
     ],
     "prereq": "Invincible Reload",
+    "needs": [
+     {
+      "name": "Invincible Reload",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Increases AC",
     "formula": "Added AC = Gun AP Increase ÷ 20",
     "uses": [
@@ -7127,6 +9073,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "This is the skill to detect items under the ground. It is a basic detection skill and one can judge the existence of item under the ground using insight and perceptibility specific to sensible type.",
     "formula": "None.",
     "uses": [],
@@ -7146,6 +9094,13 @@
      }
     ],
     "prereq": "Stone Strike (Lv.10)",
+    "needs": [
+     {
+      "name": "Stone Strike",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "The skill of Arrmour Destructor can weaken the defense ability of enemy for constant time by breaking enemy's defense barrier. As expertness increases, it can weaken defense ability of enemy more effectively for longer time.",
     "formula": "Target Defense × Defense Decrease%",
     "uses": [],
@@ -7160,6 +9115,13 @@
     "master": 0,
     "items": [],
     "prereq": "Invincible Reload",
+    "needs": [
+     {
+      "name": "Invincible Reload",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Allows you to reload when moving.",
     "formula": "",
     "uses": [],
@@ -7179,6 +9141,13 @@
      }
     ],
     "prereq": "Armor Destructor (Lv.1)",
+    "needs": [
+     {
+      "name": "Armor Destructor",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "The skill of lucky seven can enhance my luck for constant time due to help from the fairy of fortune. As expertness increases, my luck can be enhanced more effectively for longer time.",
     "formula": "LK × Luck Increase %",
     "uses": [
@@ -7200,6 +9169,13 @@
      }
     ],
     "prereq": "Crazy Drilling",
+    "needs": [
+     {
+      "name": "Crazy Drilling",
+      "lv": ""
+     }
+    ],
+    "how": null,
     "desc": "Card No.9 that teaches you the Anger Management skill. In increases that rate at which your Stress Points are accumulated in order to activate the Crazy Drill skill.",
     "formula": "Stress Point increases as described below",
     "uses": [],
@@ -7221,6 +9197,13 @@
      }
     ],
     "prereq": "Gun Carrier (Lv.1)",
+    "needs": [
+     {
+      "name": "Gun Carrier",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "It attacks the enemy in a close distance using a butt plate of a rifle.",
     "formula": "(DA + AC - 49) × Magnification Ratio - 1",
     "uses": [
@@ -7243,6 +9226,13 @@
      }
     ],
     "prereq": "Gun Booster (Lv.10)",
+    "needs": [
+     {
+      "name": "Gun Booster",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Cause a severe damage as the bullet carries strong energy.",
     "formula": "[(GunAP - 11) + 20(AC - 48) ] x M",
     "uses": [
@@ -7264,6 +9254,13 @@
      }
     ],
     "prereq": "Power Shot (Lv.7)",
+    "needs": [
+     {
+      "name": "Power Shot",
+      "lv": "7"
+     }
+    ],
+    "how": null,
     "desc": "Fires guns randomly without targeting a specific enemy to damage unspecified opponents.",
     "formula": "[(GunAP - 11) + 20(AC - 48) ] x M (M=Attack power/100)",
     "uses": [
@@ -7285,6 +9282,13 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.10)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A desperate blow that leaves everything to one's luck.",
     "formula": "(Enemy's Max HP ÷ 10 + LK × 8) × Power",
     "uses": [
@@ -7307,6 +9311,17 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.1) Gun Booster (Lv.10)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "1"
+     },
+     {
+      "name": "Gun Booster",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases the critical damage of normal gun shots (timed criticals) for a period of time.",
     "formula": "(AC × 20) × 1.2 × Power Increase",
     "uses": [
@@ -7328,6 +9343,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Lowers your target's HV.",
     "formula": "",
     "uses": [],
@@ -7347,6 +9364,13 @@
      }
     ],
     "prereq": "Power Shot (Lv.10)",
+    "needs": [
+     {
+      "name": "Power Shot",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Rapidly shoots 2 shots.",
     "formula": "[(GunAP - 11) + 20(AC - 48) ] x M Power per 1 shot (%) ÷ 2 (M=Attack power/100)",
     "uses": [
@@ -7368,6 +9392,13 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.10)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Can break through all shields and Sumo Suit skills.",
     "formula": "Enemy DP/HV = Enemy DP/HV x [(100 - Reduction Ratio) ÷ 100)]",
     "uses": [
@@ -7389,6 +9420,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases immunity to movement impairing attacks of the party members by strengthening their legs.",
     "formula": "None.",
     "uses": [],
@@ -7408,6 +9441,13 @@
      }
     ],
     "prereq": "Double Shot (Mastered)",
+    "needs": [
+     {
+      "name": "Double Shot",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Reduces the time it takes to reload between normal shots",
     "formula": "",
     "uses": [],
@@ -7429,6 +9469,16 @@
      }
     ],
     "prereq": "Sixth Sense (Lv.10)",
+    "needs": [
+     {
+      "name": "Sixth Sense",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ansur"
+    },
     "desc": "Reveals hidden enemies.",
     "formula": "?",
     "uses": [],
@@ -7448,6 +9498,20 @@
      }
     ],
     "prereq": "Shooting Spree (Lv.10) Double Shot (Lv.10)",
+    "needs": [
+     {
+      "name": "Shooting Spree",
+      "lv": "10"
+     },
+     {
+      "name": "Double Shot",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ansur"
+    },
     "desc": "An AoE skill with large range and damage.",
     "formula": "[(GunAP - 11) + 20 (AC-48) ] x M (M=Attack Power/100)",
     "uses": [
@@ -7469,6 +9533,16 @@
      }
     ],
     "prereq": "Gun Carrier",
+    "needs": [
+     {
+      "name": "Gun Carrier",
+      "lv": ""
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ken"
+    },
     "desc": "You can boost your Gun AP for a limited period of time. This skill can't be used to increase the damage of other skills.",
     "formula": "Gun APx Power%",
     "uses": [],
@@ -7488,6 +9562,16 @@
      }
     ],
     "prereq": "Keen Sense (Lv.5)",
+    "needs": [
+     {
+      "name": "Keen Sense",
+      "lv": "5"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Wunjo"
+    },
     "desc": "Increases the gun's critical damage for a short peroid of time.",
     "formula": "Skill damage x 1.20 x Critical Damage Added%",
     "uses": [],
@@ -7507,6 +9591,16 @@
      }
     ],
     "prereq": "Revealing Eye (Mastered)",
+    "needs": [
+     {
+      "name": "Revealing Eye",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Enter a bunker that will shield you from all damage.",
     "formula": "HP x %",
     "uses": [
@@ -7523,6 +9617,16 @@
     "master": 0,
     "items": [],
     "prereq": "Bunker (Lv. 10)",
+    "needs": [
+     {
+      "name": "Bunker",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Cancels Bunker",
     "formula": "",
     "uses": [],
@@ -7544,6 +9648,13 @@
      }
     ],
     "prereq": "Shuriken Master (Lv.10)",
+    "needs": [
+     {
+      "name": "Shuriken Master",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill enhances Shuriken Master for a short period of time. When using this skill, damage that is inflicted upon the enemy by throwing a weapon at them is amplified. As the user gains more experience, the amount of damage also increases.",
     "formula": "SM Attack, with PP = (DA × SM Mag.Ratio) + (Throw AP ÷ 10 × SM Mag.Ratio × PP Mag.Ratio)",
     "uses": [
@@ -7566,6 +9677,13 @@
      }
     ],
     "prereq": "Invincible Drilling Sixth Sense (Lv.10)",
+    "needs": [
+     {
+      "name": "Sixth Sense",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill allows the user to sense items that are buried within the ground. By using insight and perceptibility, one can predict the existence of items in the area. As the user gains more experience, the probability of detecting items increases. The depth will depend upon how well the user's Detect Ability is.",
     "formula": "Detection = DA × (Multiplier ÷ 10)",
     "uses": [
@@ -7587,6 +9705,13 @@
      }
     ],
     "prereq": "Lucky Seven (Lv.7)",
+    "needs": [
+     {
+      "name": "Lucky Seven",
+      "lv": "7"
+     }
+    ],
+    "how": null,
     "desc": "This is a party skill that enables an aura that brings good luck to all party members.",
     "formula": "LK × (A)",
     "uses": [
@@ -7608,6 +9733,13 @@
      }
     ],
     "prereq": "Precise Pitch (Lv.5)",
+    "needs": [
+     {
+      "name": "Precise Pitch",
+      "lv": "5"
+     }
+    ],
+    "how": null,
     "desc": "Physical skill. User throws several knives at single target. The number of knives thrown increases with the skill level.",
     "formula": "(DA × 16 + Throw AP × PP multiplier) × m",
     "uses": [
@@ -7625,6 +9757,8 @@
     "master": 3,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "It gives the user and the nearby user's party a defense against the skunk pouch skill.",
     "formula": "",
     "uses": [],
@@ -7644,6 +9778,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Places a powerful proximity mine. It will surface and explode on anyone that comes too close. Its effectiveness is based on one's senses. it's power will increase based on your LK and DA.",
     "formula": "(DA + LK) × Magnification",
     "uses": [
@@ -7666,6 +9802,17 @@
      }
     ],
     "prereq": "Sticky Foot (Lv.10) Armor Destructor (Lv.10)",
+    "needs": [
+     {
+      "name": "Sticky Foot",
+      "lv": "10"
+     },
+     {
+      "name": "Armor Destructor",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This skill allows you to lower your enemy's stats temporarily. No target needs to be selected specifically. It lowers HV, DP, and LK.",
     "formula": "LK Reduction = Caster's LK * Ratio DP Reduction = Caster's LK * 16 * Ratio HV Reduction = Caster's LK * Ratio",
     "uses": [
@@ -7689,6 +9836,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "It decreases the electric attacks that the user and the party may come in contact with. Party memebers must be nearby to receive the effect.",
     "formula": "Electric Resist = Electric Resist + Bonus",
     "uses": [],
@@ -7708,6 +9857,13 @@
      }
     ],
     "prereq": "Heavy Carrier (Lv.10)",
+    "needs": [
+     {
+      "name": "Heavy Carrier",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This pouch hurts. Especially if there are heavy items in the pouch. This skill can also attack multiple enemies at once.",
     "formula": "(Max WT - Current WT(checkable in shops)) × Magnification",
     "uses": [
@@ -7729,6 +9885,13 @@
      }
     ],
     "prereq": "Precise Pitch (Lv.M)",
+    "needs": [
+     {
+      "name": "Precise Pitch",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Physical Skill. Allows the player to attack multiple targets by throwing several thrown weapons. Player can throw up to a maximum of seven shuriken.",
     "formula": "FoK Attack = (DA + Throw AP ÷ 10) × AP% FoK Attack with PP = (DA + ([ Throw AP ÷ 10 ] × 2.4)) × AP%",
     "uses": [
@@ -7748,6 +9911,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "Warming up is always nice before taking on more serious skills.",
     "formula": "",
     "uses": [],
@@ -7767,6 +9935,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Uses both fists to deliver a powerful attack on a single target.",
     "formula": "Damage = AP × Multiplier",
     "uses": [
@@ -7788,6 +9958,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Raises HV for a certain period of time.",
     "formula": "(Base HV + Equip HV) × Multiplier",
     "uses": [
@@ -7809,6 +9981,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Consumes 100 Galders to deal damage on a single target.",
     "formula": "Fixed Damage. AC for 100% hit rate = 32.5 + (Target HV Lvl × 2.5)",
     "uses": [
@@ -7830,6 +10004,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Decreases target's MA for a certain period of time.",
     "formula": "MA Decrease = HV × Reduction %",
     "uses": [
@@ -7852,6 +10028,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Barrier that reduces and reflects back received magical damage.",
     "formula": "r = [(HV + 30) ÷ 100] × m True Damage = Raw Damage x (1 - r) True Damage (with Sumo Suit) = Raw Damage × (1 - r) × (1 - s) Reflect Damage = Raw Damage × r",
     "uses": [
@@ -7873,6 +10051,13 @@
      }
     ],
     "prereq": "Mana Reflector (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Reflector",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases user's and party members' DP for a certain period of time.",
     "formula": "(Base DP + Equip DP) x d1",
     "uses": [
@@ -7894,6 +10079,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases user DP for a certain period of time.",
     "formula": "(Base DP + Equip DP) x d2 Total DP (with Shield All) = (Base DP + Equip DP) × (d1 + d2)",
     "uses": [
@@ -7915,6 +10102,13 @@
      }
     ],
     "prereq": "Power Blow (Lv.10)",
+    "needs": [
+     {
+      "name": "Power Blow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Passive skill that augments Power Blow by increasing its strength.",
     "formula": "AP × (t + a)",
     "uses": [
@@ -7936,6 +10130,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Knocks out an enemy for a short period of time.",
     "formula": "None.",
     "uses": [],
@@ -7955,6 +10151,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases HP.",
     "formula": "(3000 x Modifier) ÷ 100",
     "uses": [],
@@ -7974,6 +10172,13 @@
      }
     ],
     "prereq": "Sturdy Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Sturdy Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Inflicts damage that is equal to the damage received.",
     "formula": "AP + [(Max HP - Current HP) ÷ 10] × m",
     "uses": [
@@ -7998,6 +10203,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Launches a powerful kick on a single target.",
     "formula": "[AP + (HV × 16)] × (m ÷ 8)",
     "uses": [
@@ -8020,6 +10227,13 @@
      }
     ],
     "prereq": "Galder Thrower (Lv.10)",
+    "needs": [
+     {
+      "name": "Galder Thrower",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 100 Galders to deal fixed damage on three targets.",
     "formula": "Fixed Damage.",
     "uses": [],
@@ -8034,6 +10248,13 @@
     "master": 0,
     "items": [],
     "prereq": "Shield All (Lv.10)",
+    "needs": [
+     {
+      "name": "Shield All",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases effect of Shield All. Dependent on the number of party members in skill range. Affects only the user.",
     "formula": "Shield All Bonus = d1 + t",
     "uses": [],
@@ -8053,6 +10274,13 @@
      }
     ],
     "prereq": "Physical Training (Lv.10)",
+    "needs": [
+     {
+      "name": "Physical Training",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Uses ones voice to inflict damage on enemies.",
     "formula": "[((DP × 5) + Current HP) × Power] ÷ 10",
     "uses": [
@@ -8075,6 +10303,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "User transform into a beast.",
     "formula": "Base AP × m Base LK × r Base DP × r Base HV × r Base DX + d",
     "uses": [
@@ -8095,6 +10325,13 @@
     "master": 3,
     "items": [],
     "prereq": "Evolution (Lv.10)",
+    "needs": [
+     {
+      "name": "Evolution",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A rushing attack with a slight initial delay.",
     "formula": "AP × m",
     "uses": [
@@ -8116,6 +10353,13 @@
      }
     ],
     "prereq": "Evolution (Lv.10)",
+    "needs": [
+     {
+      "name": "Evolution",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Inflicts bleeding status on single target",
     "formula": "Initial Damage = AP × m Continuing Damage = Initial Damage × p",
     "uses": [
@@ -8137,6 +10381,13 @@
      }
     ],
     "prereq": "Galder Barrage (Lv.10)",
+    "needs": [
+     {
+      "name": "Galder Barrage",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 100 Galders per hit to deal fixed damage on single target.",
     "formula": "Fixed Damage.",
     "uses": [],
@@ -8156,6 +10407,21 @@
      }
     ],
     "prereq": "Shield All (Lv.10) Sturdy Shield (Lv.10) Physical Training (Lv.10)",
+    "needs": [
+     {
+      "name": "Shield All",
+      "lv": "10"
+     },
+     {
+      "name": "Sturdy Shield",
+      "lv": "10"
+     },
+     {
+      "name": "Physical Training",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Decreases received physical and magical damage.",
     "formula": "s = [7 + (HV ÷ 7)] ÷ 100 True Damage = Raw Damage x (1 - s)",
     "uses": [
@@ -8177,6 +10443,13 @@
      }
     ],
     "prereq": "Skunk Pouch (Lv.M)",
+    "needs": [
+     {
+      "name": "Skunk Pouch",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Knocks your enemies out with its horrible smell.",
     "formula": "None.",
     "uses": [],
@@ -8196,6 +10469,13 @@
      }
     ],
     "prereq": "Sumo Suit (Mastered)",
+    "needs": [
+     {
+      "name": "Sumo Suit",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Cancels the target's buffs the target takes damage each time a buff is canceled",
     "formula": "(Normal Attack Damage + HV x 16) x Magnification",
     "uses": [
@@ -8219,6 +10499,16 @@
      }
     ],
     "prereq": "Siren Song (Lv.5)",
+    "needs": [
+     {
+      "name": "Siren Song",
+      "lv": "5"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Wunjo"
+    },
     "desc": "Inflicts damage to nearby enemies by screaming loudly. Must be in a transformed state to use.",
     "formula": "(AP + HV x 16) x Magnifcation",
     "uses": [
@@ -8241,6 +10531,20 @@
      }
     ],
     "prereq": "Power Blow (Lv.1) Volley Kick (Lv.1)",
+    "needs": [
+     {
+      "name": "Power Blow",
+      "lv": "1"
+     },
+     {
+      "name": "Volley Kick",
+      "lv": "1"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Rad"
+    },
     "desc": "A skill that performs Power Blow immediately followed by Volley Kick on a single target.",
     "formula": "First Hit: AP × [(PBL × 0.6) + 3] × (Power ÷ 15) Second Hit: [AP + (HV × 16)] x (VKL + 10.2) × (Power ÷ 60)",
     "uses": [
@@ -8263,6 +10567,16 @@
      }
     ],
     "prereq": "Fatal Wound (Lv.M)",
+    "needs": [
+     {
+      "name": "Fatal Wound",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ken"
+    },
     "desc": "This skill deals damage which ignores part of the enemy's physical Defense Power.",
     "formula": "[(AP ÷ 2) + (HV × 8)] × Power ÷ 100",
     "uses": [
@@ -8285,6 +10599,16 @@
      }
     ],
     "prereq": "Magic Meltdown (Lv.10) Magic Defense Breaker (Lv.10)",
+    "needs": [
+     {
+      "name": "Magic Meltdown",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Rad"
+    },
     "desc": "Prevents target from using magic spells.",
     "formula": "None.",
     "uses": [],
@@ -8304,6 +10628,16 @@
      }
     ],
     "prereq": "Raging Nail (Mastered)",
+    "needs": [
+     {
+      "name": "Raging Nail",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "increases the power of Evolution.",
     "formula": "Base AP × m Base LK × r Base DP × r Base HV × r Base DX + d",
     "uses": [
@@ -8331,6 +10665,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Consumes 1 Empty Card to deal Splash-AoE damage. Ranged attack.",
     "formula": "(AP + HV × 8) × m",
     "uses": [
@@ -8348,6 +10684,13 @@
     "master": 0,
     "items": [],
     "prereq": "Dodge Master (Lv.10)",
+    "needs": [
+     {
+      "name": "Dodge Master",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This passive skill supplements Dodge Master. This allows one to avoid all critical attacks and power attacks coming from an enemy of the similar level. This skill is ineffective against enemies that are much higher level than the user.",
     "formula": "Enemy Lvl Affected = User Base Level + 99 (May be incorrect)",
     "uses": [],
@@ -8367,6 +10710,13 @@
      }
     ],
     "prereq": "Physical Training (Lv.1)",
+    "needs": [
+     {
+      "name": "Physical Training",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Allows the caster to receive a portion of party members' damage.",
     "formula": "Partymate Damage = Raw Damage ÷ 2 Bodyguard User Damage = Partymate Damage × (1 - g)",
     "uses": [],
@@ -8386,6 +10736,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "HP-based AoE skill that pushes target away from the user. Maximum of 5 targets.",
     "formula": "Current HP × Modifier Pattern",
     "uses": [
@@ -8407,6 +10759,13 @@
      }
     ],
     "prereq": "Galder Thrower (Lv.M)",
+    "needs": [
+     {
+      "name": "Galder Thrower",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 500 Galders to deal random damage on single target.",
     "formula": "True Damage = m × Max Damage or Max Crit. Damage",
     "uses": [],
@@ -8426,6 +10785,13 @@
      }
     ],
     "prereq": "Physical Training (Lv.10)",
+    "needs": [
+     {
+      "name": "Physical Training",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes a certain amount of HP to recover MP.",
     "formula": "HP loss = max HP × r MP gain = (HP loss × c) - MP cost of Flux Capacitor",
     "uses": [
@@ -8448,6 +10814,13 @@
      }
     ],
     "prereq": "Card Strike (Lv.10)",
+    "needs": [
+     {
+      "name": "Card Strike",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 2 Empty Card to deal damage to single target. Ranged attack.",
     "formula": "(AP + HV × 8) × m",
     "uses": [
@@ -8470,6 +10843,13 @@
      }
     ],
     "prereq": "One Pair (Lv.1)",
+    "needs": [
+     {
+      "name": "One Pair",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "\"Increases the number of cards that can be thrown in a One Pair\".",
     "formula": "O + O × C ÷ 15",
     "uses": [],
@@ -8486,6 +10866,11 @@
     "master": 0,
     "items": [],
     "prereq": "",
+    "needs": [],
+    "how": {
+     "kind": "start",
+     "text": "You start with it"
+    },
     "desc": "Warming up is always nice before taking on more serious skills.",
     "formula": "",
     "uses": [],
@@ -8505,6 +10890,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Uses both fists to deliver a powerful attack on a single target.",
     "formula": "Damage = AP × Multiplier",
     "uses": [
@@ -8526,6 +10913,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Raises HV for a certain period of time.",
     "formula": "(Base HV + Equip HV) × Multiplier",
     "uses": [
@@ -8547,6 +10936,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Decreases target's MA for a certain period of time.",
     "formula": "MA Decrease = HV × Reduction %",
     "uses": [
@@ -8569,6 +10960,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Barrier that reduces and reflects back received magical damage.",
     "formula": "r = [(HV + 30) ÷ 100] × m True Damage = Raw Damage x (1 - r) True Damage (with Sumo Suit) = Raw Damage × (1 - r) × (1 - s) Reflect Damage = Raw Damage × r",
     "uses": [
@@ -8590,6 +10983,13 @@
      }
     ],
     "prereq": "Mana Reflector (Lv.10)",
+    "needs": [
+     {
+      "name": "Mana Reflector",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases user's and party members' DP for a certain period of time.",
     "formula": "(Base DP + Equip DP) x d1",
     "uses": [
@@ -8611,6 +11011,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases user DP for a certain period of time.",
     "formula": "(Base DP + Equip DP) x d2 Total DP (with Shield All) = (Base DP + Equip DP) × (d1 + d2)",
     "uses": [
@@ -8632,6 +11034,13 @@
      }
     ],
     "prereq": "Power Blow (Lv.10)",
+    "needs": [
+     {
+      "name": "Power Blow",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Passive skill that augments Power Blow by increasing its strength.",
     "formula": "AP × (t + a)",
     "uses": [
@@ -8653,6 +11062,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Knocks out an enemy for a short period of time.",
     "formula": "None.",
     "uses": [],
@@ -8672,6 +11083,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Increases HP.",
     "formula": "(3000 x Modifier) ÷ 100",
     "uses": [],
@@ -8691,6 +11104,13 @@
      }
     ],
     "prereq": "Sturdy Shield (Lv.10)",
+    "needs": [
+     {
+      "name": "Sturdy Shield",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Inflicts damage that is equal to the damage received.",
     "formula": "AP + [(Max HP - Current HP) ÷ 10] × m",
     "uses": [
@@ -8715,6 +11135,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Consumes 1 Empty Card to deal Splash-AoE damage. Ranged attack.",
     "formula": "(AP + HV × 8) × m",
     "uses": [
@@ -8732,6 +11154,13 @@
     "master": 0,
     "items": [],
     "prereq": "Dodge Master (Lv.10)",
+    "needs": [
+     {
+      "name": "Dodge Master",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "This passive skill supplements Dodge Master. This allows one to avoid all critical attacks and power attacks coming from an enemy of the similar level. This skill is ineffective against enemies that are much higher level than the user.",
     "formula": "Enemy Lvl Affected = User Base Level + 99 (May be incorrect)",
     "uses": [],
@@ -8751,6 +11180,13 @@
      }
     ],
     "prereq": "Physical Training (Lv.1)",
+    "needs": [
+     {
+      "name": "Physical Training",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "Allows the caster to receive a portion of party members' damage.",
     "formula": "Partymate Damage = Raw Damage ÷ 2 Bodyguard User Damage = Partymate Damage × (1 - g)",
     "uses": [],
@@ -8770,6 +11206,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "HP-based AoE skill that pushes target away from the user. Maximum of 5 targets.",
     "formula": "Current HP × Modifier Pattern",
     "uses": [
@@ -8791,6 +11229,13 @@
      }
     ],
     "prereq": "Galder Thrower (Lv.M)",
+    "needs": [
+     {
+      "name": "Galder Thrower",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 500 Galders to deal random damage on single target.",
     "formula": "True Damage = m × Max Damage or Max Crit. Damage",
     "uses": [],
@@ -8810,6 +11255,13 @@
      }
     ],
     "prereq": "Physical Training (Lv.10)",
+    "needs": [
+     {
+      "name": "Physical Training",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes a certain amount of HP to recover MP.",
     "formula": "HP loss = max HP × r MP gain = (HP loss × c) - MP cost of Flux Capacitor",
     "uses": [
@@ -8832,6 +11284,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "User turns into a wolverine.",
     "formula": "New base stat = Old base stat × stat mag. ratio (except DX) New base DX = Base DX + d",
     "uses": [
@@ -8853,6 +11307,13 @@
      }
     ],
     "prereq": "Metamorphosis (Lv.10)",
+    "needs": [
+     {
+      "name": "Metamorphosis",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "A powerful HV-based attack skill on a single target.",
     "formula": "HV × 16 × m",
     "uses": [
@@ -8874,6 +11335,13 @@
      }
     ],
     "prereq": "Card Strike (Lv.10)",
+    "needs": [
+     {
+      "name": "Card Strike",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 2 Empty Card to deal damage to single target. Ranged attack.",
     "formula": "(AP + HV × 8) × m",
     "uses": [
@@ -8896,6 +11364,13 @@
      }
     ],
     "prereq": "One Pair (Lv.1)",
+    "needs": [
+     {
+      "name": "One Pair",
+      "lv": "1"
+     }
+    ],
+    "how": null,
     "desc": "\"Increases the number of cards that can be thrown in a One Pair\".",
     "formula": "O + O × C ÷ 15",
     "uses": [],
@@ -8915,6 +11390,13 @@
      }
     ],
     "prereq": "Furious Galder Throw (Lv.10)",
+    "needs": [
+     {
+      "name": "Furious Galder Throw",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Inflicts great damage around you but you'll be injured the most",
     "formula": "HP x (0.8 x Magnification)",
     "uses": [
@@ -8938,6 +11420,16 @@
      }
     ],
     "prereq": "Impelling Rage (Lv.10)",
+    "needs": [
+     {
+      "name": "Impelling Rage",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ansur"
+    },
     "desc": "Stronger version of Impelling Rage. Up to 6 targets hit.",
     "formula": "Current HP x Modifier Pattern",
     "uses": [
@@ -8959,6 +11451,16 @@
      }
     ],
     "prereq": "Metamorphosis (Lv.1)",
+    "needs": [
+     {
+      "name": "Metamorphosis",
+      "lv": "1"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Ken"
+    },
     "desc": "Atack in a hit, the hit can move the monsters",
     "formula": "[(Current HP ÷ 8) + AP] × Power",
     "uses": [
@@ -8981,6 +11483,20 @@
      }
     ],
     "prereq": "Skunk Pouch (Lv.10) One Pair (Lv.10)",
+    "needs": [
+     {
+      "name": "Skunk Pouch",
+      "lv": "10"
+     },
+     {
+      "name": "One Pair",
+      "lv": "10"
+     }
+    ],
+    "how": {
+     "kind": "cardpack",
+     "text": "Card Pack Rad"
+    },
     "desc": "Consumes 5 Empty Card to inflict AoE damage. Can hit up to 5 targets.",
     "formula": "Success: [AP + (HV + LK) × 8] × m Fail: (Full House Damage - DP ) × m ÷ 5",
     "uses": [
@@ -9005,8 +11521,18 @@
      }
     ],
     "prereq": "Metamorphosis (Lv.M)",
+    "needs": [
+     {
+      "name": "Metamorphosis",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "quest",
+     "text": "Frog Shaman - Card Master Secret"
+    },
     "desc": "Uses an Empty Card from the inventory to summon a card soldier to attack enemies. Must be in a transformed state.",
-    "formula": "-",
+    "formula": "",
     "uses": [],
     "notes": "Obtained from completing Frog Shaman - Card Master Secret."
    },
@@ -9024,6 +11550,16 @@
      }
     ],
     "prereq": "Full House (Mastered)",
+    "needs": [
+     {
+      "name": "Full House",
+      "lv": "M"
+     }
+    ],
+    "how": {
+     "kind": "drop",
+     "text": "Chaos Tower monsters above 36th floor"
+    },
     "desc": "Attacks four enemies at once",
     "formula": "(Attack% + DA x 16) x Magnification",
     "uses": [
@@ -9047,6 +11583,8 @@
      }
     ],
     "prereq": "",
+    "needs": [],
+    "how": null,
     "desc": "Launches a powerful kick on a single target.",
     "formula": "[AP + (HV × 16)] × (m ÷ 8)",
     "uses": [
@@ -9069,6 +11607,13 @@
      }
     ],
     "prereq": "Galder Thrower (Lv.10)",
+    "needs": [
+     {
+      "name": "Galder Thrower",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 100 Galders to deal fixed damage on three targets.",
     "formula": "Fixed Damage.",
     "uses": [],
@@ -9083,6 +11628,13 @@
     "master": 0,
     "items": [],
     "prereq": "Shield All (Lv.10)",
+    "needs": [
+     {
+      "name": "Shield All",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Increases effect of Shield All. Dependent on the number of party members in skill range. Affects only the user.",
     "formula": "Shield All Bonus = d1 + t",
     "uses": [],
@@ -9102,6 +11654,13 @@
      }
     ],
     "prereq": "Physical Training (Lv.10)",
+    "needs": [
+     {
+      "name": "Physical Training",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Uses ones voice to inflict damage on enemies.",
     "formula": "[((DP × 5) + Current HP) × Power] ÷ 10",
     "uses": [
@@ -9124,6 +11683,13 @@
      }
     ],
     "prereq": "Galder Barrage (Lv.10)",
+    "needs": [
+     {
+      "name": "Galder Barrage",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Consumes 100 Galders per hit to deal fixed damage on single target.",
     "formula": "Fixed Damage.",
     "uses": [],
@@ -9143,6 +11709,21 @@
      }
     ],
     "prereq": "Shield All (Lv.10) Sturdy Shield (Lv.10) Physical Training (Lv.10)",
+    "needs": [
+     {
+      "name": "Shield All",
+      "lv": "10"
+     },
+     {
+      "name": "Sturdy Shield",
+      "lv": "10"
+     },
+     {
+      "name": "Physical Training",
+      "lv": "10"
+     }
+    ],
+    "how": null,
     "desc": "Decreases received physical and magical damage.",
     "formula": "s = [7 + (HV ÷ 7)] ÷ 100 True Damage = Raw Damage x (1 - s)",
     "uses": [
@@ -9164,6 +11745,13 @@
      }
     ],
     "prereq": "Skunk Pouch (Lv.M)",
+    "needs": [
+     {
+      "name": "Skunk Pouch",
+      "lv": "M"
+     }
+    ],
+    "how": null,
     "desc": "Knocks your enemies out with its horrible smell.",
     "formula": "None.",
     "uses": [],

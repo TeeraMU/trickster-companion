@@ -2883,10 +2883,15 @@ a.btn {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 520px) { /* the name pushes 🔍 and ⚙️ off the screen below ~520px */
   .brand-text {
     display: none;
   }
+}
+
+@media (max-width: 400px) {
+  .topbar { padding-inline: 8px; gap: 6px; }
+  .topbar-tools { gap: 5px; }
 }
 
 /* ---------------------------------------------------------------------------------------
@@ -4418,7 +4423,7 @@ a.btn {
 .bd-skill-icon { width: 36px; height: 36px; border-radius: 6px; image-rendering: pixelated; object-fit: contain; }
 .bd-skill-ph { display: grid; place-items: center; background: var(--bg-sunken); }
 .bd-skill-name { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; }
-.bd-prereq { font-size: 0.78rem; color: var(--text-secondary); }
+
 .bd-desc { font-size: 0.82rem; margin-top: 2px; }
 .bd-formula code { font-size: 0.78rem; color: var(--text-secondary); }
 .bd-master { margin-top: 4px; font-size: 0.82rem; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -4455,4 +4460,42 @@ a.btn {
   .bd-grow-badge { width: 30px; height: 28px; }
   .bd-grow-icon { width: 27px; height: 24px; }
   .bd-grow-name { font-size: 0.74rem; }
+}
+
+/* skills as a tree: a skill sits under the one it needs */
+.bd-skill.is-child {
+  margin-left: calc(var(--depth) * 22px);
+  position: relative;
+  border-style: dashed;
+}
+.bd-skill.is-child::before {
+  content: "↳";
+  position: absolute;
+  left: -18px;
+  top: 10px;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+.bd-skill.is-flash { animation: bd-flash 1.4s ease-out; }
+@keyframes bd-flash { 0%, 40% { box-shadow: 0 0 0 3px var(--border-highlight); } 100% { box-shadow: none; } }
+@media (prefers-reduced-motion: reduce) { .bd-skill.is-flash { animation: none; outline: 3px solid var(--border-highlight); } }
+
+.bd-needs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 4px; font-size: 0.8rem; }
+.bd-needs-label { font-weight: 700; color: var(--text-secondary); }
+.bd-need {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 1px 8px 1px 2px;
+  border: 1px solid var(--border-strong); border-radius: 999px;
+  background: var(--bg-primary); color: var(--text-primary); font: inherit; font-size: 0.8rem;
+}
+button.bd-need { cursor: pointer; }
+button.bd-need:hover { border-color: var(--border-highlight); }
+.bd-need img { width: 20px; height: 20px; border-radius: 4px; image-rendering: pixelated; }
+.bd-lv { font-size: 0.7rem; font-weight: 800; padding: 0 6px; border-radius: 999px; background: var(--bg-sunken); color: var(--text-secondary); }
+.bd-lv.is-m { background: color-mix(in srgb, var(--accent-gold) 25%, transparent); color: var(--ink-gold); }
+.bd-how { margin-top: 4px; font-size: 0.8rem; }
+
+@media (max-width: 640px) {
+  .bd-skill.is-child { margin-left: calc(var(--depth) * 14px); }
+  .bd-skill.is-child::before { left: -13px; }
 }

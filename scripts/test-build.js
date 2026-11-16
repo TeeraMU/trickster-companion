@@ -71,6 +71,29 @@ t("master items add up across the skills picked", () => {
   assert.deepStrictEqual(pw.skills.sort(), ["2 Hit Combo", "Raging Nail", "Sharp Scream"]);
 });
 
+t("prerequisites are read into skills; a skill sits under the one it needs", () => {
+  const priest = builds.skills.Priest;
+  const dew = priest.find(s => s.name === "Refreshing Dew");
+  assert.deepStrictEqual(dew.needs, [{ name: "Sacred Oath", lv: "M" }]);
+  assert.deepStrictEqual(builds.skills.Primadonna.find(s => s.name === "2 Hit Combo").needs.map(n => n.name), ["Power Blow", "Volley Kick"]);
+  const tree = B.skillTree(priest);
+  const oathAt = tree.findIndex(n => n.skill.name === "Sacred Oath");
+  const dewAt = tree.findIndex(n => n.skill.name === "Refreshing Dew");
+  assert.strictEqual(tree[dewAt].parent, "Sacred Oath");
+  assert.ok(dewAt > oathAt && tree[dewAt].depth === tree[oathAt].depth + 1);
+  assert.strictEqual(tree.length, priest.length); // nothing lost
+  // a loop in the data doesn't hide skills
+  const loop = B.skillTree([{ name: "A", needs: [{ name: "B" }] }, { name: "B", needs: [{ name: "A" }] }]);
+  assert.strictEqual(loop.length, 2);
+});
+
+t("how to get a skill: card pack, quest, Chaos Tower", () => {
+  const all = Object.values(builds.skills).flat();
+  assert.deepStrictEqual(all.find(s => s.name === "Raging Nail").how, { kind: "cardpack", text: "Card Pack Ken" });
+  assert.deepStrictEqual(all.find(s => s.name === "Sacred Oath").how, { kind: "quest", text: "Magician Louie - Power of Faith" });
+  assert.strictEqual(all.find(s => s.name === "Beast's Instinct").how.kind, "drop");
+});
+
 t("every mastery item a skill names is described in items", () => {
   for (const list of Object.values(builds.skills)) for (const s of list) for (const it of s.items) {
     assert.ok(builds.items[it.name], s.name + ": " + it.name);
