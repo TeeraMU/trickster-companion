@@ -7,6 +7,26 @@
 
   const GROUPS = ["Power", "Magic", "Sense", "Charm"];
   const DEFAULT_GROWTH = { Power: 1, Magic: 2, Sense: 3, Charm: 4 };
+  // in game the four growth numbers are 1-4 each and add up to 10 (4-4-1-1 at most two 4s)
+  const GROWTH_TOTAL = 10, GROWTH_MIN = 1, GROWTH_MAX = 4;
+
+  /** One − / + on the growth chart; stays within 1-4 and 10 in all. Returns a new object. */
+  function stepGrowth(growth, group, d) {
+    const next = Object.assign({}, growth);
+    const total = GROUPS.reduce((n, g) => n + (growth[g] || 0), 0);
+    const v = (growth[group] || GROWTH_MIN) + d;
+    if (v < GROWTH_MIN || v > GROWTH_MAX) return next;
+    if (d > 0 && total >= GROWTH_TOTAL) return next;
+    next[group] = v;
+    return next;
+  }
+
+  /** A saved chart that can't happen in game (16 in all, a 5) goes back to the default. */
+  function fixGrowth(growth) {
+    const ok = growth && GROUPS.every(g => growth[g] >= GROWTH_MIN && growth[g] <= GROWTH_MAX) &&
+      GROUPS.reduce((n, g) => n + growth[g], 0) <= GROWTH_TOTAL;
+    return ok ? growth : Object.assign({}, DEFAULT_GROWTH);
+  }
 
   /** The jobs a job's skills come from, in order: Model, Entertainer, Primadonna. */
   function skillSets(builds, cls, job) {
@@ -82,7 +102,7 @@
     return [...by.values()].sort((a, b) => b.qty - a.qty || a.name.localeCompare(b.name));
   }
 
-  const model = { GROUPS, DEFAULT_GROWTH, skillSets, statUse, advice, statPlan, masterItems };
+  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -94,33 +114,38 @@
   const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
   const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
 
-  /** Growth chart: four corners like the in-game graph, each with − / + (1-4). */
+  /** Growth chart: four corners like the in-game graph, each with − / + (1-4, 10 in all). */
   function growthChart(growth) {
+    const total = GROUPS.reduce((n, g) => n + growth[g], 0);
+    const left = GROWTH_TOTAL - total;
     const corner = (g, pos) => `
       <div class="bd-grow ${GROUP_CLASS[g]} bd-grow-${pos}">
         <span class="bd-grow-name">${g}</span>
         <span class="bd-grow-ctl">
           <button type="button" class="bd-step" aria-label="Less ${g}" onclick="TQBuild.growth('${g}', -1)" ${growth[g] <= 1 ? "disabled" : ""}>−</button>
           <strong>${growth[g]}</strong>
-          <button type="button" class="bd-step" aria-label="More ${g}" onclick="TQBuild.growth('${g}', 1)" ${growth[g] >= 4 ? "disabled" : ""}>+</button>
+          <button type="button" class="bd-step" aria-label="More ${g}" onclick="TQBuild.growth('${g}', 1)" ${growth[g] >= GROWTH_MAX || left <= 0 ? "disabled" : ""}>+</button>
         </span>
         <span class="bd-grow-pct">${growth[g] * 10}%</span>
       </div>`;
-    const total = GROUPS.reduce((n, g) => n + growth[g], 0);
-    // the diamond: each axis as long as its growth
-    const r = v => 10 + v * 9;
-    const pts = [[50, 50 - r(growth.Power)], [50 + r(growth.Magic), 50], [50, 50 + r(growth.Charm)], [50 - r(growth.Sense), 50]].map(p => p.join(",")).join(" ");
+    // the chart: one diagonal per group, pointing at its box (Power top left … Charm bottom right),
+    // as long as its growth (4 reaches the corner)
+    const r = v => 4 + v * 10.5;
+    const pts = [[-1, -1, "Power"], [1, -1, "Magic"], [1, 1, "Charm"], [-1, 1, "Sense"]]
+      .map(([x, y, g]) => [50 + x * r(growth[g]), 50 + y * r(growth[g])].map(n => n.toFixed(1)).join(",")).join(" ");
     return `
       <div class="bd-growth">
         ${corner("Power", "tl")}${corner("Magic", "tr")}
         <svg class="bd-diamond" viewBox="0 0 100 100" aria-hidden="true">
-          <polygon points="50,4 96,50 50,96 4,50" class="bd-diamond-frame" />
-          <line x1="50" y1="4" x2="50" y2="96" class="bd-diamond-axis" /><line x1="4" y1="50" x2="96" y2="50" class="bd-diamond-axis" />
+          <rect x="4" y="4" width="92" height="92" rx="10" class="bd-diamond-frame" />
+          <line x1="4" y1="4" x2="96" y2="96" class="bd-diamond-axis" /><line x1="96" y1="4" x2="4" y2="96" class="bd-diamond-axis" />
           <polygon points="${pts}" class="bd-diamond-fill" />
         </svg>
         ${corner("Sense", "bl")}${corner("Charm", "br")}
       </div>
-      <p class="bd-note ${total === 10 ? "" : "bd-warn"}">Growth ${GROUPS.map(g => growth[g]).join("-")} (${total === 10 ? "as picked when you made the character" : `adds up to ${total}: in game it's 10`})</p>`;
+      <p class="bd-note ${left === 0 ? "" : "bd-warn"}">Growth ${GROUPS.map(g => growth[g]).join("-")} · ${left === 0
+        ? "10 points, as picked when you made the character"
+        : left > 0 ? `${left} point${left === 1 ? "" : "s"} left to place (10 in all, 1-4 each)` : `${-left} too many: 10 in all`}</p>`;
   }
 
   function cardChip(builds, it) {
