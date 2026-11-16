@@ -94,6 +94,20 @@ t("how to get a skill: card pack, quest, Chaos Tower", () => {
   assert.strictEqual(all.find(s => s.name === "Beast's Instinct").how.kind, "drop");
 });
 
+t("levels: Sharp Scream's table, and its Lv.1 -> Master summary", () => {
+  const ss = builds.skills.Primadonna.find(s => s.name === "Sharp Scream");
+  assert.deepStrictEqual(ss.levels.cols, ["Level", "MP", "Cooldown", "Magnification", "Target"]);
+  assert.strictEqual(ss.levels.rows.length, 11);
+  assert.deepStrictEqual(ss.levels.rows[10], ["Master", "660", "8 seconds", "2.55", "4"]);
+  assert.deepStrictEqual(B.levelSummary(ss.levels), [
+    { col: "MP", from: "300", to: "660" },
+    { col: "Cooldown", from: "8s", to: "8s" },
+    { col: "Magnification", from: "0.75", to: "2.55" },
+    { col: "Target", from: "2", to: "4" }
+  ]);
+  assert.deepStrictEqual(B.levelSummary(null), []);
+});
+
 t("every mastery item a skill names is described in items", () => {
   for (const list of Object.values(builds.skills)) for (const s of list) for (const it of s.items) {
     assert.ok(builds.items[it.name], s.name + ": " + it.name);

@@ -4499,3 +4499,25 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   .bd-skill.is-child { margin-left: calc(var(--depth) * 14px); }
   .bd-skill.is-child::before { left: -13px; }
 }
+
+/* skill levels: Lv.1 -> Master summary, and the full table under ▾ */
+.bd-lvsum { display: flex; flex-wrap: wrap; gap: 2px 10px; margin-top: 4px; font-size: 0.78rem; color: var(--text-secondary); }
+.bd-lvsum-label { font-weight: 800; color: var(--ink-gold); }
+.bd-lvsum-item b { font-weight: 700; color: var(--text-primary); }
+.bd-lvsum-item strong { color: var(--text-primary); }
+.bd-detail { margin-top: 6px; font-size: 0.8rem; }
+.bd-detail summary { cursor: pointer; font-weight: 700; color: var(--ink-blue); width: max-content; max-width: 100%; }
+.bd-detail[open] summary { margin-bottom: 6px; }
+.bd-lvtable-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.bd-lvtable { width: 100%; border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
+.bd-lvtable th, .bd-lvtable td { padding: 3px 8px; border-bottom: 1px solid var(--border); text-align: center; }
+.bd-lvtable thead th { background: var(--bg-sunken); color: var(--text-secondary); font-weight: 800; }
+.bd-lvtable tbody th { background: var(--bg-sunken); font-weight: 800; }
+.bd-lvtable tr.is-m th, .bd-lvtable tr.is-m td { background: color-mix(in srgb, var(--accent-gold) 22%, transparent); color: var(--ink-gold); font-weight: 800; }
+.bd-lvtable tbody tr:last-child th, .bd-lvtable tbody tr:last-child td { border-bottom: none; }
+.bd-notes { margin: 6px 0 0; color: var(--text-secondary); white-space: pre-line; }
+.bd-lvtable thead th { white-space: normal; vertical-align: bottom; line-height: 1.2; }
+@media (max-width: 640px) {
+  .bd-lvtable th, .bd-lvtable td { padding: 3px 5px; }
+  .bd-lvtable { font-size: 0.74rem; }
+}

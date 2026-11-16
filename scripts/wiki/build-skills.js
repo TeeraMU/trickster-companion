@@ -39,7 +39,23 @@ function parsePage(file) {
     const nm = nx.match(/<b>Notes<\/b>[\s\S]*?<td[^>]*>([\s\S]*?)<\/td>/);
     if (nm) notes = text(nm[1]);
     if (!name) continue;
-    out.push({ name, icon: iconM ? abs(iconM[1]) : '', tm, type, learn, mastery, items, prereq, desc, formula, notes });
+    // per-level table (Level | MP | Cooldown | Magnifcation | …): the next table whose header starts "Level"
+    let levels = null;
+    for (let k = i + 1; k <= i + 3 && k < parts.length; k++) {
+      if (/Mastery Item|TM Level/.test(parts[k])) break;
+      const lrows = parts[k].split(/<tr[^>]*>/).slice(1).map(r => cells(r).map(text));
+      if (!lrows.length || lrows[0][0] !== 'Level') continue;
+      const head = lrows[0];
+      const keep = head.map((h, c) => c === 0 || (h && lrows.slice(1).some(r => (r[c] || '') !== '')));
+      const fix = h => h.replace(/Magnifcation/i, 'Magnification');
+      levels = {
+        cols: head.filter((_, c) => keep[c]).map(fix),
+        // level rows only ("1".."10", "Master"; not the "Top of Page" link row)
+        rows: lrows.slice(1).filter(r => r[0] && r.length > 1 && /^(\d+|M|Master|Lv\.?\s*\d+)$/i.test(r[0])).map(r => r.filter((_, c) => keep[c]))
+      };
+      break;
+    }
+    out.push({ name, icon: iconM ? abs(iconM[1]) : '', tm, type, learn, mastery, items, prereq, desc, formula, notes, levels });
   }
   return out;
 }
