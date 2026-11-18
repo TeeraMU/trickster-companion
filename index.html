@@ -1593,7 +1593,10 @@
     // ============================================================================
     let BUILDS = null;
     function loadBuilds() {
-      return TQData.fetchJson("data/builds.json").then(b => {
+      // skill-fixes.json: where PlayTrickster differs from the wiki (optional)
+      const fixes = TQData.fetchJson("data/skill-fixes.json").catch(() => null);
+      return Promise.all([TQData.fetchJson("data/builds.json"), fixes]).then(([b, f]) => {
+        TQBuild.applyFixes(b, f);
         BUILDS = b;
         TQSearch.refresh();
         if (appState.currentView === "build") renderBuild();

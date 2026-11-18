@@ -6,6 +6,18 @@ const raw = JSON.parse(fs.readFileSync('skills.raw.json', 'utf8'));
 const classes = JSON.parse(fs.readFileSync(repo + '/data/classes.json', 'utf8')).classes;
 const text = s => String(s).replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 const fileOf = n => n.replace(/ /g, '_').replace(/[\/:*?"<>|]/g, '-') + '.html';
+// an item page reached through a redirect ("Officer Akto Card") is really another item ("Officer Okto Card")
+const canonCache = {};
+function canon(name) {
+  if (name in canonCache) return canonCache[name];
+  const f = 'it/' + fileOf(name);
+  let real = name;
+  if (fs.existsSync(f)) {
+    const h1 = (fs.readFileSync(f, 'utf8').match(/<h1[^>]*firstHeading[^>]*>([^<]+)<\/h1>/) || [])[1];
+    if (h1 && h1.trim() !== name) real = h1.trim().replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+  }
+  return (canonCache[name] = real);
+}
 
 const TYPE = { Bunny: 'Power', Buffalo: 'Power', Sheep: 'Magic', Dragon: 'Magic', Fox: 'Sense', Lion: 'Sense', Cat: 'Charm', Raccoon: 'Charm' };
 const STATS = ['AP', 'AC', 'DX', 'MP', 'MA', 'MD', 'WT', 'DA', 'LK', 'HP', 'DP', 'HV'];
@@ -53,7 +65,7 @@ function clean(s, tmOverride) {
   return {
     name: s.name, icon: s.icon, tm, type: (s.type || '').replace('On-Off', 'On/Off'),
     learn: +s.learn || 0, master: +s.mastery || 0,
-    items: s.items.filter(i => i.qty).map(i => ({ name: i.name, qty: i.qty })),
+    items: s.items.filter(i => i.qty).map(i => ({ name: canon(i.name), qty: i.qty })),
     prereq: s.prereq && s.prereq !== 'None' ? s.prereq : '',
     needs: s.prereq && s.prereq !== 'None' ? parsePrereq(s.prereq) : [],
     how: howToGet(s.notes),
@@ -95,7 +107,10 @@ for (const [cls, c] of Object.entries(classes)) {
 
 // --- mastery items: picture, how to get, monsters and their maps -------------------------
 const itemImg = {};
-for (const v of [...Object.values(raw.pages).flat(), ...Object.values(single)]) for (const it of v.items) if (it.qty && (it.img || !(it.name in itemImg))) itemImg[it.name] = it.img || '';
+for (const v of [...Object.values(raw.pages).flat(), ...Object.values(single)]) for (const it of v.items) {
+  const n = canon(it.name);
+  if (it.qty && (it.img || !(n in itemImg))) itemImg[n] = itemImg[n] || it.img || '';
+}
 const monsterInfo = name => {
   const f = 'mon/' + fileOf(name);
   if (!fs.existsSync(f)) return null;
