@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Friends page: each friend's card has a folded **🎒 Bag** box ("🎒 Bag · 87 items · 3 you need"). Open it to see what's in their Bag: items you still need come first in gold ("Nausea Drink ×25 · you need 5"), then the rest, most first, 20 at a time (Show all). Big Bags get a filter box, and tapping an item looks it up in search.
 - Quests page: each chapter's header has a **✅ Tick all** button (next to "0 / 5 Completed") for players who already finished that part before using the app. It asks first, ticks the quests shown in that chapter, and any of them can be unticked afterwards.
 - Quests page: Tower of Chaos has its own **🗼 Tower** group after 🎓 Job, instead of sitting among the 📍 Zones.
 - Tower of Chaos: the way in is a chapter of its own, **Tower of Chaos - Entrance**, at the top of the Tower: Poirot - Make a Missing Ed Flyer → Wandering Photographer Ren - Flyer Picture Request (1) and (2) (Gold Lens, 20 Expensive Film) → Poirot - Get to the Bottom of the Rumours → Issue the Tower of Chaos Entrance Pass. The first three were missing; they are added from the wiki (from Lv.60, after the 2nd job).
