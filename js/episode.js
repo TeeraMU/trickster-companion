@@ -424,6 +424,18 @@
   function renderFarmPanel(f, opts) {
     const have = opts.have || null;
     if (have && root.TQBag) f = root.TQBag.applyHave(f, have);
+    // opts.huntsTo (the Quests page, which has a ⚔️ Monsters view): hunt-only rows leave the item list,
+    // so it's only things to collect; one line says how many monsters wait in Monsters
+    let huntNote = "";
+    if (opts.huntsTo) {
+      const hunts = new Set();
+      f.maps.forEach(g => g.rows.forEach(r => { if (r.kind === "hunt") hunts.add(r.item); }));
+      f = Object.assign({}, f, { maps: f.maps.map(g => Object.assign({}, g, { rows: g.rows.filter(r => r.kind !== "hunt") })).filter(g => g.rows.length) });
+      if (hunts.size) huntNote = `
+        <button type="button" class="ep-hunt-note" onclick="${opts.huntsTo}">
+          <span aria-hidden="true">⚔️</span> <span>${hunts.size} monster${hunts.size === 1 ? "" : "s"} to hunt (kill counts, no item) are in <strong>Monsters</strong></span>
+          <span aria-hidden="true">→</span></button>`;
+    }
     const empty = !f.maps.length && !f.shop.length && !f.compound.length;
     const maps = f.maps.map(g => `
       <section class="ep-map ${g.locked ? "is-locked" : ""} ${g.rows.every(r => r.done) ? "is-done" : ""}">
@@ -460,6 +472,7 @@
         </div>
         <p class="ep-hint">${opts.hint}</p>
         ${opts.afterHint || ""}
+        ${huntNote}
         ${empty ? `<div class="ep-empty">${opts.emptyText || "✅ Nothing left to farm here!"}</div>` : maps + shop + compound}
       </div>`;
   }

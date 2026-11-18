@@ -2,6 +2,174 @@
   "region": "Tower of Chaos",
   "quests": [
     {
+      "id": "toc-80",
+      "order": 1995,
+      "title": "Poirot - Make a Missing Ed Flyer",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Entrance",
+      "location": "Gate of Caballa Relics",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "npc": "Poirot",
+      "npcIds": [
+        "poirot"
+      ],
+      "prereqs": [],
+      "prereqText": "Have completed 2nd Job Advancement (Level 60+)",
+      "steps": [
+        "Talk to Poirot at Gate of Caballa Relics: he gives you Brother's Pendant.",
+        "Get 1x Enlarged Brother's Picture: reward from Wandering Photographer Ren - Flyer Picture Request (2).",
+        "Bring everything back to Poirot."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Enlarged Brother's Picture",
+          "qty": 1,
+          "source": {
+            "kind": "quest",
+            "from": "Reward from Wandering Photographer Ren - Flyer Picture Request (2)",
+            "map": "Gate of Caballa Relics"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 1528934,
+        "tmExp": 1845227,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Brother's Pendant is obtained with Poirot when the quest starts. Enlarged Brother's Picture is obtained by completing Wandering Photographer Ren - Flyer Picture Request (2).",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Poirot_-_Make_a_Missing_Ed_Flyer.html",
+        "checked": "2026-11-19",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-81",
+      "order": 1996,
+      "title": "Wandering Photographer Ren - Flyer Picture Request (1)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Entrance",
+      "location": "Gate of Caballa Relics",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "npc": "Wandering Photographer Ren",
+      "npcIds": [
+        "wandering-photographer-ren"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-80",
+          "active": true
+        }
+      ],
+      "prereqText": "Have Poirot - Make a Missing Ed Flyer in quest log",
+      "steps": [
+        "Talk to Wandering Photographer Ren at Gate of Caballa Relics.",
+        "Get 1x Gold Lens: compound 1x Optical Glass Crystal + 1x Animal Bone + 5x Gold with Compounder Paul in Relics Town - Azteca (Optical Glass Crystal and Animal Bone are drilled in Caballa Relics Fields).",
+        "Bring everything back to Wandering Photographer Ren."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Gold Lens",
+          "qty": 1,
+          "source": {
+            "kind": "compound",
+            "from": "Compounder Paul: 1x Optical Glass Crystal + 1x Animal Bone + 5x Gold",
+            "map": "Relics Town - Azteca"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 407715,
+        "tmExp": 492060,
+        "galder": 0,
+        "items": [
+          "1x None"
+        ]
+      },
+      "notes": "Gold Lens is obtained by compounding 1x Optical Glass Crystal + 1x Animal Bone + 5x Gold with Compounder Paul in Relics Town - Azteca. Optical Glass Crystal and Animal Bone are drilled in Caballa Relics Fields. The wiki gives no quantity for Gold Lens.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Photographer_Ren_-_Flyer_Picture_Request_(1).html",
+        "checked": "2026-11-19",
+        "verifiedInGame": false
+      }
+    },
+    {
+      "id": "toc-82",
+      "order": 1997,
+      "title": "Wandering Photographer Ren - Flyer Picture Request (2)",
+      "categories": [
+        "general"
+      ],
+      "tags": [],
+      "chapter": "Tower of Chaos - Entrance",
+      "location": "Gate of Caballa Relics",
+      "minLevel": 60,
+      "cycles": 1,
+      "classes": [
+        "all"
+      ],
+      "npc": "Wandering Photographer Ren",
+      "npcIds": [
+        "wandering-photographer-ren"
+      ],
+      "prereqs": [
+        {
+          "quest": "toc-81"
+        }
+      ],
+      "prereqText": "Have completed Wandering Photographer Ren - Flyer Picture Request (1)",
+      "steps": [
+        "Talk to Wandering Photographer Ren at Gate of Caballa Relics.",
+        "Get 20x Expensive Film: drill in Caballa Relics Fields.",
+        "Bring everything back to Wandering Photographer Ren."
+      ],
+      "objectives": [
+        {
+          "type": "collect",
+          "item": "Expensive Film",
+          "qty": 20,
+          "source": {
+            "kind": "drill",
+            "from": "Drill in Caballa Relics Fields",
+            "map": "Caballa Relics Fields 1-4"
+          }
+        }
+      ],
+      "rewards": {
+        "baseExp": 407715,
+        "tmExp": 492060,
+        "galder": 0,
+        "items": [
+          "1x Enlarged Brother's Picture"
+        ]
+      },
+      "notes": "Expensive Film is drilled in Caballa Relics Fields.",
+      "source": {
+        "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Wandering_Photographer_Ren_-_Flyer_Picture_Request_(2).html",
+        "checked": "2026-11-19",
+        "verifiedInGame": false
+      }
+    },
+    {
       "id": "toc-01",
       "order": 2000,
       "title": "Developer Project Manager L - Investigating Committee Work",
@@ -1453,13 +1621,13 @@
     },
     {
       "id": "toc-61",
-      "order": 2028,
+      "order": 1998,
       "title": "Poirot - Get to the Bottom of the Rumours",
       "categories": [
         "general"
       ],
       "tags": [],
-      "chapter": "Tower of Chaos - Town Quests",
+      "chapter": "Tower of Chaos - Entrance",
       "npc": "Poirot",
       "npcIds": [
         "poirot"
@@ -1470,7 +1638,11 @@
       "classes": [
         "all"
       ],
-      "prereqs": [],
+      "prereqs": [
+        {
+          "quest": "toc-80"
+        }
+      ],
       "prereqText": "Have completed Poirot - Make a Missing Ed Flyer",
       "steps": [
         "Talk to Poirot at Gate of Caballa Relics.",
@@ -1493,13 +1665,13 @@
     },
     {
       "id": "toc-37",
-      "order": 2029,
+      "order": 1999,
       "title": "Poirot - Issue the Tower of Chaos Entrance Pass",
       "categories": [
         "general"
       ],
       "tags": [],
-      "chapter": "Tower of Chaos - Town Quests",
+      "chapter": "Tower of Chaos - Entrance",
       "npc": "Poirot",
       "npcIds": [
         "poirot"

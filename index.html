@@ -701,13 +701,15 @@
         </div>`;
     }
 
-    // Areas are grouped: 📖 Story (EP0, EP1 …), 📍 Zones (towns, by level), 🎓 Job (every job change).
+    // Areas are grouped: 📖 Story (EP0, EP1 …), 📍 Zones (towns, by level), 🎓 Job (every job change),
+    // 🗼 Tower (Tower of Chaos).
     // A group button shows the whole group; a chip narrows it to one area (click it again to go back).
     const AREA_GROUPS = [
       { key: "all", icon: "✨", label: "All" },
       { key: "story", icon: "📖", label: "Story" },
       { key: "zones", icon: "📍", label: "Zones" },
-      { key: "job", icon: "🎓", label: "Job" }
+      { key: "job", icon: "🎓", label: "Job" },
+      { key: "tower", icon: "🗼", label: "Tower" }
     ];
     let AREAS = null; // [{ key, group, minLevel, first }] built once from the data
 
@@ -718,7 +720,7 @@
         if (!byKey.has(q.area)) byKey.set(q.area, { key: q.area, quests: [] });
         byKey.get(q.area).quests.push(q);
       });
-      const order = { story: 0, zones: 1, job: 2 };
+      const order = { story: 0, zones: 1, job: 2, tower: 3 };
       AREAS = [...byKey.values()].map(a => {
         // the level the area's main path (its key quests) starts at; side quests (weddings, events)
         // can start much lower and would make a zone look like a beginner area
@@ -726,7 +728,7 @@
         const levels = keyLevels.length ? keyLevels : a.quests.map(q => q.minLevel || 0).filter(Boolean);
         return {
           key: a.key,
-          group: /^Episode \d+$/.test(a.key) ? "story" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",
+          group: /^Episode \d+$/.test(a.key) ? "story" : /^Tower of /.test(a.key) ? "tower" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",
           minLevel: levels.length ? Math.min(...levels) : 0,
           first: Math.min(...a.quests.map(q => q.order))
         };
@@ -838,7 +840,7 @@
       document.getElementById("statTmExp").textContent = earnedTm.toLocaleString();
       document.getElementById("statTmExpRem").textContent = `${remTm.toLocaleString()} remaining`;
 
-      // Area picker: group buttons (✨ All, 📖 Story, 📍 Zones, 🎓 Job), then the chosen group's chips,
+      // Area picker: group buttons (✨ All, 📖 Story, 📍 Zones, 🎓 Job, 🗼 Tower), then the chosen group's chips,
       // built from the data so new episodes / towns / jobs appear by themselves.
       const areas = areaList();
       const reg = appState.selectedRegion || "All";
@@ -919,10 +921,20 @@
     // Tick every quest of the picked area (your class / path) after asking: for players who already
     // finished a zone before using the app
     function markZoneDone() {
-      const left = zonePool().filter(q => !appState.completedQuests[q.id]);
+      markQuestsDone(zonePool(), appState.selectedRegion);
+    }
+
+    // Tick every quest of one chapter on the list (the ones shown, after filters), after asking
+    let SECTION_QUESTS = [];
+    function markSectionDone(i) {
+      const sec = SECTION_QUESTS[i];
+      if (sec) markQuestsDone(sec.quests, sec.name);
+    }
+
+    function markQuestsDone(quests, where) {
+      const left = quests.filter(q => !appState.completedQuests[q.id]);
       if (!left.length) return;
-      const reg = appState.selectedRegion;
-      if (!confirm(`Mark all ${left.length} unfinished quests in ${reg} as done?\n\nYou can untick any of them afterwards.`)) return;
+      if (!confirm(`Mark all ${left.length} unfinished quests in ${where} as done?\n\nYou can untick any of them afterwards.`)) return;
       left.forEach(q => {
         appState.completedQuests[q.id] = true;
         appState.completedCycles[q.id] = q.cycles;
@@ -984,14 +996,18 @@
       };
 
       let html = "";
+      SECTION_QUESTS = [];
       groups.forEach((quests, subRegion) => {
         const all = quests.flatMap(q => [q, ...(stickerKids.get(q.id)?.quests || [])]);
         const gDone = all.filter(isDone).length;
+        const at = SECTION_QUESTS.push({ name: subRegion, quests: all }) - 1;
         html += `
           <div class="section-group">
             <div class="section-header">
               <h2>${subRegion}</h2>
               <span class="badge-count">${gDone} / ${all.length} Completed</span>
+              ${gDone < all.length ? `<button type="button" class="btn btn-sm section-tick" onclick="markSectionDone(${at})"
+                title="Already did these? Tick all ${all.length - gDone} unfinished quests shown here">✅ Tick all</button>` : ""}
             </div>
             <div class="quest-list">
               ${quests.map(cardWithKids).join("")}
@@ -1268,7 +1284,8 @@
             <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
           </div>`,
         hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map.${plus.earlier.size ? ` Also for ${plus.earlier.size} other quest${plus.earlier.size === 1 ? "" : "s"} they need: done first, or handing out an item they use (↩).` : ""} Items handed over by earlier quests aren't listed.${samePathCopies ? " One 3rd job path counted: pick yours to see its exact items." : ""}`,
-        afterHint: focusBarHtml()
+        afterHint: focusBarHtml(),
+        huntsTo: "setChecklistSide('monsters')"
       });
       // ⚔️ Monsters: the same list regrouped by monster (js/town.js)
       const monsters = TQTown.monsterList(everything ? farm : TQBag.applyHave(farm, appState.inventory));
@@ -1797,7 +1814,12 @@
         : TQBag.bagList(open, appState, appState.inventory).sort((a, b) => rank(a) - rank(b)))
         .filter(r => r.left > 0 && !r.chain && !money(r.item))
         .slice(0, 12).map(r => ({ item: r.item, n: r.left }));
-      const needed = new Map(TQBag.bagList(pool, appState, appState.inventory).map(r => [r.item, r.need]));
+      const poolBag = TQBag.bagList(pool, appState, appState.inventory);
+      const needed = new Map(poolBag.map(r => [r.item, r.need]));
+      // what you still need for every quest you haven't done (this device only: lifts those items to
+      // the top of a friend's 🎒 Bag box; never published)
+      const want = {};
+      poolBag.forEach(r => { if (r.left > 0 && !money(r.item)) want[r.item] = r.left; });
       // "Share my Bag" off (Friends page): no item counts and no spares (both come from the Bag)
       const spares = appState.hideBag ? [] : Object.entries(appState.inventory || {})
         .map(([item, have]) => ({ item, n: have - (needed.get(item) || 0) }))
@@ -1807,7 +1829,7 @@
         cls, path: path ? path.label : "",
         done: pool.filter(q => appState.completedQuests[q.id]).length, total: pool.length,
         area: ref ? area(ref.area) : "", next: ref ? short(ref.title) : "",
-        needs, spares,
+        needs, spares, want,
         bag: appState.hideBag ? {} : (appState.inventory || {}),
         shareBag: !appState.hideBag,
         focus: fq ? { label: scopeLabel(focus), done: fq.filter(q => appState.completedQuests[q.id]).length, total: fq.length } : null
@@ -1842,8 +1864,18 @@
       if (document.getElementById("viewBag").classList.contains("hidden")) return;
       TQBag.render(document.getElementById("bagContainer"), {
         quests: visible, state: appState, have: appState.inventory,
-        filter: appState.bagFilter || "keep", search: appState.bagSearch || "", getItemImage
+        filter: appState.bagFilter || "keep", search: appState.bagSearch || "", getItemImage,
+        questWhere: bagQuestWhere, openQuest: "jumpToQuest"
       });
+    }
+
+    // where a quest is, for the Bag's quest chips: "EP2" / "Oops Wharf" up front, the rest on hover
+    function bagQuestWhere(id) {
+      const q = questById(id);
+      if (!q) return null;
+      const ep = /^Episode \d+$/.test(q.area);
+      return { area: ep ? "EP" + num(q.area) : q.area, areaLong: q.area, chapter: q.subRegion || "",
+        npc: q.npc || "", location: q.location || "", level: q.minLevel || 0 };
     }
 
     function setHave(item, n) {
@@ -2040,7 +2072,7 @@
         .then(() => {
           loadState(); renderAll(); switchView(appState.currentView);
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
-          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon });
+          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon, itemImage: getItemImage });
           TQEpisode.setFriendsHave(friendsHaveHtml);
           TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage, mapImage, builds: () => BUILDS });
           loadBuilds();

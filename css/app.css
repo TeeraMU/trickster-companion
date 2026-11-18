@@ -711,10 +711,23 @@ select:focus, input:focus {
   margin-bottom: 12px;
 }
 
+.section-header {
+  flex-wrap: wrap;
+}
+
 .section-header h2 {
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
+}
+
+/* ✅ Tick all: marks a whole chapter done (players who already finished it) */
+.section-header .section-tick {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  min-height: 0;
 }
 
 .quest-list {
@@ -1725,6 +1738,28 @@ select:focus, input:focus {
   font-size: 0.78rem;
   color: var(--text-muted);
   margin-bottom: 12px;
+}
+
+/* Quests page: hunts live in ⚔️ Monsters; this line points there */
+.ep-hunt-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--accent-red) 30%, transparent);
+  background: color-mix(in srgb, var(--accent-red) 8%, var(--bg-card));
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ep-hunt-note > span:nth-child(2) {
+  flex: 1;
 }
 
 .ep-map {
@@ -3065,14 +3100,43 @@ a.btn {
 .bag-quest {
   display: inline-block;
   margin: 2px 4px 0 0;
-  padding: 0 7px;
-  border-radius: 999px;
+  padding: 1px 8px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--bg-card);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
+.bag-quest:hover,
+.bag-quest:focus-visible {
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+/* the area the quest is in: EP2, Oops Wharf … */
+.bag-quest-where {
+  margin-right: 5px;
+  padding-right: 5px;
+  border-right: 1px solid var(--border);
+  font-weight: 700;
+  color: var(--ink-blue);
+}
+
+.bag-quest.is-extra { display: none; }
+.show-all > .bag-quest.is-extra { display: inline-block; }
+
 .bag-more {
+  font: inherit;
   font-weight: 800;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0 4px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media (max-width: 900px) {
@@ -3400,6 +3464,103 @@ a.btn {
 .friend-tag.tag-get { background: color-mix(in srgb, var(--accent-blue) 16%, var(--bg-card)); color: var(--ink-blue); }
 .friend-tag.tag-need { background: color-mix(in srgb, var(--accent-gold) 18%, var(--bg-card)); color: var(--ink-gold); }
 .friend-tag.tag-spare { background: color-mix(in srgb, var(--accent-purple) 14%, var(--bg-card)); color: var(--ink-purple); }
+
+/* 🎒 a friend's whole Bag, folded away */
+.fb-box {
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+.fb-box > summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 700;
+  list-style-position: inside;
+}
+
+.fb-want-count {
+  color: var(--ink-gold);
+}
+
+.fb-filter {
+  width: 100%;
+  margin: 8px 0 4px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--text-secondary) 30%, transparent);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.fb-head {
+  margin: 8px 0 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.fb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 3px 9px 3px 4px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--text-secondary) 20%, transparent);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.fb-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.fb-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fb-n {
+  font-weight: 700;
+}
+
+.fb-item.is-want {
+  background: color-mix(in srgb, var(--accent-gold) 18%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--accent-gold) 45%, transparent);
+}
+
+.fb-need {
+  font-weight: 700;
+  color: var(--ink-gold);
+}
+
+.fb-need::before {
+  content: "· ";
+}
+
+.fb-more {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+}
+
+.fb-none {
+  font-size: 0.8rem;
+}
 
 .friend-missing {
   opacity: 0.85;
