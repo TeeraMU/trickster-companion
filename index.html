@@ -1284,7 +1284,8 @@
             <button type="button" aria-pressed="${everything}" onclick="setChecklistFarmAll(true)">Everything</button>
           </div>`,
         hint: `${everything ? "Everything" : "What's still needed"} for the ${filtered.length} quest${filtered.length === 1 ? "" : "s"} shown (${scope}), grouped by map.${plus.earlier.size ? ` Also for ${plus.earlier.size} other quest${plus.earlier.size === 1 ? "" : "s"} they need: done first, or handing out an item they use (↩).` : ""} Items handed over by earlier quests aren't listed.${samePathCopies ? " One 3rd job path counted: pick yours to see its exact items." : ""}`,
-        afterHint: focusBarHtml()
+        afterHint: focusBarHtml(),
+        huntsTo: "setChecklistSide('monsters')"
       });
       // ⚔️ Monsters: the same list regrouped by monster (js/town.js)
       const monsters = TQTown.monsterList(everything ? farm : TQBag.applyHave(farm, appState.inventory));
