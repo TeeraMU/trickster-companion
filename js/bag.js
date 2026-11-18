@@ -84,6 +84,16 @@
 
     const keepCount = all.filter(r => !r.chain).length;
     const tabs = [["keep", `🔒 Keep (${all.length})`], ["missing", `🎯 Still missing (${all.filter(r => r.left > 0 && !r.chain).length})`], ["spare", `💰 Extra (${all.filter(r => r.spare > 0).length + sellable.length})`]];
+    // a quest needing the item: its area up front ("EP2", "Oops Wharf"), chapter / NPC / map / level on
+    // hover (title), and a tap opens the quest's card. Past the 4th they wait behind "+N more".
+    const questChip = (q, extra) => {
+      const w = ctx.questWhere ? ctx.questWhere(q.id) : null;
+      const tip = w ? [w.areaLong + (w.chapter && w.chapter !== w.areaLong ? " · " + w.chapter : ""),
+        [w.npc, w.location].filter(Boolean).join(" @ ") + (w.level ? " · Lv." + w.level + "+" : ""),
+        "Tap to open the quest"].filter(Boolean).join("\n") : q.title;
+      return `<button type="button" class="bag-quest ${extra ? "is-extra" : ""}" title="${esc(tip)}"
+          ${ctx.openQuest ? `onclick="${ctx.openQuest}('${esc(q.id)}')"` : ""}>${w && w.area ? `<span class="bag-quest-where">${esc(w.area)}</span>` : ""}${esc(q.title.replace(/\s*\([^)]*\)\s*$/, ""))} ×${q.need}</button>`;
+    };
     const list = rows.map(r => {
       const icon = ctx.getItemImage(r.item);
       const status = r.chain
@@ -97,7 +107,8 @@
           <div class="bag-main">
             <div class="bag-name"><strong>${esc(r.item)}</strong> <span class="bag-lock" title="Still needed: don't sell">🔒</span> ${status}</div>
             <div class="bag-need">Needed: <strong>${r.need}</strong> · for ${r.quests.length} quest${r.quests.length === 1 ? "" : "s"}:
-              ${r.quests.slice(0, 4).map(q => `<span class="bag-quest">${esc(q.title.replace(/\s*\([^)]*\)\s*$/, ""))} ×${q.need}</span>`).join("")}${r.quests.length > 4 ? ` <span class="bag-more">+${r.quests.length - 4} more</span>` : ""}</div>
+              ${r.quests.map((q, i) => questChip(q, i >= 4)).join("")}${r.quests.length > 4
+                ? ` <button type="button" class="bag-more" onclick="this.parentNode.classList.add('show-all'); this.remove()">+${r.quests.length - 4} more</button>` : ""}</div>
           </div>
           ${stepper(r.item, r.have)}
         </li>`;

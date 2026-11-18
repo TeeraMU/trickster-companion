@@ -1863,8 +1863,18 @@
       if (document.getElementById("viewBag").classList.contains("hidden")) return;
       TQBag.render(document.getElementById("bagContainer"), {
         quests: visible, state: appState, have: appState.inventory,
-        filter: appState.bagFilter || "keep", search: appState.bagSearch || "", getItemImage
+        filter: appState.bagFilter || "keep", search: appState.bagSearch || "", getItemImage,
+        questWhere: bagQuestWhere, openQuest: "jumpToQuest"
       });
+    }
+
+    // where a quest is, for the Bag's quest chips: "EP2" / "Oops Wharf" up front, the rest on hover
+    function bagQuestWhere(id) {
+      const q = questById(id);
+      if (!q) return null;
+      const ep = /^Episode \d+$/.test(q.area);
+      return { area: ep ? "EP" + num(q.area) : q.area, areaLong: q.area, chapter: q.subRegion || "",
+        npc: q.npc || "", location: q.location || "", level: q.minLevel || 0 };
     }
 
     function setHave(item, n) {
