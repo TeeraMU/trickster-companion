@@ -108,6 +108,26 @@ t("levels: Sharp Scream's table, and its Lv.1 -> Master summary", () => {
   assert.deepStrictEqual(B.levelSummary(null), []);
 });
 
+t("in-game fixes: Fatal Wound masters with 3 Officer Okto Card; every fix names a real skill and item", () => {
+  const fixes = require(path.join(__dirname, "..", "data", "skill-fixes.json"));
+  const copy = JSON.parse(JSON.stringify(builds));
+  assert.ok(B.applyFixes(copy, fixes) >= 1);
+  const fw = copy.skills.Entertainer.find(s => s.name === "Fatal Wound");
+  assert.deepStrictEqual(fw.items, [{ name: "Officer Okto Card", qty: 3 }]);
+  assert.ok(/in game/.test(fw.checked));
+  const names = new Set(Object.values(builds.skills).flat().map(s => s.name));
+  for (const [name, f] of Object.entries(fixes.skills)) {
+    assert.ok(names.has(name), "skill-fixes.json: no skill " + name);
+    assert.ok(f.checked, name + ": say who checked it and when");
+    for (const it of f.items || []) assert.ok(builds.items[it.name], name + ": no item " + it.name);
+  }
+});
+
+t("redirect links count: Beast Claw masters with Officer Okto Card (wiki: Officer Akto Card)", () => {
+  const bc = builds.skills.Entertainer.find(s => s.name === "Beast Claw");
+  assert.deepStrictEqual(bc.items, [{ name: "Officer Okto Card", qty: 3 }]);
+});
+
 t("every mastery item a skill names is described in items", () => {
   for (const list of Object.values(builds.skills)) for (const s of list) for (const it of s.items) {
     assert.ok(builds.items[it.name], s.name + ": " + it.name);
