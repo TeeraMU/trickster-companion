@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Quests page: Tower of Chaos has its own **🗼 Tower** group after 🎓 Job, instead of sitting among the 📍 Zones.
+- Tower of Chaos: the way in is a chapter of its own, **Tower of Chaos - Entrance**, at the top of the Tower: Poirot - Make a Missing Ed Flyer → Wandering Photographer Ren - Flyer Picture Request (1) and (2) (Gold Lens, 20 Expensive Film) → Poirot - Get to the Bottom of the Rumours → Issue the Tower of Chaos Entrance Pass. The first three were missing; they are added from the wiki (from Lv.60, after the 2nd job).
 
 ## 0.9.1 (2026-11-19): Fatal Wound and redirect-linked mastery cards
 
