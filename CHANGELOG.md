@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.9.1 (2026-11-19): Fatal Wound and redirect-linked mastery cards
 
 - Fixed: Fatal Wound's mastery is 3 Officer Okto Card in PlayTrickster, not 5 Thorn Stem as the wiki says (checked in game). Skills checked in game carry a **✓ In game** badge; corrections live in `data/skill-fixes.json`.
 - Fixed: skills whose mastery card is linked on the wiki through another name lost their card: Beast Claw, Earthquake Blade, Summon Boulder and Gas Mask now ask for Officer Okto Card ×3 (the wiki's "Officer Akto Card"), and Gladiator's Shadow is back in the list.
