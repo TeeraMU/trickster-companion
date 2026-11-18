@@ -26,7 +26,8 @@ function parsePage(file) {
     const desc = rows[hi + 2] ? text(cells(rows[hi + 2])[0] || '') : '';
     // items: "<img ..> <a>Purple Worm Card</a> x5", maybe several
     const items = [];
-    for (const m of (itemHtml || '').matchAll(/<a href="([^"]+)" title="([^"]+)">[^<]*<\/a>\s*x\s*(\d+)/g)) {
+    // links to redirect pages carry class="mw-redirect" before href ("Officer Akto Card")
+    for (const m of (itemHtml || '').matchAll(/<a (?:class="[^"]*" )?href="([^"]+)" title="([^"]+)">[^<]*<\/a>\s*x\s*(\d+)/g)) {
       const img = (itemHtml.match(new RegExp('title="' + m[2].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"><img[^>]*src="([^"]+)"')) || [])[1];
       items.push({ name: m[2], qty: +m[3], img: img ? abs(img) : '' });
     }
@@ -84,7 +85,7 @@ for (const f of fs.readdirSync('job')) {
   const sk = (h.match(/click one of the below skills for in-depth information\.([\s\S]*?)(Hair Dye|Advancing|Retrieved)/) || [])[1] || '';
   // "They cannot learn Evolution, Beast Claw, or Fatal Wound." names skills the job does NOT get
   const cannot = new Set([...((sk.match(/cannot learn([\s\S]*?)\.\s*(<|$)/) || [])[1] || '').matchAll(/title="([^"]+)"/g)].map(m => m[1]));
-  const listed = [...sk.matchAll(/<a href="[^"]+" title="([^"]+)">/g)].map(m => m[1]).filter(n => !/^Image/.test(n) && !cannot.has(n));
+  const listed = [...sk.matchAll(/<a (?:class="[^"]*" )?href="[^"]+" title="([^"]+)">/g)].map(m => m[1]).filter(n => !/^Image/.test(n) && !cannot.has(n));
   const desc = (t.match(/Description (.*?) (Skills|Appearance) /) || [])[1] || '';
   jobs[name] = { art: art ? abs(art) : '', like, listed: [...new Set(listed)], desc: desc.slice(0, 600) };
 }

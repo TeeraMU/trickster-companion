@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: Fatal Wound's mastery is 3 Officer Okto Card in PlayTrickster, not 5 Thorn Stem as the wiki says (checked in game). Skills checked in game carry a **✓ In game** badge; corrections live in `data/skill-fixes.json`.
+- Fixed: skills whose mastery card is linked on the wiki through another name lost their card: Beast Claw, Earthquake Blade, Summon Boulder and Gas Mask now ask for Officer Okto Card ×3 (the wiki's "Officer Akto Card"), and Gladiator's Shadow is back in the list.
+
 ## 0.9.0 (2026-11-17): Build guide
 
 - New **🧭 Build guide** page (replaces the Drill guide): pick a class and job to see its wiki artwork, your growth chart (Power / Magic / Sense / Charm with the in-game type badges and colours, 1-4 each and 10 in all) and which stats its skills use.

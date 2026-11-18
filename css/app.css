@@ -4521,3 +4521,9 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   .bd-lvtable th, .bd-lvtable td { padding: 3px 5px; }
   .bd-lvtable { font-size: 0.74rem; }
 }
+.bd-checked {
+  font-size: 0.72rem; font-weight: 800; padding: 1px 8px; border-radius: 999px;
+  color: var(--ink-green); border: 1px solid var(--ink-green);
+  background: color-mix(in srgb, var(--accent-green) 14%, transparent);
+  cursor: help;
+}

@@ -151,7 +151,28 @@
     return pick.sort((a, b) => a.i - b.i).map(c => ({ col: c.col, from: short(first[c.i]), to: short(last[c.i]) }));
   }
 
-  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems, skillTree, levelSummary };
+  /**
+   * In-game corrections (data/skill-fixes.json) over the wiki data: each fix replaces those fields of
+   * the skill in every job that has it and marks it `checked`. Changes builds in place; returns how
+   * many skill entries changed.
+   */
+  const FIX_FIELDS = ["items", "tm", "master", "learn", "needs", "how"];
+  function applyFixes(builds, fixes) {
+    let n = 0;
+    const list = (fixes && fixes.skills) || {};
+    for (const skills of Object.values(builds.skills)) {
+      for (const sk of skills) {
+        const f = list[sk.name];
+        if (!f) continue;
+        for (const k of FIX_FIELDS) if (k in f) sk[k] = JSON.parse(JSON.stringify(f[k]));
+        sk.checked = f.checked || "in game";
+        n++;
+      }
+    }
+    return n;
+  }
+
+  const model = { GROUPS, DEFAULT_GROWTH, GROWTH_TOTAL, stepGrowth, fixGrowth, skillSets, statUse, advice, statPlan, masterItems, skillTree, levelSummary, applyFixes };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -291,7 +312,8 @@
         ${sk.icon ? `<img class="bd-skill-icon" src="${esc(sk.icon)}" alt="" loading="lazy">` : `<span class="bd-skill-icon bd-skill-ph" aria-hidden="true">✨</span>`}
         <div class="bd-skill-main">
           <div class="bd-skill-name"><strong>${esc(sk.name)}</strong>
-            <span class="tag">TM ${sk.tm}</span> <span class="tag">${esc(sk.type || "")}</span></div>
+            <span class="tag">TM ${sk.tm}</span> <span class="tag">${esc(sk.type || "")}</span>
+            ${sk.checked ? `<span class="bd-checked" title="${esc(sk.checked)}">✓ In game</span>` : ""}</div>
           ${needChips(sk, ctx)}
           ${howLine(sk, ctx)}
           ${sk.desc ? `<div class="bd-desc">${esc(sk.desc)}</div>` : ""}
