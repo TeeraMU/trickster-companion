@@ -47,4 +47,19 @@ t("timeAgo", () => {
   assert.strictEqual(F.timeAgo(0, now), "");
 });
 
+t("bagView: what you need first, then the rest most first, cut at the limit; a filter lifts it", () => {
+  const bag = { "Purple Worm Card": 3, "Stone Ginseng": 75, "Nausea Drink": 25, "Peridot": 7, "Empty": 0 };
+  const want = { "Nausea Drink": 5, "Purple Worm Card": 16 };
+  const v = F.bagView(bag, want, { limit: 1 });
+  assert.strictEqual(v.total, 4); // Empty (0) left out
+  assert.strictEqual(v.wantedCount, 2);
+  assert.deepStrictEqual(v.wanted, [{ item: "Nausea Drink", n: 25, need: 5 }, { item: "Purple Worm Card", n: 3, need: 16 }]);
+  assert.deepStrictEqual(v.rest, [{ item: "Stone Ginseng", n: 75 }]);
+  assert.strictEqual(v.hidden, 1);
+  const f = F.bagView(bag, want, { limit: 1, query: "peri" });
+  assert.deepStrictEqual([f.wanted.length, f.rest, f.hidden, f.matches], [0, [{ item: "Peridot", n: 7 }], 0, 1]);
+  assert.strictEqual(F.bagView(bag, want, { limit: 0 }).hidden, 0); // 0 = show all
+  assert.strictEqual(F.bagView(undefined, undefined).total, 0); // Bag not shared
+});
+
 console.log(`${n} passed`);

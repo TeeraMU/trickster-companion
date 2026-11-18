@@ -3414,6 +3414,103 @@ a.btn {
 .friend-tag.tag-need { background: color-mix(in srgb, var(--accent-gold) 18%, var(--bg-card)); color: var(--ink-gold); }
 .friend-tag.tag-spare { background: color-mix(in srgb, var(--accent-purple) 14%, var(--bg-card)); color: var(--ink-purple); }
 
+/* 🎒 a friend's whole Bag, folded away */
+.fb-box {
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+.fb-box > summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 700;
+  list-style-position: inside;
+}
+
+.fb-want-count {
+  color: var(--ink-gold);
+}
+
+.fb-filter {
+  width: 100%;
+  margin: 8px 0 4px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--text-secondary) 30%, transparent);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.fb-head {
+  margin: 8px 0 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.fb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 3px 9px 3px 4px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--text-secondary) 20%, transparent);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.fb-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.fb-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fb-n {
+  font-weight: 700;
+}
+
+.fb-item.is-want {
+  background: color-mix(in srgb, var(--accent-gold) 18%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--accent-gold) 45%, transparent);
+}
+
+.fb-need {
+  font-weight: 700;
+  color: var(--ink-gold);
+}
+
+.fb-need::before {
+  content: "· ";
+}
+
+.fb-more {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+}
+
+.fb-none {
+  font-size: 0.8rem;
+}
+
 .friend-missing {
   opacity: 0.85;
   border-style: dashed;

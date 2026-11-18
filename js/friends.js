@@ -50,7 +50,29 @@
     return `${Math.round(s / 86400)} days ago`;
   }
 
-  const helpers = { makeCode, normalizeCode, cleanName, canGive, timeAgo, CODE_RE };
+  // A friend's whole Bag for the 🎒 box on their card. `want` = { item: how many you still need }.
+  // Items you need come first (most first), then the rest (most first, then A-Z), cut at `limit`.
+  // `query` keeps names containing it and lifts the limit.
+  function bagView(bag, want, opts) {
+    const o = opts || {}, limit = o.limit == null ? 20 : o.limit;
+    const q = String(o.query || "").trim().toLowerCase();
+    const all = Object.entries(bag || {}).filter(([, n]) => n > 0)
+      .map(([item, n]) => ({ item, n }))
+      .sort((a, b) => b.n - a.n || a.item.localeCompare(b.item));
+    const wantN = item => (want && want[item]) || 0;
+    const match = all.filter(x => !q || x.item.toLowerCase().includes(q));
+    const wanted = match.filter(x => wantN(x.item) > 0).map(x => ({ item: x.item, n: x.n, need: wantN(x.item) }));
+    const others = match.filter(x => !(wantN(x.item) > 0));
+    const cut = q || limit <= 0 ? others.length : Math.min(limit, others.length);
+    return {
+      total: all.length,
+      wantedCount: all.filter(x => wantN(x.item) > 0).length,
+      matches: match.length,
+      wanted, rest: others.slice(0, cut), hidden: others.length - cut
+    };
+  }
+
+  const helpers = { makeCode, normalizeCode, cleanName, canGive, timeAgo, bagView, CODE_RE };
   if (typeof module !== "undefined" && module.exports) { module.exports = helpers; return; }
 
   // ---------------------------------------------------------------------------------------------
@@ -345,8 +367,54 @@
           ${(d.needs || []).length ? `<span class="friend-tag tag-need">🎯 Needs: ${items(d.needs.slice(0, 6))}</span>` : ""}
           ${(d.spares || []).length ? `<span class="friend-tag tag-spare">💰 Spare: ${items(d.spares.slice(0, 6))}</span>` : ""}
         </div>
+        ${bagBox(code, d, mine)}
       </div>`;
   }
 
-  root.TQFriends = Object.assign({ init, render, setName, newCode, addFriend, removeFriend, copyCode, changed, holdings, signedIn: () => !!user }, helpers);
+  // 🎒 the friend's whole Bag, folded away: what you need first, a filter, then the rest
+  const bagState = new Map(); // code -> { open, query, all } (this page only)
+  const bagOf = code => { if (!bagState.has(code)) bagState.set(code, { open: false, query: "", all: false }); return bagState.get(code); };
+
+  function bagBox(code, d, mine) {
+    const v = bagView(d.bag, mine.want);
+    if (!v.total) return `<p class="friend-line friends-muted fb-none">🎒 Bag not shared (or empty)</p>`;
+    const st = bagOf(code);
+    return `
+      <details class="fb-box" ${st.open ? "open" : ""} ontoggle="TQFriends.bagToggle('${code}', this.open)">
+        <summary><span aria-hidden="true">🎒</span> Bag <span class="friends-muted">· ${v.total} items</span>
+          ${v.wantedCount ? `<span class="fb-want-count">· ${v.wantedCount} you need</span>` : ""}</summary>
+        ${v.total > 12 ? `<input type="search" class="fb-filter" placeholder="Find an item in ${esc(d.name)}'s Bag" value="${esc(st.query)}"
+          oninput="TQFriends.bagFilter('${code}', this.value)" aria-label="Find an item in ${esc(d.name)}'s Bag">` : ""}
+        <div class="fb-list" id="fb-${code}">${bagListHtml(code, d, mine)}</div>
+      </details>`;
+  }
+
+  function bagListHtml(code, d, mine) {
+    const st = bagOf(code);
+    const v = bagView(d.bag, mine.want, { query: st.query, limit: st.all ? 0 : 20 });
+    if (!v.matches) return `<p class="friends-muted">No item matches “${esc(st.query)}”.</p>`;
+    const chip = (x, need) => {
+      const img = ctx.itemImage ? ctx.itemImage(x.item) : "";
+      return `<button type="button" class="fb-item ${need ? "is-want" : ""}" onclick="TQSearch.open(this.dataset.item)" data-item="${esc(x.item)}"
+          title="${esc(x.item)}: ${d.name ? esc(d.name) + " has " : ""}${x.n}${need ? ` · you need ${need}` : ""} (tap to look it up)">
+          ${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : ""}<span class="fb-name">${esc(x.item)}</span>
+          <span class="fb-n">×${x.n}</span>${need ? `<span class="fb-need">you need ${need}</span>` : ""}</button>`;
+    };
+    return (v.wanted.length ? `<p class="fb-head">🎯 You need</p><div class="fb-chips">${v.wanted.map(x => chip(x, x.need)).join("")}</div>` : "") +
+      (v.rest.length ? `${v.wanted.length ? `<p class="fb-head">Everything else</p>` : ""}<div class="fb-chips">${v.rest.map(x => chip(x, 0)).join("")}</div>` : "") +
+      (v.hidden ? `<button type="button" class="btn fb-more" onclick="TQFriends.bagAll('${code}', true)">Show all (${v.hidden} more)</button>`
+        : st.all && !st.query && v.rest.length > 20 ? `<button type="button" class="btn fb-more" onclick="TQFriends.bagAll('${code}', false)">Show less</button>` : "");
+  }
+
+  // the filter and Show all redraw only the list, so typing keeps the focus
+  function redrawBag(code) {
+    const el = typeof document !== "undefined" && document.getElementById("fb-" + code);
+    const f = friendData.get(code);
+    if (el && f && f.data) el.innerHTML = bagListHtml(code, f.data, ctx.summary());
+  }
+  function bagToggle(code, open) { bagOf(code).open = open; }
+  function bagFilter(code, text) { bagOf(code).query = text; redrawBag(code); }
+  function bagAll(code, on) { bagOf(code).all = on; redrawBag(code); }
+
+  root.TQFriends = Object.assign({ init, render, setName, newCode, addFriend, removeFriend, copyCode, changed, holdings, bagToggle, bagFilter, bagAll, signedIn: () => !!user }, helpers);
 })(this);
