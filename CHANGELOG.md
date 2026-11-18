@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Quests page: Tower of Chaos has its own **🗼 Tower** group after 🎓 Job, instead of sitting among the 📍 Zones.
+
 ## 0.9.1 (2026-11-19): Fatal Wound and redirect-linked mastery cards
 
 - Fixed: Fatal Wound's mastery is 3 Officer Okto Card in PlayTrickster, not 5 Thorn Stem as the wiki says (checked in game). Skills checked in game carry a **✓ In game** badge; corrections live in `data/skill-fixes.json`.

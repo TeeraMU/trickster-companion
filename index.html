@@ -701,13 +701,15 @@
         </div>`;
     }
 
-    // Areas are grouped: 📖 Story (EP0, EP1 …), 📍 Zones (towns, by level), 🎓 Job (every job change).
+    // Areas are grouped: 📖 Story (EP0, EP1 …), 📍 Zones (towns, by level), 🎓 Job (every job change),
+    // 🗼 Tower (Tower of Chaos).
     // A group button shows the whole group; a chip narrows it to one area (click it again to go back).
     const AREA_GROUPS = [
       { key: "all", icon: "✨", label: "All" },
       { key: "story", icon: "📖", label: "Story" },
       { key: "zones", icon: "📍", label: "Zones" },
-      { key: "job", icon: "🎓", label: "Job" }
+      { key: "job", icon: "🎓", label: "Job" },
+      { key: "tower", icon: "🗼", label: "Tower" }
     ];
     let AREAS = null; // [{ key, group, minLevel, first }] built once from the data
 
@@ -718,7 +720,7 @@
         if (!byKey.has(q.area)) byKey.set(q.area, { key: q.area, quests: [] });
         byKey.get(q.area).quests.push(q);
       });
-      const order = { story: 0, zones: 1, job: 2 };
+      const order = { story: 0, zones: 1, job: 2, tower: 3 };
       AREAS = [...byKey.values()].map(a => {
         // the level the area's main path (its key quests) starts at; side quests (weddings, events)
         // can start much lower and would make a zone look like a beginner area
@@ -726,7 +728,7 @@
         const levels = keyLevels.length ? keyLevels : a.quests.map(q => q.minLevel || 0).filter(Boolean);
         return {
           key: a.key,
-          group: /^Episode \d+$/.test(a.key) ? "story" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",
+          group: /^Episode \d+$/.test(a.key) ? "story" : /^Tower of /.test(a.key) ? "tower" : a.quests.every(q => q.categories.includes("Job")) ? "job" : "zones",
           minLevel: levels.length ? Math.min(...levels) : 0,
           first: Math.min(...a.quests.map(q => q.order))
         };
@@ -838,7 +840,7 @@
       document.getElementById("statTmExp").textContent = earnedTm.toLocaleString();
       document.getElementById("statTmExpRem").textContent = `${remTm.toLocaleString()} remaining`;
 
-      // Area picker: group buttons (✨ All, 📖 Story, 📍 Zones, 🎓 Job), then the chosen group's chips,
+      // Area picker: group buttons (✨ All, 📖 Story, 📍 Zones, 🎓 Job, 🗼 Tower), then the chosen group's chips,
       // built from the data so new episodes / towns / jobs appear by themselves.
       const areas = areaList();
       const reg = appState.selectedRegion || "All";
