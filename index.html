@@ -921,10 +921,20 @@
     // Tick every quest of the picked area (your class / path) after asking: for players who already
     // finished a zone before using the app
     function markZoneDone() {
-      const left = zonePool().filter(q => !appState.completedQuests[q.id]);
+      markQuestsDone(zonePool(), appState.selectedRegion);
+    }
+
+    // Tick every quest of one chapter on the list (the ones shown, after filters), after asking
+    let SECTION_QUESTS = [];
+    function markSectionDone(i) {
+      const sec = SECTION_QUESTS[i];
+      if (sec) markQuestsDone(sec.quests, sec.name);
+    }
+
+    function markQuestsDone(quests, where) {
+      const left = quests.filter(q => !appState.completedQuests[q.id]);
       if (!left.length) return;
-      const reg = appState.selectedRegion;
-      if (!confirm(`Mark all ${left.length} unfinished quests in ${reg} as done?\n\nYou can untick any of them afterwards.`)) return;
+      if (!confirm(`Mark all ${left.length} unfinished quests in ${where} as done?\n\nYou can untick any of them afterwards.`)) return;
       left.forEach(q => {
         appState.completedQuests[q.id] = true;
         appState.completedCycles[q.id] = q.cycles;
@@ -986,14 +996,18 @@
       };
 
       let html = "";
+      SECTION_QUESTS = [];
       groups.forEach((quests, subRegion) => {
         const all = quests.flatMap(q => [q, ...(stickerKids.get(q.id)?.quests || [])]);
         const gDone = all.filter(isDone).length;
+        const at = SECTION_QUESTS.push({ name: subRegion, quests: all }) - 1;
         html += `
           <div class="section-group">
             <div class="section-header">
               <h2>${subRegion}</h2>
               <span class="badge-count">${gDone} / ${all.length} Completed</span>
+              ${gDone < all.length ? `<button type="button" class="btn btn-sm section-tick" onclick="markSectionDone(${at})"
+                title="Already did these? Tick all ${all.length - gDone} unfinished quests shown here">✅ Tick all</button>` : ""}
             </div>
             <div class="quest-list">
               ${quests.map(cardWithKids).join("")}

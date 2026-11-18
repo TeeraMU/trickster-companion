@@ -711,10 +711,23 @@ select:focus, input:focus {
   margin-bottom: 12px;
 }
 
+.section-header {
+  flex-wrap: wrap;
+}
+
 .section-header h2 {
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
+}
+
+/* ✅ Tick all: marks a whole chapter done (players who already finished it) */
+.section-header .section-tick {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  min-height: 0;
 }
 
 .quest-list {

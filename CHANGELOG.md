@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Quests page: each chapter's header has a **✅ Tick all** button (next to "0 / 5 Completed") for players who already finished that part before using the app. It asks first, ticks the quests shown in that chapter, and any of them can be unticked afterwards.
 - Quests page: Tower of Chaos has its own **🗼 Tower** group after 🎓 Job, instead of sitting among the 📍 Zones.
 - Tower of Chaos: the way in is a chapter of its own, **Tower of Chaos - Entrance**, at the top of the Tower: Poirot - Make a Missing Ed Flyer → Wandering Photographer Ren - Flyer Picture Request (1) and (2) (Gold Lens, 20 Expensive Film) → Poirot - Get to the Bottom of the Rumours → Issue the Tower of Chaos Entrance Pass. The first three were missing; they are added from the wiki (from Lv.60, after the 2nd job).
 
