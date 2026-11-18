@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.9.2 (2026-11-19): Tower group, Tick all, friends' Bags
 
 - Quests page: **Items to collect** lists only items now. Kill-count hunts (Chaos King Yamu ×30, Corrupt Xeper ×19900 …) live in **⚔️ Monsters**, and one line at the top ("⚔️ 29 monsters to hunt … are in Monsters →") takes you there. The Episodes page, which has no Monsters view, still lists them.
 - Bag page: each "for N quests" chip starts with where the quest is (**EP1**, **Oops Wharf**, **3rd Job**). Hover it (or long-press) for the chapter, NPC, map and level, and tap it to open that quest. "+N more" now opens the rest of the list.
