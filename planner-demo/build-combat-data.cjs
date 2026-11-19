@@ -1,0 +1,13 @@
+const fs=require('fs'),path=require('path');
+const root='G:/Claude/playtrickster-extraction', catalog=require(root+'/catalog.json');
+const index=new Map(catalog.tables.map(x=>[x.table.toLowerCase(),x.path]));
+const get=n=>{let p=index.get(n.trim().toLowerCase());return p?JSON.parse(fs.readFileSync(path.join(root,p),'utf8')).rows:[]};
+const skills=get('SkillParam2'), boss=get('MonsterParamEx2');
+const normalize=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+const web=require('../data/builds.json');
+const needed=new Set(Object.values(web.skills).flat().map(x=>normalize(x.name)));
+const extracted=skills.filter(s=>needed.has(normalize(s.Name))).map(s=>({id:s.ID,name:s.Name,actionTable:s.ESATable,levels:get(s.ESAIITable||''),action:get(s.ESATable||'')}));
+const ids=['2072','2213','2295','2138','2152','2123','2216','2029'];
+const bosses=ids.map(id=>boss.find(x=>x.ID===id)).filter(Boolean).map(x=>({id:x.ID,name:x.Name,level:Number(x.Level),rawHP:x.MaxHpLv,rawDP:x.DpLv,rawMD:x.MdLv,fire:x.FireR,water:x.WaterR,wind:x.WindR,earth:x.EarthR,elec:x.ElecR}));
+fs.writeFileSync(path.join(__dirname,'combat-data.json'),JSON.stringify({source:'Extracted old client; fields unverified for new server',skills:extracted,bosses}));
+console.log(`Wrote ${extracted.length} skill records and ${bosses.length} bosses`);
