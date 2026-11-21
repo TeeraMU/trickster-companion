@@ -1680,10 +1680,10 @@
     function renderPlanner(st) {
       const c = BUILDS.classes[st.cls];
       const job = c && (c.jobs.find(j => j.name === st.job) || c.jobs[c.jobs.length - 2] || c.jobs[0]);
-      const known = STAT_BASE && STAT_BASE.classes[st.cls];
+      const base = TQPlanner.pickBase(STAT_BASE, st.cls, st.base);
       const buffs = BUFFS || { skills: {} };
       return TQPlanner.render({
-        build: st, stats: BUILDS.stats, base: known || st.base || null, baseChecked: known ? known.checked : "",
+        build: st, stats: BUILDS.stats, base: base.base, baseFrom: base.from, baseChecked: base.checked, estimateFrom: base.estimateFrom,
         buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, st.cls, job.name) : []),
         art: job && job.art, saved: appState.planner.builds,
         signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI

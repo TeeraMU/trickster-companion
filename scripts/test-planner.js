@@ -98,6 +98,17 @@ t("a class without starting stats: no front number, calibrating finds the base a
   assert.strictEqual(P.baseFromFront(-3, per.DX, 160), 10);
 });
 
+t("starting stats: checked class, else the player's own, else Cat's as an estimate", () => {
+  const typed = { AP: 20 };
+  assert.strictEqual(P.pickBase(bases, "Cat", typed).from, "checked");
+  assert.deepStrictEqual(P.pickBase(bases, "Buffalo", typed), { base: typed, from: "mine", checked: "", estimateFrom: "" });
+  const est = P.pickBase(bases, "Buffalo", undefined);
+  assert.strictEqual(est.from, "estimate");
+  assert.strictEqual(est.estimateFrom, "Cat");
+  assert.strictEqual(est.base, bases.classes.Cat);
+  assert.strictEqual(P.pickBase({ classes: {} }, "Buffalo").base, null);
+});
+
 t("bonus points: level − 1 unless typed in", () => {
   assert.deepStrictEqual(P.points(cat(160, 157)), { have: 159, spent: 157, left: 2, typed: false });
   const b = cat(160, 157); b.ptsHave = 165;
