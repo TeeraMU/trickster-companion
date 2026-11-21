@@ -108,8 +108,9 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   (`appState.planner.builds`, synced through sync-merge, max 20) and share codes (`TCB2.`). Pure model tested by
   `node scripts/test-planner.js` (against real status windows). The working build is `appState.build`
   (gear, pts, skills, buffs). Data: `data/stat-base.json` (starting stats per class, from in-game windows; add a
-  class when a player sends Growth + Basic Info screenshots) and `data/buffs.json` (which level-table column of
-  a skill changes which stat, read from the wiki's formulas).
+  class when a player sends Growth + Basic Info screenshots) `data/buffs.json` (which field of a skill's client
+  ESAction table changes which stat, and how) and `data/buff-values.json` (the values per level, made by
+  `node scripts/client/build-buffs.js` from `G:/Claude/playtrickster-extraction`; never hand-edit it).
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 

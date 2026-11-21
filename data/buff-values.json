@@ -1,0 +1,860 @@
+{
+ "source": "PlayTrickster client tables (ESAction_*); level 11 is Master",
+ "made": "2026-11-21",
+ "skills": {
+  "Bull's Eye": {
+   "table": "ESAction_Accuracy_Up",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.13
+    },
+    "3": {
+     "Ratio": 0.16
+    },
+    "4": {
+     "Ratio": 0.19
+    },
+    "5": {
+     "Ratio": 0.22
+    },
+    "6": {
+     "Ratio": 0.25
+    },
+    "7": {
+     "Ratio": 0.28
+    },
+    "8": {
+     "Ratio": 0.31
+    },
+    "9": {
+     "Ratio": 0.34
+    },
+    "10": {
+     "Ratio": 0.37
+    },
+    "M": {
+     "Ratio": 0.45
+    }
+   }
+  },
+  "Eagle Eye": {
+   "table": "ESAction_HawkEye",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.11
+    },
+    "3": {
+     "Ratio": 0.12
+    },
+    "4": {
+     "Ratio": 0.13
+    },
+    "5": {
+     "Ratio": 0.14
+    },
+    "6": {
+     "Ratio": 0.15
+    },
+    "7": {
+     "Ratio": 0.16
+    },
+    "8": {
+     "Ratio": 0.17
+    },
+    "9": {
+     "Ratio": 0.18
+    },
+    "10": {
+     "Ratio": 0.19
+    },
+    "M": {
+     "Ratio": 0.22
+    }
+   }
+  },
+  "Pumping Heart": {
+   "table": "ESAction_HeartBeat",
+   "levels": {
+    "1": {
+     "Ratio": 0.06
+    },
+    "2": {
+     "Ratio": 0.07
+    },
+    "3": {
+     "Ratio": 0.08
+    },
+    "4": {
+     "Ratio": 0.09
+    },
+    "5": {
+     "Ratio": 0.1
+    },
+    "6": {
+     "Ratio": 0.11
+    },
+    "7": {
+     "Ratio": 0.12
+    },
+    "8": {
+     "Ratio": 0.13
+    },
+    "9": {
+     "Ratio": 0.14
+    },
+    "10": {
+     "Ratio": 0.15
+    },
+    "M": {
+     "Ratio": 0.16
+    }
+   }
+  },
+  "Adrenaline": {
+   "table": "ESAction_Adrenaline",
+   "levels": {
+    "1": {
+     "Ratio": 0.02
+    },
+    "2": {
+     "Ratio": 0.04
+    },
+    "3": {
+     "Ratio": 0.06
+    },
+    "4": {
+     "Ratio": 0.08
+    },
+    "5": {
+     "Ratio": 0.1
+    },
+    "6": {
+     "Ratio": 0.12
+    },
+    "7": {
+     "Ratio": 0.14
+    },
+    "8": {
+     "Ratio": 0.16
+    },
+    "9": {
+     "Ratio": 0.18
+    },
+    "10": {
+     "Ratio": 0.2
+    },
+    "M": {
+     "Ratio": 0.26
+    }
+   }
+  },
+  "Hyper Beat": {
+   "table": "ESAction_AgilityUp",
+   "levels": {
+    "1": {
+     "DX": -1
+    },
+    "2": {
+     "DX": -1
+    },
+    "3": {
+     "DX": -1
+    },
+    "4": {
+     "DX": -1
+    },
+    "5": {
+     "DX": -1
+    },
+    "6": {
+     "DX": -1
+    },
+    "7": {
+     "DX": -2
+    },
+    "8": {
+     "DX": -2
+    },
+    "9": {
+     "DX": -2
+    },
+    "10": {
+     "DX": -2
+    },
+    "M": {
+     "DX": -3
+    }
+   }
+  },
+  "Aura of Haste": {
+   "table": "ESAction_MultiAgilityUp",
+   "levels": {
+    "1": {
+     "DX": -1
+    },
+    "2": {
+     "DX": -1
+    },
+    "3": {
+     "DX": -1
+    },
+    "4": {
+     "DX": -1
+    },
+    "5": {
+     "DX": -1
+    },
+    "6": {
+     "DX": -2
+    },
+    "7": {
+     "DX": -2
+    },
+    "8": {
+     "DX": -2
+    },
+    "9": {
+     "DX": -2
+    },
+    "10": {
+     "DX": -2
+    },
+    "M": {
+     "DX": -3
+    }
+   }
+  },
+  "Bottle of Mana": {
+   "table": "ESAction_Mana_Bottle",
+   "levels": {
+    "1": {
+     "MP": 40
+    },
+    "2": {
+     "MP": 90
+    },
+    "3": {
+     "MP": 150
+    },
+    "4": {
+     "MP": 220
+    },
+    "5": {
+     "MP": 310
+    },
+    "6": {
+     "MP": 420
+    },
+    "7": {
+     "MP": 550
+    },
+    "8": {
+     "MP": 710
+    },
+    "9": {
+     "MP": 900
+    },
+    "10": {
+     "MP": 1120
+    },
+    "M": {
+     "MP": 1390
+    }
+   }
+  },
+  "Mana Shield": {
+   "table": "ESAction_MagicWall",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.13
+    },
+    "3": {
+     "Ratio": 0.16
+    },
+    "4": {
+     "Ratio": 0.19
+    },
+    "5": {
+     "Ratio": 0.22
+    },
+    "6": {
+     "Ratio": 0.25
+    },
+    "7": {
+     "Ratio": 0.28
+    },
+    "8": {
+     "Ratio": 0.31
+    },
+    "9": {
+     "Ratio": 0.34
+    },
+    "10": {
+     "Ratio": 0.37
+    },
+    "M": {
+     "Ratio": 0.45
+    }
+   }
+  },
+  "Mist of Mana": {
+   "table": "ESAction_MagicWind",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.13
+    },
+    "3": {
+     "Ratio": 0.16
+    },
+    "4": {
+     "Ratio": 0.19
+    },
+    "5": {
+     "Ratio": 0.22
+    },
+    "6": {
+     "Ratio": 0.25
+    },
+    "7": {
+     "Ratio": 0.28
+    },
+    "8": {
+     "Ratio": 0.31
+    },
+    "9": {
+     "Ratio": 0.34
+    },
+    "10": {
+     "Ratio": 0.37
+    },
+    "M": {
+     "Ratio": 0.6
+    }
+   }
+  },
+  "Sixth Sense": {
+   "table": "ESAction_Sixth_Sense",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.13
+    },
+    "3": {
+     "Ratio": 0.16
+    },
+    "4": {
+     "Ratio": 0.19
+    },
+    "5": {
+     "Ratio": 0.22
+    },
+    "6": {
+     "Ratio": 0.25
+    },
+    "7": {
+     "Ratio": 0.28
+    },
+    "8": {
+     "Ratio": 0.31
+    },
+    "9": {
+     "Ratio": 0.34
+    },
+    "10": {
+     "Ratio": 0.37
+    },
+    "M": {
+     "Ratio": 0.7
+    }
+   }
+  },
+  "Lucky Seven": {
+   "table": "ESAction_LuckUp",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.13
+    },
+    "3": {
+     "Ratio": 0.16
+    },
+    "4": {
+     "Ratio": 0.19
+    },
+    "5": {
+     "Ratio": 0.22
+    },
+    "6": {
+     "Ratio": 0.25
+    },
+    "7": {
+     "Ratio": 0.28
+    },
+    "8": {
+     "Ratio": 0.31
+    },
+    "9": {
+     "Ratio": 0.34
+    },
+    "10": {
+     "Ratio": 0.37
+    },
+    "M": {
+     "Ratio": 0.45
+    }
+   }
+  },
+  "Aura of Luck": {
+   "table": "ESAction_GoodLuck",
+   "levels": {
+    "1": {
+     "Ratio": 0.06
+    },
+    "2": {
+     "Ratio": 0.07
+    },
+    "3": {
+     "Ratio": 0.08
+    },
+    "4": {
+     "Ratio": 0.09
+    },
+    "5": {
+     "Ratio": 0.1
+    },
+    "6": {
+     "Ratio": 0.11
+    },
+    "7": {
+     "Ratio": 0.12
+    },
+    "8": {
+     "Ratio": 0.13
+    },
+    "9": {
+     "Ratio": 0.14
+    },
+    "10": {
+     "Ratio": 0.15
+    },
+    "M": {
+     "Ratio": 0.18
+    }
+   }
+  },
+  "Dodge Master": {
+   "table": "ESAction_Soft_Waist",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.13
+    },
+    "3": {
+     "Ratio": 0.16
+    },
+    "4": {
+     "Ratio": 0.19
+    },
+    "5": {
+     "Ratio": 0.22
+    },
+    "6": {
+     "Ratio": 0.25
+    },
+    "7": {
+     "Ratio": 0.28
+    },
+    "8": {
+     "Ratio": 0.31
+    },
+    "9": {
+     "Ratio": 0.34
+    },
+    "10": {
+     "Ratio": 0.37
+    },
+    "M": {
+     "Ratio": 0.6
+    }
+   }
+  },
+  "Shield All": {
+   "table": "ESAction_BigShield",
+   "levels": {
+    "1": {
+     "Ratio": 0.06
+    },
+    "2": {
+     "Ratio": 0.07
+    },
+    "3": {
+     "Ratio": 0.08
+    },
+    "4": {
+     "Ratio": 0.09
+    },
+    "5": {
+     "Ratio": 0.1
+    },
+    "6": {
+     "Ratio": 0.11
+    },
+    "7": {
+     "Ratio": 0.12
+    },
+    "8": {
+     "Ratio": 0.13
+    },
+    "9": {
+     "Ratio": 0.14
+    },
+    "10": {
+     "Ratio": 0.15
+    },
+    "M": {
+     "Ratio": 0.18
+    }
+   }
+  },
+  "Sturdy Shield": {
+   "table": "ESAction_StaticShield",
+   "levels": {
+    "1": {
+     "Ratio": 0.1
+    },
+    "2": {
+     "Ratio": 0.12
+    },
+    "3": {
+     "Ratio": 0.14
+    },
+    "4": {
+     "Ratio": 0.16
+    },
+    "5": {
+     "Ratio": 0.18
+    },
+    "6": {
+     "Ratio": 0.2
+    },
+    "7": {
+     "Ratio": 0.22
+    },
+    "8": {
+     "Ratio": 0.24
+    },
+    "9": {
+     "Ratio": 0.26
+    },
+    "10": {
+     "Ratio": 0.28
+    },
+    "M": {
+     "Ratio": 0.34
+    }
+   }
+  },
+  "Physical Training": {
+   "table": "ESAction_Fitness",
+   "levels": {
+    "1": {
+     "HP": 500
+    },
+    "2": {
+     "HP": 600
+    },
+    "3": {
+     "HP": 710
+    },
+    "4": {
+     "HP": 830
+    },
+    "5": {
+     "HP": 960
+    },
+    "6": {
+     "HP": 1100
+    },
+    "7": {
+     "HP": 1250
+    },
+    "8": {
+     "HP": 1410
+    },
+    "9": {
+     "HP": 1580
+    },
+    "10": {
+     "HP": 1760
+    },
+    "M": {
+     "HP": 23600
+    }
+   }
+  },
+  "Evolution": {
+   "table": "ESAction_WildMutation",
+   "levels": {
+    "1": {
+     "ApPRatio": 1.3,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.2,
+     "DpMRatio": 0.2,
+     "DxPValue": 1
+    },
+    "2": {
+     "ApPRatio": 1.4,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.21,
+     "DpMRatio": 0.21,
+     "DxPValue": 1
+    },
+    "3": {
+     "ApPRatio": 1.5,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.22,
+     "DpMRatio": 0.22,
+     "DxPValue": 1
+    },
+    "4": {
+     "ApPRatio": 1.6,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.23,
+     "DpMRatio": 0.23,
+     "DxPValue": 1
+    },
+    "5": {
+     "ApPRatio": 1.7,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.24,
+     "DpMRatio": 0.24,
+     "DxPValue": 2
+    },
+    "6": {
+     "ApPRatio": 1.8,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.25,
+     "DpMRatio": 0.25,
+     "DxPValue": 2
+    },
+    "7": {
+     "ApPRatio": 1.9,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.26,
+     "DpMRatio": 0.26,
+     "DxPValue": 2
+    },
+    "8": {
+     "ApPRatio": 2,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.27,
+     "DpMRatio": 0.27,
+     "DxPValue": 3
+    },
+    "9": {
+     "ApPRatio": 2.1,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.28,
+     "DpMRatio": 0.28,
+     "DxPValue": 3
+    },
+    "10": {
+     "ApPRatio": 2.2,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.29,
+     "DpMRatio": 0.29,
+     "DxPValue": 3
+    },
+    "M": {
+     "ApPRatio": 2.5,
+     "LkMRatio": 0.3,
+     "HvMRatio": 0.3,
+     "DpMRatio": 0.3,
+     "DxPValue": 4
+    }
+   }
+  },
+  "Beast's Instinct": {
+   "table": "ESAction_Beast",
+   "levels": {
+    "1": {
+     "AP_Ratio": 2.6,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.2,
+     "DP_Ratio": 0.2,
+     "DX_Ratio": 1
+    },
+    "2": {
+     "AP_Ratio": 2.8,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.21,
+     "DP_Ratio": 0.21,
+     "DX_Ratio": 1
+    },
+    "3": {
+     "AP_Ratio": 3,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.22,
+     "DP_Ratio": 0.22,
+     "DX_Ratio": 1
+    },
+    "4": {
+     "AP_Ratio": 3.2,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.23,
+     "DP_Ratio": 0.23,
+     "DX_Ratio": 1
+    },
+    "5": {
+     "AP_Ratio": 3.4,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.24,
+     "DP_Ratio": 0.24,
+     "DX_Ratio": 2
+    },
+    "6": {
+     "AP_Ratio": 3.6,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.25,
+     "DP_Ratio": 0.25,
+     "DX_Ratio": 2
+    },
+    "7": {
+     "AP_Ratio": 3.8,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.26,
+     "DP_Ratio": 0.26,
+     "DX_Ratio": 2
+    },
+    "8": {
+     "AP_Ratio": 4,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.27,
+     "DP_Ratio": 0.27,
+     "DX_Ratio": 3
+    },
+    "9": {
+     "AP_Ratio": 4.2,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.28,
+     "DP_Ratio": 0.28,
+     "DX_Ratio": 3
+    },
+    "10": {
+     "AP_Ratio": 4.4,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.29,
+     "DP_Ratio": 0.29,
+     "DX_Ratio": 3
+    },
+    "M": {
+     "AP_Ratio": 5,
+     "LK_Ratio": 0.3,
+     "HV_Ratio": 0.3,
+     "DP_Ratio": 0.3,
+     "DX_Ratio": 4
+    }
+   }
+  },
+  "Metamorphosis": {
+   "table": "ESAction_Change",
+   "levels": {
+    "1": {
+     "HvPRatio": 1.3,
+     "DpPRatio": 1.3,
+     "ApMRatio": 0.2,
+     "LkMRatio": 0.2,
+     "DxMValue": -1
+    },
+    "2": {
+     "HvPRatio": 1.4,
+     "DpPRatio": 1.4,
+     "ApMRatio": 0.21,
+     "LkMRatio": 0.21,
+     "DxMValue": -1
+    },
+    "3": {
+     "HvPRatio": 1.5,
+     "DpPRatio": 1.5,
+     "ApMRatio": 0.22,
+     "LkMRatio": 0.22,
+     "DxMValue": -1
+    },
+    "4": {
+     "HvPRatio": 1.6,
+     "DpPRatio": 1.6,
+     "ApMRatio": 0.23,
+     "LkMRatio": 0.23,
+     "DxMValue": -1
+    },
+    "5": {
+     "HvPRatio": 1.7,
+     "DpPRatio": 1.7,
+     "ApMRatio": 0.24,
+     "LkMRatio": 0.24,
+     "DxMValue": -2
+    },
+    "6": {
+     "HvPRatio": 1.8,
+     "DpPRatio": 1.8,
+     "ApMRatio": 0.25,
+     "LkMRatio": 0.25,
+     "DxMValue": -2
+    },
+    "7": {
+     "HvPRatio": 1.9,
+     "DpPRatio": 1.9,
+     "ApMRatio": 0.26,
+     "LkMRatio": 0.26,
+     "DxMValue": -2
+    },
+    "8": {
+     "HvPRatio": 2,
+     "DpPRatio": 2,
+     "ApMRatio": 0.27,
+     "LkMRatio": 0.27,
+     "DxMValue": -3
+    },
+    "9": {
+     "HvPRatio": 2.1,
+     "DpPRatio": 2.1,
+     "ApMRatio": 0.28,
+     "LkMRatio": 0.28,
+     "DxMValue": -3
+    },
+    "10": {
+     "HvPRatio": 2.2,
+     "DpPRatio": 2.2,
+     "ApMRatio": 0.29,
+     "LkMRatio": 0.29,
+     "DxMValue": -3
+    },
+    "M": {
+     "HvPRatio": 2.5,
+     "DpPRatio": 2.5,
+     "ApMRatio": 0.3,
+     "LkMRatio": 0.3,
+     "DxMValue": -4
+    }
+   }
+  }
+ }
+}
