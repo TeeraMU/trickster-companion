@@ -1,0 +1,51 @@
+{
+  "about": "Skills that raise the player's own stats, for the Build planner. Each effect reads a column of the skill's level table in data/builds.json (wiki). of: base = the front number of the status window, total = front + gear. op: mul = new value is the stat times the column (1.45, 145%), pct = adds the stat times the column (26%, or 18 when num), add = adds the column. group: only one of these at a time. party: also cast on party members, so every job can tick it. From the wiki's formulas; not checked in game yet.",
+  "skills": {
+    "Bull's Eye": [{ "stat": "AC", "of": "total", "op": "mul", "col": "Accuracy Increase (A)" }],
+    "Eagle Eye": { "party": true, "effects": [{ "stat": "AC", "of": "total", "op": "mul", "col": "AC Increase (A)" }] },
+    "Pumping Heart": { "party": true, "effects": [{ "stat": "AP", "of": "total", "op": "mul", "col": "Attack Increase (A)" }] },
+    "Adrenaline": [{ "stat": "AP", "of": "total", "op": "pct", "col": "AP increase" }],
+    "Hyper Beat": [{ "stat": "DX", "op": "add", "col": "Dexterity Modifier (A)" }],
+    "Aura of Haste": { "party": true, "effects": [{ "stat": "DX", "op": "add", "col": "Agility" }] },
+    "Bottle of Mana": [{ "stat": "MP", "op": "add", "col": "Maximum MP Increase" }],
+    "Mana Shield": { "party": true, "effects": [{ "stat": "MD", "of": "total", "op": "pct", "col": "Magic Defense Increase" }] },
+    "Mist of Mana": { "party": true, "effects": [{ "stat": "MA", "of": "total", "op": "pct", "col": "Magic Power Up" }] },
+    "Sixth Sense": [{ "stat": "DA", "of": "total", "op": "pct", "col": "DA Increase (%)" }],
+    "Lucky Seven": [{ "stat": "LK", "of": "total", "op": "pct", "col": "Luck Increase %" }],
+    "Aura of Luck": { "party": true, "effects": [{ "stat": "LK", "of": "total", "op": "mul", "col": "Luck Increase (A)" }] },
+    "Dodge Master": [{ "stat": "HV", "of": "total", "op": "mul", "col": "Multiplier" }],
+    "Shield All": { "party": true, "effects": [{ "stat": "DP", "of": "total", "op": "pct", "num": true, "col": "DP Increase % (d1)" }] },
+    "Sturdy Shield": [{ "stat": "DP", "of": "total", "op": "pct", "num": true, "col": "Increase % (d2)" }],
+    "Physical Training": [{ "stat": "HP", "op": "add", "col": "HP Increase" }],
+    "Evolution": {
+      "group": "transform",
+      "effects": [
+        { "stat": "AP", "of": "base", "op": "mul", "col": "AP Mag. Ratio" },
+        { "stat": "LK", "of": "base", "op": "mul", "col": "LK, HV, DP Mag. Ratio" },
+        { "stat": "HV", "of": "base", "op": "mul", "col": "LK, HV, DP Mag. Ratio" },
+        { "stat": "DP", "of": "base", "op": "mul", "col": "LK, HV, DP Mag. Ratio" },
+        { "stat": "DX", "op": "add", "col": "DX Decrease" }
+      ]
+    },
+    "Beast's Instinct": {
+      "group": "transform",
+      "effects": [
+        { "stat": "AP", "of": "base", "op": "mul", "col": "AP Mag. Ratio" },
+        { "stat": "LK", "of": "base", "op": "mul", "col": "LK, HV, DP Mag. Ratio" },
+        { "stat": "HV", "of": "base", "op": "mul", "col": "LK, HV, DP Mag. Ratio" },
+        { "stat": "DP", "of": "base", "op": "mul", "col": "LK, HV, DP Mag. Ratio" },
+        { "stat": "DX", "op": "add", "col": "DX Decrease" }
+      ]
+    },
+    "Metamorphosis": {
+      "group": "transform",
+      "effects": [
+        { "stat": "HV", "of": "base", "op": "mul", "col": "HV & DP Mag. Ratio (m)" },
+        { "stat": "DP", "of": "base", "op": "mul", "col": "HV & DP Mag. Ratio (m)" },
+        { "stat": "AP", "of": "base", "op": "mul", "col": "AP & LK Mag. Ratio (r)" },
+        { "stat": "LK", "of": "base", "op": "mul", "col": "AP & LK Mag. Ratio (r)" },
+        { "stat": "DX", "op": "add", "col": "DX Increase (d)" }
+      ]
+    }
+  }
+}

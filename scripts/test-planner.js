@@ -1,98 +1,149 @@
-// Checks js/planner.js (Build planner model) against data/equipment.json. usage: node scripts/test-planner.js
+// Checks js/planner.js (Build planner model) against the game's status windows and the data files.
+// usage: node scripts/test-planner.js
 const assert = require("assert");
 const path = require("path");
 const P = require("../js/planner.js");
-const cat = require(path.join(__dirname, "..", "data", "equipment.json"));
+const B = require("../js/build.js");
+const data = f => require(path.join(__dirname, "..", "data", f));
+const builds = data("builds.json"), buffs = data("buffs.json"), bases = data("stat-base.json");
 
 let n = 0;
 const t = (name, fn) => { fn(); n++; console.log("ok ", name); };
-const byId = P.indexCatalog(cat);
+const skillByName = new Map();
+for (const list of Object.values(builds.skills)) for (const s of list) if (!skillByName.has(s.name)) skillByName.set(s.name, s);
+const ctx = { stats: builds.stats, base: bases.classes.Cat, buffs, skillByName };
+const front = st => Object.fromEntries(st.rows.map(r => [r.stat, r.front]));
+const lvs = st => Object.fromEntries(st.rows.map(r => [r.stat, r.lv]));
 
-t("the catalog has every slot kind, ids are unique, stats are known", () => {
-  const kinds = new Set(cat.items.map(i => i.s));
-  for (const k of P.SLOT_KINDS) assert.ok(kinds.has(k), "no " + k);
-  assert.strictEqual(byId.size, cat.items.length);
-  for (const it of cat.items) for (const k of Object.keys(it.st || {})) assert.ok(P.STATS.includes(k), it.n + " " + k);
+// Cat / Primadonna, growth Power 4 · Magic 1 · Sense 1 · Charm 4 (player's Growth windows, 2026-11)
+const cat = (level, ap) => P.cleanBuild({ cls: "Cat", job: "Primadonna", level, growth: { Power: 4, Magic: 1, Sense: 1, Charm: 4 }, pts: { AP: ap } });
+
+t("stat levels: growth 4 = level, growth 1 = a quarter (Lv.146 -> 37)", () => {
+  assert.strictEqual(P.groupLevel(160, 4), 160);
+  assert.strictEqual(P.groupLevel(160, 1), 40);
+  assert.strictEqual(P.groupLevel(152, 1), 38);
+  assert.strictEqual(P.groupLevel(146, 1), 37);
+  assert.deepStrictEqual(lvs(P.status(cat(160, 157), ctx)), { AP: 317, AC: 160, DX: 160, MP: 40, MA: 40, MD: 40, WT: 40, DA: 40, LK: 40, HP: 160, DP: 160, HV: 160 });
 });
 
-t("Flame Ring (19136) has Fire 30, as in Item_Attribute", () => {
-  const it = byId.get("19136");
-  assert.strictEqual(it.n, "Flame Ring");
-  assert.deepStrictEqual(it.e, { Fire: 30 });
+t("front numbers match the game at Lv.160, 152 and 146", () => {
+  assert.deepStrictEqual(front(P.status(cat(160, 157), ctx)), { AP: 1282, AC: 89, DX: -3, MP: 1250, MA: 59, MD: 146, WT: 4320, DA: 9, LK: 9, HP: 4890, DP: 632, HV: 39 });
+  assert.deepStrictEqual(front(P.status(cat(152, 148), ctx)), { AP: 1214, AC: 87, DX: -2, MP: 1190, MA: 59, MD: 138, WT: 4160, DA: 9, LK: 9, HP: 4650, DP: 600, HV: 37 });
+  assert.deepStrictEqual(front(P.status(cat(146, 145), ctx)), { AP: 1178, AC: 86, DX: -2, MP: 1160, MA: 59, MD: 134, WT: 4080, DA: 9, LK: 9, HP: 4470, DP: 576, HV: 36 });
 });
 
-t("totals: gear + typed bonuses + ticked buffs, elements and resistances", () => {
-  const b = P.cleanBuild({
-    level: 150,
-    gear: { acc1: { id: "19136", add: { AP: 50 } }, acc2: { id: "19136" }, weapon: { id: "c:abc" } },
-    custom: [{ id: "c:abc", n: "My Sword", s: "weapon", l: 150, st: { AP: 1000 } }],
-    buffs: [{ name: "Fury", stat: "AP", value: 200, on: true }, { name: "Off", stat: "AP", value: 999, on: false }, { name: "Fire up", stat: "Fire", value: 10, on: true }]
-  });
-  const r = P.totals(b, byId);
-  assert.strictEqual(r.gear.AP, 192 * 2 + 1000);
-  assert.strictEqual(r.adds.AP, 50);
-  assert.strictEqual(r.buffs.AP, 200);
-  assert.strictEqual(r.plus.AP, 192 * 2 + 1000 + 50 + 200);
-  assert.strictEqual(r.elements.Fire, 30 + 30 + 10);
-  assert.strictEqual(r.pieces.length, 3);
+t("gear adds to the +, with elements and resistances", () => {
+  const b = cat(160, 157);
+  b.gear = P.cleanBuild({ gear: { weapon: { n: "Staff", st: { AP: 4000, HV: 20 }, e: { Wind: 83 } }, acc1: { n: "Ring", st: { AP: 305 }, r: { Fire: 10 } } } }).gear;
+  const st = P.status(b, ctx);
+  const ap = st.rows.find(r => r.stat === "AP");
+  assert.strictEqual(ap.gear, 4305);
+  assert.strictEqual(ap.plus, 4305);
+  assert.strictEqual(ap.total, 1282 + 4305);
+  assert.deepStrictEqual(st.elements, { Wind: 83 });
+  assert.deepStrictEqual(st.resist, { Fire: 10 });
 });
 
-t("an item id the catalog no longer has is flagged, not counted", () => {
-  const b = P.cleanBuild({ gear: { hat: { id: "999999999" } } });
-  const r = P.totals(b, byId);
-  assert.deepStrictEqual(r.pieces, [{ key: "hat", item: null, missing: true }]);
-  assert.deepStrictEqual(r.plus, {});
+t("level table values: %, thousands, signs", () => {
+  assert.strictEqual(P.cellValue("145%"), 1.45);
+  assert.strictEqual(P.cellValue("1,390"), 1390);
+  assert.strictEqual(P.cellValue("+4"), 4);
+  assert.strictEqual(P.cellValue("-3"), -3);
+  assert.strictEqual(P.cellValue("—"), null);
 });
 
-t("diff: what changes when one item replaces another", () => {
-  assert.deepStrictEqual(P.diff({ st: { AP: 10, MD: 5 } }, { st: { AP: 30, HP: 100 } }), { AP: 20, MD: -5, HP: 100 });
-  assert.deepStrictEqual(P.diff(null, { st: { AP: 3 } }), { AP: 3 });
+t("every buff in data/buffs.json is a skill with the columns it reads", () => {
+  for (const name of Object.keys(buffs.skills)) {
+    const sk = skillByName.get(name);
+    assert.ok(sk, name + " is not a skill in builds.json");
+    for (const e of P.buffSpec(buffs, name).effects) {
+      assert.ok(P.STATS.includes(e.stat), name + " " + e.stat);
+      assert.ok(["add", "mul", "pct"].includes(e.op), name + " op");
+      assert.notStrictEqual(P.skillValue(sk, e.col, "M"), null, `${name}: no "${e.col}" value`);
+    }
+  }
 });
 
-t("search: slot, words in any order, level cap, custom first", () => {
-  const b = P.cleanBuild({ custom: [{ id: "c:x1", n: "Flame Test Ring", s: "accessory", l: 1 }] });
-  const r = P.search(cat, b, { slot: "accessory", query: "ring flame", maxLevel: 80 });
-  assert.strictEqual(r.list[0].id, "c:x1");
-  assert.ok(r.list.some(i => i.id === "19136"));
-  assert.ok(r.list.every(i => i.s === "accessory" && i.l <= 80 && /flame/i.test(i.n)));
-  assert.ok(!r.list.some(i => i.id === "19246"), "Lv.90 ring is over the cap");
+t("Primadonna buffs: Dodge Master, Shield All, Evolution … with the Master values", () => {
+  const sets = B.skillSets(builds, "Cat", "Primadonna");
+  const lists = P.buffLists(builds, buffs, sets);
+  const mine = lists.mine.map(e => e.skill.name);
+  for (const s of ["Dodge Master", "Shield All", "Sturdy Shield", "Physical Training", "Evolution", "Beast's Instinct"]) assert.ok(mine.includes(s), s);
+  assert.ok(lists.party.some(e => e.skill.name === "Pumping Heart"));
+  assert.ok(!lists.party.some(e => mine.includes(e.skill.name)), "own buffs aren't listed again");
+  const b = cat(160, 157);
+  b.gear = { weapon: { n: "x", st: { HV: 120, DP: 1085 } } };
+  b.skills = { "Physical Training": "M", "Dodge Master": "M", "Shield All": "M", "Evolution": "M" };
+  const st = P.status(b, ctx);
+  const d = Object.fromEntries(st.buffs.map(x => [x.name, x.deltas]));
+  assert.deepStrictEqual(d["Physical Training"], { HP: 2360 });
+  assert.deepStrictEqual(d["Dodge Master"], { HV: Math.trunc((39 + 120) * 0.45) });
+  assert.deepStrictEqual(d["Shield All"], { DP: Math.trunc((632 + 1085) * 0.18) });
+  assert.strictEqual(d.Evolution.AP, Math.trunc(1282 * 1.5));
+  assert.strictEqual(d.Evolution.DX, -4);
+  const dp = st.rows.find(r => r.stat === "DP");
+  assert.strictEqual(dp.buff, d["Shield All"].DP + d.Evolution.DP);
+});
+
+t("a skill level picks its row; a typed-in buff adds as it is", () => {
+  const b = cat(160, 157);
+  b.skills = { "Physical Training": "1" };
+  b.buffs = [{ name: "Food", stat: "AP", value: 100, on: true }, { name: "Off", stat: "AP", value: 999, on: false }];
+  const st = P.status(b, ctx);
+  assert.strictEqual(st.rows.find(r => r.stat === "HP").buff, 500);
+  assert.strictEqual(st.rows.find(r => r.stat === "AP").buff, 100);
+});
+
+t("a class without starting stats: no front number, calibrating finds the base again", () => {
+  const b = P.cleanBuild({ cls: "Fox", level: 160, growth: { Power: 4, Magic: 1, Sense: 1, Charm: 4 } });
+  const st = P.status(b, Object.assign({}, ctx, { base: null }));
+  assert.ok(!st.known && st.rows.every(r => r.front === null));
+  const per = builds.stats.perAttrLevel;
+  assert.strictEqual(P.baseFromFront(1282, per.AP, 317), 18);
+  assert.strictEqual(P.baseFromFront(-3, per.DX, 160), 10);
+});
+
+t("bonus points: level − 1 unless typed in", () => {
+  assert.deepStrictEqual(P.points(cat(160, 157)), { have: 159, spent: 157, left: 2, typed: false });
+  const b = cat(160, 157); b.ptsHave = 165;
+  assert.strictEqual(P.points(b).left, 8);
 });
 
 t("cleanBuild drops what doesn't belong and keeps limits", () => {
   const b = P.cleanBuild({
     id: "bad id", name: "x".repeat(99), level: 5000, growth: { Power: 9 },
-    gear: { weapon: { id: "c:gone" }, hat: { id: "<script>" }, shield: { id: "78977", add: { AP: "12", ZZ: 4 } }, nope: { id: "1" } },
-    buffs: [{ stat: "ZZ", value: 1 }], bonus: { AP: 300, MD: 20 }
+    gear: { weapon: { n: "Sword", st: { AP: "12", ZZ: 4 } }, hat: {}, nope: { n: "x" } },
+    skills: { "Dodge Master": "M", "Shield All": "99" }, buffs: [{ stat: "ZZ", value: 1 }], pts: { AP: -5, HV: 3 }
   });
   assert.ok(/^b[a-z0-9]+$/.test(b.id));
   assert.strictEqual(b.name.length, P.LIMITS.name);
   assert.strictEqual(b.level, 999);
   assert.strictEqual(b.growth.Power, 4);
-  assert.deepStrictEqual(b.gear, { shield: { id: "78977", add: { AP: 12 } } });
+  assert.deepStrictEqual(b.gear, { weapon: { n: "Sword", st: { AP: 12 } } });
+  assert.deepStrictEqual(b.skills, { "Dodge Master": "M" });
   assert.deepStrictEqual(b.buffs, []);
-  assert.deepStrictEqual(b.bonus, { AP: 100, MD: 20 });
+  assert.deepStrictEqual(b.pts, { HV: 3 });
   assert.strictEqual(P.cleanBuild("nope"), null);
 });
 
 t("mergeBuilds: the newer copy of the same build wins, others are kept", () => {
   const a = [{ id: "b1", name: "Here", updated: 200 }, { id: "b2", name: "Only here", updated: 50 }];
   const c = [{ id: "b1", name: "Cloud", updated: 100 }, { id: "b3", name: "Only cloud", updated: 300 }];
-  const m = P.mergeBuilds(a, c);
-  assert.deepStrictEqual(m.map(b => b.id + ":" + b.name), ["b3:Only cloud", "b1:Here", "b2:Only here"]);
+  assert.deepStrictEqual(P.mergeBuilds(a, c).map(b => b.id + ":" + b.name), ["b3:Only cloud", "b1:Here", "b2:Only here"]);
 });
 
-t("share code round trip keeps gear and custom items, gets a new id", () => {
-  const b = P.cleanBuild({ id: "babc", name: "Diva AP ✨", cls: "Cat", job: "Primadonna", level: 250,
-    gear: { weapon: { id: "c:s1", add: { AP: 9 } }, acc1: { id: "19136" } },
-    custom: [{ id: "c:s1", n: "Swan Staff (live)", s: "weapon", l: 90, st: { AP: 500 } }] });
-  const code = P.encodeBuild(b);
-  assert.ok(code.startsWith("TCB1."));
-  const back = P.decodeBuild(code);
+t("share code round trip keeps the build, gets a new id", () => {
+  const b = cat(160, 157);
+  b.id = "babc"; b.name = "Diva AP ✨";
+  b.gear = { weapon: { n: "White Swan Staff +7", st: { AP: 500 }, e: { Wind: 30 }, note: "refine +7" } };
+  b.skills = { Evolution: "M" };
+  const back = P.decodeBuild(P.encodeBuild(b));
   assert.notStrictEqual(back.id, "babc");
   assert.strictEqual(back.name, "Diva AP ✨");
   assert.deepStrictEqual(back.gear, b.gear);
-  assert.deepStrictEqual(back.custom, b.custom);
-  assert.strictEqual(P.decodeBuild("TCB1.!!!"), null);
+  assert.deepStrictEqual(back.skills, b.skills);
+  assert.deepStrictEqual(back.pts, { AP: 157 });
+  assert.strictEqual(P.decodeBuild("TCB2.!!!"), null);
   assert.strictEqual(P.decodeBuild("hello"), null);
 });
 

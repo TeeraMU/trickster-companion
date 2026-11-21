@@ -1,0 +1,10 @@
+{
+  "about": "Starting stats per class for the Build planner: the front number of the status window is base + floor(per level x (stat level - 1)), per level from data/builds.json stats.perAttrLevel. A stat's level is floor((4 + growth x (level - 1)) / 4) plus the bonus points put in it. Worked out from in-game status windows; a class without numbers here asks the player to type their window once.",
+  "classes": {
+    "Cat": {
+      "AP": 18, "AC": 50, "DX": 10, "MP": 80, "MA": 50, "MD": -10,
+      "WT": 1200, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
+      "checked": "2026-11-21 in game: Primadonna growth 4-1-1-4 at Lv.146, 152 and 160 (every stat matches)"
+    }
+  }
+}

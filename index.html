@@ -375,7 +375,7 @@
       selectedRegion: "All",
       selectedAreaGroup: "all",
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
-      build: null,             // Build guide: { cls, job, tab, growth, level, bonus, picked, gear, custom, buffs, name, savedId } (this device only)
+      build: null,             // Build guide: { cls, job, tab, growth, level, bonus, picked, gear, pts, skills, buffs, name, savedId } (this device only)
       planner: { builds: [] }, // Build planner's saved builds (synced; js/planner.js)
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
@@ -1616,8 +1616,13 @@
     function loadBuilds() {
       // skill-fixes.json: where PlayTrickster differs from the wiki (optional)
       const fixes = TQData.fetchJson("data/skill-fixes.json").catch(() => null);
-      return Promise.all([TQData.fetchJson("data/builds.json"), fixes]).then(([b, f]) => {
+      // Build planner: starting stats per class and buff effects (optional)
+      const bases = TQData.fetchJson("data/stat-base.json").catch(() => null);
+      const buffs = TQData.fetchJson("data/buffs.json").catch(() => null);
+      return Promise.all([TQData.fetchJson("data/builds.json"), fixes, bases, buffs]).then(([b, f, sb, bf]) => {
         TQBuild.applyFixes(b, f);
+        STAT_BASE = sb;
+        BUFFS = bf;
         BUILDS = b;
         TQSearch.refresh();
         if (appState.currentView === "build") renderBuild();
@@ -1638,7 +1643,11 @@
       st.growth = TQBuild.fixGrowth(st.growth);
       // Equipment tab (js/planner.js): gear, custom items, buffs, and which saved build this is
       if (!st.gear || typeof st.gear !== "object") st.gear = {};
-      if (!Array.isArray(st.custom)) st.custom = [];
+      // pieces from the first planner (catalog ids) can't be shown any more
+      for (const [k, g] of Object.entries(st.gear)) if (!g || g.id) delete st.gear[k];
+      delete st.custom;
+      if (!st.pts || typeof st.pts !== "object") st.pts = {};
+      if (!st.skills || typeof st.skills !== "object") st.skills = {};
       if (!Array.isArray(st.buffs)) st.buffs = [];
       if (typeof st.name !== "string") st.name = "";
       if (!appState.planner || !Array.isArray(appState.planner.builds)) appState.planner = { builds: [] };
@@ -1650,52 +1659,41 @@
       if (!box || !BUILDS) return;
       const lc = s => String(s).toLowerCase().replace(/\s+/g, " ").trim();
       const questByTitle = t => QUESTS.find(q => lc(q.title) === lc(t)) || null;
+      // keep the cursor where it was (the planner re-renders after every field)
+      const had = document.activeElement && box.contains(document.activeElement) ? document.activeElement.id : "";
       box.innerHTML = TQBuild.render({ builds: BUILDS, state: buildState(), have: appState.inventory, questByTitle, renderGear: renderPlanner });
-      if (PLANNER_UI.focusSearch) {
-        PLANNER_UI.focusSearch = false;
-        const el = document.getElementById("plSearch");
-        if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
-      }
+      const el = had && document.getElementById(had);
+      if (el) el.focus({ preventScroll: true });
     }
 
     // ============================================================================
-    // BUILD PLANNER (js/planner.js): the Build guide's 🛡️ Equipment tab. data/equipment.json is
-    // loaded the first time the tab opens. The working build is appState.build (with gear, custom
-    // items and buffs); saved builds are appState.planner.builds (synced).
+    // BUILD PLANNER (js/planner.js): the Build guide's 🛡️ Equipment tab. Gear is typed in per slot;
+    // the status window comes from data/stat-base.json, buffs from data/buffs.json (both load with
+    // builds.json). The working build is appState.build (gear, pts, skills, buffs); saved builds are
+    // appState.planner.builds (synced).
     // ============================================================================
-    let EQUIPMENT = null, EQUIP_BY_ID = null, equipmentLoading = false;
-    const PLANNER_UI = { slot: "", query: "", fitLevel: true, custom: "", code: "", focusSearch: false };
-    function loadEquipment() {
-      if (EQUIPMENT || equipmentLoading) return;
-      equipmentLoading = true;
-      TQData.fetchJson("data/equipment.json").then(d => {
-        EQUIPMENT = d;
-        EQUIP_BY_ID = TQPlanner.indexCatalog(d);
-        if (appState.currentView === "build") renderBuild();
-      }).catch(() => {
-        equipmentLoading = false;
-        const box = document.querySelector(".pl-gear");
-        if (box) box.insertAdjacentHTML("afterbegin", '<p class="bd-warn">Couldn\'t load the item list. Check your connection and reload.</p>');
-      });
-    }
+    let STAT_BASE = null, BUFFS = null;
+    const PLANNER_UI = { slot: "", code: "" };
 
     function renderPlanner(st) {
-      loadEquipment();
-      const plan = TQBuild.statPlan(BUILDS.stats, { level: st.level, growth: st.growth, bonus: st.bonus });
-      const levelGain = {};
-      plan.forEach(r => { levelGain[r.stat] = r.gain; });
+      const c = BUILDS.classes[st.cls];
+      const job = c && (c.jobs.find(j => j.name === st.job) || c.jobs[c.jobs.length - 2] || c.jobs[0]);
+      const known = STAT_BASE && STAT_BASE.classes[st.cls];
+      const skillByName = new Map();
+      for (const list of Object.values(BUILDS.skills)) for (const s of list) if (!skillByName.has(s.name)) skillByName.set(s.name, s);
+      const buffs = BUFFS || { skills: {} };
       return TQPlanner.render({
-        build: st, catalog: EQUIPMENT, byId: EQUIP_BY_ID, saved: appState.planner.builds,
-        signedIn: !!(window.TQCloud && TQCloud.user()), levelGain, itemImage: getItemImage, ui: PLANNER_UI
+        build: st, stats: BUILDS.stats, base: known || st.base || null, baseChecked: known ? known.checked : "",
+        buffs, skillByName, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, st.cls, job.name) : []),
+        art: job && job.art, saved: appState.planner.builds,
+        signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI
       });
     }
 
     // the working build as a saved one (what cleanBuild keeps)
-    const plannerSnapshot = st => TQPlanner.cleanBuild({
-      id: st.savedId, name: (document.getElementById("plName") || {}).value || st.name,
-      cls: st.cls, job: st.job, level: st.level, growth: st.growth, bonus: st.bonus,
-      gear: st.gear, custom: st.custom, buffs: st.buffs, updated: Date.now()
-    });
+    const plannerSnapshot = st => TQPlanner.cleanBuild(Object.assign({}, st, {
+      id: st.savedId, name: (document.getElementById("plName") || {}).value || st.name, updated: Date.now()
+    }));
 
     function plannerChanged() { saveState(); renderBuild(); }
 
@@ -1703,59 +1701,93 @@
     function plannerUse(b, savedId) {
       const st = buildState();
       const copy = JSON.parse(JSON.stringify(b));
-      Object.assign(st, { cls: copy.cls || st.cls, job: copy.job, level: copy.level, growth: copy.growth, bonus: copy.bonus,
-        gear: copy.gear, custom: copy.custom, buffs: copy.buffs, name: copy.name, savedId, picked: {} });
+      ["gear", "pts", "skills", "buffs", "bonus", "growth"].forEach(k => { st[k] = copy[k]; });
+      Object.assign(st, { cls: copy.cls || st.cls, job: copy.job, level: copy.level, name: copy.name, savedId, picked: {} });
+      if (copy.ptsHave != null) st.ptsHave = copy.ptsHave; else delete st.ptsHave;
+      if (copy.base) st.base = copy.base; else delete st.base;
       PLANNER_UI.slot = ""; PLANNER_UI.code = "";
       plannerChanged();
+    }
+
+    const plNum = v => { const n = Math.round(+v); return Number.isFinite(n) ? n : 0; };
+    function piece(key) {
+      const st = buildState();
+      return st.gear[key] || (st.gear[key] = { n: "" });
+    }
+    // a slot with nothing typed in is empty again
+    function tidyPiece(key) {
+      const st = buildState(), g = st.gear[key];
+      if (g && !g.n && !g.note && !Object.keys(g.st || {}).length && !Object.keys(g.e || {}).length && !Object.keys(g.r || {}).length) delete st.gear[key];
     }
 
     Object.assign(TQPlanner, {
       openSlot(key) {
         PLANNER_UI.slot = PLANNER_UI.slot === key ? "" : key;
-        PLANNER_UI.query = ""; PLANNER_UI.custom = "";
         renderBuild();
-        const panel = document.querySelector(".pl-panel");
-        if (panel && key && window.matchMedia("(max-width: 900px)").matches) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        const ed = document.querySelector(".pl-editor");
+        if (ed && key) { ed.scrollIntoView({ behavior: "smooth", block: "nearest" }); const n = document.getElementById(`pl-${key}-n`); if (n) n.focus({ preventScroll: true }); }
       },
-      equip(key, id) {
+      clearSlot(key) { delete buildState().gear[key]; plannerChanged(); },
+      gearField(key, field, value) {
+        const g = piece(key);
+        g[field] = String(value).trim().slice(0, field === "n" ? TQPlanner.LIMITS.item : TQPlanner.LIMITS.note);
+        if (!g[field]) delete g[field];
+        tidyPiece(key); plannerChanged();
+      },
+      gearStat(key, stat, value) {
+        const g = piece(key), v = plNum(value);
+        g.st = Object.assign({}, g.st);
+        if (v) g.st[stat] = v; else delete g.st[stat];
+        if (!Object.keys(g.st).length) delete g.st;
+        tidyPiece(key); plannerChanged();
+      },
+      gearElement(key, kind, element, value) {
+        const g = piece(key), v = plNum(value);
+        delete g[kind];
+        if (element && v) g[kind] = { [element]: v };
+        tidyPiece(key); plannerChanged();
+      },
+      point(stat, value, exact) {
         const st = buildState();
-        if (id) st.gear[key] = { id: String(id) }; else delete st.gear[key];
-        // custom items nobody wears any more go away
-        const worn = new Set(Object.values(st.gear).map(g => g.id));
-        st.custom = st.custom.filter(c => worn.has(c.id));
+        st.pts = Object.assign({}, st.pts);
+        const v = Math.max(0, Math.min(9999, exact ? plNum(value) : (st.pts[stat] || 0) + plNum(value)));
+        if (v) st.pts[stat] = v; else delete st.pts[stat];
         plannerChanged();
       },
-      setAdd(key, stat, value, plus) {
-        const g = buildState().gear[key];
-        if (!g || !TQPlanner.STATS.includes(stat)) return;
-        const add = Object.assign({}, g.add);
-        const v = Math.round(+value || 0) + (plus ? add[stat] || 0 : 0);
-        if (v) add[stat] = v; else delete add[stat];
-        if (Object.keys(add).length) g.add = add; else delete g.add;
+      pointsHave(value) {
+        const st = buildState(), v = plNum(value);
+        if (value === "" || v === st.level - 1) delete st.ptsHave; else st.ptsHave = Math.max(0, v);
         plannerChanged();
       },
-      query(q) { PLANNER_UI.query = q; PLANNER_UI.focusSearch = true; renderBuild(); },
-      fitLevel(on) { PLANNER_UI.fitLevel = !!on; renderBuild(); },
-      customForm(kind) { PLANNER_UI.custom = PLANNER_UI.custom === kind ? "" : kind; renderBuild(); },
-      addCustom(form, key) {
+      calibrate(form) {
         const st = buildState();
-        const s = TQPlanner.SLOTS.find(x => x.key === key);
-        if (!s || st.custom.length >= TQPlanner.LIMITS.custom) return;
-        const stats = {};
-        TQPlanner.STATS.forEach(k => { stats[k] = form["st_" + k].value; });
-        const item = { id: "c:" + TQPlanner.newId("").slice(0, 12), n: form.n.value, s: s.slot, l: form.l.value, st: stats, note: form.note.value };
-        const clean = TQPlanner.cleanBuild({ custom: [item] }).custom[0];
-        if (!clean) return;
-        st.custom.push(clean);
-        st.gear[key] = { id: clean.id };
-        PLANNER_UI.custom = "";
+        const s = TQPlanner.status(st, { stats: BUILDS.stats, base: null, buffs: { skills: {} } });
+        st.base = {};
+        s.rows.forEach(r => { st.base[r.stat] = TQPlanner.baseFromFront(form[r.stat].value, r.per, r.lv); });
+        plannerChanged();
+      },
+      skill(name, lv, levelOnly) {
+        const st = buildState();
+        st.skills = Object.assign({}, st.skills);
+        if (!lv) delete st.skills[name];
+        else {
+          // one transform at a time (Evolution, Beast's Instinct …)
+          const spec = TQPlanner.buffSpec(BUFFS, name);
+          if (spec && spec.group && !levelOnly) {
+            for (const other of Object.keys(st.skills)) {
+              const o = TQPlanner.buffSpec(BUFFS, other);
+              if (other !== name && o && o.group === spec.group) delete st.skills[other];
+            }
+          }
+          st.skills[name] = lv;
+        }
         plannerChanged();
       },
       buff(i, field, value) {
         const st = buildState();
         if (field === "add") st.buffs.push({ name: "Buff " + (st.buffs.length + 1), stat: "AP", value: 0, on: true });
         else if (field === "remove") st.buffs.splice(i, 1);
-        else if (st.buffs[i]) st.buffs[i][field] = field === "value" ? Math.round(+value || 0) : field === "on" ? !!value : String(value).slice(0, 40);
+        else if (st.buffs[i]) st.buffs[i][field] = field === "value" ? plNum(value) : field === "on" ? !!value : String(value).slice(0, 40);
         plannerChanged();
       },
       save(asNew) {
@@ -1774,7 +1806,7 @@
       },
       remove(id) {
         const b = appState.planner.builds.find(x => x.id === id);
-        if (!b || !confirm(`Delete the saved build "${b.name}"?\n\nThe gear on this page stays.`)) return;
+        if (!b || !confirm(`Delete the saved build "${b.name}"?\n\nWhat's on this page stays.`)) return;
         appState.planner.builds = appState.planner.builds.filter(x => x.id !== id);
         const st = buildState();
         if (st.savedId === id) st.savedId = "";
@@ -1785,14 +1817,13 @@
         renderBuild();
       },
       importCode() {
-        const code = prompt("Paste a build code (starts with TCB1.)");
+        const code = prompt("Paste a build code (starts with TCB2.)");
         if (!code) return;
         const b = TQPlanner.decodeBuild(code);
         if (!b) { alert("That code doesn't look right. Copy the whole code and try again."); return; }
         plannerUse(b, "");
       }
     });
-
 
     // handlers called from the page (TQBuild.set / growth / bonus / pick / useAdvice)
     Object.assign(TQBuild, {

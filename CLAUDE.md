@@ -102,13 +102,14 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki:
   put in-game corrections in `data/skill-fixes.json` (`{ skills: { name: { items?, tm?, needs?, how?, checked } } }`,
   applied on load by `TQBuild.applyFixes`, shown with a "✓ In game" badge), never in builds.json by hand.
-- `js/planner.js`: the Build guide's 🛡️ Equipment tab (Build planner): 12 gear slots, item search with
-  the change against what's worn, bonuses typed in per piece, custom items, buffs, "+gear" totals, saved
-  builds (`appState.planner.builds`, synced through sync-merge, max 20) and share codes (`TCB1.`). Pure model
-  tested by `node scripts/test-planner.js`. The working build is `appState.build` (gear, custom, buffs).
-  Items: `data/equipment.json`, made by `node scripts/client/build-equipment.js` from the PlayTrickster
-  client tables extracted in `G:/Claude/playtrickster-extraction` (base values; the live server may differ).
-  Never hand-edit it; rerun the script.
+- `js/planner.js`: the Build guide's 🛡️ Equipment tab (Build planner): gear typed in per slot (no item list:
+  servers differ), the status window (front number = class base + floor(per level × (stat level − 1)); stat
+  level = floor((4 + growth × (level − 1)) / 4) + bonus points), buffs ticked from the job's skills, saved builds
+  (`appState.planner.builds`, synced through sync-merge, max 20) and share codes (`TCB2.`). Pure model tested by
+  `node scripts/test-planner.js` (against real status windows). The working build is `appState.build`
+  (gear, pts, skills, buffs). Data: `data/stat-base.json` (starting stats per class, from in-game windows; add a
+  class when a player sends Growth + Basic Info screenshots) and `data/buffs.json` (which level-table column of
+  a skill changes which stat, read from the wiki's formulas).
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 
