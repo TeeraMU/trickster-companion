@@ -253,12 +253,16 @@ t("forms: Evolution-only skills need it, other attacks can't be used in it", () 
 // --- 🎯 Against a monster: client monster table and the hit log ---
 const mons = data("monsters.json").monsters;
 
-t("monsters: Tombeth #2072 as in the client (HP 6,845, AP 1,178, Earth 48%), search finds bosses first", () => {
+t("monsters: Tombeth #2072 as in the client (HP 6,845 x 4 bars, AP 1,178, Earth 48%), search finds bosses first", () => {
   const tb = mons.find(m => m.id === "2072");
   assert.strictEqual(tb.n, "Tombeth");
   assert.strictEqual(tb.hp, 6845);
   assert.strictEqual(tb.ap, 1178);
   assert.deepStrictEqual(tb.el, { Earth: 48 });
+  // HP bars (client LifeCnt + 1) as the wiki writes them: Tombeth 6,845x4, Count Blood x5, Captain Skull x4
+  assert.strictEqual(tb.bars, 4);
+  assert.strictEqual(mons.find(m => m.id === "2138").bars, 5);
+  assert.strictEqual(mons.find(m => m.id === "2213").bars, 4);
   assert.ok(new Set(mons.map(m => m.id)).size === mons.length, "ids are unique");
   const found = P.searchMonsters(mons, "tombeth");
   assert.ok(found.length >= 2 && found.every(m => /tombeth/i.test(m.n)));
