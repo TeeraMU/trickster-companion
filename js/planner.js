@@ -29,7 +29,7 @@
     { key: "fashion2", label: "Fashion 2", icon: "👒", side: "bottom" }
   ];
   const SKILL_LEVELS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "M"];
-  const LIMITS = { compound: 5, builds: 20, buffs: 20, name: 40, item: 40, note: 120, notes: 500, skills: 40 };
+  const LIMITS = { hits: 40, hitNumbers: 20, compound: 5, builds: 20, buffs: 20, name: 40, item: 40, note: 120, notes: 500, skills: 40 };
 
   const num = v => { const n = Number(v); return Number.isFinite(n) ? Math.round(n) : 0; };
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, num(v)));
@@ -257,6 +257,53 @@
     return { mine, party };
   }
 
+  /** Monsters whose name has every word of the query, bosses first, then by level. */
+  function searchMonsters(list, query, limit) {
+    const words = String(query || "").toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
+    return (list || []).filter(m => words.every(w => m.n.toLowerCase().includes(w) || m.id === w))
+      .sort((a, b) => (b.boss ? 1 : 0) - (a.boss ? 1 : 0) || a.l - b.l || a.n.localeCompare(b.n))
+      .slice(0, limit || 20);
+  }
+
+  /**
+   * Hits written down from the game, kept in the build to work out the defense formula later:
+   * [{ mon, mn, ml (id, name, level), skill ("Normal attack" or a skill), lv, dmg: [numbers], note, at,
+   *    stats: { AP: … } (front + gear + buffs when it was written), el: { Wind: 183 } }]
+   */
+  function cleanHits(list) {
+    return (Array.isArray(list) ? list : []).slice(0, LIMITS.hits).map(h => {
+      if (!h || typeof h !== "object") return null;
+      const dmg = (Array.isArray(h.dmg) ? h.dmg : []).map(v => clamp(v, 0, 99999999)).filter(v => v > 0).slice(0, LIMITS.hitNumbers);
+      if (!dmg.length) return null;
+      const out = {
+        mon: str(h.mon, 12), mn: str(h.mn, 60), ml: clamp(h.ml, 0, 9999),
+        skill: str(h.skill, 60) || "Normal attack", lv: SKILL_LEVELS.includes(String(h.lv)) ? String(h.lv) : "",
+        dmg, note: str(h.note, LIMITS.note), at: clamp(h.at, 0, 9e15), stats: cleanStats(h.stats)
+      };
+      const el = cleanStats(h.el, ELEMENTS);
+      if (Object.keys(el).length) out.el = el;
+      return out;
+    }).filter(Boolean);
+  }
+
+  /** "812, 795 830" -> [812, 795, 830] (anything not a number splits them). */
+  function parseDamage(text) {
+    return String(text || "").replace(/,(?=\d{3}\b)/g, "").split(/[^0-9]+/).map(Number).filter(v => v > 0).slice(0, LIMITS.hitNumbers);
+  }
+
+  /** The written hits as plain text to copy and send for working out the formula. */
+  function hitsText(build, hits) {
+    const lines = [`Trickster Companion hits · ${build.cls} ${build.job} Lv.${build.level} · growth ${Object.values(build.growth).join("-")}`];
+    for (const h of hits || []) {
+      const s = Object.entries(h.stats || {}).map(([k, v]) => `${k} ${v}`).join(" ");
+      const el = Object.entries(h.el || {}).map(([k, v]) => `${k} ${v}%`).join(" ");
+      lines.push(`${h.mn} (#${h.mon} Lv.${h.ml}) · ${h.skill}${h.lv ? " " + (h.lv === "M" ? "Master" : "Lv." + h.lv) : ""} · ${h.dmg.join(", ")}` +
+        ` · stats: ${s}${el ? " · element: " + el : ""}${h.note ? " · " + h.note : ""}`);
+    }
+    return lines.join("\n");
+  }
+
   const newId = prefix => prefix + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
   /**
@@ -332,6 +379,9 @@
       notes: str(b.notes, LIMITS.notes),
       updated: clamp(b.updated, 0, 9e15)
     };
+    if (/^\d{1,9}$/.test(String(b.mon || ""))) out.mon = String(b.mon); // the monster picked in 🎯
+    const hits = cleanHits(b.hits);
+    if (hits.length) out.hits = hits;
     if (b.shared) out.shared = true; // friends can see it (Friends page)
     if (b.ptsHave != null && b.ptsHave !== "") out.ptsHave = clamp(b.ptsHave, 0, 9999);
     // starting stats the player typed in for a class we don't know yet
@@ -384,7 +434,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -714,11 +764,17 @@
    * 💥 How hard each attack skill of the job hits with this build's stats (gear and buffs in),
    * from the wiki's formula and level table, before the monster's defense.
    */
-  function powerBox(build, st, ctx) {
-    const F = ctx.formula;
-    if (!F || !ctx.skillSets) return "";
+  /** Stats as the game uses them: front + gear + buffs. */
+  function totalsOf(st) {
     const totals = {};
     for (const r of st.rows) totals[r.stat] = (r.front == null ? 0 : r.front) + r.plus;
+    return totals;
+  }
+
+  /** Every attack skill of the job with its power at the picked level: { rows, unread, form } */
+  function powerRows(build, st, ctx) {
+    const F = ctx.formula;
+    const totals = totalsOf(st);
     // every skill's picked level (Master unless changed), for formulas that use another skill's level
     const levels = {};
     for (const set of ctx.skillSets) for (const sk of set.skills) levels[sk.name] = (ctx.ui.power || {})[sk.name] || "M";
@@ -732,9 +788,15 @@
       const parts = F.evalFormula(sk.formula, F.formulaVars(totals, st.elements, sk.levels, lv, others));
       (parts.length ? rows : unread).push({ sk, job: set.job, lv, parts, use: form.usable(sk) });
     }
-    if (!rows.length && !unread.length) return "";
     // skills that can be used in the build's state (Evolution on or off) first, the others greyed below
     rows.sort((a, b) => (b.use.ok ? 1 : 0) - (a.use.ok ? 1 : 0));
+    return { rows, unread, form };
+  }
+
+  function powerBox(build, st, ctx) {
+    if (!ctx.formula || !ctx.skillSets) return "";
+    const { rows, unread, form } = powerRows(build, st, ctx);
+    if (!rows.length && !unread.length) return "";
     const lvSel = (name, lv) => `<select aria-label="${esc(name)} level" onchange="TQPlanner.powerLevel('${jsq(name)}', this.value)">${SKILL_LEVELS.map(l => `<option value="${l}" ${l === lv ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select>`;
     return `
       <section class="bd-box pl-power">
@@ -751,6 +813,78 @@
         ${unread.length ? `<details class="pl-party"><summary>❔ ${unread.length} skill${unread.length === 1 ? "" : "s"} we can't work out yet</summary>
           <ul class="pl-power-list">${unread.map(r => `<li class="pl-power-row"><span class="pl-power-name"><strong>${esc(r.sk.name)}</strong></span><code class="pl-power-f">${esc(r.sk.formula)}</code></li>`).join("")}</ul></details>` : ""}
         <p class="bd-note">Formulas and level values from the wiki. The monster's DP / MD, elements and critical hits aren't in yet: that needs damage numbers checked in game.</p>
+      </section>
+      ${monsterBox(build, st, ctx, rows)}`;
+  }
+
+  /**
+   * 🎯 Against a monster: pick one (client table), see its stats next to the build's skill power
+   * (before its defense, so "hits" is the fewest it could take), and write down hits from the game
+   * to work out the defense formula later.
+   */
+  function monsterBox(build, st, ctx, rows) {
+    if (!ctx.monsters) return "";
+    const list = ctx.monsters.monsters || [];
+    const mon = list.find(m => m.id === build.mon) || null;
+    const found = searchMonsters(list, ctx.ui.monQuery, 12);
+    const totals = totalsOf(st);
+    const myEl = Object.entries(st.elements).map(([k, v]) => `${k} ${v}%`).join(" · ");
+    const usable = rows.filter(r => r.use.ok);
+    const best = r => Math.max(...r.parts.map(p => p.value));
+    const hits = build.hits || [];
+    const skillOpts = ["Normal attack", ...usable.map(r => r.sk.name)];
+    const card = mon ? `
+      <div class="pl-mon">
+        <div class="pl-mon-head"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag">Boss</span>` : ""}
+          <span class="bd-note">#${esc(mon.id)}</span>
+          ${ctx.readOnly ? "" : `<button type="button" class="btn btn-sm" onclick="TQPlanner.pickMonster('')">Change</button>`}</div>
+        <div class="pl-mon-stats">
+          ${[["HP", mon.hp], ["DP", mon.dp], ["MD", mon.md], ["HV", mon.hv], ["AP", mon.ap], ["AC", mon.ac], ["MA", mon.ma], ["LK", mon.lk]].map(([k, v]) => `<span><b>${k}</b> ${fmt(v)}</span>`).join("")}
+        </div>
+        <p class="pl-elems"><b>Element</b> ${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)}">${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`}
+          <b>Resists</b> ${Object.entries(mon.res || {}).map(([k, v]) => `<span class="pl-el pl-el-res">${k} ${v}</span>`).join("") || `<span class="bd-note">none</span>`}</p>
+        ${myEl ? `<p class="bd-note">Your attack element: ${esc(myEl)}. How elements and resistances change damage isn't in yet.</p>` : ""}
+        ${usable.length ? `<ul class="pl-vs">${usable.slice(0, 8).map(r => {
+          const v = best(r);
+          return `<li><span>${esc(r.sk.name)}</span><b>${fmt(v)}</b><span class="bd-note">${v > 0 ? `at least ${Math.ceil(mon.hp / v)} hit${Math.ceil(mon.hp / v) === 1 ? "" : "s"}` : ""}</span></li>`;
+        }).join("")}</ul>
+        <p class="bd-note">"At least" because the monster's DP / MD isn't taken off yet: the real number of hits is the same or more.</p>` : ""}
+      </div>` : "";
+    const picker = `
+      <div class="pl-mon-find">
+        <input type="search" id="pl-mon-q" value="${esc(ctx.ui.monQuery || "")}" placeholder="Find a monster or boss: Tombeth, Fire Moth…" aria-label="Find a monster" oninput="TQPlanner.monQuery(this.value)">
+        ${found.length ? `<ul class="pl-mon-list">${found.map(m => `<li><button type="button" onclick="TQPlanner.pickMonster('${esc(m.id)}')">
+          <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span>${m.boss ? ` <span class="tag">Boss</span>` : ""}
+          <span class="bd-note">HP ${fmt(m.hp)} · DP ${fmt(m.dp)} · MD ${fmt(m.md)}</span></button></li>`).join("")}</ul>`
+        : ctx.ui.monQuery ? `<p class="bd-note">No monster called “${esc(ctx.ui.monQuery)}”.</p>` : ""}
+      </div>`;
+    const log = `
+      <details class="pl-hits" ${hits.length || ctx.ui.logOpen ? "open" : ""} ontoggle="TQPlanner.logOpen(this.open)">
+        <summary>📝 Hits from the game <span class="bd-note">${hits.length} written down</span></summary>
+        <p class="bd-note">To work out the defense formula: hit a monster with one attack (normal attacks first), write down 5-10
+          damage numbers (not critical hits), and do it on 2-3 monsters with different DP. Your stats right now are saved with each line.</p>
+        ${ctx.readOnly ? "" : mon ? `<form class="pl-hit-form" onsubmit="event.preventDefault(); TQPlanner.addHit(this)">
+          <label class="pl-in"><span>Attack</span><select name="skill">${skillOpts.map(n => `<option>${esc(n)}</option>`).join("")}</select></label>
+          <label class="pl-in"><span>Skill level</span><select name="lv"><option value="">–</option>${SKILL_LEVELS.map(l => `<option value="${l}">${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select></label>
+          <label class="pl-in pl-in-wide"><span>Damage numbers on ${esc(mon.n)}</span><input name="dmg" required placeholder="812 795 830 806 …" inputmode="numeric"></label>
+          <label class="pl-in pl-in-wide"><span>Note</span><input name="note" maxlength="${LIMITS.note}" placeholder="no buffs, Evolution on, a critical hit was 1,640…"></label>
+          <button type="submit" class="btn btn-sm btn-primary">Save these hits</button>
+        </form>` : `<p class="bd-note">Pick the monster first.</p>`}
+        ${hits.length ? `<ul class="pl-hit-list">${hits.map((h, i) => `
+          <li><span><strong>${esc(h.mn)}</strong> <span class="ep-lv">Lv.${h.ml}</span> · ${esc(h.skill)}${h.lv ? " " + (h.lv === "M" ? "Master" : "Lv." + h.lv) : ""}</span>
+            <span class="pl-hit-dmg">${h.dmg.map(fmt).join(", ")}</span>
+            <span class="bd-note">AP ${fmt((h.stats || {}).AP || 0)}${h.note ? " · " + esc(h.note) : ""}</span>
+            ${ctx.readOnly ? "" : `<button type="button" class="btn btn-sm" aria-label="Delete this line" onclick="TQPlanner.removeHit(${i})">✕</button>`}</li>`).join("")}</ul>
+          <button type="button" class="btn btn-sm" onclick="TQPlanner.copyHits()">📋 ${ctx.ui.hitsText ? "Hide the text" : "Text to send for working out"}</button>
+          ${ctx.ui.hitsText ? `<textarea class="pl-hits-text" readonly rows="6" onclick="this.select()">${esc(hitsText(build, hits))}</textarea>` : ""}` : ""}
+      </details>`;
+    return `
+      <section class="bd-box pl-monster">
+        <h4>🎯 Against a monster <span class="bd-note">client data: level, HP, DP, MD, element, resistances</span></h4>
+        ${card || picker}
+        ${card && ctx.ui.monQuery ? picker : ""}
+        ${log}
+        <p class="bd-note">AP now: ${fmt(totals.AP || 0)}. Monster numbers come from the PlayTrickster client and may differ on the live server.</p>
       </section>`;
   }
 

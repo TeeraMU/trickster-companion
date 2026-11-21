@@ -113,6 +113,10 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   `estimate` = the class used until one is checked), `data/buffs.json` (which field of a skill's client ESAction
   table changes which stat) and `data/buff-values.json` (values per level, made by
   `node scripts/client/build-buffs.js` from `G:/Claude/playtrickster-extraction`; never hand-edit it).
+- 🎯 in the Planner: `data/monsters.json` (1,307 monsters from the client's MonsterParamEx2: level, stats, element,
+  resistances, boss), made by `node scripts/client/build-monsters.js`; loaded the first time the Planner shows.
+  The defense formula isn't known yet: players write hits from the game into `build.hits` (with their stats)
+  and copy them as text for working it out.
 - `js/formula.js`: reads the wiki's skill formulas ("[AP + (HV × 16)] × (m ÷ 8)") with a build's stats and a
   level row. Only numbers, + − × ÷ ( ) [ ], stat names and level-table columns; anything else ends an
   expression, and nothing is run as code. Tested in test-planner.js.

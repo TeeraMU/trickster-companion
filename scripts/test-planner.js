@@ -250,4 +250,41 @@ t("forms: Evolution-only skills need it, other attacks can't be used in it", () 
   assert.strictEqual(P.formState(b, buffs).form, "Evolution");
 });
 
+// --- 🎯 Against a monster: client monster table and the hit log ---
+const mons = data("monsters.json").monsters;
+
+t("monsters: Tombeth #2072 as in the client (HP 6,845, AP 1,178, Earth 48%), search finds bosses first", () => {
+  const tb = mons.find(m => m.id === "2072");
+  assert.strictEqual(tb.n, "Tombeth");
+  assert.strictEqual(tb.hp, 6845);
+  assert.strictEqual(tb.ap, 1178);
+  assert.deepStrictEqual(tb.el, { Earth: 48 });
+  assert.ok(new Set(mons.map(m => m.id)).size === mons.length, "ids are unique");
+  const found = P.searchMonsters(mons, "tombeth");
+  assert.ok(found.length >= 2 && found.every(m => /tombeth/i.test(m.n)));
+  assert.deepStrictEqual(P.searchMonsters(mons, ""), []);
+  const boss = P.searchMonsters(mons, "kronos");
+  assert.ok(boss[0].boss);
+});
+
+t("hit log: numbers parsed from what was typed, cleaned, and written out as text", () => {
+  assert.deepStrictEqual(P.parseDamage("812 795, 830\n1,640"), [812, 795, 830, 1640]);
+  assert.deepStrictEqual(P.parseDamage("none"), []);
+  const hits = P.cleanHits([
+    { mon: "2072", mn: "Tombeth", ml: 120, skill: "Normal attack", lv: "", dmg: [812, "795", -3, 0], stats: { AP: 5587, ZZ: 1 }, el: { Wind: 183 }, at: 1 },
+    { mon: "x", dmg: [] }, null
+  ]);
+  assert.strictEqual(hits.length, 1);
+  assert.deepStrictEqual(hits[0].dmg, [812, 795]);
+  assert.deepStrictEqual(hits[0].stats, { AP: 5587 });
+  const b = cat(160, 157);
+  b.hits = hits;
+  const text = P.hitsText(b, hits);
+  assert.ok(text.includes("Tombeth (#2072 Lv.120) · Normal attack · 812, 795 · stats: AP 5587 · element: Wind 183%"), text);
+  const kept = P.cleanBuild(Object.assign({}, b, { mon: "2072" }));
+  assert.strictEqual(kept.mon, "2072");
+  assert.strictEqual(kept.hits.length, 1);
+  assert.strictEqual(P.cleanBuild({ mon: "<x>" }).mon, undefined);
+});
+
 console.log(`\n${n} passed`);
