@@ -95,23 +95,27 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
   drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
   ✅ Mark zone done) is in index.html (`renderZoneBar`).
-- `js/build.js`: the 🧭 Build guide page (class / job picker, wiki art, growth chart, suggested build from
-  skill formulas, stat planner, skills with mastery cards). Pure model tested by `node scripts/test-build.js`.
-  State is `appState.build` (this device only, not synced). Data: `data/builds.json` (jobs, skills per job,
+- `js/build.js`: the 🧭 Build guide page (class / job picker, one line about the job with the suggested build
+  from skill formulas, skills with mastery cards; builds are made on the 🛠️ Planner). Pure model (also growth
+  steps and advice the Planner uses) tested by `node scripts/test-build.js`.
+  State is `appState.build` { cls, job, picked } (this device only, not synced). Data: `data/builds.json` (jobs, skills per job,
   mastery items with picture / monster / maps, stat rules), loaded in the background after start-up;
   rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki:
   put in-game corrections in `data/skill-fixes.json` (`{ skills: { name: { items?, tm?, needs?, how?, checked } } }`,
   applied on load by `TQBuild.applyFixes`, shown with a "✓ In game" badge), never in builds.json by hand.
-- `js/planner.js`: the Build guide's 📊 Status & Equipment tab (Build planner; it replaced the Stats tab, whose
-  header is a short one from build.js with growth −/+ and the "How to raise stats" guide): gear typed in per slot (no item list:
+- `js/planner.js`: the 🛠️ Planner page: my builds (`appState.planner.builds`, synced through sync-merge, max 20;
+  the open one is `appState.planner.current`), each edited in place. Gear typed in per slot (no item list:
   servers differ), the status window (front number = class base + floor(per level × (stat level − 1)); stat
-  level = floor((4 + growth × (level − 1)) / 4) + bonus points), buffs ticked from the job's skills, saved builds
-  (`appState.planner.builds`, synced through sync-merge, max 20) and share codes (`TCB2.`). Pure model tested by
-  `node scripts/test-planner.js` (against real status windows). The working build is `appState.build`
-  (gear, pts, skills, buffs). Data: `data/stat-base.json` (starting stats per class, from in-game windows; add a
-  class when a player sends Growth + Basic Info screenshots) `data/buffs.json` (which field of a skill's client
-  ESAction table changes which stat, and how) and `data/buff-values.json` (the values per level, made by
+  level = floor((4 + growth × (level − 1)) / 4) + bonus points), buffs ticked from the job's skills, 💥 skill
+  power, share codes (`TCB2.`). Builds marked `shared` (max 5) go into the friend profile (`builds`, see
+  firestore.rules) and open read only from a friend's card. Pure model tested by `node scripts/test-planner.js`
+  (against real status windows). Data: `data/stat-base.json` (starting stats per class from in-game windows;
+  `estimate` = the class used until one is checked), `data/buffs.json` (which field of a skill's client ESAction
+  table changes which stat) and `data/buff-values.json` (values per level, made by
   `node scripts/client/build-buffs.js` from `G:/Claude/playtrickster-extraction`; never hand-edit it).
+- `js/formula.js`: reads the wiki's skill formulas ("[AP + (HV × 16)] × (m ÷ 8)") with a build's stats and a
+  level row. Only numbers, + − × ÷ ( ) [ ], stat names and level-table columns; anything else ends an
+  expression, and nothing is run as code. Tested in test-planner.js.
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 

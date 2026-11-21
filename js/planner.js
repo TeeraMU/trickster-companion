@@ -222,6 +222,7 @@
       notes: str(b.notes, LIMITS.notes),
       updated: clamp(b.updated, 0, 9e15)
     };
+    if (b.shared) out.shared = true; // friends can see it (Friends page)
     if (b.ptsHave != null && b.ptsHave !== "") out.ptsHave = clamp(b.ptsHave, 0, 9999);
     // starting stats the player typed in for a class we don't know yet
     if (b.base && typeof b.base === "object" && STATS.some(k => k in b.base)) {
@@ -333,10 +334,11 @@
         <div class="pl-editor-head">
           <strong>${s.icon} ${s.label}</strong>
           <span>
-            ${build.gear[s.key] ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.clearSlot('${s.key}')">Take off</button>` : ""}
+            ${build.gear[s.key] && !ctx.readOnly ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.clearSlot('${s.key}')">Take off</button>` : ""}
             <button type="button" class="btn btn-sm" onclick="TQPlanner.openSlot('')">Done</button>
           </span>
         </div>
+        <fieldset class="pl-fs" ${ctx.readOnly ? "disabled" : ""}>
         <label class="pl-in pl-in-wide"><span>Name</span><input id="pl-${s.key}-n" maxlength="${LIMITS.item}" value="${esc(g.n || "")}" placeholder="e.g. White Swan Staff +7" onchange="TQPlanner.gearField('${s.key}', 'n', this.value)"></label>
         <p class="bd-note">Type every stat the item window shows, Refine and Compound included.</p>
         <div class="pl-in-grid">${STATS.map(k => field(k, (g.st || {})[k])).join("")}</div>
@@ -345,6 +347,7 @@
           <span class="pl-in-pair">${elSel("r", rK)}<input id="pl-${s.key}-rv" type="number" step="1" value="${rV || ""}" placeholder="%" aria-label="Resistance %" onchange="TQPlanner.gearElement('${s.key}', 'r', document.getElementById('pl-${s.key}-r').value, this.value)"></span>
         </div>
         <label class="pl-in pl-in-wide"><span>Note</span><input id="pl-${s.key}-note" maxlength="${LIMITS.note}" value="${esc(g.note || "")}" placeholder="Refine +7, 3 compound slots…" onchange="TQPlanner.gearField('${s.key}', 'note', this.value)"></label>
+        </fieldset>
       </div>`;
   }
 
@@ -369,7 +372,6 @@
       <section class="bd-box pl-status">
         <div class="pl-status-head">
           <h4>📊 Status</h4>
-          <label class="pl-in pl-in-inline"><span>Level</span><input id="pl-level" type="number" min="1" max="999" value="${build.level}" onchange="TQBuild.set({ level: Math.max(1, Math.min(999, +this.value || 1)) })"></label>
           <label class="pl-in pl-in-inline" title="Level − 1 unless you type what the game shows (quests give extra points)"><span>Bonus points</span><input id="pl-pts-have" type="number" min="0" value="${p.have}" onchange="TQPlanner.pointsHave(this.value)"></label>
           <span class="pl-pts-left ${p.left < 0 ? "bd-warn" : ""}">${p.left >= 0 ? `${p.left} left` : `${-p.left} too many`}</span>
         </div>
@@ -463,45 +465,140 @@
       </section>`;
   }
 
-  function savedBox(build, ctx) {
-    const saved = ctx.saved || [];
-    const mine = saved.find(b => b.id === build.savedId);
-    return `
-      <section class="bd-box pl-saved">
-        <h4>💾 Saved builds <span class="bd-note">${saved.length} / ${LIMITS.builds}${ctx.signedIn ? " · synced with your account" : " · on this device (sign in to sync)"}</span></h4>
+  /** My builds as tabs, and what can be done with the open one. */
+  function buildsBar(build, ctx) {
+    const list = ctx.saved || [];
+    if (ctx.readOnly) return `
+      <section class="bd-box pl-bar pl-bar-friend">
+        <p><strong>👥 ${esc(ctx.readOnly.friend)}'s build: ${esc(build.name)}</strong> <span class="bd-note">read only</span></p>
         <div class="pl-save-row">
-          <input id="plName" value="${esc(build.name || "")}" maxlength="${LIMITS.name}" placeholder="Build name, e.g. Primadonna AP 160" aria-label="Build name">
-          ${mine ? `<button type="button" class="btn btn-sm btn-primary" onclick="TQPlanner.save(false)">Save changes</button>` : ""}
-          <button type="button" class="btn btn-sm ${mine ? "" : "btn-primary"}" onclick="TQPlanner.save(true)" ${saved.length >= LIMITS.builds ? "disabled title='20 builds at most: delete one first'" : ""}>Save as new</button>
+          <button type="button" class="btn btn-sm btn-primary" onclick="TQPlanner.copyViewed()" ${list.length >= LIMITS.builds ? "disabled" : ""}>📋 Copy to my builds</button>
+          <button type="button" class="btn btn-sm" onclick="TQPlanner.closeViewed()">Close</button>
+        </div>
+      </section>`;
+    return `
+      <section class="bd-box pl-bar">
+        <div class="pl-tabs" role="tablist" aria-label="My builds">
+          ${list.map(b => `<button type="button" role="tab" class="pl-tab ${b.id === build.id ? "is-on" : ""}" aria-selected="${b.id === build.id}" onclick="TQPlanner.open('${b.id}')">
+              <strong>${esc(b.name)}</strong><span>${esc(b.job || b.cls)} · Lv.${b.level}${b.shared ? " · 👥" : ""}</span></button>`).join("")}
+          ${list.length < LIMITS.builds ? `<button type="button" class="pl-tab pl-tab-new" onclick="TQPlanner.newBuild()">＋ New build</button>` : ""}
+        </div>
+        <div class="pl-save-row">
+          <input id="plName" value="${esc(build.name)}" maxlength="${LIMITS.name}" aria-label="Build name" onchange="TQPlanner.set({ name: this.value })">
+          <label class="pl-share"><input type="checkbox" ${build.shared ? "checked" : ""} onchange="TQPlanner.set({ shared: this.checked })"> 👥 Friends can see it</label>
+          <button type="button" class="btn btn-sm" onclick="TQPlanner.duplicate()" ${list.length >= LIMITS.builds ? "disabled" : ""}>Duplicate</button>
           <button type="button" class="btn btn-sm" onclick="TQPlanner.share()">🔗 Share code</button>
           <button type="button" class="btn btn-sm" onclick="TQPlanner.importCode()">📥 Open a code</button>
+          <button type="button" class="btn btn-sm" onclick="TQPlanner.remove('${build.id}')">🗑 Delete</button>
         </div>
-        ${ctx.ui.code ? `<div class="pl-code"><textarea readonly rows="3" aria-label="Share code" onclick="this.select()">${esc(ctx.ui.code)}</textarea><p class="bd-note">Copy this and send it to a friend; they open it with 📥 Open a code.</p></div>` : ""}
-        ${saved.length ? `<ul class="pl-saved-list">${saved.map(b => `
-          <li class="${b.id === build.savedId ? "is-on" : ""}">
-            <button type="button" class="pl-saved-open" onclick="TQPlanner.load('${b.id}')"><strong>${esc(b.name)}</strong>
-              <span class="bd-note">${esc(b.job || b.cls)} · Lv.${b.level} · ${Object.keys(b.gear).length} pieces</span></button>
-            <button type="button" class="btn btn-sm" aria-label="Delete ${esc(b.name)}" onclick="TQPlanner.remove('${b.id}')">🗑</button>
-          </li>`).join("")}</ul>` : ""}
+        ${ctx.ui.code ? `<div class="pl-code"><textarea readonly rows="3" aria-label="Share code" onclick="this.select()">${esc(ctx.ui.code)}</textarea><p class="bd-note">Copy this and send it to anyone; they open it with 📥 Open a code.</p></div>` : ""}
+        <p class="bd-note">${list.length} / ${LIMITS.builds} builds · ${ctx.signedIn ? "saved and synced with your account" : "saved on this device (sign in to sync)"}. Changes save as you go.</p>
+      </section>`;
+  }
+
+  /** Class, job, level and growth of the build, and how to raise stats beside them. */
+  function headBox(build, ctx) {
+    const g = build.growth;
+    const total = Object.values(g).reduce((n, v) => n + v, 0);
+    const left = 10 - total;
+    const growthRow = Object.keys(GROUP_STATS).map(k => `
+      <span class="bd-mini ${GROUP_CLASS[k]}"><span class="bd-mini-name">${k}</span><b>${g[k]}</b>
+        <button type="button" class="bd-step" aria-label="Less ${k}" onclick="TQPlanner.growth('${k}', -1)" ${g[k] <= 1 ? "disabled" : ""}>−</button>
+        <button type="button" class="bd-step" aria-label="More ${k}" onclick="TQPlanner.growth('${k}', 1)" ${g[k] >= 4 || total >= 10 ? "disabled" : ""}>+</button></span>`).join("");
+    const classes = Object.keys(ctx.classes || {});
+    const jobs = ((ctx.classes || {})[build.cls] || { jobs: [] }).jobs;
+    const adv = ctx.advice || { label: "", why: "", stats: [] };
+    return `
+      <section class="bd-profile bd-compact">
+        <div class="bd-compact-main">
+          <div class="pl-pick">
+            <label class="pl-in"><span>Class</span><select id="pl-cls" onchange="TQPlanner.set({ cls: this.value, job: '' })">${classes.map(c => `<option ${c === build.cls ? "selected" : ""}>${esc(c)}</option>`).join("")}</select></label>
+            <label class="pl-in"><span>Job</span><select id="pl-job" onchange="TQPlanner.set({ job: this.value })">${jobs.map(j => `<option ${j.name === build.job ? "selected" : ""}>${esc(j.name)}</option>`).join("")}</select></label>
+            <label class="pl-in pl-in-lv"><span>Level</span><input id="pl-level" type="number" min="1" max="999" value="${build.level}" onchange="TQPlanner.set({ level: this.value })"></label>
+          </div>
+          <p class="bd-compact-label">Growth <span class="bd-note ${left ? "bd-warn" : ""}">${left ? `${left > 0 ? left + " to place" : -left + " too many"} (10 in all, 1-4 each)` : "as picked when you made the character"}</span></p>
+          <div class="bd-mini-row">${growthRow}</div>
+          <button type="button" class="btn btn-sm pl-skills-link" onclick="TQPlanner.showSkills()">📖 ${esc(build.job || build.cls)} skills in the guide</button>
+        </div>
+        <div class="bd-compact-guide">
+          <h4>🧭 How to raise stats${adv.label ? `: <span class="bd-build">${esc(adv.label)}</span>` : ""}</h4>
+          ${adv.why ? `<p>${esc(adv.why)}</p>` : ""}
+          <ul class="bd-howto">
+            <li>Every level, growth raises each stat of a group: a <b>4</b> gives 1 stat level per level, a <b>1</b> one per 4 levels.</li>
+            <li>Bonus points you place yourself: press <b>+</b> on a stat below. One point = one stat level (AP +4, HP +30, MP +30, WT +80, DP +4, MD +4; AC, MA, DA, LK, HV +1 per 4).</li>
+            <li>The first number is starting stats + levels + bonus points, the <b>+</b> is gear and buffs, like the game's Growth window.</li>
+          </ul>
+          ${adv.stats.length && !ctx.readOnly ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.useAdvice()">Put my bonus points in ${esc(adv.stats.join(" + "))}</button>` : ""}
+          <p class="bd-note">The suggestion comes from the wiki's skill formulas, not from players. Check a guide or ask your guild.</p>
+        </div>
       </section>`;
   }
 
   /**
-   * ctx: { build (the guide's working build), stats (builds.stats), base, baseFrom, baseChecked, estimateFrom, buffs,
-   *        values, buffLists, art, saved, signedIn, ui: { slot, code } }
+   * The 🛠️ Planner page.
+   * ctx: { build, saved (my builds), readOnly: { friend } when it's a friend's build, classes (builds.json),
+   *        advice, stats (builds.stats), base, baseFrom, baseChecked, estimateFrom, buffs, values, buffLists,
+   *        art, signedIn, ui: { slot, code } }
    */
   function render(ctx) {
     const build = ctx.build;
+    if (!build) return `
+      <section class="bd-box pl-empty">
+        <h3>🛠️ Build planner</h3>
+        <p>Plan a character: gear in every slot, bonus points, buffs, and the status window worked out like the game's.
+          Make as many builds as you like (up to ${LIMITS.builds}) and let friends see the ones you choose.</p>
+        <button type="button" class="btn btn-primary" onclick="TQPlanner.newBuild()">＋ Make my first build</button>
+        <button type="button" class="btn" onclick="TQPlanner.importCode()">📥 Open a code</button>
+      </section>`;
     const st = status(build, ctx);
+    // a friend's build: everything shows, nothing changes (slots still open to read)
+    const lock = ctx.readOnly ? "disabled" : "";
     return `
-      ${savedBox(build, ctx)}
+      ${buildsBar(build, ctx)}
+      <fieldset class="pl-fs" ${lock}>${headBox(build, ctx)}</fieldset>
       <div class="pl-grid">
         ${dollBox(build, ctx)}
-        <div class="pl-side">
+        <fieldset class="pl-fs pl-side" ${lock}>
           ${statusBox(build, st, ctx)}
           ${buffBox(build, st, ctx)}
-        </div>
-      </div>`;
+        </fieldset>
+      </div>
+      ${powerBox(build, st, ctx)}`;
+  }
+
+  /**
+   * 💥 How hard each attack skill of the job hits with this build's stats (gear and buffs in),
+   * from the wiki's formula and level table, before the monster's defense.
+   */
+  function powerBox(build, st, ctx) {
+    const F = ctx.formula;
+    if (!F || !ctx.skillSets) return "";
+    const totals = {};
+    for (const r of st.rows) totals[r.stat] = (r.front == null ? 0 : r.front) + r.plus;
+    const seen = new Set(), rows = [], unread = [];
+    for (const set of ctx.skillSets.slice().reverse()) for (const sk of set.skills) {
+      if (seen.has(sk.name) || !/on\/off/i.test(sk.type || "") || !sk.formula) continue;
+      seen.add(sk.name);
+      const lv = (ctx.ui.power || {})[sk.name] || "M";
+      const parts = F.evalFormula(sk.formula, F.formulaVars(totals, st.elements, sk.levels, lv));
+      (parts.length ? rows : unread).push({ sk, job: set.job, lv, parts });
+    }
+    if (!rows.length && !unread.length) return "";
+    const lvSel = (name, lv) => `<select aria-label="${esc(name)} level" onchange="TQPlanner.powerLevel('${jsq(name)}', this.value)">${SKILL_LEVELS.map(l => `<option value="${l}" ${l === lv ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select>`;
+    return `
+      <section class="bd-box pl-power">
+        <h4>💥 Skill power <span class="bd-note">with this build's stats, gear and buffs, before the monster's defense</span></h4>
+        <ul class="pl-power-list">${rows.map(r => `
+          <li class="pl-power-row">
+            <span class="pl-power-name">${r.sk.icon ? `<img src="${esc(r.sk.icon)}" alt="" loading="lazy">` : ""}<strong>${esc(r.sk.name)}</strong> <span class="bd-note">${esc(r.job)}</span></span>
+            ${lvSel(r.sk.name, r.lv)}
+            <span class="pl-power-vals">${r.parts.map(p => `<span class="pl-power-val" title="${esc(p.text)}">${p.label ? `<span class="bd-note">${esc(p.label)}</span> ` : ""}<b>${fmt(p.value)}</b></span>`).join("")}</span>
+            <code class="pl-power-f">${esc(r.sk.formula)}</code>
+          </li>`).join("")}</ul>
+        ${unread.length ? `<details class="pl-party"><summary>❔ ${unread.length} skill${unread.length === 1 ? "" : "s"} we can't work out yet</summary>
+          <ul class="pl-power-list">${unread.map(r => `<li class="pl-power-row"><span class="pl-power-name"><strong>${esc(r.sk.name)}</strong></span><code class="pl-power-f">${esc(r.sk.formula)}</code></li>`).join("")}</ul></details>` : ""}
+        <p class="bd-note">Formulas and level values from the wiki. The monster's DP / MD, elements and critical hits aren't in yet: that needs damage numbers checked in game.</p>
+      </section>`;
   }
 
   root.TQPlanner = Object.assign({ render }, model);
