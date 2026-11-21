@@ -747,15 +747,19 @@
     const st = status(build, ctx);
     // a friend's build: everything shows, nothing changes (slots still open to read)
     const lock = ctx.readOnly ? "disabled" : "";
+    // left: what the character wears and the status it makes; right: the fight and the buffs
     return `
       ${buildsBar(build, ctx)}
       <fieldset class="pl-fs" ${lock}>${headBox(build, ctx)}</fieldset>
       <div class="pl-grid">
-        ${dollBox(build, ctx)}
-        <fieldset class="pl-fs pl-side" ${lock}>
-          ${statusBox(build, st, ctx)}
-          ${buffBox(build, st, ctx)}
-        </fieldset>
+        <div class="pl-col">
+          ${dollBox(build, ctx)}
+          <fieldset class="pl-fs" ${lock}>${statusBox(build, st, ctx)}</fieldset>
+        </div>
+        <div class="pl-col">
+          ${battleBox(build, st, ctx)}
+          <fieldset class="pl-fs" ${lock}>${buffBox(build, st, ctx)}</fieldset>
+        </div>
       </div>
       ${powerBox(build, st, ctx)}`;
   }
@@ -813,58 +817,140 @@
         ${unread.length ? `<details class="pl-party"><summary>❔ ${unread.length} skill${unread.length === 1 ? "" : "s"} we can't work out yet</summary>
           <ul class="pl-power-list">${unread.map(r => `<li class="pl-power-row"><span class="pl-power-name"><strong>${esc(r.sk.name)}</strong></span><code class="pl-power-f">${esc(r.sk.formula)}</code></li>`).join("")}</ul></details>` : ""}
         <p class="bd-note">Formulas and level values from the wiki. The monster's DP / MD, elements and critical hits aren't in yet: that needs damage numbers checked in game.</p>
-      </section>
-      ${monsterBox(build, st, ctx, rows)}`;
+      </section>`;
+  }
+
+  const WIKI_IMG = "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/";
+  /** The monster's wiki picture: the big .png, else the .gif sprite, else nothing. */
+  function monImg(m, cls) {
+    const [a, b] = m.img || [];
+    if (!a) return "";
+    return `<img class="${cls}" src="${esc(WIKI_IMG + a)}" ${b ? `data-alt="${esc(WIKI_IMG + b)}"` : ""} alt="${esc(m.n)}" loading="lazy"
+      onerror="if (this.dataset.alt) { this.src = this.dataset.alt; this.dataset.alt = ''; } else { this.remove(); }">`;
   }
 
   /**
-   * 🎯 Against a monster: pick one (client table), see its stats next to the build's skill power
-   * (before its defense, so "hits" is the fewest it could take), and write down hits from the game
-   * to work out the defense formula later.
+   * The attacks the Battle Summary can pick: a normal hit (AP, before defense) and the job's attack
+   * skills that can be used in the build's state, with their power.
    */
-  function monsterBox(build, st, ctx, rows) {
-    if (!ctx.monsters) return "";
-    const list = ctx.monsters.monsters || [];
-    const mon = list.find(m => m.id === build.mon) || null;
-    const found = searchMonsters(list, ctx.ui.monQuery, 12);
+  function attacks(build, st, ctx) {
     const totals = totalsOf(st);
-    const myEl = Object.entries(st.elements).map(([k, v]) => `${k} ${v}%`).join(" · ");
-    const usable = rows.filter(r => r.use.ok);
-    const best = r => Math.max(...r.parts.map(p => p.value));
-    const hits = build.hits || [];
-    const skillOpts = ["Normal attack", ...usable.map(r => r.sk.name)];
-    const card = mon ? `
-      <div class="pl-mon">
-        <div class="pl-mon-head"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag">Boss</span>` : ""}
-          <span class="bd-note">#${esc(mon.id)}</span>
-          ${ctx.readOnly ? "" : `<button type="button" class="btn btn-sm" onclick="TQPlanner.pickMonster('')">Change</button>`}</div>
-        <div class="pl-mon-stats">
-          ${[["HP", mon.hp], ["DP", mon.dp], ["MD", mon.md], ["HV", mon.hv], ["AP", mon.ap], ["AC", mon.ac], ["MA", mon.ma], ["LK", mon.lk]].map(([k, v]) => `<span><b>${k}</b> ${fmt(v)}</span>`).join("")}
+    const { rows } = ctx.formula && ctx.skillSets ? powerRows(build, st, ctx) : { rows: [] };
+    const list = [{ name: "Normal attack", lv: "", parts: [{ label: "", text: "AP", value: totals.AP || 0 }], use: { ok: true, why: "" }, normal: true }];
+    for (const r of rows) list.push({ name: r.sk.name, lv: r.lv, parts: r.parts, use: r.use, sk: r.sk });
+    return list;
+  }
+  const strongest = a => Math.max(0, ...a.parts.map(p => p.value));
+
+  /**
+   * ⚔️ Battle Summary: a monster against one attack of the build (and a table of several monsters).
+   * Before the monster's defense, so hits are the fewest it could take; the hits written down from the
+   * game (📝) are for working out the defense formula.
+   */
+  function battleBox(build, st, ctx) {
+    if (!ctx.monsters) return `<section class="bd-box pl-battle"><h4>⚔️ Battle Summary</h4><p class="bd-note">Loading monsters…</p></section>`;
+    const list = ctx.monsters.monsters || [];
+    const byId = new Map(list.map(m => [m.id, m]));
+    const mon = byId.get(build.mon) || null;
+    const atks = attacks(build, st, ctx);
+    const usable = atks.filter(a => a.use.ok);
+    const atk = usable.find(a => a.name === ctx.ui.attack) || usable[0];
+    const dmg = strongest(atk);
+    const found = searchMonsters(list, ctx.ui.monQuery, 12);
+    const sk = atk.sk;
+    const row = sk && sk.levels && sk.levels.rows.length ? (atk.lv === "M" ? sk.levels.rows[sk.levels.rows.length - 1] : sk.levels.rows.find(r => r[0] === atk.lv) || sk.levels.rows[sk.levels.rows.length - 1]) : null;
+    const col = re => { if (!row) return ""; const i = sk.levels.cols.findIndex(c => re.test(c)); return i > 0 ? row[i] : ""; };
+    const myEl = Object.entries(st.elements).map(([k, v]) => `<span class="${EL_CLASS(k)}">${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`;
+    const hits = m => (dmg > 0 ? Math.ceil(m.hp / dmg) : "–");
+    const cmp = (ctx.ui.compare || []).map(id => byId.get(id)).filter(Boolean);
+
+    const pickRow = `
+      <div class="pl-bs-pick">
+        <div class="pl-bs-find">
+          <span class="pl-bs-label">Monster</span>
+          <input type="search" id="pl-mon-q" value="${esc(ctx.ui.monQuery || "")}" placeholder="${mon ? esc(mon.n) + " · type to change" : "Find a monster or boss: Tombeth, Fire Moth…"}" aria-label="Find a monster" oninput="TQPlanner.monQuery(this.value)">
+          ${found.length ? `<ul class="pl-mon-list">${found.map(m => `<li><button type="button" onclick="TQPlanner.pickMonster('${esc(m.id)}')">
+            ${monImg(m, "pl-mon-thumb")}<strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span>${m.boss ? ` <span class="tag">Boss</span>` : ""}
+            <span class="bd-note">HP ${fmt(m.hp)} · DP ${fmt(m.dp)} · MD ${fmt(m.md)}</span></button></li>`).join("")}</ul>`
+          : ctx.ui.monQuery ? `<p class="bd-note">No monster called “${esc(ctx.ui.monQuery)}”.</p>` : ""}
         </div>
-        <p class="pl-elems"><b>Element</b> ${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)}">${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`}
-          <b>Resists</b> ${Object.entries(mon.res || {}).map(([k, v]) => `<span class="pl-el pl-el-res">${k} ${v}</span>`).join("") || `<span class="bd-note">none</span>`}</p>
-        ${myEl ? `<p class="bd-note">Your attack element: ${esc(myEl)}. How elements and resistances change damage isn't in yet.</p>` : ""}
-        ${usable.length ? `<ul class="pl-vs">${usable.slice(0, 8).map(r => {
-          const v = best(r);
-          return `<li><span>${esc(r.sk.name)}</span><b>${fmt(v)}</b><span class="bd-note">${v > 0 ? `at least ${Math.ceil(mon.hp / v)} hit${Math.ceil(mon.hp / v) === 1 ? "" : "s"}` : ""}</span></li>`;
-        }).join("")}</ul>
-        <p class="bd-note">"At least" because the monster's DP / MD isn't taken off yet: the real number of hits is the same or more.</p>` : ""}
-      </div>` : "";
-    const picker = `
-      <div class="pl-mon-find">
-        <input type="search" id="pl-mon-q" value="${esc(ctx.ui.monQuery || "")}" placeholder="Find a monster or boss: Tombeth, Fire Moth…" aria-label="Find a monster" oninput="TQPlanner.monQuery(this.value)">
-        ${found.length ? `<ul class="pl-mon-list">${found.map(m => `<li><button type="button" onclick="TQPlanner.pickMonster('${esc(m.id)}')">
-          <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span>${m.boss ? ` <span class="tag">Boss</span>` : ""}
-          <span class="bd-note">HP ${fmt(m.hp)} · DP ${fmt(m.dp)} · MD ${fmt(m.md)}</span></button></li>`).join("")}</ul>`
-        : ctx.ui.monQuery ? `<p class="bd-note">No monster called “${esc(ctx.ui.monQuery)}”.</p>` : ""}
+        <div class="pl-bs-find">
+          <span class="pl-bs-label">Attack</span>
+          <select id="pl-atk" aria-label="Attack" onchange="TQPlanner.attack(this.value)">${usable.map(a => `<option ${a === atk ? "selected" : ""}>${esc(a.name)}</option>`).join("")}</select>
+          ${atk.normal ? "" : `<select id="pl-atk-lv" aria-label="${esc(atk.name)} level" onchange="TQPlanner.powerLevel('${jsq(atk.name)}', this.value)">${SKILL_LEVELS.map(l => `<option value="${l}" ${l === atk.lv ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select>`}
+        </div>
       </div>`;
-    const log = `
+
+    const monSide = mon ? `
+      <div class="pl-bs-mon">
+        ${monImg(mon, "pl-mon-pic")}
+        <div class="pl-bs-mon-info">
+          <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">Boss</span>` : ""}</p>
+          <dl class="pl-bs-stats">
+            <dt>HP</dt><dd class="is-hp">${fmt(mon.hp)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
+            <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
+            <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
+          </dl>
+          <p class="pl-elems"><b>Element</b> ${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)}">${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`}</p>
+          <p class="pl-elems"><b>Resists</b> ${Object.entries(mon.res || {}).map(([k, v]) => `<span class="pl-el pl-el-res">${k} ${v}</span>`).join("") || `<span class="bd-note">none</span>`}</p>
+        </div>
+      </div>` : `<p class="bd-note pl-bs-empty">Find a monster above to see it here.</p>`;
+
+    const atkSide = `
+      <div class="pl-bs-atk">
+        <dl class="pl-bs-stats">
+          <dt>Type</dt><dd>${atk.normal ? "Normal hit" : esc(sk.type || "Skill")}</dd>
+          <dt>Element</dt><dd>${myEl}</dd>
+          ${col(/^MP$/i) ? `<dt>MP</dt><dd>${esc(col(/^MP$/i))}</dd>` : ""}
+          ${col(/cool/i) ? `<dt>Cooldown</dt><dd>${esc(col(/cool/i))}</dd>` : ""}
+        </dl>
+        <div class="pl-bs-result">
+          ${atk.parts.map(p => `<p><span class="bd-note">${esc(p.label || (atk.normal ? "Damage (AP)" : "Damage"))}</span> <b>${fmt(p.value)}</b></p>`).join("")}
+          ${mon ? `<p><span class="bd-note">Hits to kill</span> <b class="is-hits">≥ ${hits(mon)}</b></p>` : ""}
+        </div>
+        <code class="pl-power-f">${atk.normal ? "Normal hit: your AP (how the game turns it into damage isn't checked yet)" : esc(sk.formula)}</code>
+      </div>`;
+
+    const table = `
+      <div class="pl-bs-cmp">
+        <div class="pl-bs-cmp-head">
+          <strong>Compare monsters</strong>
+          <input type="search" id="pl-cmp-q" value="${esc(ctx.ui.cmpQuery || "")}" placeholder="＋ Add a monster" aria-label="Add a monster to compare" oninput="TQPlanner.cmpQuery(this.value)">
+        </div>
+        ${ctx.ui.cmpQuery ? `<ul class="pl-mon-list">${searchMonsters(list, ctx.ui.cmpQuery, 8).map(m => `<li><button type="button" onclick="TQPlanner.compare('${esc(m.id)}', true)">
+          <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span> <span class="bd-note">HP ${fmt(m.hp)} · DP ${fmt(m.dp)}</span></button></li>`).join("")}</ul>` : ""}
+        ${cmp.length || mon ? `<div class="bd-lvtable-wrap"><table class="pl-bs-table">
+          <thead><tr><th>Monster</th><th>Lv</th><th>HP</th><th>DP</th><th>MD</th><th>${esc(atk.name)}</th><th>Hits ≥</th><th></th></tr></thead>
+          <tbody>${[...(mon ? [mon] : []), ...cmp.filter(m => m !== mon)].map(m => `<tr class="${m === mon ? "is-on" : ""}">
+            <td><button type="button" class="pl-bs-link" onclick="TQPlanner.pickMonster('${esc(m.id)}')">${esc(m.n)}</button>${m.boss ? ` <span class="tag">Boss</span>` : ""}</td>
+            <td>${m.l}</td><td>${fmt(m.hp)}</td><td>${fmt(m.dp)}</td><td>${fmt(m.md)}</td><td>${fmt(dmg)}</td><td><b>${hits(m)}</b></td>
+            <td>${m === mon ? "" : `<button type="button" class="btn btn-sm" aria-label="Take ${esc(m.n)} out" onclick="TQPlanner.compare('${esc(m.id)}', false)">✕</button>`}</td></tr>`).join("")}</tbody>
+        </table></div>` : ""}
+      </div>`;
+
+    const log = hitLog(build, mon, usable, ctx);
+    return `
+      <section class="bd-box pl-battle">
+        <h4>⚔️ Battle Summary <span class="bd-note">before the monster's defense</span></h4>
+        ${pickRow}
+        <div class="pl-bs-body">${monSide}${atkSide}</div>
+        ${table}
+        ${log}
+        <p class="bd-note">"≥" because the monster's DP / MD, elements and critical hits aren't taken into account yet: the real number of hits is the same or more.
+          Monsters from the PlayTrickster client; pictures from the wiki.</p>
+      </section>`;
+  }
+
+  /** 📝 Hits written down from the game, to work out the defense formula. */
+  function hitLog(build, mon, usable, ctx) {
+    const hits = build.hits || [];
+    return `
       <details class="pl-hits" ${hits.length || ctx.ui.logOpen ? "open" : ""} ontoggle="TQPlanner.logOpen(this.open)">
         <summary>📝 Hits from the game <span class="bd-note">${hits.length} written down</span></summary>
         <p class="bd-note">To work out the defense formula: hit a monster with one attack (normal attacks first), write down 5-10
           damage numbers (not critical hits), and do it on 2-3 monsters with different DP. Your stats right now are saved with each line.</p>
         ${ctx.readOnly ? "" : mon ? `<form class="pl-hit-form" onsubmit="event.preventDefault(); TQPlanner.addHit(this)">
-          <label class="pl-in"><span>Attack</span><select name="skill">${skillOpts.map(n => `<option>${esc(n)}</option>`).join("")}</select></label>
+          <label class="pl-in"><span>Attack</span><select name="skill">${usable.map(a => `<option ${a.name === ctx.ui.attack ? "selected" : ""}>${esc(a.name)}</option>`).join("")}</select></label>
           <label class="pl-in"><span>Skill level</span><select name="lv"><option value="">–</option>${SKILL_LEVELS.map(l => `<option value="${l}">${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select></label>
           <label class="pl-in pl-in-wide"><span>Damage numbers on ${esc(mon.n)}</span><input name="dmg" required placeholder="812 795 830 806 …" inputmode="numeric"></label>
           <label class="pl-in pl-in-wide"><span>Note</span><input name="note" maxlength="${LIMITS.note}" placeholder="no buffs, Evolution on, a critical hit was 1,640…"></label>
@@ -878,14 +964,6 @@
           <button type="button" class="btn btn-sm" onclick="TQPlanner.copyHits()">📋 ${ctx.ui.hitsText ? "Hide the text" : "Text to send for working out"}</button>
           ${ctx.ui.hitsText ? `<textarea class="pl-hits-text" readonly rows="6" onclick="this.select()">${esc(hitsText(build, hits))}</textarea>` : ""}` : ""}
       </details>`;
-    return `
-      <section class="bd-box pl-monster">
-        <h4>🎯 Against a monster <span class="bd-note">client data: level, HP, DP, MD, element, resistances</span></h4>
-        ${card || picker}
-        ${card && ctx.ui.monQuery ? picker : ""}
-        ${log}
-        <p class="bd-note">AP now: ${fmt(totals.AP || 0)}. Monster numbers come from the PlayTrickster client and may differ on the live server.</p>
-      </section>`;
   }
 
   root.TQPlanner = Object.assign({ render }, model);

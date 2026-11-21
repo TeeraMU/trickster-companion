@@ -1694,7 +1694,7 @@
     // buff-values.json (all load with builds.json). A friend's shared build opens read only.
     // ============================================================================
     let STAT_BASE = null, BUFFS = null, BUFF_VALUES = null;
-    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {}, monQuery: "", logOpen: false, hitsText: false }; // viewing: { build, friend }; power: { skill: level }
+    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {}, monQuery: "", logOpen: false, hitsText: false, attack: "", cmpQuery: "", compare: [] }; // viewing: { build, friend }; power: { skill: level }
     // data/monsters.json (client table, ~320 KB): loaded the first time the Planner shows
     let MONSTERS = null, monstersLoading = false;
     function loadMonsters() {
@@ -1991,6 +1991,16 @@
       powerLevel(name, lv) { PLANNER_UI.power[name] = lv; renderPlanner(); },
       // 🎯 Against a monster
       monQuery(q) { PLANNER_UI.monQuery = q; renderPlanner(); },
+      attack(name) { PLANNER_UI.attack = name; renderPlanner(); },
+      cmpQuery(q) { PLANNER_UI.cmpQuery = q; renderPlanner(); },
+      /** Monsters in the Battle Summary's table (this page only, 8 at most). */
+      compare(id, add) {
+        const list = PLANNER_UI.compare.filter(x => x !== id);
+        if (add && list.length < 8) list.push(id);
+        PLANNER_UI.compare = list;
+        PLANNER_UI.cmpQuery = "";
+        renderPlanner();
+      },
       pickMonster(id) {
         const b = editable();
         if (!b) return;
