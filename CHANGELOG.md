@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Build guide: new **🛡️ Equipment** tab, the first part of the Build planner. Tap any of the 12 slots (weapon, shield, hat, 2 accessories, pet, cape, inner, ears, tail, 2 fashion) to search about 7,000 items by name, with the change against what you wear shown on each one (AP +40, MD −12). Add the Refine, Compound or random bonus your own piece has, make a **custom item** when something isn't listed or differs on the live server, and type in buffs. The stat table adds it all up as the number the game shows after the **+** (AP 1178**+4007**), with the elements and resistances.
+- Build guide: **💾 Saved builds**: name a build and save up to 20 of them (gear, custom items, buffs, level, growth, bonus split). They sync with your account when you're signed in. **🔗 Share code** gives a code a friend can open with **📥 Open a code**, custom items included.
+- Item numbers come from the PlayTrickster client's item tables (base values). The live server may differ, so check them in game.
+
 ## 0.9.2 (2026-11-19): Tower group, Tick all, friends' Bags
 
 - Quests page: **Items to collect** lists only items now. Kill-count hunts (Chaos King Yamu ×30, Corrupt Xeper ×19900 …) live in **⚔️ Monsters**, and one line at the top ("⚔️ 29 monsters to hunt … are in Monsters →") takes you there. The Episodes page, which has no Monsters view, still lists them.

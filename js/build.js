@@ -354,12 +354,14 @@
         </div>
       </section>`;
 
-    const tabs = [["stats", "📊 Stats"], ["skills", "✨ Skills"]];
+    const tabs = [["stats", "📊 Stats"], ["skills", "✨ Skills"], ...(ctx.renderGear ? [["gear", "🛡️ Equipment"]] : [])];
     const tabBar = `<div class="bd-tabs" role="tablist">${tabs.map(([k, l]) => `<button type="button" role="tab" class="pill-btn ${st.tab === k ? "active" : ""}" aria-selected="${st.tab === k}" onclick="TQBuild.set({ tab: '${k}' })">${l}</button>`).join("")}
-      <span class="bd-later" title="Coming in a later version">🛡️ Equipment · 💥 Damage: later</span></div>`;
+      <span class="bd-later" title="Coming in a later version">💥 Damage: later</span></div>`;
 
     let body = "";
-    if (st.tab === "skills") {
+    if (st.tab === "gear" && ctx.renderGear) {
+      body = ctx.renderGear(st);
+    } else if (st.tab === "skills") {
       const items = masterItems(b, sets, st.picked);
       const have = ctx.have || {};
       const totals = items.length ? `

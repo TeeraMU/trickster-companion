@@ -13,7 +13,7 @@ t("pick keeps progress, drops screen prefs and empty values", () => {
   }, { "npc@map": { x: 1, y: 2 } });
   assert.deepStrictEqual(p, {
     schema: 1, completedQuests: { a: true }, completedCycles: { a: 5 }, completedSteps: { a_0: true },
-    inventory: { Brass: 3 }, pins: { "npc@map": { x: 1, y: 2 } }, selectedClass: "Cat", selectedJobPath: "diva", focus: null, hideBag: false
+    inventory: { Brass: 3 }, pins: { "npc@map": { x: 1, y: 2 } }, selectedClass: "Cat", selectedJobPath: "diva", focus: null, hideBag: false, builds: []
   });
 });
 
@@ -36,11 +36,23 @@ t("merge: this device's pins and class win, cloud fills the gaps", () => {
   assert.strictEqual(m.selectedJobPath, "diva");
 });
 
+t("saved builds: synced cleaned, merged by newest, counted, old copies without them match", () => {
+  const here = S.pick({ planner: { builds: [{ id: "b1", name: "Here", updated: 200, gear: { hat: { id: "<x>" } } }] } }, {});
+  assert.deepStrictEqual(here.builds[0].gear, {});
+  const cloud = S.pick({ planner: { builds: [{ id: "b1", name: "Cloud", updated: 100 }, { id: "b2", name: "Other", updated: 50 }] } }, {});
+  const m = S.merge(here, cloud);
+  assert.deepStrictEqual(m.builds.map(b => b.name), ["Here", "Other"]);
+  assert.strictEqual(S.summary(cloud).builds, 2);
+  assert.ok(!S.isEmpty(cloud));
+  const old = S.pick({}, {}); delete old.builds;
+  assert.ok(S.same(old, S.pick({}, {})));
+});
+
 t("summary, isEmpty and same", () => {
   const empty = S.pick({}, {});
   assert.ok(S.isEmpty(empty));
   const p = S.pick({ completedQuests: { a: true }, inventory: { Brass: 2 } }, { "n@m": { x: 1, y: 1 } });
-  assert.deepStrictEqual(S.summary(p), { quests: 1, steps: 0, items: 1, pins: 1 });
+  assert.deepStrictEqual(S.summary(p), { quests: 1, steps: 0, items: 1, pins: 1, builds: 0 });
   assert.ok(!S.isEmpty(p));
   const reordered = JSON.parse(JSON.stringify({ pins: p.pins, inventory: p.inventory, completedQuests: p.completedQuests,
     completedCycles: {}, completedSteps: {}, selectedJobPath: "", selectedClass: "All", focus: null, hideBag: false, schema: 1 }));

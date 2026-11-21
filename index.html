@@ -350,6 +350,7 @@
   <script src="js/report.js"></script>
   <script src="js/bag.js"></script>
   <script src="js/town.js"></script>
+  <script src="js/planner.js"></script>
   <script src="js/sync-merge.js"></script>
   <script src="js/cloud.js"></script>
   <script src="js/friends.js"></script>
@@ -374,7 +375,8 @@
       selectedRegion: "All",
       selectedAreaGroup: "all",
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
-      build: null,             // Build guide: { cls, job, tab, growth, level, bonus, picked } (this device only)
+      build: null,             // Build guide: { cls, job, tab, growth, level, bonus, picked, gear, custom, buffs, name, savedId } (this device only)
+      planner: { builds: [] }, // Build planner's saved builds (synced; js/planner.js)
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
       focus: null,             // pinned scope friends see needs for: { region, group, cats, path } (Friends)
@@ -477,6 +479,8 @@
       appState.selectedJobPath = p.selectedJobPath || "";
       appState.focus = p.focus || null;
       appState.hideBag = !!p.hideBag;
+      // a copy saved before builds were synced has none: keep this device's
+      if (Array.isArray(p.builds)) appState.planner = { builds: TQPlanner.cleanBuilds(p.builds) };
       storePins(p.pins || {});
       normalizeCompletion();
       document.getElementById("charClassSelect").value = appState.selectedClass;
@@ -487,7 +491,7 @@
 
     // First sign-in on a browser that already has different progress: ask which copy to keep
     function chooseSyncCopy(local, cloud) {
-      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins`;
+      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins` + (s.builds ? ` · ${s.builds} builds` : "");
       document.getElementById("syncLocal").textContent = say(local);
       document.getElementById("syncCloud").textContent = say(cloud);
       const dlg = document.getElementById("syncChoice");
@@ -1630,8 +1634,15 @@
         const path = jobPaths().find(p => p.key === appState.selectedJobPath);
         appState.build = { cls, job: path ? path.label : "", tab: "stats", growth: Object.assign({}, TQBuild.DEFAULT_GROWTH), level: 100, bonus: {}, picked: {} };
       }
-      appState.build.growth = TQBuild.fixGrowth(appState.build.growth);
-      return appState.build;
+      const st = appState.build;
+      st.growth = TQBuild.fixGrowth(st.growth);
+      // Equipment tab (js/planner.js): gear, custom items, buffs, and which saved build this is
+      if (!st.gear || typeof st.gear !== "object") st.gear = {};
+      if (!Array.isArray(st.custom)) st.custom = [];
+      if (!Array.isArray(st.buffs)) st.buffs = [];
+      if (typeof st.name !== "string") st.name = "";
+      if (!appState.planner || !Array.isArray(appState.planner.builds)) appState.planner = { builds: [] };
+      return st;
     }
 
     function renderBuild() {
@@ -1639,8 +1650,149 @@
       if (!box || !BUILDS) return;
       const lc = s => String(s).toLowerCase().replace(/\s+/g, " ").trim();
       const questByTitle = t => QUESTS.find(q => lc(q.title) === lc(t)) || null;
-      box.innerHTML = TQBuild.render({ builds: BUILDS, state: buildState(), have: appState.inventory, questByTitle });
+      box.innerHTML = TQBuild.render({ builds: BUILDS, state: buildState(), have: appState.inventory, questByTitle, renderGear: renderPlanner });
+      if (PLANNER_UI.focusSearch) {
+        PLANNER_UI.focusSearch = false;
+        const el = document.getElementById("plSearch");
+        if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
+      }
     }
+
+    // ============================================================================
+    // BUILD PLANNER (js/planner.js): the Build guide's 🛡️ Equipment tab. data/equipment.json is
+    // loaded the first time the tab opens. The working build is appState.build (with gear, custom
+    // items and buffs); saved builds are appState.planner.builds (synced).
+    // ============================================================================
+    let EQUIPMENT = null, EQUIP_BY_ID = null, equipmentLoading = false;
+    const PLANNER_UI = { slot: "", query: "", fitLevel: true, custom: "", code: "", focusSearch: false };
+    function loadEquipment() {
+      if (EQUIPMENT || equipmentLoading) return;
+      equipmentLoading = true;
+      TQData.fetchJson("data/equipment.json").then(d => {
+        EQUIPMENT = d;
+        EQUIP_BY_ID = TQPlanner.indexCatalog(d);
+        if (appState.currentView === "build") renderBuild();
+      }).catch(() => {
+        equipmentLoading = false;
+        const box = document.querySelector(".pl-gear");
+        if (box) box.insertAdjacentHTML("afterbegin", '<p class="bd-warn">Couldn\'t load the item list. Check your connection and reload.</p>');
+      });
+    }
+
+    function renderPlanner(st) {
+      loadEquipment();
+      const plan = TQBuild.statPlan(BUILDS.stats, { level: st.level, growth: st.growth, bonus: st.bonus });
+      const levelGain = {};
+      plan.forEach(r => { levelGain[r.stat] = r.gain; });
+      return TQPlanner.render({
+        build: st, catalog: EQUIPMENT, byId: EQUIP_BY_ID, saved: appState.planner.builds,
+        signedIn: !!(window.TQCloud && TQCloud.user()), levelGain, itemImage: getItemImage, ui: PLANNER_UI
+      });
+    }
+
+    // the working build as a saved one (what cleanBuild keeps)
+    const plannerSnapshot = st => TQPlanner.cleanBuild({
+      id: st.savedId, name: (document.getElementById("plName") || {}).value || st.name,
+      cls: st.cls, job: st.job, level: st.level, growth: st.growth, bonus: st.bonus,
+      gear: st.gear, custom: st.custom, buffs: st.buffs, updated: Date.now()
+    });
+
+    function plannerChanged() { saveState(); renderBuild(); }
+
+    // the working build becomes a saved one, or one from a share code
+    function plannerUse(b, savedId) {
+      const st = buildState();
+      const copy = JSON.parse(JSON.stringify(b));
+      Object.assign(st, { cls: copy.cls || st.cls, job: copy.job, level: copy.level, growth: copy.growth, bonus: copy.bonus,
+        gear: copy.gear, custom: copy.custom, buffs: copy.buffs, name: copy.name, savedId, picked: {} });
+      PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+      plannerChanged();
+    }
+
+    Object.assign(TQPlanner, {
+      openSlot(key) {
+        PLANNER_UI.slot = PLANNER_UI.slot === key ? "" : key;
+        PLANNER_UI.query = ""; PLANNER_UI.custom = "";
+        renderBuild();
+        const panel = document.querySelector(".pl-panel");
+        if (panel && key && window.matchMedia("(max-width: 900px)").matches) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      },
+      equip(key, id) {
+        const st = buildState();
+        if (id) st.gear[key] = { id: String(id) }; else delete st.gear[key];
+        // custom items nobody wears any more go away
+        const worn = new Set(Object.values(st.gear).map(g => g.id));
+        st.custom = st.custom.filter(c => worn.has(c.id));
+        plannerChanged();
+      },
+      setAdd(key, stat, value, plus) {
+        const g = buildState().gear[key];
+        if (!g || !TQPlanner.STATS.includes(stat)) return;
+        const add = Object.assign({}, g.add);
+        const v = Math.round(+value || 0) + (plus ? add[stat] || 0 : 0);
+        if (v) add[stat] = v; else delete add[stat];
+        if (Object.keys(add).length) g.add = add; else delete g.add;
+        plannerChanged();
+      },
+      query(q) { PLANNER_UI.query = q; PLANNER_UI.focusSearch = true; renderBuild(); },
+      fitLevel(on) { PLANNER_UI.fitLevel = !!on; renderBuild(); },
+      customForm(kind) { PLANNER_UI.custom = PLANNER_UI.custom === kind ? "" : kind; renderBuild(); },
+      addCustom(form, key) {
+        const st = buildState();
+        const s = TQPlanner.SLOTS.find(x => x.key === key);
+        if (!s || st.custom.length >= TQPlanner.LIMITS.custom) return;
+        const stats = {};
+        TQPlanner.STATS.forEach(k => { stats[k] = form["st_" + k].value; });
+        const item = { id: "c:" + TQPlanner.newId("").slice(0, 12), n: form.n.value, s: s.slot, l: form.l.value, st: stats, note: form.note.value };
+        const clean = TQPlanner.cleanBuild({ custom: [item] }).custom[0];
+        if (!clean) return;
+        st.custom.push(clean);
+        st.gear[key] = { id: clean.id };
+        PLANNER_UI.custom = "";
+        plannerChanged();
+      },
+      buff(i, field, value) {
+        const st = buildState();
+        if (field === "add") st.buffs.push({ name: "Buff " + (st.buffs.length + 1), stat: "AP", value: 0, on: true });
+        else if (field === "remove") st.buffs.splice(i, 1);
+        else if (st.buffs[i]) st.buffs[i][field] = field === "value" ? Math.round(+value || 0) : field === "on" ? !!value : String(value).slice(0, 40);
+        plannerChanged();
+      },
+      save(asNew) {
+        const st = buildState();
+        const list = appState.planner.builds;
+        if (asNew && list.length >= TQPlanner.LIMITS.builds) return;
+        if (asNew) st.savedId = "";
+        const snap = plannerSnapshot(st);
+        st.savedId = snap.id; st.name = snap.name;
+        appState.planner.builds = TQPlanner.cleanBuilds([snap, ...list.filter(b => b.id !== snap.id)]);
+        plannerChanged();
+      },
+      load(id) {
+        const b = appState.planner.builds.find(x => x.id === id);
+        if (b) plannerUse(b, b.id);
+      },
+      remove(id) {
+        const b = appState.planner.builds.find(x => x.id === id);
+        if (!b || !confirm(`Delete the saved build "${b.name}"?\n\nThe gear on this page stays.`)) return;
+        appState.planner.builds = appState.planner.builds.filter(x => x.id !== id);
+        const st = buildState();
+        if (st.savedId === id) st.savedId = "";
+        plannerChanged();
+      },
+      share() {
+        PLANNER_UI.code = PLANNER_UI.code ? "" : TQPlanner.encodeBuild(plannerSnapshot(buildState()));
+        renderBuild();
+      },
+      importCode() {
+        const code = prompt("Paste a build code (starts with TCB1.)");
+        if (!code) return;
+        const b = TQPlanner.decodeBuild(code);
+        if (!b) { alert("That code doesn't look right. Copy the whole code and try again."); return; }
+        plannerUse(b, "");
+      }
+    });
+
 
     // handlers called from the page (TQBuild.set / growth / bonus / pick / useAdvice)
     Object.assign(TQBuild, {

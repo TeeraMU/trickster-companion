@@ -91,7 +91,7 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   { name, stage 1/2/3, img }: job sprites for friend avatars; the app works without it).
 - `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
 - Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`,
-  `test-search.js` (search index against the real data).
+  `test-search.js` (search index against the real data), `test-planner.js`.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
   drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
   ✅ Mark zone done) is in index.html (`renderZoneBar`).
@@ -102,6 +102,13 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki:
   put in-game corrections in `data/skill-fixes.json` (`{ skills: { name: { items?, tm?, needs?, how?, checked } } }`,
   applied on load by `TQBuild.applyFixes`, shown with a "✓ In game" badge), never in builds.json by hand.
+- `js/planner.js`: the Build guide's 🛡️ Equipment tab (Build planner): 12 gear slots, item search with
+  the change against what's worn, bonuses typed in per piece, custom items, buffs, "+gear" totals, saved
+  builds (`appState.planner.builds`, synced through sync-merge, max 20) and share codes (`TCB1.`). Pure model
+  tested by `node scripts/test-planner.js`. The working build is `appState.build` (gear, custom, buffs).
+  Items: `data/equipment.json`, made by `node scripts/client/build-equipment.js` from the PlayTrickster
+  client tables extracted in `G:/Claude/playtrickster-extraction` (base values; the live server may differ).
+  Never hand-edit it; rerun the script.
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 
