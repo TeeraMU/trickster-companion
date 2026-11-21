@@ -171,7 +171,6 @@ t("formula: Flaming Fist with and without Fire, Power Blow, Volley Kick, lowerca
 });
 
 t("formula: a word it can't read inside brackets drops the expression instead of guessing", () => {
-  assert.deepStrictEqual(power("2 Hit Combo"), []); // needs the Power Blow / Volley Kick levels (PBL, VKL)
   assert.deepStrictEqual(Fm.evalFormula("AP × Unknown Thing", Fm.formulaVars(total, {}, null, "M")), []);
   assert.deepStrictEqual(Fm.evalFormula("alert(1); AP", Fm.formulaVars(total, {}, null, "M")), []);
 });
@@ -182,6 +181,27 @@ t("formula: level rows, % and thousands in cells", () => {
   assert.strictEqual(Fm.cellValue("3 seconds"), 3);
   assert.strictEqual(Fm.cellValue("—"), null);
   assert.ok(power("Power Blow", {}, "1")[0].value < power("Power Blow")[0].value);
+});
+
+t("formula: 2 Hit Combo uses Power Blow and Volley Kick levels (PBL, VKL; Master = 11)", () => {
+  const others = Fm.skillLevelVars({ "Power Blow": "M", "Volley Kick": "5" });
+  assert.deepStrictEqual(others, { PBL: 11, VKL: 5 });
+  const s = skill("2 Hit Combo");
+  const p = Fm.evalFormula(s.formula, Fm.formulaVars(total, {}, s.levels, "M", others));
+  const pw = Fm.cellValue(s.levels.rows.slice(-1)[0][s.levels.cols.indexOf("Power")]);
+  assert.deepStrictEqual(p.map(x => x.label), ["First Hit", "Second Hit"]);
+  assert.strictEqual(Math.round(p[0].value), Math.round(5587 * (11 * 0.6 + 3) * (pw / 15)));
+  assert.strictEqual(Math.round(p[1].value), Math.round((5587 + 159 * 16) * (5 + 10.2) * (pw / 60)));
+});
+
+t("bonus point plan: the suggestion split evenly until changed, points split by %", () => {
+  assert.deepStrictEqual(P.planOf({ bonus: {} }, { stats: ["AP", "HV"] }), { AP: 50, HV: 50 });
+  assert.deepStrictEqual(P.planOf({ bonus: { AP: 70, HV: 30 } }, { stats: ["AP"] }), { AP: 70, HV: 30 });
+  assert.deepStrictEqual(P.planOf({}, null), {});
+  assert.deepStrictEqual(P.splitPoints({ AP: 70, HV: 30 }, 159), { AP: 112, HV: 47 });
+  const s = P.splitPoints({ AP: 34, HV: 33, DP: 33 }, 100);
+  assert.strictEqual(s.AP + s.HV + s.DP, 100);
+  assert.deepStrictEqual(P.splitPoints({}, 100), {});
 });
 
 console.log(`\n${n} passed`);

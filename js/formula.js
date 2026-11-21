@@ -26,8 +26,8 @@
    * and every column of the level table row (by full name, without its "(x)" part, and as the x).
    * stats: { AP: 5000, … }, elements: { Fire: 30 }, table: { cols, rows }, lv: "1".."10" | "M"
    */
-  function formulaVars(stats, elements, table, lv) {
-    const vars = new Map();
+  function formulaVars(stats, elements, table, lv, extra) {
+    const vars = new Map(Object.entries(extra || {})); // e.g. other skills' levels: { PBL: 11 }
     for (const [w, k] of Object.entries(STAT_WORDS)) if (stats[k] != null) vars.set(w, stats[k]);
     // the wiki names elements several ways: "Fire Attr", "Water Attribute", "Soil%", "Darkness Attribute %"
     const ELEMENT_ALIASES = { Earth: ["Soil"], Elec: ["Electric"], Dark: ["Darkness"] };
@@ -174,7 +174,20 @@
     return parts;
   }
 
-  const api = { cellValue, formulaVars, evalFormula };
+  /**
+   * Other skills' levels as a formula names them: "Power Blow" -> PBL (2 Hit Combo uses PBL and VKL).
+   * levels: { "Power Blow": "M" | "1".."10" }; Master counts as 11, like the client's level tables.
+   */
+  function skillLevelVars(levels) {
+    const out = {};
+    for (const [name, lv] of Object.entries(levels || {})) {
+      const short = String(name).split(/\s+/).filter(w => /^[A-Za-z]/.test(w)).map(w => w[0].toUpperCase()).join("") + "L";
+      if (short.length >= 3) out[short] = lv === "M" ? 11 : Number(lv) || 11;
+    }
+    return out;
+  }
+
+  const api = { cellValue, formulaVars, evalFormula, skillLevelVars };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.TQFormula = api;
 })(this);

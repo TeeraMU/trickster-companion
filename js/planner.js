@@ -72,6 +72,33 @@
     return { base: null, from: "", checked: "", estimateFrom: "" };
   }
 
+  /**
+   * How the player wants to spread bonus points, % per stat: their own plan (build.bonus) or else the
+   * suggestion from the skills split evenly (AP + HV -> 50 / 50).
+   */
+  function planOf(build, advice) {
+    const own = {};
+    for (const k of STATS) { const v = ((build && build.bonus) || {})[k]; if (v > 0) own[k] = v; }
+    if (Object.keys(own).length) return own;
+    const s = (advice && advice.stats) || [];
+    const out = {};
+    s.forEach((k, i) => { out[k] = Math.floor(100 / s.length) + (i < 100 % s.length ? 1 : 0); });
+    return out;
+  }
+
+  /** Bonus points split by a plan: { AP: 70, HV: 30 } of 159 -> { AP: 111, HV: 48 } (rounding goes to the biggest share). */
+  function splitPoints(plan, have) {
+    const sum = Object.values(plan).reduce((n, v) => n + v, 0);
+    if (!sum || have <= 0) return {};
+    const out = {};
+    let given = 0;
+    for (const [k, v] of Object.entries(plan)) { out[k] = Math.floor(have * v / sum); given += out[k]; }
+    const order = Object.entries(plan).sort((a, b) => b[1] - a[1]).map(([k]) => k);
+    for (let i = 0; given < have; i++, given++) out[order[i % order.length]]++;
+    for (const k of Object.keys(out)) if (!out[k]) delete out[k];
+    return out;
+  }
+
   /** Bonus points: what the character has (level − 1 unless typed in), spent, left. */
   function points(build) {
     const have = build.ptsHave != null && build.ptsHave !== "" ? clamp(build.ptsHave, 0, 9999) : Math.max(0, build.level - 1);
@@ -274,7 +301,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, points, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -498,16 +525,18 @@
 
   /** Class, job, level and growth of the build, and how to raise stats beside them. */
   function headBox(build, ctx) {
-    const g = build.growth;
-    const total = Object.values(g).reduce((n, v) => n + v, 0);
-    const left = 10 - total;
-    const growthRow = Object.keys(GROUP_STATS).map(k => `
-      <span class="bd-mini ${GROUP_CLASS[k]}"><span class="bd-mini-name">${k}</span><b>${g[k]}</b>
-        <button type="button" class="bd-step" aria-label="Less ${k}" onclick="TQPlanner.growth('${k}', -1)" ${g[k] <= 1 ? "disabled" : ""}>−</button>
-        <button type="button" class="bd-step" aria-label="More ${k}" onclick="TQPlanner.growth('${k}', 1)" ${g[k] >= 4 || total >= 10 ? "disabled" : ""}>+</button></span>`).join("");
     const classes = Object.keys(ctx.classes || {});
     const jobs = ((ctx.classes || {})[build.cls] || { jobs: [] }).jobs;
     const adv = ctx.advice || { label: "", why: "", stats: [] };
+    // my own plan for the bonus points (build.bonus, % per stat); the suggestion until I change it
+    const mine = Object.keys(build.bonus || {}).length > 0;
+    const plan = planOf(build, adv);
+    const sum = Object.values(plan).reduce((n, v) => n + v, 0);
+    const planRows = Object.entries(plan).map(([k, v]) => `
+      <span class="pl-plan-item ${GROUP_CLASS[GROUP_OF[k]]}"><b>${k}</b>
+        <input id="pl-plan-${k}" type="number" min="0" max="100" step="5" value="${v}" aria-label="${k} share of bonus points, %" onchange="TQPlanner.plan('${k}', this.value)">%
+        <button type="button" class="bd-step" aria-label="Take ${k} out of the plan" onclick="TQPlanner.plan('${k}', 0)">✕</button></span>`).join("");
+    const addable = STATS.filter(k => !(k in plan));
     return `
       <section class="bd-profile bd-compact">
         <div class="bd-compact-main">
@@ -516,20 +545,32 @@
             <label class="pl-in"><span>Job</span><select id="pl-job" onchange="TQPlanner.set({ job: this.value })">${jobs.map(j => `<option ${j.name === build.job ? "selected" : ""}>${esc(j.name)}</option>`).join("")}</select></label>
             <label class="pl-in pl-in-lv"><span>Level</span><input id="pl-level" type="number" min="1" max="999" value="${build.level}" onchange="TQPlanner.set({ level: this.value })"></label>
           </div>
-          <p class="bd-compact-label">Growth <span class="bd-note ${left ? "bd-warn" : ""}">${left ? `${left > 0 ? left + " to place" : -left + " too many"} (10 in all, 1-4 each)` : "as picked when you made the character"}</span></p>
-          <div class="bd-mini-row">${growthRow}</div>
+          ${ctx.growthChart ? ctx.growthChart(build.growth, "TQPlanner.growth") : ""}
           <button type="button" class="btn btn-sm pl-skills-link" onclick="TQPlanner.showSkills()">📖 ${esc(build.job || build.cls)} skills in the guide</button>
         </div>
         <div class="bd-compact-guide">
-          <h4>🧭 How to raise stats${adv.label ? `: <span class="bd-build">${esc(adv.label)}</span>` : ""}</h4>
-          ${adv.why ? `<p>${esc(adv.why)}</p>` : ""}
-          <ul class="bd-howto">
-            <li>Every level, growth raises each stat of a group: a <b>4</b> gives 1 stat level per level, a <b>1</b> one per 4 levels.</li>
-            <li>Bonus points you place yourself: press <b>+</b> on a stat below. One point = one stat level (AP +4, HP +30, MP +30, WT +80, DP +4, MD +4; AC, MA, DA, LK, HV +1 per 4).</li>
-            <li>The first number is starting stats + levels + bonus points, the <b>+</b> is gear and buffs, like the game's Growth window.</li>
-          </ul>
-          ${adv.stats.length && !ctx.readOnly ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.useAdvice()">Put my bonus points in ${esc(adv.stats.join(" + "))}</button>` : ""}
-          <p class="bd-note">The suggestion comes from the wiki's skill formulas, not from players. Check a guide or ask your guild.</p>
+          <h4>🧭 How to raise stats</h4>
+          ${adv.label ? `<p><span class="bd-note">Suggested from the skills:</span> <span class="bd-build">${esc(adv.label)}</span>. ${esc(adv.why)}</p>` : ""}
+          <div class="pl-plan">
+            <p class="bd-compact-label">${mine ? "My plan" : "Plan (the suggestion: change it to how you build)"} <span class="bd-note ${sum !== 100 ? "bd-warn" : ""}">${sum}%${sum !== 100 ? " · make it 100%" : ""}</span></p>
+            <div class="pl-plan-row">${planRows}
+              ${addable.length ? `<select id="pl-plan-add" aria-label="Add a stat to the plan" onchange="if (this.value) TQPlanner.plan(this.value, 10)">
+                <option value="">＋ Add a stat</option>${addable.map(k => `<option>${k}</option>`).join("")}</select>` : ""}
+            </div>
+            <div class="pl-plan-row">
+              <button type="button" class="btn btn-sm btn-primary" onclick="TQPlanner.usePlan()" ${sum > 0 ? "" : "disabled"}>Put my bonus points by this plan</button>
+              ${mine && adv.stats.length ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.plan('', 'reset')">Back to the suggestion</button>` : ""}
+            </div>
+          </div>
+          <details class="pl-howto-more">
+            <summary>How stats grow</summary>
+            <ul class="bd-howto">
+              <li>Every level, growth raises each stat of a group: a <b>4</b> gives 1 stat level per level, a <b>1</b> one per 4 levels.</li>
+              <li>Bonus points you place yourself: press <b>+</b> on a stat below. One point = one stat level (AP +4, HP +30, MP +30, WT +80, DP +4, MD +4; AC, MA, DA, LK, HV +1 per 4).</li>
+              <li>The first number is starting stats + levels + bonus points, the <b>+</b> is gear and buffs, like the game's Growth window.</li>
+            </ul>
+            <p class="bd-note">The suggestion comes from the wiki's skill formulas, not from players. Check a guide or ask your guild.</p>
+          </details>
         </div>
       </section>`;
   }
@@ -575,12 +616,16 @@
     if (!F || !ctx.skillSets) return "";
     const totals = {};
     for (const r of st.rows) totals[r.stat] = (r.front == null ? 0 : r.front) + r.plus;
+    // every skill's picked level (Master unless changed), for formulas that use another skill's level
+    const levels = {};
+    for (const set of ctx.skillSets) for (const sk of set.skills) levels[sk.name] = (ctx.ui.power || {})[sk.name] || "M";
+    const others = F.skillLevelVars ? F.skillLevelVars(levels) : {};
     const seen = new Set(), rows = [], unread = [];
     for (const set of ctx.skillSets.slice().reverse()) for (const sk of set.skills) {
       if (seen.has(sk.name) || !/on\/off/i.test(sk.type || "") || !sk.formula) continue;
       seen.add(sk.name);
-      const lv = (ctx.ui.power || {})[sk.name] || "M";
-      const parts = F.evalFormula(sk.formula, F.formulaVars(totals, st.elements, sk.levels, lv));
+      const lv = levels[sk.name];
+      const parts = F.evalFormula(sk.formula, F.formulaVars(totals, st.elements, sk.levels, lv, others));
       (parts.length ? rows : unread).push({ sk, job: set.job, lv, parts });
     }
     if (!rows.length && !unread.length) return "";
