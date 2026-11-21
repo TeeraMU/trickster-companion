@@ -4926,7 +4926,20 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .pl-howto-more summary { cursor: pointer; font-weight: 700; font-size: 0.85rem; color: var(--ink-blue); }
 .bd-compact .bd-growth { margin-top: 8px; }
 /* Planner: compound slots in the slot form */
-.pl-cp { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
-.pl-cp .pl-in-pair { flex: 1 1 220px; align-items: center; }
-.pl-cp-n { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); min-width: 1.2em; text-align: center; }
-.pl-cp .pl-in-inline select { width: auto; font: inherit; padding: 4px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-cp { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; border-radius: var(--radius-sm); background: var(--bg-sunken); border: 1px solid var(--border); }
+.pl-cp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); }
+.pl-cp-sum { color: var(--ink-green); }
+.pl-cp-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 6px; }
+.pl-cp-slot { display: grid; grid-template-columns: 22px minmax(0, 1fr) 76px; align-items: center; gap: 6px; padding: 4px 6px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); }
+.pl-cp-slot.is-on { border-color: color-mix(in srgb, var(--accent-green) 50%, var(--border)); }
+.pl-cp-n { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; font-size: 0.75rem; font-weight: 800; background: var(--bg-tertiary); color: var(--text-secondary); }
+.pl-cp select { width: 100%; min-width: 0; font: inherit; font-size: 0.9rem; padding: 5px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-cp-head select { width: auto; }
+.pl-cp-pct { display: flex; align-items: center; gap: 3px; font-size: 0.85rem; color: var(--text-muted); }
+.pl-cp-pct input { width: 100%; min-width: 0; font: inherit; font-size: 0.9rem; padding: 5px 6px; text-align: right; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+/* Planner: skills that can't be used in the build's state (Evolution on / off) */
+.pl-power-row.is-off { opacity: 0.55; background: var(--bg-sunken); }
+.pl-power-row.is-off .pl-power-val b { color: var(--text-muted); }
+.pl-power-tag { font-size: 0.7rem; font-weight: 800; padding: 1px 7px; border-radius: 8px; background: color-mix(in srgb, var(--accent-purple) 16%, var(--bg-card)); color: var(--ink-purple); white-space: nowrap; }
+.pl-power-tag.is-off { background: var(--bg-tertiary); color: var(--text-secondary); }
+.pl-form-note { margin: 4px 0 6px; padding: 6px 10px; border-radius: var(--radius-sm); font-size: 0.85rem; background: color-mix(in srgb, var(--accent-purple) 10%, var(--bg-card)); }

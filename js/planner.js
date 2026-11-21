@@ -106,11 +106,64 @@
     return { have, spent, left: have - spent, typed: build.ptsHave != null && build.ptsHave !== "" };
   }
 
-  /** A buff's effects from data/buffs.json: { table, group, party, effects } */
+  /** A buff's effects from data/buffs.json: { table, group, party, needs, replaces, form, onlyFormSkills, effects } */
   function buffSpec(buffs, name) {
     const s = buffs && buffs.skills && buffs.skills[name];
     if (!s) return null;
-    return { table: s.table || "", group: s.group || "", party: !!s.party, effects: s.effects || [] };
+    return {
+      table: s.table || "", group: s.group || "", party: !!s.party, needs: s.needs || "", replaces: s.replaces || "",
+      form: s.form || "", onlyFormSkills: !!s.onlyFormSkills, effects: s.effects || []
+    };
+  }
+
+  /**
+   * The ticked buffs that really work: one that needs another (Beast's Instinct needs Evolution) only
+   * with it, and one replaced by another that's on (Evolution while Beast's Instinct is on) is left out.
+   * Returns { active: { name: lv }, off: { name: "needs Evolution" }, replacedBy: { name: other } }
+   */
+  function activeBuffs(build, buffs) {
+    const ticked = build.skills || {};
+    const active = {}, off = {}, replacedBy = {};
+    for (const [name, lv] of Object.entries(ticked)) {
+      const spec = buffSpec(buffs, name);
+      if (spec && spec.needs && !ticked[spec.needs]) off[name] = "needs " + spec.needs;
+      else active[name] = lv;
+    }
+    for (const name of Object.keys(active)) {
+      const spec = buffSpec(buffs, name);
+      if (spec && spec.replaces && active[spec.replaces]) { replacedBy[spec.replaces] = name; delete active[spec.replaces]; }
+    }
+    return { active, off, replacedBy };
+  }
+
+  /**
+   * The state the build is in (Evolution, Metamorphosis) and whether a skill can be used in it.
+   * A skill that says "Can only be used while in Evolution state" needs that form; while a form with
+   * onlyFormSkills is on (Evolution, Beast's Instinct) other attack skills can't be used.
+   * Returns { form: "Evolution" | "", usable(skill) -> { ok, why } }
+   */
+  function formState(build, buffs) {
+    const ticked = build.skills || {};
+    let form = "", only = false;
+    for (const name of Object.keys(activeBuffs(build, buffs).active).concat(Object.keys(ticked).filter(n => buffSpec(buffs, n) && buffSpec(buffs, n).replaces && ticked[buffSpec(buffs, n).replaces]))) {
+      const spec = buffSpec(buffs, name);
+      if (spec && spec.form) { form = spec.form; only = only || spec.onlyFormSkills; }
+    }
+    const needsForm = sk => {
+      const t = `${sk.desc || ""} ${sk.notes || ""}`;
+      const m = /only be used while in (\w+) state/i.exec(t);
+      return m ? m[1] : /must be in a transformed state/i.test(t) ? "transformed" : "";
+    };
+    return {
+      form,
+      usable(sk) {
+        const need = needsForm(sk);
+        if (need && !form) return { ok: false, why: need === "transformed" ? "Only while transformed" : `Only in ${need}` };
+        if (need && need !== "transformed" && form && need !== form) return { ok: false, why: `Only in ${need}` };
+        if (!need && form && only) return { ok: false, why: `Can't be used in ${form}` };
+        return { ok: true, why: need ? `${form} skill` : "" };
+      }
+    };
   }
 
   /** A buff's field at a skill level ("1"…"10", "M") from data/buff-values.json, or null. */
@@ -160,7 +213,7 @@
     });
     const by = Object.fromEntries(rows.map(r => [r.stat, r]));
     const applied = [];
-    for (const [name, lv] of Object.entries(build.skills || {})) {
+    for (const [name, lv] of Object.entries(activeBuffs(build, ctx.buffs).active)) {
       const spec = buffSpec(ctx.buffs, name);
       if (!spec) continue;
       const deltas = {};
@@ -331,7 +384,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -340,7 +393,8 @@
   // page can put the cursor back after a re-render.
   // ---------------------------------------------------------------------------------------------
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+  // a JS string inside an HTML attribute: escape for JS first, then for HTML (see build.js)
+  const jsq = s => esc(String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
   const fmt = v => Math.round(v).toLocaleString();
   const sign = v => (v >= 0 ? "+" : "") + fmt(v);
   const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
@@ -406,10 +460,17 @@
         <p class="bd-note">Type every stat the item window shows, Refine and Compound included.</p>
         <div class="pl-in-grid">${STATS.map(k => field(k, (g.st || {})[k])).join("")}</div>
         <div class="pl-cp">
-          <label class="pl-in pl-in-inline"><span>◇ Compound slots</span>
-            <select id="pl-${s.key}-cpn" onchange="TQPlanner.gearCompound('${s.key}', -1, 'count', this.value)">${[0, 1, 2, 3, 4, 5].map(n => `<option ${n === cp.length ? "selected" : ""}>${n}</option>`).join("")}</select></label>
-          ${sumLine ? `<span class="bd-note">= ${esc(sumLine)}</span>` : ""}
-          ${cp.map((c, i) => `<span class="pl-in-pair"><span class="pl-cp-n">${i + 1}</span>${cpSel(i, c.k)}<input id="pl-${s.key}-cpv${i}" type="number" min="0" step="1" value="${c.v || ""}" placeholder="%" aria-label="Compound slot ${i + 1} %" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'v', this.value)"></span>`).join("")}
+          <div class="pl-cp-head">
+            <label for="pl-${s.key}-cpn">◇ Compound slots</label>
+            <select id="pl-${s.key}-cpn" onchange="TQPlanner.gearCompound('${s.key}', -1, 'count', this.value)">${[0, 1, 2, 3, 4, 5].map(n => `<option ${n === cp.length ? "selected" : ""}>${n}</option>`).join("")}</select>
+            ${sumLine ? `<span class="pl-cp-sum">= ${esc(sumLine)}</span>` : cp.length ? `<span class="bd-note">pick an element and its % in each</span>` : ""}
+          </div>
+          ${cp.length ? `<div class="pl-cp-list">${cp.map((c, i) => `
+            <div class="pl-cp-slot ${c.k ? "is-on" : ""}">
+              <span class="pl-cp-n" aria-hidden="true">${i + 1}</span>
+              ${cpSel(i, c.k)}
+              <span class="pl-cp-pct"><input id="pl-${s.key}-cpv${i}" type="number" min="0" step="1" inputmode="numeric" value="${c.v || ""}" placeholder="0" aria-label="Compound slot ${i + 1} %" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'v', this.value)"><span aria-hidden="true">%</span></span>
+            </div>`).join("")}</div>` : ""}
         </div>
         <label class="pl-in pl-in-wide"><span>Note</span><input id="pl-${s.key}-note" maxlength="${LIMITS.note}" value="${esc(g.note || "")}" placeholder="Refine +7, where it drops…" onchange="TQPlanner.gearField('${s.key}', 'note', this.value)"></label>
         </fieldset>
@@ -480,10 +541,13 @@
       </details>`;
   }
 
-  function buffRow(entry, build, st) {
+  function buffRow(entry, build, st, act) {
     const sk = entry.skill;
     const lv = (build.skills || {})[sk.name];
     const on = !!lv;
+    const spec = entry.spec;
+    const note = !on ? "" : act && act.off[sk.name] ? `<span class="bd-warn">Works only with ${esc(spec.needs)} on: tick it too</span>`
+      : act && act.replacedBy[sk.name] ? `<span class="bd-note">${esc(act.replacedBy[sk.name])} is on: its values are used instead</span>` : "";
     const applied = st.buffs.find(b => b.name === sk.name && !b.manual);
     const eff = applied ? Object.entries(applied.deltas).map(([k, v]) => `<span class="${v >= 0 ? "is-up" : "is-down"}">${k} ${sign(v)}</span>`).join("") : "";
     const what = entry.spec.effects.map(e => e.stat).filter((v, i, a) => a.indexOf(v) === i).join(" · ");
@@ -493,28 +557,29 @@
         <label class="pl-buff-main" for="${id}">
           <input id="${id}" type="checkbox" ${on ? "checked" : ""} onchange="TQPlanner.skill('${jsq(sk.name)}', this.checked ? (document.getElementById('${id}-lv').value) : '')">
           ${sk.icon ? `<img src="${esc(sk.icon)}" alt="" loading="lazy">` : `<span class="pl-buff-ph" aria-hidden="true">✨</span>`}
-          <span><strong>${esc(sk.name)}</strong> <span class="bd-note">${esc(entry.job)} · ${esc(what)}${entry.spec.group ? " · transform" : ""}</span></span>
+          <span><strong>${esc(sk.name)}</strong> <span class="bd-note">${esc(entry.job)} · ${esc(what)}${spec.needs ? ` · with ${esc(spec.needs)}` : spec.group ? " · transform" : ""}</span></span>
         </label>
         <select id="${id}-lv" aria-label="${esc(sk.name)} level" onchange="TQPlanner.skill('${jsq(sk.name)}', document.getElementById('${id}').checked ? this.value : '', true)">
           ${SKILL_LEVELS.map(l => `<option value="${l}" ${l === (lv || "M") ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}
         </select>
-        ${on ? `<span class="pl-diff">${eff || `<span class="bd-note">no change</span>`}</span>` : ""}
+        ${on ? `<span class="pl-diff">${note || eff || `<span class="bd-note">no change</span>`}</span>` : ""}
       </li>`;
   }
 
   function buffBox(build, st, ctx) {
     const lists = ctx.buffLists;
     const partyOn = lists.party.filter(e => build.skills[e.skill.name]).length;
+    const act = activeBuffs(build, ctx.buffs);
     const manual = build.buffs;
     const opts = sel => [...STATS, ...ELEMENTS].map(k => `<option ${k === sel ? "selected" : ""}>${k}</option>`).join("");
     return `
       <section class="bd-box pl-buffs">
         <h4>✨ Buffs <span class="bd-note">tick to add them to the status</span></h4>
-        ${lists.mine.length ? `<ul class="pl-buff-list">${lists.mine.map(e => buffRow(e, build, st)).join("")}</ul>`
+        ${lists.mine.length ? `<ul class="pl-buff-list">${lists.mine.map(e => buffRow(e, build, st, act)).join("")}</ul>`
           : `<p class="bd-note">${esc(build.job || build.cls)} has no stat buffs we know of.</p>`}
         <details class="pl-party" ${partyOn ? "open" : ""}>
           <summary>👥 Party buffs from other jobs ${partyOn ? `<span class="tag">${partyOn} on</span>` : ""}</summary>
-          <ul class="pl-buff-list">${lists.party.map(e => buffRow(e, build, st)).join("")}</ul>
+          <ul class="pl-buff-list">${lists.party.map(e => buffRow(e, build, st, act)).join("")}</ul>
         </details>
         <details class="pl-party" ${manual.length ? "open" : ""}>
           <summary>✏️ Other buffs, typed in ${manual.length ? `<span class="tag">${manual.filter(b => b.on).length} on</span>` : ""}</summary>
@@ -658,22 +723,27 @@
     const levels = {};
     for (const set of ctx.skillSets) for (const sk of set.skills) levels[sk.name] = (ctx.ui.power || {})[sk.name] || "M";
     const others = F.skillLevelVars ? F.skillLevelVars(levels) : {};
+    const form = formState(build, ctx.buffs);
     const seen = new Set(), rows = [], unread = [];
     for (const set of ctx.skillSets.slice().reverse()) for (const sk of set.skills) {
       if (seen.has(sk.name) || !/on\/off/i.test(sk.type || "") || !sk.formula) continue;
       seen.add(sk.name);
       const lv = levels[sk.name];
       const parts = F.evalFormula(sk.formula, F.formulaVars(totals, st.elements, sk.levels, lv, others));
-      (parts.length ? rows : unread).push({ sk, job: set.job, lv, parts });
+      (parts.length ? rows : unread).push({ sk, job: set.job, lv, parts, use: form.usable(sk) });
     }
     if (!rows.length && !unread.length) return "";
+    // skills that can be used in the build's state (Evolution on or off) first, the others greyed below
+    rows.sort((a, b) => (b.use.ok ? 1 : 0) - (a.use.ok ? 1 : 0));
     const lvSel = (name, lv) => `<select aria-label="${esc(name)} level" onchange="TQPlanner.powerLevel('${jsq(name)}', this.value)">${SKILL_LEVELS.map(l => `<option value="${l}" ${l === lv ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select>`;
     return `
       <section class="bd-box pl-power">
         <h4>💥 Skill power <span class="bd-note">with this build's stats, gear and buffs, before the monster's defense</span></h4>
+        ${form.form ? `<p class="pl-form-note">🐾 In <b>${esc(form.form)}</b> (ticked in Buffs): its own skills are on top, the ones you can't use in it are greyed out.</p>` : ""}
         <ul class="pl-power-list">${rows.map(r => `
-          <li class="pl-power-row">
-            <span class="pl-power-name">${r.sk.icon ? `<img src="${esc(r.sk.icon)}" alt="" loading="lazy">` : ""}<strong>${esc(r.sk.name)}</strong> <span class="bd-note">${esc(r.job)}</span></span>
+          <li class="pl-power-row ${r.use.ok ? "" : "is-off"}">
+            <span class="pl-power-name">${r.sk.icon ? `<img src="${esc(r.sk.icon)}" alt="" loading="lazy">` : ""}<strong>${esc(r.sk.name)}</strong> <span class="bd-note">${esc(r.job)}</span>
+              ${r.use.why ? `<span class="pl-power-tag ${r.use.ok ? "" : "is-off"}">${esc(r.use.why)}</span>` : ""}</span>
             ${lvSel(r.sk.name, r.lv)}
             <span class="pl-power-vals">${r.parts.map(p => `<span class="pl-power-val" title="${esc(p.text)}">${p.label ? `<span class="bd-note">${esc(p.label)}</span> ` : ""}<b>${fmt(p.value)}</b></span>`).join("")}</span>
             <code class="pl-power-f">${esc(r.sk.formula)}</code>

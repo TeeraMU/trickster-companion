@@ -1889,14 +1889,24 @@
         const b = editable();
         if (!b) return;
         b.skills = Object.assign({}, b.skills);
-        if (!lv) delete b.skills[name];
-        else {
-          // one transform at a time (Evolution, Beast's Instinct …)
-          const spec = TQPlanner.buffSpec(BUFFS, name);
-          if (spec && spec.group && !levelOnly) {
-            for (const other of Object.keys(b.skills)) {
-              const o = TQPlanner.buffSpec(BUFFS, other);
+        const specOf = n => TQPlanner.buffSpec(BUFFS, n);
+        if (!lv) {
+          delete b.skills[name];
+          // what works only with it goes too (Evolution off -> Beast's Instinct off)
+          for (const other of Object.keys(b.skills)) if ((specOf(other) || {}).needs === name) delete b.skills[other];
+        } else {
+          const spec = specOf(name);
+          if (spec && !levelOnly) {
+            // one transform at a time (Evolution or Metamorphosis)
+            if (spec.group) for (const other of Object.keys(b.skills)) {
+              const o = specOf(other);
               if (other !== name && o && o.group === spec.group) delete b.skills[other];
+            }
+            // Beast's Instinct needs Evolution: tick that too
+            if (spec.needs && !b.skills[spec.needs]) {
+              const n = specOf(spec.needs);
+              if (n && n.group) for (const other of Object.keys(b.skills)) if (other !== spec.needs && (specOf(other) || {}).group === n.group) delete b.skills[other];
+              b.skills[spec.needs] = "M";
             }
           }
           b.skills[name] = lv;

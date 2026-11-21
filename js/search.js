@@ -261,7 +261,8 @@
   }
 
   let pop = null, popFor = null, hoverTimer = 0, leaveTimer = 0;
-  const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+  // a JS string inside an HTML attribute: escape for JS first, then for HTML (see build.js)
+  const jsq = s => esc(String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
 
   function popHtml(name) {
     const m = monsterInfo(name);
