@@ -4912,3 +4912,16 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   .pl-power-row { grid-template-columns: 1fr auto; }
   .pl-power-vals { grid-column: 1 / -1; justify-content: flex-start; }
 }
+/* Planner: my plan for bonus points */
+.pl-plan { margin: 6px 0; }
+.pl-plan .bd-compact-label { margin: 4px 0; }
+.pl-plan-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 4px 0; }
+.pl-plan-item { display: inline-flex; align-items: center; gap: 4px; padding: 3px 4px 3px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-card); font-size: 0.85rem; }
+.pl-plan-item.bd-power { background: color-mix(in srgb, var(--accent-red) 10%, var(--bg-card)); }
+.pl-plan-item.bd-magic { background: color-mix(in srgb, var(--accent-blue) 10%, var(--bg-card)); }
+.pl-plan-item.bd-sense { background: color-mix(in srgb, var(--accent-purple) 10%, var(--bg-card)); }
+.pl-plan-item.bd-charm { background: color-mix(in srgb, var(--accent-orange) 10%, var(--bg-card)); }
+.pl-plan-item input { width: 56px; font: inherit; padding: 2px 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-primary); color: var(--text-primary); text-align: right; }
+.pl-plan-row select { font: inherit; font-size: 0.85rem; padding: 4px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-howto-more summary { cursor: pointer; font-weight: 700; font-size: 0.85rem; color: var(--ink-blue); }
+.bd-compact .bd-growth { margin-top: 8px; }

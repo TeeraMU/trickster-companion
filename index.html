@@ -1731,7 +1731,7 @@
         stats: BUILDS.stats, base: base.base, baseFrom: base.from, baseChecked: base.checked, estimateFrom: base.estimateFrom,
         buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []),
         art: job && job.art, signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI,
-        formula: window.TQFormula, skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
+        formula: window.TQFormula, growthChart: TQBuild.growthChart, skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
       }));
     }
 
@@ -1797,16 +1797,31 @@
         Object.assign(buildState(), { cls: b.cls, job: b.job, picked: buildState().cls === b.cls && buildState().job === b.job ? buildState().picked : {} });
         saveState(); switchView("build");
       },
-      useAdvice() {
+      /** My plan for bonus points (% per stat): set one stat, take it out (0), or 'reset' to the suggestion. */
+      plan(stat, value) {
         const b = editable();
-        const job = b && jobOf(b.cls, b.job);
-        const adv = job ? TQBuild.advice(BUILDS, b.cls, job.name) : { stats: [] };
-        if (!adv.stats.length) return;
-        // every bonus point the character has goes to the suggested stat(s), split evenly
+        if (!b) return;
+        if (value === "reset") { b.bonus = {}; plannerChanged(); return; }
+        const job = jobOf(b.cls, b.job);
+        // the first change starts from what's on screen (the suggestion)
+        b.bonus = Object.assign({}, TQPlanner.planOf(b, job ? TQBuild.advice(BUILDS, b.cls, job.name) : null));
+        const v = Math.max(0, Math.min(100, plNum(value)));
+        if (v) b.bonus[stat] = v; else delete b.bonus[stat];
+        if (!Object.keys(b.bonus).length) b.bonus = {};
+        plannerChanged();
+      },
+      /** Every bonus point the character has, spread by the plan. */
+      usePlan() {
+        const b = editable();
+        if (!b) return;
+        const job = jobOf(b.cls, b.job);
+        const plan = TQPlanner.planOf(b, job ? TQBuild.advice(BUILDS, b.cls, job.name) : null);
         const have = TQPlanner.points(Object.assign({}, b, { pts: {} })).have;
-        if (Object.keys(b.pts || {}).length && !confirm(`Move all ${have} bonus points to ${adv.stats.join(" + ")}?\n\nThe points you placed now are replaced.`)) return;
-        b.pts = {};
-        adv.stats.forEach((k, i) => { const n = Math.floor(have / adv.stats.length) + (i < have % adv.stats.length ? 1 : 0); if (n) b.pts[k] = n; });
+        const pts = TQPlanner.splitPoints(plan, have);
+        if (!Object.keys(pts).length) return;
+        const say = Object.entries(pts).map(([k, n]) => `${k} ${n}`).join(", ");
+        if (Object.keys(b.pts || {}).length && !confirm(`Put your ${have} bonus points as ${say}?\n\nThe points you placed now are replaced.`)) return;
+        b.pts = pts;
         plannerChanged();
       },
       openSlot(key) {

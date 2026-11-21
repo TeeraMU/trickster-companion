@@ -189,6 +189,47 @@
   const TYPE_ICON = { Power: "a/a0/Power_Icon.gif", Magic: "2/24/Magic_Icon.gif", Sense: "c/cc/Sense_Icon.gif", Charm: "5/53/Charm_Icon.gif" };
   const typeIcon = (g, cls) => `<img class="${cls}" src="${WIKI_IMG + TYPE_ICON[g]}" alt="" width="17" height="15">`;
 
+  /** Growth chart, like the in-game one: a box per type in its corner (badge, number, %), a ring in the middle.
+   *  on: the handler its −/+ call ("TQPlanner.growth"). */
+  function growthChart(growth, on) {
+    const total = GROUPS.reduce((n, g) => n + growth[g], 0);
+    const left = GROWTH_TOTAL - total;
+    const corner = (g, pos) => `
+      <div class="bd-grow ${GROUP_CLASS[g]} bd-grow-${pos}">
+        <span class="bd-grow-name">${g}</span>
+        <span class="bd-grow-badge">${typeIcon(g, "bd-grow-icon")}<b>${growth[g]}</b></span>
+        <span class="bd-grow-pct">${growth[g] * 10}%</span>
+        <span class="bd-grow-ctl">
+          <button type="button" class="bd-step" aria-label="Less ${g}" onclick="${on}('${g}', -1)" ${growth[g] <= 1 ? "disabled" : ""}>−</button>
+          <button type="button" class="bd-step" aria-label="More ${g}" onclick="${on}('${g}', 1)" ${growth[g] >= GROWTH_MAX || left <= 0 ? "disabled" : ""}>+</button>
+        </span>
+      </div>`;
+    // one spoke per type, pointing at its box (Power top left … Charm bottom right), as long as its
+    // growth (4 reaches the ring), and the shape they make
+    const DIR = { Power: [-1, -1], Magic: [1, -1], Charm: [1, 1], Sense: [-1, 1] };
+    const end = g => { const r = 5 + growth[g] * 7.2; return [50 + DIR[g][0] * r, 50 + DIR[g][1] * r].map(n => n.toFixed(1)); };
+    const shape = ["Power", "Magic", "Charm", "Sense"].map(g => end(g).join(",")).join(" ");
+    const spokes = GROUPS.map(g => { const [x, y] = end(g); return `<g class="${GROUP_CLASS[g]}"><line x1="50" y1="50" x2="${x}" y2="${y}" class="bd-spoke" /><circle cx="${x}" cy="${y}" r="3.2" class="bd-spoke-end" /></g>`; }).join("");
+    return `
+      <div class="bd-growth">
+        ${corner("Power", "tl")}${corner("Magic", "tr")}
+        <svg class="bd-diamond" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="45" class="bd-ring-teeth" />
+          <circle cx="50" cy="50" r="40" class="bd-ring" />
+          <circle cx="50" cy="50" r="24" class="bd-ring-inner" />
+          <line x1="21" y1="21" x2="79" y2="79" class="bd-diamond-axis" /><line x1="79" y1="21" x2="21" y2="79" class="bd-diamond-axis" />
+          <polygon points="${shape}" class="bd-diamond-fill" />
+          ${spokes}
+          <circle cx="50" cy="50" r="4" class="bd-ring-hub" />
+        </svg>
+        ${corner("Sense", "bl")}${corner("Charm", "br")}
+      </div>
+      <p class="bd-note ${left === 0 ? "" : "bd-warn"}">Growth ${GROUPS.map(g => growth[g]).join("-")} · ${left === 0
+        ? "10 points, as picked when you made the character"
+        : left > 0 ? `${left} point${left === 1 ? "" : "s"} left to place (10 in all, 1-4 each)` : `${-left} too many: 10 in all`}</p>`;
+  }
+
+
   function cardChip(builds, it) {
     const info = builds.items[it.name];
     const img = (info && info.img) || (root.getItemImage ? root.getItemImage(it.name) : "");
@@ -363,5 +404,5 @@
     el.classList.add("is-flash");
   }
 
-  root.TQBuild = Object.assign({ render, goSkill, toggleDetail }, model);
+  root.TQBuild = Object.assign({ render, goSkill, toggleDetail, growthChart }, model);
 })(typeof window !== "undefined" ? window : globalThis);
