@@ -5,13 +5,13 @@ const path = require("path");
 const P = require("../js/planner.js");
 const B = require("../js/build.js");
 const data = f => require(path.join(__dirname, "..", "data", f));
-const builds = data("builds.json"), buffs = data("buffs.json"), bases = data("stat-base.json");
+const builds = data("builds.json"), buffs = data("buffs.json"), values = data("buff-values.json"), bases = data("stat-base.json");
 
 let n = 0;
 const t = (name, fn) => { fn(); n++; console.log("ok ", name); };
 const skillByName = new Map();
 for (const list of Object.values(builds.skills)) for (const s of list) if (!skillByName.has(s.name)) skillByName.set(s.name, s);
-const ctx = { stats: builds.stats, base: bases.classes.Cat, buffs, skillByName };
+const ctx = { stats: builds.stats, base: bases.classes.Cat, buffs, values };
 const front = st => Object.fromEntries(st.rows.map(r => [r.stat, r.front]));
 const lvs = st => Object.fromEntries(st.rows.map(r => [r.stat, r.lv]));
 
@@ -44,22 +44,15 @@ t("gear adds to the +, with elements and resistances", () => {
   assert.deepStrictEqual(st.resist, { Fire: 10 });
 });
 
-t("level table values: %, thousands, signs", () => {
-  assert.strictEqual(P.cellValue("145%"), 1.45);
-  assert.strictEqual(P.cellValue("1,390"), 1390);
-  assert.strictEqual(P.cellValue("+4"), 4);
-  assert.strictEqual(P.cellValue("-3"), -3);
-  assert.strictEqual(P.cellValue("—"), null);
-});
-
-t("every buff in data/buffs.json is a skill with the columns it reads", () => {
+t("every buff is a skill of the guide, with client values for each field at levels 1-10 and Master", () => {
   for (const name of Object.keys(buffs.skills)) {
-    const sk = skillByName.get(name);
-    assert.ok(sk, name + " is not a skill in builds.json");
-    for (const e of P.buffSpec(buffs, name).effects) {
+    assert.ok(skillByName.has(name), name + " is not a skill in builds.json");
+    const spec = P.buffSpec(buffs, name);
+    assert.strictEqual(values.skills[name].table, spec.table, name + ": run scripts/client/build-buffs.js");
+    for (const e of spec.effects) {
       assert.ok(P.STATS.includes(e.stat), name + " " + e.stat);
-      assert.ok(["add", "mul", "pct"].includes(e.op), name + " op");
-      assert.notStrictEqual(P.skillValue(sk, e.col, "M"), null, `${name}: no "${e.col}" value`);
+      assert.ok(["add", "sub", "plus", "minus"].includes(e.op), name + " op");
+      for (const lv of P.SKILL_LEVELS) assert.notStrictEqual(P.buffValue(values, name, e.field, lv), null, `${name}: no ${e.field} at ${lv}`);
     }
   }
 });
@@ -76,10 +69,12 @@ t("Primadonna buffs: Dodge Master, Shield All, Evolution … with the Master val
   b.skills = { "Physical Training": "M", "Dodge Master": "M", "Shield All": "M", "Evolution": "M" };
   const st = P.status(b, ctx);
   const d = Object.fromEntries(st.buffs.map(x => [x.name, x.deltas]));
-  assert.deepStrictEqual(d["Physical Training"], { HP: 2360 });
-  assert.deepStrictEqual(d["Dodge Master"], { HV: Math.trunc((39 + 120) * 0.45) });
+  // client tables (ESAction_Fitness, Soft_Waist, BigShield, WildMutation) at level 11 = Master
+  assert.deepStrictEqual(d["Physical Training"], { HP: 23600 });
+  assert.deepStrictEqual(d["Dodge Master"], { HV: Math.trunc((39 + 120) * 0.6) });
   assert.deepStrictEqual(d["Shield All"], { DP: Math.trunc((632 + 1085) * 0.18) });
-  assert.strictEqual(d.Evolution.AP, Math.trunc(1282 * 1.5));
+  assert.strictEqual(d.Evolution.AP, Math.trunc(1282 * 2.5));
+  assert.strictEqual(d.Evolution.DP, -Math.trunc(632 * 0.3));
   assert.strictEqual(d.Evolution.DX, -4);
   const dp = st.rows.find(r => r.stat === "DP");
   assert.strictEqual(dp.buff, d["Shield All"].DP + d.Evolution.DP);

@@ -1619,10 +1619,12 @@
       // Build planner: starting stats per class and buff effects (optional)
       const bases = TQData.fetchJson("data/stat-base.json").catch(() => null);
       const buffs = TQData.fetchJson("data/buffs.json").catch(() => null);
-      return Promise.all([TQData.fetchJson("data/builds.json"), fixes, bases, buffs]).then(([b, f, sb, bf]) => {
+      const buffValues = TQData.fetchJson("data/buff-values.json").catch(() => null);
+      return Promise.all([TQData.fetchJson("data/builds.json"), fixes, bases, buffs, buffValues]).then(([b, f, sb, bf, bv]) => {
         TQBuild.applyFixes(b, f);
         STAT_BASE = sb;
         BUFFS = bf;
+        BUFF_VALUES = bv;
         BUILDS = b;
         TQSearch.refresh();
         if (appState.currentView === "build") renderBuild();
@@ -1668,23 +1670,21 @@
 
     // ============================================================================
     // BUILD PLANNER (js/planner.js): the Build guide's 🛡️ Equipment tab. Gear is typed in per slot;
-    // the status window comes from data/stat-base.json, buffs from data/buffs.json (both load with
-    // builds.json). The working build is appState.build (gear, pts, skills, buffs); saved builds are
+    // the status window comes from data/stat-base.json, buffs from data/buffs.json + buff-values.json
+    // (all load with builds.json). The working build is appState.build (gear, pts, skills, buffs); saved builds are
     // appState.planner.builds (synced).
     // ============================================================================
-    let STAT_BASE = null, BUFFS = null;
+    let STAT_BASE = null, BUFFS = null, BUFF_VALUES = null;
     const PLANNER_UI = { slot: "", code: "" };
 
     function renderPlanner(st) {
       const c = BUILDS.classes[st.cls];
       const job = c && (c.jobs.find(j => j.name === st.job) || c.jobs[c.jobs.length - 2] || c.jobs[0]);
       const known = STAT_BASE && STAT_BASE.classes[st.cls];
-      const skillByName = new Map();
-      for (const list of Object.values(BUILDS.skills)) for (const s of list) if (!skillByName.has(s.name)) skillByName.set(s.name, s);
       const buffs = BUFFS || { skills: {} };
       return TQPlanner.render({
         build: st, stats: BUILDS.stats, base: known || st.base || null, baseChecked: known ? known.checked : "",
-        buffs, skillByName, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, st.cls, job.name) : []),
+        buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, st.cls, job.name) : []),
         art: job && job.art, saved: appState.planner.builds,
         signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI
       });

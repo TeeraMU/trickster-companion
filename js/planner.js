@@ -1,6 +1,6 @@
 // Build planner: the Build guide's 🛡️ Equipment tab. Gear typed in per slot (name, stats, element:
 // items differ between servers, so there is no item list), bonus points per stat, the class's buffs
-// (data/buffs.json + the wiki's level tables) and the status window worked out like the game:
+// (data/buffs.json, values per level from the client in data/buff-values.json) and the status window worked out like the game:
 // front number from level, growth and bonus points (data/stat-base.json), "+" from gear and buffs.
 // Saved builds are synced; share codes carry a whole build.
 // The model is pure and runs under Node (node scripts/test-planner.js); the renderer gets what it
@@ -65,29 +65,19 @@
     return { have, spent, left: have - spent, typed: build.ptsHave != null && build.ptsHave !== "" };
   }
 
-  /** A level table value as a number: "145%" -> 1.45, "1,390" -> 1390, "+4" -> 4. */
-  function cellValue(v) {
-    const s = String(v == null ? "" : v).replace(/,/g, "");
-    const n = parseFloat(s.replace(/^\+/, ""));
-    if (!Number.isFinite(n)) return null;
-    return /%/.test(s) ? n / 100 : n;
-  }
-
-  /** A buff's effects as { group, effects } whatever way data/buffs.json wrote it. */
+  /** A buff's effects from data/buffs.json: { table, group, party, effects } */
   function buffSpec(buffs, name) {
     const s = buffs && buffs.skills && buffs.skills[name];
     if (!s) return null;
-    return Array.isArray(s) ? { group: "", party: false, effects: s } : { group: s.group || "", party: !!s.party, effects: s.effects || [] };
+    return { table: s.table || "", group: s.group || "", party: !!s.party, effects: s.effects || [] };
   }
 
-  /** Column value of a skill at a level label ("M" = the last row). */
-  function skillValue(skill, col, lv) {
-    const t = skill && skill.levels;
-    if (!t) return null;
-    const i = t.cols.indexOf(col);
-    if (i < 1) return null;
-    const row = lv === "M" ? t.rows[t.rows.length - 1] : t.rows.find(r => r[0] === String(lv)) || t.rows[t.rows.length - 1];
-    return row ? cellValue(row[i]) : null;
+  /** A buff's field at a skill level ("1"…"10", "M") from data/buff-values.json, or null. */
+  function buffValue(values, name, field, lv) {
+    const s = values && values.skills && values.skills[name];
+    const row = s && s.levels && (s.levels[lv] || s.levels.M);
+    const v = row ? row[field] : null;
+    return Number.isFinite(v) ? v : null;
   }
 
   /** Change one effect makes, from the stat before buffs. */
@@ -95,14 +85,15 @@
     if (value == null) return 0;
     const of = eff.of === "base" ? front : front + gear;
     if (eff.op === "add") return Math.trunc(value);
-    if (eff.op === "mul") return Math.trunc(of * (value - 1));
-    if (eff.op === "pct") return Math.trunc(of * (eff.num ? value / 100 : value));
+    if (eff.op === "sub") return -Math.trunc(value);
+    if (eff.op === "plus") return Math.trunc(of * value);
+    if (eff.op === "minus") return -Math.trunc(of * value);
     return 0;
   }
 
   /**
    * The status window for a build.
-   * ctx: { stats: builds.stats, base: { AP: 18, … } or null, buffs: data/buffs.json, skillByName: Map }
+   * ctx: { stats: builds.stats, base: { AP: 18, … } or null, buffs: data/buffs.json, values: data/buff-values.json }
    * Returns { rows: [{ stat, group, lv, pts, front, gear, buff, plus, total }], elements, resist,
    *           buffs: [{ name, lv, deltas: { AP: n } }], known: base is known }
    */
@@ -129,13 +120,12 @@
     const applied = [];
     for (const [name, lv] of Object.entries(build.skills || {})) {
       const spec = buffSpec(ctx.buffs, name);
-      const skill = ctx.skillByName && ctx.skillByName.get(name);
-      if (!spec || !skill) continue;
+      if (!spec) continue;
       const deltas = {};
       for (const eff of spec.effects) {
         const r = by[eff.stat];
         if (!r) continue;
-        const d = effectDelta(eff, skillValue(skill, eff.col, lv), r.front || 0, r.gear);
+        const d = effectDelta(eff, buffValue(ctx.values, name, eff.field, lv), r.front || 0, r.gear);
         if (d) deltas[eff.stat] = (deltas[eff.stat] || 0) + d;
       }
       applied.push({ name, lv, deltas });
@@ -269,7 +259,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, points, cellValue, buffSpec, skillValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, points, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -437,7 +427,7 @@
               <button type="button" class="btn btn-sm" aria-label="Remove ${esc(b.name)}" onclick="TQPlanner.buff(${i}, 'remove')">✕</button></li>`).join("")}</ul>
           ${manual.length < LIMITS.buffs ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.buff(-1, 'add')">＋ Add a buff</button>` : ""}
         </details>
-        <p class="bd-note">Worked out from the wiki's skill formulas, not checked in game yet. If a number is off, tell us what the game shows.</p>
+        <p class="bd-note">Values from the PlayTrickster client's skill tables, not checked in game yet. If a number is off, tell us what the game shows.</p>
       </section>`;
   }
 
@@ -466,7 +456,7 @@
 
   /**
    * ctx: { build (the guide's working build), stats (builds.stats), base, baseChecked, buffs,
-   *        skillByName, buffLists, art, saved, signedIn, ui: { slot, code } }
+   *        values, buffLists, art, saved, signedIn, ui: { slot, code } }
    */
   function render(ctx) {
     const build = ctx.build;
