@@ -1,5 +1,6 @@
 {
-  "about": "Starting stats per class for the Build planner: the front number of the status window is base + floor(per level x (stat level - 1)), per level from data/builds.json stats.perAttrLevel. A stat's level is floor((4 + growth x (level - 1)) / 4) plus the bonus points put in it. Worked out from in-game status windows; a class without numbers here asks the player to type their window once.",
+  "about": "Starting stats per class for the Build planner: the front number of the status window is base + floor(per level x (stat level - 1)), per level from data/builds.json stats.perAttrLevel. A stat's level is floor((4 + growth x (level - 1)) / 4) plus the bonus points put in it. Worked out from in-game status windows; a class without numbers here uses the \"estimate\" class's until someone checks it, and the player can type their own window to correct it.",
+  "estimate": "Cat",
   "classes": {
     "Cat": {
       "AP": 18, "AC": 50, "DX": 10, "MP": 80, "MA": 50, "MD": -10,

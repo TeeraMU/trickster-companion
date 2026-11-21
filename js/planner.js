@@ -58,6 +58,20 @@
     return num(front) - floor(per * (statLv - 1));
   }
 
+  /**
+   * Starting stats for a class: checked ones (data/stat-base.json), else the ones the player worked
+   * out from their own window, else the file's `estimate` class (until someone checks this one).
+   * Returns { base, from: "checked" | "mine" | "estimate" | "", checked, estimateFrom }
+   */
+  function pickBase(statBase, cls, typed) {
+    const classes = (statBase && statBase.classes) || {};
+    if (classes[cls]) return { base: classes[cls], from: "checked", checked: classes[cls].checked || "", estimateFrom: "" };
+    if (typed) return { base: typed, from: "mine", checked: "", estimateFrom: "" };
+    const est = statBase && statBase.estimate;
+    if (est && classes[est]) return { base: classes[est], from: "estimate", checked: "", estimateFrom: est };
+    return { base: null, from: "", checked: "", estimateFrom: "" };
+  }
+
   /** Bonus points: what the character has (level − 1 unless typed in), spent, left. */
   function points(build) {
     const have = build.ptsHave != null && build.ptsHave !== "" ? clamp(build.ptsHave, 0, 9999) : Math.max(0, build.level - 1);
@@ -259,7 +273,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, points, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, points, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -362,23 +376,41 @@
         <div class="pl-stats-grid">${cards}</div>
         <p class="pl-elems"><b>Attack element</b> ${el.filter(k => st.elements[k]).map(k => `<span class="${EL_CLASS(k)}">${k} ${st.elements[k]}%</span>`).join("") || `<span class="bd-note">none</span>`}
           <b>Resistance</b> ${el.filter(k => st.resist[k]).map(k => `<span class="${EL_CLASS(k)}">${k} ${st.resist[k]}%</span>`).join("") || `<span class="bd-note">none</span>`}</p>
-        ${st.known ? `<p class="bd-note">Like the game's Growth window: the first number from level, growth ${Object.values(build.growth).join("-")} and bonus points, the second (+) from gear and buffs.${ctx.baseChecked ? ` Checked in game: ${esc(ctx.baseChecked)}.` : ""}</p>`
-          : calibrateBox(build, st)}
+        ${baseNote(build, st, ctx)}
       </section>`;
   }
 
-  /** A class we have no starting stats for: the player types their front numbers once. */
-  function calibrateBox(build, st) {
-    return `
+  /**
+   * Where the starting stats come from (ctx.baseFrom): "checked" (data/stat-base.json), "mine" (the
+   * player typed their window), "estimate" (another class's, until someone checks), else unknown.
+   */
+  function baseNote(build, st, ctx) {
+    const how = `the first number from level, growth ${Object.values(build.growth).join("-")} and bonus points, the second (+) from gear and buffs`;
+    if (ctx.baseFrom === "checked") return `<p class="bd-note">Like the game's Growth window: ${how}.${ctx.baseChecked ? ` Checked in game: ${esc(ctx.baseChecked)}.` : ""}</p>`;
+    if (ctx.baseFrom === "mine") return `<p class="bd-note">Like the game's Growth window: ${how}. ${esc(build.cls)}'s starting stats come from the window you typed in.</p>
+      ${calibrateBox(build, "Type your window again", false)}`;
+    if (ctx.baseFrom === "estimate") return `
       <div class="pl-calib">
-        <p><strong>We don't know ${esc(build.cls)}'s starting stats yet.</strong> Open the game's Growth window, set the level, growth and
-          bonus points above to match, and type the first number of each stat (before the +).</p>
+        <p><strong>Estimated:</strong> we don't know ${esc(build.cls)}'s starting stats yet, so the first numbers use ${esc(ctx.estimateFrom)}'s.
+          Compare them with your Growth window; if they're off, type yours below.</p>
+        ${calibrateBox(build, `Type ${build.cls}'s Growth window`, false)}
+      </div>`;
+    return `<div class="pl-calib"><p><strong>We don't know ${esc(build.cls)}'s starting stats yet.</strong></p>${calibrateBox(build, "Type your Growth window", true)}</div>`;
+  }
+
+  /** The player types their front numbers once and the planner works out the class's starting stats. */
+  function calibrateBox(build, title, open) {
+    return `
+      <details class="pl-calib-form" ${open ? "open" : ""}>
+        <summary>✏️ ${esc(title)}</summary>
+        <p class="bd-note">Open the game's Growth window, set the level, growth and bonus points above to match, and type the
+          first number of each stat (before the +).</p>
         <form class="pl-in-grid" onsubmit="event.preventDefault(); TQPlanner.calibrate(this)">
           ${STATS.map(k => `<label class="pl-in ${GROUP_CLASS[GROUP_OF[k]]}"><span>${k}</span><input name="${k}" type="number" step="1" required></label>`).join("")}
           <button type="submit" class="btn btn-sm btn-primary">Use these</button>
         </form>
-        <p class="bd-note">Send us the numbers too (a screenshot of the Growth and Basic Info tabs) and we'll add the class for everyone.</p>
-      </div>`;
+        <p class="bd-note">Send us the numbers too (a screenshot of the Growth and Basic Info tabs) and we'll add ${esc(build.cls)} for everyone.</p>
+      </details>`;
   }
 
   function buffRow(entry, build, st) {
@@ -455,7 +487,7 @@
   }
 
   /**
-   * ctx: { build (the guide's working build), stats (builds.stats), base, baseChecked, buffs,
+   * ctx: { build (the guide's working build), stats (builds.stats), base, baseFrom, baseChecked, estimateFrom, buffs,
    *        values, buffLists, art, saved, signedIn, ui: { slot, code } }
    */
   function render(ctx) {

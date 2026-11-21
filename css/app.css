@@ -4823,3 +4823,5 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   .pl-stat-val { font-size: 1rem; }
   .pl-diff { padding-left: 0; }
 }
+.pl-calib-form summary { cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--ink-blue); margin-top: 6px; }
+.pl-calib-form[open] summary { margin-bottom: 4px; }
