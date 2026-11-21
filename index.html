@@ -1752,7 +1752,7 @@
     // a slot with nothing typed in is empty again
     function tidyPiece(key) {
       const b = editable(), g = b && b.gear[key];
-      if (g && !g.n && !g.note && !Object.keys(g.st || {}).length && !Object.keys(g.e || {}).length && !Object.keys(g.r || {}).length) delete b.gear[key];
+      if (g && !g.n && !g.note && !Object.keys(g.st || {}).length && !(g.cp || []).length) delete b.gear[key];
     }
 
     Object.assign(TQPlanner, {
@@ -1846,11 +1846,21 @@
         if (!Object.keys(g.st).length) delete g.st;
         tidyPiece(key); plannerChanged();
       },
-      gearElement(key, kind, element, value) {
-        const g = piece(key), v = plNum(value);
+      /** Compound slots: field "count" sets how many (i = -1), "k" an element ("e:Wind" / "r:Fire"), "v" its %. */
+      gearCompound(key, i, field, value) {
+        const g = piece(key);
         if (!g) return;
-        delete g[kind];
-        if (element && v) g[kind] = { [element]: v };
+        g.cp = TQPlanner.cleanCompound(g);
+        delete g.e; delete g.r;
+        if (field === "count") {
+          const n = Math.max(0, Math.min(TQPlanner.LIMITS.compound, plNum(value)));
+          while (g.cp.length < n) g.cp.push({ k: "", v: 0 });
+          g.cp.length = n;
+        } else if (g.cp[i]) {
+          if (field === "k") g.cp[i].k = String(value);
+          else g.cp[i].v = Math.max(0, Math.min(999, plNum(value)));
+        }
+        if (!g.cp.length) delete g.cp;
         tidyPiece(key); plannerChanged();
       },
       point(stat, value, exact) {

@@ -141,7 +141,7 @@ t("mergeBuilds: the newer copy of the same build wins, others are kept", () => {
 t("share code round trip keeps the build, gets a new id", () => {
   const b = cat(160, 157);
   b.id = "babc"; b.name = "Diva AP ✨";
-  b.gear = { weapon: { n: "White Swan Staff +7", st: { AP: 500 }, e: { Wind: 30 }, note: "refine +7" } };
+  b.gear = { weapon: { n: "White Swan Staff +7", st: { AP: 500 }, cp: [{ k: "e:Wind", v: 30 }, { k: "", v: 0 }], note: "refine +7" } };
   b.skills = { Evolution: "M" };
   const back = P.decodeBuild(P.encodeBuild(b));
   assert.notStrictEqual(back.id, "babc");
@@ -202,6 +202,20 @@ t("bonus point plan: the suggestion split evenly until changed, points split by 
   const s = P.splitPoints({ AP: 34, HV: 33, DP: 33 }, 100);
   assert.strictEqual(s.AP + s.HV + s.DP, 100);
   assert.deepStrictEqual(P.splitPoints({}, 100), {});
+});
+
+t("compound slots: elements add up, resistances apart, empty slots kept, old single element converted", () => {
+  const g = { n: "Ring", cp: [{ k: "e:Wind", v: 40 }, { k: "e:Wind", v: 41 }, { k: "e:Wind", v: 45 }, { k: "r:Fire", v: 10 }, { k: "", v: 0 }, { k: "e:Wind", v: 5 }] };
+  assert.strictEqual(P.cleanCompound(g).length, 5); // 5 slots at most
+  assert.deepStrictEqual(P.pieceElements(g), { e: { Wind: 126 }, r: { Fire: 10 } });
+  assert.deepStrictEqual(P.cleanCompound({ cp: [{ k: "e:Nope", v: 9 }, { k: "e:Fire", v: -4 }] }), [{ k: "", v: 9 }, { k: "e:Fire", v: 0 }]);
+  assert.deepStrictEqual(P.cleanCompound({ e: { Fire: 30 }, r: { Dark: 5 } }), [{ k: "e:Fire", v: 30 }, { k: "r:Dark", v: 5 }]);
+  const b = cat(160, 157);
+  b.gear = P.cleanBuild({ gear: { acc1: g, acc2: { n: "Ring 2", cp: [{ k: "e:Wind", v: 57 }] } } }).gear;
+  const st = P.status(b, ctx);
+  assert.deepStrictEqual(st.elements, { Wind: 183 });
+  assert.deepStrictEqual(st.resist, { Fire: 10 });
+  assert.deepStrictEqual(P.cleanBuild({ gear: { hat: { cp: [{ k: "", v: 0 }, { k: "", v: 0 }] } } }).gear.hat.cp.length, 2);
 });
 
 console.log(`\n${n} passed`);

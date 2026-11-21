@@ -29,7 +29,7 @@
     { key: "fashion2", label: "Fashion 2", icon: "👒", side: "bottom" }
   ];
   const SKILL_LEVELS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "M"];
-  const LIMITS = { builds: 20, buffs: 20, name: 40, item: 40, note: 120, notes: 500, skills: 40 };
+  const LIMITS = { compound: 5, builds: 20, buffs: 20, name: 40, item: 40, note: 120, notes: 500, skills: 40 };
 
   const num = v => { const n = Number(v); return Number.isFinite(n) ? Math.round(n) : 0; };
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, num(v)));
@@ -146,8 +146,9 @@
       const g = (build.gear || {})[s.key];
       if (!g) continue;
       add(gearSum, g.st);
-      add(elements, g.e);
-      add(resist, g.r);
+      const pe = pieceElements(g); // compound slots
+      add(elements, pe.e);
+      add(resist, pe.r);
     }
     const rows = STATS.map(stat => {
       const group = GROUP_OF[stat];
@@ -205,16 +206,45 @@
 
   const newId = prefix => prefix + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
+  /**
+   * Compound slots of a piece: [{ k: "e:Wind" (attack element) | "r:Fire" (resistance) | "", v: % }],
+   * at most 5, empty ones kept so the slot count stays. An older piece's single element / resistance
+   * (g.e, g.r) becomes slots too.
+   */
+  const CP_RE = new RegExp(`^[er]:(${ELEMENTS.join("|")})$`);
+  function cleanCompound(g) {
+    let list = Array.isArray(g.cp) ? g.cp : [];
+    if (!list.length) {
+      for (const [k, v] of Object.entries(cleanStats(g.e, ELEMENTS))) list.push({ k: "e:" + k, v });
+      for (const [k, v] of Object.entries(cleanStats(g.r, ELEMENTS))) list.push({ k: "r:" + k, v });
+    }
+    return list.slice(0, LIMITS.compound).map(c => ({
+      k: c && CP_RE.test(c.k) ? c.k : "",
+      v: clamp(c && c.v, 0, 999)
+    }));
+  }
+
+  /** Attack elements and resistances a piece gives: { e: { Wind: 126 }, r: { Fire: 10 } } */
+  function pieceElements(g) {
+    const e = {}, r = {};
+    for (const c of cleanCompound(g || {})) {
+      if (!c.k || !c.v) continue;
+      const [kind, el] = c.k.split(":");
+      const to = kind === "e" ? e : r;
+      to[el] = (to[el] || 0) + c.v;
+    }
+    return { e, r };
+  }
+
   function cleanPiece(g) {
     if (!g || typeof g !== "object") return null;
     const p = { n: str(g.n, LIMITS.item) };
-    const st = cleanStats(g.st), e = cleanStats(g.e, ELEMENTS), r = cleanStats(g.r, ELEMENTS);
+    const st = cleanStats(g.st), cp = cleanCompound(g);
     if (Object.keys(st).length) p.st = st;
-    if (Object.keys(e).length) p.e = e;
-    if (Object.keys(r).length) p.r = r;
+    if (cp.length) p.cp = cp;
     const note = str(g.note, LIMITS.note);
     if (note) p.note = note;
-    return p.n || p.st || p.e || p.r ? p : null;
+    return p.n || p.st || p.cp || p.note ? p : null;
   }
 
   /**
@@ -301,7 +331,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -320,7 +350,9 @@
     const g = (build.gear || {})[s.key];
     const open = ui.slot === s.key;
     const stats = g && g.st ? Object.entries(g.st) : [];
-    const sub = g ? (stats.length ? stats.slice(0, 2).map(([k, v]) => `${k} ${sign(v)}`).join(" · ") + (stats.length > 2 ? " …" : "") : "no stats") : "Empty";
+    const pe = g ? pieceElements(g) : { e: {} };
+    const el = Object.entries(pe.e).map(([k, v]) => `${k} ${v}%`).join(" · ");
+    const sub = g ? (stats.length ? stats.slice(0, 2).map(([k, v]) => `${k} ${sign(v)}`).join(" · ") + (stats.length > 2 ? " …" : "") : el || "no stats") : "Empty";
     return `<button type="button" class="pl-tile ${g ? "is-on" : ""} ${open ? "is-open" : ""}" onclick="TQPlanner.openSlot('${s.key}')" aria-expanded="${open}" title="${esc(s.label)}${g && g.n ? ": " + esc(g.n) : ""}">
         <span class="pl-tile-icon" aria-hidden="true">${s.icon}</span>
         <span class="pl-tile-label">${g && g.n ? esc(g.n) : s.label}</span>
@@ -345,17 +377,21 @@
       </section>`;
   }
 
-  /** The open slot's form: name, the 12 stats (in the status window's order), element, note. */
+  /** The open slot's form: name, the 12 stats (in the status window's order), compound slots, note. */
   function slotEditor(build, ctx) {
     const s = SLOTS.find(x => x.key === ctx.ui.slot);
     if (!s) return "";
     const g = build.gear[s.key] || {};
     const field = (k, v, label) => `<label class="pl-in ${GROUP_CLASS[GROUP_OF[k]] || ""}"><span>${label || k}</span>
       <input id="pl-${s.key}-${k}" type="number" step="1" inputmode="numeric" value="${v || ""}" placeholder="0" onchange="TQPlanner.gearStat('${s.key}', '${k}', this.value)"></label>`;
-    const elSel = (kind, cur) => `<select id="pl-${s.key}-${kind}" aria-label="${kind === "e" ? "Attack element" : "Resistance"}" onchange="TQPlanner.gearElement('${s.key}', '${kind}', this.value, document.getElementById('pl-${s.key}-${kind}v').value)">
-        <option value="">${kind === "e" ? "No element" : "No resistance"}</option>${ELEMENTS.map(k => `<option ${k === cur ? "selected" : ""}>${k}</option>`).join("")}</select>`;
-    const [eK, eV] = Object.entries(g.e || {})[0] || ["", ""];
-    const [rK, rV] = Object.entries(g.r || {})[0] || ["", ""];
+    // compound slots: how many, then an element (attack or resistance) and its % in each
+    const cp = cleanCompound(g);
+    const cpSel = (i, cur) => `<select id="pl-${s.key}-cp${i}" aria-label="Compound slot ${i + 1} element" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'k', this.value)">
+        <option value="">Empty</option>
+        <optgroup label="Attack element">${ELEMENTS.map(k => `<option value="e:${k}" ${cur === "e:" + k ? "selected" : ""}>${k}</option>`).join("")}</optgroup>
+        <optgroup label="Resistance">${ELEMENTS.map(k => `<option value="r:${k}" ${cur === "r:" + k ? "selected" : ""}>${k} resistance</option>`).join("")}</optgroup></select>`;
+    const pe = pieceElements(g);
+    const sumLine = [...Object.entries(pe.e).map(([k, v]) => `${k} ${v}%`), ...Object.entries(pe.r).map(([k, v]) => `${k} res ${v}%`)].join(" · ");
     return `
       <div class="pl-editor" role="group" aria-label="${s.label}">
         <div class="pl-editor-head">
@@ -369,11 +405,13 @@
         <label class="pl-in pl-in-wide"><span>Name</span><input id="pl-${s.key}-n" maxlength="${LIMITS.item}" value="${esc(g.n || "")}" placeholder="e.g. White Swan Staff +7" onchange="TQPlanner.gearField('${s.key}', 'n', this.value)"></label>
         <p class="bd-note">Type every stat the item window shows, Refine and Compound included.</p>
         <div class="pl-in-grid">${STATS.map(k => field(k, (g.st || {})[k])).join("")}</div>
-        <div class="pl-in-row">
-          <span class="pl-in-pair">${elSel("e", eK)}<input id="pl-${s.key}-ev" type="number" step="1" value="${eV || ""}" placeholder="%" aria-label="Attack element %" onchange="TQPlanner.gearElement('${s.key}', 'e', document.getElementById('pl-${s.key}-e').value, this.value)"></span>
-          <span class="pl-in-pair">${elSel("r", rK)}<input id="pl-${s.key}-rv" type="number" step="1" value="${rV || ""}" placeholder="%" aria-label="Resistance %" onchange="TQPlanner.gearElement('${s.key}', 'r', document.getElementById('pl-${s.key}-r').value, this.value)"></span>
+        <div class="pl-cp">
+          <label class="pl-in pl-in-inline"><span>◇ Compound slots</span>
+            <select id="pl-${s.key}-cpn" onchange="TQPlanner.gearCompound('${s.key}', -1, 'count', this.value)">${[0, 1, 2, 3, 4, 5].map(n => `<option ${n === cp.length ? "selected" : ""}>${n}</option>`).join("")}</select></label>
+          ${sumLine ? `<span class="bd-note">= ${esc(sumLine)}</span>` : ""}
+          ${cp.map((c, i) => `<span class="pl-in-pair"><span class="pl-cp-n">${i + 1}</span>${cpSel(i, c.k)}<input id="pl-${s.key}-cpv${i}" type="number" min="0" step="1" value="${c.v || ""}" placeholder="%" aria-label="Compound slot ${i + 1} %" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'v', this.value)"></span>`).join("")}
         </div>
-        <label class="pl-in pl-in-wide"><span>Note</span><input id="pl-${s.key}-note" maxlength="${LIMITS.note}" value="${esc(g.note || "")}" placeholder="Refine +7, 3 compound slots…" onchange="TQPlanner.gearField('${s.key}', 'note', this.value)"></label>
+        <label class="pl-in pl-in-wide"><span>Note</span><input id="pl-${s.key}-note" maxlength="${LIMITS.note}" value="${esc(g.note || "")}" placeholder="Refine +7, where it drops…" onchange="TQPlanner.gearField('${s.key}', 'note', this.value)"></label>
         </fieldset>
       </div>`;
   }

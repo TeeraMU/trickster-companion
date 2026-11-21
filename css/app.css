@@ -4925,3 +4925,8 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .pl-plan-row select { font: inherit; font-size: 0.85rem; padding: 4px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
 .pl-howto-more summary { cursor: pointer; font-weight: 700; font-size: 0.85rem; color: var(--ink-blue); }
 .bd-compact .bd-growth { margin-top: 8px; }
+/* Planner: compound slots in the slot form */
+.pl-cp { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.pl-cp .pl-in-pair { flex: 1 1 220px; align-items: center; }
+.pl-cp-n { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); min-width: 1.2em; text-align: center; }
+.pl-cp .pl-in-inline select { width: auto; font: inherit; padding: 4px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
