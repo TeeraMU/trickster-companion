@@ -1855,9 +1855,12 @@
         const c = BUILDS.classes[st.cls];
         const job = (c.jobs.find(j => j.name === st.job) || c.jobs[c.jobs.length - 2] || c.jobs[0]).name;
         const adv = TQBuild.advice(BUILDS, st.cls, job);
-        st.bonus = {};
-        if (adv.stats.length === 2) { st.bonus[adv.stats[0]] = 50; st.bonus[adv.stats[1]] = 50; }
-        else if (adv.stats.length === 1) st.bonus[adv.stats[0]] = 100;
+        if (!adv.stats.length) return;
+        // every bonus point the character has goes to the suggested stat(s), split evenly
+        const have = TQPlanner.points(Object.assign({}, st, { pts: {} })).have;
+        if (Object.keys(st.pts || {}).length && !confirm(`Move all ${have} bonus points to ${adv.stats.join(" + ")}?\n\nThe points you placed now are replaced.`)) return;
+        st.pts = {};
+        adv.stats.forEach((k, i) => { const n = Math.floor(have / adv.stats.length) + (i < have % adv.stats.length ? 1 : 0); if (n) st.pts[k] = n; });
         saveState(); renderBuild();
       }
     });

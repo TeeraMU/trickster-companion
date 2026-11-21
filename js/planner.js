@@ -385,9 +385,9 @@
    * player typed their window), "estimate" (another class's, until someone checks), else unknown.
    */
   function baseNote(build, st, ctx) {
-    const how = `the first number from level, growth ${Object.values(build.growth).join("-")} and bonus points, the second (+) from gear and buffs`;
-    if (ctx.baseFrom === "checked") return `<p class="bd-note">Like the game's Growth window: ${how}.${ctx.baseChecked ? ` Checked in game: ${esc(ctx.baseChecked)}.` : ""}</p>`;
-    if (ctx.baseFrom === "mine") return `<p class="bd-note">Like the game's Growth window: ${how}. ${esc(build.cls)}'s starting stats come from the window you typed in.</p>
+    // how the numbers are made is said once, in the guide at the top of the page
+    if (ctx.baseFrom === "checked") return `<p class="bd-note">✓ ${esc(build.cls)}'s starting stats are checked in game${ctx.baseChecked ? ` (${esc(ctx.baseChecked.replace(/^[\d-]+ in game: /, ""))})` : ""}.</p>`;
+    if (ctx.baseFrom === "mine") return `<p class="bd-note">${esc(build.cls)}'s starting stats come from the Growth window you typed in.</p>
       ${calibrateBox(build, "Type your window again", false)}`;
     if (ctx.baseFrom === "estimate") return `
       <div class="pl-calib">

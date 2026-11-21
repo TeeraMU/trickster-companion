@@ -102,7 +102,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki:
   put in-game corrections in `data/skill-fixes.json` (`{ skills: { name: { items?, tm?, needs?, how?, checked } } }`,
   applied on load by `TQBuild.applyFixes`, shown with a "✓ In game" badge), never in builds.json by hand.
-- `js/planner.js`: the Build guide's 🛡️ Equipment tab (Build planner): gear typed in per slot (no item list:
+- `js/planner.js`: the Build guide's 📊 Status & Equipment tab (Build planner; it replaced the Stats tab, whose
+  header is a short one from build.js with growth −/+ and the "How to raise stats" guide): gear typed in per slot (no item list:
   servers differ), the status window (front number = class base + floor(per level × (stat level − 1)); stat
   level = floor((4 + growth × (level − 1)) / 4) + bonus points), buffs ticked from the job's skills, saved builds
   (`appState.planner.builds`, synced through sync-merge, max 20) and share codes (`TCB2.`). Pure model tested by
