@@ -1,5 +1,6 @@
 // data/monsters.json for the Planner's "Against a monster": every named monster in the PlayTrickster
-// client's MonsterParamEx2 table (level, stats, element, resistances, boss flag). Values are the old
+// client's MonsterParamEx2 table (level, stats, element, resistances, boss flag) and how many HP bars a
+// boss has (BossMonsterparamEx LifeCnt + 1). Values are the old
 // client's; the live server may differ (Tombeth's DP is 1,078 here and 809 on the wiki).
 //
 //   node scripts/client/build-monsters.js [extraction folder]   (default G:/Claude/playtrickster-extraction)
@@ -12,6 +13,10 @@ const root = process.argv[2] || "G:/Claude/playtrickster-extraction";
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "catalog.json"), "utf8"));
 const where = new Map(catalog.tables.map(t => [t.table.toLowerCase(), t.path]));
 const rows = JSON.parse(fs.readFileSync(path.join(root, where.get("monsterparamex2")), "utf8")).rows;
+// bosses come back after their HP runs out: LifeCnt more times (Tombeth 3 -> the wiki's "6,845x4",
+// Count Blood 4 -> "x5"), so the HP to beat is MaxHp x (LifeCnt + 1)
+const lives = new Map(JSON.parse(fs.readFileSync(path.join(root, where.get("bossmonsterparamex")), "utf8")).rows
+  .map(r => [r.ID, (Number(r.LifeCnt) || 0) + 1]));
 
 // PropertyType -> the monster's own element (Tombeth: 4 = Earth 48%, as on the wiki)
 const ELEMENT = { 1: "Fire", 2: "Water", 3: "Wind", 4: "Earth", 5: "Elec", 6: "Light", 7: "Dark" };
@@ -27,6 +32,7 @@ for (const r of rows) {
     md: n(r.MdLv), dp: n(r.DpLv), hv: n(r.HvLv), da: n(r.DaLv), lk: n(r.LkLv), exp: n(r.EXP), tm: n(r.TM)
   };
   if (r.IsBoss === "1") m.boss = 1;
+  if ((lives.get(r.ID) || 1) > 1) m.bars = lives.get(r.ID); // HP bars: hp x bars in all
   // the wiki's picture paths for this name (MediaWiki keeps File:X under md5(X)[0]/md5(X)[0..1]/X):
   // the big .png first, then the sprite .gif; the page tries them in turn and hides a missing one
   m.img = ["png", "gif"].map(ext => {

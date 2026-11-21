@@ -843,6 +843,9 @@
     for (const r of rows) list.push({ name: r.sk.name, lv: r.lv, parts: r.parts, use: r.use, sk: r.sk });
     return list;
   }
+  /** A boss's HP to beat: each HP bar × how many it has (Tombeth 6,845 × 4). */
+  const monsterHp = m => m.hp * (m.bars || 1);
+  const hpText = m => (m.bars ? `${fmt(m.hp)} × ${m.bars} = ${fmt(monsterHp(m))}` : fmt(m.hp));
   const strongest = a => Math.max(0, ...a.parts.map(p => p.value));
 
   /**
@@ -864,7 +867,7 @@
     const row = sk && sk.levels && sk.levels.rows.length ? (atk.lv === "M" ? sk.levels.rows[sk.levels.rows.length - 1] : sk.levels.rows.find(r => r[0] === atk.lv) || sk.levels.rows[sk.levels.rows.length - 1]) : null;
     const col = re => { if (!row) return ""; const i = sk.levels.cols.findIndex(c => re.test(c)); return i > 0 ? row[i] : ""; };
     const myEl = Object.entries(st.elements).map(([k, v]) => `<span class="${EL_CLASS(k)}">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`;
-    const hits = m => (dmg > 0 ? Math.ceil(m.hp / dmg) : "–");
+    const hits = m => (dmg > 0 ? Math.ceil(monsterHp(m) / dmg) : "–");
     const cmp = (ctx.ui.compare || []).map(id => byId.get(id)).filter(Boolean);
 
     const pickRow = `
@@ -874,7 +877,7 @@
           <input type="search" id="pl-mon-q" value="${esc(ctx.ui.monQuery || "")}" placeholder="${mon ? esc(mon.n) + " · type to change" : "Find a monster or boss: Tombeth, Fire Moth…"}" aria-label="Find a monster" oninput="TQPlanner.monQuery(this.value)">
           ${found.length ? `<ul class="pl-mon-list">${found.map(m => `<li><button type="button" onclick="TQPlanner.pickMonster('${esc(m.id)}')">
             ${monImg(m, "pl-mon-thumb")}<strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span>${m.boss ? ` <span class="tag">Boss</span>` : ""}
-            <span class="bd-note">HP ${fmt(m.hp)} · DP ${fmt(m.dp)} · MD ${fmt(m.md)}</span></button></li>`).join("")}</ul>`
+            <span class="bd-note">HP ${hpText(m)} · DP ${fmt(m.dp)} · MD ${fmt(m.md)}</span></button></li>`).join("")}</ul>`
           : ctx.ui.monQuery ? `<p class="bd-note">No monster called “${esc(ctx.ui.monQuery)}”.</p>` : ""}
         </div>
         <div class="pl-bs-find">
@@ -895,7 +898,7 @@
             <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">👑 Boss</span>` : ""}</p>
             <p class="pl-bs-own">${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)} pl-el-big">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="pl-el pl-el-none">⚪ No element</span>`}</p>
             <dl class="pl-bs-stats">
-              <dt>HP</dt><dd class="is-hp">${fmt(mon.hp)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
+              <dt>HP</dt><dd class="is-hp" title="${mon.bars ? `${mon.bars} HP bars of ${fmt(mon.hp)}` : ""}">${hpText(mon)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
               <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
               <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
             </dl>
@@ -935,12 +938,12 @@
           <input type="search" id="pl-cmp-q" value="${esc(ctx.ui.cmpQuery || "")}" placeholder="＋ Add a monster" aria-label="Add a monster to compare" oninput="TQPlanner.cmpQuery(this.value)">
         </div>
         ${ctx.ui.cmpQuery ? `<ul class="pl-mon-list">${searchMonsters(list, ctx.ui.cmpQuery, 8).map(m => `<li><button type="button" onclick="TQPlanner.compare('${esc(m.id)}', true)">
-          <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span> <span class="bd-note">HP ${fmt(m.hp)} · DP ${fmt(m.dp)}</span></button></li>`).join("")}</ul>` : ""}
+          <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span> <span class="bd-note">HP ${hpText(m)} · DP ${fmt(m.dp)}</span></button></li>`).join("")}</ul>` : ""}
         ${cmp.length || mon ? `<div class="bd-lvtable-wrap"><table class="pl-bs-table">
           <thead><tr><th>Monster</th><th>Lv</th><th>HP</th><th>DP</th><th>MD</th><th>${esc(atk.name)}</th><th>Hits ≥</th><th></th></tr></thead>
           <tbody>${[...(mon ? [mon] : []), ...cmp.filter(m => m !== mon)].map(m => `<tr class="${m === mon ? "is-on" : ""}">
             <td><button type="button" class="pl-bs-link" onclick="TQPlanner.pickMonster('${esc(m.id)}')">${esc(m.n)}</button>${m.boss ? ` <span class="tag">Boss</span>` : ""}</td>
-            <td>${m.l}</td><td>${fmt(m.hp)}</td><td>${fmt(m.dp)}</td><td>${fmt(m.md)}</td><td>${fmt(dmg)}</td><td><b>${hits(m)}</b></td>
+            <td>${m.l}</td><td>${fmt(monsterHp(m))}${m.bars ? ` <span class="bd-note">(×${m.bars})</span>` : ""}</td><td>${fmt(m.dp)}</td><td>${fmt(m.md)}</td><td>${fmt(dmg)}</td><td><b>${hits(m)}</b></td>
             <td>${m === mon ? "" : `<button type="button" class="btn btn-sm" aria-label="Take ${esc(m.n)} out" onclick="TQPlanner.compare('${esc(m.id)}', false)">✕</button>`}</td></tr>`).join("")}</tbody>
         </table></div>` : ""}
       </div>`;
