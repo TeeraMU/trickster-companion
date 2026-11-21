@@ -1656,11 +1656,17 @@
     }
 
     // which page keeps the cursor: both re-render after every change
+    // (and the caret: a search box re-rendered on every key would otherwise jump to the start, "Too" -> "ooT")
     function renderKeepingFocus(box, html) {
-      const had = document.activeElement && box.contains(document.activeElement) ? document.activeElement.id : "";
+      const a = document.activeElement;
+      const had = a && box.contains(a) ? a.id : "";
+      let caret = null;
+      try { if (had && typeof a.selectionStart === "number") caret = [a.selectionStart, a.selectionEnd]; } catch (e) { /* number inputs have none */ }
       box.innerHTML = html;
       const el = had && document.getElementById(had);
-      if (el) el.focus({ preventScroll: true });
+      if (!el) return;
+      el.focus({ preventScroll: true });
+      try { if (caret) el.setSelectionRange(caret[0], caret[1]); } catch (e) { /* number inputs have none */ }
     }
 
     function renderBuild() {
