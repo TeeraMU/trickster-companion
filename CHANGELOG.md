@@ -2,9 +2,11 @@
 
 ## Unreleased
 
-- Build guide: new **🛡️ Equipment** tab, the first part of the Build planner. Tap any of the 12 slots (weapon, shield, hat, 2 accessories, pet, cape, inner, ears, tail, 2 fashion) to search about 7,000 items by name, with the change against what you wear shown on each one (AP +40, MD −12). Add the Refine, Compound or random bonus your own piece has, make a **custom item** when something isn't listed or differs on the live server, and type in buffs. The stat table adds it all up as the number the game shows after the **+** (AP 1178**+4007**), with the elements and resistances.
-- Build guide: **💾 Saved builds**: name a build and save up to 20 of them (gear, custom items, buffs, level, growth, bonus split). They sync with your account when you're signed in. **🔗 Share code** gives a code a friend can open with **📥 Open a code**, custom items included.
-- Item numbers come from the PlayTrickster client's item tables (base values). The live server may differ, so check them in game.
+- Build guide: new **🛡️ Equipment** tab, the first part of the Build planner.
+  - **Equipment window:** the 12 slots sit around your job's picture, like the game's. Tap one and type what the item window shows (name, the 12 stats with Refine and Compound, attack element, resistance, a note). Servers differ, so there's no item list to pick from.
+  - **Status window:** 12 stat cards in the game's colours, each with the first number worked out like the game does (level, growth and the bonus points you put in it) and the **+** from gear and buffs. Checked against a Cat / Primadonna at Lv.146, 152 and 160: every number matches. Bonus points have −/+ like the game, with how many are left. Other classes: type your Growth window once and the planner learns that class's starting stats.
+  - **Buffs:** your job's buff skills with their icons (Primadonna: Dodge Master, Shield All, Sturdy Shield, Physical Training, Evolution, Beast's Instinct). Tick one, pick its level, and the status adds it ("AP +6,410"). Party buffs from other jobs (Pumping Heart, Eagle Eye, Aura of Luck …) are in their own list, and anything else can be typed in. Worked out from the wiki's skill formulas, not checked in game yet.
+  - **💾 Saved builds:** up to 20, synced with your account when you're signed in. **🔗 Share code** gives a code a friend opens with **📥 Open a code**.
 
 ## 0.9.2 (2026-11-19): Tower group, Tick all, friends' Bags
 

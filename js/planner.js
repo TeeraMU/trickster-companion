@@ -1,34 +1,40 @@
-// Build planner: the Build guide's 🛡️ Equipment tab. Gear in 12 slots from data/equipment.json (the
-// PlayTrickster client tables, old base values), custom items, bonuses typed in per piece (Refine,
-// Compound, random), buffs, the "+gear" stat totals and elements, and saved builds (synced).
+// Build planner: the Build guide's 🛡️ Equipment tab. Gear typed in per slot (name, stats, element:
+// items differ between servers, so there is no item list), bonus points per stat, the class's buffs
+// (data/buffs.json + the wiki's level tables) and the status window worked out like the game:
+// front number from level, growth and bonus points (data/stat-base.json), "+" from gear and buffs.
+// Saved builds are synced; share codes carry a whole build.
 // The model is pure and runs under Node (node scripts/test-planner.js); the renderer gets what it
 // needs through a context object.
 (function (root) {
   "use strict";
 
   const STATS = ["AP", "AC", "DX", "MP", "MA", "MD", "WT", "DA", "LK", "HP", "DP", "HV"];
+  const GROUP_STATS = { Power: ["AP", "AC", "DX"], Magic: ["MP", "MA", "MD"], Sense: ["WT", "DA", "LK"], Charm: ["HP", "DP", "HV"] };
+  const GROUP_OF = {};
+  for (const [g, list] of Object.entries(GROUP_STATS)) for (const s of list) GROUP_OF[s] = g;
   const ELEMENTS = ["Fire", "Water", "Wind", "Earth", "Elec", "Light", "Dark"];
-  // the equipment window's slots; `slot` is the item kind that fits
+  // the equipment window: `side` places the slot around the character
   const SLOTS = [
-    { key: "weapon", slot: "weapon", label: "Weapon", icon: "⚔️" },
-    { key: "shield", slot: "shield", label: "Shield", icon: "🛡️" },
-    { key: "hat", slot: "hat", label: "Hat", icon: "🎩" },
-    { key: "acc1", slot: "accessory", label: "Accessory 1", icon: "💍" },
-    { key: "acc2", slot: "accessory", label: "Accessory 2", icon: "💍" },
-    { key: "pet", slot: "pet", label: "Pet", icon: "🐾" },
-    { key: "cape", slot: "cape", label: "Cape", icon: "🧣" },
-    { key: "inner", slot: "inner", label: "Inner", icon: "🎽" },
-    { key: "ear", slot: "ear", label: "Ears", icon: "👂" },
-    { key: "tail", slot: "tail", label: "Tail", icon: "🦊" },
-    { key: "fashion1", slot: "fashion", label: "Fashion 1", icon: "👗" },
-    { key: "fashion2", slot: "fashion", label: "Fashion 2", icon: "👒" }
+    { key: "hat", label: "Hat", icon: "🎩", side: "left" },
+    { key: "weapon", label: "Weapon", icon: "⚔️", side: "left" },
+    { key: "acc1", label: "Accessory 1", icon: "💍", side: "left" },
+    { key: "inner", label: "Inner", icon: "🎽", side: "left" },
+    { key: "cape", label: "Cape", icon: "🧣", side: "left" },
+    { key: "ear", label: "Ears", icon: "👂", side: "right" },
+    { key: "shield", label: "Shield", icon: "🛡️", side: "right" },
+    { key: "acc2", label: "Accessory 2", icon: "💍", side: "right" },
+    { key: "tail", label: "Tail", icon: "🦊", side: "right" },
+    { key: "pet", label: "Pet", icon: "🐾", side: "right" },
+    { key: "fashion1", label: "Fashion 1", icon: "👗", side: "bottom" },
+    { key: "fashion2", label: "Fashion 2", icon: "👒", side: "bottom" }
   ];
-  const SLOT_KINDS = [...new Set(SLOTS.map(s => s.slot))];
-  const LIMITS = { builds: 20, custom: 30, buffs: 20, adds: 8, name: 40, notes: 500 };
+  const SKILL_LEVELS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "M"];
+  const LIMITS = { builds: 20, buffs: 20, name: 40, item: 40, note: 120, notes: 500, skills: 40 };
 
   const num = v => { const n = Number(v); return Number.isFinite(n) ? Math.round(n) : 0; };
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, num(v)));
   const str = (v, max) => String(v == null ? "" : v).replace(/[\u0000-\u001f]/g, " ").trim().slice(0, max);
+  const floor = x => Math.floor(x + 1e-9); // 0.25 × 39 is 9.75, never 9.7499…
 
   /** { AP: 12, … } with known keys, whole numbers, no zeros. */
   function cleanStats(o, keys) {
@@ -37,77 +43,148 @@
     return out;
   }
 
-  /** Index of the catalog by id, for quick lookups. */
-  function indexCatalog(cat) {
-    const byId = new Map();
-    for (const it of (cat && cat.items) || []) byId.set(String(it.id), it);
-    return byId;
+  /** A stat group's level from growth: each level adds `growth` pips, 4 pips = 1 stat level. */
+  function groupLevel(level, growth) {
+    return floor((4 + (growth || 1) * (Math.max(1, level) - 1)) / 4);
   }
 
-  /** The item in a slot: a catalog id, or "c:…" for one of the build's custom items. */
-  function itemFor(ref, build, byId) {
-    if (!ref) return null;
-    if (String(ref).startsWith("c:")) return (build.custom || []).find(c => c.id === ref) || null;
-    return (byId && byId.get(String(ref))) || null;
+  /** Front number of the status window for one stat. */
+  function frontStat(base, per, statLv) {
+    return base + floor(per * (statLv - 1));
+  }
+
+  /** The starting stat that makes `front` come out at this stat level (to calibrate a class). */
+  function baseFromFront(front, per, statLv) {
+    return num(front) - floor(per * (statLv - 1));
+  }
+
+  /** Bonus points: what the character has (level − 1 unless typed in), spent, left. */
+  function points(build) {
+    const have = build.ptsHave != null && build.ptsHave !== "" ? clamp(build.ptsHave, 0, 9999) : Math.max(0, build.level - 1);
+    const spent = STATS.reduce((n, k) => n + ((build.pts || {})[k] || 0), 0);
+    return { have, spent, left: have - spent, typed: build.ptsHave != null && build.ptsHave !== "" };
+  }
+
+  /** A level table value as a number: "145%" -> 1.45, "1,390" -> 1390, "+4" -> 4. */
+  function cellValue(v) {
+    const s = String(v == null ? "" : v).replace(/,/g, "");
+    const n = parseFloat(s.replace(/^\+/, ""));
+    if (!Number.isFinite(n)) return null;
+    return /%/.test(s) ? n / 100 : n;
+  }
+
+  /** A buff's effects as { group, effects } whatever way data/buffs.json wrote it. */
+  function buffSpec(buffs, name) {
+    const s = buffs && buffs.skills && buffs.skills[name];
+    if (!s) return null;
+    return Array.isArray(s) ? { group: "", party: false, effects: s } : { group: s.group || "", party: !!s.party, effects: s.effects || [] };
+  }
+
+  /** Column value of a skill at a level label ("M" = the last row). */
+  function skillValue(skill, col, lv) {
+    const t = skill && skill.levels;
+    if (!t) return null;
+    const i = t.cols.indexOf(col);
+    if (i < 1) return null;
+    const row = lv === "M" ? t.rows[t.rows.length - 1] : t.rows.find(r => r[0] === String(lv)) || t.rows[t.rows.length - 1];
+    return row ? cellValue(row[i]) : null;
+  }
+
+  /** Change one effect makes, from the stat before buffs. */
+  function effectDelta(eff, value, front, gear) {
+    if (value == null) return 0;
+    const of = eff.of === "base" ? front : front + gear;
+    if (eff.op === "add") return Math.trunc(value);
+    if (eff.op === "mul") return Math.trunc(of * (value - 1));
+    if (eff.op === "pct") return Math.trunc(of * (eff.num ? value / 100 : value));
+    return 0;
   }
 
   /**
-   * Stat and element totals of a build.
-   * Returns { gear: {AP…}, adds: {AP…}, buffs: {AP…}, plus: {AP…} (all three), elements: {Fire…},
-   *           resist: {Fire…}, pieces: [{ key, item, missing }] }
+   * The status window for a build.
+   * ctx: { stats: builds.stats, base: { AP: 18, … } or null, buffs: data/buffs.json, skillByName: Map }
+   * Returns { rows: [{ stat, group, lv, pts, front, gear, buff, plus, total }], elements, resist,
+   *           buffs: [{ name, lv, deltas: { AP: n } }], known: base is known }
    */
-  function totals(build, byId) {
-    const gear = {}, adds = {}, buffs = {}, plus = {}, elements = {}, resist = {};
+  function status(build, ctx) {
+    const base = ctx.base || null;
+    const gearSum = {}, elements = {}, resist = {};
     const add = (to, src) => { for (const [k, v] of Object.entries(src || {})) to[k] = (to[k] || 0) + v; };
-    const pieces = [];
     for (const s of SLOTS) {
       const g = (build.gear || {})[s.key];
-      if (!g || !g.id) continue;
-      const item = itemFor(g.id, build, byId);
-      pieces.push({ key: s.key, item, missing: !item });
-      if (!item) continue;
-      add(gear, item.st);
-      add(elements, item.e);
-      add(resist, item.r);
-      add(adds, g.add);
+      if (!g) continue;
+      add(gearSum, g.st);
+      add(elements, g.e);
+      add(resist, g.r);
     }
-    for (const b of build.buffs || []) if (b.on && b.value) add(buffs, { [b.stat]: b.value });
-    for (const k of STATS) {
-      const v = (gear[k] || 0) + (adds[k] || 0) + (buffs[k] || 0);
-      if (v) plus[k] = v;
+    const rows = STATS.map(stat => {
+      const group = GROUP_OF[stat];
+      const pts = (build.pts || {})[stat] || 0;
+      const lv = groupLevel(build.level, build.growth[group]) + pts;
+      const per = ctx.stats.perAttrLevel[stat];
+      const front = base ? frontStat(base[stat] || 0, per, lv) : null;
+      return { stat, group, lv, pts, per, front, gear: gearSum[stat] || 0, buff: 0 };
+    });
+    const by = Object.fromEntries(rows.map(r => [r.stat, r]));
+    const applied = [];
+    for (const [name, lv] of Object.entries(build.skills || {})) {
+      const spec = buffSpec(ctx.buffs, name);
+      const skill = ctx.skillByName && ctx.skillByName.get(name);
+      if (!spec || !skill) continue;
+      const deltas = {};
+      for (const eff of spec.effects) {
+        const r = by[eff.stat];
+        if (!r) continue;
+        const d = effectDelta(eff, skillValue(skill, eff.col, lv), r.front || 0, r.gear);
+        if (d) deltas[eff.stat] = (deltas[eff.stat] || 0) + d;
+      }
+      applied.push({ name, lv, deltas });
     }
-    // buff lines can also be an element ("Fire" +20)
-    for (const b of build.buffs || []) if (b.on && b.value && ELEMENTS.includes(b.stat)) elements[b.stat] = (elements[b.stat] || 0) + b.value;
-    return { gear, adds, buffs, plus, elements, resist, pieces };
+    for (const b of build.buffs || []) {
+      if (!b.on || !b.value) continue;
+      if (ELEMENTS.includes(b.stat)) elements[b.stat] = (elements[b.stat] || 0) + b.value;
+      else if (by[b.stat]) applied.push({ name: b.name, lv: "", deltas: { [b.stat]: b.value }, manual: true });
+    }
+    for (const a of applied) for (const [k, v] of Object.entries(a.deltas)) by[k].buff += v;
+    for (const r of rows) {
+      r.plus = r.gear + r.buff;
+      r.total = r.front == null ? null : r.front + r.plus;
+    }
+    return { rows, elements, resist, buffs: applied, known: !!base };
   }
 
-  /** What changes if `next` replaces `cur` (either may be null): { AP: +40, MD: -12 } */
-  function diff(cur, next) {
-    const out = {};
-    for (const k of STATS) {
-      const d = ((next && next.st && next.st[k]) || 0) - ((cur && cur.st && cur.st[k]) || 0);
-      if (d) out[k] = d;
+  /** Buff skills a job has (its own skills, earlier jobs first) and party buffs from the other jobs. */
+  function buffLists(builds, buffs, sets) {
+    const mine = [], seen = new Set();
+    for (const s of sets) for (const sk of s.skills) {
+      if (!buffSpec(buffs, sk.name) || seen.has(sk.name)) continue;
+      seen.add(sk.name);
+      mine.push({ skill: sk, job: s.job, spec: buffSpec(buffs, sk.name) });
     }
-    return out;
-  }
-
-  /**
-   * Items for a slot kind, best matches first: name words in any order, `maxLevel` hides items the
-   * character can't wear yet. Custom items of the build come first. Returns { list, more }.
-   */
-  function search(cat, build, opts) {
-    const o = Object.assign({ slot: "weapon", query: "", maxLevel: 0, limit: 40 }, opts);
-    const words = String(o.query).toLowerCase().split(/\s+/).filter(Boolean);
-    const ok = it => it.s === o.slot && (!o.maxLevel || (it.l || 0) <= o.maxLevel) &&
-      words.every(w => it.n.toLowerCase().includes(w) || String(it.id) === w);
-    const custom = (build.custom || []).filter(ok);
-    const found = ((cat && cat.items) || []).filter(ok)
-      .sort((a, b) => (b.l || 0) - (a.l || 0) || a.n.localeCompare(b.n));
-    const all = [...custom, ...found];
-    return { list: all.slice(0, o.limit), more: Math.max(0, all.length - o.limit) };
+    const party = [];
+    for (const [job, skills] of Object.entries(builds.skills)) for (const sk of skills) {
+      if (seen.has(sk.name) || !buffSpec(buffs, sk.name)) continue;
+      const spec = buffSpec(buffs, sk.name);
+      if (!spec.party) continue; // only buffs a party member can cast on you
+      seen.add(sk.name);
+      party.push({ skill: sk, job, spec });
+    }
+    return { mine, party };
   }
 
   const newId = prefix => prefix + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+  function cleanPiece(g) {
+    if (!g || typeof g !== "object") return null;
+    const p = { n: str(g.n, LIMITS.item) };
+    const st = cleanStats(g.st), e = cleanStats(g.e, ELEMENTS), r = cleanStats(g.r, ELEMENTS);
+    if (Object.keys(st).length) p.st = st;
+    if (Object.keys(e).length) p.e = e;
+    if (Object.keys(r).length) p.r = r;
+    const note = str(g.note, LIMITS.note);
+    if (note) p.note = note;
+    return p.n || p.st || p.e || p.r ? p : null;
+  }
 
   /**
    * A build from anything (saved data, cloud, an import): known fields only, sizes limited, numbers
@@ -116,43 +193,38 @@
   function cleanBuild(b) {
     if (!b || typeof b !== "object") return null;
     const growth = {};
-    for (const g of ["Power", "Magic", "Sense", "Charm"]) growth[g] = clamp(b.growth && b.growth[g], 1, 4) || 1;
-    const custom = (Array.isArray(b.custom) ? b.custom : []).slice(0, LIMITS.custom)
-      .filter(c => c && /^c:[a-z0-9]{1,24}$/.test(c.id) && SLOT_KINDS.includes(c.s))
-      .map(c => {
-        const it = { id: c.id, n: str(c.n, LIMITS.name) || "Custom item", s: c.s, l: clamp(c.l, 0, 999), custom: true };
-        const st = cleanStats(c.st), e = cleanStats(c.e, ELEMENTS), r = cleanStats(c.r, ELEMENTS);
-        if (Object.keys(st).length) it.st = st;
-        if (Object.keys(e).length) it.e = e;
-        if (Object.keys(r).length) it.r = r;
-        const note = str(c.note, 120);
-        if (note) it.note = note;
-        return it;
-      });
-    const customIds = new Set(custom.map(c => c.id));
+    for (const g of Object.keys(GROUP_STATS)) growth[g] = clamp(b.growth && b.growth[g], 1, 4) || 1;
     const gear = {};
-    for (const s of SLOTS) {
-      const g = b.gear && b.gear[s.key];
-      if (!g || !g.id) continue;
-      const id = str(g.id, 30);
-      if (id.startsWith("c:") ? !customIds.has(id) : !/^\d{1,9}$/.test(id)) continue;
-      const add = cleanStats(g.add);
-      gear[s.key] = Object.keys(add).length ? { id, add } : { id };
+    for (const s of SLOTS) { const p = cleanPiece(b.gear && b.gear[s.key]); if (p) gear[s.key] = p; }
+    const pts = {}, bonus = {};
+    for (const k of STATS) {
+      const v = clamp(b.pts && b.pts[k], 0, 9999); if (v) pts[k] = v;
+      const p = clamp(b.bonus && b.bonus[k], 0, 100); if (p) bonus[k] = p;
     }
-    const bonus = {};
-    for (const k of STATS) { const v = clamp(b.bonus && b.bonus[k], 0, 100); if (v) bonus[k] = v; }
+    const skills = {};
+    for (const [name, lv] of Object.entries(b.skills && typeof b.skills === "object" ? b.skills : {}).slice(0, LIMITS.skills)) {
+      const n = str(name, 60);
+      if (n && SKILL_LEVELS.includes(String(lv))) skills[n] = String(lv);
+    }
     const buffs = (Array.isArray(b.buffs) ? b.buffs : []).slice(0, LIMITS.buffs)
       .filter(x => x && (STATS.includes(x.stat) || ELEMENTS.includes(x.stat)))
       .map(x => ({ name: str(x.name, LIMITS.name) || "Buff", stat: x.stat, value: clamp(x.value, -99999, 99999), on: !!x.on }));
-    return {
+    const out = {
       id: /^b[a-z0-9]{1,24}$/.test(b.id) ? b.id : newId("b"),
       name: str(b.name, LIMITS.name) || "My build",
       cls: str(b.cls, 20), job: str(b.job, 40),
       level: clamp(b.level, 1, 999) || 1,
-      growth, bonus, gear, custom, buffs,
+      growth, pts, bonus, gear, skills, buffs,
       notes: str(b.notes, LIMITS.notes),
       updated: clamp(b.updated, 0, 9e15)
     };
+    if (b.ptsHave != null && b.ptsHave !== "") out.ptsHave = clamp(b.ptsHave, 0, 9999);
+    // starting stats the player typed in for a class we don't know yet
+    if (b.base && typeof b.base === "object" && STATS.some(k => k in b.base)) {
+      out.base = {};
+      for (const k of STATS) out.base[k] = clamp(b.base[k], -99999, 99999);
+    }
+    return out;
   }
 
   /** Saved builds as they are synced: clean, at most 20, newest first. */
@@ -177,16 +249,16 @@
     return cleanBuilds([...by.values()]);
   }
 
-  /** A share code for one build (custom items travel with it): "TCB1." + base64 JSON. */
+  /** A share code for one build: "TCB2." + base64 JSON. */
   function encodeBuild(b) {
     const json = JSON.stringify(Object.assign({}, cleanBuild(b), { id: undefined, updated: undefined }));
     const b64 = typeof btoa === "function" ? btoa(unescape(encodeURIComponent(json))) : Buffer.from(json, "utf8").toString("base64");
-    return "TCB1." + b64;
+    return "TCB2." + b64;
   }
 
   /** The build in a share code, as a new build (own id), or null when the code is broken. */
   function decodeBuild(code) {
-    const m = /^TCB1\.([A-Za-z0-9+/=]+)$/.exec(String(code || "").replace(/\s+/g, ""));
+    const m = /^TCB2\.([A-Za-z0-9+/=]+)$/.exec(String(code || "").replace(/\s+/g, ""));
     if (!m || m[1].length > 60000) return null;
     try {
       const json = typeof atob === "function" ? decodeURIComponent(escape(atob(m[1]))) : Buffer.from(m[1], "base64").toString("utf8");
@@ -197,139 +269,176 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, ELEMENTS, SLOTS, SLOT_KINDS, LIMITS, cleanStats, indexCatalog, itemFor, totals, diff, search, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, points, cellValue, buffSpec, skillValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
   // ---------------------------------------------------------------------------------------------
-  // Renderer (browser). Handlers live on TQPlanner (set up in index.html).
+  // Renderer (browser). Handlers live on TQPlanner (set up in index.html). Inputs have ids so the
+  // page can put the cursor back after a re-render.
   // ---------------------------------------------------------------------------------------------
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
-  const sign = v => (v > 0 ? "+" : "") + v.toLocaleString();
-  const statLine = st => Object.entries(st || {}).map(([k, v]) => `<span class="pl-st">${k} <b>${sign(v)}</b></span>`).join("");
-  const elemLine = (e, r) => [
-    ...Object.entries(e || {}).map(([k, v]) => `<span class="pl-el pl-el-${k.toLowerCase()}">${k} ${v}</span>`),
-    ...Object.entries(r || {}).map(([k, v]) => `<span class="pl-el pl-el-res">${k} res ${v}</span>`)
-  ].join("");
+  const fmt = v => Math.round(v).toLocaleString();
+  const sign = v => (v >= 0 ? "+" : "") + fmt(v);
+  const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
+  const EL_CLASS = k => "pl-el pl-el-" + k.toLowerCase();
 
-  function itemImg(it, ctx) {
-    const url = it && !it.custom && ctx.itemImage ? ctx.itemImage(it.n) : "";
-    return url ? `<img src="${esc(url)}" alt="" loading="lazy">` : "";
+  function slotTile(s, build, ui) {
+    const g = (build.gear || {})[s.key];
+    const open = ui.slot === s.key;
+    const stats = g && g.st ? Object.entries(g.st) : [];
+    const sub = g ? (stats.length ? stats.slice(0, 2).map(([k, v]) => `${k} ${sign(v)}`).join(" · ") + (stats.length > 2 ? " …" : "") : "no stats") : "Empty";
+    return `<button type="button" class="pl-tile ${g ? "is-on" : ""} ${open ? "is-open" : ""}" onclick="TQPlanner.openSlot('${s.key}')" aria-expanded="${open}" title="${esc(s.label)}${g && g.n ? ": " + esc(g.n) : ""}">
+        <span class="pl-tile-icon" aria-hidden="true">${s.icon}</span>
+        <span class="pl-tile-label">${g && g.n ? esc(g.n) : s.label}</span>
+        <span class="pl-tile-sub">${esc(sub)}</span>
+      </button>`;
   }
 
-  function slotCard(s, build, ctx) {
-    const g = (build.gear || {})[s.key];
-    const it = g ? itemFor(g.id, build, ctx.byId) : null;
-    const open = ctx.ui.slot === s.key;
-    const adds = g && g.add ? Object.entries(g.add) : [];
+  function dollBox(build, ctx) {
+    const side = k => SLOTS.filter(s => s.side === k).map(s => slotTile(s, build, ctx.ui)).join("");
+    const worn = SLOTS.filter(s => build.gear[s.key]).length;
     return `
-      <li class="pl-slot ${it ? "is-on" : ""} ${open ? "is-open" : ""}">
-        <button type="button" class="pl-slot-btn" onclick="TQPlanner.openSlot('${s.key}')" aria-expanded="${open}">
-          <span class="pl-slot-icon" aria-hidden="true">${itemImg(it, ctx) || s.icon}</span>
-          <span class="pl-slot-main">
-            <span class="pl-slot-label">${s.label}</span>
-            <span class="pl-slot-item">${it ? `${esc(it.n)} <span class="ep-lv">Lv.${it.l}</span>${it.custom ? ` <span class="tag">Custom</span>` : ""}` : g ? `<span class="bd-warn">Item ${esc(g.id)} not found</span>` : `<span class="bd-note">Empty</span>`}</span>
-            ${it ? `<span class="pl-stats">${statLine(it.st)}${elemLine(it.e, it.r)}${adds.length ? `<span class="pl-st pl-add">${adds.map(([k, v]) => `${k} ${sign(v)}`).join(" · ")}</span>` : ""}</span>` : ""}
+      <section class="bd-box pl-doll-box">
+        <h4>🛡️ Equipment <span class="bd-note">${worn} / ${SLOTS.length} · tap a slot and type what the game shows</span></h4>
+        <div class="pl-doll">
+          <div class="pl-doll-col">${side("left")}</div>
+          <div class="pl-doll-art">${ctx.art ? `<img src="${esc(ctx.art)}" alt="${esc(build.job || build.cls)}" loading="lazy">` : ""}
+            <span class="pl-doll-name">${esc(build.job || build.cls)} · Lv.${build.level}</span></div>
+          <div class="pl-doll-col">${side("right")}</div>
+        </div>
+        <div class="pl-doll-row">${side("bottom")}</div>
+        ${slotEditor(build, ctx)}
+      </section>`;
+  }
+
+  /** The open slot's form: name, the 12 stats (in the status window's order), element, note. */
+  function slotEditor(build, ctx) {
+    const s = SLOTS.find(x => x.key === ctx.ui.slot);
+    if (!s) return "";
+    const g = build.gear[s.key] || {};
+    const field = (k, v, label) => `<label class="pl-in ${GROUP_CLASS[GROUP_OF[k]] || ""}"><span>${label || k}</span>
+      <input id="pl-${s.key}-${k}" type="number" step="1" inputmode="numeric" value="${v || ""}" placeholder="0" onchange="TQPlanner.gearStat('${s.key}', '${k}', this.value)"></label>`;
+    const elSel = (kind, cur) => `<select id="pl-${s.key}-${kind}" aria-label="${kind === "e" ? "Attack element" : "Resistance"}" onchange="TQPlanner.gearElement('${s.key}', '${kind}', this.value, document.getElementById('pl-${s.key}-${kind}v').value)">
+        <option value="">${kind === "e" ? "No element" : "No resistance"}</option>${ELEMENTS.map(k => `<option ${k === cur ? "selected" : ""}>${k}</option>`).join("")}</select>`;
+    const [eK, eV] = Object.entries(g.e || {})[0] || ["", ""];
+    const [rK, rV] = Object.entries(g.r || {})[0] || ["", ""];
+    return `
+      <div class="pl-editor" role="group" aria-label="${s.label}">
+        <div class="pl-editor-head">
+          <strong>${s.icon} ${s.label}</strong>
+          <span>
+            ${build.gear[s.key] ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.clearSlot('${s.key}')">Take off</button>` : ""}
+            <button type="button" class="btn btn-sm" onclick="TQPlanner.openSlot('')">Done</button>
           </span>
-        </button>
+        </div>
+        <label class="pl-in pl-in-wide"><span>Name</span><input id="pl-${s.key}-n" maxlength="${LIMITS.item}" value="${esc(g.n || "")}" placeholder="e.g. White Swan Staff +7" onchange="TQPlanner.gearField('${s.key}', 'n', this.value)"></label>
+        <p class="bd-note">Type every stat the item window shows, Refine and Compound included.</p>
+        <div class="pl-in-grid">${STATS.map(k => field(k, (g.st || {})[k])).join("")}</div>
+        <div class="pl-in-row">
+          <span class="pl-in-pair">${elSel("e", eK)}<input id="pl-${s.key}-ev" type="number" step="1" value="${eV || ""}" placeholder="%" aria-label="Attack element %" onchange="TQPlanner.gearElement('${s.key}', 'e', document.getElementById('pl-${s.key}-e').value, this.value)"></span>
+          <span class="pl-in-pair">${elSel("r", rK)}<input id="pl-${s.key}-rv" type="number" step="1" value="${rV || ""}" placeholder="%" aria-label="Resistance %" onchange="TQPlanner.gearElement('${s.key}', 'r', document.getElementById('pl-${s.key}-r').value, this.value)"></span>
+        </div>
+        <label class="pl-in pl-in-wide"><span>Note</span><input id="pl-${s.key}-note" maxlength="${LIMITS.note}" value="${esc(g.note || "")}" placeholder="Refine +7, 3 compound slots…" onchange="TQPlanner.gearField('${s.key}', 'note', this.value)"></label>
+      </div>`;
+  }
+
+  function statusBox(build, st, ctx) {
+    const p = points(build);
+    const cards = Object.entries(GROUP_STATS).map(([g, list]) => list.map(k => {
+      const r = st.rows.find(x => x.stat === k);
+      const name = ctx.stats.names[k] || k;
+      return `<div class="pl-stat ${GROUP_CLASS[g]}">
+          <div class="pl-stat-top"><span class="pl-stat-key" title="${esc(name)}">${k}</span><span class="pl-stat-lv">Lv.${r.lv}</span></div>
+          <div class="pl-stat-val">${r.front == null ? "?" : fmt(r.front)}<span class="pl-stat-plus">${r.plus || r.front != null ? (r.plus < 0 ? "" : "+") + fmt(r.plus) : ""}</span></div>
+          <div class="pl-stat-pts">
+            <button type="button" class="bd-step" aria-label="One bonus point less in ${k}" onclick="TQPlanner.point('${k}', -1)" ${r.pts ? "" : "disabled"}>−</button>
+            <input id="pl-pt-${k}" type="number" min="0" step="1" value="${r.pts}" aria-label="Bonus points in ${k}" onchange="TQPlanner.point('${k}', this.value, true)">
+            <button type="button" class="bd-step" aria-label="One bonus point more in ${k}" onclick="TQPlanner.point('${k}', 1)">+</button>
+          </div>
+          ${r.gear || r.buff ? `<div class="pl-stat-from">${r.gear ? `gear ${sign(r.gear)}` : ""}${r.gear && r.buff ? " · " : ""}${r.buff ? `<span class="pl-stat-buff">buffs ${sign(r.buff)}</span>` : ""}</div>` : ""}
+        </div>`;
+    }).join("")).join("");
+    const el = ELEMENTS.filter(k => st.elements[k] || st.resist[k]);
+    return `
+      <section class="bd-box pl-status">
+        <div class="pl-status-head">
+          <h4>📊 Status</h4>
+          <label class="pl-in pl-in-inline"><span>Level</span><input id="pl-level" type="number" min="1" max="999" value="${build.level}" onchange="TQBuild.set({ level: Math.max(1, Math.min(999, +this.value || 1)) })"></label>
+          <label class="pl-in pl-in-inline" title="Level − 1 unless you type what the game shows (quests give extra points)"><span>Bonus points</span><input id="pl-pts-have" type="number" min="0" value="${p.have}" onchange="TQPlanner.pointsHave(this.value)"></label>
+          <span class="pl-pts-left ${p.left < 0 ? "bd-warn" : ""}">${p.left >= 0 ? `${p.left} left` : `${-p.left} too many`}</span>
+        </div>
+        <div class="pl-stats-grid">${cards}</div>
+        <p class="pl-elems"><b>Attack element</b> ${el.filter(k => st.elements[k]).map(k => `<span class="${EL_CLASS(k)}">${k} ${st.elements[k]}%</span>`).join("") || `<span class="bd-note">none</span>`}
+          <b>Resistance</b> ${el.filter(k => st.resist[k]).map(k => `<span class="${EL_CLASS(k)}">${k} ${st.resist[k]}%</span>`).join("") || `<span class="bd-note">none</span>`}</p>
+        ${st.known ? `<p class="bd-note">Like the game's Growth window: the first number from level, growth ${Object.values(build.growth).join("-")} and bonus points, the second (+) from gear and buffs.${ctx.baseChecked ? ` Checked in game: ${esc(ctx.baseChecked)}.` : ""}</p>`
+          : calibrateBox(build, st)}
+      </section>`;
+  }
+
+  /** A class we have no starting stats for: the player types their front numbers once. */
+  function calibrateBox(build, st) {
+    return `
+      <div class="pl-calib">
+        <p><strong>We don't know ${esc(build.cls)}'s starting stats yet.</strong> Open the game's Growth window, set the level, growth and
+          bonus points above to match, and type the first number of each stat (before the +).</p>
+        <form class="pl-in-grid" onsubmit="event.preventDefault(); TQPlanner.calibrate(this)">
+          ${STATS.map(k => `<label class="pl-in ${GROUP_CLASS[GROUP_OF[k]]}"><span>${k}</span><input name="${k}" type="number" step="1" required></label>`).join("")}
+          <button type="submit" class="btn btn-sm btn-primary">Use these</button>
+        </form>
+        <p class="bd-note">Send us the numbers too (a screenshot of the Growth and Basic Info tabs) and we'll add the class for everyone.</p>
+      </div>`;
+  }
+
+  function buffRow(entry, build, st) {
+    const sk = entry.skill;
+    const lv = (build.skills || {})[sk.name];
+    const on = !!lv;
+    const applied = st.buffs.find(b => b.name === sk.name && !b.manual);
+    const eff = applied ? Object.entries(applied.deltas).map(([k, v]) => `<span class="${v >= 0 ? "is-up" : "is-down"}">${k} ${sign(v)}</span>`).join("") : "";
+    const what = entry.spec.effects.map(e => e.stat).filter((v, i, a) => a.indexOf(v) === i).join(" · ");
+    const id = "pl-sk-" + sk.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    return `
+      <li class="pl-buff ${on ? "is-on" : ""}">
+        <label class="pl-buff-main" for="${id}">
+          <input id="${id}" type="checkbox" ${on ? "checked" : ""} onchange="TQPlanner.skill('${jsq(sk.name)}', this.checked ? (document.getElementById('${id}-lv').value) : '')">
+          ${sk.icon ? `<img src="${esc(sk.icon)}" alt="" loading="lazy">` : `<span class="pl-buff-ph" aria-hidden="true">✨</span>`}
+          <span><strong>${esc(sk.name)}</strong> <span class="bd-note">${esc(entry.job)} · ${esc(what)}${entry.spec.group ? " · transform" : ""}</span></span>
+        </label>
+        <select id="${id}-lv" aria-label="${esc(sk.name)} level" onchange="TQPlanner.skill('${jsq(sk.name)}', document.getElementById('${id}').checked ? this.value : '', true)">
+          ${SKILL_LEVELS.map(l => `<option value="${l}" ${l === (lv || "M") ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}
+        </select>
+        ${on ? `<span class="pl-diff">${eff || `<span class="bd-note">no change</span>`}</span>` : ""}
       </li>`;
   }
 
-  /** The open slot: what's in it (bonuses typed in, remove) and the item list to pick from. */
-  function slotPanel(build, ctx) {
-    const s = SLOTS.find(x => x.key === ctx.ui.slot);
-    if (!s) return "";
-    const g = (build.gear || {})[s.key];
-    const cur = g ? itemFor(g.id, build, ctx.byId) : null;
-    const res = search(ctx.catalog, build, { slot: s.slot, query: ctx.ui.query, maxLevel: ctx.ui.fitLevel ? build.level : 0 });
-    const adds = g && g.add ? Object.entries(g.add) : [];
-    const statOpts = sel => STATS.map(k => `<option ${k === sel ? "selected" : ""}>${k}</option>`).join("");
-    const rows = res.list.map(it => {
-      const d = diff(cur, it);
-      const on = cur && it.id === cur.id;
-      return `<li><button type="button" class="pl-pick ${on ? "is-on" : ""}" onclick="TQPlanner.equip('${s.key}', '${jsq(it.id)}')">
-          <span class="pl-pick-name">${itemImg(it, ctx)}<strong>${esc(it.n)}</strong> <span class="ep-lv">Lv.${it.l}</span>${it.custom ? ` <span class="tag">Custom</span>` : ""}${it.c ? ` <span class="tag" title="Compound slots">◇${it.c}</span>` : ""}</span>
-          <span class="pl-stats">${statLine(it.st)}${elemLine(it.e, it.r)}</span>
-          ${cur && !on ? `<span class="pl-diff">${Object.keys(d).length ? Object.entries(d).map(([k, v]) => `<span class="${v > 0 ? "is-up" : "is-down"}">${k} ${sign(v)}</span>`).join("") : `<span class="bd-note">same stats</span>`}</span>` : ""}
-        </button></li>`;
-    }).join("");
-    return `
-      <section class="bd-box pl-panel" aria-label="${s.label}">
-        <div class="pl-panel-head">
-          <h4>${s.icon} ${s.label}</h4>
-          <button type="button" class="btn btn-sm" onclick="TQPlanner.openSlot('')">Close</button>
-        </div>
-        ${cur ? `
-          <div class="pl-cur">
-            <p><strong>${esc(cur.n)}</strong> <span class="ep-lv">Lv.${cur.l}</span> ${cur.c ? `<span class="tag">◇ ${cur.c} compound slots</span>` : ""}
-              <button type="button" class="btn btn-sm" onclick="TQPlanner.equip('${s.key}', '')">Take off</button></p>
-            <p class="bd-note">Refine, Compound or random bonus on your piece: add what the game shows.</p>
-            <ul class="pl-adds">${adds.map(([k, v]) => `<li><span>${k} <b>${sign(v)}</b></span><button type="button" class="btn btn-sm" aria-label="Remove ${k} bonus" onclick="TQPlanner.setAdd('${s.key}', '${k}', 0)">✕</button></li>`).join("")}</ul>
-            ${adds.length < LIMITS.adds ? `<form class="pl-add-form" onsubmit="event.preventDefault(); TQPlanner.setAdd('${s.key}', this.stat.value, this.val.value, true)">
-              <select name="stat" aria-label="Stat">${statOpts("AP")}</select>
-              <input name="val" type="number" step="1" placeholder="+0" aria-label="Bonus value" required>
-              <button type="submit" class="btn btn-sm">Add bonus</button>
-            </form>` : ""}
-          </div>` : ""}
-        <div class="pl-search">
-          <input type="search" id="plSearch" value="${esc(ctx.ui.query)}" placeholder="Search ${s.label.toLowerCase()}s by name" aria-label="Search items" oninput="TQPlanner.query(this.value)">
-          <label class="pl-fit"><input type="checkbox" ${ctx.ui.fitLevel ? "checked" : ""} onchange="TQPlanner.fitLevel(this.checked)"> Lv.${build.level} and below</label>
-          <button type="button" class="btn btn-sm" onclick="TQPlanner.customForm('${s.slot}')">＋ Custom item</button>
-        </div>
-        ${ctx.ui.custom === s.slot ? customForm(s) : ""}
-        ${!ctx.catalog ? `<p class="bd-note">Loading items…</p>` : res.list.length ? `<ul class="pl-picks">${rows}</ul>${res.more ? `<p class="bd-note">${res.more.toLocaleString()} more: type more of the name.</p>` : ""}` : `<p class="bd-note">No ${s.label.toLowerCase()} matches. Add it as a custom item.</p>`}
-      </section>`;
-  }
-
-  function customForm(s) {
-    return `
-      <form class="pl-custom" onsubmit="event.preventDefault(); TQPlanner.addCustom(this, '${s.key}')">
-        <p class="bd-note">An item that isn't in the list (new on the live server, or different there). It's saved with this build and goes along when you share it.</p>
-        <label>Name <input name="n" maxlength="${LIMITS.name}" required></label>
-        <label>Level <input name="l" type="number" min="0" max="999" value="1"></label>
-        <div class="pl-custom-stats">${STATS.map(k => `<label>${k} <input name="st_${k}" type="number" step="1"></label>`).join("")}</div>
-        <label>Note <input name="note" maxlength="120" placeholder="Where it's from, what you checked"></label>
-        <button type="submit" class="btn btn-sm btn-primary">Add and wear</button>
-      </form>`;
-  }
-
-  function statTable(build, t, ctx) {
-    const lv = ctx.levelGain || {};
-    const rows = STATS.map(k => {
-      const gear = t.gear[k] || 0, add = t.adds[k] || 0, buff = t.buffs[k] || 0, plus = t.plus[k] || 0;
-      return `<tr class="${plus ? "" : "is-zero"}"><th scope="row">${k}</th>
-        <td>${lv[k] != null ? Math.floor(lv[k]).toLocaleString() : "–"}</td>
-        <td>${gear ? sign(gear) : "–"}</td><td>${add ? sign(add) : "–"}</td><td>${buff ? sign(buff) : "–"}</td>
-        <td><strong>${plus ? sign(plus) : "0"}</strong></td></tr>`;
-    }).join("");
-    const el = ELEMENTS.filter(k => t.elements[k] || t.resist[k]);
-    return `
-      <section class="bd-box">
-        <h4>📊 Stats from gear</h4>
-        <div class="bd-lvtable-wrap"><table class="bd-stats pl-totals">
-          <thead><tr><th>Stat</th><th title="Gain from levels and bonus points (wiki formula, without starting stats)">Levels</th><th>Gear</th><th>Bonuses</th><th>Buffs</th><th title="Compare with the number after + in the game's status window">+ in game</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table></div>
-        <p class="bd-note">The last column is what the game shows after the <b>+</b> (like AP 1178<b>+4007</b>). "Levels" leaves out starting stats, so it won't match the first number yet.</p>
-        ${el.length ? `<p class="pl-elems"><b>Elements:</b> ${el.map(k => `<span class="pl-el pl-el-${k.toLowerCase()}">${k}${t.elements[k] ? ` ${t.elements[k]}` : ""}${t.resist[k] ? ` · res ${t.resist[k]}` : ""}</span>`).join("")}</p>` : ""}
-      </section>`;
-  }
-
-  function buffBox(build) {
+  function buffBox(build, st, ctx) {
+    const lists = ctx.buffLists;
+    const partyOn = lists.party.filter(e => build.skills[e.skill.name]).length;
+    const manual = build.buffs;
     const opts = sel => [...STATS, ...ELEMENTS].map(k => `<option ${k === sel ? "selected" : ""}>${k}</option>`).join("");
     return `
-      <details class="bd-box pl-buffs" ${build.buffs.length ? "open" : ""}>
-        <summary><h4>✨ Buffs <span class="bd-note">${build.buffs.filter(b => b.on).length} on</span></h4></summary>
-        <p class="bd-note">Type in what a buff adds (your own or a party member's). Ticked buffs count in the totals.</p>
-        <ul class="pl-buff-list">${build.buffs.map((b, i) => `
-          <li><input type="checkbox" ${b.on ? "checked" : ""} aria-label="Use ${esc(b.name)}" onchange="TQPlanner.buff(${i}, 'on', this.checked)">
-            <input value="${esc(b.name)}" maxlength="${LIMITS.name}" aria-label="Buff name" onchange="TQPlanner.buff(${i}, 'name', this.value)">
-            <select aria-label="Stat" onchange="TQPlanner.buff(${i}, 'stat', this.value)">${opts(b.stat)}</select>
-            <input type="number" value="${b.value}" aria-label="Value" onchange="TQPlanner.buff(${i}, 'value', this.value)">
-            <button type="button" class="btn btn-sm" aria-label="Remove ${esc(b.name)}" onclick="TQPlanner.buff(${i}, 'remove')">✕</button></li>`).join("")}</ul>
-        ${build.buffs.length < LIMITS.buffs ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.buff(-1, 'add')">＋ Add a buff</button>` : ""}
-      </details>`;
+      <section class="bd-box pl-buffs">
+        <h4>✨ Buffs <span class="bd-note">tick to add them to the status</span></h4>
+        ${lists.mine.length ? `<ul class="pl-buff-list">${lists.mine.map(e => buffRow(e, build, st)).join("")}</ul>`
+          : `<p class="bd-note">${esc(build.job || build.cls)} has no stat buffs we know of.</p>`}
+        <details class="pl-party" ${partyOn ? "open" : ""}>
+          <summary>👥 Party buffs from other jobs ${partyOn ? `<span class="tag">${partyOn} on</span>` : ""}</summary>
+          <ul class="pl-buff-list">${lists.party.map(e => buffRow(e, build, st)).join("")}</ul>
+        </details>
+        <details class="pl-party" ${manual.length ? "open" : ""}>
+          <summary>✏️ Other buffs, typed in ${manual.length ? `<span class="tag">${manual.filter(b => b.on).length} on</span>` : ""}</summary>
+          <ul class="pl-manual">${manual.map((b, i) => `
+            <li><input type="checkbox" ${b.on ? "checked" : ""} aria-label="Use ${esc(b.name)}" onchange="TQPlanner.buff(${i}, 'on', this.checked)">
+              <input id="pl-bf-${i}-n" value="${esc(b.name)}" maxlength="${LIMITS.name}" aria-label="Buff name" onchange="TQPlanner.buff(${i}, 'name', this.value)">
+              <select aria-label="Stat" onchange="TQPlanner.buff(${i}, 'stat', this.value)">${opts(b.stat)}</select>
+              <input id="pl-bf-${i}-v" type="number" value="${b.value}" aria-label="Value" onchange="TQPlanner.buff(${i}, 'value', this.value)">
+              <button type="button" class="btn btn-sm" aria-label="Remove ${esc(b.name)}" onclick="TQPlanner.buff(${i}, 'remove')">✕</button></li>`).join("")}</ul>
+          ${manual.length < LIMITS.buffs ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.buff(-1, 'add')">＋ Add a buff</button>` : ""}
+        </details>
+        <p class="bd-note">Worked out from the wiki's skill formulas, not checked in game yet. If a number is off, tell us what the game shows.</p>
+      </section>`;
   }
 
   function savedBox(build, ctx) {
@@ -339,7 +448,7 @@
       <section class="bd-box pl-saved">
         <h4>💾 Saved builds <span class="bd-note">${saved.length} / ${LIMITS.builds}${ctx.signedIn ? " · synced with your account" : " · on this device (sign in to sync)"}</span></h4>
         <div class="pl-save-row">
-          <input id="plName" value="${esc(build.name || (mine && mine.name) || "")}" maxlength="${LIMITS.name}" placeholder="Build name, e.g. Primadonna AP 250" aria-label="Build name">
+          <input id="plName" value="${esc(build.name || "")}" maxlength="${LIMITS.name}" placeholder="Build name, e.g. Primadonna AP 160" aria-label="Build name">
           ${mine ? `<button type="button" class="btn btn-sm btn-primary" onclick="TQPlanner.save(false)">Save changes</button>` : ""}
           <button type="button" class="btn btn-sm ${mine ? "" : "btn-primary"}" onclick="TQPlanner.save(true)" ${saved.length >= LIMITS.builds ? "disabled title='20 builds at most: delete one first'" : ""}>Save as new</button>
           <button type="button" class="btn btn-sm" onclick="TQPlanner.share()">🔗 Share code</button>
@@ -351,33 +460,26 @@
             <button type="button" class="pl-saved-open" onclick="TQPlanner.load('${b.id}')"><strong>${esc(b.name)}</strong>
               <span class="bd-note">${esc(b.job || b.cls)} · Lv.${b.level} · ${Object.keys(b.gear).length} pieces</span></button>
             <button type="button" class="btn btn-sm" aria-label="Delete ${esc(b.name)}" onclick="TQPlanner.remove('${b.id}')">🗑</button>
-          </li>`).join("")}</ul>` : `<p class="bd-note">Nothing saved yet. Name this build and save it to come back to it or compare.</p>`}
+          </li>`).join("")}</ul>` : ""}
       </section>`;
   }
 
   /**
-   * ctx: { build (the guide's working build: cls, job, level, growth, bonus, gear, custom, buffs,
-   *        name, savedId), catalog, byId, saved, signedIn, levelGain: {AP: n}, itemImage, ui: { slot,
-   *        query, fitLevel, custom, code } }
+   * ctx: { build (the guide's working build), stats (builds.stats), base, baseChecked, buffs,
+   *        skillByName, buffLists, art, saved, signedIn, ui: { slot, code } }
    */
   function render(ctx) {
     const build = ctx.build;
-    const t = totals(build, ctx.byId);
+    const st = status(build, ctx);
     return `
       ${savedBox(build, ctx)}
       <div class="pl-grid">
-        <section class="bd-box pl-gear">
-          <h4>🛡️ Equipment <span class="bd-note">${t.pieces.length} / ${SLOTS.length} · tap a slot to pick</span></h4>
-          <ul class="pl-slots">${SLOTS.map(s => slotCard(s, build, ctx)).join("")}</ul>
-        </section>
+        ${dollBox(build, ctx)}
         <div class="pl-side">
-          ${slotPanel(build, ctx)}
-          ${statTable(build, t, ctx)}
-          ${buffBox(build)}
+          ${statusBox(build, st, ctx)}
+          ${buffBox(build, st, ctx)}
         </div>
-      </div>
-      <p class="bd-note bd-source">Items: PlayTrickster client tables (base values of the old client). The live server may differ:
-        if a number is wrong, type the difference as a bonus or add a custom item.${ctx.catalog && ctx.catalog.made ? ` Data ${esc(ctx.catalog.made)}.` : ""}</p>`;
+      </div>`;
   }
 
   root.TQPlanner = Object.assign({ render }, model);
