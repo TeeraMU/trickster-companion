@@ -180,7 +180,9 @@
   // Renderer (browser)
   // ---------------------------------------------------------------------------------------------
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+  // a JS string inside an HTML attribute: escape for JS first, then for HTML (an ' turned into &#39;
+  // first would come back as ' and end the string: "Beast's Instinct")
+  const jsq = s => esc(String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
   const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
   const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
 

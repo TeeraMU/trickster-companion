@@ -218,4 +218,36 @@ t("compound slots: elements add up, resistances apart, empty slots kept, old sin
   assert.deepStrictEqual(P.cleanBuild({ gear: { hat: { cp: [{ k: "", v: 0 }, { k: "", v: 0 }] } } }).gear.hat.cp.length, 2);
 });
 
+t("Beast's Instinct works only with Evolution and is used instead of it", () => {
+  const b = cat(160, 157);
+  b.skills = { "Beast's Instinct": "M" };
+  let a = P.activeBuffs(b, buffs);
+  assert.deepStrictEqual(a.active, {});
+  assert.strictEqual(a.off["Beast's Instinct"], "needs Evolution");
+  assert.deepStrictEqual(P.status(b, ctx).buffs, []);
+  b.skills = { Evolution: "M", "Beast's Instinct": "M" };
+  a = P.activeBuffs(b, buffs);
+  assert.deepStrictEqual(a.active, { "Beast's Instinct": "M" });
+  assert.strictEqual(a.replacedBy.Evolution, "Beast's Instinct");
+  const d = P.status(b, ctx).buffs.find(x => x.name === "Beast's Instinct").deltas;
+  assert.strictEqual(d.AP, Math.trunc(1282 * 5)); // ESAction_Beast AP_Ratio 5 at Master
+  assert.ok(!P.status(b, ctx).buffs.some(x => x.name === "Evolution"));
+});
+
+t("forms: Evolution-only skills need it, other attacks can't be used in it", () => {
+  const sharp = skillByName.get("Sharp Scream"), combo = skillByName.get("2 Hit Combo");
+  const b = cat(160, 157);
+  let f = P.formState(b, buffs);
+  assert.strictEqual(f.form, "");
+  assert.strictEqual(f.usable(sharp).ok, false);
+  assert.strictEqual(f.usable(combo).ok, true);
+  b.skills = { Evolution: "M" };
+  f = P.formState(b, buffs);
+  assert.strictEqual(f.form, "Evolution");
+  assert.strictEqual(f.usable(sharp).ok, true);
+  assert.deepStrictEqual(f.usable(combo), { ok: false, why: "Can't be used in Evolution" });
+  b.skills = { Evolution: "M", "Beast's Instinct": "M" };
+  assert.strictEqual(P.formState(b, buffs).form, "Evolution");
+});
+
 console.log(`\n${n} passed`);
