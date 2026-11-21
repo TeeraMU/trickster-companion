@@ -354,14 +354,45 @@
         </div>
       </section>`;
 
-    const tabs = [["stats", "📊 Stats"], ["skills", "✨ Skills"], ...(ctx.renderGear ? [["gear", "🛡️ Equipment"]] : [])];
-    const tabBar = `<div class="bd-tabs" role="tablist">${tabs.map(([k, l]) => `<button type="button" role="tab" class="pill-btn ${st.tab === k ? "active" : ""}" aria-selected="${st.tab === k}" onclick="TQBuild.set({ tab: '${k}' })">${l}</button>`).join("")}
+    // with the planner (index.html) the old Stats tab is part of 📊 Status & Equipment
+    const tabs = ctx.renderGear ? [["gear", "📊 Status & Equipment"], ["skills", "✨ Skills"]] : [["stats", "📊 Stats"], ["skills", "✨ Skills"]];
+    const tab = tabs.some(([k]) => k === st.tab) ? st.tab : tabs[0][0];
+    const tabBar = `<div class="bd-tabs" role="tablist">${tabs.map(([k, l]) => `<button type="button" role="tab" class="pill-btn ${tab === k ? "active" : ""}" aria-selected="${tab === k}" onclick="TQBuild.set({ tab: '${k}' })">${l}</button>`).join("")}
       <span class="bd-later" title="Coming in a later version">💥 Damage: later</span></div>`;
 
+    // Status & Equipment: a short header (the job's picture is in the equipment window) with how to
+    // raise stats in the space next to it
+    const growthRow = GROUPS.map(g => `
+      <span class="bd-mini ${GROUP_CLASS[g]}">${typeIcon(g, "bd-mini-icon")}<span class="bd-mini-name">${g}</span><b>${st.growth[g]}</b>
+        <button type="button" class="bd-step" aria-label="Less ${g}" onclick="TQBuild.growth('${g}', -1)" ${st.growth[g] <= 1 ? "disabled" : ""}>−</button>
+        <button type="button" class="bd-step" aria-label="More ${g}" onclick="TQBuild.growth('${g}', 1)" ${st.growth[g] >= GROWTH_MAX || GROUPS.reduce((n, x) => n + st.growth[x], 0) >= GROWTH_TOTAL ? "disabled" : ""}>+</button></span>`).join("");
+    const left = GROWTH_TOTAL - GROUPS.reduce((n, g) => n + st.growth[g], 0);
+    const compact = `
+      <section class="bd-profile bd-compact">
+        <div class="bd-compact-main">
+          <h3>${esc(job.name)} <span class="bd-type ${GROUP_CLASS[c.type]}">${TYPE_ICON[c.type] ? typeIcon(c.type, "bd-type-icon") : ""}${esc(c.type)} type</span></h3>
+          <p class="bd-note">${esc(cls)} · ${job.stage === 1 ? "1st job" : job.stage === 2 ? "2nd job" : job.hybridOf ? `3rd job (hybrid)` : "3rd job"} · skills from ${sets.map(s => esc(s.job)).join(" → ")}</p>
+          <p class="bd-compact-label">Growth <span class="bd-note ${left ? "bd-warn" : ""}">${left ? `${left > 0 ? left + " to place" : -left + " too many"} (10 in all, 1-4 each)` : "as picked when you made the character"}</span></p>
+          <div class="bd-mini-row">${growthRow}</div>
+        </div>
+        <div class="bd-compact-guide">
+          <h4>🧭 How to raise stats${adv.label ? `: <span class="bd-build">${esc(adv.label)}</span>` : ""}</h4>
+          ${adv.why ? `<p>${esc(adv.why)}</p>` : ""}
+          <ul class="bd-howto">
+            <li>Every level, growth raises each stat of a group: a <b>4</b> gives 1 stat level per level, a <b>1</b> one per 4 levels.</li>
+            <li>Bonus points you place yourself: press <b>+</b> on a stat below. One point = one stat level (AP +4, HP +30, MP +30, WT +80, DP +4, MD +4; AC, MA, DA, LK, HV +1 per 4).</li>
+            <li>The first number is starting stats + levels + bonus points, the <b>+</b> is gear and buffs, like the game's Growth window.</li>
+          </ul>
+          ${use.length ? `<p class="bd-uses">Skills use: ${use.slice(0, 5).map(u => `<span class="tag">${u.stat} ×${u.n}</span>`).join(" ")}</p>` : ""}
+          ${adv.stats.length ? `<button type="button" class="btn btn-sm" onclick="TQBuild.useAdvice()">Put my bonus points in ${esc(adv.stats.join(" + "))}</button>` : ""}
+          <p class="bd-note">From the wiki's skill formulas, not from players. Check a guide${guides.length ? ": " + guides.map(g => `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.title)}</a>`).join(" · ") : ""} or ask your guild.</p>
+        </div>
+      </section>`;
+
     let body = "";
-    if (st.tab === "gear" && ctx.renderGear) {
+    if (tab === "gear") {
       body = ctx.renderGear(st);
-    } else if (st.tab === "skills") {
+    } else if (tab === "skills") {
       const items = masterItems(b, sets, st.picked);
       const have = ctx.have || {};
       const totals = items.length ? `
@@ -424,7 +455,7 @@
       <div class="bd-page">
         <div class="bd-pick-row">${classChips}</div>
         <div class="bd-pick-row">${jobChips}</div>
-        ${profile}
+        ${tab === "gear" ? compact : profile}
         ${tabBar}
         ${body}
         <p class="bd-note bd-source">Data: ggFTW Trickster wiki. PlayTrickster may differ: tell us what's wrong and we'll fix it.</p>
