@@ -153,4 +153,35 @@ t("share code round trip keeps the build, gets a new id", () => {
   assert.strictEqual(P.decodeBuild("hello"), null);
 });
 
+// --- js/formula.js: skill formulas from the wiki ---
+const Fm = require("../js/formula.js");
+const skill = name => skillByName.get(name);
+const total = { AP: 5587, AC: 193, DX: -10, MP: 4082, MA: 145, MD: 1097, WT: 27231, DA: 97, LK: 80, HP: 12380, DP: 1717, HV: 159 };
+const power = (name, el, lv) => Fm.evalFormula(skill(name).formula, Fm.formulaVars(total, el || {}, skill(name).levels, lv || "M"));
+
+t("formula: Flaming Fist with and without Fire, Power Blow, Volley Kick, lowercase x", () => {
+  const ff = power("Flaming Fist", { Fire: 30 });
+  const m = Fm.cellValue(skill("Flaming Fist").levels.rows.slice(-1)[0][4]); // Magnification Ratio at Master
+  assert.deepStrictEqual(ff.map(p => p.label), ["WITHOUT any Fire Attr", "WITH Fire Attr"]);
+  assert.strictEqual(Math.round(ff[0].value), Math.round(5587 * m));
+  assert.strictEqual(Math.round(ff[1].value), Math.round(5587 * (m + 0.3) * 145 / 100));
+  assert.strictEqual(Math.round(power("Power Blow")[0].value), Math.round(5587 * 2.4));
+  assert.strictEqual(Math.round(power("Volley Kick")[0].value), Math.round((5587 + 159 * 16) * (18.6 / 8)));
+  assert.strictEqual(power("Sharp Scream")[0].text, "(AP + HV × 16) × Magnification");
+});
+
+t("formula: a word it can't read inside brackets drops the expression instead of guessing", () => {
+  assert.deepStrictEqual(power("2 Hit Combo"), []); // needs the Power Blow / Volley Kick levels (PBL, VKL)
+  assert.deepStrictEqual(Fm.evalFormula("AP × Unknown Thing", Fm.formulaVars(total, {}, null, "M")), []);
+  assert.deepStrictEqual(Fm.evalFormula("alert(1); AP", Fm.formulaVars(total, {}, null, "M")), []);
+});
+
+t("formula: level rows, % and thousands in cells", () => {
+  assert.strictEqual(Fm.cellValue("240%"), 2.4);
+  assert.strictEqual(Fm.cellValue("1,390"), 1390);
+  assert.strictEqual(Fm.cellValue("3 seconds"), 3);
+  assert.strictEqual(Fm.cellValue("—"), null);
+  assert.ok(power("Power Blow", {}, "1")[0].value < power("Power Blow")[0].value);
+});
+
 console.log(`\n${n} passed`);

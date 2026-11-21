@@ -4854,7 +4854,61 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 @media (max-width: 760px) {
   .bd-compact { grid-template-columns: 1fr; }
 }
-@media (max-width: 420px) {
-  .bd-mini-name { display: none; }
-  .bd-mini { justify-content: space-between; }
+
+/* 🛠️ Planner page: my builds as tabs, the build's class / job / level, read-only friend builds */
+.pl-fs { border: 0; margin: 0; padding: 0; min-width: 0; }
+.pl-fs[disabled] .bd-step, .pl-fs[disabled] input, .pl-fs[disabled] select { opacity: 0.75; }
+.pl-bar { display: flex; flex-direction: column; gap: 8px; }
+.pl-bar > p { margin: 0; }
+.pl-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; }
+.pl-tab {
+  flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 1px; max-width: 220px;
+  padding: 6px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer;
+  background: var(--bg-primary); color: var(--text-primary); font: inherit; text-align: left;
+}
+.pl-tab strong { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pl-tab span { font-size: 0.75rem; color: var(--text-muted); }
+.pl-tab.is-on { border-color: var(--border-highlight); background: color-mix(in srgb, var(--accent-blue) 14%, var(--bg-card)); }
+.pl-tab:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.pl-tab-new { justify-content: center; align-self: stretch; font-weight: 700; color: var(--ink-blue); border-style: dashed; }
+.pl-share { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); }
+.pl-bar-friend { background: color-mix(in srgb, var(--accent-purple) 12%, var(--bg-card)); }
+.pl-pick { display: grid; grid-template-columns: 1fr 1.3fr 90px; gap: 6px; }
+.pl-pick select, .pl-pick input { width: 100%; }
+.pl-skills-link { margin-top: 8px; }
+.pl-empty { text-align: center; padding: 24px 16px; }
+.pl-empty .btn { margin: 4px; }
+/* Build guide: one line about the job above its skills */
+.bd-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.bd-head-main { flex: 1 1 260px; min-width: 0; }
+.bd-head-main h3 { margin: 0 0 2px; }
+.bd-head-main .bd-note { margin: 0; }
+.bd-head-adv { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 0.9rem;
+  padding: 6px 10px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--accent-gold) 10%, var(--bg-card)); }
+/* Friends page: a friend's shared Planner builds */
+.friend-builds { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
+.friend-builds-label { font-weight: 700; font-size: 0.85rem; }
+.friend-build {
+  display: inline-flex; flex-direction: column; align-items: flex-start; padding: 4px 10px; cursor: pointer; font: inherit; text-align: left;
+  border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-primary); color: var(--text-primary);
+}
+.friend-build:hover { border-color: var(--border-highlight); background: var(--bg-card-hover); }
+.friend-build:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.friend-build .friends-muted { font-size: 0.75rem; }
+/* Planner: 💥 skill power */
+.pl-power { margin-top: 12px; }
+.pl-power-list { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.pl-power-row {
+  display: grid; grid-template-columns: minmax(180px, 1.2fr) auto minmax(0, 1.5fr); gap: 4px 10px; align-items: center;
+  padding: 6px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-card);
+}
+.pl-power-name { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.pl-power-name img { width: 28px; height: 28px; image-rendering: pixelated; flex: 0 0 auto; }
+.pl-power-row select { font: inherit; font-size: 0.85rem; padding: 3px 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-power-vals { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: flex-end; }
+.pl-power-val b { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink-red); }
+.pl-power-f { grid-column: 1 / -1; font-size: 0.75rem; color: var(--text-muted); white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .pl-power-row { grid-template-columns: 1fr auto; }
+  .pl-power-vals { grid-column: 1 / -1; justify-content: flex-start; }
 }
