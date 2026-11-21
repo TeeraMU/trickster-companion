@@ -4943,3 +4943,29 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .pl-power-tag { font-size: 0.7rem; font-weight: 800; padding: 1px 7px; border-radius: 8px; background: color-mix(in srgb, var(--accent-purple) 16%, var(--bg-card)); color: var(--ink-purple); white-space: nowrap; }
 .pl-power-tag.is-off { background: var(--bg-tertiary); color: var(--text-secondary); }
 .pl-form-note { margin: 4px 0 6px; padding: 6px 10px; border-radius: var(--radius-sm); font-size: 0.85rem; background: color-mix(in srgb, var(--accent-purple) 10%, var(--bg-card)); }
+/* Planner: 🎯 Against a monster */
+.pl-monster { margin-top: 12px; }
+.pl-mon { padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-card); }
+.pl-mon-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.pl-mon-head .btn { margin-left: auto; }
+.pl-mon-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 4px 10px; margin: 8px 0; font-size: 0.9rem; }
+.pl-mon-stats b { color: var(--text-secondary); margin-right: 4px; }
+.pl-vs { list-style: none; margin: 8px 0 4px; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.pl-vs li { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(110px, auto); gap: 10px; align-items: baseline; padding: 3px 8px; border-radius: 8px; background: var(--bg-primary); }
+.pl-vs b { font-family: var(--font-display); color: var(--ink-red); text-align: right; }
+.pl-mon-find input { width: 100%; font: inherit; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-mon-list { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-direction: column; gap: 3px; max-height: 320px; overflow-y: auto; }
+.pl-mon-list button { width: 100%; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; text-align: left; padding: 6px 8px; font: inherit; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card); color: var(--text-primary); }
+.pl-mon-list button:hover, .pl-mon-list button:focus-visible { border-color: var(--border-highlight); outline: none; }
+.pl-hits { margin-top: 10px; }
+.pl-hits summary { cursor: pointer; font-weight: 700; }
+.pl-hit-form { display: grid; grid-template-columns: 1fr 120px; gap: 6px 8px; margin: 6px 0; }
+.pl-hit-form .pl-in-wide { grid-column: 1 / -1; }
+.pl-hit-form select, .pl-hit-form input { width: 100%; font: inherit; padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-hit-form .btn { justify-self: start; }
+.pl-hit-list { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.pl-hit-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; padding: 5px 8px; border-radius: 8px; background: var(--bg-primary); border: 1px solid var(--border); }
+.pl-hit-list li .btn { margin-left: auto; }
+.pl-hit-dmg { font-family: var(--font-display); color: var(--ink-red); }
+.pl-hits-text { width: 100%; margin-top: 6px; font: 0.8rem/1.4 ui-monospace, Consolas, monospace; padding: 6px 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }

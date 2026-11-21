@@ -1694,7 +1694,15 @@
     // buff-values.json (all load with builds.json). A friend's shared build opens read only.
     // ============================================================================
     let STAT_BASE = null, BUFFS = null, BUFF_VALUES = null;
-    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {} }; // viewing: { build, friend }; power: { skill: level }
+    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {}, monQuery: "", logOpen: false, hitsText: false }; // viewing: { build, friend }; power: { skill: level }
+    // data/monsters.json (client table, ~320 KB): loaded the first time the Planner shows
+    let MONSTERS = null, monstersLoading = false;
+    function loadMonsters() {
+      if (MONSTERS || monstersLoading) return;
+      monstersLoading = true;
+      TQData.fetchJson("data/monsters.json").then(d => { MONSTERS = d; if (appState.currentView === "planner") renderPlanner(); })
+        .catch(() => { monstersLoading = false; });
+    }
 
     function plannerState() {
       if (!appState.planner || !Array.isArray(appState.planner.builds)) appState.planner = { builds: [], current: "" };
@@ -1719,6 +1727,7 @@
     }
 
     function renderPlanner() {
+      loadMonsters();
       const box = document.getElementById("plannerContainer");
       if (!box || !BUILDS) return;
       const build = plannerBuild();
@@ -1731,7 +1740,7 @@
         stats: BUILDS.stats, base: base.base, baseFrom: base.from, baseChecked: base.checked, estimateFrom: base.estimateFrom,
         buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []),
         art: job && job.art, signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI,
-        formula: window.TQFormula, growthChart: TQBuild.growthChart, skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
+        formula: window.TQFormula, growthChart: TQBuild.growthChart, monsters: MONSTERS, skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
       }));
     }
 
@@ -1979,7 +1988,40 @@
         saveState(); renderPlanner();
       },
       closeViewed() { PLANNER_UI.viewing = null; PLANNER_UI.slot = ""; renderPlanner(); },
-      powerLevel(name, lv) { PLANNER_UI.power[name] = lv; renderPlanner(); }
+      powerLevel(name, lv) { PLANNER_UI.power[name] = lv; renderPlanner(); },
+      // 🎯 Against a monster
+      monQuery(q) { PLANNER_UI.monQuery = q; renderPlanner(); },
+      pickMonster(id) {
+        const b = editable();
+        if (!b) return;
+        if (id) b.mon = String(id); else delete b.mon;
+        PLANNER_UI.monQuery = "";
+        plannerChanged();
+      },
+      logOpen(open) { PLANNER_UI.logOpen = open; },
+      /** A line of hits from the game, with the build's stats right now (to work out the defense formula). */
+      addHit(form) {
+        const b = editable();
+        const mon = b && MONSTERS && MONSTERS.monsters.find(m => m.id === b.mon);
+        const dmg = TQPlanner.parseDamage(form.dmg.value);
+        if (!mon || !dmg.length) { alert("Type the damage numbers you saw, e.g. 812 795 830."); return; }
+        const job = jobOf(b.cls, b.job);
+        const st = TQPlanner.status(b, { stats: BUILDS.stats, base: TQPlanner.pickBase(STAT_BASE, b.cls, b.base).base, buffs: BUFFS || { skills: {} }, values: BUFF_VALUES });
+        const stats = {};
+        st.rows.forEach(r => { stats[r.stat] = (r.front || 0) + r.plus; });
+        const line = { mon: mon.id, mn: mon.n, ml: mon.l, skill: form.skill.value, lv: form.lv.value, dmg, note: form.note.value, at: Date.now(), stats, el: st.elements };
+        b.hits = TQPlanner.cleanHits([...(b.hits || []), line]);
+        PLANNER_UI.logOpen = true;
+        plannerChanged();
+      },
+      removeHit(i) {
+        const b = editable();
+        if (!b || !b.hits || !confirm("Delete this line of hits?")) return;
+        b.hits.splice(i, 1);
+        if (!b.hits.length) delete b.hits;
+        plannerChanged();
+      },
+      copyHits() { PLANNER_UI.hitsText = !PLANNER_UI.hitsText; PLANNER_UI.logOpen = true; renderPlanner(); }
     });
 
     // ============================================================================
