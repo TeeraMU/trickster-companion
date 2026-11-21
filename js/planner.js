@@ -449,6 +449,9 @@
   const sign = v => (v >= 0 ? "+" : "") + fmt(v);
   const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
   const EL_CLASS = k => "pl-el pl-el-" + k.toLowerCase();
+  // one icon per element (and the physical / gun / no-element resistances), used beside their names
+  const EL_ICON = { Fire: "🔥", Water: "💧", Wind: "🌪️", Earth: "🪨", Elec: "⚡", Light: "✨", Dark: "🌑", None: "⚪", Physical: "🗡️", Gun: "🔫" };
+  const RES_ORDER = ["Fire", "Water", "Wind", "Earth", "Elec", "Light", "Dark", "None", "Physical", "Gun"];
 
   function slotTile(s, build, ui) {
     const g = (build.gear || {})[s.key];
@@ -860,7 +863,7 @@
     const sk = atk.sk;
     const row = sk && sk.levels && sk.levels.rows.length ? (atk.lv === "M" ? sk.levels.rows[sk.levels.rows.length - 1] : sk.levels.rows.find(r => r[0] === atk.lv) || sk.levels.rows[sk.levels.rows.length - 1]) : null;
     const col = re => { if (!row) return ""; const i = sk.levels.cols.findIndex(c => re.test(c)); return i > 0 ? row[i] : ""; };
-    const myEl = Object.entries(st.elements).map(([k, v]) => `<span class="${EL_CLASS(k)}">${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`;
+    const myEl = Object.entries(st.elements).map(([k, v]) => `<span class="${EL_CLASS(k)}">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`;
     const hits = m => (dmg > 0 ? Math.ceil(m.hp / dmg) : "–");
     const cmp = (ctx.ui.compare || []).map(id => byId.get(id)).filter(Boolean);
 
@@ -881,19 +884,33 @@
         </div>
       </div>`;
 
+    // resistances as a grid of meters (0-100), one colour and icon per element, the highest stands out
+    const resList = RES_ORDER.filter(k => (mon && mon.res || {})[k] != null);
+    const maxRes = Math.max(0, ...resList.map(k => mon.res[k]));
     const monSide = mon ? `
       <div class="pl-bs-mon">
-        ${monImg(mon, "pl-mon-pic")}
-        <div class="pl-bs-mon-info">
-          <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">Boss</span>` : ""}</p>
-          <dl class="pl-bs-stats">
-            <dt>HP</dt><dd class="is-hp">${fmt(mon.hp)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
-            <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
-            <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
-          </dl>
-          <p class="pl-elems"><b>Element</b> ${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)}">${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`}</p>
-          <p class="pl-elems"><b>Resists</b> ${Object.entries(mon.res || {}).map(([k, v]) => `<span class="pl-el pl-el-res">${k} ${v}</span>`).join("") || `<span class="bd-note">none</span>`}</p>
+        <div class="pl-bs-mon-top">
+          ${monImg(mon, "pl-mon-pic")}
+          <div class="pl-bs-mon-info">
+            <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">👑 Boss</span>` : ""}</p>
+            <p class="pl-bs-own">${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)} pl-el-big">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="pl-el pl-el-none">⚪ No element</span>`}</p>
+            <dl class="pl-bs-stats">
+              <dt>HP</dt><dd class="is-hp">${fmt(mon.hp)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
+              <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
+              <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
+            </dl>
+          </div>
         </div>
+        ${resList.length ? `<div class="pl-res">
+          <p class="pl-res-title">🛡️ Resists</p>
+          <ul class="pl-res-grid">${resList.map(k => `
+            <li class="pl-res-item pl-res-${k.toLowerCase()} ${mon.res[k] === maxRes ? "is-max" : ""}" title="${esc(k)} resistance ${mon.res[k]}">
+              <span class="pl-res-icon" aria-hidden="true">${EL_ICON[k] || ""}</span>
+              <span class="pl-res-name">${esc(k)}</span>
+              <b class="pl-res-val">${mon.res[k]}</b>
+              <span class="pl-res-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, mon.res[k]))}%"></span></span>
+            </li>`).join("")}</ul>
+        </div>` : ""}
       </div>` : `<p class="bd-note pl-bs-empty">Find a monster above to see it here.</p>`;
 
     const atkSide = `
