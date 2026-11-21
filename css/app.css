@@ -5014,3 +5014,31 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   .pl-bs-pick, .pl-bs-body { grid-template-columns: 1fr; }
   .pl-bs-atk { border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: 8px; }
 }
+/* Battle Summary: the monster's element and resistances */
+.pl-bs-mon { flex-direction: column; }
+.pl-bs-mon-top { display: flex; gap: 10px; min-width: 0; }
+.pl-bs-own { margin: 2px 0 6px; }
+.pl-el-big { font-size: 0.8rem; padding: 2px 8px; }
+.pl-el-none { background: var(--bg-tertiary); color: var(--text-secondary); }
+.pl-res { margin-top: 4px; }
+.pl-res-title { margin: 0 0 4px; font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); }
+.pl-res-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 4px; }
+.pl-res-item {
+  --res: var(--accent-blue); --res-ink: var(--ink-blue);
+  display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; grid-template-rows: auto 4px; align-items: center; gap: 1px 4px;
+  padding: 4px 7px 5px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--res) 35%, var(--border));
+  background: color-mix(in srgb, var(--res) 8%, var(--bg-card)); font-size: 0.8rem;
+}
+.pl-res-icon { font-size: 0.95rem; line-height: 1; text-align: center; }
+.pl-res-name { color: var(--text-secondary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pl-res-val { color: var(--res-ink); font-family: var(--font-display); }
+.pl-res-bar { grid-column: 1 / -1; height: 4px; border-radius: 4px; background: color-mix(in srgb, var(--res) 15%, transparent); overflow: hidden; }
+.pl-res-bar > span { display: block; height: 100%; border-radius: 4px; background: var(--res); }
+.pl-res-item.is-max { border-color: var(--res); box-shadow: 0 0 0 1px color-mix(in srgb, var(--res) 40%, transparent); }
+.pl-res-fire { --res: var(--accent-red); --res-ink: var(--ink-red); }
+.pl-res-water { --res: var(--accent-blue); --res-ink: var(--ink-blue); }
+.pl-res-wind { --res: var(--accent-green); --res-ink: var(--ink-green); }
+.pl-res-earth { --res: var(--accent-orange); --res-ink: var(--ink-orange); }
+.pl-res-elec, .pl-res-light { --res: var(--accent-gold); --res-ink: var(--ink-gold); }
+.pl-res-dark { --res: var(--accent-purple); --res-ink: var(--ink-purple); }
+.pl-res-none, .pl-res-physical, .pl-res-gun { --res: var(--border-strong); --res-ink: var(--text-primary); }
