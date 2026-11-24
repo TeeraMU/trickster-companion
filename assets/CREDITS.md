@@ -13,6 +13,10 @@ non-commercial fan project and will be removed on request.
 | (hotlinked) item / NPC / reward icons in `data/images.json` | Game sprites | ggftw Trickster wiki via wikimirror.lifeto.co |
 | (hotlinked) job sprites in `data/classes.json` | In-game sprite of every job (1st, 2nd and 3rd jobs of the 8 classes), shown next to friends' names | ggftw Trickster wiki class pages via wikimirror.lifeto.co |
 | (hotlinked) region overview maps and map pictures in `data/maps.json` | Game maps | ggftw Trickster wiki via wikimirror.lifeto.co |
+| (hotlinked) boss pictures, seals and solved trial maps in `data/bosses.json` | Boss sprites, maze / puzzle answers | ggftw Trickster wiki via wikimirror.lifeto.co |
+| (hotlinked) Koiosu and True Kronos pictures, the Tartarus cage screenshots and minimaps | Boss sprites, in-game screenshots | Our Trickster Online wiki, oto.fandom.com (CC-BY-SA) |
+| (hotlinked) guardian pictures in `data/guardian.json` | Sephirens, Digrimm, Ifron, Krusef, Spinel | ggftw Trickster wiki via wikimirror.lifeto.co |
+| (hotlinked) monster pictures in the Planner (`scripts/wiki/monster-pics.json`) | Monster sprites; a variant shows the monster its name ends with | ggftw Trickster wiki via wikimirror.lifeto.co |
 
 To remove the background art: delete `bg/key-art.webp` and the `--bg-art-image` rule in `css/app.css`.
 The page falls back to the plain sky / night gradient.

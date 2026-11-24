@@ -1,0 +1,149 @@
+{
+  "about": "Tartarus bosses for data/bosses.json, written by hand from the Our Trickster Online wiki (oto.fandom.com, CC-BY-SA): Koiosu, True Kronos, Tartarus Quests. The ggFTW wiki has no pages for them. Monster ids are the client's (Koiosu = 'Nose Ios', True Kronos = 'Jean Kronos' in MonsterParamEx2).",
+  "getThere": [
+    { "h": 1, "t": "Getting to Tartarus (first time)" },
+    { "d": 0, "t": "Level 260+. Pay Homeless Ian at Megalopolis Square 5,000 Galders to go to New Content Development Office 1 (later he takes you to Office 2)." },
+    { "d": 0, "t": "Developer Project Manager L - Preparation of New Content Development: bring Content Design Report, Content Art Report and Development Process Report." },
+    { "d": 1, "t": "Developer J - Stolen Content Blueprint and Developer K - Lost Work: dig Content Sketch 1, 2 and 3 in New Content Development Office - Basement 1 and 2." },
+    { "d": 1, "t": "Developer J - Construction of the System, then Developer H - Constructed System: 10 Tail of Uparupa, 10 Fin of Uparupa, 10 Drop Test Dummy (Cave Uparupa)." },
+    { "d": 0, "t": "Developer Project Manager L - Don Giuvanni's Disappearance: talk to him again at New Content Development Office 2." },
+    { "d": 0, "t": "To reach Office 2: Rock Fragment in Basement 2 -> Abandoned Control Room. Beat Scylla (Control Room, Lv.480, alone) for a Suspicious ID Card, give it to Old Control Device (you keep needing the card for Control Room Door)." },
+    { "d": 0, "t": "At Office 2: Don Giuvanni - Strange Device, then talk to Strange Device (next to him) to go to Tartarus Entrance." }
+  ],
+  "bosses": [
+    {
+      "name": "Koiosu", "area": "Tartarus", "group": "Tartarus (Lv.260+)",
+      "img": "https://static.wikia.nocookie.net/oto/images/a/a2/Monster_Koiosu_Idle.gif",
+      "seal": "https://static.wikia.nocookie.net/oto/images/b/bf/Koiosu_Seal.png",
+      "type": "", "level": 650, "weak": "Gun", "resist": "Physical, Electricity, Soil",
+      "location": "Tartarus - Cage of Steel God Koiosu",
+      "wiki": { "element": "Dark 50% (melee)", "hp": "480,000x5", "ap": "12,325", "ma": "535", "dp": "12,750", "md": "12,750", "gd": "" },
+      "tolerance": {},
+      "skills": [{ "n": "M Aura Shatter", "lv": 9 }, { "n": "M Warp", "lv": 7 }, { "n": "M Berserker", "lv": 9 }, { "n": "M Cleaving Terra", "lv": 9 }, { "n": "M Cure", "lv": 10 }, { "n": "M Dark Barrier", "lv": 1 }, { "n": "Enhanced Resistance" }],
+      "summons": [{ "n": "Steel Hecate", "lv": 575 }],
+      "levels": [260, null], "restrict": "Level 260+", "spawn": "",
+      "walk": [
+        { "h": 1, "t": "Tartarus Entrance" },
+        { "d": 0, "t": "Have a Book of God: buy one from Monkey T at New Content Development Office 2 (20,000 Galders), or bring Kyu an Oil Can of God (Kyu - Falsified Book of God)." },
+        { "d": 0, "t": "Warden Oceanus - Tartarus Access Management, then talk to Door of Tartarus and pick 1. Koiosu Prison (B1, B2, Lv.260+). Don't cancel: the book is used up." },
+        { "h": 1, "t": "Steel God B1: left platform -> Cage 6 -> 16 -> 24 -> right platform" },
+        { "d": 0, "t": "Access Control Device A sends you into B1. Walk to Cage 6 and take its portal to Cage 16." },
+        { "d": 0, "t": "In Cage 16 talk to the Gap in the wall (near the portal to Cage 23): it takes you to Cage 24." },
+        { "d": 0, "t": "In Cage 24 talk to the Gap: it takes you to the right platform. Access Control Device B sends you to B2." },
+        { "h": 1, "t": "Steel God B2: left platform -> Cage 1 -> 11 -> 21 -> Secret Cage 1 -> right platform" },
+        { "d": 0, "t": "Access Control Device A sends you into B2. Walk to Cage 1, take the portal to Cage 11, then the portal to Cage 21." },
+        { "d": 0, "t": "In Cage 21 talk to the Gap in the wall: it takes you to Secret Cage 1." },
+        { "d": 0, "t": "In Secret Cage 1 talk to the Gap: it takes you to the right platform." },
+        { "h": 1, "t": "Koiosu's cage" },
+        { "d": 0, "t": "Access Control Device B sends you to Tartarus - Cage of Steel God Koiosu." },
+        { "d": 0, "t": "Warden Oceanus - Tartarus Hunting 1 asks for Koiosu in 20 minutes." }
+      ],
+      "notes": [
+        { "d": 0, "t": "Resists magic. M Dark Barrier sends back both physical and magic damage." }
+      ],
+      "drops": [
+        { "n": "Koiosu Legendary Box", "use": "Legendary Unique Box", "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png", "req":300,"pick":"one of these at random","contains":[{"n":"Koiosu Sword","img":"https://static.wikia.nocookie.net/oto/images/d/d7/Weapon_Koiosu_Sword_Icon.png","lv":320,"slots":4,"stats":"AP 1,672, DA 105, HV 105","set":"AP + 520, AC + 40, DA + 40, HP + 900, DP + 400, HV + 40"},{"n":"Koiosu Staff","img":"https://static.wikia.nocookie.net/oto/images/f/f0/Weapon_Koiosu_Staff_Icon.png","lv":320,"slots":4,"stats":"MA 105, LK 70","set":"MP + 1,250, MA + 40, MD + 320, LK + 40, HP + 900, DP + 400"},{"n":"Koiosu Gun","img":"https://static.wikia.nocookie.net/oto/images/4/49/Gun_Koiosu_Gun_Icon.png","lv":320,"slots":4,"stats":"AC 70, LK 70","set":"AC + 60, MD + 520, LK + 40, HP + 1,250, DP + 1,000, HV + 40"},{"n":"Koiosu Helmet","img":"https://static.wikia.nocookie.net/oto/images/e/e2/Hat_Koiosu_Helmet_Icon.png","lv":320,"slots":3,"stats":"AC 70, MD 874, LK 70, DP 874"},{"n":"Koiosu Shield","img":"https://static.wikia.nocookie.net/oto/images/c/c3/Shield_Koiosu_Shield_Icon.png","lv":320,"slots":4,"stats":"MD 1,207, HP 3,016, DP 1,207"},{"n":"Koiosu Ring","img":"https://static.wikia.nocookie.net/oto/images/c/c6/Ring_Koiosu_Ring_Icon.png","lv":320,"slots":4,"stats":"AP 668, AC 40, MP 2,345, MA 40, DA 40, LK 40, HP 2,345, HV 40"}] },
+        { "n": "Koiosu Soul 1 to 7", "use": "Soul upgrade", "img": "https://static.wikia.nocookie.net/oto/images/5/50/Item_Koiosu_Soul_1_Icon.png" },
+        { "n": "10,000 Galder Coupon", "use": "Coupon", "img": "https://static.wikia.nocookie.net/oto/images/e/e6/Item_10000_Galder_Coupon_Icon.png" },
+        { "n": "Compound Waste, Good Compound Waste", "use": "Item", "img": "https://static.wikia.nocookie.net/oto/images/f/f5/Item_Compound_Waste_Icon.png" }
+      ],
+      "puzzles": [
+        { "at": "Steel God B1", "title": "B1: the way to Cage 6, and the Gaps (circled)",
+          "text": ["Pictures from the Koiosu page on oto.fandom.com. The yellow circle is the Gap in the wall to talk to."],
+          "images": [
+            { "src": "https://static.wikia.nocookie.net/oto/images/a/a0/Koiosu_Trials_2.png", "cap": "B1 left platform -> Cage 6",
+              "note": "From Access Control Device A, follow the yellow line to the Cage 6 door." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/d/da/Koiosu_Trials_3.png", "cap": "Cage 16: Gap -> Cage 24",
+              "note": "The Gap is on the wall left of the portal to Cage 23." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/e/e9/Koiosu_Trials_4.png", "cap": "Cage 24: Gap -> right platform",
+              "note": "The Gap is on the right-hand wall." }
+          ] },
+        { "at": "Steel God B2", "title": "B2: the way to Cage 1, and the Gaps (circled)",
+          "text": ["Pictures from the Koiosu page on oto.fandom.com. The yellow circle is the Gap in the wall to talk to."],
+          "images": [
+            { "src": "https://static.wikia.nocookie.net/oto/images/b/b2/Koiosu_Trials_5.png", "cap": "B2 left platform -> Cage 1",
+              "note": "From Access Control Device A, follow the yellow line to the Cage 1 door." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/a/a2/Koiosu_Trials_6.png", "cap": "Cage 21: Gap -> Secret Cage 1",
+              "note": "The Gap is on the back wall, top left." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/e/e9/Koiosu_Trials_4.png", "cap": "Secret Cage 1: Gap -> right platform",
+              "note": "The wiki shows the same picture as Cage 24: the Gap is on the right-hand wall." }
+          ] }
+      ],
+      "quests": [], "monster": "3244",
+      "source": "https://oto.fandom.com/wiki/Koiosu"
+    },
+    {
+      "name": "True Kronos", "area": "Tartarus", "group": "Tartarus (Lv.260+)",
+      "img": "https://static.wikia.nocookie.net/oto/images/c/cc/Monster_Kronos_Idle.gif",
+      "seal": "https://static.wikia.nocookie.net/oto/images/4/4c/Kronos_Seal.png",
+      "type": "", "level": 999, "weak": "Gun", "resist": "Physical, Electricity, Soil, Magic",
+      "location": "Tartarus - Ancient God B4 Cage 10",
+      "wiki": { "element": "Dark 50% (melee)", "hp": "1,152,000x5", "ap": "32,375", "ma": "1,610", "dp": "30,600", "md": "30,600", "gd": "" },
+      "tolerance": {},
+      "skills": [{ "n": "M Berserker", "lv": 10 }, { "n": "Flash Cut", "lv": 10 }, { "n": "M Cleaving Terra", "lv": 7 }, { "n": "Staff of Thunder", "lv": 10 }, { "n": "M Cure", "lv": 9 }, { "n": "M Guard", "lv": 10 }, { "n": "Enhanced Resistance" }],
+      "summons": [{ "n": "Ancient Charybdis", "lv": 600 }, { "n": "Ancient Gorgon", "lv": 636 }, { "n": "Ancient Scylla", "lv": 576 }, { "n": "Ancient Tentacle", "lv": 560 }],
+      "levels": [320, null], "restrict": "Level 320+, Warden Oceanus - 9. Barrier Registration done", "spawn": "",
+      "walk": [
+        { "h": 1, "t": "Tartarus Entrance" },
+        { "d": 0, "t": "Book of God (Monkey T at Office 2, 20,000 Galders, or Kyu - Falsified Book of God). Warden Oceanus - Tartarus Access Management, then Door of Tartarus: pick 2. True Kronos Prison (B3, B4, Lv.320+). You land in Ancient God B3 Cage 1." },
+        { "d": 0, "t": "King Poppuri is in B3 Cage 1; report his tests to him in B4. Certification Registry, Warden Oceanus and Poppuri 1 to 10 are in B4. Each King Poppuri test also gives 1–3 of a Key 8 material." },
+        { "h": 1, "t": "Part 1: Key 1 -> 1. Barrier" },
+        { "d": 0, "t": "King Poppuri - 1. Test: kill 1 True Ancient Fire Hand in 20 min (B3 Cage 4, 6, 9, 11, 14, 16) -> Key 1." },
+        { "d": 0, "t": "Certification Registry - 1. Barrier Registration. Poppuri 1 - 1. Barrier Test (Key 1): kill Ancient Dragon in 20 min (B4 Cage 1) -> 1. Barrier Certificate." },
+        { "h": 1, "t": "Part 2: Key 3 -> 3. Barrier" },
+        { "d": 0, "t": "King Poppuri - 3. Test: 3 Chain of Pirate (Ancient Pirate), 3 Exhaust Stack of Bio Junk (Ancient Bio Junk), 3 Fetters of Guard Ian (Ancient Guard Ian) -> Key 3." },
+        { "d": 0, "t": "Certification Registry - 3. Barrier Registration. Poppuri 3 - 3. Barrier Test (Key 3): kill Ancient Sisyphus in 20 min (B4 Cage 3)." },
+        { "h": 1, "t": "Part 3: Key 4 -> 4. Barrier" },
+        { "d": 0, "t": "King Poppuri - 4. Test: find Robin Van Peruoza through the Gap in the wall of B3 Cage 6–19 (Secret Space 6–19). Robin's test: 10 Ancient Bijou Golem in 10 min -> Scroll of Robin -> Key 4. No other monster quest in your log." },
+        { "d": 0, "t": "Certification Registry - 4. Barrier Registration. Poppuri 4 - 4. Barrier Test (Key 4): kill Ancient Ixion in 15 min (B4 Cage 4)." },
+        { "h": 1, "t": "Part 4: Key 6 -> 6. Barrier" },
+        { "d": 0, "t": "King Poppuri - 6. Test: Proof of King Poppuri from Poseidon's Surprise Spot. Combine Map of King Poppuri part 1 and 2 at OK-19 or Certification Registry and follow the map -> Key 6." },
+        { "d": 0, "t": "Certification Registry - 6. Barrier Registration. Poppuri 6 - 6. Barrier Test (Key 6): kill Ancient Hecate in 15 min (B4 Cage 6)." },
+        { "h": 1, "t": "Part 5: Key 8 -> 8. Barrier" },
+        { "d": 0, "t": "Combine Key 8 material 1–4 (from the King Poppuri tests) at OK-19 or Certification Registry -> Key 8." },
+        { "d": 0, "t": "Warden Oceanus - 8. Barrier Registration. Poppuri 8 - 8. Barrier Test (Key 8): kill Ancient Tantalus in 10 min (B4 Cage 8) -> Key 9." },
+        { "h": 1, "t": "Part 6: Key 9 -> 9. Barrier" },
+        { "d": 0, "t": "Warden Oceanus - 9. Barrier Registration. Poppuri 9 - 9. Barrier Test (Key 9): kill Chronos (Lv.950) in 10 min (B4 Cage 9) -> Key 10." },
+        { "h": 1, "t": "Part 7: Key 10 -> True Kronos" },
+        { "d": 0, "t": "Warden Oceanus - 10. Barrier Registration. Poppuri 10 - 10. Barrier Test (Key 10): kill True Kronos in 10 min (B4 Cage 10)." },
+        { "d": 0, "t": "Next time you only need Parts 5–7: Key 8 -> Key 9 -> Key 10. The King Poppuri tests can be taken all at once." }
+      ],
+      "notes": [
+        { "d": 0, "t": "Players report that he can vanish when several people hunt him at once, and Key 10 is lost." }
+      ],
+      "drops": [
+        { "n": "True Kronos Legendary Box", "use": "Legendary Unique Box", "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png", "req":360,"pick":"one of these at random","contains":[{"n":"Kronos Sword","img":"https://static.wikia.nocookie.net/oto/images/d/d7/Weapon_Koiosu_Sword_Icon.png","lv":380,"slots":4,"stats":"AP 2,183, DA 136, HV 136","set":"AP + 620, AC + 48, DA + 48, HP + 1,150, DP + 500, HV + 48"},{"n":"Kronos Staff","img":"https://static.wikia.nocookie.net/oto/images/f/f0/Weapon_Koiosu_Staff_Icon.png","lv":380,"slots":4,"stats":"MA 136, LK 91","set":"MP + 1,500, MA + 48, MD + 380, LK + 48, HP + 1,150, DP + 500"},{"n":"Kronos Gun","img":"https://static.wikia.nocookie.net/oto/images/4/49/Gun_Koiosu_Gun_Icon.png","lv":380,"slots":4,"stats":"AC 91, LK 91","set":"AC + 68, MD + 640, LK + 48, HP + 1,500, DP + 1,250, HV + 48"},{"n":"Kronos Helmet","img":"https://static.wikia.nocookie.net/oto/images/e/e2/Hat_Koiosu_Helmet_Icon.png","lv":380,"slots":3,"stats":"AC 91, MD 1,140, LK 91, DP 1,140"},{"n":"Kronos Shield","img":"https://static.wikia.nocookie.net/oto/images/c/c3/Shield_Koiosu_Shield_Icon.png","lv":380,"slots":4,"stats":"MD 1,576, HP 3,939, DP 1,576"},{"n":"Kronos Ring","img":"https://static.wikia.nocookie.net/oto/images/c/c6/Ring_Koiosu_Ring_Icon.png","lv":380,"slots":4,"stats":"AP 872, AC 51, MP 3,062, MA 51, DA 51, LK 51, HP 3,062, HV 51"}] },
+        { "n": "Kronos Soul 1 to 7", "use": "Soul upgrade" },
+        { "n": "10,000 Galder Coupon", "use": "Coupon", "img": "https://static.wikia.nocookie.net/oto/images/e/e6/Item_10000_Galder_Coupon_Icon.png" },
+        { "n": "Key 10", "use": "Key" }
+      ],
+      "puzzles": [
+        { "at": "Part 1", "title": "Ancient God B4: where everyone stands",
+          "text": ["Spots from the True Kronos page on oto.fandom.com (it draws them on the Tartarus minimap). The numbers are the Poppuri for each barrier test."],
+          "images": [
+            { "src": "https://static.wikia.nocookie.net/oto/images/e/e8/Minimap_Tartarus_B1.png", "w": 200, "h": 142, "cap": "Ancient God B4",
+              "note": "R = Certification Registry (registrations 1, 3, 4, 6). W = Warden Oceanus (8, 9, 10). 1–10 = Poppuri 1–10: each one's cage has the barrier boss.",
+              "marks": [
+                { "x": 103, "y": 22, "n": "R", "t": "Certification Registry" },
+                { "x": 103, "y": 82, "n": "W", "t": "Warden Oceanus" },
+                { "x": 40, "y": 50, "n": "1", "t": "Poppuri 1: Ancient Dragon" },
+                { "x": 83, "y": 29, "n": "3", "t": "Poppuri 3: Ancient Sisyphus" },
+                { "x": 125, "y": 30, "n": "4", "t": "Poppuri 4: Ancient Ixion" },
+                { "x": 167, "y": 50, "n": "6", "t": "Poppuri 6: Ancient Hecate" },
+                { "x": 90, "y": 83, "n": "8", "t": "Poppuri 8: Ancient Tantalus" },
+                { "x": 118, "y": 83, "n": "9", "t": "Poppuri 9: Chronos" },
+                { "x": 132, "y": 90, "n": "10", "t": "Poppuri 10: True Kronos" }
+              ] }
+          ] },
+        { "at": "Part 3", "title": "B3 Secret Space: where Robin Van Peruoza is",
+          "text": ["Go through the Gap in the wall of a B3 cage (6 to 19) into its Secret Space."],
+          "images": [
+            { "src": "https://static.wikia.nocookie.net/oto/images/3/37/Minimap_Secret_Room.png", "w": 160, "h": 160, "cap": "Secret Space 6–19",
+              "marks": [{ "x": 109, "y": 30, "n": "Robin", "t": "Robin Van Peruoza" }] }
+          ] }
+      ],
+      "quests": [], "monster": "3310",
+      "source": "https://oto.fandom.com/wiki/True_Kronos"
+    }
+  ]
+}

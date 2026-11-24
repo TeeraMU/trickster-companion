@@ -99,15 +99,58 @@ for (const { q, file } of quests) {
 }
 
 // --- cross-quest checks --------------------------------------------------------------------
+// quests by title ("NPC - Title" and the title alone), for the quests a prereqText names
+const normTitle = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const byTitle = new Map();
+for (const { q } of quests) {
+  byTitle.set(normTitle(q.title), q);
+  const t = normTitle(q.title.split(" - ").slice(1).join(" - "));
+  if (t && !byTitle.has(t)) byTitle.set(t, q);
+}
+// "Level 230+, have completed A - B and C - D" -> ["A - B", "C - D"]
+const namedQuests = text => String(text || "").split(/,|;| and /)
+  .map(s => s.replace(/^.*?\b(have completed|finished|have)\s+/i, "").replace(/\s+in quest log.*$|\s+\d+ times$/i, "").trim())
+  .filter(s => / - [A-Z]/.test(s));
+const notInApp = new Set();
+// the titles (without a "(variant)" ending) of every quest q needs, directly or through the chain
+function chainTitles(q, out = new Set(), seen = new Set()) {
+  for (const p of q.prereqs || []) {
+    if (seen.has(p.quest) || !byId.has(p.quest)) continue;
+    seen.add(p.quest);
+    const o = byId.get(p.quest).q;
+    out.add(normTitle(o.title.replace(/\s*\([^)]*\)\s*$/, "")));
+    chainTitles(o, out, seen);
+  }
+  return out;
+}
+// does q need `id`, directly or through its prerequisites' prerequisites?
+function reaches(q, id, seen = new Set()) {
+  for (const p of q.prereqs || []) {
+    if (p.quest === id) return true;
+    if (seen.has(p.quest) || !byId.has(p.quest)) continue;
+    seen.add(p.quest);
+    if (reaches(byId.get(p.quest).q, id, seen)) return true;
+  }
+  return false;
+}
 for (const { q, file } of quests) {
   const at = `${file} ${q.id}`;
   for (const p of q.prereqs || []) {
     if (!byId.has(p.quest)) err(at, `prerequisite "${p.quest}" does not exist`);
     if (p.quest === q.id) err(at, "quest requires itself");
   }
-  // prereqText names more quests ("NPC - Title") than prereqs links: a link was probably missed.
-  const named = (q.prereqText.match(/[A-Z][\w.' ]+ - [A-Z]/g) || []).length;
-  if (named > (q.prereqs || []).length) warn(at, `prereqText names ${named} quest(s) but only ${(q.prereqs || []).length} linked: "${q.prereqText}"`);
+  // prereqText names a quest ("NPC - Title") the app has but prereqs doesn't link: a link was missed.
+  // One the app doesn't have (no wiki page) is only counted.
+  for (const name of namedQuests(q.prereqText)) {
+    const other = byTitle.get(normTitle(name)) || byTitle.get(normTitle(name.split(" - ").slice(1).join(" - ")));
+    if (!other) { notInApp.add(name); continue; }
+    if (other.id === q.id || reaches(q, other.id)) continue; // linked, or through the chain (job3-05 -> job3-04 -> … -> job3-03)
+    // the same quest in another variant (Calm Down Suu (Maze Jungle B) when A is linked)
+    const base = t => normTitle(t.replace(/\s*\([^)]*\)\s*$/, ""));
+    // or a copy of it in the chain (ep6-31 "King Poppuri - Holy Preparations?" is ae-05 in the episode)
+    if (chainTitles(q).has(base(other.title))) continue;
+    warn(at, `prereqText names ${other.id} (${other.title}) but prereqs doesn't link it`);
+  }
   // A quest needing another one *finished* should come after it in play order.
   for (const p of q.prereqs || []) {
     const other = byId.get(p.quest);
@@ -190,5 +233,6 @@ for (const w of warnings) console.warn("warning  " + w);
 for (const e of errors) console.error("ERROR    " + e);
 console.log(`\n${quests.length} quests in ${index.files.length} files, ${npcIds.size} NPCs, ${Object.keys(images).length} images, ` +
   `${mapIds.size} maps (${Object.keys(maps.names).length} map names), ${Object.keys(pins).length} NPC pins: ` +
-  `${errors.length} error(s), ${warnings.length} warning(s)`);
+  `${errors.length} error(s), ${warnings.length} warning(s)` +
+  (notInApp.size ? `\n(${notInApp.size} prerequisite quests named in the text have no wiki page, so they aren't in the app)` : ""));
 process.exit(errors.length ? 1 : 0);

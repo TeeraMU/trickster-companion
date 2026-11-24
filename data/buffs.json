@@ -1,0 +1,51 @@
+{
+  "about": "Skills that change the player's own stats, for the Build planner. table = the skill's ESAction table in the PlayTrickster client; its values per level are in data/buff-values.json (node scripts/client/build-buffs.js). Each effect reads one field. of: base = the front number of the status window, total = front + gear. op: plus = adds stat x value (0.18 = +18%), minus = takes stat x value off, add = adds the value, sub = takes the value off (DX: lower is faster). group: only one of these at a time. needs: works only while that skill is on (Beast's Instinct needs Evolution); replaces: its values are used instead of that skill's while both are on. form: the state it puts you in (skills that say \"Can only be used while in Evolution state\" need it); onlyFormSkills: in that state only those skills can be used. party: also cast on party members, so every job can tick it.",
+  "skills": {
+    "Bull's Eye": { "table": "ESAction_Accuracy_Up", "effects": [{ "stat": "AC", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Eagle Eye": { "table": "ESAction_HawkEye", "party": true, "effects": [{ "stat": "AC", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Pumping Heart": { "table": "ESAction_HeartBeat", "party": true, "effects": [{ "stat": "AP", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Adrenaline": { "table": "ESAction_Adrenaline", "effects": [{ "stat": "AP", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Hyper Beat": { "table": "ESAction_AgilityUp", "effects": [{ "stat": "DX", "op": "add", "field": "DX" }] },
+    "Aura of Haste": { "table": "ESAction_MultiAgilityUp", "party": true, "effects": [{ "stat": "DX", "op": "add", "field": "DX" }] },
+    "Bottle of Mana": { "table": "ESAction_Mana_Bottle", "effects": [{ "stat": "MP", "op": "add", "field": "MP" }] },
+    "Mana Shield": { "table": "ESAction_MagicWall", "party": true, "effects": [{ "stat": "MD", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Mist of Mana": { "table": "ESAction_MagicWind", "party": true, "effects": [{ "stat": "MA", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Sixth Sense": { "table": "ESAction_Sixth_Sense", "effects": [{ "stat": "DA", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Lucky Seven": { "table": "ESAction_LuckUp", "effects": [{ "stat": "LK", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Aura of Luck": { "table": "ESAction_GoodLuck", "party": true, "effects": [{ "stat": "LK", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Dodge Master": { "table": "ESAction_Soft_Waist", "effects": [{ "stat": "HV", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Shield All": { "table": "ESAction_BigShield", "party": true, "effects": [{ "stat": "DP", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Sturdy Shield": { "table": "ESAction_StaticShield", "effects": [{ "stat": "DP", "of": "total", "op": "plus", "field": "Ratio" }] },
+    "Physical Training": { "table": "ESAction_Fitness", "effects": [{ "stat": "HP", "op": "add", "field": "HP" }] },
+    "Evolution": {
+      "table": "ESAction_WildMutation", "group": "transform", "form": "Evolution", "onlyFormSkills": true,
+      "effects": [
+        { "stat": "AP", "of": "base", "op": "plus", "field": "ApPRatio" },
+        { "stat": "LK", "of": "base", "op": "minus", "field": "LkMRatio" },
+        { "stat": "HV", "of": "base", "op": "minus", "field": "HvMRatio" },
+        { "stat": "DP", "of": "base", "op": "minus", "field": "DpMRatio" },
+        { "stat": "DX", "op": "sub", "field": "DxPValue" }
+      ]
+    },
+    "Beast's Instinct": {
+      "table": "ESAction_Beast", "needs": "Evolution", "replaces": "Evolution", "form": "Evolution", "onlyFormSkills": true,
+      "effects": [
+        { "stat": "AP", "of": "base", "op": "plus", "field": "AP_Ratio" },
+        { "stat": "LK", "of": "base", "op": "minus", "field": "LK_Ratio" },
+        { "stat": "HV", "of": "base", "op": "minus", "field": "HV_Ratio" },
+        { "stat": "DP", "of": "base", "op": "minus", "field": "DP_Ratio" },
+        { "stat": "DX", "op": "sub", "field": "DX_Ratio" }
+      ]
+    },
+    "Metamorphosis": {
+      "table": "ESAction_Change", "group": "transform", "form": "Metamorphosis",
+      "effects": [
+        { "stat": "HV", "of": "base", "op": "plus", "field": "HvPRatio" },
+        { "stat": "DP", "of": "base", "op": "plus", "field": "DpPRatio" },
+        { "stat": "AP", "of": "base", "op": "minus", "field": "ApMRatio" },
+        { "stat": "LK", "of": "base", "op": "minus", "field": "LkMRatio" },
+        { "stat": "DX", "op": "sub", "field": "DxMValue" }
+      ]
+    }
+  }
+}

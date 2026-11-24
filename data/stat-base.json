@@ -1,0 +1,26 @@
+{
+  "about": "Starting stats per class for the Build planner: the front number of the status window is base + floor(per level x (stat level - 1)), per level from data/builds.json stats.perAttrLevel. A stat's level is floor((4 + growth x (level - 1)) / 4) plus the bonus points put in it. Worked out from in-game status windows; a class without numbers here uses the \"estimate\" class's until someone checks it, and the player can type their own window to correct it. The 4 classes checked (2026-11-25) start the same in 10 of the 12 stats: only DX (8-11) and WT (1120-1200) differ, so the estimate is close.",
+  "estimate": "Cat",
+  "classes": {
+    "Cat": {
+      "AP": 18, "AC": 50, "DX": 10, "MP": 80, "MA": 50, "MD": -10,
+      "WT": 1200, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
+      "checked": "2026-11-21 in game: Primadonna growth 4-1-1-4 at Lv.146, 152 and 160 (every stat matches)"
+    },
+    "Bunny": {
+      "AP": 18, "AC": 50, "DX": 8, "MP": 80, "MA": 50, "MD": -10,
+      "WT": 1200, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
+      "checked": "2026-11-25 in game: Duelist growth 4-1-1-4 at Lv.400, 399 bonus points in AP (every stat matches). Same as Cat but DX 8"
+    },
+    "Sheep": {
+      "AP": 18, "AC": 50, "DX": 11, "MP": 80, "MA": 50, "MD": -10,
+      "WT": 1120, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
+      "checked": "2026-11-25 in game: Soul Master growth 1-4-4-1 at Lv.372, 371 bonus points in MA (every stat matches). Same as Cat but DX 11, WT 1120"
+    },
+    "Dragon": {
+      "AP": 18, "AC": 50, "DX": 10, "MP": 80, "MA": 50, "MD": -10,
+      "WT": 1200, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
+      "checked": "2026-11-25 in game: Priest growth 1-4-4-1 at Lv.306, 305 bonus points in MA (every stat matches). Same as Cat"
+    }
+  }
+}

@@ -62,4 +62,14 @@ t("bagView: what you need first, then the rest most first, cut at the limit; a f
   assert.strictEqual(F.bagView(undefined, undefined).total, 0); // Bag not shared
 });
 
+t("sharedBuilds: only builds marked shared, at most 5, cleaned, without the flag", () => {
+  const P = require("../js/planner.js");
+  const list = Array.from({ length: 8 }, (_, i) => ({ id: "b" + i, name: "B" + i, shared: i !== 1, gear: { hat: { n: "<x>" } }, junk: 1 }));
+  const out = F.sharedBuilds(list, P.cleanBuild);
+  assert.strictEqual(out.length, F.MAX_SHARED_BUILDS);
+  assert.deepStrictEqual(out.map(b => b.name), ["B0", "B2", "B3", "B4", "B5"]);
+  assert.ok(out.every(b => !("shared" in b) && !("junk" in b)));
+  assert.deepStrictEqual(F.sharedBuilds(undefined, P.cleanBuild), []);
+});
+
 console.log(`${n} passed`);

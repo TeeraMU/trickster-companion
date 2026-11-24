@@ -4,6 +4,8 @@
   "use strict";
 
   const SCHEMA = 1;
+  // saved builds are cleaned and merged by js/planner.js
+  const planner = () => (typeof module !== "undefined" && module.exports ? require("./planner.js") : root.TQPlanner);
 
   // The progress worth keeping on every device. Screen preferences (filters, open page, theme) stay
   // per device.
@@ -18,7 +20,8 @@
       selectedClass: state.selectedClass || "All",
       selectedJobPath: state.selectedJobPath || "",
       focus: state.focus || null, // scope pinned for friends (Friends page)
-      hideBag: !!state.hideBag // "Share my Bag with friends" switched off
+      hideBag: !!state.hideBag, // "Share my Bag with friends" switched off
+      builds: planner().cleanBuilds(state.planner && state.planner.builds) // Build planner's saved builds
     };
   }
 
@@ -55,25 +58,27 @@
       selectedClass: a.selectedClass && a.selectedClass !== "All" ? a.selectedClass : b.selectedClass || "All",
       selectedJobPath: a.selectedJobPath || b.selectedJobPath || "",
       focus: a.focus || b.focus || null,
-      hideBag: !!(a.hideBag || b.hideBag) // private on either copy stays private
+      hideBag: !!(a.hideBag || b.hideBag), // private on either copy stays private
+      builds: planner().mergeBuilds(a.builds, b.builds)
     };
   }
 
-  // Short summary for the "which copy?" question: { quests, steps, items, pins }
+  // Short summary for the "which copy?" question: { quests, steps, items, pins, builds }
   function summary(p) {
     p = p || {};
     const n = o => Object.keys(o || {}).length;
-    return { quests: n(p.completedQuests), steps: n(p.completedSteps), items: n(p.inventory), pins: n(p.pins) };
+    return { quests: n(p.completedQuests), steps: n(p.completedSteps), items: n(p.inventory), pins: n(p.pins), builds: (p.builds || []).length };
   }
 
   function isEmpty(p) {
     const s = summary(p);
-    return !s.quests && !s.steps && !s.items && !s.pins;
+    return !s.quests && !s.steps && !s.items && !s.pins && !s.builds;
   }
 
   // Same progress? (key order doesn't matter)
   function same(a, b) {
-    const norm = p => JSON.stringify(sortKeys(Object.assign({}, p, { schema: SCHEMA })));
+    // a copy saved before builds were synced has none
+    const norm = p => JSON.stringify(sortKeys(Object.assign({ builds: [] }, p, { schema: SCHEMA })));
     return norm(a) === norm(b);
   }
 

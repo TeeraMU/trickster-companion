@@ -123,6 +123,41 @@ t("in-game fixes: Fatal Wound masters with 3 Officer Okto Card; every fix names 
   }
 });
 
+t("hybrids from the client: Duelist learns Lightning Strike at TM 260, each hybrid gets its TM 260 skill, Faint at TM 101", () => {
+  const fixes = require(path.join(__dirname, "..", "data", "skill-fixes.json"));
+  const copy = JSON.parse(JSON.stringify(builds));
+  B.applyFixes(copy, fixes);
+  const ls = copy.skills.Duelist.find(s => s.name === "Lightning Strike");
+  assert.strictEqual(ls.tm, 260);
+  assert.strictEqual(ls.fixSrc, "client");
+  assert.strictEqual(copy.skills.Warrior.find(s => s.name === "Lightning Strike").tm, 210); // the Warrior's own stays
+  assert.strictEqual(copy.skills.Duelist.find(s => s.name === "Faint").tm, 101);
+  assert.strictEqual(copy.skills.Warrior.find(s => s.name === "Faint").tm, 41);
+  assert.deepStrictEqual(copy.skills.Duelist.map(s => s.tm), [...copy.skills.Duelist.map(s => s.tm)].sort((a, b) => a - b));
+  const added = { Duelist: "Lightning Strike", Mercenary: "Clinch Release", Witch: "Revival", Wizard: "Elemental Boost",
+    "Hunter Lord": "Speedloader", "Cyber Hunter": "Rain of Knives", Diva: "Mass Destruction", Duke: "Aura Shatter" };
+  for (const [job, name] of Object.entries(added)) assert.ok(copy.skills[job].some(s => s.name === name && s.tm === 260), job + " " + name);
+  // the Duelist's skills in the Planner: the line's own, then its Warrior skills with Lightning Strike
+  assert.ok(B.skillSets(copy, "Bunny", "Duelist").at(-1).skills.some(s => s.name === "Lightning Strike"));
+  // running applyFixes twice doesn't add it twice
+  B.applyFixes(copy, fixes);
+  assert.strictEqual(copy.skills.Duelist.filter(s => s.name === "Lightning Strike").length, 1);
+});
+
+t("client fixes: 20 skills master with the client's card, marked as from the client", () => {
+  const fixes = require(path.join(__dirname, "..", "data", "skill-fixes.json"));
+  const copy = JSON.parse(JSON.stringify(builds));
+  B.applyFixes(copy, fixes);
+  const all = Object.values(copy.skills).flat();
+  const one = name => all.find(s => s.name === name);
+  assert.strictEqual(Object.values(fixes.skills).filter(f => f.src === "client").length, 20);
+  assert.deepStrictEqual(one("Sense Breaker").items, [{ name: "Gold G Card", qty: 2 }]);
+  assert.deepStrictEqual(one("Sticky Icky").items, [{ name: "Officer Surapat Card", qty: 3 }]);
+  assert.deepStrictEqual(one("Gnome's Domain").items, [{ name: "Maid Lydia Card", qty: 3 }]);
+  assert.strictEqual(one("Light Wave").fixSrc, "client");
+  assert.strictEqual(one("Fatal Wound").fixSrc, undefined); // seen in game
+});
+
 t("redirect links count: Beast Claw masters with Officer Okto Card (wiki: Officer Akto Card)", () => {
   const bc = builds.skills.Entertainer.find(s => s.name === "Beast Claw");
   assert.deepStrictEqual(bc.items, [{ name: "Officer Okto Card", qty: 3 }]);

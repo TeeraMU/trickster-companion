@@ -72,7 +72,17 @@
     };
   }
 
-  const helpers = { makeCode, normalizeCode, cleanName, canGive, timeAgo, bagView, CODE_RE };
+  /**
+   * The builds a player lets friends see (🛠️ Planner, "Friends can see it"): at most 5, each cleaned
+   * by `clean` (TQPlanner.cleanBuild), without the local "shared" flag.
+   */
+  const MAX_SHARED_BUILDS = 5;
+  function sharedBuilds(builds, clean) {
+    return (Array.isArray(builds) ? builds : []).filter(b => b && b.shared).slice(0, MAX_SHARED_BUILDS)
+      .map(b => { const c = clean ? clean(b) : null; if (c) delete c.shared; return c; }).filter(Boolean);
+  }
+
+  const helpers = { makeCode, normalizeCode, cleanName, canGive, timeAgo, bagView, sharedBuilds, MAX_SHARED_BUILDS, CODE_RE };
   if (typeof module !== "undefined" && module.exports) { module.exports = helpers; return; }
 
   // ---------------------------------------------------------------------------------------------
@@ -166,6 +176,7 @@
       needs: (s.needs || []).slice(0, 12), spares: (s.spares || []).slice(0, 12),
       focus: s.focus ? { label: String(s.focus.label).slice(0, 80), done: s.focus.done || 0, total: s.focus.total || 0 } : null,
       bag: bagCounts(s.bag),
+      builds: sharedBuilds(s.builds, ctx.cleanBuild),
       updatedAt: TQCloud.serverTime()
     };
   }
@@ -368,7 +379,22 @@
           ${(d.spares || []).length ? `<span class="friend-tag tag-spare">💰 Spare: ${items(d.spares.slice(0, 6))}</span>` : ""}
         </div>
         ${bagBox(code, d, mine)}
+        ${buildsLine(code, d)}
       </div>`;
+  }
+
+  // 🛠️ the builds the friend shares: tap one to open it (read only) on the Planner page
+  function buildsLine(code, d) {
+    const list = Array.isArray(d.builds) ? d.builds : [];
+    if (!list.length) return "";
+    return `<div class="friend-builds"><span class="friend-builds-label">🛠️ Builds</span>${list.map((b, i) =>
+      `<button type="button" class="friend-build" onclick="TQFriends.openBuild('${code}', ${i})" title="Open ${esc(b.name)} (read only)">
+        <strong>${esc(b.name)}</strong> <span class="friends-muted">${esc(b.job || b.cls)} · Lv.${Number(b.level) || 1}</span></button>`).join("")}</div>`;
+  }
+  function openBuild(code, i) {
+    const f = friendData.get(code);
+    const b = f && f.data && Array.isArray(f.data.builds) ? f.data.builds[i] : null;
+    if (b && ctx.openBuild) ctx.openBuild(b, f.data.name);
   }
 
   // 🎒 the friend's whole Bag, folded away: what you need first, a filter, then the rest
@@ -416,5 +442,5 @@
   function bagFilter(code, text) { bagOf(code).query = text; redrawBag(code); }
   function bagAll(code, on) { bagOf(code).all = on; redrawBag(code); }
 
-  root.TQFriends = Object.assign({ init, render, setName, newCode, addFriend, removeFriend, copyCode, changed, holdings, bagToggle, bagFilter, bagAll, signedIn: () => !!user }, helpers);
+  root.TQFriends = Object.assign({ init, render, setName, newCode, addFriend, removeFriend, copyCode, changed, holdings, bagToggle, bagFilter, bagAll, openBuild, signedIn: () => !!user }, helpers);
 })(this);

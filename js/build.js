@@ -166,8 +166,28 @@
         if (!f) continue;
         for (const k of FIX_FIELDS) if (k in f) sk[k] = JSON.parse(JSON.stringify(f[k]));
         sk.checked = f.checked || "in game";
+        if (f.src) sk.fixSrc = f.src; // "client": from the client tables, not yet seen in game
         n++;
       }
+    }
+    // hybrid 3rd jobs: the other line's skills the wiki's job page leaves out, and the client's TM
+    for (const [job, h] of Object.entries((fixes && fixes.hybrids) || {})) {
+      const set = builds.skills[job];
+      if (!set || !h || typeof h !== "object") continue;
+      for (const [name, tm] of Object.entries(h.tm || {})) {
+        const sk = set.find(s => s.name === name);
+        if (sk && sk.tm !== tm) { sk.tm = tm; sk.fixSrc = "client"; n++; }
+      }
+      for (const [name, tm] of Object.entries(h.add || {})) {
+        if (set.some(s => s.name === name)) continue;
+        const from = (builds.skills[h.from] || []).find(s => s.name === name);
+        if (!from) continue;
+        const sk = Object.assign(JSON.parse(JSON.stringify(from)), { tm, fixSrc: "client" });
+        sk.checked = sk.checked || `PlayTrickster client tables: ${job} can learn it at TM ${tm} (the wiki's ${job} page leaves it out). Not yet seen in game`;
+        set.push(sk);
+        n++;
+      }
+      set.sort((a, b) => (a.tm || 0) - (b.tm || 0));
     }
     return n;
   }
@@ -180,7 +200,9 @@
   // Renderer (browser)
   // ---------------------------------------------------------------------------------------------
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const jsq = s => esc(s).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+  // a JS string inside an HTML attribute: escape for JS first, then for HTML (an ' turned into &#39;
+  // first would come back as ' and end the string: "Beast's Instinct")
+  const jsq = s => esc(String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
   const GROUP_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
   const monLink = name => `<button type="button" class="mon-link" data-mon="${esc(name)}" aria-expanded="false">${esc(name)}</button>`;
 
@@ -189,8 +211,9 @@
   const TYPE_ICON = { Power: "a/a0/Power_Icon.gif", Magic: "2/24/Magic_Icon.gif", Sense: "c/cc/Sense_Icon.gif", Charm: "5/53/Charm_Icon.gif" };
   const typeIcon = (g, cls) => `<img class="${cls}" src="${WIKI_IMG + TYPE_ICON[g]}" alt="" width="17" height="15">`;
 
-  /** Growth chart, like the in-game one: a box per type in its corner (badge, number, %), a ring in the middle. */
-  function growthChart(growth) {
+  /** Growth chart, like the in-game one: a box per type in its corner (badge, number, %), a ring in the middle.
+   *  on: the handler its −/+ call ("TQPlanner.growth"). */
+  function growthChart(growth, on) {
     const total = GROUPS.reduce((n, g) => n + growth[g], 0);
     const left = GROWTH_TOTAL - total;
     const corner = (g, pos) => `
@@ -199,8 +222,8 @@
         <span class="bd-grow-badge">${typeIcon(g, "bd-grow-icon")}<b>${growth[g]}</b></span>
         <span class="bd-grow-pct">${growth[g] * 10}%</span>
         <span class="bd-grow-ctl">
-          <button type="button" class="bd-step" aria-label="Less ${g}" onclick="TQBuild.growth('${g}', -1)" ${growth[g] <= 1 ? "disabled" : ""}>−</button>
-          <button type="button" class="bd-step" aria-label="More ${g}" onclick="TQBuild.growth('${g}', 1)" ${growth[g] >= GROWTH_MAX || left <= 0 ? "disabled" : ""}>+</button>
+          <button type="button" class="bd-step" aria-label="Less ${g}" onclick="${on}('${g}', -1)" ${growth[g] <= 1 ? "disabled" : ""}>−</button>
+          <button type="button" class="bd-step" aria-label="More ${g}" onclick="${on}('${g}', 1)" ${growth[g] >= GROWTH_MAX || left <= 0 ? "disabled" : ""}>+</button>
         </span>
       </div>`;
     // one spoke per type, pointing at its box (Power top left … Charm bottom right), as long as its
@@ -227,6 +250,7 @@
         ? "10 points, as picked when you made the character"
         : left > 0 ? `${left} point${left === 1 ? "" : "s"} left to place (10 in all, 1-4 each)` : `${-left} too many: 10 in all`}</p>`;
   }
+
 
   function cardChip(builds, it) {
     const info = builds.items[it.name];
@@ -313,7 +337,7 @@
         <div class="bd-skill-main">
           <div class="bd-skill-name"><strong>${esc(sk.name)}</strong>
             <span class="tag">TM ${sk.tm}</span> <span class="tag">${esc(sk.type || "")}</span>
-            ${sk.checked ? `<span class="bd-checked" title="${esc(sk.checked)}">✓ In game</span>` : ""}</div>
+            ${sk.checked ? (sk.fixSrc === "client" ? `<span class="bd-checked bd-client" title="${esc(sk.checked)}">📦 From client</span>` : `<span class="bd-checked" title="${esc(sk.checked)}">✓ In game</span>`) : ""}</div>
           ${needChips(sk, ctx)}
           ${howLine(sk, ctx)}
           ${sk.desc ? `<div class="bd-desc">${esc(sk.desc)}</div>` : ""}
@@ -327,8 +351,9 @@
   }
 
   /**
-   * ctx: { builds, state: { cls, job, tab, growth, level, bonus: {stat: pct}, picked: {skill: true} },
-   *        have: bag counts }
+   * The Build guide: pick a class and job, read its skills and mastery cards. Builds are made on the
+   * 🛠️ Planner page (js/planner.js).
+   * ctx: { builds, state: { cls, job, picked: {skill: true} }, have: bag counts, questByTitle }
    */
   function render(ctx) {
     const b = ctx.builds, st = ctx.state;
@@ -343,88 +368,50 @@
     const classChips = Object.keys(b.classes).map(k => `<button type="button" class="pill-btn ${k === cls ? "active" : ""}" onclick="TQBuild.set({ cls: '${k}', job: '' })">${esc(k)}</button>`).join("");
     const jobChips = c.jobs.map(j => `<button type="button" class="pill-btn ${j.name === job.name ? "active" : ""}" onclick="TQBuild.set({ job: '${jsq(j.name)}' })">${esc(j.name)}${j.stage === 3 ? ` <span class="bd-stage">${j.hybridOf ? "hybrid" : "pure"}</span>` : ""}</button>`).join("");
 
-    const profile = `
-      <section class="bd-profile">
-        <div class="bd-art">${job.art ? `<img src="${esc(job.art)}" alt="${esc(job.name)}" loading="lazy">` : ""}</div>
-        <div class="bd-info">
+    // one line about the job, then what its skills suggest
+    const head = `
+      <section class="bd-box bd-head">
+        <div class="bd-head-main">
           <h3>${esc(job.name)} <span class="bd-type ${GROUP_CLASS[c.type]}">${TYPE_ICON[c.type] ? typeIcon(c.type, "bd-type-icon") : ""}${esc(c.type)} type</span></h3>
           <p class="bd-note">${esc(cls)} · ${job.stage === 1 ? "1st job" : job.stage === 2 ? "2nd job" : job.hybridOf ? `3rd job (hybrid, ${esc(job.hybridOf)} skills at TM +50)` : "3rd job"} · skills from ${sets.map(s => esc(s.job)).join(" → ")}</p>
-          ${growthChart(st.growth)}
-          ${use.length ? `<p class="bd-uses">Skills use: ${use.slice(0, 5).map(u => `<span class="tag">${u.stat} ×${u.n}</span>`).join(" ")}</p>` : ""}
         </div>
+        <button type="button" class="btn btn-sm btn-primary" onclick="TQPlanner.newBuild('${jsq(cls)}', '${jsq(job.name)}')">🛠️ Plan a ${esc(job.name)} build</button>
+        ${adv.label ? `<div class="bd-head-adv"><strong>🧭 Suggested build: <span class="bd-build">${esc(adv.label)}</span></strong> ${esc(adv.why)}
+          ${use.length ? `<span class="bd-uses">${use.slice(0, 5).map(u => `<span class="tag">${u.stat} ×${u.n}</span>`).join(" ")}</span>` : ""}
+          <span class="bd-note">From the wiki's skill formulas, not from players.${guides.length ? " Guides: " + guides.map(g => `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.title)}</a>`).join(" · ") : ""}</span></div>` : ""}
       </section>`;
 
-    const tabs = [["stats", "📊 Stats"], ["skills", "✨ Skills"]];
-    const tabBar = `<div class="bd-tabs" role="tablist">${tabs.map(([k, l]) => `<button type="button" role="tab" class="pill-btn ${st.tab === k ? "active" : ""}" aria-selected="${st.tab === k}" onclick="TQBuild.set({ tab: '${k}' })">${l}</button>`).join("")}
-      <span class="bd-later" title="Coming in a later version">🛡️ Equipment · 💥 Damage: later</span></div>`;
-
-    let body = "";
-    if (st.tab === "skills") {
-      const items = masterItems(b, sets, st.picked);
-      const have = ctx.have || {};
-      const totals = items.length ? `
-        <section class="bd-box">
-          <h4>🃏 Cards to collect for the skills you picked</h4>
-          <ul class="bd-items">${items.map(it => {
-            const got = have[it.name] || 0;
-            return `<li>${cardChip(b, it)} ${got ? `<span class="qc-have ${got >= it.qty ? "is-enough" : ""}">🎒 have ${got}</span>` : ""}
-              <div class="bd-item-where">${whereLine(it.info)} <span class="bd-note">for ${esc(it.skills.join(", "))}</span></div></li>`;
-          }).join("")}</ul>
-        </section>` : `<p class="bd-note">Tick <b>Master</b> on the skills you want to master to add up their cards here.</p>`;
-      // this job's own skills first, then the earlier jobs'
-      // every skill on the page by name, for the "Needs" chips
-      const skillByName = new Map();
-      for (const s of sets) for (const sk of s.skills) skillByName.set(sk.name, { skill: sk, job: s.job });
-      body = totals + sets.slice().reverse().map(s => {
-        const rowCtx = { skillByName, job: s.job, questByTitle: ctx.questByTitle };
-        return `
-        <section class="bd-box">
-          <h4>${esc(s.job)} skills <span class="bd-note">${s.skills.length} · skills that need another one sit under it</span></h4>
-          ${s.skills.some(sk => !sk.how) ? `<p class="bd-note">❔ The wiki doesn't say how to get ${s.skills.every(sk => !sk.how) ? "these skills" : "the skills without a 🃏 / 📜 / 🗼 line"}. Tell us if you know.</p>` : ""}
-          <ul class="bd-skills">${skillTree(s.skills).map(node => skillRow(b, node, st.picked, rowCtx)).join("")}</ul>
-        </section>`;
-      }).join("");
-    } else {
-      const plan = statPlan(b.stats, { level: st.level, growth: st.growth, bonus: st.bonus });
-      const all = GROUPS.flatMap(g => b.stats.groups[g]);
-      const bonusRows = all.map(s => {
-        const v = st.bonus[s] || 0;
-        return `<label class="bd-bonus ${v ? "is-on" : ""}"><span>${s}</span>
-          <input type="number" min="0" max="100" step="10" value="${v}" aria-label="Bonus points in ${s}, percent" onchange="TQBuild.bonus('${s}', this.value)"> %</label>`;
-      }).join("");
-      const sum = all.reduce((n, s) => n + (st.bonus[s] || 0), 0);
-      const fmt = r => r.stat === "DX" ? (r.gain ? r.gain.toFixed(1) : "0") : (Math.abs(r.gain) < 10 && r.gain % 1 ? r.gain.toFixed(2) : Math.round(r.gain).toLocaleString());
-      body = `
-        <section class="bd-box bd-advice">
-          <h4>🧭 Suggested build: <span class="bd-build">${esc(adv.label || "—")}</span></h4>
-          <p>${esc(adv.why)}</p>
-          ${adv.stats.length ? `<button type="button" class="btn qc-small-btn" onclick="TQBuild.useAdvice()">Use this in the planner</button>` : ""}
-          <p class="bd-note">From the wiki's skill formulas, not from players. Check a guide${guides.length ? ": " + guides.map(g => `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.title)}</a>`).join(" · ") : ""} or ask your guild.</p>
-        </section>
-        <section class="bd-box">
-          <h4>📈 Stat planner</h4>
-          <div class="bd-plan-top">
-            <label>Level <input type="number" min="1" max="999" value="${st.level}" onchange="TQBuild.set({ level: +this.value || 1 })"></label>
-            <span class="bd-note">4 bonus points per level · bonus split ${sum}%${sum !== 100 ? ` <span class="bd-warn">(make it 100%)</span>` : ""}</span>
-          </div>
-          <div class="bd-bonus-grid">${bonusRows}</div>
-          <table class="bd-stats">
-            <thead><tr><th>Stat</th><th>From growth</th><th>From bonus</th><th>Gain</th></tr></thead>
-            <tbody>${plan.map(r => `<tr class="${GROUP_CLASS[r.group]} ${adv.stats.includes(r.stat) ? "is-main" : ""}">
-              <td><strong>${r.stat}</strong> <span class="bd-note">${esc(b.stats.names[r.stat])}</span></td>
-              <td>Lv ${r.growthLv}</td><td>${r.bonusLv ? `+${r.bonusLv}` : "–"}</td><td><strong>${fmt(r)}</strong></td></tr>`).join("")}</tbody>
-          </table>
-          <p class="bd-note">Gain from levels only (wiki Stats page: AP +4, HP +30 per stat level; HV, LK, MA +1 per 4 levels…). Your starting stats and equipment come on top.</p>
-        </section>`;
-    }
+    const items = masterItems(b, sets, st.picked || {});
+    const have = ctx.have || {};
+    const totals = items.length ? `
+      <section class="bd-box">
+        <h4>🃏 Cards to collect for the skills you picked</h4>
+        <ul class="bd-items">${items.map(it => {
+          const got = have[it.name] || 0;
+          return `<li>${cardChip(b, it)} ${got ? `<span class="qc-have ${got >= it.qty ? "is-enough" : ""}">🎒 have ${got}</span>` : ""}
+            <div class="bd-item-where">${whereLine(it.info)} <span class="bd-note">for ${esc(it.skills.join(", "))}</span></div></li>`;
+        }).join("")}</ul>
+      </section>` : `<p class="bd-note">Tick <b>Master</b> on the skills you want to master to add up their cards here.</p>`;
+    // every skill on the page by name, for the "Needs" chips; this job's own skills first
+    const skillByName = new Map();
+    for (const s of sets) for (const sk of s.skills) skillByName.set(sk.name, { skill: sk, job: s.job });
+    const skills = sets.slice().reverse().map(s => {
+      const rowCtx = { skillByName, job: s.job, questByTitle: ctx.questByTitle };
+      return `
+      <section class="bd-box">
+        <h4>${esc(s.job)} skills <span class="bd-note">${s.skills.length} · skills that need another one sit under it</span></h4>
+        ${s.skills.some(sk => !sk.how) ? `<p class="bd-note">❔ The wiki doesn't say how to get ${s.skills.every(sk => !sk.how) ? "these skills" : "the skills without a 🃏 / 📜 / 🗼 line"}. Tell us if you know.</p>` : ""}
+        <ul class="bd-skills">${skillTree(s.skills).map(node => skillRow(b, node, st.picked || {}, rowCtx)).join("")}</ul>
+      </section>`;
+    }).join("");
 
     return `
       <div class="bd-page">
         <div class="bd-pick-row">${classChips}</div>
         <div class="bd-pick-row">${jobChips}</div>
-        ${profile}
-        ${tabBar}
-        ${body}
+        ${head}
+        ${totals}
+        ${skills}
         <p class="bd-note bd-source">Data: ggFTW Trickster wiki. PlayTrickster may differ: tell us what's wrong and we'll fix it.</p>
       </div>`;
   }
@@ -439,5 +426,5 @@
     el.classList.add("is-flash");
   }
 
-  root.TQBuild = Object.assign({ render, goSkill, toggleDetail }, model);
+  root.TQBuild = Object.assign({ render, goSkill, toggleDetail, growthChart }, model);
 })(typeof window !== "undefined" ? window : globalThis);

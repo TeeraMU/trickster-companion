@@ -1,9 +1,191 @@
 {
-  "about": "Where PlayTrickster differs from the wiki's skill pages (data/builds.json). Each entry replaces those fields of the skill in every job that has it. Fields: items [{ name, qty }], tm, master, learn, needs [{ name, lv }], how { kind, text }. 'checked' says who checked what, and when.",
+  "about": "Where PlayTrickster differs from the wiki's skill pages (data/builds.json). Each entry replaces those fields of the skill in every job that has it. Fields: items [{ name, qty }], tm, master, learn, needs [{ name, lv }], how { kind, text }. 'src': 'client' = taken from the PlayTrickster client tables and not yet seen in game (Fatal Wound showed the client is right where the wiki differs). 'checked' says who checked what, and when.",
   "skills": {
     "Fatal Wound": {
       "items": [{ "name": "Officer Okto Card", "qty": 3 }],
       "checked": "in game (PlayTrickster) 2026-11-19: the Skill Master window asks for 3 Officer Okto Card, not 5 Thorn Stem as on the wiki"
+    },
+    "Sense Breaker": {
+      "items": [{ "name": "Gold G Card", "qty": 2 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 2 Gold G Card; the wiki says 20 Book of the Dead. Not yet seen in game"
+    },
+    "Counter Punch": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 7 Silver-Colored Mantle. Not yet seen in game"
+    },
+    "Aura of Haste": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 8 Squishy Mud. Not yet seen in game"
+    },
+    "Water Shield": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 5 Joker's Ball. Not yet seen in game"
+    },
+    "Thunder Shield": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 9 Ball Joint. Not yet seen in game"
+    },
+    "Fire Shield": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 9 Colored Paper. Not yet seen in game"
+    },
+    "Wind Shield": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 9 Delicate Doll. Not yet seen in game"
+    },
+    "Dark Lance": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 26 Fried Egg. Not yet seen in game"
+    },
+    "Lucky Fist": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 55 Royal Jelly. Not yet seen in game"
+    },
+    "Keen Sense": {
+      "items": [{ "name": "Chele Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Chele Card; the wiki says 8 Old Hand Knife. Not yet seen in game"
+    },
+    "Blazing Strike": {
+      "items": [{ "name": "Officer Okto Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Okto Card; the wiki says 24 Mingo Toy. Not yet seen in game"
+    },
+    "Light Wave": {
+      "items": [{ "name": "Officer Okto Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Okto Card; the wiki says 25 Swamp Shark's Fin. Not yet seen in game"
+    },
+    "Radiant Strike": {
+      "items": [{ "name": "Officer Okto Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Okto Card; the wiki says 7 Silk Thread. Not yet seen in game"
+    },
+    "Dark Barrier": {
+      "items": [{ "name": "Officer Okto Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Okto Card; the wiki says 10 Malachite. Not yet seen in game"
+    },
+    "Gravity Crush": {
+      "items": [{ "name": "Officer Okto Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Okto Card; the wiki says 7 Aristocratic Fan. Not yet seen in game"
+    },
+    "Pouch of Pain": {
+      "items": [{ "name": "Officer Okto Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Okto Card; the wiki says 8 Red Rosary. Not yet seen in game"
+    },
+    "Aqua Bomb": {
+      "items": [{ "name": "Slithis Card", "qty": 5 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 5 Slithis Card; the wiki says 5 Myconid Card. Not yet seen in game"
+    },
+    "Sticky Icky": {
+      "items": [{ "name": "Officer Surapat Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Sulaphat Card; the wiki says 7 Red Woolen Yarn. Not yet seen in game"
+    },
+    "Salamander's Territory": {
+      "items": [{ "name": "Maid Lydia Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Maid Lydia Card; the wiki says no item. Not yet seen in game"
+    },
+    "Gnome's Domain": {
+      "items": [{ "name": "Maid Lydia Card", "qty": 3 }],
+      "src": "client",
+      "checked": "PlayTrickster client tables 2026-11-25: 3 Maid Lydia Card; the wiki says no item. Not yet seen in game"
+    }
+  },
+  "hybrids": {
+    "about": "Made by scripts/client/build-hybrids.js from the client's Item_SkillCardParam (Job column). Per hybrid job: add = skills of the other line it can learn that the wiki's job page leaves out (copied from that line, with this TM); tm = the TM the client asks of it. Not yet seen in game.",
+    "Duelist": {
+      "from": "Warrior",
+      "add": {
+        "Lightning Strike": 260
+      },
+      "tm": {
+        "Faint": 101,
+        "Lacerator": 101,
+        "Berserker": 110
+      }
+    },
+    "Mercenary": {
+      "from": "Boxer",
+      "add": {
+        "Clinch Release": 260
+      },
+      "tm": {
+        "Guard Break": 101,
+        "Dash": 101,
+        "Uppercut": 101
+      }
+    },
+    "Witch": {
+      "from": "Magician",
+      "add": {
+        "Revival": 260
+      },
+      "tm": {
+        "Hinder Snare": 101
+      }
+    },
+    "Wizard": {
+      "from": "Bard",
+      "add": {
+        "Elemental Boost": 260
+      },
+      "tm": {
+        "Bolster Ballad": 101
+      }
+    },
+    "Hunter Lord": {
+      "from": "Inventor",
+      "add": {
+        "Speedloader": 260
+      },
+      "tm": {
+        "Butt Plate": 101,
+        "Power Shot": 110
+      }
+    },
+    "Cyber Hunter": {
+      "from": "Explorer",
+      "add": {
+        "Rain of Knives": 260
+      },
+      "tm": {
+        "Precise Pitch": 101
+      }
+    },
+    "Diva": {
+      "from": "Card Master",
+      "add": {
+        "Mass Destruction": 260
+      },
+      "tm": {
+        "Card Strike": 101,
+        "Super Hips": 110
+      }
+    },
+    "Duke": {
+      "from": "Entertainer",
+      "add": {
+        "Aura Shatter": 260
+      },
+      "tm": {
+        "Volley Kick": 101,
+        "Galder Barrage": 110
+      }
     }
   }
 }

@@ -50,9 +50,12 @@
       <nav class="view-tabs" aria-label="Pages">
         <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
+        <button class="view-tab" id="tabBtnBosses" onclick="switchView('bosses')"><span class="tab-icon" aria-hidden="true">👑</span><span class="tab-label">Bosses</span></button>
+        <button class="view-tab" id="tabBtnGuardian" onclick="switchView('guardian')"><span class="tab-icon" aria-hidden="true">🥚</span><span class="tab-label">Guardian</span></button>
         <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
         <button class="view-tab" id="tabBtnFriends" onclick="switchView('friends')"><span class="tab-icon" aria-hidden="true">👥</span><span class="tab-label">Friends</span></button>
         <button class="view-tab" id="tabBtnBuild" onclick="switchView('build')"><span class="tab-icon" aria-hidden="true">🧭</span><span class="tab-label">Build guide</span></button>
+        <button class="view-tab" id="tabBtnPlanner" onclick="switchView('planner')"><span class="tab-icon" aria-hidden="true">🛠️</span><span class="tab-label">Planner</span></button>
         <button class="view-tab" id="tabBtnRoadmap" onclick="switchView('roadmap')"><span class="tab-icon" aria-hidden="true">🗺️</span><span class="tab-label">Roadmap</span></button>
       </nav>
 
@@ -254,6 +257,21 @@
       <div id="buildContainer"><p class="calc-desc">Loading skills…</p></div>
     </div>
 
+    <!-- VIEW: BUILD PLANNER (js/planner.js) -->
+    <div id="viewPlanner" class="hidden">
+      <div id="plannerContainer"><p class="calc-desc">Loading…</p></div>
+    </div>
+
+    <!-- VIEW: GUARDIAN (js/guardian.js, data/guardian.json) -->
+    <div id="viewGuardian" class="hidden">
+      <div id="guardianContainer"><p class="calc-desc">Loading…</p></div>
+    </div>
+
+    <!-- VIEW: BOSSES (js/boss.js, data/bosses.json) -->
+    <div id="viewBosses" class="hidden">
+      <div id="bossContainer"><p class="calc-desc">Loading bosses…</p></div>
+    </div>
+
     <!-- VIEW 4: STEP-BY-STEP PROGRESSION ROADMAP -->
     <div id="viewRoadmap" class="hidden">
       <!-- Key roadmap: built from the key quests in the data (renderKeyRoadmap) -->
@@ -339,7 +357,9 @@
   <footer class="site-footer">
     Trickster Companion is a non-commercial fan project, not affiliated with or endorsed by the game's developer or publisher.<br />
     Trickster Online, its artwork (including the background picture) and item images are property of their respective owners.
-    Item images from the ggftw Trickster wiki via wikimirror.lifeto.co. Quest data may be inaccurate: please verify in game.<br />
+    Item, map and monster images from the ggftw Trickster wiki via wikimirror.lifeto.co; Tartarus bosses from
+    <a href="https://oto.fandom.com/" target="_blank" rel="noopener">oto.fandom.com</a> (CC-BY-SA). Monster numbers from the PlayTrickster client.
+    Data may be inaccurate: please verify in game.<br />
     <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source on GitHub</a> · <a href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener">report on GitHub instead</a>
   </footer>
 
@@ -350,11 +370,15 @@
   <script src="js/report.js"></script>
   <script src="js/bag.js"></script>
   <script src="js/town.js"></script>
+  <script src="js/formula.js"></script>
+  <script src="js/planner.js"></script>
   <script src="js/sync-merge.js"></script>
   <script src="js/cloud.js"></script>
   <script src="js/friends.js"></script>
   <script src="js/search.js"></script>
   <script src="js/build.js"></script>
+  <script src="js/boss.js"></script>
+  <script src="js/guardian.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -374,7 +398,9 @@
       selectedRegion: "All",
       selectedAreaGroup: "all",
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
-      build: null,             // Build guide: { cls, job, tab, growth, level, bonus, picked } (this device only)
+      build: null,             // Build guide: { cls, job, picked } (this device only)
+      planner: { builds: [], current: "" }, // Planner: my builds (synced; js/planner.js) and the open one
+      bossOpen: "",            // 👑 Bosses: the boss on screen, "" = the list (this device only)
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
       focus: null,             // pinned scope friends see needs for: { region, group, cats, path } (Friends)
@@ -477,6 +503,8 @@
       appState.selectedJobPath = p.selectedJobPath || "";
       appState.focus = p.focus || null;
       appState.hideBag = !!p.hideBag;
+      // a copy saved before builds were synced has none: keep this device's
+      if (Array.isArray(p.builds)) appState.planner = { builds: TQPlanner.cleanBuilds(p.builds), current: (appState.planner || {}).current || "" };
       storePins(p.pins || {});
       normalizeCompletion();
       document.getElementById("charClassSelect").value = appState.selectedClass;
@@ -487,7 +515,7 @@
 
     // First sign-in on a browser that already has different progress: ask which copy to keep
     function chooseSyncCopy(local, cloud) {
-      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins`;
+      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins` + (s.builds ? ` · ${s.builds} builds` : "");
       document.getElementById("syncLocal").textContent = say(local);
       document.getElementById("syncCloud").textContent = say(cloud);
       const dlg = document.getElementById("syncChoice");
@@ -552,6 +580,7 @@
       const cats = selectedCats();
 
       let list = QUESTS.filter(q => {
+        if (onOwnPage(q.id)) return false; // on the 👑 Bosses or 🥚 Guardian page
         if (!matchesClassFilter(q, cls)) return false;
         if (!inSelectedArea(q)) return false;
         if (cats.length && !cats.some(c => q.categories.includes(c))) return false;
@@ -779,7 +808,7 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", friends: "Friends", build: "Build", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bosses: "Bosses", guardian: "Guardian", bag: "Bag", friends: "Friends", build: "Build", planner: "Planner", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
@@ -798,6 +827,9 @@
       if (viewName === "friends") renderFriends();
       if (viewName === "roadmap") renderKeyRoadmap();
       if (viewName === "build") renderBuild();
+      if (viewName === "planner") renderPlanner();
+      if (viewName === "bosses") renderBosses();
+      if (viewName === "guardian") renderGuardian();
     }
 
     // ============================================================================
@@ -805,7 +837,7 @@
     // ============================================================================
     function renderStatsAndRegions() {
       const cls = appState.selectedClass || "All";
-      const activePool = QUESTS.filter(q => matchesClassFilter(q, cls));
+      const activePool = QUESTS.filter(q => !onOwnPage(q.id) && matchesClassFilter(q, cls));
 
       const totalCount = activePool.length;
       const doneCount = activePool.filter(q => !!appState.completedQuests[q.id]).length;
@@ -1201,6 +1233,28 @@
     function jumpToQuest(id) {
       const q = questById(id);
       if (!q) return;
+      if (GUARD_OF.has(id)) { // a guardian quest: its card is on the 🥚 Guardian page, under its stage
+        appState.expandedQuests[id] = true;
+        GUARD_UI.quests = GUARD_OF.get(id);
+        saveState();
+        switchView("guardian");
+        requestAnimationFrame(() => {
+          const el = document.getElementById("qcard-" + id);
+          if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+        return;
+      }
+      if (BOSS_OF.has(id)) { // a boss's quest: its card is on the boss's page
+        appState.expandedQuests[id] = true;
+        appState.bossOpen = BOSS_OF.get(id);
+        saveState();
+        switchView("bosses");
+        requestAnimationFrame(() => {
+          const el = document.getElementById("qcard-" + id);
+          if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+        return;
+      }
       if (!matchesClassFilter(q, appState.selectedClass || "All")) { // hidden by class / 3rd job path
         appState.selectedJobPath = "";
         if (!matchesClassFilter(q, appState.selectedClass || "All")) appState.selectedClass = "All";
@@ -1612,11 +1666,19 @@
     function loadBuilds() {
       // skill-fixes.json: where PlayTrickster differs from the wiki (optional)
       const fixes = TQData.fetchJson("data/skill-fixes.json").catch(() => null);
-      return Promise.all([TQData.fetchJson("data/builds.json"), fixes]).then(([b, f]) => {
+      // Build planner: starting stats per class and buff effects (optional)
+      const bases = TQData.fetchJson("data/stat-base.json").catch(() => null);
+      const buffs = TQData.fetchJson("data/buffs.json").catch(() => null);
+      const buffValues = TQData.fetchJson("data/buff-values.json").catch(() => null);
+      return Promise.all([TQData.fetchJson("data/builds.json"), fixes, bases, buffs, buffValues]).then(([b, f, sb, bf, bv]) => {
         TQBuild.applyFixes(b, f);
+        STAT_BASE = sb;
+        BUFFS = bf;
+        BUFF_VALUES = bv;
         BUILDS = b;
         TQSearch.refresh();
         if (appState.currentView === "build") renderBuild();
+        if (appState.currentView === "planner") renderPlanner();
       }).catch(() => {
         const box = document.getElementById("buildContainer");
         if (box) box.innerHTML = '<p class="calc-desc">Couldn\'t load the skill data. Check your connection and reload.</p>';
@@ -1628,10 +1690,25 @@
         // start from the class and 3rd job path picked in the header
         const cls = appState.selectedClass && appState.selectedClass !== "All" ? appState.selectedClass : "Cat";
         const path = jobPaths().find(p => p.key === appState.selectedJobPath);
-        appState.build = { cls, job: path ? path.label : "", tab: "stats", growth: Object.assign({}, TQBuild.DEFAULT_GROWTH), level: 100, bonus: {}, picked: {} };
+        appState.build = { cls, job: path ? path.label : "", picked: {} };
       }
-      appState.build.growth = TQBuild.fixGrowth(appState.build.growth);
-      return appState.build;
+      const st = appState.build;
+      if (!st.picked || typeof st.picked !== "object") st.picked = {};
+      return st;
+    }
+
+    // which page keeps the cursor: both re-render after every change
+    // (and the caret: a search box re-rendered on every key would otherwise jump to the start, "Too" -> "ooT")
+    function renderKeepingFocus(box, html) {
+      const a = document.activeElement;
+      const had = a && box.contains(a) ? a.id : "";
+      let caret = null;
+      try { if (had && typeof a.selectionStart === "number") caret = [a.selectionStart, a.selectionEnd]; } catch (e) { /* number inputs have none */ }
+      box.innerHTML = html;
+      const el = had && document.getElementById(had);
+      if (!el) return;
+      el.focus({ preventScroll: true });
+      try { if (caret) el.setSelectionRange(caret[0], caret[1]); } catch (e) { /* number inputs have none */ }
     }
 
     function renderBuild() {
@@ -1639,10 +1716,10 @@
       if (!box || !BUILDS) return;
       const lc = s => String(s).toLowerCase().replace(/\s+/g, " ").trim();
       const questByTitle = t => QUESTS.find(q => lc(q.title) === lc(t)) || null;
-      box.innerHTML = TQBuild.render({ builds: BUILDS, state: buildState(), have: appState.inventory, questByTitle });
+      renderKeepingFocus(box, TQBuild.render({ builds: BUILDS, state: buildState(), have: appState.inventory, questByTitle }));
     }
 
-    // handlers called from the page (TQBuild.set / growth / bonus / pick / useAdvice)
+    // handlers called from the guide page (TQBuild.set / pick)
     Object.assign(TQBuild, {
       set(patch) {
         const st = buildState();
@@ -1651,32 +1728,442 @@
         Object.assign(st, patch);
         saveState(); renderBuild();
       },
-      growth(group, d) {
-        const st = buildState();
-        st.growth = TQBuild.stepGrowth(st.growth, group, d); // 1-4 each, 10 in all
-        saveState(); renderBuild();
-      },
-      bonus(stat, v) {
-        const st = buildState();
-        const n = Math.max(0, Math.min(100, Math.round(+v || 0)));
-        if (n) st.bonus[stat] = n; else delete st.bonus[stat];
-        saveState(); renderBuild();
-      },
       pick(skill, on) {
         const st = buildState();
         if (on) st.picked[skill] = true; else delete st.picked[skill];
         saveState(); renderBuild();
-      },
-      useAdvice() {
-        const st = buildState();
-        const c = BUILDS.classes[st.cls];
-        const job = (c.jobs.find(j => j.name === st.job) || c.jobs[c.jobs.length - 2] || c.jobs[0]).name;
-        const adv = TQBuild.advice(BUILDS, st.cls, job);
-        st.bonus = {};
-        if (adv.stats.length === 2) { st.bonus[adv.stats[0]] = 50; st.bonus[adv.stats[1]] = 50; }
-        else if (adv.stats.length === 1) st.bonus[adv.stats[0]] = 100;
-        saveState(); renderBuild();
       }
+    });
+
+    // ============================================================================
+    // BUILD PLANNER (js/planner.js): the 🛠️ Planner page. My builds are appState.planner.builds
+    // (synced; the open one is appState.planner.current, this device only). Each change is saved into
+    // the build straight away. The status window uses data/stat-base.json, buffs data/buffs.json +
+    // buff-values.json (all load with builds.json). A friend's shared build opens read only.
+    // ============================================================================
+    let STAT_BASE = null, BUFFS = null, BUFF_VALUES = null;
+    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {}, monQuery: "", monOpen: false, monActive: 0, planEdit: false, logOpen: false, hitsText: false, attack: "", cmpQuery: "", compare: [] }; // viewing: { build, friend }; power: { skill: level }
+    // data/monsters.json (client table, ~320 KB): loaded the first time the Planner shows
+    let MONSTERS = null, monstersLoading = false;
+    function loadMonsters() {
+      if (MONSTERS || monstersLoading) return;
+      monstersLoading = true;
+      TQData.fetchJson("data/monsters.json").then(d => {
+        MONSTERS = d;
+        linkBossPics();
+        if (appState.currentView === "planner") renderPlanner();
+        if (appState.currentView === "bosses") renderBosses();
+      })
+        .catch(() => { monstersLoading = false; });
+    }
+
+    // the monsters I picked lately in the Battle Summary (this device only)
+    const MON_RECENT = "tq-mon-recent";
+    function monRecent() {
+      try { const v = JSON.parse(localStorage.getItem(MON_RECENT) || "[]"); return Array.isArray(v) ? v.slice(0, 5) : []; } catch (e) { return []; }
+    }
+    function monRemember(id) {
+      try { localStorage.setItem(MON_RECENT, JSON.stringify([String(id), ...monRecent().filter(x => x !== String(id))].slice(0, 5))); } catch (e) { /* private mode */ }
+    }
+    /** Bosses with a 👑 page show that page's picture in the Planner too. */
+    function linkBossPics() {
+      if (!MONSTERS || !BOSSES) return;
+      const pic = new Map(BOSSES.bosses.filter(b => b.sprite || b.img).map(b => [b.monster, b.sprite || b.img]));
+      for (const m of MONSTERS.monsters) if (pic.has(m.id)) m.pic = pic.get(m.id);
+    }
+
+    /** A skill of data/builds.json by name (the guardian's skills come from any job's list). */
+    let SKILL_BY_NAME = null;
+    function skillByName(name) {
+      if (!SKILL_BY_NAME && BUILDS) { SKILL_BY_NAME = new Map(); for (const list of Object.values(BUILDS.skills)) for (const sk of list) if (!SKILL_BY_NAME.has(sk.name)) SKILL_BY_NAME.set(sk.name, sk); }
+      return SKILL_BY_NAME ? SKILL_BY_NAME.get(name) : null;
+    }
+    /** My open build's guardian, made when first touched. */
+    function guardianOf() {
+      const b = editable();
+      if (!b) return null;
+      if (!b.guardian) b.guardian = { graph: [0, 0, 0, 0], skills: {}, debuff: false };
+      return b.guardian;
+    }
+    function guardianSave() {
+      const b = editable();
+      if (b) b.guardian = TQPlanner.cleanGuardian(b.guardian) || undefined;
+      if (b && !b.guardian) delete b.guardian;
+      plannerChanged();
+    }
+
+    function plannerState() {
+      if (!appState.planner || !Array.isArray(appState.planner.builds)) appState.planner = { builds: [], current: "" };
+      const p = appState.planner;
+      // the first planner kept one build inside the guide's state: make it a saved build
+      const old = appState.build;
+      if (old && (Object.keys(old.gear || {}).length || Object.keys(old.pts || {}).length) && !old.movedToPlanner) {
+        const b = TQPlanner.cleanBuild(Object.assign({}, old, { id: old.savedId, name: old.name || "My build", updated: Date.now() }));
+        if (b && !p.builds.some(x => x.id === b.id) && p.builds.length < TQPlanner.LIMITS.builds) p.builds.unshift(b);
+        ["gear", "pts", "skills", "buffs", "ptsHave", "base", "savedId", "name", "custom", "tab", "level", "growth", "bonus"].forEach(k => delete old[k]);
+        old.movedToPlanner = true;
+      }
+      if (!p.builds.some(b => b.id === p.current)) p.current = p.builds.length ? p.builds[0].id : "";
+      return p;
+    }
+    /** The build on screen: a friend's (read only) or my open one. */
+    const plannerBuild = () => PLANNER_UI.viewing ? PLANNER_UI.viewing.build : plannerState().builds.find(b => b.id === plannerState().current) || null;
+
+    function jobOf(cls, name) {
+      const c = BUILDS.classes[cls];
+      return c ? c.jobs.find(j => j.name === name) || c.jobs[c.jobs.length - 2] || c.jobs[0] : null;
+    }
+
+    function renderPlanner() {
+      loadMonsters();
+      const box = document.getElementById("plannerContainer");
+      if (!box || !BUILDS) return;
+      const build = plannerBuild();
+      const job = build && jobOf(build.cls, build.job);
+      const base = build ? TQPlanner.pickBase(STAT_BASE, build.cls, build.base) : {};
+      const buffs = BUFFS || { skills: {} };
+      renderKeepingFocus(box, TQPlanner.render({
+        build, saved: plannerState().builds, readOnly: PLANNER_UI.viewing ? { friend: PLANNER_UI.viewing.friend } : null,
+        classes: BUILDS.classes, advice: job ? TQBuild.advice(BUILDS, build.cls, job.name) : null,
+        stats: BUILDS.stats, base: base.base, baseFrom: base.from, baseChecked: base.checked, estimateFrom: base.estimateFrom, estimateSpread: base.spread, estimateKnown: base.known,
+        buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []),
+        art: job && job.art, signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI,
+        formula: window.TQFormula, growthChart: TQBuild.growthChart, monsters: MONSTERS, bossMons: BOSSES ? BOSSES.bosses.map(x => x.monster) : [], recentMons: monRecent(), skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : [],
+        guardianSkills: GUARDIAN ? GUARDIAN.skills.first : null, skillByName: skillByName
+      }));
+    }
+
+    // after any change to my open build: stamp it (newest copy wins when syncing) and save
+    function plannerChanged() {
+      const b = plannerBuild();
+      if (b && !PLANNER_UI.viewing) b.updated = Date.now();
+      saveState(); renderPlanner();
+    }
+    // my open build, or nothing while a friend's is on screen
+    const editable = () => PLANNER_UI.viewing ? null : plannerBuild();
+
+    const plNum = v => { const n = Math.round(+v); return Number.isFinite(n) ? n : 0; };
+    function piece(key) {
+      const b = editable();
+      return b && (b.gear[key] || (b.gear[key] = { n: "" }));
+    }
+    // a slot with nothing typed in is empty again
+    function tidyPiece(key) {
+      const b = editable(), g = b && b.gear[key];
+      if (g && !g.n && !g.note && !Object.keys(g.st || {}).length && !(g.cp || []).length) delete b.gear[key];
+    }
+
+    Object.assign(TQPlanner, {
+      /** A new build: from a job in the guide, or like the class picked in the header. */
+      newBuild(cls, job) {
+        const p = plannerState();
+        if (p.builds.length >= TQPlanner.LIMITS.builds) { alert(`${TQPlanner.LIMITS.builds} builds at most: delete one first.`); return; }
+        const pick = cls || (appState.selectedClass && appState.selectedClass !== "All" ? appState.selectedClass : buildState().cls) || "Cat";
+        const j = jobOf(pick, job || (pick === buildState().cls ? buildState().job : ""));
+        const b = TQPlanner.cleanBuild({ name: `Build ${p.builds.length + 1}`, cls: pick, job: j ? j.name : "", level: 100,
+          growth: Object.assign({}, TQBuild.DEFAULT_GROWTH), updated: Date.now() });
+        p.builds.unshift(b);
+        p.current = b.id;
+        PLANNER_UI.viewing = null; PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+        saveState();
+        if (appState.currentView !== "planner") switchView("planner"); else renderPlanner();
+      },
+      open(id) {
+        plannerState().current = id;
+        PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+        saveState(); renderPlanner();
+      },
+      set(patch) {
+        const b = editable();
+        if (!b) return;
+        if ("name" in patch) b.name = String(patch.name).trim().slice(0, TQPlanner.LIMITS.name) || b.name;
+        if ("shared" in patch) { if (patch.shared) b.shared = true; else delete b.shared; }
+        if ("level" in patch) b.level = Math.max(1, Math.min(999, plNum(patch.level) || 1));
+        if (patch.cls && patch.cls !== b.cls) { b.cls = patch.cls; b.skills = {}; b.job = ""; }
+        if ("job" in patch) { const j = jobOf(b.cls, patch.job); b.job = j ? j.name : ""; }
+        plannerChanged();
+      },
+      growth(group, d) {
+        const b = editable();
+        if (!b) return;
+        b.growth = TQBuild.stepGrowth(b.growth, group, d); // 1-4 each, 10 in all
+        plannerChanged();
+      },
+      showSkills() {
+        const b = plannerBuild();
+        if (!b) return;
+        Object.assign(buildState(), { cls: b.cls, job: b.job, picked: buildState().cls === b.cls && buildState().job === b.job ? buildState().picked : {} });
+        saveState(); switchView("build");
+      },
+      /** My plan for bonus points (% per stat): set one stat, take it out (0), or 'reset' to the suggestion. */
+      // 🥚 the build's guardian: graph, learnt skills and levels, debuffs on the Battle Summary monster
+      guardGraph(i, value) { const g = guardianOf(); if (!g) return; g.graph[i] = Math.max(0, Math.min(9, plNum(value))); guardianSave(); },
+      guardSkill(name, on) { const g = guardianOf(); if (!g) return; if (on) g.skills[name] = "M"; else delete g.skills[name]; guardianSave(); },
+      guardLevel(name, lv) { const g = guardianOf(); if (!g || !(name in g.skills)) return; g.skills[name] = String(lv); guardianSave(); },
+      guardDebuff(on) { const g = guardianOf(); if (!g) return; g.debuff = !!on; guardianSave(); },
+      plan(stat, value) {
+        const b = editable();
+        if (!b) return;
+        if (value === "reset") { b.bonus = {}; plannerChanged(); return; }
+        const job = jobOf(b.cls, b.job);
+        // the first change starts from what's on screen (the suggestion)
+        b.bonus = Object.assign({}, TQPlanner.planOf(b, job ? TQBuild.advice(BUILDS, b.cls, job.name) : null));
+        const v = Math.max(0, Math.min(100, plNum(value)));
+        if (v) b.bonus[stat] = v; else delete b.bonus[stat];
+        if (!Object.keys(b.bonus).length) b.bonus = {};
+        plannerChanged();
+      },
+      /** The build's note (shown under the plan; friends see it on a shared build). */
+      notes(text) {
+        const b = editable();
+        if (!b) return;
+        b.notes = String(text || "").slice(0, TQPlanner.LIMITS.notes);
+        plannerChanged();
+      },
+      planEdit(open) { PLANNER_UI.planEdit = open; },
+      /** Every bonus point the character has, spread by the plan. */
+      usePlan() {
+        const b = editable();
+        if (!b) return;
+        const job = jobOf(b.cls, b.job);
+        const plan = TQPlanner.planOf(b, job ? TQBuild.advice(BUILDS, b.cls, job.name) : null);
+        const have = TQPlanner.points(Object.assign({}, b, { pts: {} })).have;
+        const pts = TQPlanner.splitPoints(plan, have);
+        if (!Object.keys(pts).length) return;
+        const say = Object.entries(pts).map(([k, n]) => `${k} ${n}`).join(", ");
+        if (Object.keys(b.pts || {}).length && !confirm(`Put your ${have} bonus points as ${say}?\n\nThe points you placed now are replaced.`)) return;
+        b.pts = pts;
+        plannerChanged();
+      },
+      openSlot(key) {
+        PLANNER_UI.slot = PLANNER_UI.slot === key ? "" : key;
+        renderPlanner();
+        const ed = document.querySelector(".pl-editor");
+        if (ed && key) { ed.scrollIntoView({ behavior: "smooth", block: "nearest" }); const n = document.getElementById(`pl-${key}-n`); if (n && !n.disabled) n.focus({ preventScroll: true }); }
+      },
+      clearSlot(key) { const b = editable(); if (b) { delete b.gear[key]; plannerChanged(); } },
+      gearField(key, field, value) {
+        const g = piece(key);
+        if (!g) return;
+        g[field] = String(value).trim().slice(0, field === "n" ? TQPlanner.LIMITS.item : TQPlanner.LIMITS.note);
+        if (!g[field]) delete g[field];
+        tidyPiece(key); plannerChanged();
+      },
+      gearStat(key, stat, value) {
+        const g = piece(key), v = plNum(value);
+        if (!g) return;
+        g.st = Object.assign({}, g.st);
+        if (v) g.st[stat] = v; else delete g.st[stat];
+        if (!Object.keys(g.st).length) delete g.st;
+        tidyPiece(key); plannerChanged();
+      },
+      /** Compound slots: field "count" sets how many (i = -1), "k" an element ("e:Wind" / "r:Fire"), "v" its %. */
+      gearCompound(key, i, field, value) {
+        const g = piece(key);
+        if (!g) return;
+        g.cp = TQPlanner.cleanCompound(g);
+        delete g.e; delete g.r;
+        if (field === "count") {
+          const n = Math.max(0, Math.min(TQPlanner.LIMITS.compound, plNum(value)));
+          while (g.cp.length < n) g.cp.push({ k: "", v: 0 });
+          g.cp.length = n;
+        } else if (g.cp[i]) {
+          if (field === "k") g.cp[i].k = String(value);
+          else g.cp[i].v = plNum(value);
+          g.cp = TQPlanner.cleanCompound(g); // clamps it: a stat may be minus, an element is 0-999 %
+        }
+        if (!g.cp.length) delete g.cp;
+        tidyPiece(key); plannerChanged();
+      },
+      point(stat, value, exact) {
+        const b = editable();
+        if (!b) return;
+        b.pts = Object.assign({}, b.pts);
+        const v = Math.max(0, Math.min(9999, exact ? plNum(value) : (b.pts[stat] || 0) + plNum(value)));
+        if (v) b.pts[stat] = v; else delete b.pts[stat];
+        plannerChanged();
+      },
+      pointsHave(value) {
+        const b = editable(), v = plNum(value);
+        if (!b) return;
+        if (value === "" || v === b.level - 1) delete b.ptsHave; else b.ptsHave = Math.max(0, v);
+        plannerChanged();
+      },
+      calibrate(form) {
+        const b = editable();
+        if (!b) return;
+        const s = TQPlanner.status(b, { stats: BUILDS.stats, base: null, buffs: { skills: {} } });
+        b.base = {};
+        s.rows.forEach(r => { b.base[r.stat] = TQPlanner.baseFromFront(form[r.stat].value, r.per, r.lv); });
+        plannerChanged();
+      },
+      skill(name, lv, levelOnly) {
+        const b = editable();
+        if (!b) return;
+        b.skills = Object.assign({}, b.skills);
+        const specOf = n => TQPlanner.buffSpec(BUFFS, n);
+        if (!lv) {
+          delete b.skills[name];
+          // what works only with it goes too (Evolution off -> Beast's Instinct off)
+          for (const other of Object.keys(b.skills)) if ((specOf(other) || {}).needs === name) delete b.skills[other];
+        } else {
+          const spec = specOf(name);
+          if (spec && !levelOnly) {
+            // one transform at a time (Evolution or Metamorphosis)
+            if (spec.group) for (const other of Object.keys(b.skills)) {
+              const o = specOf(other);
+              if (other !== name && o && o.group === spec.group) delete b.skills[other];
+            }
+            // Beast's Instinct needs Evolution: tick that too
+            if (spec.needs && !b.skills[spec.needs]) {
+              const n = specOf(spec.needs);
+              if (n && n.group) for (const other of Object.keys(b.skills)) if (other !== spec.needs && (specOf(other) || {}).group === n.group) delete b.skills[other];
+              b.skills[spec.needs] = "M";
+            }
+          }
+          b.skills[name] = lv;
+        }
+        plannerChanged();
+      },
+      buff(i, field, value) {
+        const b = editable();
+        if (!b) return;
+        if (field === "add") b.buffs.push({ name: "Buff " + (b.buffs.length + 1), stat: "AP", value: 0, on: true });
+        else if (field === "remove") b.buffs.splice(i, 1);
+        else if (b.buffs[i]) b.buffs[i][field] = field === "value" ? plNum(value) : field === "on" ? !!value : String(value).slice(0, 40);
+        plannerChanged();
+      },
+      duplicate() {
+        const b = editable(), p = plannerState();
+        if (!b || p.builds.length >= TQPlanner.LIMITS.builds) return;
+        const copy = TQPlanner.cleanBuild(Object.assign({}, JSON.parse(JSON.stringify(b)), { id: "", name: (b.name + " copy").slice(0, TQPlanner.LIMITS.name), updated: Date.now() }));
+        delete copy.shared;
+        p.builds.unshift(copy);
+        p.current = copy.id;
+        PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+        saveState(); renderPlanner();
+      },
+      remove(id) {
+        const p = plannerState(), b = p.builds.find(x => x.id === id);
+        if (!b || !confirm(`Delete "${b.name}"?\n\nThis can't be undone (copy its share code first if you want to keep it).`)) return;
+        p.builds = p.builds.filter(x => x.id !== id);
+        p.current = p.builds.length ? p.builds[0].id : "";
+        PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+        saveState(); renderPlanner();
+      },
+      share() {
+        const b = plannerBuild();
+        PLANNER_UI.code = PLANNER_UI.code || !b ? "" : TQPlanner.encodeBuild(b);
+        renderPlanner();
+      },
+      /** A share code becomes a new build of mine. */
+      importCode() {
+        const code = prompt("Paste a build code (starts with TCB2.)");
+        if (!code) return;
+        const b = TQPlanner.decodeBuild(code);
+        if (!b) { alert("That code doesn't look right. Copy the whole code and try again."); return; }
+        const p = plannerState();
+        if (p.builds.length >= TQPlanner.LIMITS.builds) { alert(`${TQPlanner.LIMITS.builds} builds at most: delete one first.`); return; }
+        delete b.shared;
+        b.updated = Date.now();
+        p.builds.unshift(b);
+        p.current = b.id;
+        PLANNER_UI.viewing = null; PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+        saveState();
+        if (appState.currentView !== "planner") switchView("planner"); else renderPlanner();
+      },
+      /** A friend's shared build, read only (from the Friends page). */
+      viewFriend(build, friend) {
+        const b = TQPlanner.cleanBuild(build);
+        if (!b) return;
+        PLANNER_UI.viewing = { build: b, friend: String(friend || "Friend") };
+        PLANNER_UI.slot = ""; PLANNER_UI.code = "";
+        switchView("planner");
+      },
+      copyViewed() {
+        const v = PLANNER_UI.viewing, p = plannerState();
+        if (!v || p.builds.length >= TQPlanner.LIMITS.builds) return;
+        const copy = TQPlanner.cleanBuild(Object.assign({}, JSON.parse(JSON.stringify(v.build)), { id: "", name: `${v.build.name} (${v.friend})`.slice(0, TQPlanner.LIMITS.name), updated: Date.now() }));
+        delete copy.shared;
+        p.builds.unshift(copy);
+        p.current = copy.id;
+        PLANNER_UI.viewing = null; PLANNER_UI.slot = "";
+        saveState(); renderPlanner();
+      },
+      closeViewed() { PLANNER_UI.viewing = null; PLANNER_UI.slot = ""; renderPlanner(); },
+      powerLevel(name, lv) { PLANNER_UI.power[name] = lv; renderPlanner(); },
+      // 🎯 Against a monster
+      monQuery(q) { PLANNER_UI.monQuery = q; PLANNER_UI.monOpen = true; PLANNER_UI.monActive = 0; renderPlanner(); },
+      /** The monster list opens on focus and closes when the box loses it (not when a re-render moves focus back). */
+      monOpen(open) {
+        if (open) { if (!PLANNER_UI.monOpen) { PLANNER_UI.monOpen = true; PLANNER_UI.monActive = 0; renderPlanner(); } return; }
+        setTimeout(() => {
+          const a = document.activeElement;
+          if (a && a.id === "pl-mon-q") return;
+          if (PLANNER_UI.monOpen) { PLANNER_UI.monOpen = false; renderPlanner(); }
+        }, 0);
+      },
+      /** Up / down to move, Enter to pick, Escape to close. */
+      monKey(e) {
+        const opts = MONSTERS ? TQPlanner.monOptions(MONSTERS.monsters, PLANNER_UI.monQuery, BOSSES ? BOSSES.bosses.map(x => x.monster) : [], monRecent()) : [];
+        if (e.key === "Escape") { PLANNER_UI.monOpen = false; renderPlanner(); return; }
+        if (!PLANNER_UI.monOpen && (e.key === "ArrowDown" || e.key === "ArrowUp")) { e.preventDefault(); PLANNER_UI.monOpen = true; PLANNER_UI.monActive = 0; renderPlanner(); return; }
+        if (!opts.length) return;
+        const i = Math.min(PLANNER_UI.monActive, opts.length - 1);
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          e.preventDefault();
+          PLANNER_UI.monActive = (i + (e.key === "ArrowDown" ? 1 : opts.length - 1)) % opts.length;
+          renderPlanner();
+          const on = document.getElementById("pl-mon-opt-" + PLANNER_UI.monActive);
+          if (on) on.scrollIntoView({ block: "nearest" });
+        } else if (e.key === "Enter" && PLANNER_UI.monOpen) {
+          e.preventDefault();
+          TQPlanner.pickMonster(opts[i].m.id);
+        }
+      },
+      attack(name) { PLANNER_UI.attack = name; renderPlanner(); },
+      cmpQuery(q) { PLANNER_UI.cmpQuery = q; renderPlanner(); },
+      /** Monsters in the Battle Summary's table (this page only, 8 at most). */
+      compare(id, add) {
+        const list = PLANNER_UI.compare.filter(x => x !== id);
+        if (add && list.length < 8) list.push(id);
+        PLANNER_UI.compare = list;
+        PLANNER_UI.cmpQuery = "";
+        renderPlanner();
+      },
+      pickMonster(id) {
+        const b = editable();
+        if (!b) return;
+        if (id) { b.mon = String(id); monRemember(id); } else delete b.mon;
+        PLANNER_UI.monQuery = ""; PLANNER_UI.monOpen = false; PLANNER_UI.monActive = 0;
+        const a = document.activeElement;
+        if (a && a.id === "pl-mon-q") a.blur(); // or the re-render puts focus back and opens the list again
+        plannerChanged();
+      },
+      logOpen(open) { PLANNER_UI.logOpen = open; },
+      /** A line of hits from the game, with the build's stats right now (to work out the defense formula). */
+      addHit(form) {
+        const b = editable();
+        const mon = b && MONSTERS && MONSTERS.monsters.find(m => m.id === b.mon);
+        const dmg = TQPlanner.parseDamage(form.dmg.value);
+        if (!mon || !dmg.length) { alert("Type the damage numbers you saw, e.g. 812 795 830."); return; }
+        const job = jobOf(b.cls, b.job);
+        const st = TQPlanner.status(b, { stats: BUILDS.stats, base: TQPlanner.pickBase(STAT_BASE, b.cls, b.base).base, buffs: BUFFS || { skills: {} }, values: BUFF_VALUES });
+        const stats = {};
+        st.rows.forEach(r => { stats[r.stat] = (r.front || 0) + r.plus; });
+        const line = { mon: mon.id, mn: mon.n, ml: mon.l, skill: form.skill.value, lv: form.lv.value, dmg, note: form.note.value, at: Date.now(), stats, el: st.elements };
+        b.hits = TQPlanner.cleanHits([...(b.hits || []), line]);
+        PLANNER_UI.logOpen = true;
+        plannerChanged();
+      },
+      removeHit(i) {
+        const b = editable();
+        if (!b || !b.hits || !confirm("Delete this line of hits?")) return;
+        b.hits.splice(i, 1);
+        if (!b.hits.length) delete b.hits;
+        plannerChanged();
+      },
+      copyHits() { PLANNER_UI.hitsText = !PLANNER_UI.hitsText; PLANNER_UI.logOpen = true; renderPlanner(); }
     });
 
     // ============================================================================
@@ -1831,6 +2318,7 @@
         area: ref ? area(ref.area) : "", next: ref ? short(ref.title) : "",
         needs, spares, want,
         bag: appState.hideBag ? {} : (appState.inventory || {}),
+        builds: (appState.planner && appState.planner.builds) || [], // the shared ones are published (friends.js)
         shareBag: !appState.hideBag,
         focus: fq ? { label: scopeLabel(focus), done: fq.filter(q => appState.completedQuests[q.id]).length, total: fq.length } : null
       };
@@ -1918,6 +2406,104 @@
       renderQuestList();
       renderChecklistFarm();
       renderKeyRoadmap();
+      if (appState.currentView === "bosses") renderBosses(); // boss ticks are steps: a synced copy changes them
+      if (appState.currentView === "guardian") renderGuardian();
+    }
+
+    // ============================================================================
+    // 👑 BOSSES (js/boss.js): data/bosses.json (from the wiki's boss pages), loaded the first time the
+    // page shows. Trial ticks are steps ("boss:Tombeth_2", "boss:Tombeth_beaten"), so they sync with
+    // the rest of the progress. A boss's numbers come from data/monsters.json (the Planner's card).
+    // ============================================================================
+    let BOSSES = null;
+    let BOSS_OF = new Map(); // quest id -> boss name: these quests show on the boss's page only
+    const BOSS_UI = { drops: false };
+    function setBosses(d) {
+      BOSSES = d;
+      BOSS_OF = new Map();
+      for (const b of (d && d.bosses) || []) for (const id of b.quests || []) BOSS_OF.set(id, b.name);
+      linkBossPics();
+    }
+    function renderBosses() {
+      const box = document.getElementById("bossContainer");
+      if (!box) return;
+      if (!BOSSES) {
+        box.innerHTML = `<p class="calc-desc">Couldn't load the bosses. Check the connection and reload the page.</p>`;
+        return;
+      }
+      if (appState.bossOpen) loadMonsters();
+      const mine = plannerState().builds.find(b => b.id === plannerState().current);
+      box.innerHTML = TQBoss.render({
+        data: BOSSES, monsters: MONSTERS, steps: appState.completedSteps, open: appState.bossOpen || "",
+        level: mine ? mine.level : 0, ui: BOSS_UI,
+        questCard: id => { const q = questById(id); return q ? renderQuestCard(q) : ""; },
+        questDone: id => !!appState.completedQuests[id]
+      });
+    }
+
+    Object.assign(TQBoss, {
+      open(name) {
+        appState.bossOpen = name || "";
+        BOSS_UI.drops = false;
+        saveState(); renderBosses();
+        window.scrollTo({ top: 0 });
+      },
+      step(name, i, on) { bossTick(TQBoss.stepKey(name, i), on); },
+      beaten(name, on) { bossTick(TQBoss.beatenKey(name), on); },
+      drops(open) { BOSS_UI.drops = open; },
+      quest(id) { jumpToQuest(id); },
+      /** The Planner's Battle Summary against this boss, with my open build (a new one if I have none). */
+      toPlanner(id) {
+        if (!BUILDS) { alert("The Planner is still loading: try again in a moment."); return; }
+        PLANNER_UI.viewing = null;
+        if (!plannerBuild()) TQPlanner.newBuild();
+        const b = plannerBuild();
+        if (!b) return;
+        b.mon = String(id);
+        b.updated = Date.now();
+        PLANNER_UI.monQuery = "";
+        saveState();
+        switchView("planner");
+      }
+    });
+    // ============================================================================
+    // 🥚 GUARDIAN (js/guardian.js): data/guardian.json, loaded with the quests. Stage ticks are steps
+    // ("guard:0"), so they sync; its quests show on this page only.
+    // ============================================================================
+    let GUARDIAN = null;
+    let GUARD_OF = new Map(); // quest id -> the stage it belongs to
+    const GUARD_UI = { recipe: "", quests: -1 };
+    function setGuardian(d) {
+      GUARDIAN = d;
+      GUARD_OF = new Map();
+      ((d && d.stages) || []).forEach((s, i) => (s.quests || []).forEach(id => GUARD_OF.set(id, i)));
+    }
+    /** A quest whose card lives on the 👑 Bosses or 🥚 Guardian page, not on the Quests page. */
+    const onOwnPage = id => BOSS_OF.has(id) || GUARD_OF.has(id);
+    function renderGuardian() {
+      const box = document.getElementById("guardianContainer");
+      if (!box) return;
+      if (!GUARDIAN) { box.innerHTML = `<p class="calc-desc">Couldn't load the guardian guide. Check the connection and reload the page.</p>`; return; }
+      box.innerHTML = TQGuardian.render({
+        data: GUARDIAN, steps: appState.completedSteps, ui: GUARD_UI,
+        questCard: id => { const q = questById(id); return q ? renderQuestCard(q) : ""; },
+        questArea: id => { const q = questById(id); return q ? (q.area || q.region || "") + (q.minLevel ? ` (Lv.${q.minLevel}+)` : "") : ""; },
+        questDone: id => !!appState.completedQuests[id]
+      });
+    }
+    Object.assign(TQGuardian, {
+      step(i, on) {
+        const key = TQGuardian.stepKey(i);
+        if (on) appState.completedSteps[key] = true; else delete appState.completedSteps[key];
+        saveState(); renderGuardian();
+      },
+      quests(i, open) { GUARD_UI.quests = open ? i : (GUARD_UI.quests === i ? -1 : GUARD_UI.quests); },
+      recipe(graph) { GUARD_UI.recipe = graph; renderGuardian(); }
+    });
+
+    function bossTick(key, on) {
+      if (on) appState.completedSteps[key] = true; else delete appState.completedSteps[key];
+      saveState(); renderBosses();
     }
 
     // ============================================================================
@@ -2016,7 +2602,12 @@
 
     // Initialize on page load: fetch the JSON data first, then restore progress and render.
     async function loadData() {
+      // the boss list comes with the quests: its quests live on the 👑 Bosses page, not the Quests page
+      const bosses = TQData.fetchJson("data/bosses.json").catch(() => null);
+      const guardian = TQData.fetchJson("data/guardian.json").catch(() => null); // its quests live on the 🥚 Guardian page
       const data = await TQData.loadAll("data/");
+      setBosses(await bosses);
+      setGuardian(await guardian);
       QUESTS = data.quests;
       PREREQS = data.prereqsById;
       MAP_INDEX = TQRoute.indexMaps(data.maps);
@@ -2072,7 +2663,7 @@
         .then(() => {
           loadState(); renderAll(); switchView(appState.currentView);
           TQCloud.init({ getPayload: cloudPayload, applyPayload: applyCloudPayload, choose: chooseSyncCopy, onStatus: s => { renderSyncStatus(s); renderFriends(); } });
-          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon, itemImage: getItemImage });
+          TQFriends.init({ summary: friendSummary, render: renderFriends, onData: friendsDataChanged, classIcon, itemImage: getItemImage, cleanBuild: TQPlanner.cleanBuild, openBuild: (b, name) => TQPlanner.viewFriend(b, name) });
           TQEpisode.setFriendsHave(friendsHaveHtml);
           TQSearch.init({ quests: () => QUESTS, itemImage: getItemImage, npcImage: getNpcImage, mapImage, builds: () => BUILDS });
           loadBuilds();
