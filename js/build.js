@@ -170,6 +170,25 @@
         n++;
       }
     }
+    // hybrid 3rd jobs: the other line's skills the wiki's job page leaves out, and the client's TM
+    for (const [job, h] of Object.entries((fixes && fixes.hybrids) || {})) {
+      const set = builds.skills[job];
+      if (!set || !h || typeof h !== "object") continue;
+      for (const [name, tm] of Object.entries(h.tm || {})) {
+        const sk = set.find(s => s.name === name);
+        if (sk && sk.tm !== tm) { sk.tm = tm; sk.fixSrc = "client"; n++; }
+      }
+      for (const [name, tm] of Object.entries(h.add || {})) {
+        if (set.some(s => s.name === name)) continue;
+        const from = (builds.skills[h.from] || []).find(s => s.name === name);
+        if (!from) continue;
+        const sk = Object.assign(JSON.parse(JSON.stringify(from)), { tm, fixSrc: "client" });
+        sk.checked = sk.checked || `PlayTrickster client tables: ${job} can learn it at TM ${tm} (the wiki's ${job} page leaves it out). Not yet seen in game`;
+        set.push(sk);
+        n++;
+      }
+      set.sort((a, b) => (a.tm || 0) - (b.tm || 0));
+    }
     return n;
   }
 

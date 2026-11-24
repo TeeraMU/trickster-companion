@@ -103,6 +103,8 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki:
   put in-game corrections in `data/skill-fixes.json` (`{ skills: { name: { items?, tm?, needs?, how?, checked } } }`,
   applied on load by `TQBuild.applyFixes`, shown with a "✓ In game" badge), never in builds.json by hand.
+  Its `hybrids` part (the other line's skills each hybrid 3rd job can learn, and their TM, from the client's
+  Item_SkillCardParam Job column) is made by `node scripts/client/build-hybrids.js`: don't edit that part by hand.
 - `js/planner.js`: the 🛠️ Planner page: my builds (`appState.planner.builds`, synced through sync-merge, max 20;
   the open one is `appState.planner.current`), each edited in place. Gear typed in per slot (no item list:
   servers differ), the status window (front number = class base + floor(per level × (stat level − 1)); stat

@@ -105,5 +105,87 @@
       "src": "client",
       "checked": "PlayTrickster client tables 2026-11-25: 3 Maid Lydia Card; the wiki says no item. Not yet seen in game"
     }
+  },
+  "hybrids": {
+    "about": "Made by scripts/client/build-hybrids.js from the client's Item_SkillCardParam (Job column). Per hybrid job: add = skills of the other line it can learn that the wiki's job page leaves out (copied from that line, with this TM); tm = the TM the client asks of it. Not yet seen in game.",
+    "Duelist": {
+      "from": "Warrior",
+      "add": {
+        "Lightning Strike": 260
+      },
+      "tm": {
+        "Faint": 101,
+        "Lacerator": 101,
+        "Berserker": 110
+      }
+    },
+    "Mercenary": {
+      "from": "Boxer",
+      "add": {
+        "Clinch Release": 260
+      },
+      "tm": {
+        "Guard Break": 101,
+        "Dash": 101,
+        "Uppercut": 101
+      }
+    },
+    "Witch": {
+      "from": "Magician",
+      "add": {
+        "Revival": 260
+      },
+      "tm": {
+        "Hinder Snare": 101
+      }
+    },
+    "Wizard": {
+      "from": "Bard",
+      "add": {
+        "Elemental Boost": 260
+      },
+      "tm": {
+        "Bolster Ballad": 101
+      }
+    },
+    "Hunter Lord": {
+      "from": "Inventor",
+      "add": {
+        "Speedloader": 260
+      },
+      "tm": {
+        "Butt Plate": 101,
+        "Power Shot": 110
+      }
+    },
+    "Cyber Hunter": {
+      "from": "Explorer",
+      "add": {
+        "Rain of Knives": 260
+      },
+      "tm": {
+        "Precise Pitch": 101
+      }
+    },
+    "Diva": {
+      "from": "Card Master",
+      "add": {
+        "Mass Destruction": 260
+      },
+      "tm": {
+        "Card Strike": 101,
+        "Super Hips": 110
+      }
+    },
+    "Duke": {
+      "from": "Entertainer",
+      "add": {
+        "Aura Shatter": 260
+      },
+      "tm": {
+        "Volley Kick": 101,
+        "Galder Barrage": 110
+      }
+    }
   }
 }
