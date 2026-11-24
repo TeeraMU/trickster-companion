@@ -102,6 +102,11 @@ t("a class without starting stats: no front number, calibrating finds the base a
   assert.deepStrictEqual(front(bst), { AP: 3210, AC: 149, DX: -23, MP: 3050, MA: 74, MD: 386, WT: 9120, DA: 24, LK: 24, HP: 12090, DP: 1592, HV: 99 });
   assert.deepStrictEqual(lvs(bst), { AP: 799, AC: 400, DX: 400, MP: 100, MA: 100, MD: 100, WT: 100, DA: 100, LK: 100, HP: 400, DP: 400, HV: 400 });
   assert.strictEqual(P.pickBase(bases, "Bunny").from, "checked");
+  // Sheep / Soul Master, growth 1-4-4-1, Lv.372, 371 bonus points in MA
+  const sheep = P.cleanBuild({ cls: "Sheep", job: "Soul Master", level: 372, growth: { Power: 1, Magic: 4, Sense: 4, Charm: 1 }, pts: { MA: 371 } });
+  const sst = P.status(sheep, { stats: builds.stats, base: P.pickBase(bases, "Sheep").base, buffs, values });
+  assert.deepStrictEqual(front(sst), { AP: 386, AC: 73, DX: 3, MP: 11210, MA: 235, MD: 1474, WT: 30800, DA: 92, LK: 92, HP: 2880, DP: 364, HV: 23 });
+  assert.deepStrictEqual(lvs(sst), { AP: 93, AC: 93, DX: 93, MP: 372, MA: 743, MD: 372, WT: 372, DA: 372, LK: 372, HP: 93, DP: 93, HV: 93 });
 });
 
 t("starting stats: checked class, else the player's own, else Cat's as an estimate", () => {
