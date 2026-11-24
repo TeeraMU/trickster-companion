@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **🧭 Build guide: mastery items from the PlayTrickster client.** 20 skills now ask for the card the game's own tables list instead of the wiki's drop (Counter Punch, the four Shields, Lucky Fist … 3 Chele Card; Blazing Strike, Light Wave, Pouch of Pain … 3 Officer Okto Card; Sense Breaker 2 Gold G Card; Aqua Bomb 5 Slithis Card). Salamander's Territory and Gnome's Domain can be mastered now (3 Maid Lydia Card). These carry a blue **📦 From client** badge until someone sees them in game.
 - New **🛠️ Planner** page (next to 🧭 Build guide) for planning characters.
   - **Many builds:** Build 1, 2, 3 … as tabs (up to 20), each with its own class, job, level, growth, bonus points, gear and buffs. Changes save as you go and sync with your account when you're signed in. Rename, duplicate, delete, 🔗 share code, 📥 open a code.
   - **Equipment window:** the 12 slots around the job's picture, like the game's. Tap one and type what the item window shows: name, the 12 stats (Refine included), up to 5 **◇ compound slots** each with an attack element or a resistance and its % (Wind 40% + 41% + 45% = Wind 126%), and a note. Servers differ, so there's no item list to pick from.
