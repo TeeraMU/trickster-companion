@@ -12,7 +12,7 @@
   ],
   "bosses": [
     {
-      "name": "Koiosu", "area": "Tartarus",
+      "name": "Koiosu", "area": "Tartarus", "group": "Tartarus (Lv.260+)",
       "img": "https://static.wikia.nocookie.net/oto/images/a/a2/Monster_Koiosu_Idle.gif",
       "seal": "https://static.wikia.nocookie.net/oto/images/b/bf/Koiosu_Seal.png",
       "type": "", "level": 650, "weak": "Gun", "resist": "Physical, Electricity, Soil",
@@ -73,7 +73,7 @@
       "source": "https://oto.fandom.com/wiki/Koiosu"
     },
     {
-      "name": "True Kronos", "area": "Tartarus",
+      "name": "True Kronos", "area": "Tartarus", "group": "Tartarus (Lv.260+)",
       "img": "https://static.wikia.nocookie.net/oto/images/c/cc/Monster_Kronos_Idle.gif",
       "seal": "https://static.wikia.nocookie.net/oto/images/4/4c/Kronos_Seal.png",
       "type": "", "level": 999, "weak": "Gun", "resist": "Physical, Electricity, Soil, Magic",

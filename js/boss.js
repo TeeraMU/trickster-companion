@@ -81,6 +81,18 @@
   const wikiUrl = b => b.source || WIKI_PAGE + encodeURIComponent(b.name.replace(/ /g, "_")) + ".html";
   const pic = (src, cls, alt) => src ? `<img class="${cls}" src="${esc(src)}" alt="${esc(alt || "")}" loading="lazy" onerror="this.remove()">` : "";
 
+  /** The hub's sections, in order: [name, bosses] (a boss without `group` is an area boss). */
+  function groups(list) {
+    const out = [];
+    for (const b of list) {
+      const name = b.group || "Area bosses";
+      let g = out.find(x => x[0] === name);
+      if (!g) out.push(g = [name, []]);
+      g[1].push(b);
+    }
+    return out;
+  }
+
   function hub(ctx) {
     const list = ctx.data.bosses;
     const beaten = list.filter(b => progress(b, ctx.steps).beaten).length;
@@ -90,17 +102,19 @@
           <h2>👑 Bosses</h2>
           <p class="bd-note">Every area boss in the order you meet them: the trials to reach it as a checklist, its numbers and what it drops. ${beaten} of ${list.length} beaten.</p>
         </div>
-        <ul class="bs-grid">${list.map(b => {
+        ${groups(list).map(([name, bosses]) => `
+        <h3 class="bs-group">${esc(name)} <span class="bd-note">${bosses.filter(b => progress(b, ctx.steps).beaten).length}/${bosses.length}</span></h3>
+        <ul class="bs-grid">${bosses.map(b => {
           const p = progress(b, ctx.steps);
           const pct = p.total ? Math.round(p.done / p.total * 100) : 0;
           return `<li><button type="button" class="bs-card ${p.beaten ? "is-beaten" : ""}" onclick="TQBoss.open('${jsq(b.name)}')">
             <span class="bs-card-pics">${pic(b.seal, "bs-seal", "")}${pic(b.sprite || b.img, "bs-card-sprite", b.name)}</span>
             <span class="bs-card-name"><strong>${esc(b.name)}</strong>${p.beaten ? ` <span class="bs-beaten-tag">✓ Beaten</span>` : ""}</span>
             <span class="bs-card-area">${esc(b.area)}</span>
-            <span class="bs-card-tags"><span class="tag">Boss Lv.${b.level}</span> <span class="tag">${esc(levelText(b))}</span></span>
+            <span class="bs-card-tags"><span class="tag bs-tag-lv">Boss Lv.${b.level}</span> <span class="tag">${esc(levelText(b))}</span></span>
             <span class="bs-card-prog"><span class="bd-note">Trials ${p.done}/${p.total}</span><span class="area-bar"><span style="width:${pct}%"></span></span></span>
           </button></li>`;
-        }).join("")}</ul>
+        }).join("")}</ul>`).join("")}
         <p class="bd-note">From the ggFTW Trickster wiki (Tartarus: the Our Trickster Online wiki). Monster numbers in the boss pages are the PlayTrickster client's.</p>
       </section>`;
   }
@@ -131,11 +145,14 @@
       <details class="bs-puzzle" open>
         <summary>🧩 ${esc(pz.title)}</summary>
         ${pz.text.map(t => `<p>${esc(t)}</p>`).join("")}
-        <div class="bs-puzzle-maps ${pz.images.length > 1 ? "is-many" : ""}">${pz.images.map(im => `
+        ${(pz.tables || []).map(tb => `
+          <table class="bs-answers">${tb.head ? `<thead><tr><th>${esc(tb.head[0])}</th><th>${esc(tb.head[1])}</th></tr></thead>` : ""}
+            <tbody>${tb.rows.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join("")}</tbody></table>`).join("")}
+        ${pz.images.length ? `<div class="bs-puzzle-maps ${pz.images.length > 1 ? "is-many" : ""}">${pz.images.map(im => `
           <figure>
             <a href="${esc(im.src)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(im.src)}" alt="${esc(im.cap)}" loading="lazy"></a>
             <figcaption>${esc(im.cap)}${im.note ? `<span class="bs-puzzle-note">${esc(im.note)}</span>` : ""}</figcaption>
-          </figure>`).join("")}</div>
+          </figure>`).join("")}</div>` : ""}
       </details>`;
   }
 
@@ -206,7 +223,7 @@
             <p class="bs-head-where">${esc(b.area)} boss · ${esc(b.location)}</p>
             <p class="bs-head-tags">
               ${b.type ? `<span class="tag ${TYPE_CLASS[b.type] || ""}">${esc(b.type)}</span>` : ""}
-              <span class="tag">Boss Lv.${b.level}</span>
+              <span class="tag bs-tag-lv">Boss Lv.${b.level}</span>
               <span class="tag ${enter === false ? "bs-no" : enter ? "bs-yes" : ""}" title="${esc(b.restrict)}">Enter: ${esc(levelText(b))}${enter === false ? " (not your level)" : ""}</span>
               ${rs ? `<span class="tag" title="${esc(b.spawn)}">⏱️ Back in ${esc(rs)}</span>` : ""}
             </p>

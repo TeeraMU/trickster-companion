@@ -19,8 +19,35 @@ const WIKI_IMG = "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/ima
 // shown under the trial whose title has `at`.
 const IMG = WIKI_IMG;
 const BOSSES = [
-  { name: "Tutankhamen", quests: ["db-pyr-02"] },
-  { name: "Tombeth", quests: ["cr-boss-01"] },
+  {
+    name: "Tutankhamen", quests: ["db-pyr-02"],
+    // from the wiki's Test of Knowledge guide (Test_of_Knowledge.html)
+    puzzles: [{ at: "Test of Knowledge", title: "Test of Knowledge: which key, and the second question",
+      text: ["First the key: the Lieutenant and the Sergeant each say which key it is, then what the other will tell you. Find what they said in the first table. Then answer the question from the second one."],
+      tables: [
+        { head: ["Lieutenant · Sergeant (key, then \"he will tell you…\")", "Pick"], rows: [
+          ["A, A · B, A", "B"], ["B, A · A, A", "B"], ["B, B · A, B", "A"], ["A, B · B, B", "A"],
+          ["A, A · A, A", "A (on the big map, where the Lieutenant stands far off, it can be B)"],
+          ["B, B · B, B", "A or B: a 50/50 guess"]] },
+        { head: ["The question is about…", "Answer"], rows: [
+          ["Oran G, Bron G, Silver G, Gold G", "Scarab"], ["Pharaoh's: provider for his people", "Flail"],
+          ["Pharaoh's: shepherd of his people", "Crook"], ["A stone with old Egyptian writing", "Glyph stone"],
+          ["A guide on the afterlife", "Lion Scroll"], ["Serves a mummy in the afterlife", "Shabtis"],
+          ["A gold vulture ornament", "Nekhbet"], ["Sticky, from a beehive", "Beeswax"],
+          ["Two tails, servant of Bastet", "Seth"], ["Seals a mummy's bandages", "Pine Resin"],
+          ["Dropped by Isis", "Red Feather"], ["Dropped by Nephthys", "Blue Feather"],
+          ["Jar: human head, liver", "Imsety"], ["Jar: monkey head, lungs", "Hapi"],
+          ["Jar: jackal head, stomach", "Duamutef"], ["Jar: falcon head, intestines", "Qebehsenuef"]] }],
+      images: [] }]
+  },
+  {
+    name: "Tombeth", quests: ["cr-boss-01"],
+    puzzles: [{ at: "Guide Stones", title: "Guide Stones: the quick way to the last room",
+      text: ["11 rooms; you start in room 7, the last room (only Guide Sabrina there) is room 5.",
+        "Keeper Julio with 1 Chaotic + 1 Fractal Guide Stone moves you 4 rooms on: 3 times gets you there. Bring 3 of each.",
+        "Guide Sabrina: a Brick Guide Stone moves you 1 room on; a Chaotic one alone sends you anywhere."],
+      images: [] }]
+  },
   {
     name: "Captain Skull", quests: [],
     puzzles: [{ at: "Not This Map", title: "The way through Not This Map", text: ["The lines show the walkways that lead on."],
@@ -50,7 +77,17 @@ const BOSSES = [
         { src: IMG + "6/67/Maze_Jungle_C.jpg", cap: "Maze Jungle C" }
       ] }]
   },
-  { name: "Queen Odinea", quests: ["sh-78", "sh-79", "tp-98", "tp-99"] },
+  {
+    name: "Queen Odinea", quests: ["sh-78", "sh-79", "tp-98", "tp-99"],
+    // checked against the stairs' teleport table: each NPC sends you to a fixed area
+    puzzles: [{ at: "Ice Palace Stairs", title: "Ice Palace Stairs: which plank to give, in order",
+      text: ["Blue Plank → Niwerth, Red Plank → Freyr, Green Plank → Freyja. You start in Area 1; drill the planks first."],
+      tables: [{ head: ["Planks, in order", "The areas you pass"], rows: [
+        ["Green, Red, Green, Green (fastest)", "1 → 4 → 3 → 5 → General Granada"],
+        ["Blue, Green, Green, Green", "1 → 2 → 3 → 5 → General Granada"],
+        ["Blue, Red, Red, Green, Green (one Green fewer)", "1 → 2 → 4 → 3 → 5 → General Granada"]] }],
+      images: [] }]
+  },
   {
     name: "Soki", quests: [],
     puzzles: [{ at: "Maze of Death", title: "Where the Ponchichis are",
