@@ -279,6 +279,22 @@
     return out;
   }
 
+  /**
+   * The hit the game shows, roughly: physical attacks (AP formulas) lose the monster's Physical
+   * resistance %, a critical hit is ×1.5, DP hardly counts. From Lightning Strike Master on Chaos Cut
+   * Throat (Physical 80): AP 57,416 × (4 + 27.07 × 2) × 20% = 667,633, the game showed 667,117 and
+   * 667,129, crit 1,000,934 (2026-11-25). No sample for magic attacks yet, so they get none.
+   */
+  const CRIT = 1.5;
+  const PHYS_RE = /\b(AP|Attack Power|Normal Attack Damage)\b|\bAttack\s*[×x*(]/i;
+  const attackKind = (formula, normal) => (normal || PHYS_RE.test(String(formula || "")) ? "Physical" : "");
+  function hitEstimate(dmg, mon, kind) {
+    const res = kind && mon && mon.res ? mon.res[kind] : null;
+    if (res == null || !(dmg > 0)) return null;
+    const hit = Math.floor(dmg * Math.max(0, 100 - res) / 100);
+    return { kind, res, hit, crit: Math.floor(hit * CRIT), hits: hit > 0 ? Math.ceil(mon.hp * (mon.bars || 1) / hit) : null };
+  }
+
   function searchMonsters(list, query, limit) {
     const words = String(query || "").toLowerCase().split(/\s+/).filter(Boolean);
     if (!words.length) return [];
@@ -456,7 +472,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, attackKind, hitEstimate, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -938,6 +954,9 @@
     const col = re => { if (!row) return ""; const i = sk.levels.cols.findIndex(c => re.test(c)); return i > 0 ? row[i] : ""; };
     const myEl = Object.entries(st.elements).map(([k, v]) => `<span class="${EL_CLASS(k)}">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`;
     const hits = m => (dmg > 0 ? Math.ceil(monsterHp(m) / dmg) : "–");
+    // ≈ the hit in game (physical attacks only, from one sample: see hitEstimate)
+    const kind = attackKind(sk && sk.formula, atk.normal);
+    const est = m => hitEstimate(dmg, m, kind);
     const cmp = (ctx.ui.compare || []).map(id => byId.get(id)).filter(Boolean);
 
     const pickRow = `
@@ -978,9 +997,13 @@
         </dl>
         <div class="pl-bs-result">
           ${atk.parts.map(p => `<p><span class="bd-note">${esc(p.label || (atk.normal ? "Damage (AP)" : "Damage"))}</span> <b>${fmt(p.value)}</b></p>`).join("")}
-          ${mon ? `<p><span class="bd-note">Hits to kill</span> <b class="is-hits">≥ ${hits(mon)}</b></p>` : ""}
+          ${mon && est(mon) ? `<p class="pl-bs-est"><span class="bd-note">≈ In game <span title="minus the monster's ${est(mon).kind} resistance ${est(mon).res}%">(− ${est(mon).kind} ${est(mon).res}%)</span></span> <b>${fmt(est(mon).hit)}</b></p>
+          <p><span class="bd-note">Critical ×${CRIT}</span> <b class="pl-bs-crit">${fmt(est(mon).crit)}</b></p>
+          <p><span class="bd-note">Hits to kill</span> <b class="is-hits">≈ ${est(mon).hits}</b></p>`
+          : mon ? `<p><span class="bd-note">Hits to kill</span> <b class="is-hits">≥ ${hits(mon)}</b></p>` : ""}
         </div>
         <code class="pl-power-f">${atk.normal ? "Normal hit: your AP (how the game turns it into damage isn't checked yet)" : esc(sk.formula)}</code>
+        <p class="bd-note pl-bs-est-note">${kind ? "≈ In game: the damage minus the monster's Physical resistance %, critical ×1.5. Worked out from one skill (Lightning Strike, within 0.1% of the game); write your hits below to check it." : "No in-game number for magic attacks yet: this is before the monster's defense. Write your hits below so it can be worked out."}</p>
       </div>`;
 
     const table = `
@@ -992,10 +1015,10 @@
         ${ctx.ui.cmpQuery ? `<ul class="pl-mon-list">${searchMonsters(list, ctx.ui.cmpQuery, 8).map(m => `<li><button type="button" onclick="TQPlanner.compare('${esc(m.id)}', true)">
           <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span> <span class="bd-note">HP ${hpText(m)} · DP ${fmt(m.dp)}</span></button></li>`).join("")}</ul>` : ""}
         ${cmp.length || mon ? `<div class="bd-lvtable-wrap"><table class="pl-bs-table">
-          <thead><tr><th>Monster</th><th>Lv</th><th>HP</th><th>DP</th><th>MD</th><th>${esc(atk.name)}</th><th>Hits ≥</th><th></th></tr></thead>
+          <thead><tr><th>Monster</th><th>Lv</th><th>HP</th><th>DP</th><th>MD</th><th>${esc(atk.name)}${kind ? " ≈" : ""}</th><th>Hits ${kind ? "≈" : "≥"}</th><th></th></tr></thead>
           <tbody>${[...(mon ? [mon] : []), ...cmp.filter(m => m !== mon)].map(m => `<tr class="${m === mon ? "is-on" : ""}">
             <td><button type="button" class="pl-bs-link" onclick="TQPlanner.pickMonster('${esc(m.id)}')">${esc(m.n)}</button>${m.boss ? ` <span class="tag">Boss</span>` : ""}</td>
-            <td>${m.l}</td><td>${fmt(monsterHp(m))}${m.bars ? ` <span class="bd-note">(×${m.bars})</span>` : ""}</td><td>${fmt(m.dp)}</td><td>${fmt(m.md)}</td><td>${fmt(dmg)}</td><td><b>${hits(m)}</b></td>
+            <td>${m.l}</td><td>${fmt(monsterHp(m))}${m.bars ? ` <span class="bd-note">(×${m.bars})</span>` : ""}</td><td>${fmt(m.dp)}</td><td>${fmt(m.md)}</td><td>${est(m) ? `<span title="${fmt(dmg)} before resistance">${fmt(est(m).hit)}</span>` : fmt(dmg)}</td><td><b>${est(m) ? est(m).hits : hits(m)}</b></td>
             <td>${m === mon ? "" : `<button type="button" class="btn btn-sm" aria-label="Take ${esc(m.n)} out" onclick="TQPlanner.compare('${esc(m.id)}', false)">✕</button>`}</td></tr>`).join("")}</tbody>
         </table></div>` : ""}
       </div>`;
@@ -1003,7 +1026,7 @@
     const log = hitLog(build, mon, usable, ctx);
     return `
       <section class="bd-box pl-battle">
-        <h4>⚔️ Battle Summary <span class="bd-note">before the monster's defense</span></h4>
+        <h4>⚔️ Battle Summary <span class="bd-note">your damage, and ≈ the hit in game</span></h4>
         ${pickRow}
         <div class="pl-bs-body">${monSide}${atkSide}</div>
         ${table}

@@ -304,6 +304,28 @@ t("monsters: Tombeth #2072 as in the client (HP 6,845 x 4 bars, AP 1,178, Earth 
   assert.ok(P.monOptions(mons, "tombeth", bossIds, []).every(o => /tombeth/i.test(o.m.n) && o.group === ""));
 });
 
+t("≈ in-game hit: physical attacks lose the Physical resistance %, crit ×1.5 (Lightning Strike on Chaos Cut Throat)", () => {
+  const mons = data("monsters.json").monsters;
+  const cct = mons.find(m => m.n === "Chaos Cut Throat" && m.l === 417);
+  assert.strictEqual(cct.res.Physical, 80);
+  // the player's Bunny / Duelist: AP 3210 + 54206, Elec 2707%, Lightning Strike Master (Magnification 400%)
+  const dmg = 57416 * (4 + 27.07 * 2);
+  const e = P.hitEstimate(dmg, cct, P.attackKind("Attack Power × (Magnification + Electric Attribute × 2)"));
+  assert.strictEqual(e.kind, "Physical");
+  for (const seen of [667117, 667129]) assert.ok(Math.abs(e.hit - seen) / seen < 0.001, `${e.hit} vs ${seen} in game`);
+  assert.ok(Math.abs(e.crit - 1000934) / 1000934 < 0.001);
+  assert.strictEqual(e.hits, 1);
+  // which formulas count as physical: AP ones yes, magic ones (none yet) no
+  assert.strictEqual(P.attackKind("AP × Actual percentage"), "Physical");
+  assert.strictEqual(P.attackKind("Normal Attack Damage × A"), "Physical");
+  assert.strictEqual(P.attackKind("Attack × (Magnification Ratio + Fire Attribute × 1)"), "Physical");
+  assert.strictEqual(P.attackKind("", true), "Physical");
+  assert.strictEqual(P.attackKind("(magic - 49) × (attack magnification + 3 × attribute value (%) ÷ 100)"), "");
+  assert.strictEqual(P.attackKind("MA × (Magnification + Water Attribute)"), "");
+  assert.strictEqual(P.hitEstimate(dmg, cct, ""), null);
+  assert.strictEqual(P.hitEstimate(0, cct, "Physical"), null);
+});
+
 t("hit log: numbers parsed from what was typed, cleaned, and written out as text", () => {
   assert.deepStrictEqual(P.parseDamage("812 795, 830\n1,640"), [812, 795, 830, 1640]);
   assert.deepStrictEqual(P.parseDamage("none"), []);
