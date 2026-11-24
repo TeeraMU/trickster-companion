@@ -56,7 +56,8 @@ const BOSSES = [
   {
     name: "Pirate King Karan", quests: ["gb-62"],
     puzzles: [{ at: "Whirlpool of Agony", title: "Short way through the Whirlpool of Agony", text: [],
-      images: [{ src: IMG + "b/b2/Whirlpool_of_Agony_Short_Path.jpg", cap: "Short path" }] }]
+      // the mirror only kept the page's 400px copy (the full-size file is a 404)
+      images: [{ src: IMG + "thumb/b/b2/Whirlpool_of_Agony_Short_Path.jpg/400px-Whirlpool_of_Agony_Short_Path.jpg", cap: "Short path" }] }]
   },
   {
     name: "Count Blood", quests: [],
