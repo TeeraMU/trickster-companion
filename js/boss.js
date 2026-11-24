@@ -198,7 +198,10 @@
         <ul class="bs-drop-list">${b.drops.map(d => `<li>
           ${d.img ? pic(d.img, "bs-drop-pic", "") : `<span class="bs-drop-pic bs-drop-nopic" aria-hidden="true">🎁</span>`}
           <span class="bs-drop-name"><strong>${esc(d.n)}</strong>${d.rate ? ` <span class="tag">${esc(d.rate)}</span>` : ""}</span>
-          <span class="bd-note">${esc(d.use)}</span></li>`).join("")}</ul>
+          <span class="bd-note">${esc(d.use)}${d.req ? ` · opens at Lv.${d.req}` : ""}</span>
+          ${d.contains ? `<div class="bs-box-in"><p class="bd-note">Inside, ${esc(d.pick || "")}:</p>
+            <ul>${d.contains.map(c => `<li>${c.img ? pic(c.img, "bs-box-pic", "") : ""}<span><strong>${esc(c.n)}</strong> <span class="tag">Lv.${c.lv}</span>${c.slots ? ` <span class="bd-note">${c.slots} slots</span>` : ""}
+              <br><span class="bd-note">${esc(c.stats)} (max temper)${c.set ? ` · set with Helmet + Shield + Ring: ${esc(c.set)}` : ""}</span></span></li>`).join("")}</ul></div>` : ""}</li>`).join("")}</ul>
       </details>`;
   }
 

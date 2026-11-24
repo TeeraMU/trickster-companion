@@ -3183,7 +3183,56 @@
     {
      "n": "Koiosu Legendary Box",
      "use": "Legendary Unique Box",
-     "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png"
+     "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png",
+     "req": 300,
+     "pick": "one of these at random",
+     "contains": [
+      {
+       "n": "Koiosu Sword",
+       "img": "https://static.wikia.nocookie.net/oto/images/d/d7/Weapon_Koiosu_Sword_Icon.png",
+       "lv": 320,
+       "slots": 4,
+       "stats": "AP 1,672, DA 105, HV 105",
+       "set": "AP + 520, AC + 40, DA + 40, HP + 900, DP + 400, HV + 40"
+      },
+      {
+       "n": "Koiosu Staff",
+       "img": "https://static.wikia.nocookie.net/oto/images/f/f0/Weapon_Koiosu_Staff_Icon.png",
+       "lv": 320,
+       "slots": 4,
+       "stats": "MA 105, LK 70",
+       "set": "MP + 1,250, MA + 40, MD + 320, LK + 40, HP + 900, DP + 400"
+      },
+      {
+       "n": "Koiosu Gun",
+       "img": "https://static.wikia.nocookie.net/oto/images/4/49/Gun_Koiosu_Gun_Icon.png",
+       "lv": 320,
+       "slots": 4,
+       "stats": "AC 70, LK 70",
+       "set": "AC + 60, MD + 520, LK + 40, HP + 1,250, DP + 1,000, HV + 40"
+      },
+      {
+       "n": "Koiosu Helmet",
+       "img": "https://static.wikia.nocookie.net/oto/images/e/e2/Hat_Koiosu_Helmet_Icon.png",
+       "lv": 320,
+       "slots": 3,
+       "stats": "AC 70, MD 874, LK 70, DP 874"
+      },
+      {
+       "n": "Koiosu Shield",
+       "img": "https://static.wikia.nocookie.net/oto/images/c/c3/Shield_Koiosu_Shield_Icon.png",
+       "lv": 320,
+       "slots": 4,
+       "stats": "MD 1,207, HP 3,016, DP 1,207"
+      },
+      {
+       "n": "Koiosu Ring",
+       "img": "https://static.wikia.nocookie.net/oto/images/c/c6/Ring_Koiosu_Ring_Icon.png",
+       "lv": 320,
+       "slots": 4,
+       "stats": "AP 668, AC 40, MP 2,345, MA 40, DA 40, LK 40, HP 2,345, HV 40"
+      }
+     ]
     },
     {
      "n": "Koiosu Soul 1 to 7",
@@ -3464,7 +3513,57 @@
    "drops": [
     {
      "n": "True Kronos Legendary Box",
-     "use": "Legendary Unique Box"
+     "use": "Legendary Unique Box",
+     "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png",
+     "req": 360,
+     "pick": "one of these at random",
+     "contains": [
+      {
+       "n": "Kronos Sword",
+       "img": "https://static.wikia.nocookie.net/oto/images/d/d7/Weapon_Koiosu_Sword_Icon.png",
+       "lv": 380,
+       "slots": 4,
+       "stats": "AP 2,183, DA 136, HV 136",
+       "set": "AP + 620, AC + 48, DA + 48, HP + 1,150, DP + 500, HV + 48"
+      },
+      {
+       "n": "Kronos Staff",
+       "img": "https://static.wikia.nocookie.net/oto/images/f/f0/Weapon_Koiosu_Staff_Icon.png",
+       "lv": 380,
+       "slots": 4,
+       "stats": "MA 136, LK 91",
+       "set": "MP + 1,500, MA + 48, MD + 380, LK + 48, HP + 1,150, DP + 500"
+      },
+      {
+       "n": "Kronos Gun",
+       "img": "https://static.wikia.nocookie.net/oto/images/4/49/Gun_Koiosu_Gun_Icon.png",
+       "lv": 380,
+       "slots": 4,
+       "stats": "AC 91, LK 91",
+       "set": "AC + 68, MD + 640, LK + 48, HP + 1,500, DP + 1,250, HV + 48"
+      },
+      {
+       "n": "Kronos Helmet",
+       "img": "https://static.wikia.nocookie.net/oto/images/e/e2/Hat_Koiosu_Helmet_Icon.png",
+       "lv": 380,
+       "slots": 3,
+       "stats": "AC 91, MD 1,140, LK 91, DP 1,140"
+      },
+      {
+       "n": "Kronos Shield",
+       "img": "https://static.wikia.nocookie.net/oto/images/c/c3/Shield_Koiosu_Shield_Icon.png",
+       "lv": 380,
+       "slots": 4,
+       "stats": "MD 1,576, HP 3,939, DP 1,576"
+      },
+      {
+       "n": "Kronos Ring",
+       "img": "https://static.wikia.nocookie.net/oto/images/c/c6/Ring_Koiosu_Ring_Icon.png",
+       "lv": 380,
+       "slots": 4,
+       "stats": "AP 872, AC 51, MP 3,062, MA 51, DA 51, LK 51, HP 3,062, HV 51"
+      }
+     ]
     },
     {
      "n": "Kronos Soul 1 to 7",

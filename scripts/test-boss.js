@@ -69,6 +69,11 @@ t("Tartarus: Koiosu (client 'Nose Ios') and True Kronos ('Jean Kronos'), the way
     assert.ok(b.source.includes("oto.fandom.com"));
   }
   assert.ok(B.sections(k.walk).some(s => /Cage 6 -> 16 -> 24/.test(s.title)));
+  // the legendary boxes: one of six pieces at random, with level and stats
+  const kb = k.drops.find(d => /Legendary Box/.test(d.n)), tb = t.drops.find(d => /Legendary Box/.test(d.n));
+  assert.deepStrictEqual(kb.contains.map(c => c.n.split(" ")[1]), ["Sword", "Staff", "Gun", "Helmet", "Shield", "Ring"]);
+  assert.deepStrictEqual([kb.req, tb.req, kb.contains[0].lv, tb.contains[0].lv], [300, 360, 320, 380]);
+  assert.ok(tb.contains.every(c => /^Kronos /.test(c.n) && c.stats));
   assert.ok(B.sections(t.walk).some(s => /Part 7/.test(s.title)));
 });
 

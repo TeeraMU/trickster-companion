@@ -5156,6 +5156,12 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .bs-drop-list li > .bd-note { grid-column: 2; font-size: 0.8rem; }
 .bs-drop-pic { width: 30px; height: 30px; object-fit: contain; grid-row: span 2; }
 .bs-drop-name { min-width: 0; }
+/* what a box gives (Koiosu Legendary Box): under the box, full width */
+.bs-box-in { grid-column: 1 / -1; margin: 4px 0 2px; padding: 6px 8px; border-radius: var(--radius-sm); border: 1px dashed var(--border); background: var(--bg-primary); }
+.bs-box-in > p { margin: 0 0 4px !important; }
+.bs-box-in ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.bs-box-in li { display: flex; gap: 8px; align-items: flex-start; font-size: 0.85rem; }
+.bs-box-pic { width: 26px; height: 26px; object-fit: contain; flex: none; }
 .bs-drop-nopic { display: grid; place-items: center; font-size: 1.1rem; opacity: 0.55; filter: grayscale(1); }
 
 .bs-puzzle { margin-top: 8px; padding: 8px 10px; border-radius: var(--radius-sm); border: 1px dashed var(--border-highlight); background: var(--bg-card); }
