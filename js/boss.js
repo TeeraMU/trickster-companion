@@ -59,7 +59,17 @@
     return level >= lo && (!hi || level <= hi);
   }
 
-  const model = { sections, stepKey, beatenKey, progress, levelText, respawn, canEnter };
+  /** The solved puzzles under each part: { partIndex: [puzzle] }, each under the first part whose title has its `at`. */
+  function puzzlesByPart(boss, parts) {
+    const out = {};
+    for (const pz of boss.puzzles || []) {
+      const i = parts.findIndex(s => s.title.includes(pz.at));
+      if (i >= 0) (out[i] = out[i] || []).push(pz);
+    }
+    return out;
+  }
+
+  const model = { sections, stepKey, beatenKey, progress, levelText, respawn, canEnter, puzzlesByPart };
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
   // ---------------------------------------------------------------------------------------------
@@ -68,7 +78,7 @@
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const jsq = s => esc(String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
   const TYPE_CLASS = { Power: "bd-power", Magic: "bd-magic", Sense: "bd-sense", Charm: "bd-charm" };
-  const wikiUrl = name => WIKI_PAGE + encodeURIComponent(name.replace(/ /g, "_")) + ".html";
+  const wikiUrl = b => b.source || WIKI_PAGE + encodeURIComponent(b.name.replace(/ /g, "_")) + ".html";
   const pic = (src, cls, alt) => src ? `<img class="${cls}" src="${esc(src)}" alt="${esc(alt || "")}" loading="lazy" onerror="this.remove()">` : "";
 
   function hub(ctx) {
@@ -91,14 +101,14 @@
             <span class="bs-card-prog"><span class="bd-note">Trials ${p.done}/${p.total}</span><span class="area-bar"><span style="width:${pct}%"></span></span></span>
           </button></li>`;
         }).join("")}</ul>
-        ${(ctx.data.missing || []).length ? `<p class="bd-note">Not here yet: ${ctx.data.missing.map(esc).join(", ")} (Tartarus; no wiki page).</p>` : ""}
-        <p class="bd-note">From the ggFTW Trickster wiki. Monster numbers in the boss pages are the PlayTrickster client's.</p>
+        <p class="bd-note">From the ggFTW Trickster wiki (Tartarus: the Our Trickster Online wiki). Monster numbers in the boss pages are the PlayTrickster client's.</p>
       </section>`;
   }
 
   function trialBox(b, ctx) {
     const parts = sections(b.walk);
     if (!parts.length) return "";
+    const solved = puzzlesByPart(b, parts);
     return `
       <section class="bd-box bs-trials">
         <h4>🧭 How to get there <span class="bd-note">${progress(b, ctx.steps).done}/${parts.length}</span></h4>
@@ -108,10 +118,25 @@
             <label class="bs-trial-head"><input type="checkbox" ${on ? "checked" : ""} onchange="TQBoss.step('${jsq(b.name)}', ${i}, this.checked)">
               <strong>${esc(s.title)}</strong></label>
             ${s.lines.length ? `<ul class="bs-trial-lines">${s.lines.map(l => `<li style="--d:${l.d}">${esc(l.t)}</li>`).join("")}</ul>` : ""}
+            ${(solved[i] || []).map(puzzleBox).join("")}
           </li>`;
         }).join("")}</ol>
         ${b.notes.length ? `<div class="bs-notes"><p class="pl-res-title">📝 Notes</p>${b.notes.map(l => `<p>${esc(l.t)}</p>`).join("")}</div>` : ""}
       </section>`;
+  }
+
+  /** A solved puzzle: what to do, and the solved maps (tap one to open it full size). */
+  function puzzleBox(pz) {
+    return `
+      <details class="bs-puzzle" open>
+        <summary>🧩 ${esc(pz.title)}</summary>
+        ${pz.text.map(t => `<p>${esc(t)}</p>`).join("")}
+        <div class="bs-puzzle-maps ${pz.images.length > 1 ? "is-many" : ""}">${pz.images.map(im => `
+          <figure>
+            <a href="${esc(im.src)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(im.src)}" alt="${esc(im.cap)}" loading="lazy"></a>
+            <figcaption>${esc(im.cap)}</figcaption>
+          </figure>`).join("")}</div>
+      </details>`;
   }
 
   function fightBox(b, ctx) {
@@ -124,7 +149,7 @@
       <section class="bd-box bs-fight">
         <h4>⚔️ The fight</h4>
         ${card}
-        <p class="bd-note bs-wiki-line">Wiki: ${esc(b.type)} type${b.weak ? ` · weak to ${esc(b.weak)}` : ""}${b.resist ? ` · resists ${esc(b.resist)}` : ""}${w.hp ? ` · HP ${esc(w.hp)}` : ""}${w.dp ? ` · DP ${esc(w.dp)}` : ""}</p>
+        <p class="bd-note bs-wiki-line">Wiki: ${b.type ? esc(b.type) + " type" : "boss"}${b.weak ? ` · weak to ${esc(b.weak)}` : ""}${b.resist ? ` · resists ${esc(b.resist)}` : ""}${w.hp ? ` · HP ${esc(w.hp)}` : ""}${w.dp ? ` · DP ${esc(w.dp)}` : ""}</p>
         ${b.skills.length ? `<p class="pl-res-title">✨ Skills it uses</p>
           <ul class="bs-chips">${b.skills.map(s => `<li class="tag">${esc(s.n)}${s.lv ? ` <span class="bd-note">Lv.${s.lv}</span>` : ""}</li>`).join("")}</ul>` : ""}
         ${b.summons.length ? `<p class="pl-res-title">🐾 Calls in</p>
@@ -134,15 +159,14 @@
   }
 
   function questBox(b, ctx) {
-    const qs = (b.quests || []).map(id => ctx.quest(id)).filter(Boolean);
-    if (!qs.length) return "";
+    // the quest cards themselves (they live here, not on the Quests page): tick steps as usual
+    const cards = (b.quests || []).map(id => ctx.questCard(id)).filter(Boolean);
+    if (!cards.length) return "";
+    const done = (b.quests || []).filter(id => ctx.questDone(id)).length;
     return `
       <section class="bd-box bs-quests">
-        <h4>📜 Quests about ${esc(b.name)}</h4>
-        <ul class="bs-quest-list">${qs.map(q => `<li class="${q.done ? "is-done" : ""}">
-          <span>${q.done ? "✅" : "⬜"}</span>
-          <button type="button" class="pl-bs-link" onclick="TQBoss.quest('${jsq(q.id)}')">${esc(q.title)}</button>
-          ${q.area ? `<span class="bd-note">${esc(q.area)}</span>` : ""}</li>`).join("")}</ul>
+        <h4>📜 Quests <span class="bd-note">${done}/${cards.length} done</span></h4>
+        <div class="bs-quest-cards">${cards.join("")}</div>
       </section>`;
   }
 
@@ -181,29 +205,30 @@
             <h2>${pic(b.seal, "bs-seal", "")} ${esc(b.name)}</h2>
             <p class="bs-head-where">${esc(b.area)} boss · ${esc(b.location)}</p>
             <p class="bs-head-tags">
-              <span class="tag ${TYPE_CLASS[b.type] || ""}">${esc(b.type)}</span>
+              ${b.type ? `<span class="tag ${TYPE_CLASS[b.type] || ""}">${esc(b.type)}</span>` : ""}
               <span class="tag">Boss Lv.${b.level}</span>
               <span class="tag ${enter === false ? "bs-no" : enter ? "bs-yes" : ""}" title="${esc(b.restrict)}">Enter: ${esc(levelText(b))}${enter === false ? " (not your level)" : ""}</span>
               ${rs ? `<span class="tag" title="${esc(b.spawn)}">⏱️ Back in ${esc(rs)}</span>` : ""}
             </p>
             <p class="bs-head-actions">
               <button type="button" class="btn btn-sm ${p.beaten ? "btn-primary" : ""}" aria-pressed="${p.beaten}" onclick="TQBoss.beaten('${jsq(b.name)}', ${!p.beaten})">${p.beaten ? "✓ Beaten" : "Mark as beaten"}</button>
-              <a class="btn btn-sm" href="${esc(wikiUrl(b.name))}" target="_blank" rel="noopener">📖 Wiki page</a>
+              <a class="btn btn-sm" href="${esc(wikiUrl(b))}" target="_blank" rel="noopener">📖 Wiki page</a>
             </p>
           </div>
         </header>
         <div class="bs-cols">
-          <div class="bs-col">${trialBox(b, ctx)}${questBox(b, ctx)}</div>
+          <div class="bs-col">${trialBox(b, ctx)}</div>
           <div class="bs-col">${fightBox(b, ctx)}${dropBox(b, ctx)}</div>
         </div>
-        <p class="bd-note">Walkthrough and drops from the <a href="${esc(wikiUrl(b.name))}" target="_blank" rel="noopener">ggFTW wiki</a>; PlayTrickster may differ.</p>
+        ${questBox(b, ctx)}
+        <p class="bd-note">Walkthrough and drops from the <a href="${esc(wikiUrl(b))}" target="_blank" rel="noopener">${b.source ? "Our Trickster Online wiki (CC-BY-SA)" : "ggFTW wiki"}</a>; PlayTrickster may differ.</p>
       </section>`;
   }
 
   /**
    * ctx: { data: bosses.json, monsters: monsters.json or null, steps: appState.completedSteps,
    *        open: boss name or "", level: player level or 0, ui: { drops },
-   *        quest(id) -> { id, title, area, done } or null }
+   *        questCard(id) -> the quest's card HTML (renderQuestCard), questDone(id) -> true / false }
    */
   function render(ctx) {
     if (!ctx.data) return `<p class="calc-desc">Loading bosses…</p>`;

@@ -14,16 +14,50 @@ const WIKI_IMG = "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/ima
 
 // in the order of the wiki's boss list (by area), with the app's quests about each one: the trial
 // chain or the quest that opens the way, then quests asking for its drops
+// (these quests show on the 👑 Bosses page only, not on the Quests page). lv: the client entry to use
+// when the name has several. puzzles: solved maps and answers from the trial maps' own wiki pages,
+// shown under the trial whose title has `at`.
+const IMG = WIKI_IMG;
 const BOSSES = [
   { name: "Tutankhamen", quests: ["db-pyr-02"] },
   { name: "Tombeth", quests: ["cr-boss-01"] },
-  { name: "Captain Skull", quests: [] },
-  { name: "Pirate King Karan", quests: ["gb-62"] },
-  { name: "Count Blood", quests: [] },
-  { name: "Tenter Lion", quests: ["bs-13"] },
+  {
+    name: "Captain Skull", quests: [],
+    puzzles: [{ at: "Not This Map", title: "The way through Not This Map", text: ["The lines show the walkways that lead on."],
+      images: [{ src: IMG + "e/ed/Path_to_Oops_Wharf_Boss_2_-_Not_This_Map_(patways).jpg", cap: "Walkways" }] }]
+  },
+  {
+    name: "Pirate King Karan", quests: ["gb-62"],
+    puzzles: [{ at: "Whirlpool of Agony", title: "Short way through the Whirlpool of Agony", text: [],
+      images: [{ src: IMG + "b/b2/Whirlpool_of_Agony_Short_Path.jpg", cap: "Short path" }] }]
+  },
+  {
+    name: "Count Blood", quests: [],
+    puzzles: [{ at: "Majordomo Felix", title: "Majordomo Felix's sudoku answers",
+      text: ["Two puzzles: an easy one, then a harder one. Find the answer whose numbers around the board match the one in the game."],
+      images: [{ src: IMG + "0/01/Majordomo_Felix%27s_Trial_Answers.png", cap: "Answers" }] }]
+  },
+  {
+    name: "Tenter Lion", quests: ["bs-13"],
+    puzzles: [{ at: "Calm Down Suu", title: "Maze Jungle: who to talk to, and the way there",
+      text: ["You land in Maze Jungle A, B or C at random; look at the map in the game to know which.",
+        "Talk to them in this order: 0 Witch La Befana → 1 Pastor Tau → 2 Kristoffer J. → 3 Madam Sarah → 4 Warrior Kei → 5 Swampy Suu → back to 1 Pastor Tau.",
+        "Each coloured line goes to the NPC circled in the same colour."],
+      images: [
+        { src: IMG + "e/eb/Maze_Jungle_A.jpg", cap: "Maze Jungle A" },
+        { src: IMG + "9/9d/Maze_Jungle_B.jpg", cap: "Maze Jungle B" },
+        { src: IMG + "6/67/Maze_Jungle_C.jpg", cap: "Maze Jungle C" }
+      ] }]
+  },
   { name: "Queen Odinea", quests: ["sh-78", "sh-79", "tp-98", "tp-99"] },
-  { name: "Soki", quests: [] },
-  { name: "Spicy Dragon", quests: ["tp-31", "tp-37"] }
+  {
+    name: "Soki", quests: [],
+    puzzles: [{ at: "Maze of Death", title: "Where the Ponchichis are",
+      text: ["The map is one of two: Blue Bones or Red Bones. The picture marks every Ponchichi on both."],
+      images: [{ src: IMG + "d/d9/Mapa.jpg", cap: "Ponchichis on both maps" }] }]
+  },
+  // Lv.880: the client's numbers players go by (there's a Lv.730 copy too)
+  { name: "Spicy Dragon", lv: 880, quests: ["tp-31", "tp-32", "tp-37", "tp-92", "tp-93", "tp-102", "tp-103", "tp-104", "tp-105"] }
 ];
 // the wiki's own column names -> the app's (same as the Planner's resistances)
 const TOLERANCE = { Physical: "Physical", Magic: "Magic", Gun: "Gun", Fire: "Fire", Water: "Water", Air: "Wind", Soil: "Earth", Electric: "Elec", Light: "Light", Dark: "Dark", Shadow: "Shadow" };
@@ -121,9 +155,8 @@ for (const b of BOSSES) {
     return d;
   }).filter(d => d.n);
 
-  // the client's numbers for the same boss: the entry nearest the wiki's level, with HP bars first
-  // (Spicy Dragon has a Lv.880 copy without bars besides the Lv.730 boss)
-  const wikiLv = num(level) || 0;
+  // the client's numbers for the same boss: the entry nearest `lv` or the wiki's level, with HP bars first
+  const wikiLv = b.lv || num(level) || 0;
   const mon = monsters.filter(m => m.n === b.name)
     .sort((x, y) => Math.abs(x.l - wikiLv) - Math.abs(y.l - wikiLv) || (y.bars || 0) - (x.bars || 0) || (y.boss || 0) - (x.boss || 0))[0];
   const area = text((/<b>([^<]*Boss)<\/b>/.exec(left) || [])[1]).replace(/\s*Boss$/, "");
@@ -133,7 +166,7 @@ for (const b of BOSSES) {
     img: img(pics.find(p => /\.png$/i.test(p)) || pics[0]),
     sprite: img(pics.find(p => /\.gif$/i.test(p) && !/Seal/i.test(p))),
     seal: img(pics.find(p => /Seal/i.test(p))),
-    type, level: num(level), weak: weak && weak !== "-" ? weak : "", resist: resist && resist !== "-" ? resist : "",
+    type, level: b.lv || num(level), weak: weak && weak !== "-" ? weak : "", resist: resist && resist !== "-" ? resist : "",
     location: text((/<b>Location<\/b>[\s\S]*?<tr>\s*<td[^>]*>([\s\S]*?)<\/td>/.exec(html) || [])[1]),
     wiki: { element, hp, ap, ma, dp, md, gd },
     tolerance, skills, summons,
@@ -142,15 +175,23 @@ for (const b of BOSSES) {
     quests: b.quests,
     monster: mon ? mon.id : null
   };
+  if (b.puzzles) boss.puzzles = b.puzzles;
   for (const k of ["sprite", "seal"]) if (!boss[k]) delete boss[k];
   out.push(boss);
 }
 
+// Tartarus (Koiosu, True Kronos): no ggFTW pages, written by hand from the Our Trickster Online wiki;
+// both start with the same way into Tartarus
+const tartarus = JSON.parse(fs.readFileSync(path.join(__dirname, "bosses-tartarus.json"), "utf8"));
+for (const b of tartarus.bosses) {
+  if (!monsters.some(m => m.id === b.monster)) throw new Error(b.name + ": no client monster " + b.monster);
+  out.push(Object.assign({}, b, { walk: tartarus.getThere.concat(b.walk) }));
+}
+
 const file = path.join(__dirname, "../../data/bosses.json");
 fs.writeFileSync(file, JSON.stringify({
-  source: "ggFTW Trickster wiki boss pages (wikimirror.lifeto.co); numbers in Battle Summary from the PlayTrickster client (data/monsters.json)",
+  source: "ggFTW Trickster wiki boss pages (wikimirror.lifeto.co); Tartarus from the Our Trickster Online wiki (oto.fandom.com, CC-BY-SA); numbers in Battle Summary from the PlayTrickster client (data/monsters.json)",
   made: new Date().toISOString().slice(0, 10),
-  missing: ["Koiosu", "True Kronos"],
   bosses: out
 }, null, 1) + "\n");
 for (const b of out) console.log(`${b.name.padEnd(18)} ${b.area.padEnd(16)} Lv.${b.level} ${b.levels} walk ${b.walk.length} (headings ${b.walk.filter(l => l.h).length}) notes ${b.notes.length} skills ${b.skills.length} summons ${b.summons.length} drops ${b.drops.length} tol ${Object.keys(b.tolerance).length} mon ${b.monster} seal ${!!b.seal}`);

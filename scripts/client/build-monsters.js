@@ -22,10 +22,13 @@ const lives = new Map(JSON.parse(fs.readFileSync(path.join(root, where.get("boss
 const ELEMENT = { 1: "Fire", 2: "Water", 3: "Wind", 4: "Earth", 5: "Elec", 6: "Light", 7: "Dark" };
 const RES = { Fire: "FireR", Water: "WaterR", Wind: "WindR", Earth: "EarthR", Elec: "ElecR", Light: "LightR", Dark: "DarkR", None: "NoPropR", Physical: "PhysicalR", Gun: "GunR" };
 const n = v => Number(v) || 0;
+// the client's English names that are machine translations of the boss names players use
+const NAME_FIX = { "Nose Ios": "Koiosu", "Jean Kronos": "True Kronos" };
 
 const seen = new Set(), out = [];
 for (const r of rows) {
-  const name = String(r.Name || "").trim();
+  const raw = String(r.Name || "").trim();
+  const name = NAME_FIX[raw] || raw;
   if (!name || /^\[|test/i.test(name) || !n(r.MaxHpLv)) continue;
   const m = {
     id: r.ID, n: name, l: n(r.Level), hp: n(r.MaxHpLv), ap: n(r.ApLv), ac: n(r.AcLv), dx: n(r.DxLv), ma: n(r.MaLv),

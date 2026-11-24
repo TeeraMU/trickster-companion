@@ -10,9 +10,9 @@ let n = 0;
 const t = (name, fn) => { fn(); n++; console.log("ok ", name); };
 const boss = name => data.bosses.find(b => b.name === name);
 
-t("nine area bosses in the order you meet them, each with a picture, seal, area and walkthrough", () => {
+t("eleven bosses in the order you meet them, each with a picture, seal, area and walkthrough", () => {
   assert.deepStrictEqual(data.bosses.map(b => b.name), ["Tutankhamen", "Tombeth", "Captain Skull", "Pirate King Karan",
-    "Count Blood", "Tenter Lion", "Queen Odinea", "Soki", "Spicy Dragon"]);
+    "Count Blood", "Tenter Lion", "Queen Odinea", "Soki", "Spicy Dragon", "Koiosu", "True Kronos"]);
   for (const b of data.bosses) {
     assert.ok(/^https:\/\//.test(b.img) && /Seal/.test(b.seal), b.name + " pictures");
     assert.ok(b.area && b.location && b.level > 0, b.name + " area / level");
@@ -48,10 +48,42 @@ t("entry levels: a range, a floor, or none", () => {
   assert.strictEqual(B.canEnter(boss("Tombeth"), 0), null);
 });
 
-t("Spicy Dragon matches the client's Lv.730 boss with HP bars, not the Lv.880 copy", () => {
-  const mon = monsters.find(m => m.id === boss("Spicy Dragon").monster);
-  assert.strictEqual(mon.l, 730);
+t("Spicy Dragon uses the client's Lv.880 entry (players go by it), with 5 HP bars", () => {
+  const b = boss("Spicy Dragon");
+  const mon = monsters.find(m => m.id === b.monster);
+  assert.strictEqual(mon.l, 880);
   assert.strictEqual(mon.bars, 5);
+  assert.strictEqual(b.level, 880);
+});
+
+t("Tartarus: Koiosu (client 'Nose Ios') and True Kronos ('Jean Kronos'), the way in first, then the cages / barrier keys", () => {
+  const k = boss("Koiosu"), t = boss("True Kronos");
+  assert.strictEqual(monsters.find(m => m.id === k.monster).hp, 480000);
+  assert.strictEqual(monsters.find(m => m.id === t.monster).hp, 1152000);
+  assert.strictEqual(B.levelText(k), "Lv.260+");
+  assert.strictEqual(B.levelText(t), "Lv.320+");
+  for (const b of [k, t]) {
+    const parts = B.sections(b.walk);
+    assert.strictEqual(parts[0].title, "Getting to Tartarus (first time)");
+    assert.ok(/Homeless Ian/.test(parts[0].lines[0].t));
+    assert.ok(b.source.includes("oto.fandom.com"));
+  }
+  assert.ok(B.sections(k.walk).some(s => /Cage 6 -> 16 -> 24/.test(s.title)));
+  assert.ok(B.sections(t.walk).some(s => /Part 7/.test(s.title)));
+});
+
+t("solved puzzles sit under their trial: Tenter Lion's three mazes, Soki's Ponchichi map, Felix's answers", () => {
+  const under = name => { const b = boss(name); const parts = B.sections(b.walk); const by = B.puzzlesByPart(b, parts);
+    return Object.entries(by).map(([i, list]) => [parts[i].title, list]); };
+  const tl = under("Tenter Lion");
+  assert.strictEqual(tl.length, 1);
+  assert.ok(/Calm Down Suu/.test(tl[0][0]));
+  assert.deepStrictEqual(tl[0][1][0].images.map(i => i.cap), ["Maze Jungle A", "Maze Jungle B", "Maze Jungle C"]);
+  assert.ok(/Maze of Death/.test(under("Soki")[0][0]));
+  assert.ok(/Majordomo Felix/.test(under("Count Blood")[0][0]));
+  // Karan's two "Whirlpool of Agony" trials: the short path shows once, under the first
+  assert.strictEqual(under("Pirate King Karan").length, 1);
+  for (const b of data.bosses) for (const pz of b.puzzles || []) for (const im of pz.images) assert.ok(im.src.startsWith("https://wikimirror.lifeto.co/"));
 });
 
 t("progress counts ticked parts and the beaten mark from the synced steps", () => {
@@ -62,7 +94,9 @@ t("progress counts ticked parts and the beaten mark from the synced steps", () =
   assert.strictEqual(B.stepKey("Tombeth", 2), "boss:Tombeth_2");
 });
 
-t("every boss quest is a real quest", () => {
+t("every boss quest is a real quest, and belongs to one boss only", () => {
+  const seen = new Set();
+  for (const b of data.bosses) for (const id of b.quests) { assert.ok(!seen.has(id), id + " twice"); seen.add(id); }
   const ids = new Set();
   const idx = require(path.join(__dirname, "..", "data", "quests", "index.json"));
   for (const f of idx.files || idx) {
