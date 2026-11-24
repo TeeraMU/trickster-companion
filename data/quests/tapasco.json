@@ -6107,6 +6107,9 @@
       "prereqs": [
         {
           "quest": "tp-43"
+        },
+        {
+          "quest": "tp-01"
         }
       ],
       "prereqText": "Level 230+, have completed Eliza Bath - Theme Spa Grand Opening and Al-Hauri - Tapasco Exfoliation Towels",

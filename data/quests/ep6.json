@@ -1633,7 +1633,7 @@
     },
     {
       "id": "ep6-27",
-      "order": 1426,
+      "order": 1428,
       "title": "Don Giuvanni - An Apology",
       "categories": [
         "episode"
@@ -1655,6 +1655,9 @@
       "prereqs": [
         {
           "quest": "ep6-26"
+        },
+        {
+          "quest": "udr-03"
         }
       ],
       "prereqText": "Had completed Don Cavalier - Evil Don Giuvanni",
@@ -1679,7 +1682,7 @@
     },
     {
       "id": "ep6-28",
-      "order": 1427,
+      "order": 1429,
       "title": "Transformed Don Danihen - Song of Destiny",
       "categories": [
         "episode"
@@ -1741,7 +1744,7 @@
     },
     {
       "id": "ep6-29",
-      "order": 1428,
+      "order": 1430,
       "title": "Transformed Rosaline - Birth of a True Trickster",
       "categories": [
         "episode"
@@ -1791,7 +1794,7 @@
     },
     {
       "id": "ep6-30",
-      "order": 1429,
+      "order": 1431,
       "title": "Madam Sarah - Sarah's Concerns",
       "categories": [
         "episode"
@@ -1850,7 +1853,7 @@
     },
     {
       "id": "ep6-31",
-      "order": 1430,
+      "order": 1432,
       "title": "King Poppuri - Holy Preparations?",
       "categories": [
         "episode"
@@ -1930,7 +1933,7 @@
     },
     {
       "id": "ep6-32",
-      "order": 1431,
+      "order": 1433,
       "title": "Poppuri - Make a Holy Incense Burner",
       "categories": [
         "episode"
@@ -1989,7 +1992,7 @@
     },
     {
       "id": "ep6-33",
-      "order": 1432,
+      "order": 1434,
       "title": "Artisan Poppuri - Make Holy Incense",
       "categories": [
         "episode"
@@ -2048,7 +2051,7 @@
     },
     {
       "id": "ep6-34",
-      "order": 1433,
+      "order": 1435,
       "title": "Blue Muffler Poppuri - Make Holy Snacks",
       "categories": [
         "episode"
@@ -2118,7 +2121,7 @@
     },
     {
       "id": "ep6-35",
-      "order": 1434,
+      "order": 1436,
       "title": "Pastor Tau - Chagan's Heart",
       "categories": [
         "episode"
@@ -2163,7 +2166,7 @@
     },
     {
       "id": "ep6-36",
-      "order": 1435,
+      "order": 1437,
       "title": "Happisto Stallone - Nefertiti's Crown",
       "categories": [
         "episode"
@@ -2248,7 +2251,7 @@
     },
     {
       "id": "ep6-37",
-      "order": 1436,
+      "order": 1438,
       "title": "Louis Bitton - Trickster Cloak",
       "categories": [
         "episode"
@@ -2322,7 +2325,7 @@
     },
     {
       "id": "ep6-38",
-      "order": 1437,
+      "order": 1439,
       "title": "Bard La Fimmel - Song About Love and Destiny",
       "categories": [
         "episode"
