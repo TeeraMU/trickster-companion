@@ -51,6 +51,7 @@
         <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
         <button class="view-tab" id="tabBtnBosses" onclick="switchView('bosses')"><span class="tab-icon" aria-hidden="true">👑</span><span class="tab-label">Bosses</span></button>
+        <button class="view-tab" id="tabBtnGuardian" onclick="switchView('guardian')"><span class="tab-icon" aria-hidden="true">🥚</span><span class="tab-label">Guardian</span></button>
         <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
         <button class="view-tab" id="tabBtnFriends" onclick="switchView('friends')"><span class="tab-icon" aria-hidden="true">👥</span><span class="tab-label">Friends</span></button>
         <button class="view-tab" id="tabBtnBuild" onclick="switchView('build')"><span class="tab-icon" aria-hidden="true">🧭</span><span class="tab-label">Build guide</span></button>
@@ -261,6 +262,11 @@
       <div id="plannerContainer"><p class="calc-desc">Loading…</p></div>
     </div>
 
+    <!-- VIEW: GUARDIAN (js/guardian.js, data/guardian.json) -->
+    <div id="viewGuardian" class="hidden">
+      <div id="guardianContainer"><p class="calc-desc">Loading…</p></div>
+    </div>
+
     <!-- VIEW: BOSSES (js/boss.js, data/bosses.json) -->
     <div id="viewBosses" class="hidden">
       <div id="bossContainer"><p class="calc-desc">Loading bosses…</p></div>
@@ -372,6 +378,7 @@
   <script src="js/search.js"></script>
   <script src="js/build.js"></script>
   <script src="js/boss.js"></script>
+  <script src="js/guardian.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -573,7 +580,7 @@
       const cats = selectedCats();
 
       let list = QUESTS.filter(q => {
-        if (BOSS_OF.has(q.id)) return false; // on the 👑 Bosses page
+        if (onOwnPage(q.id)) return false; // on the 👑 Bosses or 🥚 Guardian page
         if (!matchesClassFilter(q, cls)) return false;
         if (!inSelectedArea(q)) return false;
         if (cats.length && !cats.some(c => q.categories.includes(c))) return false;
@@ -801,7 +808,7 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", bosses: "Bosses", bag: "Bag", friends: "Friends", build: "Build", planner: "Planner", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bosses: "Bosses", guardian: "Guardian", bag: "Bag", friends: "Friends", build: "Build", planner: "Planner", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
@@ -822,6 +829,7 @@
       if (viewName === "build") renderBuild();
       if (viewName === "planner") renderPlanner();
       if (viewName === "bosses") renderBosses();
+      if (viewName === "guardian") renderGuardian();
     }
 
     // ============================================================================
@@ -829,7 +837,7 @@
     // ============================================================================
     function renderStatsAndRegions() {
       const cls = appState.selectedClass || "All";
-      const activePool = QUESTS.filter(q => !BOSS_OF.has(q.id) && matchesClassFilter(q, cls));
+      const activePool = QUESTS.filter(q => !onOwnPage(q.id) && matchesClassFilter(q, cls));
 
       const totalCount = activePool.length;
       const doneCount = activePool.filter(q => !!appState.completedQuests[q.id]).length;
@@ -1225,6 +1233,17 @@
     function jumpToQuest(id) {
       const q = questById(id);
       if (!q) return;
+      if (GUARD_OF.has(id)) { // a guardian quest: its card is on the 🥚 Guardian page, under its stage
+        appState.expandedQuests[id] = true;
+        GUARD_UI.quests = GUARD_OF.get(id);
+        saveState();
+        switchView("guardian");
+        requestAnimationFrame(() => {
+          const el = document.getElementById("qcard-" + id);
+          if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+        return;
+      }
       if (BOSS_OF.has(id)) { // a boss's quest: its card is on the boss's page
         appState.expandedQuests[id] = true;
         appState.bossOpen = BOSS_OF.get(id);
@@ -2362,6 +2381,7 @@
       renderChecklistFarm();
       renderKeyRoadmap();
       if (appState.currentView === "bosses") renderBosses(); // boss ticks are steps: a synced copy changes them
+      if (appState.currentView === "guardian") renderGuardian();
     }
 
     // ============================================================================
@@ -2420,6 +2440,40 @@
         switchView("planner");
       }
     });
+    // ============================================================================
+    // 🥚 GUARDIAN (js/guardian.js): data/guardian.json, loaded with the quests. Stage ticks are steps
+    // ("guard:0"), so they sync; its quests show on this page only.
+    // ============================================================================
+    let GUARDIAN = null;
+    let GUARD_OF = new Map(); // quest id -> the stage it belongs to
+    const GUARD_UI = { recipe: "", quests: -1 };
+    function setGuardian(d) {
+      GUARDIAN = d;
+      GUARD_OF = new Map();
+      ((d && d.stages) || []).forEach((s, i) => (s.quests || []).forEach(id => GUARD_OF.set(id, i)));
+    }
+    /** A quest whose card lives on the 👑 Bosses or 🥚 Guardian page, not on the Quests page. */
+    const onOwnPage = id => BOSS_OF.has(id) || GUARD_OF.has(id);
+    function renderGuardian() {
+      const box = document.getElementById("guardianContainer");
+      if (!box) return;
+      if (!GUARDIAN) { box.innerHTML = `<p class="calc-desc">Couldn't load the guardian guide. Check the connection and reload the page.</p>`; return; }
+      box.innerHTML = TQGuardian.render({
+        data: GUARDIAN, steps: appState.completedSteps, ui: GUARD_UI,
+        questCard: id => { const q = questById(id); return q ? renderQuestCard(q) : ""; },
+        questDone: id => !!appState.completedQuests[id]
+      });
+    }
+    Object.assign(TQGuardian, {
+      step(i, on) {
+        const key = TQGuardian.stepKey(i);
+        if (on) appState.completedSteps[key] = true; else delete appState.completedSteps[key];
+        saveState(); renderGuardian();
+      },
+      quests(i, open) { GUARD_UI.quests = open ? i : (GUARD_UI.quests === i ? -1 : GUARD_UI.quests); },
+      recipe(graph) { GUARD_UI.recipe = graph; renderGuardian(); }
+    });
+
     function bossTick(key, on) {
       if (on) appState.completedSteps[key] = true; else delete appState.completedSteps[key];
       saveState(); renderBosses();
@@ -2523,8 +2577,10 @@
     async function loadData() {
       // the boss list comes with the quests: its quests live on the 👑 Bosses page, not the Quests page
       const bosses = TQData.fetchJson("data/bosses.json").catch(() => null);
+      const guardian = TQData.fetchJson("data/guardian.json").catch(() => null); // its quests live on the 🥚 Guardian page
       const data = await TQData.loadAll("data/");
       setBosses(await bosses);
+      setGuardian(await guardian);
       QUESTS = data.quests;
       PREREQS = data.prereqsById;
       MAP_INDEX = TQRoute.indexMaps(data.maps);

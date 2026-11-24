@@ -2372,7 +2372,7 @@ a.btn {
 }
 
 .topbar {
-  max-width: 1600px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 8px 24px;
   display: flex;
@@ -2786,8 +2786,8 @@ a.btn {
   gap: 8px;
 }
 
-/* eight page tabs with names need ~1700px; below that tighten the bar first, then go icon-only */
-@media (max-width: 1800px) {
+/* nine page tabs with names need ~1950px; below that tighten the bar first, then go icon-only */
+@media (max-width: 1950px) {
   .topbar {
     gap: 10px;
     padding-inline: 16px;
@@ -2804,7 +2804,7 @@ a.btn {
 }
 
 /* narrower laptops: tabs show icons only, names on hover */
-@media (max-width: 1560px) {
+@media (max-width: 1660px) {
   .app-header .view-tab .tab-label {
     display: none;
   }
@@ -3147,18 +3147,24 @@ a.btn {
   .app-header .view-tabs {
     grid-template-columns: none;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    /* columns may shrink below their label: 9 tabs on a 375px phone */
+    grid-auto-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 420px) {
   .app-header .view-tab {
-    font-size: 0.62rem;
-    letter-spacing: -0.01em;
+    font-size: 0.56rem;
+    letter-spacing: -0.03em;
+    min-width: 0;
+    padding-inline: 0;
   }
 
+  /* a long name (Build guide) takes two lines rather than pushing the bar wider */
   .app-header .view-tab .tab-label {
-    white-space: nowrap;
+    white-space: normal;
+    line-height: 1.05;
+    text-align: center;
   }
 }
 
@@ -5186,3 +5192,40 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   .bs-card-sprite { max-height: 70px; }
   .bs-card-pics .bs-seal { width: 24px; }
 }
+
+/* ---------- 🥚 Guardian page (js/guardian.js) ---------- */
+.gd-page .tag { white-space: nowrap; }
+/* the egg's graph as the game draws it: Power top left, Magic top right, Sense bottom left, Charm bottom right */
+.gd-graph { display: inline-grid; grid-template-columns: repeat(2, 1.35em); gap: 2px; font-family: var(--font-display); font-size: 0.78rem; line-height: 1.35em; text-align: center; vertical-align: middle; }
+.gd-graph > span { border-radius: 5px; font-weight: 800; }
+.gd-graph.is-big { font-size: 1.15rem; grid-template-columns: repeat(2, 1.6em); line-height: 1.6em; }
+.gd-g-power { background: color-mix(in srgb, var(--accent-red) 22%, var(--bg-card)); color: var(--ink-red); }
+.gd-g-magic { background: color-mix(in srgb, var(--accent-blue) 22%, var(--bg-card)); color: var(--ink-blue); }
+.gd-g-sense { background: color-mix(in srgb, var(--accent-purple) 22%, var(--bg-card)); color: var(--ink-purple); }
+.gd-g-charm { background: color-mix(in srgb, var(--accent-orange) 24%, var(--bg-card)); color: var(--ink-orange); }
+.gd-quests { margin-top: 8px; }
+.gd-quests > summary { cursor: pointer; font-weight: 700; font-size: 0.88rem; color: var(--ink-blue); margin-bottom: 6px; }
+.gd-recipe-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.gd-recipe-tab { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; font: inherit; font-size: 0.85rem; line-height: 1.2; text-align: left; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-primary); }
+.gd-recipe-tab.is-on { border-color: var(--accent-blue); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-blue) 30%, transparent); }
+.gd-recipe-sum { display: flex; gap: 12px; align-items: center; margin: 0 0 8px; }
+.gd-recipe-steps { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.gd-recipe-steps li { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--border); }
+.gd-step-do { min-width: 0; }
+.gd-rules, .gd-list { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 4px; font-size: 0.9rem; }
+.gd-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px; }
+.gd-action { padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-primary); font-size: 0.86rem; }
+.gd-action ul { margin: 4px 0 0; padding-left: 18px; display: grid; gap: 4px; }
+.gd-action-head { margin: 0; }
+.gd-action.bd-power { border-left: 4px solid var(--accent-red); }
+.gd-action.bd-magic { border-left: 4px solid var(--accent-blue); }
+.gd-action.bd-sense { border-left: 4px solid var(--accent-purple); }
+.gd-action.bd-charm { border-left: 4px solid var(--accent-orange); }
+.gd-guardians, .gd-skills { margin-top: 12px; }
+.gd-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 8px; }
+.gd-card { display: flex; gap: 10px; align-items: center; padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-primary); font-size: 0.88rem; }
+.gd-card img { width: 64px; height: 64px; object-fit: contain; flex: none; image-rendering: pixelated; }
+.gd-about { color: var(--text-secondary); font-size: 0.82rem; }
+.gd-skill-lines { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 4px 12px; }
+.gd-skills details > summary { cursor: pointer; font-weight: 700; color: var(--ink-blue); margin: 6px 0; }

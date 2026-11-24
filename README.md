@@ -8,6 +8,7 @@ Quest tracker, boss guide and character planner for **Trickster Online** (fan-ma
 - **📖 Episodes**: EP0 to EP6 in play order. The quest marked **▶ Now** is the next one; **🗺️ Route** shows the stops on the region map and **🎒 Items** everything still to collect, grouped by map.
 - **📜 Quests**: 1,230 quests from 25 areas (Coral Beach to Techichi, Tapasco, the Abyss, Tower of Chaos, 3rd jobs …) with category tabs, filters and search.
 - **👑 Bosses**: the 11 area bosses from Tutankhamen to Spicy Dragon, then Koiosu and True Kronos in Tartarus. The trials to reach each one as a checklist, solved puzzles (Tenter Lion's mazes, Felix's sudoku, Tutankhamen's answers, Odinea's planks, the Tartarus cages …), its quests, numbers and drops.
+- **🥚 Guardian**: getting your guardian from Lv.65 to Lv.180 as a checklist, how its egg grows, graphs to aim for step by step (6044, 2642, 4064, 4046, 4604), the legendary guide, skills and runes.
 - **🎒 Bag**: type what you have; quests, routes and items lists take it off.
 - **🧭 Build guide**: every class and job: skills with formulas, TM, what masters them and where it drops, the stats each job uses.
 - **🛠️ Planner**: up to 20 builds. Equipment typed in as the item window shows it (compound slots included), a status window that matches the game, buffs, skill power, and a **⚔️ Battle Summary** against any of the client's 1,309 monsters with the hit you'll see in game (physical attacks).

@@ -1,0 +1,170 @@
+{
+  "about": "The 🥚 Guardian page (js/guardian.js), written by hand. Quests: the ggFTW wiki's Card Identification, Soul Seed, Soul Guardian and Shadow World guides (wikimirror.lifeto.co). Raising the egg, the graphs and the legendary guide: the Thai guide on guwnteen.blogspot.com (2012), which collects forum posts by [-A'invidia-], Ake-ong, STR+1, BearBerryz and alexmimi. Pictures: the ggFTW wiki. Graphs are written Power-Magic-Sense-Charm, as the game's egg window shows them.",
+  "sources": [
+    { "name": "ggFTW wiki: Card Identification Quests Guide", "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Card_Identification_Quests_Guide.html" },
+    { "name": "ggFTW wiki: Soul Seed Quests Guide", "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Soul_Seed_Quests_Guide.html" },
+    { "name": "ggFTW wiki: Soul Guardian Quests Guide", "url": "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Soul_Guardian_Quests_Guide.html" },
+    { "name": "Guardian guide 6044 / 2642 / 4064 / 4046 (Thai, guwnteen.blogspot.com)", "url": "https://guwnteen.blogspot.com/2012/04/tricksterguide-guardian-6044-2642-4064.html" }
+  ],
+  "stages": [
+    {
+      "title": "1. Card Identification", "level": "Lv.65+, 2nd job",
+      "lines": [
+        { "d": 0, "t": "Bring the 4 Arcana cards (Brave, Smart, Dream, Love) and 5 Harkon Shard (monsters on the way to the Mermaid Palace)." },
+        { "d": 0, "t": "Curious Poppuri in Poppuri Dungeon - Rainbow Cave sends you to Fairy Nono in the Mysterious Space. The 4 Arbiters test you (an Arcana card, then one monster in 1 minute each) and give the 4 Crests for the Trickster Crest." },
+        { "d": 0, "t": "Reward: the Card Identification skill. You need it for the Soul Seed, and its card game is how you find the 16 Secret Cards (stage 4)." }
+      ],
+      "quests": ["mg-job-01"]
+    },
+    {
+      "title": "2. Soul Seed (the egg)", "level": "Lv.135+, 3rd job",
+      "lines": [
+        { "d": 0, "t": "At Lv.135 a Questionable Letter arrives in your MyShop inventory. Take it and Card Identification to the Light Filled Egg at Trickster's Shrine (Mirage Island): it sends you to the Spirit of Nefertiti." },
+        { "d": 0, "t": "Spirit of Nefertiti - Gift from Nefertiti asks for three things:" },
+        { "d": 1, "t": "Soul Essence: La Vida (Vamp Castle Parlor - Soul Sanctuary), 10 souls each of Iron Knight, Brass Knight, Bone Fighter, Bone Warrior and Bone Magician." },
+        { "d": 1, "t": "Essence of Life: Frog Prince (Black Swamp - Site of Life), 15 seeds each of Cobra Flower, Tooth Flower, Mud Bigfoot and Lotus Wormhole." },
+        { "d": 1, "t": "Elixir of Gods: the three sisters in Rose Garden Park, Clotho's, Lachesis's then Atropos's Deal (a monster in 2 minutes each)." },
+        { "d": 0, "t": "Reward: the Poseidon Seed (your guardian's egg) and the Empathy Manual. Eclipse then gives you a Dimensional Key; with it and the letter, Be a True Trickster gives a Dimension Card Pack. Do it before the egg hatches." }
+      ],
+      "quests": ["mi-11", "rg-50", "bs-25", "rg-17", "rg-51", "rg-06", "mi-10"]
+    },
+    {
+      "title": "3. Raise the egg to 14", "level": "after the Soul Seed",
+      "lines": [
+        { "d": 0, "t": "Plant the Poseidon Seed (use it) and it starts to grow. What you do every day raises its 4 lines: see 'How the egg grows' and pick a graph below." },
+        { "d": 0, "t": "Want a legendary guardian? Do the hidden points first, before the graph: see 'Legendary guardian'." },
+        { "d": 0, "t": "The egg is ready (golden wings) at 14 points in all, or as soon as one line reaches 6." }
+      ],
+      "quests": []
+    },
+    {
+      "title": "4. Soul Guardian (hatch it)", "level": "Lv.180+, 3rd job, egg ready",
+      "lines": [
+        { "d": 0, "t": "Find all 16 Secret Cards in the Card Identification game: together they make the Secret Space Map, the way into Janus's Secret Hideaway - Memory of Flames." },
+        { "d": 0, "t": "Janus' Messenger - Ancient Messenger: 10 Living Flame from Red Flame Spirit (Lv.180) in the hideaway." },
+        { "d": 0, "t": "Janus' Messenger - Janus's Gate: kill the Red Flame Monster (Lv.210) in 3 minutes." },
+        { "d": 0, "t": "Janus' Messenger - Guardian of the Spirit: bring a Harkon (Blacksmith Marx's quests, or drill Tapasco Volcano Fields), Phantom Dust and the Secret Space Map. He sends you to Eclipse:" },
+        { "d": 1, "t": "Eclipse - Aid from Eclipse: a Honey Tea (Compounder Paul: 1 Honey + 2 Royal Jelly + 2 Distilled Water) -> Dimensional Key." },
+        { "d": 1, "t": "Don Danihen - Abraxas (Abraxas Mirror -> Young Rosaline's Room): kill your own Doppleganger (same level and stats) in 2 minutes -> Phantom Dust." },
+        { "d": 1, "t": "Little Rosaline - Souless Girl: talk to her." },
+        { "d": 0, "t": "Back to Janus' Messenger: Summon Guardian, the Guardian Guide and Eclipse's Message. Your guardian hatches; a line at 0 becomes 1." }
+      ],
+      "quests": []
+    },
+    {
+      "title": "5. Mind's Eye (Shadow World)", "level": "Lv.180+, guardian hatched",
+      "lines": [
+        { "d": 0, "t": "Eclipse - Another View for the World (Garden of Skill Master): a P. Anemone Card and the Dimensional Key, with Eclipse's Message -> Mind's Eye, to see the Shadow World." },
+        { "d": 0, "t": "Each area then has its Mind's Eye quests from Lv.240 (Stella - Shadow Star, Eclipse - The Story of the Gods, Shaman Girl Jia - Dark Spirit Punishment): they're on the Quests page with their area." }
+      ],
+      "quests": []
+    }
+  ],
+  "rules": [
+    "The egg has 4 lines: Power, Magic, Sense, Charm. Your class doesn't decide your guardian: what you do while it grows does.",
+    "Every action fills the line's care bar; 20 care = 1 point on the graph.",
+    "The egg stops growing at 14 points in all, or as soon as one line reaches 6, and must hatch then. So build the other lines first and take your main line to 6 last.",
+    "The highest line is your guardian's type: Power = Sephirens, Magic = Digrimm, Sense = Ifron, Charm = Krusef. A tie goes to the line that got there first (5045: Power if Power filled before Charm).",
+    "The numbers are also how many skills of each line it can learn: 5234 = 5 Power, 2 Magic, 3 Sense, 4 Charm skills.",
+    "A line at 0 becomes 1 when it hatches (4064 hatches as 4164)."
+  ],
+  "actions": [
+    { "line": "Power", "items": [
+      { "do": "HP potion (100 HP)", "per": "125 potions = 1 care, 2,500 = 1 point", "note": "also raises Charm, half as fast" },
+      { "do": "Hit monsters without magic, gun skills, power skills", "per": "" },
+      { "do": "Kill monsters of your own level, miss or block an attack", "per": "" }
+    ] },
+    { "line": "Magic", "items": [
+      { "do": "MP potion (100 MP)", "per": "125 potions = 1 care, 2,500 = 1 point", "note": "also raises Sense, half as fast" },
+      { "do": "Magic skills (Cure, Mana Arrow, Arrow Rush, Mana Ring, Rust …)", "per": "25 casts = 1 care, 500 = 1 point", "cap": 5 },
+      { "do": "Kill monsters with an elemental weapon, get a TM level, get hit by magic", "per": "" }
+    ] },
+    { "line": "Sense", "items": [
+      { "do": "Drill (DA 90+, no Crazy Drilling), finding nothing", "per": "50 drills = 1 care, 1,000 = 1 point", "cap": 3, "note": "the desert entrance is a good spot: no drill wear" },
+      { "do": "Drill and find an item", "per": "50 drills = 1 care", "cap": 6 },
+      { "do": "MP potion", "per": "250 potions = 1 care, 5,000 = 1 point", "note": "the Magic side of MP potions" },
+      { "do": "Compound, refine, sense skills (Stone Strike, Sticky Foot, Armor Destructor), dying", "per": "" }
+    ] },
+    { "line": "Charm", "items": [
+      { "do": "HP potion", "per": "250 potions = 1 care, 5,000 = 1 point", "note": "the Charm side of HP potions" },
+      { "do": "Look at other players' profiles (a hidden profile counts)", "per": "50 = 1 care, 1,000 = 1 point", "cap": 2 },
+      { "do": "Buy or sell with the NPC Item Girl, one by one", "per": "25 = 1 care, 500 = 1 point", "cap": 3 },
+      { "do": "A monster misses you (no more than 20 levels apart)", "per": "500-600 misses = 1 care", "cap": 5, "note": "wear HV / DP gear" },
+      { "do": "Pick up galders, open your bank, level up, charm skills", "per": "" }
+    ] }
+  ],
+  "recipes": [
+    { "graph": "6044", "type": "Power", "for": "Cat players' pick when going for a legendary (6053 if not)","steps": [
+      { "do": "HP potions (100 HP)", "n": "2,500", "after": [1, 0, 0, 0] },
+      { "do": "Look at other players' profiles", "n": "1,500", "after": [1, 0, 0, 2] },
+      { "do": "Drill (DA 90+, no Crazy): 3,000 finding nothing, then 1,000 finding items", "n": "4,000", "after": [1, 0, 4, 2] },
+      { "do": "HP potions (100 HP)", "n": "12,500", "after": [6, 0, 4, 4] }
+    ] },
+    { "graph": "2642", "type": "Magic", "steps": [
+      { "do": "MP potions (100 MP)", "n": "2,500", "after": [0, 1, 0, 0] },
+      { "do": "Drill (DA 90+, no Crazy), finding nothing", "n": "1,500", "after": [0, 1, 2, 0] },
+      { "do": "HP potions (100 HP)", "n": "5,000", "after": [2, 1, 2, 1] },
+      { "do": "Look at other players' profiles", "n": "500", "after": [2, 1, 2, 2] },
+      { "do": "MP potions (100 MP)", "n": "12,500", "after": [2, 6, 4, 2] }
+    ] },
+    { "graph": "4064", "type": "Sense", "steps": [
+      { "do": "Look at other players' profiles", "n": "2,000", "after": [0, 0, 0, 2] },
+      { "do": "HP potions (100 HP)", "n": "10,000", "after": [4, 0, 0, 4] },
+      { "do": "Drill (DA 90+, no Crazy): 3,000 finding nothing, then 3,000 finding items", "n": "6,000", "after": [4, 0, 6, 4] }
+    ] },
+    { "graph": "4046", "type": "Charm", "steps": [
+      { "do": "Look at other players' profiles", "n": "2,000", "after": [0, 0, 0, 2] },
+      { "do": "Buy or sell with the NPC Item Girl", "n": "500", "after": [0, 0, 0, 3] },
+      { "do": "Drill (DA 90+, no Crazy): 3,000 finding nothing, then 1,000 finding items", "n": "4,000", "after": [0, 0, 4, 3] },
+      { "do": "HP potions (100 HP)", "n": "10,000", "after": [4, 0, 4, 5] },
+      { "do": "Let monsters miss you (no more than 20 levels apart; wear HV / DP gear)", "n": "10,000", "after": [4, 0, 4, 6] }
+    ] },
+    { "graph": "4604", "type": "Magic", "for": "for a magic class (uses Cure)", "steps": [
+      { "do": "Look at other players' profiles", "n": "2,000", "after": [0, 0, 0, 2] },
+      { "do": "HP potions (100 HP)", "n": "10,000", "after": [4, 0, 0, 4] },
+      { "do": "Cast Cure (bring big MP potions or Mucin)", "n": "2,500", "after": [4, 5, 0, 4] },
+      { "do": "MP potions (100 MP); Sense is close to its next point here", "n": "2,500", "after": [4, 6, 0, 4] }
+    ] }
+  ],
+  "legendary": [
+    "A legendary guardian has a rare colour and one more skill slot per line. It comes from hidden points you can't see on the egg: 4-5 of them on top of the 14, so 18-19 in all when it hatches.",
+    "Get the egg and plant it first (Lv.135); hidden points only count while it grows.",
+    "Then, before raising the graph: play the Card Identification game (about 1,500-1,700 cards: NPC cards are best) and read your stars (Star Gazing) 4-6 times a day. Combos of 3 and 5, reaching stage 10 and Secret Cards add hidden points; a star title does too.",
+    "Keep going until the egg stops glowing when you play: the hidden points are full. Then raise the graph to 14 as usual and hatch.",
+    "Players report it works most of the time, not always."
+  ],
+  "guardians": [
+    { "name": "Sephirens", "type": "Power", "img": "c/cc/Sephirens.gif", "skill": "Power Source", "about": "A fighter as dangerous as she is beautiful: her claws cut, her wings raise gales." },
+    { "name": "Digrimm", "type": "Magic", "img": "1/13/Digrimm.gif", "skill": "", "about": "Light magic in one hand, shadow in the other: together, terrible spells." },
+    { "name": "Ifron", "type": "Sense", "img": "9/90/Ifron.gif", "skill": "Power Transfer", "about": "Brave and wise; his twin blades strike fast." },
+    { "name": "Krusef", "type": "Charm", "img": "e/ee/Krusef.gif", "skill": "Power Source", "about": "The defender in white armour who would give his life for others." },
+    { "name": "Spinel", "type": "MyShop", "img": "a/a1/Spinel_(Guardian).gif", "skill": "", "about": "Sold in MyShop (comes with the Secret Space Map); raised like the others. You need one of the four first. Hits harder, in groups, and hatches with 2 runes." }
+  ],
+  "skills": {
+    "note": "A guardian learns 1st-job skills (buy the skill card from that line's teacher if your class doesn't have it) and puts each in a slot of its line. It starts with 15 skill points at Lv.15 and gets 1 per level. Buffs, guns, throwing, cards and galder skills don't work.",
+    "first": {
+      "Power": ["Shockwave", "Burning Rave", "Upper Smash", "Tornado Bomb", "Shockvibe", "Sense Breaker", "Luck Breaker", "Armor Breaker"],
+      "Magic": ["Mana Arrow", "Arrow Rush", "Mana Ring", "Mana Ring Booster", "Mana Storm", "Rust", "Mana Web"],
+      "Sense": ["Stone Strike", "Sticky Foot", "Armor Destructor"],
+      "Charm": ["Power Blow", "Titanium Wrist", "Final Blow", "Magic Meltdown", "Magic Defense Breaker", "Skunk Pouch"]
+    },
+    "teachers": { "Power": "Louis", "Magic": "Sephira", "Sense": "Cochma", "Charm": "Tiphreth" },
+    "runeNote": "With a blue rune of one line (MyShop) it can also learn some 2nd-job skills of that line. The list players reported:",
+    "second": {
+      "Power": ["Faint", "Lacerator", "Piercing Wave", "Aura of Haste", "Tidal Slash", "Tempest Strike", "Blazing Strike", "Dash", "Uppercut", "Guard Break", "Quad Punch", "Counter Punch", "Tetra Punch"],
+      "Magic": ["Dark Pact", "Light Pact", "Wicked Flame", "Hinder Snare", "Hellfire", "Arrow of Light", "Dark Lance", "Dark Distractor", "Light Wave", "Radiant Strike", "Seal of Water", "Seal of Thunder", "Seal of Fire", "Seal of Earth", "Seal of Wind", "Drip Bomb", "Electro Attack", "Whirlwind Blaze", "Cleaving Terra", "Wind Blade", "Water Web", "Electroshock", "Icey Shackles", "Thunderbolt", "Scorching Earth", "Deadly Fen", "Tornado Blast", "Incinerate", "Summon Boulder", "Shard of the Glacier", "Botulism Cloud", "Razor Gale", "Phoenix Rising", "Tesla Field"],
+      "Sense": ["Lucky Fist", "Lock-on", "Shield Breaker"],
+      "Charm": ["Volley Kick", "Siren Song"]
+    }
+  },
+  "runes": [
+    { "colour": "Red", "t": "Comes with the guardian when it hatches." },
+    { "colour": "Yellow", "t": "One of two (MyShop): attack monsters in a group, or hit back at whatever hits you." },
+    { "colour": "Blue", "t": "One line's 2nd-job skills (MyShop), any line, one at a time. Named after that line's teacher: Louis (Power), Sephira (Magic), Cochma (Sense), Tiphreth (Charm)." }
+  ],
+  "notes": [
+    "Up to about 20 guardians, one out at a time. The quests give one; more are Spinel from MyShop.",
+    "In town, PvP and on the PK server the guardian stays small and doesn't fight.",
+    "A pet and a guardian can be out together."
+  ]
+}

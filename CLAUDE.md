@@ -130,6 +130,11 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   `scripts/wiki/bosses-tartarus.json` from oto.fandom.com, CC-BY-SA). A boss's quests show on its page only:
   `BOSS_OF` in index.html leaves them out of the Quests page and `jumpToQuest` opens the boss page for them.
   Pure model tested by `node scripts/test-boss.js`.
+- `js/guardian.js`: the 🥚 Guardian page: the 5 stages (Card Identification -> Soul Seed -> raise the egg -> Soul
+  Guardian -> Mind's Eye) as a checklist with their quests, how the egg's graph grows, graph recipes step by step
+  (graphs are [Power, Magic, Sense, Charm]), the legendary guide, guardians, skills and runes. Data:
+  `data/guardian.json`, hand-written (sources listed in it); stage ticks are steps `guard:<i>`. Its quests show
+  on this page only (`GUARD_OF`; `onOwnPage` covers bosses and guardian). Tested by `node scripts/test-guardian.js`.
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 

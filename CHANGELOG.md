@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- New **🥚 Guardian** page (bottom bar, after Bosses): how to get your guardian from Lv.65 to Lv.180 as a checklist (Card Identification, Soul Seed, raising the egg, Soul Guardian, Mind's Eye) with its quests, which move here from the Quests page (Fairy Nono, La Vida, Frog Prince, the three sisters, Spirit of Nefertiti).
+  - **How the egg grows:** what raises each line and how much (2,500 HP potions = 1 Power point …), the caps, when it stops (14 in all or a line at 6) and which guardian you get.
+  - **Graphs step by step:** 6044, 2642, 4064, 4046 and 4604 with the egg's graph after each step, drawn as the game draws it.
+  - **Legendary guardian**, the five guardians, the skills each line can learn (and with a blue rune) and the runes. From the wiki's guides and a Thai players' guide (credited on the page).
+- Boss drops without a picture no longer squeeze the name (Koiosu, True Kronos); Koiosu's drops have their icons.
+- The top bar fits nine tabs: names show from 1,661 px wide, icons below; on phones a long name (Build guide) takes two lines.
 - New **👑 Bosses** page (bottom bar, next to Quests): the 11 bosses from Tutankhamen to Spicy Dragon, then Koiosu and True Kronos in Tartarus.
   - **The list:** each boss's seal and picture, area, boss level, who may enter (Lv.1–150, Lv.150+ …), how many trials you've ticked and ✓ Beaten.
   - **A boss's page:** how to get there as a checklist, one tick per trial (ticks sync like quest steps), notes, its drops, and **the quests about it as full quest cards**. These 17 quests (Tombeth's chain, Tutankhamen's trials, Spicy Dragon's trials …) are on the boss's page only now, not on the Quests page; links and search take you there.
