@@ -47,6 +47,28 @@
         { "n": "10,000 Galder Coupon", "use": "Coupon" },
         { "n": "Compound Waste, Good Compound Waste", "use": "Item" }
       ],
+      "puzzles": [
+        { "at": "Steel God B1", "title": "B1: the way to Cage 6, and the Gaps (circled)",
+          "text": ["Pictures from the Koiosu page on oto.fandom.com. The yellow circle is the Gap in the wall to talk to."],
+          "images": [
+            { "src": "https://static.wikia.nocookie.net/oto/images/a/a0/Koiosu_Trials_2.png", "cap": "B1 left platform -> Cage 6",
+              "note": "From Access Control Device A, follow the yellow line to the Cage 6 door." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/d/da/Koiosu_Trials_3.png", "cap": "Cage 16: Gap -> Cage 24",
+              "note": "The Gap is on the wall left of the portal to Cage 23." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/e/e9/Koiosu_Trials_4.png", "cap": "Cage 24: Gap -> right platform",
+              "note": "The Gap is on the right-hand wall." }
+          ] },
+        { "at": "Steel God B2", "title": "B2: the way to Cage 1, and the Gaps (circled)",
+          "text": ["Pictures from the Koiosu page on oto.fandom.com. The yellow circle is the Gap in the wall to talk to."],
+          "images": [
+            { "src": "https://static.wikia.nocookie.net/oto/images/b/b2/Koiosu_Trials_5.png", "cap": "B2 left platform -> Cage 1",
+              "note": "From Access Control Device A, follow the yellow line to the Cage 1 door." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/a/a2/Koiosu_Trials_6.png", "cap": "Cage 21: Gap -> Secret Cage 1",
+              "note": "The Gap is on the back wall, top left." },
+            { "src": "https://static.wikia.nocookie.net/oto/images/e/e9/Koiosu_Trials_4.png", "cap": "Secret Cage 1: Gap -> right platform",
+              "note": "The wiki shows the same picture as Cage 24: the Gap is on the right-hand wall." }
+          ] }
+      ],
       "quests": [], "monster": "3244",
       "source": "https://oto.fandom.com/wiki/Koiosu"
     },

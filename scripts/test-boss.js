@@ -83,7 +83,10 @@ t("solved puzzles sit under their trial: Tenter Lion's three mazes, Soki's Ponch
   assert.ok(/Majordomo Felix/.test(under("Count Blood")[0][0]));
   // Karan's two "Whirlpool of Agony" trials: the short path shows once, under the first
   assert.strictEqual(under("Pirate King Karan").length, 1);
-  for (const b of data.bosses) for (const pz of b.puzzles || []) for (const im of pz.images) assert.ok(im.src.startsWith("https://wikimirror.lifeto.co/"));
+  // Koiosu: the circled Gap pictures, one set under each floor
+  assert.deepStrictEqual(under("Koiosu").map(([title, list]) => [title.slice(0, 12), list[0].images.length]), [["Steel God B1", 3], ["Steel God B2", 3]]);
+  for (const b of data.bosses) for (const pz of b.puzzles || []) for (const im of pz.images)
+    assert.ok(im.src.startsWith(b.area === "Tartarus" ? "https://static.wikia.nocookie.net/oto/" : "https://wikimirror.lifeto.co/"), im.src);
 });
 
 t("progress counts ticked parts and the beaten mark from the synced steps", () => {
