@@ -200,6 +200,7 @@
       if (!g) continue;
       add(gearSum, g.st);
       const pe = pieceElements(g); // compound slots
+      add(gearSum, pe.s);
       add(elements, pe.e);
       add(resist, pe.r);
     }
@@ -327,33 +328,34 @@
   const newId = prefix => prefix + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
   /**
-   * Compound slots of a piece: [{ k: "e:Wind" (attack element) | "r:Fire" (resistance) | "", v: % }],
+   * Compound slots of a piece: [{ k: "e:Wind" (attack element, %) | "r:Fire" (resistance, %) | "s:AP" (a stat, + points) | "", v }],
    * at most 5, empty ones kept so the slot count stays. An older piece's single element / resistance
    * (g.e, g.r) becomes slots too.
    */
-  const CP_RE = new RegExp(`^[er]:(${ELEMENTS.join("|")})$`);
+  const CP_RE = new RegExp(`^([er]:(${ELEMENTS.join("|")})|s:(${STATS.join("|")}))$`);
   function cleanCompound(g) {
     let list = Array.isArray(g.cp) ? g.cp : [];
     if (!list.length) {
       for (const [k, v] of Object.entries(cleanStats(g.e, ELEMENTS))) list.push({ k: "e:" + k, v });
       for (const [k, v] of Object.entries(cleanStats(g.r, ELEMENTS))) list.push({ k: "r:" + k, v });
     }
-    return list.slice(0, LIMITS.compound).map(c => ({
-      k: c && CP_RE.test(c.k) ? c.k : "",
-      v: clamp(c && c.v, 0, 999)
-    }));
+    return list.slice(0, LIMITS.compound).map(c => {
+      const k = c && CP_RE.test(c.k) ? c.k : "";
+      // a stat can be minus (some compounds trade one stat for another); elements are 0-999 %
+      return { k, v: k.startsWith("s:") ? clamp(c.v, -99999, 99999) : clamp(c && c.v, 0, 999) };
+    });
   }
 
-  /** Attack elements and resistances a piece gives: { e: { Wind: 126 }, r: { Fire: 10 } } */
+  /** What a piece's compound slots give: { e: { Wind: 126 }, r: { Fire: 10 }, s: { AP: 20 } } (elements %, stats +) */
   function pieceElements(g) {
-    const e = {}, r = {};
+    const e = {}, r = {}, s = {};
     for (const c of cleanCompound(g || {})) {
       if (!c.k || !c.v) continue;
       const [kind, el] = c.k.split(":");
-      const to = kind === "e" ? e : r;
+      const to = kind === "e" ? e : kind === "r" ? r : s;
       to[el] = (to[el] || 0) + c.v;
     }
-    return { e, r };
+    return { e, r, s };
   }
 
   function cleanPiece(g) {
@@ -479,7 +481,8 @@
     const stats = g && g.st ? Object.entries(g.st) : [];
     const pe = g ? pieceElements(g) : { e: {} };
     const el = Object.entries(pe.e).map(([k, v]) => `${k} ${v}%`).join(" · ");
-    const sub = g ? (stats.length ? stats.slice(0, 2).map(([k, v]) => `${k} ${sign(v)}`).join(" · ") + (stats.length > 2 ? " …" : "") : el || "no stats") : "Empty";
+    const cs = g ? Object.entries(pieceElements(g).s).map(([k, v]) => `${k} ${sign(v)}`).join(" · ") : "";
+    const sub = g ? (stats.length ? stats.slice(0, 2).map(([k, v]) => `${k} ${sign(v)}`).join(" · ") + (stats.length > 2 ? " …" : "") : el || cs || "no stats") : "Empty";
     return `<button type="button" class="pl-tile ${g ? "is-on" : ""} ${open ? "is-open" : ""}" onclick="TQPlanner.openSlot('${s.key}')" aria-expanded="${open}" title="${esc(s.label)}${g && g.n ? ": " + esc(g.n) : ""}">
         <span class="pl-tile-icon" aria-hidden="true">${s.icon}</span>
         <span class="pl-tile-label">${g && g.n ? esc(g.n) : s.label}</span>
@@ -511,14 +514,15 @@
     const g = build.gear[s.key] || {};
     const field = (k, v, label) => `<label class="pl-in ${GROUP_CLASS[GROUP_OF[k]] || ""}"><span>${label || k}</span>
       <input id="pl-${s.key}-${k}" type="number" step="1" inputmode="numeric" value="${v || ""}" placeholder="0" onchange="TQPlanner.gearStat('${s.key}', '${k}', this.value)"></label>`;
-    // compound slots: how many, then an element (attack or resistance) and its % in each
+    // compound slots: how many, then in each an element (attack or resistance, %) or a stat (+)
     const cp = cleanCompound(g);
-    const cpSel = (i, cur) => `<select id="pl-${s.key}-cp${i}" aria-label="Compound slot ${i + 1} element" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'k', this.value)">
+    const cpSel = (i, cur) => `<select id="pl-${s.key}-cp${i}" aria-label="Compound slot ${i + 1}: what it gives" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'k', this.value)">
         <option value="">Empty</option>
         <optgroup label="Attack element">${ELEMENTS.map(k => `<option value="e:${k}" ${cur === "e:" + k ? "selected" : ""}>${k}</option>`).join("")}</optgroup>
-        <optgroup label="Resistance">${ELEMENTS.map(k => `<option value="r:${k}" ${cur === "r:" + k ? "selected" : ""}>${k} resistance</option>`).join("")}</optgroup></select>`;
+        <optgroup label="Resistance">${ELEMENTS.map(k => `<option value="r:${k}" ${cur === "r:" + k ? "selected" : ""}>${k} resistance</option>`).join("")}</optgroup>
+        <optgroup label="Stat">${STATS.map(k => `<option value="s:${k}" ${cur === "s:" + k ? "selected" : ""}>${k}</option>`).join("")}</optgroup></select>`;
     const pe = pieceElements(g);
-    const sumLine = [...Object.entries(pe.e).map(([k, v]) => `${k} ${v}%`), ...Object.entries(pe.r).map(([k, v]) => `${k} res ${v}%`)].join(" · ");
+    const sumLine = [...Object.entries(pe.e).map(([k, v]) => `${k} ${v}%`), ...Object.entries(pe.r).map(([k, v]) => `${k} res ${v}%`), ...Object.entries(pe.s).map(([k, v]) => `${k} ${sign(v)}`)].join(" · ");
     return `
       <div class="pl-editor" role="group" aria-label="${s.label}">
         <div class="pl-editor-head">
@@ -530,19 +534,19 @@
         </div>
         <fieldset class="pl-fs" ${ctx.readOnly ? "disabled" : ""}>
         <label class="pl-in pl-in-wide"><span>Name</span><input id="pl-${s.key}-n" maxlength="${LIMITS.item}" value="${esc(g.n || "")}" placeholder="e.g. White Swan Staff +7" onchange="TQPlanner.gearField('${s.key}', 'n', this.value)"></label>
-        <p class="bd-note">Type every stat the item window shows, Refine and Compound included.</p>
+        <p class="bd-note">Type the item's stats here (Refine included). A compound slot that gives a stat goes in ◇ Compound slots below, not in these boxes, so it isn't counted twice.</p>
         <div class="pl-in-grid">${STATS.map(k => field(k, (g.st || {})[k])).join("")}</div>
         <div class="pl-cp">
           <div class="pl-cp-head">
             <label for="pl-${s.key}-cpn">◇ Compound slots</label>
             <select id="pl-${s.key}-cpn" onchange="TQPlanner.gearCompound('${s.key}', -1, 'count', this.value)">${[0, 1, 2, 3, 4, 5].map(n => `<option ${n === cp.length ? "selected" : ""}>${n}</option>`).join("")}</select>
-            ${sumLine ? `<span class="pl-cp-sum">= ${esc(sumLine)}</span>` : cp.length ? `<span class="bd-note">pick an element and its % in each</span>` : ""}
+            ${sumLine ? `<span class="pl-cp-sum">= ${esc(sumLine)}</span>` : cp.length ? `<span class="bd-note">pick an element (%) or a stat (+) in each</span>` : ""}
           </div>
           ${cp.length ? `<div class="pl-cp-list">${cp.map((c, i) => `
             <div class="pl-cp-slot ${c.k ? "is-on" : ""}">
               <span class="pl-cp-n" aria-hidden="true">${i + 1}</span>
               ${cpSel(i, c.k)}
-              <span class="pl-cp-pct"><input id="pl-${s.key}-cpv${i}" type="number" min="0" step="1" inputmode="numeric" value="${c.v || ""}" placeholder="0" aria-label="Compound slot ${i + 1} %" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'v', this.value)"><span aria-hidden="true">%</span></span>
+              <span class="pl-cp-pct">${c.k.startsWith("s:") ? `<span aria-hidden="true">+</span>` : ""}<input id="pl-${s.key}-cpv${i}" type="number" ${c.k.startsWith("s:") ? "" : 'min="0"'} step="1" inputmode="numeric" value="${c.v || ""}" placeholder="0" aria-label="Compound slot ${i + 1} ${c.k.startsWith("s:") ? c.k.slice(2) : "%"}" onchange="TQPlanner.gearCompound('${s.key}', ${i}, 'v', this.value)">${c.k.startsWith("s:") ? "" : `<span aria-hidden="true">%</span>`}</span>
             </div>`).join("")}</div>` : ""}
         </div>
         <label class="pl-in pl-in-wide"><span>Note</span><input id="pl-${s.key}-note" maxlength="${LIMITS.note}" value="${esc(g.note || "")}" placeholder="Refine +7, where it drops…" onchange="TQPlanner.gearField('${s.key}', 'note', this.value)"></label>

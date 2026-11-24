@@ -207,7 +207,7 @@ t("bonus point plan: the suggestion split evenly until changed, points split by 
 t("compound slots: elements add up, resistances apart, empty slots kept, old single element converted", () => {
   const g = { n: "Ring", cp: [{ k: "e:Wind", v: 40 }, { k: "e:Wind", v: 41 }, { k: "e:Wind", v: 45 }, { k: "r:Fire", v: 10 }, { k: "", v: 0 }, { k: "e:Wind", v: 5 }] };
   assert.strictEqual(P.cleanCompound(g).length, 5); // 5 slots at most
-  assert.deepStrictEqual(P.pieceElements(g), { e: { Wind: 126 }, r: { Fire: 10 } });
+  assert.deepStrictEqual(P.pieceElements(g), { e: { Wind: 126 }, r: { Fire: 10 }, s: {} });
   assert.deepStrictEqual(P.cleanCompound({ cp: [{ k: "e:Nope", v: 9 }, { k: "e:Fire", v: -4 }] }), [{ k: "", v: 9 }, { k: "e:Fire", v: 0 }]);
   assert.deepStrictEqual(P.cleanCompound({ e: { Fire: 30 }, r: { Dark: 5 } }), [{ k: "e:Fire", v: 30 }, { k: "r:Dark", v: 5 }]);
   const b = cat(160, 157);
@@ -216,6 +216,15 @@ t("compound slots: elements add up, resistances apart, empty slots kept, old sin
   assert.deepStrictEqual(st.elements, { Wind: 183 });
   assert.deepStrictEqual(st.resist, { Fire: 10 });
   assert.deepStrictEqual(P.cleanBuild({ gear: { hat: { cp: [{ k: "", v: 0 }, { k: "", v: 0 }] } } }).gear.hat.cp.length, 2);
+  // a compound slot can give a stat: added to the gear part of the stat (the + in the status window), may be minus
+  const sg = { n: "Seraph", st: { AP: 2229 }, cp: [{ k: "s:AP", v: 30 }, { k: "s:DA", v: 12 }, { k: "s:DP", v: -8 }, { k: "e:Fire", v: 20 }, { k: "s:Nope", v: 5 }] };
+  assert.deepStrictEqual(P.pieceElements(sg), { e: { Fire: 20 }, r: {}, s: { AP: 30, DA: 12, DP: -8 } });
+  assert.deepStrictEqual(P.cleanCompound({ cp: [{ k: "e:Fire", v: -8 }, { k: "s:DP", v: -8 }] }), [{ k: "e:Fire", v: 0 }, { k: "s:DP", v: -8 }]);
+  const b2 = cat(160, 157);
+  b2.gear = P.cleanBuild({ gear: { weapon: sg } }).gear;
+  const rows = Object.fromEntries(P.status(b2, ctx).rows.map(r => [r.stat, r.gear]));
+  assert.deepStrictEqual([rows.AP, rows.DA, rows.DP], [2259, 12, -8]);
+  assert.deepStrictEqual(b2.gear.weapon.cp.map(c => c.k), ["s:AP", "s:DA", "s:DP", "e:Fire", ""]);
 });
 
 t("Beast's Instinct works only with Evolution and is used instead of it", () => {

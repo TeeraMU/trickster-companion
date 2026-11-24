@@ -1922,7 +1922,8 @@
           g.cp.length = n;
         } else if (g.cp[i]) {
           if (field === "k") g.cp[i].k = String(value);
-          else g.cp[i].v = Math.max(0, Math.min(999, plNum(value)));
+          else g.cp[i].v = plNum(value);
+          g.cp = TQPlanner.cleanCompound(g); // clamps it: a stat may be minus, an element is 0-999 %
         }
         if (!g.cp.length) delete g.cp;
         tidyPiece(key); plannerChanged();
