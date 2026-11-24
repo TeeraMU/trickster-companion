@@ -124,7 +124,10 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   from `TQPlanner.monsterCard`, drops). Ticks are steps in `appState.completedSteps` (`boss:<name>_<part>`,
   `boss:<name>_beaten`) so they sync; the boss on screen is `appState.bossOpen` (this device only). Data:
   `data/bosses.json`, made by `node scripts/wiki/build-bosses.js <folder of boss pages>` (see its header; the
-  quests about each boss are listed in that script). Pure model tested by `node scripts/test-boss.js`.
+  quests about each boss and the solved puzzles are listed in that script; Koiosu / True Kronos are hand-written in
+  `scripts/wiki/bosses-tartarus.json` from oto.fandom.com, CC-BY-SA). A boss's quests show on its page only:
+  `BOSS_OF` in index.html leaves them out of the Quests page and `jumpToQuest` opens the boss page for them.
+  Pure model tested by `node scripts/test-boss.js`.
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 

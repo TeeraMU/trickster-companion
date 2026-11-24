@@ -571,6 +571,7 @@
       const cats = selectedCats();
 
       let list = QUESTS.filter(q => {
+        if (BOSS_OF.has(q.id)) return false; // on the 👑 Bosses page
         if (!matchesClassFilter(q, cls)) return false;
         if (!inSelectedArea(q)) return false;
         if (cats.length && !cats.some(c => q.categories.includes(c))) return false;
@@ -826,7 +827,7 @@
     // ============================================================================
     function renderStatsAndRegions() {
       const cls = appState.selectedClass || "All";
-      const activePool = QUESTS.filter(q => matchesClassFilter(q, cls));
+      const activePool = QUESTS.filter(q => !BOSS_OF.has(q.id) && matchesClassFilter(q, cls));
 
       const totalCount = activePool.length;
       const doneCount = activePool.filter(q => !!appState.completedQuests[q.id]).length;
@@ -1222,6 +1223,17 @@
     function jumpToQuest(id) {
       const q = questById(id);
       if (!q) return;
+      if (BOSS_OF.has(id)) { // a boss's quest: its card is on the boss's page
+        appState.expandedQuests[id] = true;
+        appState.bossOpen = BOSS_OF.get(id);
+        saveState();
+        switchView("bosses");
+        requestAnimationFrame(() => {
+          const el = document.getElementById("qcard-" + id);
+          if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+        return;
+      }
       if (!matchesClassFilter(q, appState.selectedClass || "All")) { // hidden by class / 3rd job path
         appState.selectedJobPath = "";
         if (!matchesClassFilter(q, appState.selectedClass || "All")) appState.selectedClass = "All";
@@ -2301,28 +2313,28 @@
     // page shows. Trial ticks are steps ("boss:Tombeth_2", "boss:Tombeth_beaten"), so they sync with
     // the rest of the progress. A boss's numbers come from data/monsters.json (the Planner's card).
     // ============================================================================
-    let BOSSES = null, bossesLoading = false;
+    let BOSSES = null;
+    let BOSS_OF = new Map(); // quest id -> boss name: these quests show on the boss's page only
     const BOSS_UI = { drops: false };
+    function setBosses(d) {
+      BOSSES = d;
+      BOSS_OF = new Map();
+      for (const b of (d && d.bosses) || []) for (const id of b.quests || []) BOSS_OF.set(id, b.name);
+    }
     function renderBosses() {
       const box = document.getElementById("bossContainer");
       if (!box) return;
-      if (!BOSSES && !bossesLoading) {
-        bossesLoading = true;
-        TQData.fetchJson("data/bosses.json").then(d => { BOSSES = d; renderBosses(); })
-          .catch(() => {
-            bossesLoading = false;
-            box.innerHTML = `<p class="calc-desc">Couldn't load the bosses. Check the connection and open the page again.</p>`;
-          });
+      if (!BOSSES) {
+        box.innerHTML = `<p class="calc-desc">Couldn't load the bosses. Check the connection and reload the page.</p>`;
+        return;
       }
       if (appState.bossOpen) loadMonsters();
       const mine = plannerState().builds.find(b => b.id === plannerState().current);
       box.innerHTML = TQBoss.render({
         data: BOSSES, monsters: MONSTERS, steps: appState.completedSteps, open: appState.bossOpen || "",
         level: mine ? mine.level : 0, ui: BOSS_UI,
-        quest: id => {
-          const q = questById(id);
-          return q ? { id, title: q.title, area: q.area, done: !!appState.completedQuests[q.id] } : null;
-        }
+        questCard: id => { const q = questById(id); return q ? renderQuestCard(q) : ""; },
+        questDone: id => !!appState.completedQuests[id]
       });
     }
 
@@ -2452,7 +2464,10 @@
 
     // Initialize on page load: fetch the JSON data first, then restore progress and render.
     async function loadData() {
+      // the boss list comes with the quests: its quests live on the 👑 Bosses page, not the Quests page
+      const bosses = TQData.fetchJson("data/bosses.json").catch(() => null);
       const data = await TQData.loadAll("data/");
+      setBosses(await bosses);
       QUESTS = data.quests;
       PREREQS = data.prereqsById;
       MAP_INDEX = TQRoute.indexMaps(data.maps);
