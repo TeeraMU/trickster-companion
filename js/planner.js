@@ -61,14 +61,22 @@
   /**
    * Starting stats for a class: checked ones (data/stat-base.json), else the ones the player worked
    * out from their own window, else the file's `estimate` class (until someone checks this one).
-   * Returns { base, from: "checked" | "mine" | "estimate" | "", checked, estimateFrom }
+   * Returns { base, from: "checked" | "mine" | "estimate" | "", checked, estimateFrom, spread, known }:
+   * for an estimate, `known` = the checked classes and `spread` = the stats where they differ, { DX: [8, 11] }.
    */
   function pickBase(statBase, cls, typed) {
     const classes = (statBase && statBase.classes) || {};
     if (classes[cls]) return { base: classes[cls], from: "checked", checked: classes[cls].checked || "", estimateFrom: "" };
     if (typed) return { base: typed, from: "mine", checked: "", estimateFrom: "" };
     const est = statBase && statBase.estimate;
-    if (est && classes[est]) return { base: classes[est], from: "estimate", checked: "", estimateFrom: est };
+    if (est && classes[est]) {
+      const known = Object.keys(classes), spread = {};
+      for (const k of STATS) {
+        const vals = known.map(c => classes[c][k]).filter(v => typeof v === "number");
+        if (vals.length && Math.min(...vals) !== Math.max(...vals)) spread[k] = [Math.min(...vals), Math.max(...vals)];
+      }
+      return { base: classes[est], from: "estimate", checked: "", estimateFrom: est, spread, known };
+    }
     return { base: null, from: "", checked: "", estimateFrom: "" };
   }
 
@@ -612,7 +620,9 @@
       ${calibrateBox(build, "Type your window again", false)}`;
     if (ctx.baseFrom === "estimate") return `
       <div class="pl-calib">
-        <p><strong>Estimated:</strong> we don't know ${esc(build.cls)}'s starting stats yet, so the first numbers use ${esc(ctx.estimateFrom)}'s.
+        <p><strong>Estimated:</strong> ${esc(build.cls)}'s starting stats aren't checked yet, so the first numbers use ${esc(ctx.estimateFrom)}'s.
+          ${ctx.estimateKnown && ctx.estimateKnown.length > 1 ? `The ${ctx.estimateKnown.length} classes checked (${esc(ctx.estimateKnown.join(", "))}) start the same in
+          ${STATS.length - Object.keys(ctx.estimateSpread || {}).length} of ${STATS.length} stats${Object.keys(ctx.estimateSpread || {}).length ? `; only ${esc(Object.entries(ctx.estimateSpread).map(([k, [lo, hi]]) => `${k} (${fmt(lo)}–${fmt(hi)})`).join(" and "))} differ, so those may be a little off` : ""}.` : ""}
           Compare them with your Growth window; if they're off, type yours below.</p>
         ${calibrateBox(build, `Type ${build.cls}'s Growth window`, false)}
       </div>`;
