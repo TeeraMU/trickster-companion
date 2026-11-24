@@ -874,14 +874,19 @@
   }
 
   const WIKI_IMG = "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/";
-  /** The monster's wiki picture: the big .png, else the .gif sprite, else nothing. */
+  /**
+   * The monster's wiki picture (its own, or the monster its name ends with: see
+   * scripts/wiki/check-monster-pics.js), else a plain stand-in so the card keeps its shape.
+   */
+  const monNone = cls => `<span class="${cls} pl-mon-nopic" aria-hidden="true" title="No picture on the wiki">👾</span>`;
   function monImg(m, cls) {
+    const gone = `this.outerHTML = '${monNone(cls).replace(/'/g, "\\'").replace(/"/g, "&quot;")}'`;
     // a boss with a 👑 Bosses page: that page's picture (the guessed wiki file isn't there for every boss)
-    if (m.pic) return `<img class="${cls}" src="${esc(m.pic)}" alt="${esc(m.n)}" loading="lazy" onerror="this.remove()">`;
+    if (m.pic) return `<img class="${cls}" src="${esc(m.pic)}" alt="${esc(m.n)}" loading="lazy" onerror="${gone}">`;
     const [a, b] = m.img || [];
-    if (!a) return "";
+    if (!a) return monNone(cls);
     return `<img class="${cls}" src="${esc(WIKI_IMG + a)}" ${b ? `data-alt="${esc(WIKI_IMG + b)}"` : ""} alt="${esc(m.n)}" loading="lazy"
-      onerror="if (this.dataset.alt) { this.src = this.dataset.alt; this.dataset.alt = ''; } else { this.remove(); }">`;
+      onerror="if (this.dataset.alt) { this.src = this.dataset.alt; this.dataset.alt = ''; } else { ${gone}; }">`;
   }
 
   /**

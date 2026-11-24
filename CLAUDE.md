@@ -116,7 +116,7 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   table changes which stat) and `data/buff-values.json` (values per level, made by
   `node scripts/client/build-buffs.js` from `G:/Claude/playtrickster-extraction`; never hand-edit it).
 - ⚔️ Battle Summary in the Planner: `data/monsters.json` (1,307 monsters from the client's MonsterParamEx2: level, stats,
-  element, resistances, boss, wiki picture paths from md5 of the name), made by `node scripts/client/build-monsters.js`; loaded the first time the Planner shows.
+  element, resistances, boss, wiki picture paths from md5 of the name), made by `node scripts/client/build-monsters.js`; pictures from `scripts/wiki/monster-pics.json` (`node scripts/wiki/check-monster-pics.js` asks the wiki mirror: a variant without its own page takes the picture of the monster its name ends with, Chaos Bio Junk -> Bio Junk; rerun it, then build-monsters, when monsters change); loaded the first time the Planner shows.
   The defense formula isn't known yet: players write hits from the game into `build.hits` (with their stats)
   and copy them as text for working it out.
 - `js/formula.js`: reads the wiki's skill formulas ("[AP + (HV × 16)] × (m ÷ 8)") with a build's stats and a

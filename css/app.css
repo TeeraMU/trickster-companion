@@ -5018,6 +5018,11 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .pl-bs-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-card); }
 .pl-bs-mon { display: flex; gap: 10px; min-width: 0; }
 .pl-mon-pic { width: 96px; max-height: 140px; object-fit: contain; flex: 0 0 auto; align-self: flex-start; }
+/* a monster the wiki has no picture of: a plain stand-in the same size */
+.pl-mon-nopic { display: inline-grid; place-items: center; border-radius: var(--radius-sm); border: 1px dashed var(--border);
+  background: var(--bg-primary); filter: grayscale(1); opacity: 0.6; line-height: 1; }
+.pl-mon-pic.pl-mon-nopic { height: 96px; font-size: 2.6rem; }
+.pl-mon-thumb.pl-mon-nopic { font-size: 1rem; }
 .pl-bs-mon-info { min-width: 0; flex: 1; }
 .pl-bs-name { margin: 0 0 4px; }
 .pl-boss { background: color-mix(in srgb, var(--accent-red) 18%, var(--bg-card)); color: var(--ink-red); }

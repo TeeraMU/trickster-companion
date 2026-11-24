@@ -23,6 +23,8 @@ const ELEMENT = { 1: "Fire", 2: "Water", 3: "Wind", 4: "Earth", 5: "Elec", 6: "L
 const RES = { Fire: "FireR", Water: "WaterR", Wind: "WindR", Earth: "EarthR", Elec: "ElecR", Light: "LightR", Dark: "DarkR", None: "NoPropR", Physical: "PhysicalR", Gun: "GunR" };
 const n = v => Number(v) || 0;
 // the client's English names that are machine translations of the boss names players use
+const picsFile = path.join(__dirname, "../wiki/monster-pics.json");
+const PICS = fs.existsSync(picsFile) ? JSON.parse(fs.readFileSync(picsFile, "utf8")).pics : {};
 const NAME_FIX = { "Nose Ios": "Koiosu", "Jean Kronos": "True Kronos" };
 
 const seen = new Set(), out = [];
@@ -36,9 +38,12 @@ for (const r of rows) {
   };
   if (r.IsBoss === "1") m.boss = 1;
   if ((lives.get(r.ID) || 1) > 1) m.bars = lives.get(r.ID); // HP bars: hp x bars in all
+  // the wiki picture scripts/wiki/check-monster-pics.js found for this name (its own, or the monster its
+  // name ends with: Chaos Bio Junk -> Bio Junk); a name it hasn't checked yet gets the guessed paths
+  if (name in PICS) { if (PICS[name]) m.img = [PICS[name]]; }
   // the wiki's picture paths for this name (MediaWiki keeps File:X under md5(X)[0]/md5(X)[0..1]/X):
   // the big .png first, then the sprite .gif; the page tries them in turn and hides a missing one
-  m.img = ["png", "gif"].map(ext => {
+  else m.img = ["png", "gif"].map(ext => {
     const file = (name.charAt(0).toUpperCase() + name.slice(1)).replace(/ /g, "_") + "." + ext;
     const h = crypto.createHash("md5").update(file).digest("hex");
     return `${h[0]}/${h.slice(0, 2)}/${file}`;
