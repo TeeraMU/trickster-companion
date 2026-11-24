@@ -196,7 +196,7 @@
       <details class="bd-box bs-drops" ${open ? "open" : ""} ontoggle="TQBoss.drops(this.open)">
         <summary><h4>🎁 Drops <span class="bd-note">${b.drops.length}</span></h4></summary>
         <ul class="bs-drop-list">${b.drops.map(d => `<li>
-          ${pic(d.img, "bs-drop-pic", "")}
+          ${d.img ? pic(d.img, "bs-drop-pic", "") : `<span class="bs-drop-pic bs-drop-nopic" aria-hidden="true">🎁</span>`}
           <span class="bs-drop-name"><strong>${esc(d.n)}</strong>${d.rate ? ` <span class="tag">${esc(d.rate)}</span>` : ""}</span>
           <span class="bd-note">${esc(d.use)}</span></li>`).join("")}</ul>
       </details>`;

@@ -3182,19 +3182,23 @@
    "drops": [
     {
      "n": "Koiosu Legendary Box",
-     "use": "Legendary Unique Box"
+     "use": "Legendary Unique Box",
+     "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png"
     },
     {
      "n": "Koiosu Soul 1 to 7",
-     "use": "Soul upgrade"
+     "use": "Soul upgrade",
+     "img": "https://static.wikia.nocookie.net/oto/images/5/50/Item_Koiosu_Soul_1_Icon.png"
     },
     {
      "n": "10,000 Galder Coupon",
-     "use": "Coupon"
+     "use": "Coupon",
+     "img": "https://static.wikia.nocookie.net/oto/images/e/e6/Item_10000_Galder_Coupon_Icon.png"
     },
     {
      "n": "Compound Waste, Good Compound Waste",
-     "use": "Item"
+     "use": "Item",
+     "img": "https://static.wikia.nocookie.net/oto/images/f/f5/Item_Compound_Waste_Icon.png"
     }
    ],
    "puzzles": [
@@ -3468,7 +3472,8 @@
     },
     {
      "n": "10,000 Galder Coupon",
-     "use": "Coupon"
+     "use": "Coupon",
+     "img": "https://static.wikia.nocookie.net/oto/images/e/e6/Item_10000_Galder_Coupon_Icon.png"
     },
     {
      "n": "Key 10",

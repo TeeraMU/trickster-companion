@@ -42,10 +42,10 @@
         { "d": 0, "t": "Resists magic. M Dark Barrier sends back both physical and magic damage." }
       ],
       "drops": [
-        { "n": "Koiosu Legendary Box", "use": "Legendary Unique Box" },
-        { "n": "Koiosu Soul 1 to 7", "use": "Soul upgrade" },
-        { "n": "10,000 Galder Coupon", "use": "Coupon" },
-        { "n": "Compound Waste, Good Compound Waste", "use": "Item" }
+        { "n": "Koiosu Legendary Box", "use": "Legendary Unique Box", "img": "https://static.wikia.nocookie.net/oto/images/9/98/Box_Chest_of_the_Forgotten_God_Icon.png" },
+        { "n": "Koiosu Soul 1 to 7", "use": "Soul upgrade", "img": "https://static.wikia.nocookie.net/oto/images/5/50/Item_Koiosu_Soul_1_Icon.png" },
+        { "n": "10,000 Galder Coupon", "use": "Coupon", "img": "https://static.wikia.nocookie.net/oto/images/e/e6/Item_10000_Galder_Coupon_Icon.png" },
+        { "n": "Compound Waste, Good Compound Waste", "use": "Item", "img": "https://static.wikia.nocookie.net/oto/images/f/f5/Item_Compound_Waste_Icon.png" }
       ],
       "puzzles": [
         { "at": "Steel God B1", "title": "B1: the way to Cage 6, and the Gaps (circled)",
@@ -114,7 +114,7 @@
       "drops": [
         { "n": "True Kronos Legendary Box", "use": "Legendary Unique Box" },
         { "n": "Kronos Soul 1 to 7", "use": "Soul upgrade" },
-        { "n": "10,000 Galder Coupon", "use": "Coupon" },
+        { "n": "10,000 Galder Coupon", "use": "Coupon", "img": "https://static.wikia.nocookie.net/oto/images/e/e6/Item_10000_Galder_Coupon_Icon.png" },
         { "n": "Key 10", "use": "Key" }
       ],
       "puzzles": [
