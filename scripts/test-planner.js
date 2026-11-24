@@ -269,6 +269,14 @@ t("monsters: Tombeth #2072 as in the client (HP 6,845 x 4 bars, AP 1,178, Earth 
   assert.deepStrictEqual(P.searchMonsters(mons, ""), []);
   const boss = P.searchMonsters(mons, "kronos");
   assert.ok(boss[0].boss);
+  // the picker with nothing typed: picked lately (5 at most, no repeats), then the bosses
+  const bossIds = data("bosses.json").bosses.map(b => b.monster);
+  const empty = P.monOptions(mons, "", bossIds, ["2138", "nope", bossIds[0]]);
+  assert.deepStrictEqual(empty.slice(0, 2).map(o => [o.m.id, o.group]), [["2138", "Recent"], [bossIds[0], "Recent"]]);
+  // 2138 is Count Blood: both picked-lately ones are bosses, so they don't show twice
+  assert.strictEqual(empty.filter(o => o.group === "Bosses").length, bossIds.length - 2);
+  assert.strictEqual(new Set(empty.map(o => o.m.id)).size, empty.length);
+  assert.ok(P.monOptions(mons, "tombeth", bossIds, []).every(o => /tombeth/i.test(o.m.n) && o.group === ""));
 });
 
 t("hit log: numbers parsed from what was typed, cleaned, and written out as text", () => {

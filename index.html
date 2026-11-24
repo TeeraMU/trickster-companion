@@ -1721,7 +1721,7 @@
     // buff-values.json (all load with builds.json). A friend's shared build opens read only.
     // ============================================================================
     let STAT_BASE = null, BUFFS = null, BUFF_VALUES = null;
-    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {}, monQuery: "", logOpen: false, hitsText: false, attack: "", cmpQuery: "", compare: [] }; // viewing: { build, friend }; power: { skill: level }
+    const PLANNER_UI = { slot: "", code: "", viewing: null, power: {}, monQuery: "", monOpen: false, monActive: 0, planEdit: false, logOpen: false, hitsText: false, attack: "", cmpQuery: "", compare: [] }; // viewing: { build, friend }; power: { skill: level }
     // data/monsters.json (client table, ~320 KB): loaded the first time the Planner shows
     let MONSTERS = null, monstersLoading = false;
     function loadMonsters() {
@@ -1729,10 +1729,26 @@
       monstersLoading = true;
       TQData.fetchJson("data/monsters.json").then(d => {
         MONSTERS = d;
+        linkBossPics();
         if (appState.currentView === "planner") renderPlanner();
         if (appState.currentView === "bosses") renderBosses();
       })
         .catch(() => { monstersLoading = false; });
+    }
+
+    // the monsters I picked lately in the Battle Summary (this device only)
+    const MON_RECENT = "tq-mon-recent";
+    function monRecent() {
+      try { const v = JSON.parse(localStorage.getItem(MON_RECENT) || "[]"); return Array.isArray(v) ? v.slice(0, 5) : []; } catch (e) { return []; }
+    }
+    function monRemember(id) {
+      try { localStorage.setItem(MON_RECENT, JSON.stringify([String(id), ...monRecent().filter(x => x !== String(id))].slice(0, 5))); } catch (e) { /* private mode */ }
+    }
+    /** Bosses with a 👑 page show that page's picture in the Planner too. */
+    function linkBossPics() {
+      if (!MONSTERS || !BOSSES) return;
+      const pic = new Map(BOSSES.bosses.filter(b => b.sprite || b.img).map(b => [b.monster, b.sprite || b.img]));
+      for (const m of MONSTERS.monsters) if (pic.has(m.id)) m.pic = pic.get(m.id);
     }
 
     function plannerState() {
@@ -1771,7 +1787,7 @@
         stats: BUILDS.stats, base: base.base, baseFrom: base.from, baseChecked: base.checked, estimateFrom: base.estimateFrom,
         buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []),
         art: job && job.art, signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI,
-        formula: window.TQFormula, growthChart: TQBuild.growthChart, monsters: MONSTERS, skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
+        formula: window.TQFormula, growthChart: TQBuild.growthChart, monsters: MONSTERS, bossMons: BOSSES ? BOSSES.bosses.map(x => x.monster) : [], recentMons: monRecent(), skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
       }));
     }
 
@@ -1850,6 +1866,14 @@
         if (!Object.keys(b.bonus).length) b.bonus = {};
         plannerChanged();
       },
+      /** The build's note (shown under the plan; friends see it on a shared build). */
+      notes(text) {
+        const b = editable();
+        if (!b) return;
+        b.notes = String(text || "").slice(0, TQPlanner.LIMITS.notes);
+        plannerChanged();
+      },
+      planEdit(open) { PLANNER_UI.planEdit = open; },
       /** Every bonus point the character has, spread by the plan. */
       usePlan() {
         const b = editable();
@@ -2021,7 +2045,34 @@
       closeViewed() { PLANNER_UI.viewing = null; PLANNER_UI.slot = ""; renderPlanner(); },
       powerLevel(name, lv) { PLANNER_UI.power[name] = lv; renderPlanner(); },
       // 🎯 Against a monster
-      monQuery(q) { PLANNER_UI.monQuery = q; renderPlanner(); },
+      monQuery(q) { PLANNER_UI.monQuery = q; PLANNER_UI.monOpen = true; PLANNER_UI.monActive = 0; renderPlanner(); },
+      /** The monster list opens on focus and closes when the box loses it (not when a re-render moves focus back). */
+      monOpen(open) {
+        if (open) { if (!PLANNER_UI.monOpen) { PLANNER_UI.monOpen = true; PLANNER_UI.monActive = 0; renderPlanner(); } return; }
+        setTimeout(() => {
+          const a = document.activeElement;
+          if (a && a.id === "pl-mon-q") return;
+          if (PLANNER_UI.monOpen) { PLANNER_UI.monOpen = false; renderPlanner(); }
+        }, 0);
+      },
+      /** Up / down to move, Enter to pick, Escape to close. */
+      monKey(e) {
+        const opts = MONSTERS ? TQPlanner.monOptions(MONSTERS.monsters, PLANNER_UI.monQuery, BOSSES ? BOSSES.bosses.map(x => x.monster) : [], monRecent()) : [];
+        if (e.key === "Escape") { PLANNER_UI.monOpen = false; renderPlanner(); return; }
+        if (!PLANNER_UI.monOpen && (e.key === "ArrowDown" || e.key === "ArrowUp")) { e.preventDefault(); PLANNER_UI.monOpen = true; PLANNER_UI.monActive = 0; renderPlanner(); return; }
+        if (!opts.length) return;
+        const i = Math.min(PLANNER_UI.monActive, opts.length - 1);
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          e.preventDefault();
+          PLANNER_UI.monActive = (i + (e.key === "ArrowDown" ? 1 : opts.length - 1)) % opts.length;
+          renderPlanner();
+          const on = document.getElementById("pl-mon-opt-" + PLANNER_UI.monActive);
+          if (on) on.scrollIntoView({ block: "nearest" });
+        } else if (e.key === "Enter" && PLANNER_UI.monOpen) {
+          e.preventDefault();
+          TQPlanner.pickMonster(opts[i].m.id);
+        }
+      },
       attack(name) { PLANNER_UI.attack = name; renderPlanner(); },
       cmpQuery(q) { PLANNER_UI.cmpQuery = q; renderPlanner(); },
       /** Monsters in the Battle Summary's table (this page only, 8 at most). */
@@ -2035,8 +2086,10 @@
       pickMonster(id) {
         const b = editable();
         if (!b) return;
-        if (id) b.mon = String(id); else delete b.mon;
-        PLANNER_UI.monQuery = "";
+        if (id) { b.mon = String(id); monRemember(id); } else delete b.mon;
+        PLANNER_UI.monQuery = ""; PLANNER_UI.monOpen = false; PLANNER_UI.monActive = 0;
+        const a = document.activeElement;
+        if (a && a.id === "pl-mon-q") a.blur(); // or the re-render puts focus back and opens the list again
         plannerChanged();
       },
       logOpen(open) { PLANNER_UI.logOpen = open; },
@@ -2320,6 +2373,7 @@
       BOSSES = d;
       BOSS_OF = new Map();
       for (const b of (d && d.bosses) || []) for (const id of b.quests || []) BOSS_OF.set(id, b.name);
+      linkBossPics();
     }
     function renderBosses() {
       const box = document.getElementById("bossContainer");

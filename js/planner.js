@@ -258,6 +258,26 @@
   }
 
   /** Monsters whose name has every word of the query, bosses first, then by level. */
+  /**
+   * What the monster picker lists, in order, as [{ m, group }]: with words typed, the matches; with
+   * nothing typed, the ones I picked lately (newest first, 5) then the bosses (boss-page order).
+   */
+  function monOptions(list, query, bossIds, recentIds) {
+    if (String(query || "").trim()) return searchMonsters(list, query, 12).map(m => ({ m, group: "" }));
+    const byId = new Map((list || []).map(m => [m.id, m]));
+    const out = [], seen = new Set();
+    const add = (ids, group, max) => {
+      for (const id of ids || []) {
+        const m = byId.get(String(id));
+        if (!m || seen.has(m.id) || out.filter(o => o.group === group).length >= max) continue;
+        seen.add(m.id); out.push({ m, group });
+      }
+    };
+    add(recentIds, "Recent", 5);
+    add(bossIds, "Bosses", 20);
+    return out;
+  }
+
   function searchMonsters(list, query, limit) {
     const words = String(query || "").toLowerCase().split(/\s+/).filter(Boolean);
     if (!words.length) return [];
@@ -434,7 +454,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -679,6 +699,8 @@
       </section>`;
   }
 
+  const samePlan = (a, b) => { const ka = Object.keys(a).filter(k => a[k]), kb = Object.keys(b).filter(k => b[k]); return ka.length === kb.length && ka.every(k => a[k] === b[k]); };
+
   /** Class, job, level and growth of the build, and how to raise stats beside them. */
   function headBox(build, ctx) {
     const classes = Object.keys(ctx.classes || {});
@@ -706,18 +728,26 @@
         </div>
         <div class="bd-compact-guide">
           <h4>🧭 How to raise stats</h4>
-          ${adv.label ? `<p><span class="bd-note">Suggested from the skills:</span> <span class="bd-build">${esc(adv.label)}</span>. ${esc(adv.why)}</p>` : ""}
           <div class="pl-plan">
-            <p class="bd-compact-label">${mine ? "My plan" : "Plan (the suggestion: change it to how you build)"} <span class="bd-note ${sum !== 100 ? "bd-warn" : ""}">${sum}%${sum !== 100 ? " · make it 100%" : ""}</span></p>
+            <p class="bd-compact-label">${mine ? "My plan" : "Plan"} <span class="bd-note ${sum !== 100 ? "bd-warn" : ""}">${sum}%${sum !== 100 ? " · make it 100%" : ""}</span>${mine ? "" : ` <span class="bd-note">· the suggestion below until you change it</span>`}</p>
+            ${sum ? `<div class="pl-plan-bar" role="img" aria-label="Bonus points: ${esc(Object.entries(plan).map(([k, v]) => `${k} ${v}%`).join(", "))}">${Object.entries(plan).map(([k, v]) => `
+              <span class="${GROUP_CLASS[GROUP_OF[k]]}" style="flex:${v}"><b>${k}</b> ${v}%</span>`).join("")}</div>` : ""}
+            ${ctx.readOnly ? (build.notes ? `<p class="pl-plan-note-text">📝 ${esc(build.notes)}</p>` : "") : `
+            <label class="pl-plan-note"><span>📝 Note</span>
+              <textarea id="pl-notes" rows="2" maxlength="${LIMITS.notes}" placeholder="Why this plan, when to change it (e.g. AP first, HV after Lv.200)" title="Friends see it on a shared build" onchange="TQPlanner.notes(this.value)">${esc(build.notes || "")}</textarea></label>
+            <details class="pl-plan-edit" ${ctx.ui.planEdit ? "open" : ""} ontoggle="TQPlanner.planEdit(this.open)">
+            <summary>Change the plan</summary>
             <div class="pl-plan-row">${planRows}
               ${addable.length ? `<select id="pl-plan-add" aria-label="Add a stat to the plan" onchange="if (this.value) TQPlanner.plan(this.value, 10)">
                 <option value="">＋ Add a stat</option>${addable.map(k => `<option>${k}</option>`).join("")}</select>` : ""}
             </div>
+            </details>
             <div class="pl-plan-row">
               <button type="button" class="btn btn-sm btn-primary" onclick="TQPlanner.usePlan()" ${sum > 0 ? "" : "disabled"}>Put my bonus points by this plan</button>
-              ${mine && adv.stats.length ? `<button type="button" class="btn btn-sm" onclick="TQPlanner.plan('', 'reset')">Back to the suggestion</button>` : ""}
-            </div>
+            </div>`}
           </div>
+          ${adv.label ? `<p class="pl-suggest">💡 <span class="bd-note">The skills suggest</span> <b>${esc(adv.label)}</b>${mine && !samePlan(plan, planOf({ bonus: {} }, adv)) ? ` <button type="button" class="btn btn-sm pl-suggest-use" onclick="TQPlanner.plan('', 'reset')">Use the suggestion</button>` : ""}
+            <span class="bd-note">· ${esc(adv.why)}</span></p>` : ""}
           <details class="pl-howto-more">
             <summary>How stats grow</summary>
             <ul class="bd-howto">
@@ -826,6 +856,8 @@
   const WIKI_IMG = "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/";
   /** The monster's wiki picture: the big .png, else the .gif sprite, else nothing. */
   function monImg(m, cls) {
+    // a boss with a 👑 Bosses page: that page's picture (the guessed wiki file isn't there for every boss)
+    if (m.pic) return `<img class="${cls}" src="${esc(m.pic)}" alt="${esc(m.n)}" loading="lazy" onerror="this.remove()">`;
     const [a, b] = m.img || [];
     if (!a) return "";
     return `<img class="${cls}" src="${esc(WIKI_IMG + a)}" ${b ? `data-alt="${esc(WIKI_IMG + b)}"` : ""} alt="${esc(m.n)}" loading="lazy"
@@ -895,7 +927,8 @@
     const usable = atks.filter(a => a.use.ok);
     const atk = usable.find(a => a.name === ctx.ui.attack) || usable[0];
     const dmg = strongest(atk);
-    const found = searchMonsters(list, ctx.ui.monQuery, 12);
+    const opts = ctx.ui.monOpen ? monOptions(list, ctx.ui.monQuery, ctx.bossMons, ctx.recentMons) : [];
+    const active = Math.min(ctx.ui.monActive || 0, Math.max(0, opts.length - 1));
     const sk = atk.sk;
     const row = sk && sk.levels && sk.levels.rows.length ? (atk.lv === "M" ? sk.levels.rows[sk.levels.rows.length - 1] : sk.levels.rows.find(r => r[0] === atk.lv) || sk.levels.rows[sk.levels.rows.length - 1]) : null;
     const col = re => { if (!row) return ""; const i = sk.levels.cols.findIndex(c => re.test(c)); return i > 0 ? row[i] : ""; };
@@ -905,13 +938,22 @@
 
     const pickRow = `
       <div class="pl-bs-pick">
-        <div class="pl-bs-find">
+        <div class="pl-bs-find pl-mon-pick">
           <span class="pl-bs-label">Monster</span>
-          <input type="search" id="pl-mon-q" value="${esc(ctx.ui.monQuery || "")}" placeholder="${mon ? esc(mon.n) + " · type to change" : "Find a monster or boss: Tombeth, Fire Moth…"}" aria-label="Find a monster" oninput="TQPlanner.monQuery(this.value)">
-          ${found.length ? `<ul class="pl-mon-list">${found.map(m => `<li><button type="button" onclick="TQPlanner.pickMonster('${esc(m.id)}')">
-            ${monImg(m, "pl-mon-thumb")}<strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span>${m.boss ? ` <span class="tag">Boss</span>` : ""}
-            <span class="bd-note">HP ${hpText(m)} · DP ${fmt(m.dp)} · MD ${fmt(m.md)}</span></button></li>`).join("")}</ul>`
-          : ctx.ui.monQuery ? `<p class="bd-note">No monster called “${esc(ctx.ui.monQuery)}”.</p>` : ""}
+          ${mon ? `<span class="pl-mon-chip">${monImg(mon, "pl-mon-thumb")}<strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>
+            <button type="button" class="bd-step" aria-label="Clear the monster" onclick="TQPlanner.pickMonster('')">✕</button></span>` : ""}
+          <span class="pl-mon-search">
+            <input type="search" id="pl-mon-q" autocomplete="off" role="combobox" aria-expanded="${opts.length ? "true" : "false"}" aria-controls="pl-mon-options"
+              ${opts.length ? `aria-activedescendant="pl-mon-opt-${active}"` : ""}
+              value="${esc(ctx.ui.monQuery || "")}" placeholder="${mon ? "Change monster…" : "Pick a monster or boss…"}" aria-label="Find a monster"
+              oninput="TQPlanner.monQuery(this.value)" onfocus="TQPlanner.monOpen(true)" onclick="TQPlanner.monOpen(true)" onblur="TQPlanner.monOpen(false)" onkeydown="TQPlanner.monKey(event)">
+            ${opts.length ? `<ul class="pl-mon-list" id="pl-mon-options" role="listbox" onmousedown="event.preventDefault()">${opts.map((o, i) => `
+              ${o.group && (i === 0 || opts[i - 1].group !== o.group) ? `<li class="pl-mon-group" role="presentation">${o.group === "Recent" ? "🕘 Picked lately" : "👑 Bosses"}</li>` : ""}
+              <li role="option" id="pl-mon-opt-${i}" aria-selected="${i === active}"><button type="button" tabindex="-1" class="${i === active ? "is-active" : ""}" onclick="TQPlanner.pickMonster('${esc(o.m.id)}')">
+                ${monImg(o.m, "pl-mon-thumb")}<strong>${esc(o.m.n)}</strong> <span class="ep-lv">Lv.${o.m.l}</span>${o.m.boss && o.group !== "Bosses" ? ` <span class="tag">Boss</span>` : ""}
+                <span class="bd-note">HP ${hpText(o.m)} · DP ${fmt(o.m.dp)} · MD ${fmt(o.m.md)}</span></button></li>`).join("")}</ul>`
+            : ctx.ui.monOpen && ctx.ui.monQuery ? `<p class="bd-note pl-mon-none">No monster called “${esc(ctx.ui.monQuery)}”.</p>` : ""}
+          </span>
         </div>
         <div class="pl-bs-find">
           <span class="pl-bs-label">Attack</span>
@@ -941,7 +983,7 @@
       <div class="pl-bs-cmp">
         <div class="pl-bs-cmp-head">
           <strong>Compare monsters</strong>
-          <input type="search" id="pl-cmp-q" value="${esc(ctx.ui.cmpQuery || "")}" placeholder="＋ Add a monster" aria-label="Add a monster to compare" oninput="TQPlanner.cmpQuery(this.value)">
+          <input type="search" id="pl-cmp-q" autocomplete="off" value="${esc(ctx.ui.cmpQuery || "")}" placeholder="＋ Add a monster" aria-label="Add a monster to compare" oninput="TQPlanner.cmpQuery(this.value)">
         </div>
         ${ctx.ui.cmpQuery ? `<ul class="pl-mon-list">${searchMonsters(list, ctx.ui.cmpQuery, 8).map(m => `<li><button type="button" onclick="TQPlanner.compare('${esc(m.id)}', true)">
           <strong>${esc(m.n)}</strong> <span class="ep-lv">Lv.${m.l}</span> <span class="bd-note">HP ${hpText(m)} · DP ${fmt(m.dp)}</span></button></li>`).join("")}</ul>` : ""}

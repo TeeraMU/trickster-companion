@@ -4922,6 +4922,22 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 /* Planner: my plan for bonus points */
 .pl-plan { margin: 6px 0; }
 .pl-plan .bd-compact-label { margin: 4px 0; }
+/* my plan as one bar: each stat's share of the bonus points, in its group's colour */
+.pl-plan-bar { display: flex; gap: 3px; margin: 4px 0 8px; min-height: 34px; }
+.pl-plan-bar > span { min-width: max-content; display: flex; align-items: center; justify-content: center; gap: 4px; padding: 4px 10px; border-radius: 8px;
+  font-size: 0.92rem; border: 1px solid var(--border); }
+.pl-plan-bar b { font-family: var(--font-display); font-size: 1.05rem; }
+.pl-plan-bar .bd-power { background: color-mix(in srgb, var(--accent-red) 18%, var(--bg-card)); }
+.pl-plan-bar .bd-magic { background: color-mix(in srgb, var(--accent-blue) 18%, var(--bg-card)); }
+.pl-plan-bar .bd-sense { background: color-mix(in srgb, var(--accent-purple) 18%, var(--bg-card)); }
+.pl-plan-bar .bd-charm { background: color-mix(in srgb, var(--accent-orange) 18%, var(--bg-card)); }
+.pl-plan-note { display: grid; gap: 3px; margin: 6px 0; font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); }
+.pl-plan-note textarea { width: 100%; resize: vertical; font: inherit; font-size: 0.88rem; font-weight: 400; padding: 6px 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); }
+.pl-plan-note-text { white-space: pre-wrap; font-size: 0.88rem; }
+.pl-plan-edit > summary { cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--ink-blue); margin: 2px 0; }
+.pl-suggest { font-size: 0.84rem; margin: 8px 0 4px !important; padding-top: 6px; border-top: 1px dashed var(--border); }
+.pl-suggest b { color: var(--ink-blue); }
+.pl-suggest-use { padding: 1px 8px; margin-left: 4px; font-size: 0.78rem; }
 .pl-plan-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 4px 0; }
 .pl-plan-item { display: inline-flex; align-items: center; gap: 4px; padding: 3px 4px 3px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-card); font-size: 0.85rem; }
 .pl-plan-item.bd-power { background: color-mix(in srgb, var(--accent-red) 10%, var(--bg-card)); }
@@ -4990,6 +5006,15 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .pl-bs-find .pl-mon-list { position: absolute; z-index: 20; top: 100%; left: 0; right: 0; margin-top: 4px; padding: 4px; border-radius: var(--radius-sm);
   background: var(--bg-card-hover); border: 1px solid var(--border-strong); box-shadow: var(--shadow); }
 .pl-mon-thumb { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
+/* the monster picked: a chip; the search box beside it opens a list (picked lately, bosses) on focus */
+.pl-mon-chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px 2px 6px; border-radius: 999px; font-size: 0.88rem;
+  border: 1px solid var(--border-highlight); background: var(--bg-card); max-width: 100%; }
+.pl-mon-chip strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pl-mon-search { position: static; flex: 1 1 140px; min-width: 0; display: flex; }
+.pl-mon-search input { flex: 1 1 auto; }
+.pl-mon-group { font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); padding: 4px 6px 0; }
+.pl-mon-list button.is-active { border-color: var(--accent-blue); background: color-mix(in srgb, var(--accent-blue) 12%, var(--bg-card)); }
+.pl-mon-none { position: absolute; z-index: 20; top: 100%; left: 0; right: 0; margin: 4px 0 0 !important; padding: 8px; border-radius: var(--radius-sm); background: var(--bg-card-hover); border: 1px solid var(--border-strong); }
 .pl-bs-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-card); }
 .pl-bs-mon { display: flex; gap: 10px; min-width: 0; }
 .pl-mon-pic { width: 96px; max-height: 140px; object-fit: contain; flex: 0 0 auto; align-self: flex-start; }
