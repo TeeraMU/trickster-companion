@@ -134,7 +134,7 @@
         <div class="bs-puzzle-maps ${pz.images.length > 1 ? "is-many" : ""}">${pz.images.map(im => `
           <figure>
             <a href="${esc(im.src)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(im.src)}" alt="${esc(im.cap)}" loading="lazy"></a>
-            <figcaption>${esc(im.cap)}</figcaption>
+            <figcaption>${esc(im.cap)}${im.note ? `<span class="bs-puzzle-note">${esc(im.note)}</span>` : ""}</figcaption>
           </figure>`).join("")}</div>
       </details>`;
   }

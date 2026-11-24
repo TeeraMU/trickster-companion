@@ -42,10 +42,11 @@ const BOSSES = [
     puzzles: [{ at: "Calm Down Suu", title: "Maze Jungle: who to talk to, and the way there",
       text: ["You land in Maze Jungle A, B or C at random; look at the map in the game to know which.",
         "Talk to them in this order: 0 Witch La Befana → 1 Pastor Tau → 2 Kristoffer J. → 3 Madam Sarah → 4 Warrior Kei → 5 Swampy Suu → back to 1 Pastor Tau.",
-        "Each coloured line goes to the NPC circled in the same colour."],
+        "Each coloured line goes to the NPC circled in the same colour (in Maze B, 3 has no line of its own: see under the map)."],
       images: [
         { src: IMG + "e/eb/Maze_Jungle_A.jpg", cap: "Maze Jungle A" },
-        { src: IMG + "9/9d/Maze_Jungle_B.jpg", cap: "Maze Jungle B" },
+        { src: IMG + "9/9d/Maze_Jungle_B.jpg", cap: "Maze Jungle B",
+          note: "To 3: follow the red line up to the top. Where it turns right to 1, go left along the short yellow arrow instead." },
         { src: IMG + "6/67/Maze_Jungle_C.jpg", cap: "Maze Jungle C" }
       ] }]
   },

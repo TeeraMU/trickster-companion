@@ -5113,6 +5113,7 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .bs-puzzle-maps figure { margin: 0; }
 .bs-puzzle-maps img { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); cursor: zoom-in; }
 .bs-puzzle-maps figcaption { font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); margin-top: 2px; text-align: center; }
+.bs-puzzle-note { display: block; font-weight: 400; text-align: left; margin-top: 2px; }
 .bs-quests { margin-top: 12px; }
 .bs-quest-cards { display: grid; gap: 8px; }
 .bs-quest-cards .quest-card { margin: 0; }
