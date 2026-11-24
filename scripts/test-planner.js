@@ -96,6 +96,12 @@ t("a class without starting stats: no front number, calibrating finds the base a
   const per = builds.stats.perAttrLevel;
   assert.strictEqual(P.baseFromFront(1282, per.AP, 317), 18);
   assert.strictEqual(P.baseFromFront(-3, per.DX, 160), 10);
+  // Bunny (Rabbit) / Duelist, growth 4-1-1-4, Lv.400, 399 bonus points in AP: the player's Growth window
+  const bunny = P.cleanBuild({ cls: "Bunny", job: "Duelist", level: 400, growth: { Power: 4, Magic: 1, Sense: 1, Charm: 4 }, pts: { AP: 399 } });
+  const bst = P.status(bunny, { stats: builds.stats, base: P.pickBase(bases, "Bunny").base, buffs, values });
+  assert.deepStrictEqual(front(bst), { AP: 3210, AC: 149, DX: -23, MP: 3050, MA: 74, MD: 386, WT: 9120, DA: 24, LK: 24, HP: 12090, DP: 1592, HV: 99 });
+  assert.deepStrictEqual(lvs(bst), { AP: 799, AC: 400, DX: 400, MP: 100, MA: 100, MD: 100, WT: 100, DA: 100, LK: 100, HP: 400, DP: 400, HV: 400 });
+  assert.strictEqual(P.pickBase(bases, "Bunny").from, "checked");
 });
 
 t("starting stats: checked class, else the player's own, else Cat's as an estimate", () => {
