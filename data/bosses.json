@@ -1,0 +1,2778 @@
+{
+ "source": "ggFTW Trickster wiki boss pages (wikimirror.lifeto.co); numbers in Battle Summary from the PlayTrickster client (data/monsters.json)",
+ "made": "2026-11-24",
+ "missing": [
+  "Koiosu",
+  "True Kronos"
+ ],
+ "bosses": [
+  {
+   "name": "Tutankhamen",
+   "area": "Desert Beach",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/1b/Tutankhamen.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/60/Tutankhamen.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/1b/Tutankhamen_Seal.gif",
+   "type": "Magic",
+   "level": 71,
+   "weak": "Physical, Gun",
+   "resist": "Magic, Air, Light",
+   "location": "Pyramid Dungeon 7 - Doom of Pharaoh",
+   "wiki": {
+    "element": "Earth 48%",
+    "hp": "4,085x4",
+    "ap": "605",
+    "ma": "805",
+    "dp": "473",
+    "md": "564",
+    "gd": "60"
+   },
+   "tolerance": {
+    "Physical": 61,
+    "Magic": 27,
+    "Gun": 61,
+    "Fire": 44,
+    "Water": 44,
+    "Wind": 33,
+    "Earth": 44,
+    "Elec": 44,
+    "Light": 27,
+    "Dark": 44
+   },
+   "skills": [
+    {
+     "n": "Mana Arrow",
+     "lv": 4
+    },
+    {
+     "n": "Mana Ring",
+     "lv": 5
+    },
+    {
+     "n": "Mana Shield",
+     "lv": 4
+    },
+    {
+     "n": "Rust",
+     "lv": 4
+    },
+    {
+     "n": "Cure",
+     "lv": 4
+    },
+    {
+     "n": "Banish"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Mad Sergeant",
+     "lv": 60
+    },
+    {
+     "n": "Mad Lieutenant",
+     "lv": 60
+    },
+    {
+     "n": "Mad Captain",
+     "lv": 60
+    },
+    {
+     "n": "Sphinx",
+     "lv": 65
+    }
+   ],
+   "levels": [
+    1,
+    90
+   ],
+   "restrict": "Level 1 ~ 90",
+   "spawn": "Tutankhamen spawns in 20 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 1x Subject's Earrings and 1x Subject's Mask (not consumed) to Bastet at Pyramid Dungeon 6 - Hall of the Queen."
+    },
+    {
+     "d": 0,
+     "t": "Earlier give 1x Apron (consumed) to Rosemary in Pyramid Dungeon 5 - Hall of Love Affair and she'll transfer you to Pyramid Dungeon 6 - Hall of the Queen. To proceed to the boss, you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Trial 1 - Test of Calmness:",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Lieutenant to start a Monster Quest which requires you to defeat the correct Scarab (it's aggressive and near the right side) within 5 minutes (after the quest is in log, talk to Lieutenant again and choose the 2nd option, that do he teleport you to the Scarabs area)"
+    },
+    {
+     "d": 1,
+     "t": "Return back, talk to Lieutenant to proceed to Room of Guardian - Test of Quickness. NOTE: You don't need to loot the King's Seal that the Scarab drops."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2 - Test of Quickness:",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Sergeant for another Monster Quest which requires you to defeat Pharaoh's Mimic within 2 minutes to proceed to Room of Guardian - Test of Knowledge."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3 - Test of Knowledge:",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Captain for a logic puzzle. There are other 2 NPC's: Lieutenant and Sergeant. You need to choose which answer is correct based on what they say (the answers are found in Test of Knowledge Guide)"
+    },
+    {
+     "d": 1,
+     "t": "A second question will be asked about Egyptian history, answer this correct to proceed to Room of Guardian - Test of Power (the answers are found in Test of Knowledge Guide)."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4 - Test of Power:",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Fight with Guardian, Captain, and Captain to acquire 1x Gray Round Seal, 1x Dark Round Seal, 1x Red Round Seal, then show them to Bastet to be transfer to Pyramid Dungeon 7 - Doom of Pharaoh."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "Not recommended to fight solo below level 70 or so."
+    },
+    {
+     "d": 0,
+     "t": "Since the new Boss System is added, there is no need to rush and worry you will be teleported out of the trials because somebody already defeated it. You now have your own Boss Room! Wait for a moment and Tutankhamen will spawn. Do not panic, and start defeating it. Once it is defeated, check the ground for unique. You may get a Unique Equipment. After defeat, Pyramid Dungeon 7 - Doom of Pharaoh will crumple in 30 seconds. There is no portal leaving the Boss Room, so you need to wait until the Boss Room crumbles and be teleported to Gate of Desert Beach. You'll have to wait for 15 minutes before you can enter the trials again. · His Banish skill creates a large blue ring around a target player near him; anyone inside the ring when it disappears (around 3 seconds later) is teleported to either Megalopolis Square or Beach Town - Paradise."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Tutankhamen Card",
+     "use": "Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/00/Tutankhamen_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Pharaoh Hat",
+     "use": "Legendary Unique Hat (Lv.35) · Pharaoh Boy - Young Pharaoh's Awakening · Nefertiti - Nefertiti's Mission",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/89/Pharaoh_Hat.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Golden Sword",
+     "use": "Legendary Unique Special Weapon (Lv.35) · Pharaoh Boy - Young Pharaoh's Awakening · Anubis - Anubis' Mission (1) · Anubis - Anubis' Mission (2)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/90/Golden_Sword.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Golden Lion Shield",
+     "use": "Legendary Unique Shield (Lv.35) · Pharaoh Boy - Young Pharaoh's Awakening · Bastet - Bastet's Mission",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8a/Golden_Lion_Shield.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Flail",
+     "use": "",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/7a/Flail.gif"
+    },
+    {
+     "n": "Nemeth Hair Towel",
+     "use": "Compound: Elec Resist +5~15% (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6b/Nemeth_Hair_Towel.gif"
+    },
+    {
+     "n": "Ultimate Bokken",
+     "use": "Sword (Lv.20)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Bokken.gif"
+    },
+    {
+     "n": "Ultimate Kane Rod",
+     "use": "Cane (Lv.20)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b4/Kane_Rod.gif"
+    },
+    {
+     "n": "Ultimate Knife",
+     "use": "Knife (Lv.20)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/22/Knife.gif"
+    },
+    {
+     "n": "Ultimate Wood Gun",
+     "use": "Gun (Lv.20)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/10/Wood_Gun.gif"
+    },
+    {
+     "n": "Ultimate Wood Helmet",
+     "use": "Hat (Lv.20)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3b/Wood_Helmet.gif"
+    },
+    {
+     "n": "Ultimate Beanie",
+     "use": "Hat (Lv.20)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9b/Beanie.gif"
+    }
+   ],
+   "quests": [
+    "db-pyr-02"
+   ],
+   "monster": "2097"
+  },
+  {
+   "name": "Tombeth",
+   "area": "Caballa Relics",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/41/Tombeth.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/18/Tombeth.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5f/Tombeth_Seal.gif",
+   "type": "Charm",
+   "level": 121,
+   "weak": "Gun",
+   "resist": "Magic, Earth, Air",
+   "location": "The Trident Maze",
+   "wiki": {
+    "element": "Earth 48%",
+    "hp": "6,845x4",
+    "ap": "1,178",
+    "ma": "?",
+    "dp": "809",
+    "md": "936",
+    "gd": "150"
+   },
+   "tolerance": {
+    "Physical": 44,
+    "Magic": 27,
+    "Gun": 61,
+    "Fire": 44,
+    "Water": 44,
+    "Wind": 33,
+    "Earth": 27,
+    "Elec": 44,
+    "Light": 44,
+    "Dark": 44
+   },
+   "skills": [
+    {
+     "n": "Power Blow",
+     "lv": 4
+    },
+    {
+     "n": "Super Hips"
+    },
+    {
+     "n": "Final Blow",
+     "lv": 4
+    },
+    {
+     "n": "Sturdy Shield",
+     "lv": 6
+    },
+    {
+     "n": "Mana Reflector"
+    },
+    {
+     "n": "Magic Meltdown"
+    },
+    {
+     "n": "Cure",
+     "lv": 6
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Chimu",
+     "lv": 78
+    },
+    {
+     "n": "Naranjo",
+     "lv": 84
+    },
+    {
+     "n": "Monkya",
+     "lv": 173
+    },
+    {
+     "n": "Arachne",
+     "lv": 178
+    }
+   ],
+   "levels": [
+    1,
+    150
+   ],
+   "restrict": "Level 1 ~ 150",
+   "spawn": "Tombeth spawns in 20 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 1x 500 Galder Coupon (consumed) to Rosemary at Caballa Relics Dungeon 3."
+    },
+    {
+     "d": 0,
+     "t": "Starting with the first Explorer Reina you see, head clockwise for the proper order. Turn in Monster Quests to the next Explorer Reina."
+    },
+    {
+     "d": 0,
+     "t": "Trial 1: The Sleeping Soul of the Ancient 1",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Defeat 6x Guard Stone Soldier (Lv.60) in 1 min."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2: Find Torn Clue 1",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Locate 1x Torn Clue 1 (drilled)."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3: The Sleeping Soul of the Ancient Relics 2",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Defeat 30x Awakened Guiana (Lv.70) in 10 min."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4: Find Torn Clue 2",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Locate 1 Torn Clue 2 (drilled)."
+    },
+    {
+     "d": 0,
+     "t": "Trial 5: Waking the Ancients",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Head southwest of Explorer Reina, going into the wall. Not too long afterwards, you will go through it."
+    },
+    {
+     "d": 1,
+     "t": "Catch 5x Philosopher's Stone (dropped by Awoken Mimic (Lv.65))."
+    },
+    {
+     "d": 1,
+     "t": "Decoded Clue 1 and Decoded Clue 2 are also used. They are obtained from the quests for the torn clues."
+    },
+    {
+     "d": 0,
+     "t": "Trial 6: Guide Stones",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "After you get the Complete Decoded Doc, talk to the Explorer Reina in the middle. Give her the doc, then continue until you enter a room with Keeper Julio and Guide Sabrina."
+    },
+    {
+     "d": 1,
+     "t": "Drill to find a Chaotic Guide Stone, and defeat any monsters you find for Fractal Guide Stone or Brick Guide Stone. Please note that you may have to just proceed with a Chaotic Guide Stone if there are no monsters respawning."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Guide Sabrina to use Brick Guide Stone or Chaotic Guide Stone, and Keeper Julio for Chaotic Guide Stone and Fractal Guide Stone together."
+    },
+    {
+     "d": 2,
+     "t": "Brick Guide Stone: Sends you to the room just one up from your current room."
+    },
+    {
+     "d": 2,
+     "t": "Chaotic Guide Stone: Sends you somewhere randomly."
+    },
+    {
+     "d": 2,
+     "t": "Chaotic Guide Stone and Fractal Guide Stone: Sends you four rooms forward from your current room. I advise you get three of each, as you only need to be teleported 3 times by Keeper Julio to reach the last room."
+    },
+    {
+     "d": 2,
+     "t": "There are 11 rooms in total. You start in room 7. Room 5 is the final room with only Guide Sabrina."
+    },
+    {
+     "d": 2,
+     "t": "WARNING: Awakened Chimu has Banish. I doubt you want to get sent back to Megalopolis if you're this far."
+    },
+    {
+     "d": 1,
+     "t": "Use Keeper Julio's teleport until you enter a room with just Guide Sabrina. Talk to her and go to the next floor."
+    },
+    {
+     "d": 0,
+     "t": "Trial 7: Awakening the Sleeping Souls",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Scary enough, there are two Indiana John. Talk to the John on the left. But there's no consequence if you talk to the wrong one."
+    },
+    {
+     "d": 1,
+     "t": "Defeat 2x Tombeth's Soul (Lv.100) in 5 min."
+    },
+    {
+     "d": 1,
+     "t": "You are then sent to The Trident Maze with a Keeper Julio right there. If you head to the back (East or right side), you'll find Fortune Teller and Guide Sabrina. Guide Sabrina teleports you to Tombeth."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "Since the new Boss System is added, there is no need to rush and worry you will be teleported out of the trials because somebody already defeated it. You now have your own Boss Room! Wait for a moment and Tombeth will spawn. Do not panic, and start defeating it. Once it is defeated, check the ground for unique. After you defeat Tombeth, you will be teleported to Gate of Caballa Relics in 30 seconds. You'll have to wait 15 minutes before you can enter the trials again."
+    },
+    {
+     "d": 0,
+     "t": "You are advised to have more than 2500 Weight as Philosopher's Stone weighs 500 each."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Tombeth Card",
+     "use": "Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/44/Tombeth_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Guardian's Soul Helm",
+     "use": "Legendary Unique Hat (Lv.90) · Explorer Reina - Proof of Thanks",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5d/Guardian's_Soul_Helm.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Guardian's Soul Staff",
+     "use": "Legendary Unique Special Weapon (Lv.90) · Explorer Reina - Proof of Thanks",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/bf/Guardian's_Soul_Staff.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Guardian's Soul Shield",
+     "use": "Legendary Unique Shield (Lv.90) · Explorer Reina - Proof of Thanks",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/87/Guardian's_Soul_Shield.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Compound Waste",
+     "use": "Don Giuvanni - Transfer to Battlefield of Duel",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/87/Compound_Waste.gif"
+    },
+    {
+     "n": "Stone Bracelet",
+     "use": "Compound: Soil Attr +20~45% (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e6/Stone_Bracelet.gif"
+    },
+    {
+     "n": "Sun's Coat of Arms",
+     "use": "Compound: Fire Attr +14~37% (Lv.70)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6e/Sun's_Coat_of_Arms.gif"
+    },
+    {
+     "n": "500 Galder Coupon",
+     "use": "Galder: 500 · Monkey T - Antique Mirror! · Explorer Reina - Transfer to Nora Sewer (Upper Area) · Exchange: Merchant Lorena - Element Crystals (80~395)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/58/500_Galder_Coupon.gif"
+    },
+    {
+     "n": "Ultimate Sword",
+     "use": "Sword (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/1f/Sword.gif"
+    },
+    {
+     "n": "Chaos Bronze Rod",
+     "use": "Cane (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/20/Bronze_Rod.gif"
+    },
+    {
+     "n": "Ultimate Bronze Rod",
+     "use": "Cane (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/20/Bronze_Rod.gif"
+    },
+    {
+     "n": "Chaos Dagger",
+     "use": "Knife (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3a/Dagger.gif"
+    },
+    {
+     "n": "Ultimate Dagger",
+     "use": "Knife (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3a/Dagger.gif"
+    },
+    {
+     "n": "Ultimate Antique Gun",
+     "use": "Gun (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6d/Antique_Gun.gif"
+    },
+    {
+     "n": "Chaos Steel Helmet",
+     "use": "Hat (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cd/Steel_Helmet.gif"
+    },
+    {
+     "n": "Ultimate Steel Helmet",
+     "use": "Hat (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cd/Steel_Helmet.gif"
+    },
+    {
+     "n": "Chaos Wood Gear",
+     "use": "Hat (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8c/Wood_Gear.gif"
+    },
+    {
+     "n": "Ultimate Wood Gear",
+     "use": "Hat (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8c/Wood_Gear.gif"
+    },
+    {
+     "n": "Ultimate Metal Shield",
+     "use": "Shield (Lv.50)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/af/Metal_Shield.gif"
+    },
+    {
+     "n": "Old Thorn Shield",
+     "use": "Shield (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6f/Thorn_Shield.gif"
+    },
+    {
+     "n": "Old Metal Gun",
+     "use": "Gun (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/97/Metal_Gun.gif"
+    },
+    {
+     "n": "Old Dirk",
+     "use": "Knife (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/1c/Dirk.gif"
+    }
+   ],
+   "quests": [
+    "cr-boss-01"
+   ],
+   "monster": "2072"
+  },
+  {
+   "name": "Captain Skull",
+   "area": "Oops Wharf",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9b/Captain_Skull.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/bb/Captain_Skull.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/80/Captain_Skull_Seal.gif",
+   "type": "Power",
+   "level": 152,
+   "weak": "Magic, All Elements",
+   "resist": "Physical, Gun",
+   "location": "Wharf Field - Boss Room",
+   "wiki": {
+    "element": "Dark 54%",
+    "hp": "8,555x4",
+    "ap": "1,436",
+    "ma": "0",
+    "dp": "1,035",
+    "md": "1,239",
+    "gd": "180"
+   },
+   "tolerance": {
+    "Physical": 12,
+    "Magic": 52,
+    "Gun": 12,
+    "Fire": 52,
+    "Water": 52,
+    "Elec": 52,
+    "Light": 52,
+    "Dark": 52
+   },
+   "skills": [
+    {
+     "n": "Shockwave",
+     "lv": 10
+    },
+    {
+     "n": "Burning Rave",
+     "lv": 4
+    },
+    {
+     "n": "Bull's Eye",
+     "lv": 6
+    },
+    {
+     "n": "Shockvibe",
+     "lv": 6
+    },
+    {
+     "n": "Armor Breaker",
+     "lv": 8
+    },
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Quiem",
+     "lv": 75
+    },
+    {
+     "n": "Black Foe",
+     "lv": 79
+    },
+    {
+     "n": "Master Foe",
+     "lv": 84
+    },
+    {
+     "n": "Crow",
+     "lv": 88
+    }
+   ],
+   "levels": [
+    1,
+    210
+   ],
+   "restrict": "Level 1 ~ 210",
+   "spawn": "Captain Skull spawns in 20 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 1x Sea Ivory (consumed) to Card Girl at Wharf Field 4 - Chrono Wharf."
+    },
+    {
+     "d": 0,
+     "t": "To proceed to the boss, you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Trial 1 - Path to Oops Wharf Boss 1 - Not This Ship",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Shaman Girl Jia and hunt 10x Dread Black Foe."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Card Girl and hunt 10x Dread Master Foe."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Shaman Girl Jia again and drill 5x Love Crystal. Give the quest items to her and go to Trial 2."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2 - Path to Oops Wharf Boss 2 - Not This Map",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to the Copyfish DomDom at the top of the map behind the stand on the right."
+    },
+    {
+     "d": 1,
+     "t": "Defeat Dread Requi for Crystallized Sound 1, Dread Quiem for Crystallized Sound 2, Dread Crow for Crystallized Sound 3, and drill for Crystallized Sound 4."
+    },
+    {
+     "d": 1,
+     "t": "Talk to the other Copyfish DomDom on the right side of the map behind the stand and proceed to Trial 3."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3 - Path to Oops Wharf Boss 3 - Real Wharf of Darkness",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to the Copyfish DomDom up the ramp to be teleported to another Copyfish DomDom."
+    },
+    {
+     "d": 1,
+     "t": "Talk to him to get the quest and drill for 6x Requiem Mass Candle and 1x Requiem Mass Candelabrum. Give the items to him."
+    },
+    {
+     "d": 1,
+     "t": "Talk to another Copyfish DomDom at the middle left side of the map to get teleported to the Copyfish DomDom who gives the next quest."
+    },
+    {
+     "d": 1,
+     "t": "Talk to that Copyfish DomDom and defeat 1x Black Hearted Requi."
+    },
+    {
+     "d": 1,
+     "t": "Talk to the Copyfish DomDom on the bottom right side of the map to get teleported to the next Copyfish DomDom for the next quest."
+    },
+    {
+     "d": 1,
+     "t": "Talk to that Copyfish DomDom and drill for 1x Requiem Mass Brush and 1x Requiem Mass Sword."
+    },
+    {
+     "d": 1,
+     "t": "Lastly, talk to the middle-right Copyfish DomDom and defeat 1x Black Hearted Quiem and teleport two more times till you reach Shaman Girl Jia."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Shaman Girl Jia to proceed to Trial 4."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4 - Path to Oops Wharf Boss 4 - Real Dock of Darkness",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to La Vida to start the quest and talk to her again."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Vice Captain and accept the quest."
+    },
+    {
+     "d": 1,
+     "t": "Drill G Note, A Note and F Note."
+    },
+    {
+     "d": 1,
+     "t": "Talk to the Black Pirate Swab on the left first. Give him G Note."
+    },
+    {
+     "d": 1,
+     "t": "Talk to the middle Black Pirate Swab and give him A Note."
+    },
+    {
+     "d": 1,
+     "t": "Finally talk to the right Black Pirate Swab and give him F Note."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Vice Captain again to get Pirate's Combined Song."
+    },
+    {
+     "d": 1,
+     "t": "Talk to La Vida to go to the dock area below."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Shaman Girl Jia to get teleported to Wharf Field - Boss Room."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "Since the new Boss System is added, there is no need to rush and worry you will be teleported out of the trials because somebody already defeated him. Now you have your own Boss Room! Wait for a moment and Captain Skull will spawn. Do not panic, and start defeating him. Once he is defeated, check the ground for equipment or other things. You may get a unique. After you win, the Boss Room will crumple in 30 seconds; you will be teleported into Gate of Oops Wharf. Note that Captain Skull doesn't drop any unique shields."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Captain Skull Card",
+     "use": "Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/d7/Captain_Skull_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Dread Pirate Hat",
+     "use": "Legendary Unique Hat (Lv.120) · Star Gazer Stella - An Area of Bad Vibes · Star Gazer Stella - Quack Requiem Mass Priest · Shaman Girl Jia - The Requiem Mass for the One With Golden Eyes",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/50/Dread_Pirate_Hat.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Dread Cutlass",
+     "use": "Legendary Unique Special Weapon (Lv.120) · Star Gazer Stella - An Area of Bad Vibes · Star Gazer Stella - Quack Requiem Mass Priest · Shaman Girl Jia - The Requiem Mass for the One With Golden Eyes",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/fe/Dread_Cutlass.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "50 Galder Coupon",
+     "use": "Galder: 50 · Monkey T - Honest Monkey T",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b6/50_Galder_Coupon.gif"
+    },
+    {
+     "n": "100 Galder Coupon",
+     "use": "Galder: 100 · Clever Owl - Owl's Letter Delivery",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/4d/100_Galder_Coupon.gif"
+    },
+    {
+     "n": "Good Compound Waste",
+     "use": "",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/35/Good_Compound_Waste.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "Chaos Epoch Sword",
+     "use": "Sword (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Epoch_Sword.gif"
+    },
+    {
+     "n": "Ultimate Epoch Sword",
+     "use": "Sword (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Epoch_Sword.gif"
+    },
+    {
+     "n": "Chaos Wood Rod",
+     "use": "Cane (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/85/Wood_Rod.gif"
+    },
+    {
+     "n": "Ultimate Wood Rod",
+     "use": "Cane (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/85/Wood_Rod.gif"
+    },
+    {
+     "n": "Chaos Dirk",
+     "use": "Knife (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/1c/Dirk.gif"
+    },
+    {
+     "n": "Ultimate Dirk",
+     "use": "Knife (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/1c/Dirk.gif"
+    },
+    {
+     "n": "Chaos Metal Gun",
+     "use": "Gun (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/97/Metal_Gun.gif"
+    },
+    {
+     "n": "Ultimate Metal Gun",
+     "use": "Gun (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/97/Metal_Gun.gif"
+    },
+    {
+     "n": "Chaos Thorn Shield",
+     "use": "Shield (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6f/Thorn_Shield.gif"
+    },
+    {
+     "n": "Ultimate Thorn Shield",
+     "use": "Shield (Lv.65)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6f/Thorn_Shield.gif"
+    }
+   ],
+   "quests": [],
+   "monster": "2213"
+  },
+  {
+   "name": "Pirate King Karan",
+   "area": "Ghost Blue",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ec/Pirate_King_Karan.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/0c/Pirate_King_Karan.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/da/Pirate_King_Karan_Seal.gif",
+   "type": "Sense",
+   "level": 250,
+   "weak": "Physical, Earth, Light",
+   "resist": "Gun, Magic, Water, Electric, Dark",
+   "location": "Pirate King Karan's Room",
+   "wiki": {
+    "element": "None",
+    "hp": "?x5",
+    "ap": "?",
+    "ma": "?",
+    "dp": "1,326",
+    "md": "1,589",
+    "gd": "270"
+   },
+   "tolerance": {
+    "Physical": 30,
+    "Magic": 34,
+    "Gun": 27,
+    "Fire": 80,
+    "Water": 23,
+    "Wind": 23,
+    "Earth": 23,
+    "Elec": 23,
+    "Light": 27,
+    "Dark": 34
+   },
+   "skills": [
+    {
+     "n": "Siren Song"
+    },
+    {
+     "n": "Berserker"
+    },
+    {
+     "n": "Shockwave"
+    },
+    {
+     "n": "Faint"
+    },
+    {
+     "n": "Dodge Master"
+    },
+    {
+     "n": "Mana Reflector"
+    },
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Channa",
+     "lv": 240
+    }
+   ],
+   "levels": [
+    1,
+    280
+   ],
+   "restrict": "Level 1 ~ 280",
+   "spawn": "Pirate King Karan spawns in 30 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 5x Nora Doll (consumed) to La Vida at Nora Sewer."
+    },
+    {
+     "d": 0,
+     "t": "To proceed to the boss, you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Trial 1 - Trench of the Dead",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom to go to Popeyed Anemone Ghost area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom again and collect 5x Evil Spirit Bone 1 from Popeyed Anemone Ghost."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom at the top and proceed to Jelly Fish Ghost area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom again and collect 5x Evil Spirit Bone 2 from Jelly Fish Ghost (which explodes)."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom at the left and proceed to Sea Tiger Ghost area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom again and collect 5x Evil Spirit Bone 3 from Sea Tiger Ghost (which berserks and thunderbolts)."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom at the left and proceed to next trial."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2 - Trench of Patience",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Collect 30x Soul Marble from Sea Dragon Ghost and find your way to the top of the map through a 'maze'. Note, those Sea Dragon Ghosts electroshock and arrowrush, so MD is a great help here."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom at the top and proceed to next trial."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3 - Whirlpool of Agony",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Find the exit in the maze containing Merman Ale Ghosts and Merman Aqu Ghosts. Their speed is fast and once they Faint+Banish it is game over. Proceed with caution and exit to Trench of the Pirate."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4 - Whirlpool of Agony",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom and defeat 1x Right Hand Saki (which berserks)."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom again and defeat 1x Left Hand Sass (which banishes and faint)."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Copyfish Dom Dom one last time and go to Pirate King Karan's Room."
+    },
+    {
+     "d": 0,
+     "t": "Pirate King Karan's Room"
+    },
+    {
+     "d": 1,
+     "t": "Search for Karan around the map and defeat him. Karan has some of the annoying skills like Berserker and Faint. He also summons loads of Channas which is a hazard to many people. However, he is relatively weak, so most people wont have a problem with him. After defeating Karan, make sure to check the ground for Ebon Admiral's Hat or Pearl Pistol."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "In order to complete the Pirate Set, you must have Blood-Red Eyepatch which is obtained from completing quest Unique Fashion Quest:Blood-Red Eyepatch."
+    },
+    {
+     "d": 0,
+     "t": "Since the new boss system is added, there is no need to rush and worry you will be teleported out of the trial because somebody already defeated him. Now you have your own Boss Room! Wait for a moment and Karan will spawn. Do not panic and start defeating him. Once he is defeated, check the ground for any equipment or other things. You may get a unique. After defeat, the boss room will crumple in about 30 seconds, after what you will be teleported back to Gate of Ghost Blue."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Ebon Admiral's Hat",
+     "use": "Legendary Unique Hat (Lv.150) · Shaman Girl Jia - Make Sealing Charm",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/46/Ebon_Admiral's_Hat.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Pearl Pistol",
+     "use": "Legendary Unique Gun (Lv.150) · La Vida - La Vida's Revenge",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/05/Pearl_Pistol.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Ultimate Sabre",
+     "use": "Sword (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/66/Sabre.gif"
+    },
+    {
+     "n": "Ultimate Battle Rod",
+     "use": "Cane (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8d/Battle_Rod.gif"
+    },
+    {
+     "n": "Ultimate Kukri",
+     "use": "Knife (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e8/Kukri.gif"
+    },
+    {
+     "n": "Ultimate Milli-Gun",
+     "use": "Gun (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8d/Milli-Gun.gif"
+    },
+    {
+     "n": "Ultimate Buckler Cap",
+     "use": "Hat (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/98/Buckler_Cap.gif"
+    },
+    {
+     "n": "Ultimate Hunting Cap",
+     "use": "Hat (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f4/Hunting_Cap.gif"
+    },
+    {
+     "n": "Ultimate Knight Shield",
+     "use": "Shield (Lv.110)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f1/Knight_Shield.gif"
+    }
+   ],
+   "quests": [
+    "gb-62"
+   ],
+   "monster": "2295"
+  },
+  {
+   "name": "Count Blood",
+   "area": "Rose Garden",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c3/Count_Blood.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Count_Blood.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/61/Count_Blood_Seal.gif",
+   "type": "Charm",
+   "level": 330,
+   "weak": "Gun",
+   "resist": "Physical, Magic (absorb at green bar), Dark (absorb)",
+   "location": "Vamp Castle Boss Room",
+   "wiki": {
+    "element": "None",
+    "hp": "15,853x5",
+    "ap": "1,146",
+    "ma": "0",
+    "dp": "1,939",
+    "md": "1,077",
+    "gd": "?"
+   },
+   "tolerance": {
+    "Physical": 25,
+    "Magic": 25,
+    "Gun": 25,
+    "Fire": 25,
+    "Water": 25,
+    "Wind": 25,
+    "Earth": 25,
+    "Elec": 25,
+    "Light": 25,
+    "Dark": 25
+   },
+   "skills": [
+    {
+     "n": "Power Blow"
+    },
+    {
+     "n": "Final Blow"
+    },
+    {
+     "n": "Mana Reflector"
+    },
+    {
+     "n": "Thunderbolt"
+    },
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Banish"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Vamp Rydia",
+     "lv": 250
+    },
+    {
+     "n": "Majordomo Felix (Summon)",
+     "lv": 285
+    },
+    {
+     "n": "Vamp Lucia",
+     "lv": 300
+    }
+   ],
+   "levels": [
+    1,
+    360
+   ],
+   "restrict": "Level 1 ~ 360",
+   "spawn": "Count Blood spawns in 30 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 1x Lapis Lazuli (consumed) to Werewolf Lycan at Vamp Dungeon 4 - Center of the Dark."
+    },
+    {
+     "d": 0,
+     "t": "To proceed to the boss, first give Lapis Lazuli to Werewolf Lycan at night (7:00pm - 6:00am), then you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Trial 1 - Guardian Kerberos' Trial",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Guardian Kerberos (he teleported you into a map area littered with Guardian Kerberos (non active) and Guardian Kerberos (active). The strategy here is simply to get to the other side and warp out at the portal."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2 - Vamp Lydia's Trial",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Vamp Lydia, and begin the monster quest. You're now endowed with the job to hunt out the few Vampire Bats that are mingling with the other normal Bats in the map you've been teleported to. AoE skills are your best shot through this trial."
+    },
+    {
+     "d": 1,
+     "t": "After complete the monster quest Vamp Lydia offers teleport to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3 - Majordomo Felix's Trial",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Majordomo Felix to initiate a pair Sudoku puzzles. The answers can be found here: Sudoku Results."
+    },
+    {
+     "d": 1,
+     "t": "After complete the puzzles Majordomo Felix offers teleport to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4 - Werewolf Lycan's Trial",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Werewolf Lycan and you'll find you have two possible ways ahead through Vamp Lydia and Majordomo Felix. Note that the chances are 70/30 now, previously was a 50/50 then 66/33 chance where red path is twice likely to be correct but it is wrong and finally 60/40. The real chances are (for now)70/30."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "Since the new Boss System is added, there is no need to rush and worry you will be teleported out of the trials because somebody already defeated him. Now you have your own Boss Room! Wait for a moment and Count Blood will spawn. Do not panic, and start defeating him. Once he is defeated, check the ground for equipment or other things. You may get a unique. After you win, the Boss Room will crumple in 30 seconds; you will be teleported into Event Garden - Ceremonia."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Count Blood Card",
+     "use": "Compound: Block +5~19% (Lv.170) · Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2c/Count_Blood_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Mark of the Vampire",
+     "use": "Legendary Unique Hat (Lv.180) · Werewolf Lycan - Lycan's Question · Werewolf Lycan - Lycan's Words",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/73/Mark_of_the_Vampire.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Blood Sword",
+     "use": "Legendary Unique Special Weapon (Lv.180) · King Edward - King Remembers 1",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/00/Blood_Sword.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Blood Shield",
+     "use": "Legendary Unique Shield (Lv.180) · Queen Cecilia - Queen Remembers",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/63/Blood_Shield.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Blood Lightning Jade",
+     "use": "Compound: Elec Attr +29~57% (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f7/Blood_Lightning_Jade.gif"
+    },
+    {
+     "n": "Dark Eye",
+     "use": "Guard Gilbert - Knight Test 3 - Bravery Test",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6e/Feel_Eye.gif"
+    },
+    {
+     "n": "Pendant",
+     "use": "King Edward - King Remembers 2 · Compound: HV +5~16 (Lv.190)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/ad/Pendant.gif"
+    },
+    {
+     "n": "10 Galder Coupon",
+     "use": "Galder: 10",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/39/10_Galder_Coupon.gif"
+    },
+    {
+     "n": "Herb Potion",
+     "use": "Recovery: 1,000 HP · Little Chagan - Chagan's Dream · Little Chagan - Transfer to Lake of Illusion - Middle Island",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/97/Herb_Potion.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "Gold Pearl Potion",
+     "use": "Recovery: 1,000 MP",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/94/Gold_Pearl_Potion.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "Hook Object",
+     "use": "Compound: Compounder Nadia - Super Ring, Super Thorny Ring, Super Saw Blade Ring",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/ce/Hook_Object.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "Chaos Shotel",
+     "use": "Sword (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/df/Shotel.gif"
+    },
+    {
+     "n": "Ultimate Shotel",
+     "use": "Sword (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/df/Shotel.gif"
+    },
+    {
+     "n": "Chaos Silver Rod",
+     "use": "Cane (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/fd/Silver_Rod.gif"
+    },
+    {
+     "n": "Ultimate Silver Rod",
+     "use": "Cane (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/fd/Silver_Rod.gif"
+    },
+    {
+     "n": "Chaos Main-Gauche",
+     "use": "Knife (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6d/Main-Gauche.gif"
+    },
+    {
+     "n": "Ultimate Main-Gauche",
+     "use": "Knife (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6d/Main-Gauche.gif"
+    },
+    {
+     "n": "Chaos Blue Seal Gun",
+     "use": "Gun (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/01/Blue_Seal_Gun.gif"
+    },
+    {
+     "n": "Ultimate Blue Seal Gun",
+     "use": "Gun (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/01/Blue_Seal_Gun.gif"
+    },
+    {
+     "n": "Ultimate Nasal Helm",
+     "use": "Hat (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f0/Nasal_Helm.gif"
+    },
+    {
+     "n": "Ultimate Turban",
+     "use": "Hat (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/1/19/Turban.gif"
+    },
+    {
+     "n": "Ultimate Crest Shield",
+     "use": "Shield (Lv.125)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/47/Crest_Shield.gif"
+    }
+   ],
+   "quests": [],
+   "monster": "2138"
+  },
+  {
+   "name": "Tenter Lion",
+   "area": "Black Swamp",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f7/Tenter_Lion.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/24/Tenter_Lion.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a2/Tenter_Lion_Seal.gif",
+   "type": "Charm",
+   "level": 420,
+   "weak": "Gun",
+   "resist": "Physical, Magic, Fire, Air, Electric, Earth (absorb at red), Water (absorb), Dark",
+   "location": "Swamp Dungeon 7 - Tenterlion's Cave",
+   "wiki": {
+    "element": "Earth 66%",
+    "hp": "23,065x5",
+    "ap": "4,020",
+    "ma": "?",
+    "dp": "2,998",
+    "md": "3,420",
+    "gd": "600"
+   },
+   "tolerance": {
+    "Physical": 21,
+    "Magic": 1,
+    "Gun": 47,
+    "Fire": 21,
+    "Water": 13,
+    "Wind": 21,
+    "Earth": 13,
+    "Elec": 21,
+    "Light": 21,
+    "Dark": 21
+   },
+   "skills": [
+    {
+     "n": "Power Blow",
+     "lv": 6
+    },
+    {
+     "n": "Final Blow",
+     "lv": 8
+    },
+    {
+     "n": "Mana Reflector",
+     "lv": 8
+    },
+    {
+     "n": "Magic Meltdown",
+     "lv": 8
+    },
+    {
+     "n": "Cleaving Terra"
+    },
+    {
+     "n": "Drip Bomb"
+    },
+    {
+     "n": "Thunderbolt"
+    },
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Banish"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Stoor Worm",
+     "lv": 221
+    },
+    {
+     "n": "Slug G",
+     "lv": 224
+    },
+    {
+     "n": "Yeti",
+     "lv": 226
+    },
+    {
+     "n": "Kilimanjaro",
+     "lv": 273
+    }
+   ],
+   "levels": [
+    150,
+    null
+   ],
+   "restrict": "Level 150+",
+   "spawn": "Tenter Lion spawns in 30 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 1x Herb Potion (consumed) to Little Chagan at Swamp Field 6 - Lake of Illusion."
+    },
+    {
+     "d": 0,
+     "t": "To proceed to the boss, you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Trial 1 - Protect the Sky Lotus",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Frog Shaman and defeat 8x Tentacles."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Frog Shaman again (in the final of Tentacles' path) to teleport to center lotus area of map."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Frog Shaman, defeat 6x Dark Shaman and collect 6x Dark Necklace."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Frog Shaman again and you are teleported to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2 - Lotus Examination Room",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana and defeat 1x Super Cobra Flower to get 1x Warrior's Water Drop."
+    },
+    {
+     "d": 1,
+     "t": "Talk to her again to be teleported to next lotus area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana and defeat 2x Super Myconid to get 2x Water Drop of Power."
+    },
+    {
+     "d": 1,
+     "t": "Talk to her again to be teleported to next lotus area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana and defeat 3x Super Lotus Wormhole to get 3x Water Drop of Magic."
+    },
+    {
+     "d": 1,
+     "t": "Talk to her again to be teleported to next lotus area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana and defeat 1x Super Stoor Worm to get 1x Water Drop of Sense."
+    },
+    {
+     "d": 1,
+     "t": "Talk to her again to be teleported to next lotus area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana and defeat 2x Super Slug G to get 2x Water Drop of Strength."
+    },
+    {
+     "d": 1,
+     "t": "Talk to her again to be teleported to next lotus area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana to start the quest Find the Marble of Fortune. Defeat 4x Shadow Mon (they are invisible). Run your mouse over the map and you can see some movement.(Also by pressing Alt you can see their exact locations as their names pop up). Defeat them to get 4x Marble of Fortune to finish the quest."
+    },
+    {
+     "d": 1,
+     "t": "Talk to her again to be teleported to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3 - Calm Down Suu",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Witch La Befana to start the quest Calm Down Suu. You have to find these people in the following order:"
+    },
+    {
+     "d": 2,
+     "t": "Pastor Tau (gives Children's Letter),"
+    },
+    {
+     "d": 2,
+     "t": "Kristoffer J. (gives Sand Filled Bag),"
+    },
+    {
+     "d": 2,
+     "t": "Madam Sarah (gives Herbal Tea),"
+    },
+    {
+     "d": 2,
+     "t": "Warrior Kei (gives The Brave Story Book),"
+    },
+    {
+     "d": 2,
+     "t": "Swampy Suu (he finish the quest and gives Mud Ball)"
+    },
+    {
+     "d": 1,
+     "t": "Talk to Pastor Tau to be teleported to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4 - Destroy the Ancient Statues",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Pastor Tau to start the quest by collecting 8x Teleport Scroll: Tenter Lion's Lair by defeating 8x Ancient Hero Statue. They Arrow Rush and Banish, except for one which Faint + Mana Arrow."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Pastor Tau again to be teleported to Swamp Field 7 - Tenterlion's Cave."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "His Banish ring is as large as Tut's, the player inside the ring gets teleported to Megalopolis Square after 3 sec. As the battle progresses, and his HP gets lower and lower, his resistances will get higher. By the Red Bar, his resistances are incredibly high, absorbs soil attribute attacks. He also can banish whenever he wants, even consecutively."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Tenter Lion Card",
+     "use": "Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/64/Tenter_Lion_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Tenter Lion Mane",
+     "use": "Legendary Unique Hat (Lv.210) · Dr. Cat - Tenter Lion's Legendary Shield",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/99/Tenter_Lion_Mane.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Tenter Lion Tail Spear",
+     "use": "Legendary Unique Special Weapon (Lv.210) · Dr. Cat - Tenter Lion's Legendary Shield",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ed/Tenter_Lion_Tail_Spear.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Tenter Lion Earring",
+     "use": "Legendary Unique Accessory (Lv.210) · Dr. Cat - Tenter Lion's Legendary Shield",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/52/Tenter_Lion_Earring.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Red Tentacle",
+     "use": "Dr. Cat - Tenter Lion's Legendary Shield",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/78/Red_Tentacle.gif"
+    },
+    {
+     "n": "Ticket of the Valiant",
+     "use": "Door of Tribulation - Path of Tribulation (Quest 1)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6e/Sun's_Coat_of_Arms.gif"
+    },
+    {
+     "n": "500 Galder Coupon",
+     "use": "Galder: 500 · Monkey T - Antique Mirror! · Explorer Reina - Transfer to Nora Sewer (Upper Area) · Exchange: Merchant Lorena - Element Crystals (80~395)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/58/500_Galder_Coupon.gif"
+    },
+    {
+     "n": "Chaos Long Sword",
+     "use": "Sword (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b3/Long_Sword.gif"
+    },
+    {
+     "n": "Ultimate Long Sword",
+     "use": "Sword (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b3/Long_Sword.gif"
+    },
+    {
+     "n": "Chaos Gold Rod",
+     "use": "Cane (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/58/Gold_Rod.gif"
+    },
+    {
+     "n": "Ultimate Gold Rod",
+     "use": "Cane (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/58/Gold_Rod.gif"
+    },
+    {
+     "n": "Chaos Stiletto",
+     "use": "Knife (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/de/Stiletto.gif"
+    },
+    {
+     "n": "Ultimate Stiletto",
+     "use": "Knife (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/de/Stiletto.gif"
+    },
+    {
+     "n": "Chaos Pierce Gun",
+     "use": "Gun (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5a/Pierce_Gun.gif"
+    },
+    {
+     "n": "Ultimate Pierce Gun",
+     "use": "Gun (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5a/Pierce_Gun.gif"
+    },
+    {
+     "n": "Ultimate Headpiece",
+     "use": "Hat (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3d/Headpiece.gif"
+    },
+    {
+     "n": "Ultimate Soft Hat",
+     "use": "Hat (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e4/Soft_Hat.gif"
+    },
+    {
+     "n": "Chaos Jade Shield",
+     "use": "Shield (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/81/Jade_Shield.gif"
+    },
+    {
+     "n": "Ultimate Jade Shield",
+     "use": "Shield (Lv.140)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/81/Jade_Shield.gif"
+    }
+   ],
+   "quests": [
+    "bs-13"
+   ],
+   "monster": "2152"
+  },
+  {
+   "name": "Queen Odinea",
+   "area": "Snow Hill",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/75/Queen_Odinea.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3f/Queen_Odinea.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/da/Queen_Odinea_Seal.gif",
+   "type": "Magic",
+   "level": 520,
+   "weak": "Gun, Physical, Electric",
+   "resist": "Magic (Absorb), Fire, Water, Air, Earth, Light, Dark",
+   "location": "Ice Dungeon 5 - Room of Odinea",
+   "wiki": {
+    "element": "None",
+    "hp": "27,465x5",
+    "ap": "3,890",
+    "ma": "?",
+    "dp": "3,749",
+    "md": "4,485",
+    "gd": "720"
+   },
+   "tolerance": {
+    "Physical": 25,
+    "Magic": 14,
+    "Gun": 18,
+    "Fire": 22,
+    "Water": 14,
+    "Wind": 14,
+    "Earth": 16,
+    "Elec": 16,
+    "Light": 16,
+    "Dark": 16
+   },
+   "skills": [
+    {
+     "n": "Arrow Rush",
+     "lv": 10
+    },
+    {
+     "n": "Mana Storm"
+    },
+    {
+     "n": "Impelling Rage"
+    },
+    {
+     "n": "Rust"
+    },
+    {
+     "n": "Thunderbolt"
+    },
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Banish"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Giant Coolem",
+     "lv": 323
+    },
+    {
+     "n": "Great Coolem",
+     "lv": 328
+    }
+   ],
+   "levels": null,
+   "restrict": "None",
+   "spawn": "Queen Odinea spawns in 45 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 1x Bear Fur (consumed) to General Granada at Ice Dungeon 3 - Heart of Crystal."
+    },
+    {
+     "d": 0,
+     "t": "To proceed, you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Blue Ice Trial 1 - Gate of Ice Palace",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Princess Rosetta and defeat 3x Gate Keeper Coolem. Note: they use Arrow Rush, Berserker and Faint. Talk to her again after completion and go to Trial 2."
+    },
+    {
+     "d": 0,
+     "t": "Blue Ice Trial 2 - Ice Palace Stairs",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Drill Red Planks, Blue Planks and Green Planks anywhere in the map. · Notes: There are three common ways to get to General Granada: · Method #1: Green, Red, Green and Green (fastest way to reach General Granada); · Method #2: Blue, Green, Green and Green (alternative way); · Method #3: Blue, Red, Red, Green and Green (saves you 1x Green). · (Blue Plank is for Niwerth, Red Plank is for Freyr and Green Plank is for Freyja)."
+    },
+    {
+     "d": 1,
+     "t": "Talk to General Granada and defeat 3x General's Peon Niwerth in 1 minute. Be careful, as they have Banish and Suicide. Talk to him again and proceed to Trial 3."
+    },
+    {
+     "d": 0,
+     "t": "Blue Ice Trial 3 - Ice Palace Hallway",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Santa Claus and defeat 5x Queen's Icicler in 2 minutes. Run to the end of the map and finish the MQ by handing it in to Witch La Befana for the next quest."
+    },
+    {
+     "d": 1,
+     "t": "Now, drill 1x Special Broom anywhere in the map and give it to Witch La Befana to go to Trial 4. You can also drill first, then do the MQ and Witch La Befana's quest right after each other."
+    },
+    {
+     "d": 0,
+     "t": "Blue Ice Trial 4 - Ice Palace Maid's Room",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to General Granada and defeat 1x Queen's Maid 1 which has Berserker, Lacerator, Banish and Faint. After completion, keep talking to him for the next quest."
+    },
+    {
+     "d": 1,
+     "t": "Next, defeat Queen's Maid 2 for 1x Maid's Room Key and give it to him to get teleported to the Maid's Room."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Star Gazer Stella and choose \"Defend\", after that keep clicking \"Attack\" to proceed to the quest. When you fail her little game you will be banished to Ice Palace Jail (3), where you have to do a MQ to get teleported back to the beginning of Blue Ice Trial 4 (See Notes for more information about Ice Palace Jails)."
+    },
+    {
+     "d": 1,
+     "t": "After that, get 1x Queen's Room Key from Sly Snow Kid and give it to Star Gazer Stella to get teleported to Ice Dungeon 5 - Room of Odinea."
+    },
+    {
+     "d": 0,
+     "t": "For detailed trial quests, please see Queen Odinea's Trial Quests."
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "Queen Odinea will spawn in 50 seconds upon entering the Boss Room. Queen Odinea is highly resistant to a lot of Magic Elements with the exception of Electricity, she's Physical and Gun weak as well. However, you shouldn't take her lightly since her Magic Attacks and Impelling Rage can deal a lot of damage if you're not alert, so be careful! When you succeed in defeating her, you have 30 seconds to check the ground for any item drops including uniques before you get teleported to Gate of Snow Hill. After that, you have to wait for 45 minutes before you can enter the trials again. For more information and stats on the uniques Queen Odinea drops see the Cold Hearted Set Table. The Ice Nail, the last piece to complete the Cold Hearted Set, is obtained from completing Ice Nail Quests."
+    },
+    {
+     "d": 0,
+     "t": "Blue Ice Trial 5 - Ice Palace Jail Notes: · When you go through Blue Ice Trial 2, 3 and 4 you might end up in one of the three Ice Palace Jails. The Blue Ice Trial you will fail at will bring you to that trial's Ice Palace Jail. · Ice Palace Jail (1) in Blue Ice Trial 2 - Ice Palace Stairs, where you have to complete Jailer Santa Bear Quest to get teleported back to the beginning of Blue Ice Trial 2. · Ice Palace Jail (2) in Blue Ice Trial 3 - Ice Palace Hallway where you have to complete Jailer Ice Cream Quest to get teleported back to the beginning of Blue Ice Trial 3. · Ice Palace Jail (3) in Blue Ice Trial 4 - Ice Palace Maid's Room where you have to complete Jailer Coolem Quest to get teleported back to the beginning of Blue Ice Trial 4."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Queen Odinea Card",
+     "use": "Compound: Critical +5~19% (Lv.170) · Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b5/Queen_Odinea_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Ice Diadem",
+     "use": "Legendary Unique Hat (Lv.240) · Rudolph - Santa Expert Kidnapee",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Ice_Diadem.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Ice Heart Sword",
+     "use": "Legendary Unique Special Weapon (Lv.240) · Rudolph - Santa Expert Kidnapee",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c1/Ice_Heart_Sword.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Ice Shield",
+     "use": "Legendary Unique Shield (Lv.240) · Rudolph - Santa Expert Kidnapee",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/37/Ice_Shield.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Ice Earring",
+     "use": "Throw AP +250 (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/d7/Ice_Earring.gif"
+    },
+    {
+     "n": "Ice Heart",
+     "use": "Witch La Befana - Broken Promise · Compound: Water Attr +32~61% (Lv.190)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/d0/Ice_Heart.gif"
+    },
+    {
+     "n": "100 Galder Coupon",
+     "use": "Galder: 100 · Clever Owl - Owl's Letter Delivery",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/4d/100_Galder_Coupon.gif"
+    },
+    {
+     "n": "Ultimate Shamshir",
+     "use": "Sword (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3e/Shamshir.gif"
+    },
+    {
+     "n": "Ultimate Blue Dragon Rod",
+     "use": "Cane (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/7d/Blue_Dragon_Rod.gif"
+    },
+    {
+     "n": "Ultimate Kalis",
+     "use": "Knife (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/32/Kalis.gif"
+    },
+    {
+     "n": "Ultimate Shotgun",
+     "use": "Gun (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6b/Shotgun.gif"
+    },
+    {
+     "n": "Ultimate Diadem",
+     "use": "Hat (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/08/Diadem.gif"
+    },
+    {
+     "n": "Ultimate Witch Hat",
+     "use": "Hat (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/a0/Crone_Hat.gif"
+    },
+    {
+     "n": "Ultimate Golden Shield",
+     "use": "Shield (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/87/Golden_Shield.gif"
+    },
+    {
+     "n": "Ice Witch Broom",
+     "use": "Teleport"
+    },
+    {
+     "n": "Elixir Extract",
+     "use": "Recovery: 2,000 HP",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/d0/Elixir_Extract.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "Jewelry Potion",
+     "use": "Recovery: 2,000 MP",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/66/Jewelry_Potion.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "Star Card Pack No.6",
+     "use": "Box: Fortune Cards Rank #5 · Star Gazer Stella - Daily Quest - Techichi Volcano (Autumn)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b4/Star_Card_Pack_No.4.gif"
+    },
+    {
+     "n": "Star Card Pack No.7",
+     "use": "Box: Fortune Cards Rank #6",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b4/Star_Card_Pack_No.4.gif"
+    },
+    {
+     "n": "Fake Card Pack No.3",
+     "use": "Star Gazer Stella - Daily Quest - Techichi Volcano (Winter)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c5/Star_Card_Pack_No.5.gif"
+    },
+    {
+     "n": "Old Wakizashi",
+     "use": "Sword (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f4/Wakizashi.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Sharp Wakizashi",
+     "use": "Sword (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f4/Wakizashi.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Art Wakizashi",
+     "use": "Sword (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f4/Wakizashi.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Old Pugio",
+     "use": "Knife (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9c/Pugio.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Sharp Pugio",
+     "use": "Knife (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9c/Pugio.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Art Pugio",
+     "use": "Knife (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9c/Pugio.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Old Black Dragon Rod",
+     "use": "Cane (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5c/Black_Dragon_Rod.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Moon Black Dragon Rod",
+     "use": "Cane (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5c/Black_Dragon_Rod.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Art Black Dragon Rod",
+     "use": "Cane (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5c/Black_Dragon_Rod.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Old Hand Cannon",
+     "use": "Gun (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/27/Hand_Cannon.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Strong Hand Cannon",
+     "use": "Gun (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/27/Hand_Cannon.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Art Hand Cannon",
+     "use": "Gun (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/27/Hand_Cannon.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Old Defender",
+     "use": "Shield (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e8/Defender.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Strong Defender",
+     "use": "Shield (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e8/Defender.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Art Defender",
+     "use": "Shield (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/e8/Defender.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Sharp Piece",
+     "use": "Compound: Compounder Nadia - Super Dagger, Super Willow Dagger, Super Fir Dagger, Super Apricot Dart",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/03/Sharp_Piece.gif",
+     "rate": "Common"
+    },
+    {
+     "n": "AP Stone 185",
+     "use": "Compound: AP +88~288 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f5/Power_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "AC Stone 185",
+     "use": "Compound: AC +5~18 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f5/Power_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "DX Stone 185",
+     "use": "Compound: DX -2~-7 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f5/Power_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "MP Stone 185",
+     "use": "Compound: MP +666~2,164 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/52/Magic_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "MA Stone 185",
+     "use": "Compound: MA +5~18 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/52/Magic_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "MD Stone 185",
+     "use": "Compound: MD +88~288 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/52/Magic_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "WT Stone 185",
+     "use": "Compound: WT +1,776~5,772 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8a/Sense_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "DA Stone 185",
+     "use": "Compound: DA +5~18 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8a/Sense_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "LK Stone 185",
+     "use": "Compound: LK +5~18 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8a/Sense_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "HP Stone 185",
+     "use": "Compound: HP +666~2,164 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f9/Charm_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "DP Stone 185",
+     "use": "Compound: DP +88~288 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f9/Charm_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "HV Stone 185",
+     "use": "Compound: HV +5~18 (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f9/Charm_Stone.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Air Crystal 185",
+     "use": "Compound: Air Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cb/Air_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Water Crystal 185",
+     "use": "Compound: Water Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/a/ab/Water_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Fire Crystal 185",
+     "use": "Compound: Fire Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9f/Fire_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Soil Crystal 185",
+     "use": "Compound: Soil Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c2/Soil_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Electric Crystal 185",
+     "use": "Compound: Electric Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b6/Electric_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Light Crystal 185",
+     "use": "Compound: Light Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c0/Light_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Dark Crystal 185",
+     "use": "Compound: Dark Attr +29~67% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6b/Dark_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Air Resist Crystal 185",
+     "use": "Compound: Air Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/98/Air_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Water Resist Crystal 185",
+     "use": "Compound: Water Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8d/Water_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Fire Resist Crystal 185",
+     "use": "Compound: Fire Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2e/Fire_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Soil Resist Crystal 185",
+     "use": "Compound: Soil Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9b/Soil_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Elec Resist Crystal 185",
+     "use": "Compound: Elec Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/5b/Elec_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Light Resist Crystal 185",
+     "use": "Compound: Light Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/dc/Light_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Dark Resist Crystal 185",
+     "use": "Compound: Dark Resist +18~46% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/57/Dark_Resist_Crystal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Critical Metal 185",
+     "use": "Compound: Critical +8~24% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/63/Critical_Metal.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Block Metal 185",
+     "use": "Compound: Block +7~22% (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ee/Block_Metal.gif",
+     "rate": "Very Rare"
+    }
+   ],
+   "quests": [
+    "sh-78",
+    "sh-79",
+    "tp-98",
+    "tp-99"
+   ],
+   "monster": "2123"
+  },
+  {
+   "name": "Soki",
+   "area": "Techichi Volcano",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/97/Soki.png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b6/Soki.gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/dd/Soki_Seal.gif",
+   "type": "Power",
+   "level": 630,
+   "weak": "Magic, Fire, Electric, Water, Air, Dark, Light",
+   "resist": "Physical, Gun",
+   "location": "Soki's Hamlet",
+   "wiki": {
+    "element": "Earth 66%",
+    "hp": "30,000x5",
+    "ap": "6,120",
+    "ma": "?",
+    "dp": "4,428",
+    "md": "5,310",
+    "gd": "900"
+   },
+   "tolerance": {
+    "Physical": 7,
+    "Magic": 43,
+    "Gun": 7,
+    "Fire": 18,
+    "Water": 43,
+    "Wind": 43,
+    "Earth": 26,
+    "Elec": 43,
+    "Light": 43,
+    "Dark": 43
+   },
+   "skills": [
+    {
+     "n": "Burning Rave",
+     "lv": 8
+    },
+    {
+     "n": "Armor Breaker",
+     "lv": 4
+    },
+    {
+     "n": "Shockwave"
+    },
+    {
+     "n": "Guard Break"
+    },
+    {
+     "n": "Fire Shield"
+    },
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Banish"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Orconio",
+     "lv": 290
+    },
+    {
+     "n": "Orpeo",
+     "lv": 299
+    },
+    {
+     "n": "Aabon",
+     "lv": 307
+    },
+    {
+     "n": "Fire Golem",
+     "lv": 377
+    }
+   ],
+   "levels": [
+    150,
+    null
+   ],
+   "restrict": "Level 150+",
+   "spawn": "Soki spawns in 45 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 2x Stone Ball (consumed) to Tango at Black Ash Dungeon 4."
+    },
+    {
+     "d": 0,
+     "t": "To proceed to the boss, you have to complete the following trials:"
+    },
+    {
+     "d": 0,
+     "t": "Trial 1 - Techichi Path to Soki 1 - Maze of Death",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Dig up 1x Blue Bone 1 (for map that has Blue Bones) or 1x Red Bone 1 (for map that has Red Bones). For Ponchichi locations on both maps please see this image map."
+    },
+    {
+     "d": 1,
+     "t": "Talk to 1st Ponchichi and receive 1x Blue Bone 2 or 1x Red Bone 2. Follow the image map to locate the other Ponchichis."
+    },
+    {
+     "d": 1,
+     "t": "Talk to 2nd Ponchichi (it takes Blue Bone 2/Red Bone 2) and receive 1x Blue Bone 3/Red Bone 3"
+    },
+    {
+     "d": 1,
+     "t": "Talk to 3rd Ponchichi (it takes Blue Bone 3/Red Bone 3) and receive 1x Blue Bone 4/Red Bone 4"
+    },
+    {
+     "d": 1,
+     "t": "Talk to 4th Ponchichi (it takes Blue Bone 4/Red Bone 4) and receive 1x Blue Bone 5/Red Bone 5"
+    },
+    {
+     "d": 1,
+     "t": "Talk to 5th Ponchichi (it takes Blue Bone 5/Red Bone 5) and receive 1x Blue Bone 6/Red Bone 6"
+    },
+    {
+     "d": 1,
+     "t": "Talk to 6th Ponchichi (it takes Blue Bone 6/Red Bone 6 and teleport to 7th Ponchichi area)"
+    },
+    {
+     "d": 1,
+     "t": "Talk to 7th Ponchichi and answer 2 questions (see these guides: Blue Bone Map Questions / Red Bone Map Questions). After answer correctly both questions, it teleport to an area that has a portal to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 2 - Techichi Path to Soki 2 - Origin of Death",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Compounder Nadia and complete Nadia's Request (hunt 3x Ashen Doom Swine (Lv.360)."
+    },
+    {
+     "d": 1,
+     "t": "In farm area, dig up 1x Worn Magical Rune (you can drill more for the next compound part)."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Compounder Nadia and complete Matching Rune Stone 1"
+    },
+    {
+     "d": 1,
+     "t": "Talk to Compounder Nadia and start Matching Rune Stone 2. Take some Incense Remnants from Ashen Doom Swine and drill some Worn Magical Rune."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Compounder Nadia and compound 1x Worn Magical Rune + 1x Incense Remnants to obtain 1x Rune Stone."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Marked Stone to complete Matching Rune Stone 2. It teleport to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 3 - Techichi Path to Soki 3 - Death's Time",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Talk to Orpeo. She gives Bottle of Wishes and start the Monster Quest: A Women's Wish. After complete it, she teleport to next area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Orpeo and start the Monster Quest: The Killi's Wish. After complete it, she teleport to next area."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Orpeo and start the Monster Quest: The Soldier's Wish. After complete it, she takes Bottle of Wishes and teleport to next trial map."
+    },
+    {
+     "d": 0,
+     "t": "Trial 4 - Techichi Path to Soki 4 - Test of Death",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Dig up 1x Cat Doll Part 1, 1x Cat Doll Part 2, 1x Cat Doll Part 3"
+    },
+    {
+     "d": 1,
+     "t": "Talk to Brother Tango and complete Doll Parts for Brother Tango."
+    },
+    {
+     "d": 1,
+     "t": "Talk to Brother Tango again to start Soul for Brother Tango. It teleport to Doom Lion jail."
+    },
+    {
+     "d": 1,
+     "t": "Take 1x Techichi Village's Holy Sword from Doom Lion (Lv.410) (be careful, the lion has Banish)."
+    },
+    {
+     "d": 1,
+     "t": "Give Techichi Village's Holy Sword to Brother Tango and it teleports to Black Ash Dungeon Boss Room"
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "Soki now absorbs Physical damage (but you can use Elemental Melee to get around this) as well as Gun / Shuriken Damage (but you can use Shield Breaker to be able to damage him), and is weak to both elemental magic (all types) and non-elemental magic."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Soci Card",
+     "use": "Compound: Block +6~21% (Lv.190) · Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/23/Soci_Card.gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "Gray Ash Helm",
+     "use": "Legendary Unique Hat (Lv.270) · Tango - Tango's Brother",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/7a/Gray_Ash_Helm.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Gray Ash Staff",
+     "use": "Legendary Unique Special Weapon (Lv.270) · Tango - Tango's Brother",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/f/f0/Gray_Ash_Staff.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Gray Ash Shield",
+     "use": "Legendary Unique Shield (Lv.270) · Tango - Tango's Brother",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/be/Gray_Ash_Shield.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "500 Galder Coupon",
+     "use": "Galder: 500 · Monkey T - Antique Mirror! · Explorer Reina - Transfer to Nora Sewer (Upper Area) · Exchange: Merchant Lorena - Element Crystals (80~395)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/58/500_Galder_Coupon.gif"
+    },
+    {
+     "n": "Chaos Sky Blade",
+     "use": "Sword (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/0c/Sky_Blade.gif"
+    },
+    {
+     "n": "Ultimate Sky Blade",
+     "use": "Sword (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/0c/Sky_Blade.gif"
+    },
+    {
+     "n": "Chaos Stick",
+     "use": "Cane (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9a/Stick.gif"
+    },
+    {
+     "n": "Ultimate Stick",
+     "use": "Cane (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/9a/Stick.gif"
+    },
+    {
+     "n": "Artisan Poignard",
+     "use": "Knife (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Poignard.gif"
+    },
+    {
+     "n": "Chaos Poignard",
+     "use": "Knife (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Poignard.gif"
+    },
+    {
+     "n": "Ultimate Poignard",
+     "use": "Knife (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Poignard.gif"
+    },
+    {
+     "n": "Ultimate Shotgun",
+     "use": "Gun (Lv.170)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/6/6b/Shotgun.gif"
+    },
+    {
+     "n": "Chaos Stinger Gun",
+     "use": "Gun (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/94/Stinger_Gun.gif"
+    },
+    {
+     "n": "Ultimate Stinger Gun",
+     "use": "Gun (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/9/94/Stinger_Gun.gif"
+    },
+    {
+     "n": "Chaos Mithril Helm",
+     "use": "Hat (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Mithril_Helm.gif"
+    },
+    {
+     "n": "Ultimate Mithril Helm",
+     "use": "Hat (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Mithril_Helm.gif"
+    },
+    {
+     "n": "Chaos Mithril Hat",
+     "use": "Hat (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/56/Mithril_Hat.gif"
+    },
+    {
+     "n": "Ultimate Mithril Hat",
+     "use": "Hat (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/5/56/Mithril_Hat.gif"
+    },
+    {
+     "n": "Chaos Mithril Shield",
+     "use": "Shield (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/dd/Mithril_Shield.gif"
+    },
+    {
+     "n": "Ultimate Mithril Shield",
+     "use": "Shield (Lv.215)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/d/dd/Mithril_Shield.gif"
+    }
+   ],
+   "quests": [],
+   "monster": "2216"
+  },
+  {
+   "name": "Spicy Dragon",
+   "area": "Tapasco Volcano",
+   "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/cf/Spicy_Dragon_(new).png",
+   "sprite": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3b/Spicy_Dragon_(new).gif",
+   "seal": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/4a/Spicy_Dragon_(new)_Seal.gif",
+   "type": "Magic",
+   "level": 730,
+   "weak": "Unknown",
+   "resist": "Unknown",
+   "location": "Tapasco Boss Room",
+   "wiki": {
+    "element": "None",
+    "hp": "?x5",
+    "ap": "?",
+    "ma": "?",
+    "dp": "?",
+    "md": "?",
+    "gd": "?"
+   },
+   "tolerance": {},
+   "skills": [
+    {
+     "n": "Cure"
+    },
+    {
+     "n": "Poison Pouch"
+    },
+    {
+     "n": "Shockwave"
+    },
+    {
+     "n": "Guard Break"
+    },
+    {
+     "n": "Banish"
+    },
+    {
+     "n": "Enhanced Resistance"
+    }
+   ],
+   "summons": [
+    {
+     "n": "Red Salamander",
+     "lv": 334
+    },
+    {
+     "n": "Blue Salamander",
+     "lv": 339
+    }
+   ],
+   "levels": null,
+   "restrict": "None",
+   "spawn": "Spicy Dragon (new) spawns in 60 min after the previous appearance.",
+   "walk": [
+    {
+     "d": 0,
+     "t": "Give 2x Spicy Egg (consumed) to Cletta at Spicy Island."
+    },
+    {
+     "d": 0,
+     "t": "Follow these quests in order to confront Spicy:"
+    },
+    {
+     "d": 0,
+     "t": "Transfer to Spicy Trials: · Cletta - Tapasco Boss Room Trial Entrance",
+     "h": 1
+    },
+    {
+     "d": 0,
+     "t": "Path 1 Trials: · Cletta - The Stranger's Adventurer Test · Draco Knight - The Knight Guarding Spicy Dragon",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "If already in a possession of a Cletta's Crystal, you can head directly to Draco Knight's MQ."
+    },
+    {
+     "d": 0,
+     "t": "Path 2-1 Trials: · None - Destroy the 5 Statues · None - Destroy the 8 Statues",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "Use the paper/pen combo to note down the order of the the spawn. You can only start to hit the statues once all 5 or 8 have appeared."
+    },
+    {
+     "d": 0,
+     "t": "Path 2-2 to 2-5 Trials: · Clerk Z. Smith - Leviathan's Trial (1) · Clerk Z. Smith - Leviathan's Trial (2) · Clerk Z. Smith - Leviathan's Trial (3) · Clerk Z. Smith - Leviathan's Trial (4)"
+    },
+    {
+     "d": 0,
+     "t": "Path 3-1 Trials: · Sealed Cave Entrance - Hunter Master's Trial (1) · Sealed Cave Entrance - Hunter Master's Trial (2) · Sealed Cave Entrance - Hunter Master's Trial (3) · Sealed Cave Entrance - Hunter Master's Trial (4)"
+    },
+    {
+     "d": 1,
+     "t": "There is a total of 15 monsters per room, so be careful as to not kill anyone before starting the Monster Quests."
+    },
+    {
+     "d": 0,
+     "t": "Path 3-2 Trials: · None - Slide Puzzle 1 · None - Slide Puzzle 2 · None - Slide Puzzle 3",
+     "h": 1
+    },
+    {
+     "d": 1,
+     "t": "All 3 puzzles start with the pieces randomly generated. Click on the following links to have the way the puzzle must look: 3x3, 4x4, 5x5."
+    },
+    {
+     "d": 1,
+     "t": "Check out http://analogbit.com/software/puzzletools for slider puzzle solver, which may be some help."
+    },
+    {
+     "d": 0,
+     "t": "Path 4 Trials: · Hunter Master - Cletta's Bamboozled Adventurer · Fortune Teller - The Story Behind Tapasco Volcano · Hunter Master Leviathan - Leviathan's Help"
+    },
+    {
+     "d": 1,
+     "t": "The Cletta's Crystal you get from Cletta in Path 1 and the one from Hunter Master in path 4 are considered 2 different items. It's the second one which will be used for Fortune Teller's quest."
+    },
+    {
+     "d": 1,
+     "t": "The monster is invicible to all attacks, you need Leviathan's spell to kill it."
+    },
+    {
+     "d": 1,
+     "t": "Once Leviathan's quest is done you're automatically transported to the next trial."
+    },
+    {
+     "d": 0,
+     "t": "Pre-boss Trial: None - Kill Neredeith's Span Cletta",
+     "h": 1
+    }
+   ],
+   "notes": [
+    {
+     "d": 0,
+     "t": "You have to speak to Leviathan and get the water spell Leviathan's Help in order to hurt Spicy Dragon. · The boss room is STILL a drillable map."
+    }
+   ],
+   "drops": [
+    {
+     "n": "Spicy Dragon Card",
+     "use": "Card Identification",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8d/Spicy_Dragon_Card_(new).gif",
+     "rate": "Rare"
+    },
+    {
+     "n": "10,000 Galder Coupon",
+     "use": "Galder: 10,000",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/b/b7/10,000_Galder_Coupon.gif"
+    },
+    {
+     "n": "Dragon's Egg",
+     "use": "",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/0/00/Dragon's_Egg.gif"
+    },
+    {
+     "n": "Dragon's Horn",
+     "use": "",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/2d/Dragon's_Horn.gif"
+    },
+    {
+     "n": "Draconic Circlet",
+     "use": "Legendary Unique Hat (Lv.300)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/31/Draconic_Circlet.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Draconic Sword",
+     "use": "Legendary Unique Special Knife (Lv.300)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/3/3b/Draconic_Sword.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Draconic Staff",
+     "use": "Legendary Unique Special Cane (Lv.300)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/4/4c/Draconic_Staff.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Draconic Dagger",
+     "use": "Legendary Unique Special Knife (Lv.300)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/eb/Draconic_Dagger.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Draconic Bowgun",
+     "use": "Legendary Unique Special Gun (Lv.300)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/83/Draconic_Bowgun.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Draconic Shield",
+     "use": "Legendary Unique Shield (Lv.300)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/8e/Draconic_Shield.gif",
+     "rate": "Very Rare"
+    },
+    {
+     "n": "Ultimate Broadsword",
+     "use": "Sword (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/87/Broadsword.gif"
+    },
+    {
+     "n": "Ultimate Arc Stick",
+     "use": "Cane (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/e/ea/Arc_Stick.gif"
+    },
+    {
+     "n": "Ultimate Khanjar",
+     "use": "Knife (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/7/7d/Khanjar.gif"
+    },
+    {
+     "n": "Ultimate Hand Cannon",
+     "use": "Gun (Lv.185)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/27/Hand_Cannon.gif"
+    },
+    {
+     "n": "Ultimate MJS-G5",
+     "use": "Gun (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/8/89/MJS-G5.gif"
+    },
+    {
+     "n": "Ultimate Helm of Honor",
+     "use": "Hat (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c9/Helm_of_Honor.gif"
+    },
+    {
+     "n": "Ultimate Hat of Honor",
+     "use": "Hat (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/2/21/Hat_of_Honor.gif"
+    },
+    {
+     "n": "Ultimate Shield of Honor",
+     "use": "Shield (Lv.275)",
+     "img": "https://wikimirror.lifeto.co/asset.103.ggftw.net/wiki/to-w/images/c/c8/Shield_of_Honor.gif"
+    }
+   ],
+   "quests": [
+    "tp-31",
+    "tp-37"
+   ],
+   "monster": "3030"
+  }
+ ]
+}

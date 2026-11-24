@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- New **👑 Bosses** page (bottom bar, next to Quests): the 9 area bosses from Tutankhamen to Spicy Dragon.
+  - **The list:** each boss's seal and picture, area, boss level, who may enter (Lv.1–150, Lv.150+ …), how many trials you've ticked and ✓ Beaten.
+  - **A boss's page:** how to get there as a checklist, one tick per trial (ticks sync like quest steps), notes, the quests about it, and its drops.
+  - **⚔️ The fight:** the Battle Summary card (client numbers: HP × bars, DP / MD, element, resistance meters), the skills it uses and the monsters it calls in. **🛠️ Try my build on it** opens the Planner's Battle Summary against that boss.
+  - Koiosu and True Kronos (Tartarus) aren't in yet: the wiki has no page for them.
 - **🧭 Build guide: mastery items from the PlayTrickster client.** 20 skills now ask for the card the game's own tables list instead of the wiki's drop (Counter Punch, the four Shields, Lucky Fist … 3 Chele Card; Blazing Strike, Light Wave, Pouch of Pain … 3 Officer Okto Card; Sense Breaker 2 Gold G Card; Aqua Bomb 5 Slithis Card). Salamander's Territory and Gnome's Domain can be mastered now (3 Maid Lydia Card). These carry a blue **📦 From client** badge until someone sees them in game.
 - New **🛠️ Planner** page (next to 🧭 Build guide) for planning characters.
   - **Many builds:** Build 1, 2, 3 … as tabs (up to 20), each with its own class, job, level, growth, bonus points, gear and buffs. Changes save as you go and sync with your account when you're signed in. Rename, duplicate, delete, 🔗 share code, 📥 open a code.

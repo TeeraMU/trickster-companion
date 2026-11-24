@@ -853,6 +853,39 @@
    * Before the monster's defense, so hits are the fewest it could take; the hits written down from the
    * game (📝) are for working out the defense formula.
    */
+  /** A monster's card: picture, level, own element, stats (HP × bars) and resistance meters. Used by the
+   *  Battle Summary and the 👑 Bosses page. */
+  function monsterCard(mon) {
+    // resistances as a grid of meters (0-100), one colour and icon per element, the highest stands out
+    const resList = RES_ORDER.filter(k => (mon && mon.res || {})[k] != null);
+    const maxRes = Math.max(0, ...resList.map(k => mon.res[k]));
+    return `
+      <div class="pl-bs-mon">
+        <div class="pl-bs-mon-top">
+          ${monImg(mon, "pl-mon-pic")}
+          <div class="pl-bs-mon-info">
+            <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">👑 Boss</span>` : ""}</p>
+            <p class="pl-bs-own">${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)} pl-el-big">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="pl-el pl-el-none">⚪ No element</span>`}</p>
+            <dl class="pl-bs-stats">
+              <dt>HP</dt><dd class="is-hp" title="${mon.bars ? `${mon.bars} HP bars of ${fmt(mon.hp)}` : ""}">${hpText(mon)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
+              <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
+              <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
+            </dl>
+          </div>
+        </div>
+        ${resList.length ? `<div class="pl-res">
+          <p class="pl-res-title">🛡️ Resists</p>
+          <ul class="pl-res-grid">${resList.map(k => `
+            <li class="pl-res-item pl-res-${k.toLowerCase()} ${mon.res[k] === maxRes ? "is-max" : ""}" title="${esc(k)} resistance ${mon.res[k]}">
+              <span class="pl-res-icon" aria-hidden="true">${EL_ICON[k] || ""}</span>
+              <span class="pl-res-name">${esc(k)}</span>
+              <b class="pl-res-val">${mon.res[k]}</b>
+              <span class="pl-res-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, mon.res[k]))}%"></span></span>
+            </li>`).join("")}</ul>
+        </div>` : ""}
+      </div>`;
+  }
+
   function battleBox(build, st, ctx) {
     if (!ctx.monsters) return `<section class="bd-box pl-battle"><h4>⚔️ Battle Summary</h4><p class="bd-note">Loading monsters…</p></section>`;
     const list = ctx.monsters.monsters || [];
@@ -887,34 +920,7 @@
         </div>
       </div>`;
 
-    // resistances as a grid of meters (0-100), one colour and icon per element, the highest stands out
-    const resList = RES_ORDER.filter(k => (mon && mon.res || {})[k] != null);
-    const maxRes = Math.max(0, ...resList.map(k => mon.res[k]));
-    const monSide = mon ? `
-      <div class="pl-bs-mon">
-        <div class="pl-bs-mon-top">
-          ${monImg(mon, "pl-mon-pic")}
-          <div class="pl-bs-mon-info">
-            <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">👑 Boss</span>` : ""}</p>
-            <p class="pl-bs-own">${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)} pl-el-big">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="pl-el pl-el-none">⚪ No element</span>`}</p>
-            <dl class="pl-bs-stats">
-              <dt>HP</dt><dd class="is-hp" title="${mon.bars ? `${mon.bars} HP bars of ${fmt(mon.hp)}` : ""}">${hpText(mon)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
-              <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
-              <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
-            </dl>
-          </div>
-        </div>
-        ${resList.length ? `<div class="pl-res">
-          <p class="pl-res-title">🛡️ Resists</p>
-          <ul class="pl-res-grid">${resList.map(k => `
-            <li class="pl-res-item pl-res-${k.toLowerCase()} ${mon.res[k] === maxRes ? "is-max" : ""}" title="${esc(k)} resistance ${mon.res[k]}">
-              <span class="pl-res-icon" aria-hidden="true">${EL_ICON[k] || ""}</span>
-              <span class="pl-res-name">${esc(k)}</span>
-              <b class="pl-res-val">${mon.res[k]}</b>
-              <span class="pl-res-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, mon.res[k]))}%"></span></span>
-            </li>`).join("")}</ul>
-        </div>` : ""}
-      </div>` : `<p class="bd-note pl-bs-empty">Find a monster above to see it here.</p>`;
+    const monSide = mon ? monsterCard(mon) : `<p class="bd-note pl-bs-empty">Find a monster above to see it here.</p>`;
 
     const atkSide = `
       <div class="pl-bs-atk">
@@ -986,5 +992,5 @@
       </details>`;
   }
 
-  root.TQPlanner = Object.assign({ render }, model);
+  root.TQPlanner = Object.assign({ render, monsterCard, monsterHp, hpText }, model);
 })(typeof window !== "undefined" ? window : globalThis);

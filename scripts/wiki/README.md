@@ -11,4 +11,10 @@ Made from the ggFTW Trickster wiki mirror (wikimirror.lifeto.co). Run in an empt
 4. `node <repo>/scripts/wiki/compose-builds.js <repo>` -> `<repo>/data/builds.json`.
 5. `node scripts/test-build.js`.
 
+## Bosses (data/bosses.json)
+
+Download the boss pages (Tutankhamen, Tombeth, Captain Skull, Pirate King Karan, Count Blood, Tenter Lion,
+Queen Odinea, Soki, Spicy Dragon) with `get-pages.js`, then `node <repo>/scripts/wiki/build-bosses.js <dir>`,
+then `node scripts/test-boss.js`. Re-running keeps trial ticks only while the trial count stays the same.
+
 PlayTrickster may differ from the wiki: note in-game corrections instead of editing builds.json by hand.
