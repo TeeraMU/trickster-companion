@@ -4688,6 +4688,10 @@ button.bd-need:hover { border-color: var(--border-highlight); }
   background: color-mix(in srgb, var(--accent-green) 14%, transparent);
   cursor: help;
 }
+.bd-checked.bd-client {
+  color: var(--ink-blue); border-color: var(--ink-blue);
+  background: color-mix(in srgb, var(--accent-blue) 14%, transparent);
+}
 
 /* ---------- Build planner: Build guide's 🛡️ Equipment tab (js/planner.js) ---------- */
 .pl-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 12px; align-items: start; }

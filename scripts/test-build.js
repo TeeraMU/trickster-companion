@@ -123,6 +123,20 @@ t("in-game fixes: Fatal Wound masters with 3 Officer Okto Card; every fix names 
   }
 });
 
+t("client fixes: 20 skills master with the client's card, marked as from the client", () => {
+  const fixes = require(path.join(__dirname, "..", "data", "skill-fixes.json"));
+  const copy = JSON.parse(JSON.stringify(builds));
+  B.applyFixes(copy, fixes);
+  const all = Object.values(copy.skills).flat();
+  const one = name => all.find(s => s.name === name);
+  assert.strictEqual(Object.values(fixes.skills).filter(f => f.src === "client").length, 20);
+  assert.deepStrictEqual(one("Sense Breaker").items, [{ name: "Gold G Card", qty: 2 }]);
+  assert.deepStrictEqual(one("Sticky Icky").items, [{ name: "Officer Surapat Card", qty: 3 }]);
+  assert.deepStrictEqual(one("Gnome's Domain").items, [{ name: "Maid Lydia Card", qty: 3 }]);
+  assert.strictEqual(one("Light Wave").fixSrc, "client");
+  assert.strictEqual(one("Fatal Wound").fixSrc, undefined); // seen in game
+});
+
 t("redirect links count: Beast Claw masters with Officer Okto Card (wiki: Officer Akto Card)", () => {
   const bc = builds.skills.Entertainer.find(s => s.name === "Beast Claw");
   assert.deepStrictEqual(bc.items, [{ name: "Officer Okto Card", qty: 3 }]);

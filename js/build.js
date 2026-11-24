@@ -166,6 +166,7 @@
         if (!f) continue;
         for (const k of FIX_FIELDS) if (k in f) sk[k] = JSON.parse(JSON.stringify(f[k]));
         sk.checked = f.checked || "in game";
+        if (f.src) sk.fixSrc = f.src; // "client": from the client tables, not yet seen in game
         n++;
       }
     }
@@ -317,7 +318,7 @@
         <div class="bd-skill-main">
           <div class="bd-skill-name"><strong>${esc(sk.name)}</strong>
             <span class="tag">TM ${sk.tm}</span> <span class="tag">${esc(sk.type || "")}</span>
-            ${sk.checked ? `<span class="bd-checked" title="${esc(sk.checked)}">✓ In game</span>` : ""}</div>
+            ${sk.checked ? (sk.fixSrc === "client" ? `<span class="bd-checked bd-client" title="${esc(sk.checked)}">📦 From client</span>` : `<span class="bd-checked" title="${esc(sk.checked)}">✓ In game</span>`) : ""}</div>
           ${needChips(sk, ctx)}
           ${howLine(sk, ctx)}
           ${sk.desc ? `<div class="bd-desc">${esc(sk.desc)}</div>` : ""}
