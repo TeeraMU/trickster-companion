@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- New **🥚 Guardian** page (bottom bar, after Bosses): how to get your guardian from Lv.65 to Lv.180 as a checklist (Card Identification, Soul Seed, raising the egg, Soul Guardian, Mind's Eye) with its quests, which move here from the Quests page (Fairy Nono, La Vida, Frog Prince, the three sisters, Spirit of Nefertiti).
+- New **🥚 Guardian** page (bottom bar, after Bosses): how to get your guardian from Lv.65 to Lv.180 as a checklist (Card Identification, Soul Seed, raising the egg, Soul Guardian, Mind's Eye) with its quests, which move here from the Quests page (Fairy Nono, La Vida, Frog Prince, the three sisters, Spirit of Nefertiti), and the 24 Mind's Eye quests of 8 areas (Lv.240 to 345), grouped by area.
   - **How the egg grows:** what raises each line and how much (2,500 HP potions = 1 Power point …), the caps, when it stops (14 in all or a line at 6) and which guardian you get.
   - **Graphs step by step:** 6044, 2642, 4064, 4046 and 4604 with the egg's graph after each step, drawn as the game draws it.
   - **Legendary guardian**, the five guardians, the skills each line can learn (and with a blue rune) and the runes. From the wiki's guides and a Thai players' guide (credited on the page).

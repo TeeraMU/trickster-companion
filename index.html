@@ -2461,6 +2461,7 @@
       box.innerHTML = TQGuardian.render({
         data: GUARDIAN, steps: appState.completedSteps, ui: GUARD_UI,
         questCard: id => { const q = questById(id); return q ? renderQuestCard(q) : ""; },
+        questArea: id => { const q = questById(id); return q ? (q.area || q.region || "") + (q.minLevel ? ` (Lv.${q.minLevel}+)` : "") : ""; },
         questDone: id => !!appState.completedQuests[id]
       });
     }

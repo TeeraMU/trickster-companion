@@ -55,9 +55,9 @@
       "title": "5. Mind's Eye (Shadow World)", "level": "Lv.180+, guardian hatched",
       "lines": [
         { "d": 0, "t": "Eclipse - Another View for the World (Garden of Skill Master): a P. Anemone Card and the Dimensional Key, with Eclipse's Message -> Mind's Eye, to see the Shadow World." },
-        { "d": 0, "t": "Each area then has its Mind's Eye quests from Lv.240 (Stella - Shadow Star, Eclipse - The Story of the Gods, Shaman Girl Jia - Dark Spirit Punishment): they're on the Quests page with their area." }
+        { "d": 0, "t": "Then each area has three Mind's Eye quests, from Oops Wharf (Lv.240) to the Abyss (Lv.345): Stella - Shadow Star, Eclipse - The Story of the Gods and Shaman Girl Jia - Dark Spirit Punishment. They're listed below by area." }
       ],
-      "quests": []
+      "quests": ["ow-57", "ow-58", "ow-59", "gb-70", "gb-24", "gb-63", "rg-71", "rg-19", "rg-70", "bs-68", "bs-15", "bs-67", "sh-87", "sh-17", "sh-85", "tv-103", "tv-28", "tv-99", "tp-116", "tp-40", "tp-106", "ab-26", "ab-08", "ab-24"]
     }
   ],
   "rules": [

@@ -69,7 +69,17 @@
         <h4>🧭 Getting a guardian <span class="bd-note">${p.done}/${p.total}</span></h4>
         <ol class="bs-trial-list">${data.stages.map((s, i) => {
           const on = !!ctx.steps[stepKey(i)];
-          const cards = (s.quests || []).map(id => ctx.questCard(id)).filter(Boolean);
+          // many quests (Mind's Eye: 3 per area) get a small heading per area
+          const many = (s.quests || []).length > 8;
+          let last = "";
+          const cards = (s.quests || []).map(id => {
+            const card = ctx.questCard(id);
+            if (!card) return "";
+            const area = many && ctx.questArea ? ctx.questArea(id) : "";
+            const head = area && area !== last ? `<p class="gd-quest-area">${esc(area)}</p>` : "";
+            last = area || last;
+            return head + card;
+          }).filter(Boolean);
           const qDone = (s.quests || []).filter(id => ctx.questDone(id)).length;
           return `<li class="bs-trial ${on ? "is-done" : ""}">
             <label class="bs-trial-head"><input type="checkbox" ${on ? "checked" : ""} onchange="TQGuardian.step(${i}, this.checked)">

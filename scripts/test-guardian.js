@@ -27,7 +27,13 @@ t("every guardian quest is a real quest, on one stage only, and not a boss quest
     assert.ok(!bossQuests.has(id), id + " is a boss quest too");
     seen.add(id);
   }
-  assert.deepStrictEqual(data.stages[1].quests.sort(), ["bs-25", "mi-10", "mi-11", "rg-06", "rg-17", "rg-50", "rg-51"]);
+  assert.deepStrictEqual(data.stages[1].quests.slice().sort(), ["bs-25", "mi-10", "mi-11", "rg-06", "rg-17", "rg-50", "rg-51"]);
+  // Mind's Eye: every area's three quests, Lv.240 to 345
+  const minds = [];
+  for (const f of idx.files) JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "quests", f), "utf8")).quests
+    .forEach(q => { if (/Mind's Eye/.test(q.chapter || "")) minds.push(q.id); });
+  assert.strictEqual(minds.length, 24);
+  assert.deepStrictEqual(data.stages[4].quests.slice().sort(), minds.sort());
 });
 
 t("hatching: highest line wins, a tie goes to the line that got there first, 0 becomes 1", () => {
