@@ -331,6 +331,25 @@ t("≈ in-game hit: physical attacks lose the Physical resistance %, crit ×1.5 
   assert.strictEqual(P.hitEstimate(0, cct, "Physical"), null);
 });
 
+t("🥚 guardian: graph and skills kept clean, its DP debuff on the monster from the skill's level table", () => {
+  assert.strictEqual(P.cleanGuardian(null), null);
+  assert.strictEqual(P.cleanGuardian({ graph: [0, 0, 0, 0], skills: {} }), null);
+  const g = P.cleanGuardian({ graph: [6, "1", 4, 44], skills: { "Armor Breaker": "M", "Armor Destructor": "5", "Skunk Pouch": "x" }, debuff: 1 });
+  assert.deepStrictEqual(g, { graph: [6, 1, 4, 9], skills: { "Armor Breaker": "M", "Armor Destructor": "5", "Skunk Pouch": "M" }, debuff: true });
+  assert.deepStrictEqual(P.guardianSlots(g), { Power: 6, Magic: 1, Sense: 4, Charm: 9 });
+  const d = P.guardianDebuffs(g, name => skillByName.get(name));
+  assert.deepStrictEqual(d.map(x => [x.name, x.text, x.secs]), [["Armor Breaker", "DP −38%", 40], ["Armor Destructor", "DP −18%", 7],
+    ["Skunk Pouch", "knocks it out (60% chance at Master, from the client)", 12]]);
+  // the bigger DP cut counts (stacking isn't checked); the monster itself is left alone
+  const mon = { n: "Chaos Cut Throat", dp: 3444, md: 3440 };
+  assert.deepStrictEqual(P.debuffMonster(mon, d), { n: "Chaos Cut Throat", dp: 2135, md: 3440, was: { dp: 3444 } });
+  assert.strictEqual(mon.dp, 3444);
+  assert.strictEqual(P.debuffMonster(mon, d.slice(2)), mon);
+  // it goes with the build and its share code
+  const b = P.cleanBuild({ cls: "Cat", guardian: g });
+  assert.deepStrictEqual(P.decodeBuild(P.encodeBuild(b)).guardian, g);
+});
+
 t("hit log: numbers parsed from what was typed, cleaned, and written out as text", () => {
   assert.deepStrictEqual(P.parseDamage("812 795, 830\n1,640"), [812, 795, 830, 1640]);
   assert.deepStrictEqual(P.parseDamage("none"), []);

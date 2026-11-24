@@ -5236,3 +5236,26 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .gd-about { color: var(--text-secondary); font-size: 0.82rem; }
 .gd-skill-lines { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 4px 12px; }
 .gd-skills details > summary { cursor: pointer; font-weight: 700; color: var(--ink-blue); margin: 6px 0; }
+
+/* 🛠️ Planner: the build's 🥚 guardian (js/planner.js guardianBox) */
+.pl-guard-graph { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-end; }
+.pl-guard-graph .pl-in { width: 76px; padding: 4px 6px; border-radius: var(--radius-sm); }
+.pl-guard-graph .pl-in input { width: 100%; }
+.pl-guard-type { margin-left: 4px; }
+.pl-guard-lines { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px; margin-top: 10px; }
+.pl-guard-line { padding: 6px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-primary); }
+.pl-guard-line.bd-power { border-left: 4px solid var(--accent-red); }
+.pl-guard-line.bd-magic { border-left: 4px solid var(--accent-blue); }
+.pl-guard-line.bd-sense { border-left: 4px solid var(--accent-purple); }
+.pl-guard-line.bd-charm { border-left: 4px solid var(--accent-orange); }
+.pl-guard-line ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; font-size: 0.85rem; }
+.pl-guard-line li { display: flex; gap: 6px; align-items: center; justify-content: space-between; }
+.pl-guard-line label { cursor: pointer; }
+.pl-guard-line input:disabled + * , .pl-guard-line label:has(input:disabled) { opacity: 0.5; }
+.pl-guard-line select { font: inherit; font-size: 0.78rem; padding: 1px 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-card); color: var(--text-primary); }
+.pl-guard-debuff { display: flex; gap: 6px; align-items: center; margin-top: 10px; font-weight: 700; cursor: pointer; }
+.pl-guard-effects { margin: 6px 0; padding-left: 20px; font-size: 0.88rem; }
+.pl-guard { margin: 0; }
+.pl-debuffed { color: var(--ink-green); }
+.pl-bs-monwrap { min-width: 0; }
+.pl-bs-guard { margin: 6px 0 0 !important; }

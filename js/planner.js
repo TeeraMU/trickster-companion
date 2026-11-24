@@ -382,6 +382,78 @@
     return { e, r, s };
   }
 
+  /**
+   * The build's 🥚 guardian: its graph as it hatched [Power, Magic, Sense, Charm] (1-9: a legendary
+   * goes past 6), the skills it has learnt { name: level } and whether its debuffs count in the
+   * Battle Summary. null when the build has none.
+   */
+  function cleanGuardian(g) {
+    if (!g || typeof g !== "object") return null;
+    const graph = [0, 1, 2, 3].map(i => clamp(Array.isArray(g.graph) ? g.graph[i] : 0, 0, 9));
+    const skills = {};
+    for (const [name, lv] of Object.entries(g.skills && typeof g.skills === "object" ? g.skills : {}).slice(0, 36)) {
+      const n = str(name, 40);
+      if (n) skills[n] = SKILL_LEVELS.includes(String(lv)) ? String(lv) : "M";
+    }
+    if (!graph.some(Boolean) && !Object.keys(skills).length) return null;
+    return { graph, skills, debuff: !!g.debuff };
+  }
+
+  /** How many skills of each line the guardian can hold: its graph. { Power: 6, … } */
+  const GUARD_LINES = ["Power", "Magic", "Sense", "Charm"];
+  const guardianSlots = g => Object.fromEntries(GUARD_LINES.map((l, i) => [l, (g && g.graph && g.graph[i]) || 0]));
+
+  /**
+   * What the guardian's learnt skills do to a monster, from the wiki's level tables: DP debuffs as a
+   * number (Armor Breaker: DP × (1 − 38%)), the others in words. [{ name, lv, stat?, cut?, text, secs }]
+   * skillByName: name -> the skill in data/builds.json.
+   */
+  const GUARD_DEBUFFS = {
+    "Armor Breaker": { stat: "dp", col: /defense reduction/i },
+    "Armor Destructor": { stat: "dp", col: /defense decrease/i },
+    "Skunk Pouch": { text: "knocks it out (60% chance at Master, from the client)" },
+    "Sense Breaker": { text: "lowers its DA" },
+    "Luck Breaker": { text: "lowers its LK" },
+    "Rust": { text: "lowers its AP" },
+    "Magic Meltdown": { text: "lowers its MA" },
+    "Sticky Foot": { text: "lowers its HV" },
+    "Mana Web": { text: "slows its attacks" }
+  };
+  function guardianDebuffs(g, skillByName) {
+    const out = [];
+    for (const [name, lv] of Object.entries((g && g.skills) || {})) {
+      const spec = GUARD_DEBUFFS[name];
+      const sk = skillByName && skillByName(name);
+      if (!spec || !sk || !sk.levels || !sk.levels.rows.length) continue;
+      const rows = sk.levels.rows;
+      const row = lv === "M" ? rows[rows.length - 1] : rows.find(r => r[0] === lv) || rows[rows.length - 1];
+      const col = re => { const i = sk.levels.cols.findIndex(c => re.test(c)); return i > 0 ? row[i] : ""; };
+      const secs = parseFloat(col(/duration/i)) || 0;
+      const d = { name, lv, secs };
+      if (spec.stat) {
+        const cut = parseFloat(col(spec.col)) / 100;
+        if (!(cut > 0 && cut < 1)) continue;
+        Object.assign(d, { stat: spec.stat, cut, text: `DP −${Math.round(cut * 100)}%` });
+      } else d.text = spec.text;
+      out.push(d);
+    }
+    return out;
+  }
+
+  /**
+   * The monster with the guardian's number debuffs on it (a copy; `was` keeps the old numbers). Two
+   * DP debuffs: only the bigger counts here, since whether they stack isn't checked.
+   */
+  function debuffMonster(mon, debuffs) {
+    if (!mon) return mon;
+    const byStat = {};
+    for (const d of debuffs || []) if (d.stat && (!byStat[d.stat] || d.cut > byStat[d.stat].cut)) byStat[d.stat] = d;
+    if (!Object.keys(byStat).length) return mon;
+    const out = Object.assign({}, mon, { was: {} });
+    for (const [stat, d] of Object.entries(byStat)) { out.was[stat] = mon[stat]; out[stat] = Math.round(mon[stat] * (1 - d.cut)); }
+    return out;
+  }
+
   function cleanPiece(g) {
     if (!g || typeof g !== "object") return null;
     const p = { n: str(g.n, LIMITS.item) };
@@ -425,6 +497,8 @@
       notes: str(b.notes, LIMITS.notes),
       updated: clamp(b.updated, 0, 9e15)
     };
+    const guardian = cleanGuardian(b.guardian);
+    if (guardian) out.guardian = guardian;
     if (/^\d{1,9}$/.test(String(b.mon || ""))) out.mon = String(b.mon); // the monster picked in 🎯
     const hits = cleanHits(b.hits);
     if (hits.length) out.hits = hits;
@@ -480,7 +554,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, attackKind, hitEstimate, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, attackKind, hitEstimate, cleanGuardian, guardianSlots, guardianDebuffs, debuffMonster, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -822,9 +896,49 @@
         <div class="pl-col">
           ${battleBox(build, st, ctx)}
           <fieldset class="pl-fs" ${lock}>${buffBox(build, st, ctx)}</fieldset>
+          <fieldset class="pl-fs" ${lock}>${guardianBox(build, ctx)}</fieldset>
         </div>
       </div>
       ${powerBox(build, st, ctx)}`;
+  }
+
+  /**
+   * 🥚 The build's guardian: its graph (how many skills of each line it holds), the 1st-job skills it
+   * has learnt and their levels, and whether its debuffs go on the Battle Summary's monster.
+   */
+  function guardianBox(build, ctx) {
+    const lists = ctx.guardianSkills;
+    if (!lists) return "";
+    const g = build.guardian || { graph: [0, 0, 0, 0], skills: {}, debuff: false };
+    const slots = guardianSlots(g);
+    const top = Math.max(...g.graph);
+    const type = top ? GUARD_LINES[g.graph.indexOf(top)] : "";
+    const NAMES = { Power: "Sephirens", Magic: "Digrimm", Sense: "Ifron", Charm: "Krusef" };
+    const debuffs = guardianDebuffs(g, ctx.skillByName);
+    return `
+      <section class="bd-box pl-guard">
+        <h4>🥚 Guardian <span class="bd-note">its graph sets how many skills of each line it holds</span></h4>
+        <div class="pl-guard-graph">${GUARD_LINES.map((l, i) => `
+          <label class="pl-in gd-g-${l.toLowerCase()}"><span>${l}</span>
+            <input id="pl-g-${i}" type="number" min="0" max="9" step="1" value="${g.graph[i] || ""}" placeholder="0" onchange="TQPlanner.guardGraph(${i}, this.value)"></label>`).join("")}
+          <span class="pl-guard-type">${type ? `<strong>${esc(NAMES[type])}</strong> <span class="bd-note">${esc(type)} · ${g.graph.join("")}</span>` : `<span class="bd-note">Type its graph (the egg's numbers once hatched)</span>`}</span>
+        </div>
+        ${type ? `<div class="pl-guard-lines">${GUARD_LINES.map(l => {
+          const mine = (lists[l] || []).filter(n => n in g.skills);
+          const full = mine.length >= slots[l];
+          return `<div class="pl-guard-line ${GROUP_CLASS[l]}">
+            <p class="pl-res-title">${esc(l)} <span class="bd-note ${mine.length > slots[l] ? "bd-warn" : ""}">${mine.length}/${slots[l]}</span></p>
+            <ul>${(lists[l] || []).map(n => {
+              const on = n in g.skills;
+              return `<li><label><input type="checkbox" ${on ? "checked" : ""} ${!on && full ? "disabled" : ""} onchange="TQPlanner.guardSkill('${jsq(n)}', this.checked)"> ${esc(n)}</label>
+                ${on ? `<select aria-label="${esc(n)} level" onchange="TQPlanner.guardLevel('${jsq(n)}', this.value)">${SKILL_LEVELS.map(v => `<option value="${v}" ${v === g.skills[n] ? "selected" : ""}>${v === "M" ? "Master" : "Lv." + v}</option>`).join("")}</select>` : ""}</li>`;
+            }).join("")}</ul></div>`;
+        }).join("")}</div>
+        <label class="pl-guard-debuff"><input type="checkbox" ${g.debuff ? "checked" : ""} onchange="TQPlanner.guardDebuff(this.checked)">
+          Its debuffs are on the monster in the Battle Summary</label>
+        ${debuffs.length ? `<ul class="pl-guard-effects">${debuffs.map(d => `<li><strong>${esc(d.name)}</strong> ${esc(d.text)}${d.secs ? ` <span class="bd-note">for ${d.secs} s</span>` : ""}</li>`).join("")}</ul>
+          <p class="bd-note">DP debuffs show on the monster's card. They don't change the ≈ in-game hit yet: in the one sample so far DP hardly counted. Hits written down with and without the debuff will tell.</p>` : ""}` : ""}
+      </section>`;
   }
 
   /**
@@ -934,7 +1048,7 @@
             <p class="pl-bs-name"><strong>${esc(mon.n)}</strong> <span class="ep-lv">Lv.${mon.l}</span>${mon.boss ? ` <span class="tag pl-boss">👑 Boss</span>` : ""}</p>
             <p class="pl-bs-own">${Object.entries(mon.el || {}).map(([k, v]) => `<span class="${EL_CLASS(k)} pl-el-big">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="pl-el pl-el-none">⚪ No element</span>`}</p>
             <dl class="pl-bs-stats">
-              <dt>HP</dt><dd class="is-hp" title="${mon.bars ? `${mon.bars} HP bars of ${fmt(mon.hp)}` : ""}">${hpText(mon)}</dd><dt>DP</dt><dd>${fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
+              <dt>HP</dt><dd class="is-hp" title="${mon.bars ? `${mon.bars} HP bars of ${fmt(mon.hp)}` : ""}">${hpText(mon)}</dd><dt>DP</dt><dd>${mon.was && mon.was.dp != null ? `<s class="bd-note">${fmt(mon.was.dp)}</s> <b class="pl-debuffed" title="after the guardian's debuff">${fmt(mon.dp)}</b>` : fmt(mon.dp)}</dd><dt>MD</dt><dd>${fmt(mon.md)}</dd>
               <dt>HV</dt><dd>${fmt(mon.hv)}</dd><dt>AC</dt><dd>${fmt(mon.ac)}</dd><dt>AP</dt><dd>${fmt(mon.ap)}</dd>
               <dt>MA</dt><dd>${fmt(mon.ma)}</dd><dt>LK</dt><dd>${fmt(mon.lk)}</dd>
             </dl>
@@ -1000,7 +1114,9 @@
         </div>
       </div>`;
 
-    const monSide = mon ? monsterCard(mon) : `<p class="bd-note pl-bs-empty">Find a monster above to see it here.</p>`;
+    // the guardian's debuffs on the monster (its card only: the ≈ hit doesn't use DP yet)
+    const gd = build.guardian && build.guardian.debuff ? guardianDebuffs(build.guardian, ctx.skillByName) : [];
+    const monSide = mon ? `<div class="pl-bs-monwrap">` + monsterCard(debuffMonster(mon, gd)) + (gd.length ? `<p class="bd-note pl-bs-guard">🥚 Guardian: ${gd.map(d => `${esc(d.name)} ${esc(d.text)}${d.secs ? ` (${d.secs} s)` : ""}`).join(" · ")}</p>` : "") + `</div>` : `<p class="bd-note pl-bs-empty">Find a monster above to see it here.</p>`;
 
     const atkSide = `
       <div class="pl-bs-atk">

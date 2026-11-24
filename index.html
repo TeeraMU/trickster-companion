@@ -1772,6 +1772,26 @@
       for (const m of MONSTERS.monsters) if (pic.has(m.id)) m.pic = pic.get(m.id);
     }
 
+    /** A skill of data/builds.json by name (the guardian's skills come from any job's list). */
+    let SKILL_BY_NAME = null;
+    function skillByName(name) {
+      if (!SKILL_BY_NAME && BUILDS) { SKILL_BY_NAME = new Map(); for (const list of Object.values(BUILDS.skills)) for (const sk of list) if (!SKILL_BY_NAME.has(sk.name)) SKILL_BY_NAME.set(sk.name, sk); }
+      return SKILL_BY_NAME ? SKILL_BY_NAME.get(name) : null;
+    }
+    /** My open build's guardian, made when first touched. */
+    function guardianOf() {
+      const b = editable();
+      if (!b) return null;
+      if (!b.guardian) b.guardian = { graph: [0, 0, 0, 0], skills: {}, debuff: false };
+      return b.guardian;
+    }
+    function guardianSave() {
+      const b = editable();
+      if (b) b.guardian = TQPlanner.cleanGuardian(b.guardian) || undefined;
+      if (b && !b.guardian) delete b.guardian;
+      plannerChanged();
+    }
+
     function plannerState() {
       if (!appState.planner || !Array.isArray(appState.planner.builds)) appState.planner = { builds: [], current: "" };
       const p = appState.planner;
@@ -1808,7 +1828,8 @@
         stats: BUILDS.stats, base: base.base, baseFrom: base.from, baseChecked: base.checked, estimateFrom: base.estimateFrom, estimateSpread: base.spread, estimateKnown: base.known,
         buffs, values: BUFF_VALUES, buffLists: TQPlanner.buffLists(BUILDS, buffs, job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []),
         art: job && job.art, signedIn: !!(window.TQCloud && TQCloud.user()), ui: PLANNER_UI,
-        formula: window.TQFormula, growthChart: TQBuild.growthChart, monsters: MONSTERS, bossMons: BOSSES ? BOSSES.bosses.map(x => x.monster) : [], recentMons: monRecent(), skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : []
+        formula: window.TQFormula, growthChart: TQBuild.growthChart, monsters: MONSTERS, bossMons: BOSSES ? BOSSES.bosses.map(x => x.monster) : [], recentMons: monRecent(), skillSets: job ? TQBuild.skillSets(BUILDS, build.cls, job.name) : [],
+        guardianSkills: GUARDIAN ? GUARDIAN.skills.first : null, skillByName: skillByName
       }));
     }
 
@@ -1875,6 +1896,11 @@
         saveState(); switchView("build");
       },
       /** My plan for bonus points (% per stat): set one stat, take it out (0), or 'reset' to the suggestion. */
+      // 🥚 the build's guardian: graph, learnt skills and levels, debuffs on the Battle Summary monster
+      guardGraph(i, value) { const g = guardianOf(); if (!g) return; g.graph[i] = Math.max(0, Math.min(9, plNum(value))); guardianSave(); },
+      guardSkill(name, on) { const g = guardianOf(); if (!g) return; if (on) g.skills[name] = "M"; else delete g.skills[name]; guardianSave(); },
+      guardLevel(name, lv) { const g = guardianOf(); if (!g || !(name in g.skills)) return; g.skills[name] = String(lv); guardianSave(); },
+      guardDebuff(on) { const g = guardianOf(); if (!g) return; g.debuff = !!on; guardianSave(); },
       plan(stat, value) {
         const b = editable();
         if (!b) return;
