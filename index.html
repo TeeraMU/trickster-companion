@@ -50,6 +50,7 @@
       <nav class="view-tabs" aria-label="Pages">
         <button class="view-tab active" id="tabBtnEpisodes" onclick="switchView('episodes')"><span class="tab-icon" aria-hidden="true">📖</span><span class="tab-label">Episodes</span></button>
         <button class="view-tab" id="tabBtnQuests" onclick="switchView('quests')"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-label">Quests</span><span class="badge-count" id="badgeQuestCount">0</span></button>
+        <button class="view-tab" id="tabBtnBosses" onclick="switchView('bosses')"><span class="tab-icon" aria-hidden="true">👑</span><span class="tab-label">Bosses</span></button>
         <button class="view-tab" id="tabBtnBag" onclick="switchView('bag')"><span class="tab-icon" aria-hidden="true">🎒</span><span class="tab-label">Bag</span></button>
         <button class="view-tab" id="tabBtnFriends" onclick="switchView('friends')"><span class="tab-icon" aria-hidden="true">👥</span><span class="tab-label">Friends</span></button>
         <button class="view-tab" id="tabBtnBuild" onclick="switchView('build')"><span class="tab-icon" aria-hidden="true">🧭</span><span class="tab-label">Build guide</span></button>
@@ -260,6 +261,11 @@
       <div id="plannerContainer"><p class="calc-desc">Loading…</p></div>
     </div>
 
+    <!-- VIEW: BOSSES (js/boss.js, data/bosses.json) -->
+    <div id="viewBosses" class="hidden">
+      <div id="bossContainer"><p class="calc-desc">Loading bosses…</p></div>
+    </div>
+
     <!-- VIEW 4: STEP-BY-STEP PROGRESSION ROADMAP -->
     <div id="viewRoadmap" class="hidden">
       <!-- Key roadmap: built from the key quests in the data (renderKeyRoadmap) -->
@@ -363,6 +369,7 @@
   <script src="js/friends.js"></script>
   <script src="js/search.js"></script>
   <script src="js/build.js"></script>
+  <script src="js/boss.js"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -384,6 +391,7 @@
       selectedJobPath: "",     // 3rd job path, e.g. "primadonna"; "" = every path
       build: null,             // Build guide: { cls, job, picked } (this device only)
       planner: { builds: [], current: "" }, // Planner: my builds (synced; js/planner.js) and the open one
+      bossOpen: "",            // 👑 Bosses: the boss on screen, "" = the list (this device only)
       selectedCategory: "All",
       selectedCategories: [],  // category tabs that are on (several combine: Key + Sticker); [] = All
       focus: null,             // pinned scope friends see needs for: { region, group, cats, path } (Friends)
@@ -790,7 +798,7 @@
       renderAll();
     }
 
-    const VIEWS = { episodes: "Episodes", quests: "Quests", bag: "Bag", friends: "Friends", build: "Build", planner: "Planner", roadmap: "Roadmap" };
+    const VIEWS = { episodes: "Episodes", quests: "Quests", bosses: "Bosses", bag: "Bag", friends: "Friends", build: "Build", planner: "Planner", roadmap: "Roadmap" };
 
     function switchView(viewName) {
       if (viewName === "calc") viewName = "quests"; // the calculator now lives in the checklist
@@ -810,6 +818,7 @@
       if (viewName === "roadmap") renderKeyRoadmap();
       if (viewName === "build") renderBuild();
       if (viewName === "planner") renderPlanner();
+      if (viewName === "bosses") renderBosses();
     }
 
     // ============================================================================
@@ -1706,7 +1715,11 @@
     function loadMonsters() {
       if (MONSTERS || monstersLoading) return;
       monstersLoading = true;
-      TQData.fetchJson("data/monsters.json").then(d => { MONSTERS = d; if (appState.currentView === "planner") renderPlanner(); })
+      TQData.fetchJson("data/monsters.json").then(d => {
+        MONSTERS = d;
+        if (appState.currentView === "planner") renderPlanner();
+        if (appState.currentView === "bosses") renderBosses();
+      })
         .catch(() => { monstersLoading = false; });
     }
 
@@ -2280,6 +2293,67 @@
       renderQuestList();
       renderChecklistFarm();
       renderKeyRoadmap();
+      if (appState.currentView === "bosses") renderBosses(); // boss ticks are steps: a synced copy changes them
+    }
+
+    // ============================================================================
+    // 👑 BOSSES (js/boss.js): data/bosses.json (from the wiki's boss pages), loaded the first time the
+    // page shows. Trial ticks are steps ("boss:Tombeth_2", "boss:Tombeth_beaten"), so they sync with
+    // the rest of the progress. A boss's numbers come from data/monsters.json (the Planner's card).
+    // ============================================================================
+    let BOSSES = null, bossesLoading = false;
+    const BOSS_UI = { drops: false };
+    function renderBosses() {
+      const box = document.getElementById("bossContainer");
+      if (!box) return;
+      if (!BOSSES && !bossesLoading) {
+        bossesLoading = true;
+        TQData.fetchJson("data/bosses.json").then(d => { BOSSES = d; renderBosses(); })
+          .catch(() => {
+            bossesLoading = false;
+            box.innerHTML = `<p class="calc-desc">Couldn't load the bosses. Check the connection and open the page again.</p>`;
+          });
+      }
+      if (appState.bossOpen) loadMonsters();
+      const mine = plannerState().builds.find(b => b.id === plannerState().current);
+      box.innerHTML = TQBoss.render({
+        data: BOSSES, monsters: MONSTERS, steps: appState.completedSteps, open: appState.bossOpen || "",
+        level: mine ? mine.level : 0, ui: BOSS_UI,
+        quest: id => {
+          const q = questById(id);
+          return q ? { id, title: q.title, area: q.area, done: !!appState.completedQuests[q.id] } : null;
+        }
+      });
+    }
+
+    Object.assign(TQBoss, {
+      open(name) {
+        appState.bossOpen = name || "";
+        BOSS_UI.drops = false;
+        saveState(); renderBosses();
+        window.scrollTo({ top: 0 });
+      },
+      step(name, i, on) { bossTick(TQBoss.stepKey(name, i), on); },
+      beaten(name, on) { bossTick(TQBoss.beatenKey(name), on); },
+      drops(open) { BOSS_UI.drops = open; },
+      quest(id) { jumpToQuest(id); },
+      /** The Planner's Battle Summary against this boss, with my open build (a new one if I have none). */
+      toPlanner(id) {
+        if (!BUILDS) { alert("The Planner is still loading: try again in a moment."); return; }
+        PLANNER_UI.viewing = null;
+        if (!plannerBuild()) TQPlanner.newBuild();
+        const b = plannerBuild();
+        if (!b) return;
+        b.mon = String(id);
+        b.updated = Date.now();
+        PLANNER_UI.monQuery = "";
+        saveState();
+        switchView("planner");
+      }
+    });
+    function bossTick(key, on) {
+      if (on) appState.completedSteps[key] = true; else delete appState.completedSteps[key];
+      saveState(); renderBosses();
     }
 
     // ============================================================================

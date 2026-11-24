@@ -91,7 +91,7 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   { name, stage 1/2/3, img }: job sprites for friend avatars; the app works without it).
 - `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
 - Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`,
-  `test-search.js` (search index against the real data), `test-planner.js`.
+  `test-search.js` (search index against the real data), `test-planner.js`, `test-boss.js`.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
   drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
   ✅ Mark zone done) is in index.html (`renderZoneBar`).
@@ -120,6 +120,11 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `js/formula.js`: reads the wiki's skill formulas ("[AP + (HV × 16)] × (m ÷ 8)") with a build's stats and a
   level row. Only numbers, + − × ÷ ( ) [ ], stat names and level-table columns; anything else ends an
   expression, and nothing is run as code. Tested in test-planner.js.
+- `js/boss.js`: the 👑 Bosses page: the list and each boss's page (trials checklist, quests, Battle Summary card
+  from `TQPlanner.monsterCard`, drops). Ticks are steps in `appState.completedSteps` (`boss:<name>_<part>`,
+  `boss:<name>_beaten`) so they sync; the boss on screen is `appState.bossOpen` (this device only). Data:
+  `data/bosses.json`, made by `node scripts/wiki/build-bosses.js <folder of boss pages>` (see its header; the
+  quests about each boss are listed in that script). Pure model tested by `node scripts/test-boss.js`.
 - `js/search.js`: search everything (/ or 🔍), and the monster popover (any `<button class="mon-link" data-mon>`: maps, drops, hunts; hover or tap): index of quests, items (sources, used in, reward from),
   monsters (level, maps, quest drops, hunts) and NPCs, built once from the quests.
 
