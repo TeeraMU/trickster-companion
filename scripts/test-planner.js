@@ -107,6 +107,11 @@ t("a class without starting stats: no front number, calibrating finds the base a
   const sst = P.status(sheep, { stats: builds.stats, base: P.pickBase(bases, "Sheep").base, buffs, values });
   assert.deepStrictEqual(front(sst), { AP: 386, AC: 73, DX: 3, MP: 11210, MA: 235, MD: 1474, WT: 30800, DA: 92, LK: 92, HP: 2880, DP: 364, HV: 23 });
   assert.deepStrictEqual(lvs(sst), { AP: 93, AC: 93, DX: 93, MP: 372, MA: 743, MD: 372, WT: 372, DA: 372, LK: 372, HP: 93, DP: 93, HV: 93 });
+  // Dragon / Priest, growth 1-4-4-1, Lv.306, 305 bonus points in MA
+  const dragon = P.cleanBuild({ cls: "Dragon", job: "Priest", level: 306, growth: { Power: 1, Magic: 4, Sense: 4, Charm: 1 }, pts: { MA: 305 } });
+  const dst = P.status(dragon, { stats: builds.stats, base: P.pickBase(bases, "Dragon").base, buffs, values });
+  assert.deepStrictEqual(front(dst), { AP: 322, AC: 69, DX: 4, MP: 9230, MA: 202, MD: 1210, WT: 25600, DA: 76, LK: 76, HP: 2400, DP: 300, HV: 19 });
+  assert.deepStrictEqual(lvs(dst), { AP: 77, AC: 77, DX: 77, MP: 306, MA: 611, MD: 306, WT: 306, DA: 306, LK: 306, HP: 77, DP: 77, HV: 77 });
 });
 
 t("starting stats: checked class, else the player's own, else Cat's as an estimate", () => {

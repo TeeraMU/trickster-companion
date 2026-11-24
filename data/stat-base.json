@@ -16,6 +16,11 @@
       "AP": 18, "AC": 50, "DX": 11, "MP": 80, "MA": 50, "MD": -10,
       "WT": 1120, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
       "checked": "2026-11-25 in game: Soul Master growth 1-4-4-1 at Lv.372, 371 bonus points in MA (every stat matches). Same as Cat but DX 11, WT 1120"
+    },
+    "Dragon": {
+      "AP": 18, "AC": 50, "DX": 10, "MP": 80, "MA": 50, "MD": -10,
+      "WT": 1200, "DA": 0, "LK": 0, "HP": 120, "DP": -4, "HV": 0,
+      "checked": "2026-11-25 in game: Priest growth 1-4-4-1 at Lv.306, 305 bonus points in MA (every stat matches). Same as Cat"
     }
   }
 }
