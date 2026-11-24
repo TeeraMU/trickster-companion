@@ -150,7 +150,9 @@
             <tbody>${tb.rows.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join("")}</tbody></table>`).join("")}
         ${pz.images.length ? `<div class="bs-puzzle-maps ${pz.images.length > 1 ? "is-many" : ""}">${pz.images.map(im => `
           <figure>
-            <a href="${esc(im.src)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(im.src)}" alt="${esc(im.cap)}" loading="lazy"></a>
+            ${im.marks ? `<span class="bs-marked" style="aspect-ratio:${im.w}/${im.h}"><img src="${esc(im.src)}" alt="${esc(im.cap)}" loading="lazy">${im.marks.map(m =>
+              `<span class="bs-mark" style="left:${(m.x / im.w * 100).toFixed(2)}%;top:${(m.y / im.h * 100).toFixed(2)}%" title="${esc(m.t || m.n)}">${esc(m.n)}</span>`).join("")}</span>`
+            : `<a href="${esc(im.src)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(im.src)}" alt="${esc(im.cap)}" loading="lazy"></a>`}
             <figcaption>${esc(im.cap)}${im.note ? `<span class="bs-puzzle-note">${esc(im.note)}</span>` : ""}</figcaption>
           </figure>`).join("")}</div>` : ""}
       </details>`;

@@ -3475,6 +3475,103 @@
      "use": "Key"
     }
    ],
+   "puzzles": [
+    {
+     "at": "Part 1",
+     "title": "Ancient God B4: where everyone stands",
+     "text": [
+      "Spots from the True Kronos page on oto.fandom.com (it draws them on the Tartarus minimap). The numbers are the Poppuri for each barrier test."
+     ],
+     "images": [
+      {
+       "src": "https://static.wikia.nocookie.net/oto/images/e/e8/Minimap_Tartarus_B1.png",
+       "w": 200,
+       "h": 142,
+       "cap": "Ancient God B4",
+       "note": "R = Certification Registry (registrations 1, 3, 4, 6). W = Warden Oceanus (8, 9, 10). 1–10 = Poppuri 1–10: each one's cage has the barrier boss.",
+       "marks": [
+        {
+         "x": 103,
+         "y": 22,
+         "n": "R",
+         "t": "Certification Registry"
+        },
+        {
+         "x": 103,
+         "y": 82,
+         "n": "W",
+         "t": "Warden Oceanus"
+        },
+        {
+         "x": 40,
+         "y": 50,
+         "n": "1",
+         "t": "Poppuri 1: Ancient Dragon"
+        },
+        {
+         "x": 83,
+         "y": 29,
+         "n": "3",
+         "t": "Poppuri 3: Ancient Sisyphus"
+        },
+        {
+         "x": 125,
+         "y": 30,
+         "n": "4",
+         "t": "Poppuri 4: Ancient Ixion"
+        },
+        {
+         "x": 167,
+         "y": 50,
+         "n": "6",
+         "t": "Poppuri 6: Ancient Hecate"
+        },
+        {
+         "x": 90,
+         "y": 83,
+         "n": "8",
+         "t": "Poppuri 8: Ancient Tantalus"
+        },
+        {
+         "x": 118,
+         "y": 83,
+         "n": "9",
+         "t": "Poppuri 9: Chronos"
+        },
+        {
+         "x": 132,
+         "y": 90,
+         "n": "10",
+         "t": "Poppuri 10: True Kronos"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "at": "Part 3",
+     "title": "B3 Secret Space: where Robin Van Peruoza is",
+     "text": [
+      "Go through the Gap in the wall of a B3 cage (6 to 19) into its Secret Space."
+     ],
+     "images": [
+      {
+       "src": "https://static.wikia.nocookie.net/oto/images/3/37/Minimap_Secret_Room.png",
+       "w": 160,
+       "h": 160,
+       "cap": "Secret Space 6–19",
+       "marks": [
+        {
+         "x": 109,
+         "y": 30,
+         "n": "Robin",
+         "t": "Robin Van Peruoza"
+        }
+       ]
+      }
+     ]
+    }
+   ],
    "quests": [],
    "monster": "3310",
    "source": "https://oto.fandom.com/wiki/True_Kronos"

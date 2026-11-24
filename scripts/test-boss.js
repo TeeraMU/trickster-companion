@@ -89,6 +89,12 @@ t("solved puzzles sit under their trial: Tenter Lion's three mazes, Soki's Ponch
   assert.deepStrictEqual(tut[0][1][0].tables.map(t => t.rows.length), [6, 16]);
   assert.ok(/Ice Palace Stairs/.test(under("Queen Odinea")[0][0]));
   assert.ok(/Guide Stones/.test(under("Tombeth")[0][0]));
+  // True Kronos: the B4 minimap with every NPC marked, Robin's secret space
+  const tk = under("True Kronos");
+  assert.deepStrictEqual(tk.map(([title]) => title.slice(0, 6)), ["Part 1", "Part 3"]);
+  const b4 = tk[0][1][0].images[0];
+  assert.deepStrictEqual(b4.marks.map(m => m.n), ["R", "W", "1", "3", "4", "6", "8", "9", "10"]);
+  for (const m of b4.marks) assert.ok(m.x > 0 && m.x < b4.w && m.y > 0 && m.y < b4.h, m.n + " on the map");
   // Koiosu: the circled Gap pictures, one set under each floor
   assert.deepStrictEqual(under("Koiosu").map(([title, list]) => [title.slice(0, 12), list[0].images.length]), [["Steel God B1", 3], ["Steel God B2", 3]]);
   for (const b of data.bosses) for (const pz of b.puzzles || []) for (const im of pz.images)
