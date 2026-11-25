@@ -124,10 +124,13 @@
     return list.map(c => ({ id: c.id, name: c.name, progress: c.id === open ? snapshot(state) : cleanProgress(c.data) }));
   }
 
-  /** For the menu: [{ id, name, open, done }] (done = quests finished). */
+  /** For the menu: [{ id, name, open, done, cls, path }] (done = quests finished; cls / path for the sprite). */
   function list(state) {
-    return all(state).map(c => ({ id: c.id, name: c.name, open: c.id === state.charId,
-      done: Object.values(c.progress.completedQuests).filter(v => v === true).length }));
+    const all_ = all(state);
+    const open = all_.some(c => c.id === state.charId) ? state.charId : all_[0].id;
+    return all_.map(c => ({ id: c.id, name: c.name, open: c.id === open,
+      done: Object.values(c.progress.completedQuests).filter(v => v === true).length,
+      cls: c.progress.selectedClass || "All", path: c.progress.selectedJobPath || "" }));
   }
 
   /**

@@ -11,7 +11,7 @@ t("progress from before characters becomes Character 1, nothing lost", () => {
   assert.deepStrictEqual(st.chars, [{ id: "main", name: "Character 1", data: null }]);
   assert.strictEqual(st.charId, "main");
   assert.deepStrictEqual(st.completedQuests, { a: true });
-  assert.deepStrictEqual(C.list(st), [{ id: "main", name: "Character 1", open: true, done: 1 }]);
+  assert.deepStrictEqual(C.list(st), [{ id: "main", name: "Character 1", open: true, done: 1, cls: "Cat", path: "" }]);
   C.ensure(st); // twice is the same
   assert.strictEqual(st.chars.length, 1);
 });
