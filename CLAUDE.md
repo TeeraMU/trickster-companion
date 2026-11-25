@@ -61,6 +61,13 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   `firestore.rules`: each player reads/writes only their own document. After changing it, paste it in
   Firebase console -> Firestore -> Rules -> Publish (the repo copy is not deployed by itself).
   The web config in cloud.js is public by design; never commit service-account keys.
+- `js/chars.js`: 👤 several game characters per player. The open character's progress is the usual top-level
+  fields of appState (completedQuests, completedCycles, completedSteps, inventory, selectedClass, selectedJobPath,
+  focus), so the rest of the app reads them as before; the others wait in `appState.chars[i].data`, and
+  `appState.charId` (this device only) is the open one. Builds, pins and screen prefs are shared. Synced as: the first
+  character in the old top-level fields (older copies of the app still read it), `chars` [{ id, name }] and
+  `charData` { id: progress } for the others; a copy without `chars` is one character "Character 1" (id main), and
+  when one comes in from an older app only the first character is updated. Tested by `node scripts/test-chars.js`.
 - `js/friends.js`: the Friends page (needs sign-in). `social/{uid}` { name, code, friends } (owner only)
   and `profiles/{code}` (the short summary friends see: class, path, done/total, area, next quest,
   needs, spares; any signed-in player who knows the code may read it, nobody can list them).
@@ -90,7 +97,7 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
 - `data/npcs.json` (id, name), `data/images.json` (name -> image URL), `data/classes.json` (class -> jobs
   { name, stage 1/2/3, img }: job sprites for friend avatars; the app works without it).
 - `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
-- Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`,
+- Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-chars.js`, `test-friends.js`,
   `test-search.js` (search index against the real data), `test-planner.js`, `test-boss.js`.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
   drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
