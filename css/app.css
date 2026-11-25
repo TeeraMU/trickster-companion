@@ -2932,6 +2932,34 @@ a.btn {
   .topbar-tools { gap: 5px; }
 }
 
+/* 👤 Characters (js/chars.js): the chip's menu */
+.char-pick-label { max-width: 110px; }
+.char-menu { min-width: 270px; padding: 8px; }
+.char-menu-title { margin: 2px 6px 8px; font-weight: 800; font-size: 0.85rem; color: var(--text-primary); }
+.char-menu-title span { display: block; font-weight: 600; font-size: 0.72rem; color: var(--text-muted); }
+.char-row {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 7px 10px;
+  border: none; border-radius: 10px; background: transparent; color: var(--text-primary);
+  font: inherit; font-weight: 700; text-align: left; cursor: pointer;
+}
+.char-row:hover, .char-row:focus-visible { background: var(--bg-tertiary); }
+.char-row:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: -2px; }
+.char-row.is-on { color: var(--ink-blue, var(--text-primary)); }
+.char-row-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.char-row-done { flex-shrink: 0; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
+.char-actions, .char-add { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.char-actions, .char-add-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+.char-add label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+.char-add input { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--bg-secondary, var(--bg-primary)); color: var(--text-primary); }
+.char-menu .btn { font-size: 0.78rem; padding: 5px 10px; }
+
+@media (max-width: 640px) {
+  .char-pick-label { display: none; }
+  .char-chip .class-pick-btn { padding-right: 8px; gap: 4px; }
+  /* the chip sits mid-bar on phones: the menu spans the screen instead of hanging off its edge */
+  .char-menu { position: fixed; top: 60px; left: 8px; right: 8px; min-width: 0; }
+}
+
 /* ---------------------------------------------------------------------------------------
    Bag (js/bag.js): items in hand, keep list, +/- stepper
    --------------------------------------------------------------------------------------- */

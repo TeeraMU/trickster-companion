@@ -60,6 +60,15 @@
       </nav>
 
       <div class="topbar-tools">
+        <div class="class-chip char-chip" title="Which character's progress you see (each has its own ticks and Bag)">
+          <button type="button" class="class-pick-btn" id="charPickBtn" aria-haspopup="true" aria-expanded="false"
+            aria-controls="charMenu" aria-label="My characters" onclick="toggleCharMenu()">
+            <span class="class-chip-icon is-emoji" aria-hidden="true">👤</span>
+            <span id="charPickLabel" class="class-pick-label char-pick-label">Character 1</span>
+            <span class="class-pick-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="class-pick-list char-menu" id="charMenu" hidden onkeydown="charMenuKey(event)"></div>
+        </div>
         <div class="class-chip" title="My character class: hides quests for other classes">
           <button type="button" class="class-pick-btn" id="classPickBtn" aria-haspopup="listbox" aria-expanded="false"
             aria-controls="classPickList" aria-label="My character class" onclick="toggleClassPicker()" onkeydown="classPickerBtnKey(event)">
@@ -372,6 +381,7 @@
   <script src="js/town.js"></script>
   <script src="js/formula.js"></script>
   <script src="js/planner.js"></script>
+  <script src="js/chars.js"></script>
   <script src="js/sync-merge.js"></script>
   <script src="js/cloud.js"></script>
   <script src="js/friends.js"></script>
@@ -411,7 +421,9 @@
       openChapters: {},        // { [chapterName]: true|false } user-toggled chapters
       inventory: {},           // { itemName: count } what the player has (Bag page)
       bagFilter: "keep",       // Bag tab: keep | missing | spare
-      bagSearch: ""
+      bagSearch: "",
+      chars: [],               // 👤 game characters (js/chars.js): the open one's progress is the fields above
+      charId: ""               // the open character (this device only)
     };
     let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
     let MAP_INDEX = null;      // data/maps.json, indexed by TQRoute.indexMaps
@@ -456,6 +468,7 @@
       } catch (e) {
         console.warn("Could not load state from localStorage:", e);
       }
+      TQChars.ensure(appState);
       normalizeCompletion();
       document.getElementById("charClassSelect").value = appState.selectedClass || "All";
     }
@@ -495,13 +508,14 @@
 
     // Progress from the cloud (or a merge) replaces this browser's progress
     function applyCloudPayload(p) {
-      appState.completedQuests = Object.assign({}, p.completedQuests);
-      appState.completedCycles = Object.assign({}, p.completedCycles);
-      appState.completedSteps = Object.assign({}, p.completedSteps);
-      appState.inventory = Object.assign({}, p.inventory);
-      appState.selectedClass = p.selectedClass || "All";
-      appState.selectedJobPath = p.selectedJobPath || "";
-      appState.focus = p.focus || null;
+      // every character's progress; this device keeps its open one. A copy written by an older version
+      // of the app (no chars) only knows the first character: keep the others as they are here.
+      let list = TQSync.charsOf(p);
+      if (!Array.isArray(p.chars)) {
+        const mine = TQChars.all(appState);
+        list = [Object.assign({}, mine[0], { progress: list[0].progress })].concat(mine.slice(1));
+      }
+      TQChars.setAll(appState, list);
       appState.hideBag = !!p.hideBag;
       // a copy saved before builds were synced has none: keep this device's
       if (Array.isArray(p.builds)) appState.planner = { builds: TQPlanner.cleanBuilds(p.builds), current: (appState.planner || {}).current || "" };
@@ -515,7 +529,7 @@
 
     // First sign-in on a browser that already has different progress: ask which copy to keep
     function chooseSyncCopy(local, cloud) {
-      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins` + (s.builds ? ` · ${s.builds} builds` : "");
+      const say = s => (s.chars > 1 ? `${s.chars} characters: ` : "") + `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins` + (s.builds ? ` · ${s.builds} builds` : "");
       document.getElementById("syncLocal").textContent = say(local);
       document.getElementById("syncCloud").textContent = say(cloud);
       const dlg = document.getElementById("syncChoice");
@@ -2279,6 +2293,116 @@
       if (!e.target.closest(".class-chip")) toggleClassPicker(false);
     });
 
+    // ============================================================================
+    // 👤 CHARACTERS (js/chars.js): each game character has its own ticks, runs, Bag, class and path.
+    // The chip's menu opens one, adds one (empty or a copy of the open one), renames or deletes it.
+    // ============================================================================
+    const CHAR_UI = { adding: false };
+    const escHtml = v => String(v).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
+    function renderCharChip() {
+      const c = TQChars.active(appState);
+      const label = document.getElementById("charPickLabel");
+      if (label) label.textContent = c ? c.name : "";
+      const btn = document.getElementById("charPickBtn");
+      if (btn) btn.setAttribute("aria-label", "My characters: " + (c ? c.name : ""));
+    }
+    function renderCharMenu() {
+      const menu = document.getElementById("charMenu");
+      if (!menu) return;
+      const list = TQChars.list(appState);
+      const open = list.find(c => c.open) || list[0];
+      const rows = list.map(c => `<button type="button" class="char-row ${c.open ? "is-on" : ""}" aria-pressed="${c.open}" onclick="switchChar('${escHtml(c.id)}')">
+          <span class="char-row-name">${escHtml(c.name)}</span><span class="char-row-done">${c.done} done</span>${c.open ? `<span class="class-pick-check" aria-hidden="true">✓</span>` : ""}</button>`).join("");
+      const adding = `
+          <div class="char-add">
+            <label>Name <input id="charNewName" maxlength="${TQChars.NAME_MAX}" placeholder="e.g. My Fox" autocomplete="off"></label>
+            <div class="char-add-btns">
+              <button type="button" class="btn" onclick="addChar(false)">Start empty</button>
+              <button type="button" class="btn" onclick="addChar(true)" title="For a character that played along with ${escHtml(open.name)}">Copy ${escHtml(open.name)}'s ticks</button>
+              <button type="button" class="btn" onclick="charAdding(false)">Cancel</button>
+            </div>
+          </div>`;
+      const actions = `
+          <div class="char-actions">
+            ${list.length < TQChars.MAX ? `<button type="button" class="btn" onclick="charAdding(true)">➕ New character</button>` : `<span class="bd-note">${TQChars.MAX} characters at most</span>`}
+            <button type="button" class="btn" onclick="renameChar()">✏️ Rename</button>
+            ${list.length > 1 ? `<button type="button" class="btn btn-danger" onclick="deleteChar()">🗑️ Delete</button>` : ""}
+          </div>`;
+      menu.innerHTML = `<p class="char-menu-title">👤 My characters <span>each keeps its own ticks, runs and Bag</span></p>
+          ${rows}${CHAR_UI.adding ? adding : actions}`;
+    }
+    function charAdding(on) {
+      CHAR_UI.adding = on;
+      renderCharMenu();
+      const box = document.getElementById(on ? "charNewName" : "charPickBtn");
+      if (box) box.focus();
+    }
+    function toggleCharMenu(show) {
+      const menu = document.getElementById("charMenu");
+      const btn = document.getElementById("charPickBtn");
+      const open = show === undefined ? menu.hidden : show;
+      if (open) {
+        CHAR_UI.adding = false;
+        renderCharMenu();
+        menu.hidden = false;
+        btn.setAttribute("aria-expanded", "true");
+        const on = menu.querySelector(".char-row.is-on");
+        if (on) on.focus();
+      } else if (!menu.hidden) {
+        menu.hidden = true;
+        btn.setAttribute("aria-expanded", "false");
+      }
+    }
+    function charMenuKey(ev) {
+      if (ev.key === "Escape") { ev.preventDefault(); toggleCharMenu(false); document.getElementById("charPickBtn").focus(); }
+      else if (ev.key === "Enter" && ev.target.id === "charNewName") { ev.preventDefault(); addChar(false); }
+    }
+    document.addEventListener("pointerdown", ev => {
+      if (!ev.target.closest(".char-chip")) toggleCharMenu(false);
+    });
+    /** After the open character's progress changed under the app: everything shown follows it. */
+    function charChanged() {
+      normalizeCompletion();
+      document.getElementById("charClassSelect").value = appState.selectedClass || "All";
+      saveState();
+      renderCharChip();
+      renderAll();
+      if (appState.currentView === "episodes") renderEpisodes();
+      if (appState.currentView === "friends") renderFriends();
+    }
+    function switchChar(id) {
+      toggleCharMenu(false);
+      if (TQChars.switchTo(appState, id)) charChanged();
+    }
+    function addChar(copy) {
+      const box = document.getElementById("charNewName");
+      const id = TQChars.add(appState, box ? box.value : "", copy);
+      CHAR_UI.adding = false;
+      if (!id) { renderCharMenu(); return; }
+      toggleCharMenu(false);
+      TQChars.switchTo(appState, id);
+      charChanged();
+    }
+    function renameChar() {
+      const c = TQChars.active(appState);
+      if (!c) return;
+      const name = prompt("Name of this character:", c.name);
+      if (name == null) return;
+      TQChars.rename(appState, c.id, name);
+      saveState();
+      renderCharChip();
+      renderCharMenu();
+    }
+    function deleteChar() {
+      const c = TQChars.active(appState);
+      if (!c || appState.chars.length <= 1) return;
+      if (!confirm(`Delete ${c.name} and all its ticks, runs and Bag?\n\nThis can't be undone (signed in, it goes from your other devices too). Builds stay.`)) return;
+      toggleCharMenu(false);
+      TQChars.remove(appState, c.id);
+      charChanged();
+    }
+
+
     function friendSummary() {
       const cls = appState.selectedClass || "All";
       const pool = QUESTS.filter(q => matchesClassFilter(q, cls));
@@ -2406,6 +2530,7 @@
 
     function renderAll() {
       STATUS_CACHE = null; // progress may have changed
+      renderCharChip();
       renderClassChipIcon();
       renderBag();
       renderCategoryTabs();
@@ -2539,6 +2664,8 @@
           try {
             const imported = JSON.parse(ev.target.result);
             appState = Object.assign(appState, imported);
+            TQChars.ensure(appState);
+            normalizeCompletion();
             saveState();
             document.getElementById("charClassSelect").value = appState.selectedClass || "All";
             renderAll();
@@ -2552,7 +2679,8 @@
     }
 
     function resetAllProgress() {
-      if (!confirm("Are you sure you want to reset all checked quests, steps, and cycles?")) return;
+      const who = (TQChars.active(appState) || {}).name || "this character";
+      if (!confirm(`Reset all checked quests, steps and cycles of ${who}?\n\nYour other characters, builds and Bag stay as they are.`)) return;
       appState.completedQuests = {};
       appState.completedCycles = {};
       appState.completedSteps = {};
