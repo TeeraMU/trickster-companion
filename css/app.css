@@ -2957,7 +2957,7 @@ a.btn {
 .wn-older .wn-sec:first-of-type { margin-top: 10px; }
 
 /* 👤 Characters (js/chars.js): the chip's menu */
-.char-pick-label { max-width: 110px; }
+.char-pick-label { max-width: 130px; }
 .char-menu { min-width: 270px; padding: 8px; }
 .char-menu-title { margin: 2px 6px 8px; font-weight: 800; font-size: 0.85rem; color: var(--text-primary); }
 .char-menu-title span { display: block; font-weight: 600; font-size: 0.72rem; color: var(--text-muted); }
@@ -2969,8 +2969,25 @@ a.btn {
 .char-row:hover, .char-row:focus-visible { background: var(--bg-tertiary); }
 .char-row:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: -2px; }
 .char-row.is-on { color: var(--ink-blue, var(--text-primary)); }
-.char-row-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.char-row-done { flex-shrink: 0; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
+.char-row-text { display: flex; flex-direction: column; min-width: 0; }
+.char-row-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.char-row-done { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
+.char-row .class-pick-check { margin-left: auto; }
+.char-class { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.char-sub { display: block; margin: 0 4px 6px; font-size: 0.78rem; font-weight: 800; color: var(--text-secondary); }
+.char-sub span { font-weight: 600; color: var(--text-muted); }
+.char-class-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+.char-class-btn {
+  display: flex; align-items: center; gap: 6px; min-width: 0; padding: 4px 6px;
+  border: 1.5px solid transparent; border-radius: 10px; background: transparent; color: var(--text-primary);
+  font: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer;
+}
+.char-class-btn > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.char-class-btn .class-chip-icon { width: 26px; height: 26px; }
+.char-class-btn:hover, .char-class-btn:focus-visible { background: var(--bg-tertiary); }
+.char-class-btn:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: -2px; }
+.char-class-btn.is-on { border-color: var(--accent-blue); background: color-mix(in srgb, var(--accent-blue) 14%, transparent); color: var(--ink-blue); }
+.char-add select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--bg-secondary, var(--bg-primary)); color: var(--text-primary); }
 .char-actions, .char-add { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
 .char-actions, .char-add-btns { display: flex; flex-wrap: wrap; gap: 6px; }
 .char-add label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
@@ -2978,15 +2995,9 @@ a.btn {
 .char-menu .btn { font-size: 0.78rem; padding: 5px 10px; }
 
 @media (max-width: 640px) {
-  .char-pick-label { display: none; }
-  .char-chip .class-pick-btn { padding-right: 8px; gap: 4px; }
+  .char-pick-label { max-width: 96px; font-size: 0.78rem; }
   /* the chip sits mid-bar on phones: the menu spans the screen instead of hanging off its edge */
   .char-menu { position: fixed; top: 60px; left: 8px; right: 8px; min-width: 0; }
-}
-@media (max-width: 440px) { /* room for 👤 next to the class chip on small phones */
-  .char-chip .class-pick-caret { display: none; }
-  .char-chip .class-pick-btn { padding: 4px 6px; }
-  .class-pick-label { max-width: 70px; }
 }
 
 /* ---------------------------------------------------------------------------------------
