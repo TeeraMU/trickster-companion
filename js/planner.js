@@ -294,8 +294,27 @@
    * 667,129, crit 1,000,934 (2026-11-25). No sample for magic attacks yet, so they get none.
    */
   const CRIT = 1.5;
+  /**
+   * Numbers some skill formulas need that the status window doesn't show, typed in on the Planner
+   * (build.inputs): a gun's AP, a throwing item's AP, the weight carried, how many light attack skills.
+   */
+  const INPUTS = [
+    { key: "Gun AP", hint: "your gun's AP" },
+    { key: "Throw AP", hint: "your shuriken / throwing item's AP" },
+    { key: "Current WT", hint: "the weight you carry (shown in shops)" },
+    { key: "Light skills", hint: "how many light attack skills you have" }
+  ];
+  function cleanInputs(o) {
+    const out = {};
+    for (const { key } of INPUTS) { const v = clamp(o && o[key], 0, 9999999); if (v) out[key] = v; }
+    return out;
+  }
+  /** The formula a skill is worked out with: the readable rewrite (skill-fixes.json formulas) or the wiki's; "" = none. */
+  const calcOf = sk => (!sk ? "" : sk.calc === false ? "" : sk.calc || sk.formula || "");
+  /** The inputs a formula uses. */
+  const inputsOf = text => INPUTS.filter(i => String(text || "").includes(i.key));
   const PHYS_RE = /\b(AP|Attack Power|Normal Attack Damage)\b|\bAttack\s*[×x*(]/i;
-  const attackKind = (formula, normal) => (normal || PHYS_RE.test(String(formula || "")) ? "Physical" : "");
+  const attackKind = (formula, normal) => (normal ? "Physical" : /\bGun AP\b/.test(String(formula || "")) ? "Gun" : PHYS_RE.test(String(formula || "")) ? "Physical" : "");
   function hitEstimate(dmg, mon, kind) {
     const res = kind && mon && mon.res ? mon.res[kind] : null;
     if (res == null || !(dmg > 0)) return null;
@@ -504,6 +523,8 @@
     if (hits.length) out.hits = hits;
     if (b.shared) out.shared = true; // friends can see it (Friends page)
     if (b.ptsHave != null && b.ptsHave !== "") out.ptsHave = clamp(b.ptsHave, 0, 9999);
+    const inputs = cleanInputs(b.inputs);
+    if (Object.keys(inputs).length) out.inputs = inputs;
     // starting stats the player typed in for a class we don't know yet
     if (b.base && typeof b.base === "object" && STATS.some(k => k in b.base)) {
       out.base = {};
@@ -554,7 +575,7 @@
     } catch (e) { return null; }
   }
 
-  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, attackKind, hitEstimate, cleanGuardian, guardianSlots, guardianDebuffs, debuffMonster, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
+  const model = { STATS, GROUP_STATS, GROUP_OF, ELEMENTS, SLOTS, SKILL_LEVELS, LIMITS, cleanStats, groupLevel, frontStat, baseFromFront, pickBase, planOf, splitPoints, points, cleanCompound, pieceElements, buffSpec, activeBuffs, formState, searchMonsters, monOptions, attackKind, hitEstimate, INPUTS, cleanInputs, calcOf, inputsOf, cleanGuardian, guardianSlots, guardianDebuffs, debuffMonster, cleanHits, parseDamage, hitsText, buffValue, effectDelta, status, buffLists, cleanBuild, cleanBuilds, mergeBuilds, encodeBuild, decodeBuild, newId };
 
   if (typeof module !== "undefined" && module.exports) { module.exports = model; return; }
 
@@ -959,14 +980,16 @@
     // every skill's picked level (Master unless changed), for formulas that use another skill's level
     const levels = {};
     for (const set of ctx.skillSets) for (const sk of set.skills) levels[sk.name] = (ctx.ui.power || {})[sk.name] || "M";
-    const others = F.skillLevelVars ? F.skillLevelVars(levels) : {};
+    const others = Object.assign({}, F.skillLevelVars ? F.skillLevelVars(levels) : {});
+    for (const { key } of INPUTS) others[key] = (build.inputs || {})[key] || 0;
     const form = formState(build, ctx.buffs);
     const seen = new Set(), rows = [], unread = [];
     for (const set of ctx.skillSets.slice().reverse()) for (const sk of set.skills) {
       if (seen.has(sk.name) || !/on\/off/i.test(sk.type || "") || !sk.formula) continue;
       seen.add(sk.name);
       const lv = levels[sk.name];
-      const parts = F.evalFormula(sk.formula, F.formulaVars(totals, st.elements, sk.levels, lv, others));
+      const calc = calcOf(sk);
+      const parts = calc ? F.evalFormula(calc, F.formulaVars(totals, st.elements, sk.levels, lv, others)) : [];
       (parts.length ? rows : unread).push({ sk, job: set.job, lv, parts, use: form.usable(sk) });
     }
     // skills that can be used in the build's state (Evolution on or off) first, the others greyed below
@@ -979,10 +1002,19 @@
     const { rows, unread, form } = powerRows(build, st, ctx);
     if (!rows.length && !unread.length) return "";
     const lvSel = (name, lv) => `<select aria-label="${esc(name)} level" onchange="TQPlanner.powerLevel('${jsq(name)}', this.value)">${SKILL_LEVELS.map(l => `<option value="${l}" ${l === lv ? "selected" : ""}>${l === "M" ? "Master" : "Lv." + l}</option>`).join("")}</select>`;
+    // numbers the status window doesn't have (Gun AP …), only when one of the job's skills needs them
+    const need = INPUTS.filter(i => rows.some(r => inputsOf(calcOf(r.sk)).includes(i)));
+    const inputsRow = need.length ? `<div class="pl-inputs">${need.map(i => `
+          <label><span>${esc(i.key)}</span><input type="number" min="0" inputmode="numeric" value="${(build.inputs || {})[i.key] || ""}" placeholder="0"
+            title="${esc(i.hint)}" ${ctx.readOnly ? "disabled" : ""} onchange="TQPlanner.input('${jsq(i.key)}', this.value)"></label>`).join("")}
+          <span class="bd-note">Not in the status window: type them for the skills that use them.</span></div>` : "";
+    const readAs = sk => (sk.calc ? `<span class="bd-note pl-power-why">Worked out as <code>${esc(sk.calc)}</code>${sk.calcWhy ? ". " + esc(sk.calcWhy) : ""}</span>`
+      : sk.calcWhy ? `<span class="bd-note pl-power-why">${esc(sk.calcWhy)}</span>` : "");
     return `
       <section class="bd-box pl-power">
         <h4>💥 Skill power <span class="bd-note">with this build's stats, gear and buffs, before the monster's defense</span></h4>
         ${form.form ? `<p class="pl-form-note">🐾 In <b>${esc(form.form)}</b> (ticked in Buffs): its own skills are on top, the ones you can't use in it are greyed out.</p>` : ""}
+        ${inputsRow}
         <ul class="pl-power-list">${rows.map(r => `
           <li class="pl-power-row ${r.use.ok ? "" : "is-off"}">
             <span class="pl-power-name">${r.sk.icon ? `<img src="${esc(r.sk.icon)}" alt="" loading="lazy">` : ""}<strong>${esc(r.sk.name)}</strong> <span class="bd-note">${esc(r.job)}</span>
@@ -990,9 +1022,10 @@
             ${lvSel(r.sk.name, r.lv)}
             <span class="pl-power-vals">${r.parts.map(p => `<span class="pl-power-val" title="${esc(p.text)}">${p.label ? `<span class="bd-note">${esc(p.label)}</span> ` : ""}<b>${fmt(p.value)}</b></span>`).join("")}</span>
             <code class="pl-power-f">${esc(r.sk.formula)}</code>
+            ${readAs(r.sk)}
           </li>`).join("")}</ul>
         ${unread.length ? `<details class="pl-party"><summary>❔ ${unread.length} skill${unread.length === 1 ? "" : "s"} we can't work out yet</summary>
-          <ul class="pl-power-list">${unread.map(r => `<li class="pl-power-row"><span class="pl-power-name"><strong>${esc(r.sk.name)}</strong></span><code class="pl-power-f">${esc(r.sk.formula)}</code></li>`).join("")}</ul></details>` : ""}
+          <ul class="pl-power-list">${unread.map(r => `<li class="pl-power-row"><span class="pl-power-name"><strong>${esc(r.sk.name)}</strong></span><code class="pl-power-f">${esc(r.sk.formula)}</code>${readAs(r.sk)}</li>`).join("")}</ul></details>` : ""}
         <p class="bd-note">Formulas and level values from the wiki. The monster's DP / MD, elements and critical hits aren't in yet: that needs damage numbers checked in game.</p>
       </section>`;
   }
@@ -1084,7 +1117,7 @@
     const myEl = Object.entries(st.elements).map(([k, v]) => `<span class="${EL_CLASS(k)}">${EL_ICON[k] || ""} ${k} ${v}%</span>`).join("") || `<span class="bd-note">none</span>`;
     const hits = m => (dmg > 0 ? Math.ceil(monsterHp(m) / dmg) : "–");
     // ≈ the hit in game (physical attacks only, from one sample: see hitEstimate)
-    const kind = attackKind(sk && sk.formula, atk.normal);
+    const kind = attackKind(calcOf(sk), atk.normal);
     const est = m => hitEstimate(dmg, m, kind);
     const cmp = (ctx.ui.compare || []).map(id => byId.get(id)).filter(Boolean);
 
@@ -1134,7 +1167,8 @@
           : mon ? `<p><span class="bd-note">Hits to kill</span> <b class="is-hits">≥ ${hits(mon)}</b></p>` : ""}
         </div>
         <code class="pl-power-f">${atk.normal ? "Normal hit: your AP (how the game turns it into damage isn't checked yet)" : esc(sk.formula)}</code>
-        <p class="bd-note pl-bs-est-note">${kind ? "≈ In game: the damage minus the monster's Physical resistance %, critical ×1.5. Worked out from one skill (Lightning Strike, within 0.1% of the game); write your hits below to check it." : "No in-game number for magic attacks yet: this is before the monster's defense. Write your hits below so it can be worked out."}</p>
+        ${sk && sk.calc ? `<p class="bd-note">Worked out as <code>${esc(sk.calc)}</code>${sk.calcWhy ? ". " + esc(sk.calcWhy) : ""}</p>` : ""}
+        <p class="bd-note pl-bs-est-note">${kind ? "≈ In game: the damage minus the monster's " + kind + " resistance %, critical ×1.5. Worked out from one skill (Lightning Strike, within 0.1% of the game); write your hits below to check it." : "No in-game number for magic attacks yet: this is before the monster's defense. Write your hits below so it can be worked out."}</p>
       </div>`;
 
     const table = `

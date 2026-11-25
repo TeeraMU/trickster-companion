@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Planner: Stone Strike and Shuriken Master now use their Mag Ratio (Stone Strike Lv.10 with DA 66 = 2,680, not 55). Fox starts with the same stats as Cat (checked in game).
+- Planner: skill power for 20 more skills whose wiki formula it couldn't read: gun skills (Power Shot, Shooting Spree, Double Shot, Berserk; they lose the monster's Gun resistance), knife skills (Shuriken Master, Fan of Knives, Rain of Knives, Chain of Knives, Poison Assault), Pouch of Pain, Inferno Blade, Tempest Strike, Gale Strike, Wind Blade, Celestial Strike, Tesla Field, Impelling Rage and Power Charging. Type Gun AP, Throw AP, the weight you carry and your light skills in the new boxes above Skill power. Skills that aren't attacks (Flux Capacitor, Heart's Grace) no longer show a wrong number, and those without one say why.
 
 ## 1.0.0 (2026-11-25): Planner, Bosses and Guardian
 

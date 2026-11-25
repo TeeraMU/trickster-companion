@@ -170,6 +170,16 @@
         n++;
       }
     }
+    // formulas the Planner can't read as the wiki writes them: calc = what to work out (false = no number)
+    const forms = (fixes && fixes.formulas) || {};
+    for (const skills of Object.values(builds.skills)) {
+      for (const sk of skills) {
+        const f = forms[sk.name];
+        if (!f || typeof f !== "object") continue;
+        if (f.calc === false || typeof f.calc === "string") sk.calc = f.calc;
+        if (f.why) sk.calcWhy = String(f.why);
+      }
+    }
     // hybrid 3rd jobs: the other line's skills the wiki's job page leaves out, and the client's TM
     for (const [job, h] of Object.entries((fixes && fixes.hybrids) || {})) {
       const set = builds.skills[job];
