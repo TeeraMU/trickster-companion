@@ -228,6 +228,21 @@ for (const [key, p] of Object.entries(pins)) {
   if (p.src && p.src !== "wiki") err("npc-pins.json", `${key}: src must be "wiki" when set`);
 }
 
+// --- version: index.html's APP_VERSION, ?v= on every css / js link, and its notes in whats-new.json ----
+{
+  const html = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+  const ver = (/const APP_VERSION = "([\w.-]+)";/.exec(html) || [])[1];
+  if (!ver) err("index.html", "no APP_VERSION (scripts/set-version.js)");
+  else {
+    const off = [...html.matchAll(/(?:href|src)="((?:css|js)\/[\w.-]+\.(?:css|js))(\?v=[\w.-]*)?"/g)].filter(m => m[2] !== "?v=" + ver).map(m => m[1]);
+    if (off.length) err("index.html", `${off.join(", ")} not ?v=${ver}: run node scripts/set-version.js ${ver}`);
+    const wn = read("whats-new.json");
+    const first = ((wn && wn.versions) || [])[0];
+    if (!first || first.v !== ver) err("whats-new.json", `the newest version is ${first ? first.v : "missing"}, the app says ${ver}: add a few short lines for ${ver}`);
+    for (const v of (wn && wn.versions) || []) if (!Array.isArray(v.items) || !v.items.length) err("whats-new.json", `${v.v}: no items`);
+  }
+}
+
 // --- report --------------------------------------------------------------------------------
 for (const w of warnings) console.warn("warning  " + w);
 for (const e of errors) console.error("ERROR    " + e);

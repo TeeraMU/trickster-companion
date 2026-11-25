@@ -1,0 +1,42 @@
+{
+  "about": "What's new (⚙️ Settings): a few short lines per version, newest first. The full list of changes is CHANGELOG.md. Add the new version here when releasing.",
+  "versions": [
+    {
+      "v": "1.1.0", "date": "", "title": "Characters",
+      "items": [
+        "👤 Several characters: each has its own quest ticks, Bag and class. Switch from the chip at the top.",
+        "Planner: skill power for 20 more skills, with boxes for Gun AP, Throw AP and the weight you carry.",
+        "Stone Strike damage fixed. Fox starting stats checked in game.",
+        "📜 What's new in Settings."
+      ]
+    },
+    {
+      "v": "1.0.0", "date": "2026-11-25", "title": "Planner, Bosses and Guardian",
+      "items": [
+        "🛠️ Planner: builds, status window, gear, buffs, Battle Summary against any monster.",
+        "👑 Bosses: trials, puzzles, drops and their quests.",
+        "🥚 Guardian: the 5 stages, graph recipes and skills."
+      ]
+    },
+    {
+      "v": "0.9.2", "date": "2026-11-19", "title": "Tower group, Tick all, friends' Bags",
+      "items": ["Tick a whole chapter at once; see what's in your friends' Bags."]
+    },
+    {
+      "v": "0.9.0", "date": "2026-11-17", "title": "Build guide",
+      "items": ["🧭 Build guide: jobs, skills and the mastery cards they need."]
+    },
+    {
+      "v": "0.8.0", "date": "2026-11-15", "title": "Episodes 3-6",
+      "items": ["Episodes 3-6, six new zones, the Monsters view and Share my Bag."]
+    },
+    {
+      "v": "0.7.0", "date": "2026-11-13", "title": "Every zone to Techichi",
+      "items": ["Every zone up to Techichi."]
+    },
+    {
+      "v": "0.6.0", "date": "2026-11-12", "title": "Google sync and Friends",
+      "items": ["Sign in with Google to sync; add friends and see what they need."]
+    }
+  ]
+}

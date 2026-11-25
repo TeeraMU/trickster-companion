@@ -96,7 +96,9 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   Prefer this file over editing each quest. validate.js checks it.
 - `data/npcs.json` (id, name), `data/images.json` (name -> image URL), `data/classes.json` (class -> jobs
   { name, stage 1/2/3, img }: job sprites for friend avatars; the app works without it).
-- `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
+- `scripts/validate.js`: checks the data (and that APP_VERSION, the `?v=` links and data/whats-new.json agree).
+  `scripts/serve.js`: local server. `scripts/set-version.js X.Y.Z`: the version in index.html (see Releasing).
+- `data/whats-new.json`: ⚙️ Settings -> 📜 What's new, a few short lines per version for players; CHANGELOG.md is the full list.
 - Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-chars.js`, `test-friends.js`,
   `test-search.js` (search index against the real data), `test-planner.js`, `test-boss.js`.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
@@ -168,7 +170,10 @@ the local server: `node scripts/serve.js` then http://localhost:8080/.
 ```bash
 git switch dev && git pull
 git switch -c release/vX.Y.Z
-# CHANGELOG.md: rename "## Unreleased" to "## X.Y.Z (date): short title", commit
+# CHANGELOG.md: rename "## Unreleased" to "## X.Y.Z (date): short title"
+# data/whats-new.json: a few short lines for X.Y.Z at the top (what players see in ⚙️ Settings -> What's new)
+node scripts/set-version.js X.Y.Z   # APP_VERSION and ?v=X.Y.Z on every css / js link (browsers keep old files)
+node scripts/validate.js            # checks the three agree; commit
 git switch main && git pull && git merge --no-ff release/vX.Y.Z
 git tag vX.Y.Z && git push origin main vX.Y.Z      # GitHub Pages redeploys the live site
 git switch dev && git merge --no-ff release/vX.Y.Z && git push
