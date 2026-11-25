@@ -1921,6 +1921,14 @@
         plannerChanged();
       },
       planEdit(open) { PLANNER_UI.planEdit = open; },
+      /** A number some skill formulas need that the status window doesn't show (Gun AP, Throw AP …). */
+      input(key, value) {
+        const b = editable();
+        if (!b) return;
+        b.inputs = TQPlanner.cleanInputs(Object.assign({}, b.inputs, { [key]: value }));
+        if (!Object.keys(b.inputs).length) delete b.inputs;
+        plannerChanged();
+      },
       /** Every bonus point the character has, spread by the plan. */
       usePlan() {
         const b = editable();

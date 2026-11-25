@@ -15,7 +15,7 @@
   }
 
   const STAT_WORDS = {
-    "Max HP": "HP", "MAX HP": "HP", "Players MAX HP": "HP", "Current HP": "HP", "Total AC": "AC", "Base AP": "AP",
+    "Max HP": "HP", "MAX HP": "HP", "Max MP": "MP", "Players MAX HP": "HP", "Current HP": "HP", "Total AC": "AC", "Base AP": "AP",
     "Normal Attack Damage": "AP", "Attack Power": "AP",
     AP: "AP", AC: "AC", DX: "DX", MP: "MP", MA: "MA", MD: "MD", WT: "WT", DA: "DA", LK: "LK", HP: "HP", DP: "DP", HV: "HV"
   };

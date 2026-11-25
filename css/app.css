@@ -4921,6 +4921,12 @@ button.bd-need:hover { border-color: var(--border-highlight); }
 .pl-power-vals { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: flex-end; }
 .pl-power-val b { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink-red); }
 .pl-power-f { grid-column: 1 / -1; font-size: 0.75rem; color: var(--text-muted); white-space: normal; overflow-wrap: anywhere; }
+.pl-power-why { grid-column: 1 / -1; font-size: 0.75rem; overflow-wrap: anywhere; }
+.pl-power-why code { font-size: inherit; }
+.pl-inputs { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; margin: 0 0 10px; }
+.pl-inputs label { display: flex; flex-direction: column; gap: 2px; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
+.pl-inputs input { width: 7.5em; }
+.pl-inputs .bd-note { flex-basis: 100%; }
 @media (max-width: 600px) {
   .pl-power-row { grid-template-columns: 1fr auto; }
   .pl-power-vals { grid-column: 1 / -1; justify-content: flex-start; }
