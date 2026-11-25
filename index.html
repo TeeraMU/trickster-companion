@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@500;700;800&display=swap" />
-  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/app.css?v=1.1.0" />
 </head>
 <body>
   <!-- covers the page until the quest data is in (two running characters, assets/loading/) -->
@@ -159,13 +159,24 @@
       </div>
       <div class="settings-group">
         <span class="settings-title">Help</span>
-        <a class="btn" id="reportLink" href="#" target="_blank" rel="noopener" title="Report a bug, wrong quest info or an idea (no sign-in)">🐞 Report a problem</a>
+        <div class="settings-row">
+          <button type="button" class="btn" id="whatsNewBtn" onclick="openWhatsNew()" title="What changed in each version">📜 What's new <span class="app-version" id="appVersion"></span></button>
+          <a class="btn" id="reportLink" href="#" target="_blank" rel="noopener" title="Report a bug, wrong quest info or an idea (no sign-in)">🐞 Report a problem</a>
+        </div>
       </div>
       <div class="settings-group settings-danger">
         <button class="btn btn-danger" onclick="resetAllProgress()">🗑️ Reset all progress</button>
       </div>
     </div>
   </header>
+
+  <dialog class="whats-new" id="whatsNew" aria-labelledby="whatsNewTitle">
+    <div class="wn-head">
+      <h2 id="whatsNewTitle">📜 What's new</h2>
+      <button type="button" class="icon-btn" onclick="document.getElementById('whatsNew').close()" aria-label="Close">✕</button>
+    </div>
+    <div class="wn-body" id="whatsNewBody"><p class="calc-desc">Loading…</p></div>
+  </dialog>
 
   <dialog class="search-dialog" id="searchDialog" aria-label="Search">
     <div class="srch-bar">
@@ -372,23 +383,23 @@
     <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source on GitHub</a> · <a href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener">report on GitHub instead</a>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/episode.js"></script>
-  <script src="js/quest-card.js"></script>
-  <script src="js/route.js"></script>
-  <script src="js/report.js"></script>
-  <script src="js/bag.js"></script>
-  <script src="js/town.js"></script>
-  <script src="js/formula.js"></script>
-  <script src="js/planner.js"></script>
-  <script src="js/chars.js"></script>
-  <script src="js/sync-merge.js"></script>
-  <script src="js/cloud.js"></script>
-  <script src="js/friends.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/build.js"></script>
-  <script src="js/boss.js"></script>
-  <script src="js/guardian.js"></script>
+  <script src="js/data.js?v=1.1.0"></script>
+  <script src="js/episode.js?v=1.1.0"></script>
+  <script src="js/quest-card.js?v=1.1.0"></script>
+  <script src="js/route.js?v=1.1.0"></script>
+  <script src="js/report.js?v=1.1.0"></script>
+  <script src="js/bag.js?v=1.1.0"></script>
+  <script src="js/town.js?v=1.1.0"></script>
+  <script src="js/formula.js?v=1.1.0"></script>
+  <script src="js/planner.js?v=1.1.0"></script>
+  <script src="js/chars.js?v=1.1.0"></script>
+  <script src="js/sync-merge.js?v=1.1.0"></script>
+  <script src="js/cloud.js?v=1.1.0"></script>
+  <script src="js/friends.js?v=1.1.0"></script>
+  <script src="js/search.js?v=1.1.0"></script>
+  <script src="js/build.js?v=1.1.0"></script>
+  <script src="js/boss.js?v=1.1.0"></script>
+  <script src="js/guardian.js?v=1.1.0"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -399,6 +410,8 @@
     // STATE MANAGEMENT (LOCALSTORAGE)
     // ============================================================================
     const STORAGE_KEY = "trickster_quest_tracker_v1";
+    // set by scripts/set-version.js at each release, with ?v= on every css / js link
+    const APP_VERSION = "1.1.0";
     let appState = {
       completedQuests: {}, // { [questId]: true }
       completedCycles: {}, // { [questId]: number_of_completed_cycles }
@@ -2638,6 +2651,46 @@
       if (on) appState.completedSteps[key] = true; else delete appState.completedSteps[key];
       saveState(); renderBosses();
     }
+
+    // ============================================================================
+    // 📜 WHAT'S NEW (⚙️ Settings): a few short lines per version from data/whats-new.json (the full story is
+    // CHANGELOG.md). The button says "New" until this version's notes are opened once on this device.
+    // ============================================================================
+    const SEEN_VERSION_KEY = "tc_seen_version";
+    function renderVersionBadge() {
+      const v = document.getElementById("appVersion");
+      if (!v) return;
+      let seen = "";
+      try { seen = localStorage.getItem(SEEN_VERSION_KEY) || ""; } catch (e) { /* private mode */ }
+      v.innerHTML = `v${escHtml(APP_VERSION)}` + (seen !== APP_VERSION ? ` <span class="wn-new">New</span>` : "");
+    }
+
+    /** data/whats-new.json { versions: [{ v, date, title, items: ["…"] }] } -> HTML; the 3 newest open, the rest folded. */
+    function whatsNewHtml(d) {
+      const vers = (d && Array.isArray(d.versions) ? d.versions : []).filter(x => x && x.v);
+      const sec = x => `<section class="wn-sec"><h3><span class="wn-ver">v${escHtml(x.v)}</span> ${escHtml(x.title || "")}${x.date ? ` <span class="wn-date">${escHtml(x.date)}</span>` : ""}</h3>
+          <ul>${(x.items || []).map(i => `<li>${escHtml(i)}</li>`).join("")}</ul></section>`;
+      const shown = vers.slice(0, 3), older = vers.slice(3);
+      return shown.map(sec).join("")
+        + (older.length ? `<details class="wn-older"><summary>Older versions (${older.length})</summary>${older.map(sec).join("")}</details>` : "");
+    }
+
+    async function openWhatsNew() {
+      const dlg = document.getElementById("whatsNew");
+      const body = document.getElementById("whatsNewBody");
+      toggleHeaderPanel(null);
+      if (!dlg.open) dlg.showModal();
+      try { localStorage.setItem(SEEN_VERSION_KEY, APP_VERSION); } catch (e) { /* private mode */ }
+      renderVersionBadge();
+      try {
+        body.innerHTML = whatsNewHtml(await TQData.fetchJson("data/whats-new.json"));
+      } catch (e) {
+        body.innerHTML = `<p class="calc-desc">Couldn't load the changes. Check the connection and try again.</p>`;
+      }
+    }
+    document.getElementById("whatsNew").addEventListener("click", e => { if (e.target.id === "whatsNew") e.target.close(); }); // tap outside closes
+    renderVersionBadge();
+
 
     // ============================================================================
     // IMPORT / EXPORT / RESET
