@@ -15,7 +15,7 @@
   }
 
   const STAT_WORDS = {
-    "Max HP": "HP", "MAX HP": "HP", "Players MAX HP": "HP", "Current HP": "HP", "Total AC": "AC", "Base AP": "AP",
+    "Max HP": "HP", "MAX HP": "HP", "Max MP": "MP", "Players MAX HP": "HP", "Current HP": "HP", "Total AC": "AC", "Base AP": "AP",
     "Normal Attack Damage": "AP", "Attack Power": "AP",
     AP: "AP", AC: "AC", DX: "DX", MP: "MP", MA: "MA", MD: "MD", WT: "WT", DA: "DA", LK: "LK", HP: "HP", DP: "DP", HV: "HV"
   };
@@ -47,15 +47,19 @@
         const v = cellValue(row[i]);
         if (v == null) return;
         const col = String(c).trim();
-        const short = col.replace(/\s*\([^)]*\)\s*$/, "").trim();
-        const inner = /\(([^)]+)\)\s*$/.exec(col); // "Mag. Ratio (m)" -> m, "Attack Power (Magnification)" -> Magnification
+        const isSum = /=/.test(col); // "SS Mag Ratio =(Attack% × 50 ÷ 3)": the name is before "="
+        const short = col.replace(/\s*=.*$/, "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+        const inner = isSum ? null : /\(([^)]+)\)\s*$/.exec(col); // "Mag. Ratio (m)" -> m, "Attack Power (Magnification)" -> Magnification
         const set = (k, force) => { if (k && (force || !vars.has(k))) vars.set(k, v); };
         set(col, true);
         set(short);
         if (inner) set(inner[1].trim());
-        // "Mag. Ratio" and "Magnification Ratio" are the same column on the wiki
-        if (/^Magnification Ratio$/i.test(short)) { set("Mag. Ratio"); set("Mag.Ratio"); }
-        if (/^Mag\.? ?Ratio$/i.test(short)) set("Magnification Ratio");
+        // "SS Mag Ratio" (SS = Stone Strike) also answers to "Mag Ratio"
+        const bare = isSum ? /^[A-Z]{2} (.+)$/.exec(short) : null;
+        const name = bare ? bare[1] : short;
+        if (bare) set(name);
+        // "Mag. Ratio", "Mag.Ratio", "Mag Ratio" and "Magnification Ratio" are the same column on the wiki
+        if (/^(Magnification|Mag\.? ?) ?Ratio$/i.test(name)) ["Mag. Ratio", "Mag.Ratio", "Mag Ratio", "Magnification Ratio"].forEach(k => set(k));
         set(short.split(" ").pop()); // "Magic Power" also answers to "Power"
       });
     }

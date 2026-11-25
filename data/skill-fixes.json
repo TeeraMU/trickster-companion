@@ -106,6 +106,113 @@
       "checked": "PlayTrickster client tables 2026-11-25: 3 Maid Lydia Card; the wiki says no item. Not yet seen in game"
     }
   },
+  "formulas": {
+    "about": "How the Planner works out a skill whose wiki formula it can't read as written. calc = the same formula in words it knows (stats, level table columns, Gun AP / Throw AP / Current WT / Light skills typed in on the Planner); calc false = no number (why says what it is instead). why is shown under the skill. The wiki formula is still what the page shows.",
+    "Inferno Blade": {
+      "calc": "AP × (Magnification + Fire Attr)",
+      "why": "The wiki's \"Attack\" is read as AP (like Flaming Fist). Not checked in game."
+    },
+    "Tempest Strike": {
+      "calc": "Least: AP × Magnification Most: AP × (Magnification + Wind Attr × 5)",
+      "why": "The Wind part is random, 0 to 5 times your Wind %."
+    },
+    "Gale Strike": {
+      "calc": "Least: AP × Magnification Most: AP × (Magnification + Wind Attr × 7)",
+      "why": "The Wind part is random, 0 to 7 times your Wind %."
+    },
+    "Wind Blade": {
+      "calc": "Per shock: (MA - 49) × (Attack magnification + 3 × Wind Attr)",
+      "why": "Each shock; the level table gives how many."
+    },
+    "Heart's Grace": {
+      "calc": false,
+      "why": "Heals, not an attack: (max HP ÷ 200 + MA × 0.2) × Multiplier."
+    },
+    "Celestial Strike": {
+      "calc": "(MA - 25) × (34 + Light skills) ÷ 20 × Mag.Ratio",
+      "why": "Light skills = how many light attack skills you have: type it in above."
+    },
+    "Chain of Knives": {
+      "calc": "Without Precise Pitch: (DA × 16 + Throw AP) × m With Precise Pitch: (DA × 16 + Throw AP × 2.4) × m",
+      "why": "Precise Pitch's multiplier is taken as 2.4 (its Master, as in Fan of Knives' formula)."
+    },
+    "Pouch of Pain": {
+      "calc": "(WT - Current WT) × Magnification",
+      "why": "WT is your max weight; type the weight you carry (shown in shops) above."
+    },
+    "Power Shot": {
+      "calc": "[(Gun AP - 11) + 20 × (AC - 48)] × M",
+      "why": "Type your gun's AP above."
+    },
+    "Shooting Spree": {
+      "calc": "Per hit: [(Gun AP - 11) + 20 × (AC - 48)] × Mx100",
+      "why": "Each hit; type your gun's AP above."
+    },
+    "Berserk": {
+      "calc": "Per hit: [(Gun AP - 11) + 20 × (AC - 48)] × Mx100",
+      "why": "Each hit; type your gun's AP above."
+    },
+    "Double Shot": {
+      "calc": "Per shot: [(Gun AP - 11) + 20 × (AC - 48)] × Mx100 ÷ 2",
+      "why": "Each of the two shots; type your gun's AP above."
+    },
+    "Impelling Rage": {
+      "calc": "At full HP: HP × Attack %",
+      "why": "The wiki's \"Modifier Pattern\" is read as the Attack % column. Not checked in game."
+    },
+    "Power Charging": {
+      "calc": "At full HP: HP × Attack %",
+      "why": "The wiki's \"Modifier Pattern\" is read as the Attack % column. Not checked in game."
+    },
+    "Flux Capacitor": {
+      "calc": false,
+      "why": "Not an attack: it turns HP (max HP × r) into MP (× c)."
+    },
+    "Lucky Fist": {
+      "calc": false,
+      "why": "Needs the monster's max HP: (monster's max HP ÷ 10 + LK × 8) × Power."
+    },
+    "Poison Pouch": {
+      "calc": false,
+      "why": "A share of Pouch of Pain's damage (AP Weight of the Pouch)."
+    },
+    "Galder Thrower": {
+      "calc": false,
+      "why": "Fixed damage: the Damage column of the level table."
+    },
+    "Galder Barrage": {
+      "calc": false,
+      "why": "Fixed damage: the Damage column of the level table."
+    },
+    "Fist Full of Galders": {
+      "calc": false,
+      "why": "Fixed damage: the Damage column of the level table."
+    },
+    "Furious Galder Throw": {
+      "calc": false,
+      "why": "Fixed damage: the Max Damage column of the level table."
+    },
+    "Light Shield": {
+      "calc": false,
+      "why": "A buff (Light resistance, DP and MD), not an attack."
+    },
+    "Oath of Light": {
+      "calc": false,
+      "why": "A buff (max HP), not an attack."
+    },
+    "Icey Shackles": {
+      "calc": false,
+      "why": "The wiki has no formula for it yet."
+    },
+    "Thunderbolt": {
+      "calc": false,
+      "why": "The wiki has no formula for it yet."
+    },
+    "Botulism Cloud": {
+      "calc": false,
+      "why": "The wiki has no formula for it yet."
+    }
+  },
   "hybrids": {
     "about": "Made by scripts/client/build-hybrids.js from the client's Item_SkillCardParam (Job column). Per hybrid job: add = skills of the other line it can learn that the wiki's job page leaves out (copied from that line, with this TM); tm = the TM the client asks of it. Not yet seen in game.",
     "Duelist": {

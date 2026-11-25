@@ -61,6 +61,13 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   `firestore.rules`: each player reads/writes only their own document. After changing it, paste it in
   Firebase console -> Firestore -> Rules -> Publish (the repo copy is not deployed by itself).
   The web config in cloud.js is public by design; never commit service-account keys.
+- `js/chars.js`: 👤 several game characters per player. The open character's progress is the usual top-level
+  fields of appState (completedQuests, completedCycles, completedSteps, inventory, selectedClass, selectedJobPath,
+  focus), so the rest of the app reads them as before; the others wait in `appState.chars[i].data`, and
+  `appState.charId` (this device only) is the open one. Builds, pins and screen prefs are shared. Synced as: the first
+  character in the old top-level fields (older copies of the app still read it), `chars` [{ id, name }] and
+  `charData` { id: progress } for the others; a copy without `chars` is one character "Character 1" (id main), and
+  when one comes in from an older app only the first character is updated. Tested by `node scripts/test-chars.js`.
 - `js/friends.js`: the Friends page (needs sign-in). `social/{uid}` { name, code, friends } (owner only)
   and `profiles/{code}` (the short summary friends see: class, path, done/total, area, next quest,
   needs, spares; any signed-in player who knows the code may read it, nobody can list them).
@@ -89,8 +96,10 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   Prefer this file over editing each quest. validate.js checks it.
 - `data/npcs.json` (id, name), `data/images.json` (name -> image URL), `data/classes.json` (class -> jobs
   { name, stage 1/2/3, img }: job sprites for friend avatars; the app works without it).
-- `scripts/validate.js`: checks the data. `scripts/serve.js`: local server.
-- Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-friends.js`,
+- `scripts/validate.js`: checks the data (and that APP_VERSION, the `?v=` links and data/whats-new.json agree).
+  `scripts/serve.js`: local server. `scripts/set-version.js X.Y.Z`: the version in index.html (see Releasing).
+- `data/whats-new.json`: ⚙️ Settings -> 📜 What's new, a few short lines per version for players; CHANGELOG.md is the full list.
+- Tests (pure parts, Node): `node scripts/test-data.js` (retrying fetch), `test-sync.js`, `test-chars.js`, `test-friends.js`,
   `test-search.js` (search index against the real data), `test-planner.js`, `test-boss.js`.
 - `js/town.js`: the Quests page's ⚔️ Monsters view (Items to collect regrouped by monster: level, maps,
   drops, hunts); pure model tested by `node scripts/test-town.js`. The zone bar (🙈 Hide finished,
@@ -103,6 +112,9 @@ The roadmap is in `IMPROVEMENT_PLAN.md` (Thai). UI text and data are in English.
   rebuilt from the wiki with `scripts/wiki/` (see its README). PlayTrickster may differ from the wiki:
   put in-game corrections in `data/skill-fixes.json` (`{ skills: { name: { items?, tm?, needs?, how?, checked } } }`,
   applied on load by `TQBuild.applyFixes`, shown with a "✓ In game" badge), never in builds.json by hand.
+  Its `formulas` part ({ skill: { calc, why } }) rewrites a wiki formula the reader can't read (calc = the same formula in
+  known words; calc false = no number, why says what it is); the Planner shows the wiki's text and "Worked out as" the calc.
+  Numbers the status window lacks (Gun AP, Throw AP, Current WT, Light skills) are typed in on the Planner (`build.inputs`).
   Its `hybrids` part (the other line's skills each hybrid 3rd job can learn, and their TM, from the client's
   Item_SkillCardParam Job column) is made by `node scripts/client/build-hybrids.js`: don't edit that part by hand.
 - `js/planner.js`: the 🛠️ Planner page: my builds (`appState.planner.builds`, synced through sync-merge, max 20;
@@ -158,7 +170,10 @@ the local server: `node scripts/serve.js` then http://localhost:8080/.
 ```bash
 git switch dev && git pull
 git switch -c release/vX.Y.Z
-# CHANGELOG.md: rename "## Unreleased" to "## X.Y.Z (date): short title", commit
+# CHANGELOG.md: rename "## Unreleased" to "## X.Y.Z (date): short title"
+# data/whats-new.json: a few short lines for X.Y.Z at the top (what players see in ⚙️ Settings -> What's new)
+node scripts/set-version.js X.Y.Z   # APP_VERSION and ?v=X.Y.Z on every css / js link (browsers keep old files)
+node scripts/validate.js            # checks the three agree; commit
 git switch main && git pull && git merge --no-ff release/vX.Y.Z
 git tag vX.Y.Z && git push origin main vX.Y.Z      # GitHub Pages redeploys the live site
 git switch dev && git merge --no-ff release/vX.Y.Z && git push

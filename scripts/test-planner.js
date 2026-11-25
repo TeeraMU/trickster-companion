@@ -103,10 +103,15 @@ t("a class without starting stats: no front number, calibrating finds the base a
   assert.deepStrictEqual(lvs(bst), { AP: 799, AC: 400, DX: 400, MP: 100, MA: 100, MD: 100, WT: 100, DA: 100, LK: 100, HP: 400, DP: 400, HV: 400 });
   assert.strictEqual(P.pickBase(bases, "Bunny").from, "checked");
   // a class not checked yet: Cat's, and only DX and WT differ between the checked classes
-  const fox = P.pickBase(bases, "Fox");
-  assert.strictEqual(fox.from, "estimate");
-  assert.deepStrictEqual(fox.spread, { DX: [8, 11], WT: [1120, 1200] });
-  assert.ok(fox.known.length >= 4);
+  const lion = P.pickBase(bases, "Lion");
+  assert.strictEqual(lion.from, "estimate");
+  assert.deepStrictEqual(lion.spread, { DX: [8, 11], WT: [1120, 1200] });
+  assert.ok(lion.known.length >= 5);
+  // Fox / Archaeologist, Lv.54, 53 bonus points in DA: the player's Growth window (2026-11-25)
+  const foxB = P.cleanBuild({ cls: "Fox", job: "Archaeologist", level: 54, growth: { Power: 1, Magic: 1, Sense: 4, Charm: 4 }, pts: { DA: 53 } });
+  const fst = P.status(foxB, { stats: builds.stats, base: P.pickBase(bases, "Fox").base, buffs, values });
+  assert.strictEqual(P.pickBase(bases, "Fox").from, "checked");
+  assert.deepStrictEqual(front(fst), { AP: 70, AC: 53, DX: 9, MP: 470, MA: 53, MD: 42, WT: 5440, DA: 26, LK: 13, HP: 1710, DP: 208, HV: 13 });
   // Sheep / Soul Master, growth 1-4-4-1, Lv.372, 371 bonus points in MA
   const sheep = P.cleanBuild({ cls: "Sheep", job: "Soul Master", level: 372, growth: { Power: 1, Magic: 4, Sense: 4, Charm: 1 }, pts: { MA: 371 } });
   const sst = P.status(sheep, { stats: builds.stats, base: P.pickBase(bases, "Sheep").base, buffs, values });
@@ -189,6 +194,49 @@ t("formula: Flaming Fist with and without Fire, Power Blow, Volley Kick, lowerca
   assert.strictEqual(Math.round(power("Power Blow")[0].value), Math.round(5587 * 2.4));
   assert.strictEqual(Math.round(power("Volley Kick")[0].value), Math.round((5587 + 159 * 16) * (18.6 / 8)));
   assert.strictEqual(power("Sharp Scream")[0].text, "(AP + HV × 16) × Magnification");
+});
+
+t("formula: \"SS Mag Ratio =(Attack% × 50 ÷ 3)\" answers to Mag.Ratio (Stone Strike, Shuriken Master)", () => {
+  // in game 2026-11-25: Archaeologist DA 26+40, Stone Strike Lv.10 -> (66 + 1) × 40
+  const ss = skill("Stone Strike");
+  assert.strictEqual(Fm.evalFormula(ss.formula, Fm.formulaVars({ DA: 66 }, {}, ss.levels, "10"))[0].value, 2680);
+  const sm = skill("Shuriken Master");
+  const v = Fm.formulaVars(total, {}, sm.levels, "M");
+  assert.ok(v.get("Mag.Ratio") > 1, "SM Mag.Ratio read");
+});
+
+t("formula fixes: every attack skill gives a number or says why not; Gun AP, Throw AP and weight typed in", () => {
+  const fixes = data("skill-fixes.json");
+  const copy = JSON.parse(JSON.stringify(builds));
+  B.applyFixes(copy, fixes);
+  const byName = new Map();
+  for (const list of Object.values(copy.skills)) for (const s of list) if (!byName.has(s.name)) byName.set(s.name, s);
+  for (const name of Object.keys(fixes.formulas)) if (name !== "about") assert.ok(byName.has(name), "formulas: no skill " + name);
+  const extra = { PBL: 11, VKL: 11, "Gun AP": 300, "Throw AP": 200, "Current WT": 5000, "Light skills": 3 };
+  const read = (s, inputs) => {
+    const calc = P.calcOf(s);
+    return calc ? Fm.evalFormula(calc, Fm.formulaVars(total, {}, s.levels, "M", Object.assign({}, extra, inputs))) : [];
+  };
+  for (const s of byName.values()) {
+    if (!/on\/off/i.test(s.type || "") || !s.formula) continue;
+    if (/^[.?\s]*$/.test(s.formula) && !s.calcWhy) continue; // the wiki has nothing to read
+    assert.ok(read(s).length || s.calcWhy, s.name + ": no number and no reason");
+  }
+  // wrong numbers gone: Flux Capacitor's "- MP", Heart's Grace (a heal) gives none
+  assert.deepStrictEqual(read(byName.get("Flux Capacitor")), []);
+  assert.deepStrictEqual(read(byName.get("Heart's Grace")), []);
+  // Shuriken Master reads Throw AP (it read nothing before)
+  assert.strictEqual(Math.round(read(byName.get("Shuriken Master"))[0].value), Math.round((97 + 200 / 10) * 33 - 1));
+  // gun skills: [(Gun AP − 11) + 20 × (AC − 48)] × M, and they lose the monster's Gun resistance
+  const ps = byName.get("Power Shot");
+  assert.strictEqual(Math.round(read(ps)[0].value), Math.round((300 - 11 + 20 * (193 - 48)) * 2.7));
+  assert.strictEqual(P.attackKind(P.calcOf(ps)), "Gun");
+  assert.strictEqual(P.attackKind(P.calcOf(byName.get("Inferno Blade"))), "Physical");
+  assert.strictEqual(Math.round(read(byName.get("Pouch of Pain"))[0].value), Math.round((27231 - 5000) * 0.66));
+  assert.deepStrictEqual(P.inputsOf(P.calcOf(ps)).map(i => i.key), ["Gun AP"]);
+  // the typed numbers are kept with the build, nothing else
+  const b = P.cleanBuild({ name: "x", inputs: { "Gun AP": "320", "Throw AP": -5, evil: 9 } });
+  assert.deepStrictEqual(b.inputs, { "Gun AP": 320 });
 });
 
 t("formula: a word it can't read inside brackets drops the expression instead of guessing", () => {

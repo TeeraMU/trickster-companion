@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0 (2026-11-25): Characters, What's new, more skill formulas
+
+- **📜 What's new** in ⚙️ Settings: a few short lines about each version, with the version number; it says "New" until you've read this one.
+- No more half-styled pages after an update: the page asks for the new style and script files of each version (`?v=`), not the ones the browser kept.
+- **👤 Characters:** track several game characters, each with its own quest ticks, runs, boss and guardian ticks, Bag and class / 3rd job path. The class chip at the top is now the character chip: it shows the open character's sprite and name, and its menu switches character, sets that character's class, adds one (empty with a class, or a copy of the open one), renames or deletes it. Builds and NPC pins are shared by all. Your progress so far is "Character 1". Signed in, every character syncs; friends see the one you have open.
+- Planner: Stone Strike and Shuriken Master now use their Mag Ratio (Stone Strike Lv.10 with DA 66 = 2,680, not 55). Fox starts with the same stats as Cat (checked in game).
+- Planner: skill power for 20 more skills whose wiki formula it couldn't read: gun skills (Power Shot, Shooting Spree, Double Shot, Berserk; they lose the monster's Gun resistance), knife skills (Shuriken Master, Fan of Knives, Rain of Knives, Chain of Knives, Poison Assault), Pouch of Pain, Inferno Blade, Tempest Strike, Gale Strike, Wind Blade, Celestial Strike, Tesla Field, Impelling Rage and Power Charging. Type Gun AP, Throw AP, the weight you carry and your light skills in the new boxes above Skill power. Skills that aren't attacks (Flux Capacitor, Heart's Grace) no longer show a wrong number, and those without one say why.
+
 ## 1.0.0 (2026-11-25): Planner, Bosses and Guardian
 
 - New **🥚 Guardian** page (bottom bar, after Bosses): how to get your guardian from Lv.65 to Lv.180 as a checklist (Card Identification, Soul Seed, raising the egg, Soul Guardian, Mind's Eye) with its quests, which move here from the Quests page (Fairy Nono, La Vida, Frog Prince, the three sisters, Spirit of Nefertiti), and the 24 Mind's Eye quests of 8 areas (Lv.240 to 345), grouped by area.

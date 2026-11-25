@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@500;700;800&display=swap" />
-  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/app.css?v=1.1.0" />
 </head>
 <body>
   <!-- covers the page until the quest data is in (two running characters, assets/loading/) -->
@@ -60,15 +60,14 @@
       </nav>
 
       <div class="topbar-tools">
-        <div class="class-chip" title="My character class: hides quests for other classes">
-          <button type="button" class="class-pick-btn" id="classPickBtn" aria-haspopup="listbox" aria-expanded="false"
-            aria-controls="classPickList" aria-label="My character class" onclick="toggleClassPicker()" onkeydown="classPickerBtnKey(event)">
-            <span id="classChipIcon" class="class-chip-icon is-emoji" aria-hidden="true">🎭</span>
-            <span id="classPickLabel" class="class-pick-label">All classes</span>
+        <div class="class-chip char-chip">
+          <button type="button" class="class-pick-btn" id="charPickBtn" aria-haspopup="true" aria-expanded="false"
+            aria-controls="charMenu" aria-label="My character" onclick="toggleCharMenu()">
+            <span id="charChipIcon" class="class-chip-icon is-emoji" aria-hidden="true">🎭</span>
+            <span id="charPickLabel" class="class-pick-label char-pick-label">Character 1</span>
             <span class="class-pick-caret" aria-hidden="true">▾</span>
           </button>
-          <ul class="class-pick-list" id="classPickList" role="listbox" aria-label="My character class" tabindex="-1" hidden
-            onkeydown="classPickerListKey(event)"></ul>
+          <div class="class-pick-list char-menu" id="charMenu" hidden onkeydown="charMenuKey(event)"></div>
           <!-- the real value: kept (hidden) so the code that reads / sets it stays as it was -->
           <select id="charClassSelect" hidden aria-hidden="true" tabindex="-1" onchange="onClassChange(this.value)">
             <option value="All">All classes</option>
@@ -150,13 +149,24 @@
       </div>
       <div class="settings-group">
         <span class="settings-title">Help</span>
-        <a class="btn" id="reportLink" href="#" target="_blank" rel="noopener" title="Report a bug, wrong quest info or an idea (no sign-in)">🐞 Report a problem</a>
+        <div class="settings-row">
+          <button type="button" class="btn" id="whatsNewBtn" onclick="openWhatsNew()" title="What changed in each version">📜 What's new <span class="app-version" id="appVersion"></span></button>
+          <a class="btn" id="reportLink" href="#" target="_blank" rel="noopener" title="Report a bug, wrong quest info or an idea (no sign-in)">🐞 Report a problem</a>
+        </div>
       </div>
       <div class="settings-group settings-danger">
         <button class="btn btn-danger" onclick="resetAllProgress()">🗑️ Reset all progress</button>
       </div>
     </div>
   </header>
+
+  <dialog class="whats-new" id="whatsNew" aria-labelledby="whatsNewTitle">
+    <div class="wn-head">
+      <h2 id="whatsNewTitle">📜 What's new</h2>
+      <button type="button" class="icon-btn" onclick="document.getElementById('whatsNew').close()" aria-label="Close">✕</button>
+    </div>
+    <div class="wn-body" id="whatsNewBody"><p class="calc-desc">Loading…</p></div>
+  </dialog>
 
   <dialog class="search-dialog" id="searchDialog" aria-label="Search">
     <div class="srch-bar">
@@ -363,22 +373,23 @@
     <a href="https://github.com/TeeraMU/trickster-companion" target="_blank" rel="noopener">Source on GitHub</a> · <a href="https://github.com/TeeraMU/trickster-companion/issues/new/choose" target="_blank" rel="noopener">report on GitHub instead</a>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/episode.js"></script>
-  <script src="js/quest-card.js"></script>
-  <script src="js/route.js"></script>
-  <script src="js/report.js"></script>
-  <script src="js/bag.js"></script>
-  <script src="js/town.js"></script>
-  <script src="js/formula.js"></script>
-  <script src="js/planner.js"></script>
-  <script src="js/sync-merge.js"></script>
-  <script src="js/cloud.js"></script>
-  <script src="js/friends.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/build.js"></script>
-  <script src="js/boss.js"></script>
-  <script src="js/guardian.js"></script>
+  <script src="js/data.js?v=1.1.0"></script>
+  <script src="js/episode.js?v=1.1.0"></script>
+  <script src="js/quest-card.js?v=1.1.0"></script>
+  <script src="js/route.js?v=1.1.0"></script>
+  <script src="js/report.js?v=1.1.0"></script>
+  <script src="js/bag.js?v=1.1.0"></script>
+  <script src="js/town.js?v=1.1.0"></script>
+  <script src="js/formula.js?v=1.1.0"></script>
+  <script src="js/planner.js?v=1.1.0"></script>
+  <script src="js/chars.js?v=1.1.0"></script>
+  <script src="js/sync-merge.js?v=1.1.0"></script>
+  <script src="js/cloud.js?v=1.1.0"></script>
+  <script src="js/friends.js?v=1.1.0"></script>
+  <script src="js/search.js?v=1.1.0"></script>
+  <script src="js/build.js?v=1.1.0"></script>
+  <script src="js/boss.js?v=1.1.0"></script>
+  <script src="js/guardian.js?v=1.1.0"></script>
   <script>
     // ============================================================================
     // QUEST DATA: loaded from data/quests/*.json by js/data.js (see loadData below)
@@ -389,6 +400,8 @@
     // STATE MANAGEMENT (LOCALSTORAGE)
     // ============================================================================
     const STORAGE_KEY = "trickster_quest_tracker_v1";
+    // set by scripts/set-version.js at each release, with ?v= on every css / js link
+    const APP_VERSION = "1.1.0";
     let appState = {
       completedQuests: {}, // { [questId]: true }
       completedCycles: {}, // { [questId]: number_of_completed_cycles }
@@ -411,7 +424,9 @@
       openChapters: {},        // { [chapterName]: true|false } user-toggled chapters
       inventory: {},           // { itemName: count } what the player has (Bag page)
       bagFilter: "keep",       // Bag tab: keep | missing | spare
-      bagSearch: ""
+      bagSearch: "",
+      chars: [],               // 👤 game characters (js/chars.js): the open one's progress is the fields above
+      charId: ""               // the open character (this device only)
     };
     let PREREQS = {};          // { questId: [{ quest, active? }] } from data/quests/*.json
     let MAP_INDEX = null;      // data/maps.json, indexed by TQRoute.indexMaps
@@ -456,6 +471,7 @@
       } catch (e) {
         console.warn("Could not load state from localStorage:", e);
       }
+      TQChars.ensure(appState);
       normalizeCompletion();
       document.getElementById("charClassSelect").value = appState.selectedClass || "All";
     }
@@ -495,13 +511,14 @@
 
     // Progress from the cloud (or a merge) replaces this browser's progress
     function applyCloudPayload(p) {
-      appState.completedQuests = Object.assign({}, p.completedQuests);
-      appState.completedCycles = Object.assign({}, p.completedCycles);
-      appState.completedSteps = Object.assign({}, p.completedSteps);
-      appState.inventory = Object.assign({}, p.inventory);
-      appState.selectedClass = p.selectedClass || "All";
-      appState.selectedJobPath = p.selectedJobPath || "";
-      appState.focus = p.focus || null;
+      // every character's progress; this device keeps its open one. A copy written by an older version
+      // of the app (no chars) only knows the first character: keep the others as they are here.
+      let list = TQSync.charsOf(p);
+      if (!Array.isArray(p.chars)) {
+        const mine = TQChars.all(appState);
+        list = [Object.assign({}, mine[0], { progress: list[0].progress })].concat(mine.slice(1));
+      }
+      TQChars.setAll(appState, list);
       appState.hideBag = !!p.hideBag;
       // a copy saved before builds were synced has none: keep this device's
       if (Array.isArray(p.builds)) appState.planner = { builds: TQPlanner.cleanBuilds(p.builds), current: (appState.planner || {}).current || "" };
@@ -515,7 +532,7 @@
 
     // First sign-in on a browser that already has different progress: ask which copy to keep
     function chooseSyncCopy(local, cloud) {
-      const say = s => `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins` + (s.builds ? ` · ${s.builds} builds` : "");
+      const say = s => (s.chars > 1 ? `${s.chars} characters: ` : "") + `${s.quests} quests done · ${s.steps} steps · ${s.items} items in Bag · ${s.pins} NPC pins` + (s.builds ? ` · ${s.builds} builds` : "");
       document.getElementById("syncLocal").textContent = say(local);
       document.getElementById("syncCloud").textContent = say(cloud);
       const dlg = document.getElementById("syncChoice");
@@ -1921,6 +1938,14 @@
         plannerChanged();
       },
       planEdit(open) { PLANNER_UI.planEdit = open; },
+      /** A number some skill formulas need that the status window doesn't show (Gun AP, Throw AP …). */
+      input(key, value) {
+        const b = editable();
+        if (!b) return;
+        b.inputs = TQPlanner.cleanInputs(Object.assign({}, b.inputs, { [key]: value }));
+        if (!Object.keys(b.inputs).length) delete b.inputs;
+        plannerChanged();
+      },
       /** Every bonus point the character has, spread by the plan. */
       usePlan() {
         const b = editable();
@@ -2179,97 +2204,157 @@
       return job ? { url: job.img, name: job.name } : null;
     }
 
-    // Header class picker: a button + listbox with job sprites (a <select> can't show pictures).
-    // The hidden #charClassSelect still holds the options and the value.
+    // ============================================================================
+    // 👤 MY CHARACTER (js/chars.js): one chip in the top bar with the open character's job sprite and
+    // name. Its menu switches character, sets the open one's class (each character has its own class,
+    // ticks, runs and Bag), adds one (empty with a class, or a copy of the open one), renames or deletes it.
+    // The hidden #charClassSelect still holds the class options and value for the code that reads it.
+    // ============================================================================
     const spriteHtml = icon => icon ? `<img src="${String(icon.url).replace(/["<>&]/g, "")}" alt="" />` : "🎭";
     const classOptions = () => [...document.getElementById("charClassSelect").options].map(o => ({ value: o.value, text: o.textContent }));
+    const className = v => (v === "All" ? "All classes" : v);
+    const CHAR_UI = { adding: false };
+    const escHtml = v => String(v).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
+    /** A character's sprite: its 3rd job when a path is picked, else its class's first job; null for All classes. */
+    const charIcon = (cls, pathKey) => { const p = jobPaths().find(x => x.key === pathKey); return classIcon(cls || "All", p && p.label); };
+    const iconSpan = (icon, extra) => `<span class="class-chip-icon ${icon ? "" : "is-emoji"} ${extra || ""}" aria-hidden="true">${spriteHtml(icon)}</span>`;
 
-    // the picked 3rd job's sprite, else the class's first job; 🎭 for All classes
-    function renderClassChipIcon() {
-      const el = document.getElementById("classChipIcon");
-      if (!el) return;
-      const cls = appState.selectedClass || "All";
-      const path = jobPaths().find(p => p.key === appState.selectedJobPath);
-      const icon = classIcon(cls, path && path.label);
-      el.classList.toggle("is-emoji", !icon);
-      el.innerHTML = spriteHtml(icon);
-      const opt = classOptions().find(o => o.value === cls);
-      document.getElementById("classPickLabel").textContent = opt ? opt.text : cls;
-      el.closest(".class-chip").title = "My character class: hides quests for other classes" + (icon ? ` (${icon.name})` : "");
+    // the chip: the open character's sprite and name
+    function renderClassChipIcon() { renderCharChip(); }
+    function renderCharChip() {
+      const c = TQChars.active(appState);
+      const icon = charIcon(appState.selectedClass, appState.selectedJobPath);
+      const el = document.getElementById("charChipIcon");
+      if (el) { el.classList.toggle("is-emoji", !icon); el.innerHTML = spriteHtml(icon); }
+      const label = document.getElementById("charPickLabel");
+      if (label) label.textContent = c ? c.name : "";
+      const btn = document.getElementById("charPickBtn");
+      const what = `${c ? c.name : ""} (${className(appState.selectedClass || "All")}${icon ? ", " + icon.name : ""})`;
+      if (btn) { btn.setAttribute("aria-label", "My character: " + what); btn.title = "My character: " + what + ". Its class, quest ticks and Bag"; }
     }
-
-    function renderClassPickList() {
+    function renderCharMenu() {
+      const menu = document.getElementById("charMenu");
+      if (!menu) return;
+      const list = TQChars.list(appState);
+      const open = list.find(c => c.open) || list[0];
       const cls = appState.selectedClass || "All";
-      document.getElementById("classPickList").innerHTML = classOptions().map((o, i) => {
-        const icon = classIcon(o.value);
-        const on = o.value === cls;
-        return `<li role="option" id="classOpt${i}" data-value="${o.value}" aria-selected="${on}" class="${on ? "is-on" : ""}"
-            onclick="pickClass('${o.value}')"><span class="class-chip-icon ${icon ? "" : "is-emoji"}" aria-hidden="true">${spriteHtml(icon)}</span>
-            <span>${o.text}</span>${on ? `<span class="class-pick-check" aria-hidden="true">✓</span>` : ""}</li>`;
-      }).join("");
+      const rows = list.map(c => `<button type="button" class="char-row ${c.open ? "is-on" : ""}" aria-pressed="${c.open}" onclick="switchChar('${escHtml(c.id)}')">
+          ${iconSpan(charIcon(c.cls, c.path))}<span class="char-row-text"><span class="char-row-name">${escHtml(c.name)}</span>
+          <span class="char-row-done">${escHtml(className(c.cls))} · ${c.done} done</span></span>${c.open ? `<span class="class-pick-check" aria-hidden="true">✓</span>` : ""}</button>`).join("");
+      // the open character's class: small sprite buttons, All classes last
+      const opts = classOptions().filter(o => o.value !== "All").concat(classOptions().filter(o => o.value === "All"));
+      const classPick = `
+          <div class="char-class" role="group" aria-label="Class of ${escHtml(open.name)}">
+            <span class="char-sub">Class of ${escHtml(open.name)} <span>hides quests for other classes</span></span>
+            <div class="char-class-grid">${opts.map(o => `<button type="button" class="char-class-btn ${o.value === cls ? "is-on" : ""}" aria-pressed="${o.value === cls}"
+              title="${escHtml(o.text)}" onclick="pickClass('${escHtml(o.value)}')">${iconSpan(classIcon(o.value))}<span>${escHtml(o.value === "All" ? "All" : o.value)}</span></button>`).join("")}</div>
+          </div>`;
+      const adding = `
+          <div class="char-add">
+            <label>Name <input id="charNewName" maxlength="${TQChars.NAME_MAX}" placeholder="e.g. My Fox" autocomplete="off"></label>
+            <label>Class <select id="charNewClass">${classOptions().map(o => `<option value="${escHtml(o.value)}" ${o.value === "All" ? "selected" : ""}>${escHtml(o.text)}</option>`).join("")}</select></label>
+            <div class="char-add-btns">
+              <button type="button" class="btn" onclick="addChar(false)">Start empty</button>
+              <button type="button" class="btn" onclick="addChar(true)" title="Ticks, Bag and class of ${escHtml(open.name)}, for a character that played along">Copy ${escHtml(open.name)}</button>
+              <button type="button" class="btn" onclick="charAdding(false)">Cancel</button>
+            </div>
+          </div>`;
+      const actions = `
+          <div class="char-actions">
+            ${list.length < TQChars.MAX ? `<button type="button" class="btn" onclick="charAdding(true)">➕ New character</button>` : `<span class="bd-note">${TQChars.MAX} characters at most</span>`}
+            <button type="button" class="btn" onclick="renameChar()">✏️ Rename</button>
+            ${list.length > 1 ? `<button type="button" class="btn btn-danger" onclick="deleteChar()">🗑️ Delete</button>` : ""}
+          </div>`;
+      menu.innerHTML = `<p class="char-menu-title">👤 My characters <span>each keeps its own class, ticks, runs and Bag</span></p>
+          ${rows}${CHAR_UI.adding ? adding : classPick + actions}`;
     }
-
-    function toggleClassPicker(open) {
-      const list = document.getElementById("classPickList");
-      const btn = document.getElementById("classPickBtn");
-      const show = open === undefined ? list.hidden : open;
-      if (show) {
-        renderClassPickList();
-        list.hidden = false;
+    function charAdding(on) {
+      CHAR_UI.adding = on;
+      renderCharMenu();
+      const box = document.getElementById(on ? "charNewName" : "charPickBtn");
+      if (box) box.focus();
+    }
+    function toggleCharMenu(show) {
+      const menu = document.getElementById("charMenu");
+      const btn = document.getElementById("charPickBtn");
+      const open = show === undefined ? menu.hidden : show;
+      if (open) {
+        CHAR_UI.adding = false;
+        renderCharMenu();
+        menu.hidden = false;
         btn.setAttribute("aria-expanded", "true");
-        const on = list.querySelector(".is-on") || list.firstElementChild;
-        setClassPickActive(on);
-        list.focus();
-      } else if (!list.hidden) {
-        list.hidden = true;
+        const on = menu.querySelector(".char-row.is-on");
+        if (on) on.focus();
+      } else if (!menu.hidden) {
+        menu.hidden = true;
         btn.setAttribute("aria-expanded", "false");
       }
     }
-
-    function setClassPickActive(li) {
-      const list = document.getElementById("classPickList");
-      list.querySelectorAll(".is-active").forEach(x => x.classList.remove("is-active"));
-      if (!li) return;
-      li.classList.add("is-active");
-      list.setAttribute("aria-activedescendant", li.id);
-      li.scrollIntoView({ block: "nearest" });
+    function charMenuKey(ev) {
+      if (ev.key === "Escape") { ev.preventDefault(); toggleCharMenu(false); document.getElementById("charPickBtn").focus(); }
+      else if (ev.key === "Enter" && ev.target.id === "charNewName") { ev.preventDefault(); addChar(false); }
     }
-
+    document.addEventListener("pointerdown", ev => {
+      if (!ev.target.closest(".char-chip")) toggleCharMenu(false);
+    });
+    /** The open character's class (from the menu's class buttons). */
     function pickClass(value) {
-      toggleClassPicker(false);
-      document.getElementById("classPickBtn").focus();
       const sel = document.getElementById("charClassSelect");
-      if (sel.value === value && appState.selectedClass === value) return;
-      sel.value = value;
-      onClassChange(value);
-    }
-
-    function classPickerBtnKey(e) {
-      if (["ArrowDown", "ArrowUp"].includes(e.key)) { e.preventDefault(); toggleClassPicker(true); }
-    }
-
-    function classPickerListKey(e) {
-      const list = document.getElementById("classPickList");
-      const items = [...list.children];
-      const cur = items.indexOf(list.querySelector(".is-active"));
-      const go = i => { e.preventDefault(); setClassPickActive(items[Math.max(0, Math.min(items.length - 1, i))]); };
-      if (e.key === "ArrowDown") go(cur + 1);
-      else if (e.key === "ArrowUp") go(cur - 1);
-      else if (e.key === "Home") go(0);
-      else if (e.key === "End") go(items.length - 1);
-      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (items[cur]) pickClass(items[cur].dataset.value); }
-      else if (e.key === "Escape") { e.preventDefault(); toggleClassPicker(false); document.getElementById("classPickBtn").focus(); }
-      else if (e.key === "Tab") toggleClassPicker(false);
-      else if (/^[a-z]$/i.test(e.key)) { // jump to the class starting with that letter
-        const i = items.findIndex((li, n) => n > cur && li.textContent.trim().toLowerCase().startsWith(e.key.toLowerCase()));
-        const j = i >= 0 ? i : items.findIndex(li => li.textContent.trim().toLowerCase().startsWith(e.key.toLowerCase()));
-        if (j >= 0) go(j);
+      if (!(sel.value === value && appState.selectedClass === value)) {
+        sel.value = value;
+        onClassChange(value);
+      }
+      const menu = document.getElementById("charMenu");
+      if (menu && !menu.hidden) {
+        renderCharMenu();
+        const on = menu.querySelector(".char-class-btn.is-on");
+        if (on) on.focus();
       }
     }
-
-    document.addEventListener("pointerdown", e => {
-      if (!e.target.closest(".class-chip")) toggleClassPicker(false);
-    });
+    /** After the open character's progress changed under the app: everything shown follows it. */
+    function charChanged() {
+      normalizeCompletion();
+      document.getElementById("charClassSelect").value = appState.selectedClass || "All";
+      saveState();
+      renderCharChip();
+      renderAll();
+      if (appState.currentView === "episodes") renderEpisodes();
+      if (appState.currentView === "friends") renderFriends();
+    }
+    function switchChar(id) {
+      toggleCharMenu(false);
+      if (TQChars.switchTo(appState, id)) charChanged();
+    }
+    function addChar(copy) {
+      const box = document.getElementById("charNewName");
+      const clsBox = document.getElementById("charNewClass");
+      const cls = clsBox ? clsBox.value : "All";
+      const id = TQChars.add(appState, box ? box.value : "", copy);
+      CHAR_UI.adding = false;
+      if (!id) { renderCharMenu(); return; }
+      toggleCharMenu(false);
+      TQChars.switchTo(appState, id);
+      if (!copy) { appState.selectedClass = cls || "All"; appState.selectedJobPath = ""; }
+      charChanged();
+    }
+    function renameChar() {
+      const c = TQChars.active(appState);
+      if (!c) return;
+      const name = prompt("Name of this character:", c.name);
+      if (name == null) return;
+      TQChars.rename(appState, c.id, name);
+      saveState();
+      renderCharChip();
+      renderCharMenu();
+    }
+    function deleteChar() {
+      const c = TQChars.active(appState);
+      if (!c || appState.chars.length <= 1) return;
+      if (!confirm(`Delete ${c.name} and all its ticks, runs and Bag?\n\nThis can't be undone (signed in, it goes from your other devices too). Builds stay.`)) return;
+      toggleCharMenu(false);
+      TQChars.remove(appState, c.id);
+      charChanged();
+    }
 
     function friendSummary() {
       const cls = appState.selectedClass || "All";
@@ -2398,7 +2483,7 @@
 
     function renderAll() {
       STATUS_CACHE = null; // progress may have changed
-      renderClassChipIcon();
+      renderCharChip();
       renderBag();
       renderCategoryTabs();
       renderEpisodes();
@@ -2507,6 +2592,46 @@
     }
 
     // ============================================================================
+    // 📜 WHAT'S NEW (⚙️ Settings): a few short lines per version from data/whats-new.json (the full story is
+    // CHANGELOG.md). The button says "New" until this version's notes are opened once on this device.
+    // ============================================================================
+    const SEEN_VERSION_KEY = "tc_seen_version";
+    function renderVersionBadge() {
+      const v = document.getElementById("appVersion");
+      if (!v) return;
+      let seen = "";
+      try { seen = localStorage.getItem(SEEN_VERSION_KEY) || ""; } catch (e) { /* private mode */ }
+      v.innerHTML = `v${escHtml(APP_VERSION)}` + (seen !== APP_VERSION ? ` <span class="wn-new">New</span>` : "");
+    }
+
+    /** data/whats-new.json { versions: [{ v, date, title, items: ["…"] }] } -> HTML; the 3 newest open, the rest folded. */
+    function whatsNewHtml(d) {
+      const vers = (d && Array.isArray(d.versions) ? d.versions : []).filter(x => x && x.v);
+      const sec = x => `<section class="wn-sec"><h3><span class="wn-ver">v${escHtml(x.v)}</span> ${escHtml(x.title || "")}${x.date ? ` <span class="wn-date">${escHtml(x.date)}</span>` : ""}</h3>
+          <ul>${(x.items || []).map(i => `<li>${escHtml(i)}</li>`).join("")}</ul></section>`;
+      const shown = vers.slice(0, 3), older = vers.slice(3);
+      return shown.map(sec).join("")
+        + (older.length ? `<details class="wn-older"><summary>Older versions (${older.length})</summary>${older.map(sec).join("")}</details>` : "");
+    }
+
+    async function openWhatsNew() {
+      const dlg = document.getElementById("whatsNew");
+      const body = document.getElementById("whatsNewBody");
+      toggleHeaderPanel(null);
+      if (!dlg.open) dlg.showModal();
+      try { localStorage.setItem(SEEN_VERSION_KEY, APP_VERSION); } catch (e) { /* private mode */ }
+      renderVersionBadge();
+      try {
+        body.innerHTML = whatsNewHtml(await TQData.fetchJson("data/whats-new.json"));
+      } catch (e) {
+        body.innerHTML = `<p class="calc-desc">Couldn't load the changes. Check the connection and try again.</p>`;
+      }
+    }
+    document.getElementById("whatsNew").addEventListener("click", e => { if (e.target.id === "whatsNew") e.target.close(); }); // tap outside closes
+    renderVersionBadge();
+
+
+    // ============================================================================
     // IMPORT / EXPORT / RESET
     // ============================================================================
     function exportProgress() {
@@ -2531,6 +2656,8 @@
           try {
             const imported = JSON.parse(ev.target.result);
             appState = Object.assign(appState, imported);
+            TQChars.ensure(appState);
+            normalizeCompletion();
             saveState();
             document.getElementById("charClassSelect").value = appState.selectedClass || "All";
             renderAll();
@@ -2544,7 +2671,8 @@
     }
 
     function resetAllProgress() {
-      if (!confirm("Are you sure you want to reset all checked quests, steps, and cycles?")) return;
+      const who = (TQChars.active(appState) || {}).name || "this character";
+      if (!confirm(`Reset all checked quests, steps and cycles of ${who}?\n\nYour other characters, builds and Bag stay as they are.`)) return;
       appState.completedQuests = {};
       appState.completedCycles = {};
       appState.completedSteps = {};
