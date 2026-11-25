@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 (2026-11-25): Characters, What's new, more skill formulas
 
 - **📜 What's new** in ⚙️ Settings: a few short lines about each version, with the version number; it says "New" until you've read this one.
 - No more half-styled pages after an update: the page asks for the new style and script files of each version (`?v=`), not the ones the browser kept.
