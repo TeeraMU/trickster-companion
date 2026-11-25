@@ -191,6 +191,15 @@ t("formula: Flaming Fist with and without Fire, Power Blow, Volley Kick, lowerca
   assert.strictEqual(power("Sharp Scream")[0].text, "(AP + HV × 16) × Magnification");
 });
 
+t("formula: \"SS Mag Ratio =(Attack% × 50 ÷ 3)\" answers to Mag.Ratio (Stone Strike, Shuriken Master)", () => {
+  // in game 2026-11-25: Archaeologist DA 26+40, Stone Strike Lv.10 -> (66 + 1) × 40
+  const ss = skill("Stone Strike");
+  assert.strictEqual(Fm.evalFormula(ss.formula, Fm.formulaVars({ DA: 66 }, {}, ss.levels, "10"))[0].value, 2680);
+  const sm = skill("Shuriken Master");
+  const v = Fm.formulaVars(total, {}, sm.levels, "M");
+  assert.ok(v.get("Mag.Ratio") > 1, "SM Mag.Ratio read");
+});
+
 t("formula: a word it can't read inside brackets drops the expression instead of guessing", () => {
   assert.deepStrictEqual(Fm.evalFormula("AP × Unknown Thing", Fm.formulaVars(total, {}, null, "M")), []);
   assert.deepStrictEqual(Fm.evalFormula("alert(1); AP", Fm.formulaVars(total, {}, null, "M")), []);

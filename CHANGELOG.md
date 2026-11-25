@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Planner: Stone Strike and Shuriken Master now use their Mag Ratio (Stone Strike Lv.10 with DA 66 = 2,680, not 55). Fox starts with the same stats as Cat (checked in game).
+
 ## 1.0.0 (2026-11-25): Planner, Bosses and Guardian
 
 - New **🥚 Guardian** page (bottom bar, after Bosses): how to get your guardian from Lv.65 to Lv.180 as a checklist (Card Identification, Soul Seed, raising the egg, Soul Guardian, Mind's Eye) with its quests, which move here from the Quests page (Fairy Nono, La Vida, Frog Prince, the three sisters, Spirit of Nefertiti), and the 24 Mind's Eye quests of 8 areas (Lv.240 to 345), grouped by area.
